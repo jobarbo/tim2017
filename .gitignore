@@ -7,7 +7,7 @@ css/
 .idea/
 **/.idea/
 
-css/
+stylesheets/
 bower_components/
 node_modules/
 
