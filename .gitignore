@@ -1,2 +1,16 @@
+# fichiers cachés ou temporaires de Mac OS
+.DS_Store
+~*
+
+# dossier de réglages de PHPStorm
+css/
 .idea/
 **/.idea/
+
+css/
+bower_components/
+node_modules/
+
+# dossier de cache de sass
+.sass-cache/
+**/.sass-cache/
