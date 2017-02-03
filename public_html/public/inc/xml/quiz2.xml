@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="quiz2.xsd">
+	<questions>
+		<question>
+			<texteQuestion>Lors de ma formation en Techniques d’intégration multimédia, j’espère travailler à créer et assembler différents médias : images, vidéo, son, etc.</texteQuestion>
+			<reponses>
+				<reponse>
+					<libelleReponse>Oui</libelleReponse>
+					<texteReponse>Oui, Tim te permettra d’apprendre à concevoir et réaliser des éléments visuels et sonores de toutes sortes à l’aide de logiciels professionnels, sur plateforme Mac et PC avec par exemple la suite professionnelle d’Adobe.</texteReponse>
+				</reponse>
+				<reponse>
+					<libelleReponse>Non</libelleReponse>
+					<texteReponse>Attention, le programme Tim comporte un important pourcentage de cours dédiés à la conception et réalisation d’éléments visuels et sonores de toutes sortes à l’aide de logiciels professionnels, sur plateforme Mac et PC avec par exemple la suite professionnelle d’Adobe.</texteReponse>
+				</reponse>
+			</reponses>
+		</question>
+		<question>
+			<texteQuestion>Lors de ma formation en Techniques d’intégration multimédia, je m’attends à programmer l’interactivité de la page à l’aide de langage de programmation.</texteQuestion>
+			<reponses>
+				<reponse>
+					<libelleReponse>Oui</libelleReponse>
+					<texteReponse>Oui, Tim te permettra d'apprendre à programmer des pages Web et des produits interactifs à l'aide de langages de programmation. Les langages de programmation utilisés sont par exemple : JavaScript et PHP.</texteReponse>
+				</reponse>
+				<reponse>
+					<libelleReponse>Non</libelleReponse>
+					<texteReponse>Attention, le programme Tim comporte un important pourcentage de cours dédiés à la programmation de pages web et de produits interactifs. Les langages de programmation utilisés sont par exemple : JavaScript et PHP.</texteReponse>
+				</reponse>
+			</reponses>
+		</question>
+		<question>
+			<texteQuestion>Lors de ma formation en Techniques d’intégration multimédia, je m’attends à réaliser des émissions de télévision.</texteQuestion>
+			<reponses>
+				<reponse>
+					<libelleReponse>Oui</libelleReponse>
+					<texteReponse>Non, Tim ne te permettra pas d’apprendre des notions reliées au domaine de la télédiffusion. Tout au plus, tu auras un cours de 60 heures dédié à la captation et au montage audiovidéo au cours de tes trois années de formation. Il existe des programmes spécialisés dans le domaine des communications, par exemple : http://www.cegepjonquiere.ca/arts-lettres-et-communication.html</texteReponse>
+				</reponse>
+				<reponse>
+					<libelleReponse>Non</libelleReponse>
+					<texteReponse>En effet, TIM ne te permettra pas d’apprendre des notions reliées au domaine de la télédiffusion. Tout au plus, tu auras un cours de 60 heures dédié à la captation et au montage audio-vidéo au cours de tes trois années de formation.</texteReponse>
+				</reponse>
+			</reponses>
+		</question>
+		<question>
+			<texteQuestion>Lors de ma formation en Techniques d’intégration multimédia, je m’attends à réaliser des animations 3D et des effets spéciaux.</texteQuestion>
+			<reponses>
+				<reponse>
+					<libelleReponse>Oui</libelleReponse>
+					<texteReponse>Non, très peu. Tout au plus, tu auras un cours de 45 heures dédié à l'apprentissage de l'animation dans un contexte de diffusion pour le Web. Il existe des programmes spécialisés dans le domaine du 3D, par exemple: http://www.cegeplimoilou.ca/formations/diplomes-d-etudes-collegiales-dec-technique/574b0-animation-3d-et-synthese-d-images/</texteReponse>
+				</reponse>
+				<reponse>
+					<libelleReponse>Non</libelleReponse>
+					<texteReponse>En effet, très peu. Tout au plus, tu auras un cours de 45 heures dédié à l'apprentissage de l'animation dans un contexte de diffusion pour le Web.</texteReponse>
+				</reponse>
+			</reponses>
+		</question>
+		<question>
+			<texteQuestion>Lors de ma formation en Techniques d’intégration multimédia, je m’attends à réaliser des documents publicitaires imprimés et faire de l’illustration.</texteQuestion>
+			<reponses>
+				<reponse>
+					<libelleReponse>Oui</libelleReponse>
+					<texteReponse>Non, Tim ne te permettra pas de développer des compétences en lien avec l’imprimé et l’illustration. Il existe des programmes spécialisés dans le domaine du Graphisme, par exemple : http://www.cegep-ste-foy.qc.ca/programmes/programmes-techniques/graphisme/</texteReponse>
+				</reponse>
+				<reponse>
+					<libelleReponse>Non</libelleReponse>
+					<texteReponse>En effet, Tim ne te permettra pas de développer des compétences en lien avec l’imprimé et l’illustration. Il existe des programmes spécialisés dans le domaine du Graphisme, par exemple : http://www.cegep-ste-foy.qc.ca/programmes/programmes-techniques/graphisme/</texteReponse>
+				</reponse>
+			</reponses>
+		</question>
+	</questions>
+</quiz>

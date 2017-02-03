@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- L'équipe peut au besoin modifier et adapter cette structure. -->
+<navigation lang="fr">
+	<menu nom="metanavigation">
+		<item url="#">Accueil</item>
+		<item url="#">Nous joindre</item>
+        <!-- Ajouter un lien vers le site du Cégep de Sainte-Foy -->
+	</menu>
+	<menu nom="principal">
+		<!-- ajout d'un attribut id -->
+		<item url="#" id="etudiant">Futur étudiant</item>
+		<item url="#" id="programme">Programme</item>
+		<item url="#" id="stages">Stages</item>
+		<item url="#" id="diplomes">Diplômés</item>
+	</menu>
+	<!-- ajout d'un attribut idref --> 
+	<menu nom="secondaire" idref="etudiant">
+        <item url="#">Fais-tu le bon choix?</item>
+		<item url="#">As-tu le profil?</item>
+        <item url="#">Perspectives</item>
+        <item url="#">Témoignages</item>
+	</menu>
+	<menu nom="secondaire" idref="programme">
+        <item url="#">Équipe</item>
+		<item url="#">Grilles de cours</item>
+	</menu>
+	<menu nom="secondaire" idref="stages">
+		<item url="#">Alternance Travail-Études</item>
+		<item url="#">International</item>
+	</menu>
+</navigation>
