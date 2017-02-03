@@ -1,17 +1,19 @@
 <?php
 
-include_once('inc/lib/Twig/Autoloader.php');
-Twig_Autoloader::register();
-$loader = new Twig_Loader_Filesystem('templates'); //Nom du dossier qui contient nos templates
-$twig = new Twig_Environment($loader, array(
-    'cache' => false,
-    'debug' => true
-));
+$strNiveau="";
+
+require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 
 
 
 ///////////// EXEMPLE AVEC TWIG //////////////
-$template = $twig->loadTemplate('pieces/menu.html.twig');
+$template = $twig->loadTemplate('pieces/head.html.twig');
+echo $template->render(array(
+    'title' => "Techniques d'intégration multimédia | TIM",
+    'page' => ""
+));
+
+$template = $twig->loadTemplate('pieces/header.html.twig');
 
 $template = $twig->loadTemplate('index.html.twig');
 echo $template->render(array(

@@ -39,6 +39,10 @@ if ($objResultProfs = $objConnMySQLi->query($strSQLProfs)) {
 $objConnMySQLi->close();
 $template = $twig->loadTemplate('pieces/menu.html.twig');
 
+///////////// EXEMPLE AVEC TWIG //////////////
+$template = $twig->loadTemplate('pieces/header.html.twig');
+>>>>>>> 3eaa7071bfe2081be0b5ba34dddfccc4e1f38888
+
 $template = $twig->loadTemplate('programme/equipe/index.html.twig');
 echo $template->render(array(
     'niveau' => "../",

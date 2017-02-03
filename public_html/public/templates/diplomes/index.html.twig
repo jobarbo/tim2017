@@ -1,7 +1,18 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: vincentbeland
- * Date: 17-01-25
- * Time: 10:24
- */
+<!DOCTYPE HTML>
+<html lang="fr">
+
+<body>
+<main>
+    <h1>{{ page }}</h1>
+    <ul>
+        {% for arrDiplomes in diplomes %}
+        <li>
+            <img src="{{ niveau }}images/{{ arrDiplomes.slug}}.jpg" alt="{{ arrDiplomes.nom }}">
+            <p>{{ arrDiplomes.nom }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+
+</main>
+</body>
+</html>
