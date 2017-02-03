@@ -8,6 +8,24 @@
 $strNiveau = "../../";
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 
+
+$strSQLTextePageEquipe = "SELECT titre_texte, texte FROM t_texte WHERE section_et_page = 'Programme - Équipe'";
+
+if ($objResultTexte = $objConnMySQLi->query($strSQLTextePageEquipe)) {
+
+    while ($objLigneTexte = $objResultTexte->fetch_object()) {
+
+        $arrTextes[]=
+
+            array(
+                'titre'=>$objLigneTexte->titre_texte,
+                'paragraphe'=>$objLigneTexte->texte
+            );
+
+    }
+    $objResultTexte->free_result();
+}
+
 $strSQLProfs = "SELECT nom_prof, prenom_prof, courriel_prof, pseudo_twitter_prof, linkedin_prof, site_web_prof
 FROM t_prof";
 
@@ -36,6 +54,7 @@ $template = $twig->loadTemplate('programme/equipe/index.html.twig');
 echo $template->render(array(
     'niveau' => "../",
     'title' => "Techniques d'intégration multimédia | TIM",
+    'arrTextes' => $arrTextes,
     'arrProfs' => $arrProfs
 ));
 
