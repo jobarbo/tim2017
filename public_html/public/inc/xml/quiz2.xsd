@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by Yves Hélie (Cégep de Sainte-Foy) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="quiz">
+		<xs:annotation>
+			<xs:documentation>Un quiz pour vous permettre de savoir si vous connaissez bien le programme Techniques d’intégration multimédia</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="questions">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="question" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="texteQuestion"/>
+										<xs:element name="reponses">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="reponse" minOccurs="2" maxOccurs="2">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="libelleReponse"/>
+																<xs:element name="texteReponse"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

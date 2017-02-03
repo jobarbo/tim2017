@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 rel. 3 (http://www.altova.com) by Labo (Cegep de Sainte-Foy) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="quiz">
+		<xs:annotation>
+			<xs:documentation>Un quiz pour tester vos aptitudes à devenir intégrateur(trice) multimédia</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="questions">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="question" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="texteQuestion" type="xs:string"/>
+										<xs:element name="reponses">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="reponse" minOccurs="4" maxOccurs="4">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="texteReponse">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="jamais"/>
+																			<xs:enumeration value="parfois"/>
+																			<xs:enumeration value="souvent"/>
+																			<xs:enumeration value="toujours"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="pointage" type="xs:integer"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="résultats">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="resultat" maxOccurs="3">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="parametres">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="min" type="xs:integer"/>
+													<xs:element name="max" type="xs:integer"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="commentaire" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
