@@ -5,15 +5,8 @@
  * Date: 17-01-25
  * Time: 08:51
  */
-$niveau = "../../";
-include_once($niveau . 'inc/lib/Twig/Autoloader.php');
-include_once($niveau . 'inc/scripts/config.inc.php');
-Twig_Autoloader::register();
-$loader = new Twig_Loader_Filesystem($niveau . 'templates'); //Nom du dossier qui contient nos templates
-$twig = new Twig_Environment($loader, array(
-    'cache' => false,
-    'debug' => true
-));
+$strNiveau = "../../";
+require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 
 $strSQLProfs = "SELECT nom_prof, prenom_prof, courriel_prof, pseudo_twitter_prof, linkedin_prof, site_web_prof
 FROM t_prof";
@@ -38,10 +31,6 @@ if ($objResultProfs = $objConnMySQLi->query($strSQLProfs)) {
 }
 $objConnMySQLi->close();
 $template = $twig->loadTemplate('pieces/menu.html.twig');
-
-///////////// EXEMPLE AVEC TWIG //////////////
-$template = $twig->loadTemplate('pieces/header.html.twig');
->>>>>>> 3eaa7071bfe2081be0b5ba34dddfccc4e1f38888
 
 $template = $twig->loadTemplate('programme/equipe/index.html.twig');
 echo $template->render(array(
