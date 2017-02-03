@@ -13,7 +13,7 @@
 
     // personne responsable des bogues (gestion des erreurs)
     // nota bene: les envois de courriels sur timunix n'ont fonctionné qu'avec l'adresse de cegep-ste-foy.qc.ca
-    $strCourrielContact= ''; //VOTRE adresse courriel VALIDE. Sinon, à répétition, cela bloque le serveur de courriel du cegep entier!
+    $strCourrielContact= '1461210@etu.cegep-ste-foy.qc.ca'; //VOTRE adresse courriel VALIDE. Sinon, à répétition, cela bloque le serveur de courriel du cegep entier!
 
     // Verifier si l'exécution se fait sur le serveur de développement (local) ou celui de la production:
     if (stristr($_SERVER['HTTP_HOST'], 'local') || (substr($_SERVER['HTTP_HOST'], 0, 7) == '192.168')) {
