@@ -3,7 +3,24 @@
 
 <body>
 <main>
-    <h1>{{ page }}</h1>
+    <section class="haut_page">
+        <h1>{{ page }}</h1>
+    </section>
+    <section class="texte_intro">
+        {{ texteIntro | raw }}
+        <div class="triInterets">
+            <h2>Trier les diplômés par intérêts</h2>
+            <a href="#" class="btnResetTri">Réinitialiser</a>
+            <ul class="listeTrie">
+                <li><a class="btnTri" href="#">Gestion</a></li>
+                <li><a class="btnTri" href="#">Design</a></li>
+                <li><a class="btnTri" href="#">Traitement des médias</a></li>
+                <li><a class="btnTri" href="#">Intégration</a></li>
+                <li><a class="btnTri" href="#">Programmation</a></li>
+            </ul>
+        </div>
+    </section>
+    <section class="liste_diplomes">
     <ul>
         {% for arrDiplomes in diplomes %}
         <li>
@@ -12,6 +29,7 @@
         </li>
         {% endfor %}
     </ul>
+    </section>
 
 </main>
 </body>
