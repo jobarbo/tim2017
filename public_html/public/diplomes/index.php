@@ -42,7 +42,7 @@ $objResultDiplome->free_result();
 $template = $twig->loadTemplate('pieces/head.html.twig');
 echo $template->render(array(
     'title' => "Techniques d'intégration multimédia | TIM",
-    'page' => " | Nos diplômés 2017"
+    'page' => "Nos diplômés 2017 | "
 ));
 $template = $twig->loadTemplate('pieces/header.html.twig');
 echo $template->render(array(
@@ -54,7 +54,6 @@ echo $template->render(array(
     'page' => "Nos diplômés 2017",
     'diplomes' => $arrDiplomes
 ));
-print_r($arrDiplomes);
 
 $template = $twig->loadTemplate('pieces/footer.html.twig');
 echo $template->render(array());
