@@ -48,15 +48,24 @@ if ($objResultProfs = $objConnMySQLi->query($strSQLProfs)) {
     $objResultProfs->free_result();
 }
 $objConnMySQLi->close();
-$template = $twig->loadTemplate('pieces/menu.html.twig');
+
+
+$template = $twig->loadTemplate('pieces/head.html.twig');
+echo $template->render(array(
+    'title' => "Techniques d'intégration multimédia | TIM",
+    'page' => "Équipe | "
+));
+
+$template = $twig->loadTemplate('pieces/header.html.twig');
+echo $template->render(array());
 
 $template = $twig->loadTemplate('programme/equipe/index.html.twig');
 echo $template->render(array(
     'niveau' => "../",
-    'title' => "Techniques d'intégration multimédia | TIM",
     'arrTextes' => $arrTextes,
     'arrProfs' => $arrProfs
 ));
 
 $template = $twig->loadTemplate('pieces/footer.html.twig');
+echo $template->render(array());
 
