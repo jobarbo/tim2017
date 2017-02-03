@@ -3,7 +3,15 @@
 
 <body>
 <main>
-    <h1>Nos diplômés 2017</h1>
+    <h1>{{ page }}</h1>
+    <ul>
+        {% for arrDiplomes in diplomes %}
+        <li>
+            <img src="{{ niveau }}images/{{ arrDiplomes.slug}}.jpg" alt="{{ arrDiplomes.nom }}">
+            <p>{{ arrDiplomes.nom }}</p>
+        </li>
+        {% endfor %}
+    </ul>
 
 </main>
 </body>
