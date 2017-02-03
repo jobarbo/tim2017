@@ -1,8 +1,17 @@
 <head>
-    <meta charset = "utf-8"/>
+    <meta charset="utf-8"/>
     <title>{{ title }}</title>
 </head>
 <body>
 <h1>ÉQUIPE</h1>
-<p>{{ will }}</p>
+{% for valeur in arrTextes %}
+<h2>{{ valeur['titre'] }}</h2>
+<p>{{ valeur['paragraphe'] | raw }}</p>
+{% endfor %}
+{% for valeur in arrProfs %}
+    <div>
+        <p>{{ valeur['prenom'] }} {{ valeur['nom'] }}</p>
+        <p>{{ valeur['courriel'] }} {{ valeur['pseudo'] }} {{ valeur['linkedin'] }} {{ valeur['site'] }}</p>
+    </div>
+{% endfor %}
 </body>
