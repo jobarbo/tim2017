@@ -30,12 +30,12 @@
 	    $strBdServer   = 'localhost';
         $strBdUsername = 'root';
         $strBdPassword = 'root';
-        $strBdName     = '*à confirmer';
+        $strBdName     = 'bdtim2017_hooli';
     } else {
         $strBdServer   = 'timunix.cegep-ste-foy.qc.ca';
-        $strBdUsername = 'à confirmer';
-        $strBdPassword = 'à confirmer';
-        $strBdName     = 'à confirmer';  //ou bdTraces2015_base selon l'exercice!
+        $strBdUsername = 't17-hooli';
+        $strBdPassword = 'pinsonnoir';
+        $strBdName     = 'bdtim2017_hooli';  //ou bdTraces2015_base selon l'exercice!
                                               //mot de passe: t1m2015
     }
 
