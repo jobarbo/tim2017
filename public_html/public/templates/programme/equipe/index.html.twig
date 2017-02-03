@@ -4,6 +4,10 @@
 </head>
 <body>
 <h1>ÉQUIPE</h1>
+{% for valeur in arrTextes %}
+<h2>{{ valeur['titre'] }}</h2>
+<p>{{ valeur['paragraphe'] | raw }}</p>
+{% endfor %}
 {% for valeur in arrProfs %}
     <div>
         <p>{{ valeur['prenom'] }} {{ valeur['nom'] }}</p>
