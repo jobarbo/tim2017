@@ -16,7 +16,7 @@ $twig = new Twig_Environment($loader, array(
 
 
 ///////////// EXEMPLE AVEC TWIG //////////////
-$template = $twig->loadTemplate('pieces/menu.html.twig');
+$template = $twig->loadTemplate('pieces/header.html.twig');
 
 $template = $twig->loadTemplate('programme/equipe/index.html.twig');
 echo $template->render(array(

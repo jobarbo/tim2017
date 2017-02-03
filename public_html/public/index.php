@@ -7,7 +7,7 @@ require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 
 
 ///////////// EXEMPLE AVEC TWIG //////////////
-$template = $twig->loadTemplate('pieces/menu.html.twig');
+$template = $twig->loadTemplate('pieces/header.html.twig');
 
 $template = $twig->loadTemplate('index.html.twig');
 echo $template->render(array(

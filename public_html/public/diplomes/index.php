@@ -21,13 +21,20 @@ require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 
 
 ///////////// TWIG //////////////
-$template = $twig->loadTemplate('pieces/menu.html.twig');
+$template = $twig->loadTemplate('pieces/head.html.twig');
+echo $template->render(array(
+    'title' => "Techniques d'intégration multimédia | TIM",
+    'specifique' => "Nos diplômés 2017"
+));
+$template = $twig->loadTemplate('pieces/header.html.twig');
+echo $template->render(array(
+));
 
 $template = $twig->loadTemplate('diplomes/index.html.twig');
 echo $template->render(array(
     'niveau' => "../",
-    'will' => "the dog",
-    'title' => "Techniques d'intégration multimédia | TIM"
+    'will' => "the dog"
 ));
 
 $template = $twig->loadTemplate('pieces/footer.html.twig');
+echo $template->render(array());
