@@ -19,7 +19,7 @@ require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 
 /*************** REQUÊTES DIPLÔMÉS ***********************/
 
-//-----Requete pour aller chercher les infos sur le livre-----//
+//-----Requete pour aller chercher tous les diplômés-----//
 $strSQLDiplomes = "SELECT nom_diplome, slug FROM t_diplome ORDER BY nom_diplome";
 if ($objResultDiplome = $objConnMySQLi->query($strSQLDiplomes)) {
     while ($objLigneDiplome = $objResultDiplome->fetch_object()) {
@@ -30,6 +30,7 @@ if ($objResultDiplome = $objConnMySQLi->query($strSQLDiplomes)) {
             );
     }
 }
+
 //En cas d'erreur de requête
 if($objResultDiplome->num_rows == 0){
     header('Location: ' . $strNiveau . 'erreur/index.php');
@@ -37,6 +38,23 @@ if($objResultDiplome->num_rows == 0){
 
 $objResultDiplome->free_result();
 
+//-----Requete pour aller chercher le texte d'intro-----//
+$strSQLTexte = "SELECT texte FROM t_texte WHERE section_et_page = 'Diplômés'";
+if ($objResultTexte = $objConnMySQLi->query($strSQLTexte)) {
+    while ($objLigneTexte = $objResultTexte->fetch_object()) {
+        $texteIntro = $objLigneTexte->texte;
+    }
+}
+
+//En cas d'erreur de requête
+if($objResultTexte->num_rows == 0){
+    header('Location: ' . $strNiveau . 'erreur/index.php');
+}
+
+$objResultTexte->free_result();
+
+// fermer la connexion
+$objConnMySQLi->close();
 
 ///////////// TWIG //////////////
 $template = $twig->loadTemplate('pieces/head.html.twig');
@@ -52,7 +70,8 @@ $template = $twig->loadTemplate('diplomes/index.html.twig');
 echo $template->render(array(
     'niveau' => "../",
     'page' => "Nos diplômés 2017",
-    'diplomes' => $arrDiplomes
+    'diplomes' => $arrDiplomes,
+    'texteIntro' => $texteIntro
 ));
 
 $template = $twig->loadTemplate('pieces/footer.html.twig');
