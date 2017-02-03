@@ -46,7 +46,8 @@ foreach($quiz->questions->question as $questions)
 $template = $twig->loadTemplate('pieces/head.html.twig');
 echo $template->render(array(
     'title' => "Techniques d'intégration multimédia | TIM",
-    'page' => " | As-tu le profil?"
+    'page' => " | As-tu le profil?",
+    'niveau' => $strNiveau
 ));
 $template = $twig->loadTemplate('pieces/header.html.twig');
 echo $template->render(array());
