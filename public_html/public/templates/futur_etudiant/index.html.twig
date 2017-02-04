@@ -1,7 +1,12 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: vincentbeland
- * Date: 17-01-25
- * Time: 10:27
- */
+<head>
+    <meta charset="utf-8"/>
+    <title>{{ title }}</title>
+</head>
+<body>
+<h1>FUTUR ÉTUDIANT</h1>
+{% for valeur in arrTextes %}
+<h2>{{ valeur['titre'] }}</h2>
+{{ valeur['paragraphe'] | raw }}
+{% endfor %}
+
+</body>
