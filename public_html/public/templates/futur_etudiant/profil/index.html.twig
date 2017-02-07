@@ -12,6 +12,13 @@
         {% endfor %}
         <br />
     {% endfor %}
+    <br /><br />
+    {% for i in 0..2 %}
+        <p>{{ xmlR[i]['commentaire'] }}</p>
+        <p>{{ xmlR[i]['min'] }}</p>
+        <p>{{ xmlR[i]['max'] }}</p>
+        <br />
+    {% endfor %}
 </main>
 </body>
 </html>

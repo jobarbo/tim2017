@@ -22,25 +22,37 @@ require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 $quiz = simplexml_load_file($strNiveau . 'inc/xml/quiz1.xml');
 
 $arrQuestions = array();
-$cpt = 0;
+$arrReponses = array();
+$cptQ = 0;
 foreach($quiz->questions->question as $questions)
 {
-    $arrQuestions[$cpt] = array();
-    $arrQuestions[$cpt]['texteQuestion'] = $questions->texteQuestion;
+    $arrQuestions[$cptQ] = array();
+    $arrQuestions[$cptQ]['texteQuestion'] = $questions->texteQuestion;
     foreach($questions->reponses as $cle)
     {
         $cpt2 =0;
         foreach ($cle as $itteration)
         {
-            $arrQuestions[$cpt]['texteReponse'][$cpt2] = $itteration->texteReponse;
-            $arrQuestions[$cpt]['pointage'][$cpt2] = $itteration->pointage;
+            $arrQuestions[$cptQ]['texteReponse'][$cpt2] = $itteration->texteReponse;
+            $arrQuestions[$cptQ]['pointage'][$cpt2] = $itteration->pointage;
             $cpt2++;
         }
     }
-    $cpt++;
+    $cptQ++;
 }
-//var_dump($arrQuestions);
 
+$cptR = 0;
+foreach($quiz->résultats->resultat as $resultat)
+{
+    $arrReponses[$cptR] = array();
+    $arrReponses[$cptR]['commentaire'] = $resultat->commentaire;
+    foreach($resultat->parametres as $itteration)
+    {
+        $arrReponses[$cptR]['min'] = $itteration->min;
+        $arrReponses[$cptR]['max'] = $itteration->max;
+    }
+    $cptR++;
+}
 
 ///////////// TWIG //////////////
 $template = $twig->loadTemplate('pieces/head.html.twig');
@@ -56,7 +68,8 @@ $template = $twig->loadTemplate('futur_etudiant/profil/index.html.twig');
 echo $template->render(array(
     'niveau' => $strNiveau,
     'will' => "the dog",
-    'xml' => $arrQuestions
+    'xml' => $arrQuestions,
+    'xmlR' => $arrReponses
 ));
 
 $template = $twig->loadTemplate('pieces/footer.html.twig');
