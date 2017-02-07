@@ -24,8 +24,10 @@
     <ul>
         {% for arrDiplomes in diplomes %}
         <li>
-            <img src="{{ niveau }}images/{{ arrDiplomes.slug}}.jpg" alt="{{ arrDiplomes.nom }}">
-            <p>{{ arrDiplomes.nom }}</p>
+            <a href="#">
+                <img src="{{ niveau }}images/{{ arrDiplomes.slug}}.jpg" alt="{{ arrDiplomes.nom }}">
+                <p class="nom">{{ arrDiplomes.prenom }}<span>{{ arrDiplomes.nom }}</span></p>
+            </a>
         </li>
         {% endfor %}
     </ul>

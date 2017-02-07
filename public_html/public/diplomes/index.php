@@ -20,11 +20,12 @@ require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 /*************** REQUÊTES DIPLÔMÉS ***********************/
 
 //-----Requete pour aller chercher tous les diplômés-----//
-$strSQLDiplomes = "SELECT nom_diplome, slug FROM t_diplome ORDER BY nom_diplome";
+$strSQLDiplomes = "SELECT prenom_diplome, nom_diplome, slug FROM t_diplome ORDER BY nom_diplome";
 if ($objResultDiplome = $objConnMySQLi->query($strSQLDiplomes)) {
     while ($objLigneDiplome = $objResultDiplome->fetch_object()) {
         $arrDiplomes[] =
             array(
+                'prenom'=>$objLigneDiplome->prenom_diplome,
                 'nom'=>$objLigneDiplome->nom_diplome,
                 'slug'=>$objLigneDiplome->slug
             );

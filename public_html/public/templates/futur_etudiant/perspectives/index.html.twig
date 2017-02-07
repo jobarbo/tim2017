@@ -1,7 +1,17 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: vincentbeland
- * Date: 17-01-25
- * Time: 10:27
- */
+<head>
+    <meta charset="utf-8"/>
+    <title>{{ title }}</title>
+</head>
+<body>
+<h1>PERSPECTIVES</h1>
+
+    <h2>{{ arrTextes[1]['titre'] }}</h2>
+    {{ arrTextes[1]['paragraphe'] | raw }}
+
+    <h2>{{ arrTextes[2]['titre'] }}</h2>
+    {{ arrTextes[2]['paragraphe'] | raw }}
+
+    <h2>{{ arrTextes[0]['titre'] }}</h2>
+    {{ arrTextes[0]['paragraphe'] | raw }}
+
+</body>
