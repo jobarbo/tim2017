@@ -8,6 +8,10 @@
 /*************** INSTANCIATION CONFIG ***********************/
 require_once($strNiveau . 'inc/scripts/config.inc.php');
 
+/*************** HEADER ET FOOTER ***********************/
+require_once($strNiveau . 'inc/pieces/header.php');
+require_once($strNiveau . 'inc/pieces/footer.php');
+
 /*************** TWIG ***********************/
 include_once($strNiveau .'inc/lib/Twig/Autoloader.php');
 Twig_Autoloader::register();
