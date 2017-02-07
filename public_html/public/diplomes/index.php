@@ -61,19 +61,24 @@ $objConnMySQLi->close();
 $template = $twig->loadTemplate('pieces/head.html.twig');
 echo $template->render(array(
     'title' => "Techniques d'intégration multimédia | TIM",
-    'page' => "Nos diplômés 2017 | "
+    'page' => "Nos diplômés 2017 | ",
+    'niveau' => $strNiveau
 ));
+
 $template = $twig->loadTemplate('pieces/header.html.twig');
 echo $template->render(array(
+    'arrMenuLiensActifs' => $arrMenuActif
 ));
 
 $template = $twig->loadTemplate('diplomes/index.html.twig');
 echo $template->render(array(
-    'niveau' => "../",
+    'niveau' => $strNiveau,
     'page' => "Nos diplômés 2017",
     'diplomes' => $arrDiplomes,
     'texteIntro' => $texteIntro
 ));
 
 $template = $twig->loadTemplate('pieces/footer.html.twig');
-echo $template->render(array());
+echo $template->render(array(
+    'texte_auteurs' => $strTexteAuteurs
+));

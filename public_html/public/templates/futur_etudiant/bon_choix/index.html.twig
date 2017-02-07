@@ -1,7 +1,17 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: vincentbeland
- * Date: 17-01-25
- * Time: 10:27
- */
+<!DOCTYPE HTML>
+<html lang="fr">
+
+<body>
+<main>
+    <h1>Fais-tu le bon choix?</h1>
+    {% for i in 0..5 %}
+        <p>{{ xml[i]['texteQuestion'] }}</p>
+        {% for j in 0..3 %}
+            <p>{{ xml[i]['texteReponse'][j] }}</p>
+            <p>{{ xml[i]['pointage'][j] }}</p>
+        {% endfor %}
+        <br /><br />
+    {% endfor %}
+</main>
+</body>
+</html>

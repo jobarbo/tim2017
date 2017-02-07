@@ -1,13 +1,21 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: vincentbeland
- * Date: 17-01-25
- * Time: 08:51
+ * Index de la page Équipe
+ *
+ * Tous les enseignants y sont affichés avec leurs réseaux sociaux.
+ *
+ * LICENSE: Cégep de Sainte-Foy - Techniques d'intégration multimédia
+ *
+ * @copyright Copyright (c) 2017 Cégep de Sainte-Foy
+ * @version 1.0
+ * @link timunix.cegep-ste-foy.qc.ca/~hooli/tim2017/public_html/public/programme/equipe
+ * @author wcharest <williamcharestpepin@gmail.com>
  */
+
 $strNiveau = "../../";
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 
+//Requête permettant d'aller chercher tout le texte de la page Équipe
 
 $strSQLTextePageEquipe = "SELECT titre_texte, texte FROM t_texte WHERE section_et_page = 'Programme - Équipe'";
 
@@ -26,8 +34,10 @@ if ($objResultTexte = $objConnMySQLi->query($strSQLTextePageEquipe)) {
     $objResultTexte->free_result();
 }
 
+//Requête permettant d'aller chercher toutes les informations sur les enseignants (nom, prénom, courriel, twitter, linkedin, site web)
+
 $strSQLProfs = "SELECT nom_prof, prenom_prof, courriel_prof, pseudo_twitter_prof, linkedin_prof, site_web_prof
-FROM t_prof";
+FROM t_prof ORDER BY nom_prof";
 
 if ($objResultProfs = $objConnMySQLi->query($strSQLProfs)) {
 
@@ -53,17 +63,20 @@ $objConnMySQLi->close();
 $template = $twig->loadTemplate('pieces/head.html.twig');
 echo $template->render(array(
     'title' => "Techniques d'intégration multimédia | TIM",
-    'page' => "Équipe | "
+    'page' => "Équipe | ",
+    'niveau' => $strNiveau
 ));
 
 $template = $twig->loadTemplate('pieces/header.html.twig');
-echo $template->render(array());
+echo $template->render(array(
+    'arrMenuLiensActifs' => $arrMenuActif
+));
 
 $template = $twig->loadTemplate('programme/equipe/index.html.twig');
 echo $template->render(array(
-    'niveau' => "../",
     'arrTextes' => $arrTextes,
-    'arrProfs' => $arrProfs
+    'arrProfs' => $arrProfs,
+    'niveau' => $strNiveau
 ));
 
 $template = $twig->loadTemplate('pieces/footer.html.twig');

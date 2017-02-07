@@ -1,13 +1,22 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: vincentbeland
- * Date: 17-01-25
- * Time: 08:51
+ * Index de la page Programmation
+ *
+ * Des statistiques relatives au taux de placement et aux salaires y sont affichées ainsi q'une liste des programmes
+ * universitaires pouvant suivre après les technique
+ *
+ * LICENSE: Cégep de Sainte-Foy - Techniques d'intégration multimédia
+ *
+ * @copyright Copyright (c) 2017 Cégep de Sainte-Foy
+ * @version 1.0
+ * @link timunix.cegep-ste-foy.qc.ca/~hooli/tim2017/public_html/public/futur_etudiant/perspectives
+ * @author wcharest <williamcharestpepin@gmail.com>
  */
+
 $strNiveau = "../";
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 
+//Requête permettant d'aller chercher tout le texte de la page Programme
 
 $strSQLTextePageProgramme = "SELECT titre_texte, texte FROM t_texte WHERE section_et_page = 'Programme - Page d''entrée de la section'";
 
@@ -32,11 +41,14 @@ $objConnMySQLi->close();
 $template = $twig->loadTemplate('pieces/head.html.twig');
 echo $template->render(array(
     'title' => "Techniques d'intégration multimédia | TIM",
-    'page' => "Programme | "
+    'page' => "Programme | ",
+    'niveau' => $strNiveau
 ));
 
 $template = $twig->loadTemplate('pieces/header.html.twig');
-echo $template->render(array());
+echo $template->render(array(
+    'arrMenuLiensActifs' => $arrMenuActif
+));
 
 $template = $twig->loadTemplate('programme/index.html.twig');
 echo $template->render(array(
