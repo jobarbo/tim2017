@@ -70,7 +70,7 @@ echo $template->render(array(
 
 $template = $twig->loadTemplate('diplomes/index.html.twig');
 echo $template->render(array(
-    'niveau' => "../",
+    'niveau' => $strNiveau,
     'page' => "Nos diplômés 2017",
     'diplomes' => $arrDiplomes,
     'texteIntro' => $texteIntro
