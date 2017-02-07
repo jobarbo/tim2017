@@ -62,21 +62,14 @@ if($objResultInfosEtudiant->num_rows == 0){
 $objResultInfosEtudiant->free_result();
 
 //-----Requete pour aller chercher tous les projets du diplômé-----//
-$strSQLProjetsEtudiant = "SELECT * FROM t_projet_diplome WHERE id_diplome = " . $intIdEtudiant;
+$strSQLProjetsEtudiant = "SELECT id_projet, titre_projet, slug FROM t_projet_diplome WHERE id_diplome = " . $intIdEtudiant;
 if ($objResultProjetsEtudiant = $objConnMySQLi->query($strSQLProjetsEtudiant)) {
     while ($objLigneProjetsEtudiant = $objResultProjetsEtudiant->fetch_object()) {
         $arrProjetsEtudiant[] =
             array(
                 'id'=>$objLigneProjetsEtudiant->id_projet,
                 'titre'=>$objLigneProjetsEtudiant->titre_projet,
-                'slug'=>$objLigneProjetsEtudiant->slug,
-                'technologies'=>$objLigneProjetsEtudiant->technologies,
-                'description'=>$objLigneProjetsEtudiant->description,
-                'participation'=>$objLigneProjetsEtudiant->participation,
-                'cadre'=>$objLigneProjetsEtudiant->cadre,
-                'url'=>$objLigneProjetsEtudiant->url_projet,
-                'expose_galerie'=>$objLigneProjetsEtudiant->est_expose_galerie,
-                'id_diplome'=>$objLigneProjetsEtudiant->id_diplome
+                'slug'=>$objLigneProjetsEtudiant->slug
             );
     }
 }

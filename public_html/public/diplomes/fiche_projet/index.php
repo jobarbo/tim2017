@@ -10,82 +10,97 @@
 
 /*************** VARIABLES LOCALES ***********************/
 $strNiveau="../../";
-$strTriInterets = "";
+$intIdProjet = null;
 $intIdEtudiant = null;
 
 /*************** INSTANCIATION CONFIG ET TWIG ***********************/
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 
 
-/*************** REÇOIT ID DE L'ÉTUDIANT ***********************/
+/*************** REÇOIT ID DU PROJET ***********************/
 if(isset($_GET['id'])){
-    $intIdEtudiant = $_GET['id'];
+    $intIdProjet = $_GET['id'];
 }
 else{
     header('Location: ' . $strNiveau . 'erreur/index.php');
 }
 
-/*************** REQUÊTES FICHE DIPLÔMÉ ***********************/
-//-----Requete pour aller chercher tous les infos du diplômé-----//
-$strSQLInfosEtudiant = "SELECT * FROM t_diplome WHERE id_diplome = " . $intIdEtudiant;
-if ($objResultInfosEtudiant = $objConnMySQLi->query($strSQLInfosEtudiant)) {
-    while ($objLigneInfosEtudiant = $objResultInfosEtudiant->fetch_object()) {
-        $arrInfosEtudiant =
+/*************** REQUÊTES FICHE PROJET ***********************/
+//-----Requete pour aller chercher tous les infos du projet-----//
+$strSQLInfosProjet = "SELECT * FROM t_projet_diplome WHERE id_projet = " . $intIdProjet;
+if ($objResultInfosProjet = $objConnMySQLi->query($strSQLInfosProjet)) {
+    while ($objLigneInfosProjet = $objResultInfosProjet->fetch_object()) {
+        $arrInfosProjet =
             array(
-                'id'=>$objLigneInfosEtudiant->id_diplome,
-                'prenom'=>$objLigneInfosEtudiant->prenom_diplome,
-                'nom'=>$objLigneInfosEtudiant->nom_diplome,
-                'slug'=>$objLigneInfosEtudiant->slug,
-                'profil'=>$objLigneInfosEtudiant->profil,
-                'forces'=>$objLigneInfosEtudiant->forces,
-                'interet_gestion'=>$objLigneInfosEtudiant->interet_gestion_projet,
-                'interet_design'=>$objLigneInfosEtudiant->interet_design_interface,
-                'interet_traitement'=>$objLigneInfosEtudiant->interet_traitement_medias,
-                'interet_integration'=>$objLigneInfosEtudiant->interet_integration,
-                'interet_programmation'=>$objLigneInfosEtudiant->interet_programmation,
-                'courriel'=>$objLigneInfosEtudiant->courriel_diplome,
-                'twitter'=>$objLigneInfosEtudiant->pseudo_twitter_diplome,
-                'linkedin'=>$objLigneInfosEtudiant->linkedin_diplome,
-                'site_web'=>$objLigneInfosEtudiant->site_web_diplome,
-                'nom_usager_admin'=>$objLigneInfosEtudiant->nom_usager_admin
+                'id'=>$objLigneInfosProjet->id_projet,
+                'titre'=>$objLigneInfosProjet->titre_projet,
+                'slug'=>$objLigneInfosProjet->slug,
+                'technologies'=>$objLigneInfosProjet->technologies,
+                'description'=>$objLigneInfosProjet->description,
+                'participation'=>$objLigneInfosProjet->participation,
+                'cadre'=>$objLigneInfosProjet->cadre,
+                'url'=>$objLigneInfosProjet->url_projet,
+                'expose_galerie'=>$objLigneInfosProjet->est_expose_galerie,
+                'id_diplome'=>$objLigneInfosProjet->id_diplome
+            );
+
+        $intIdEtudiant = $objLigneInfosProjet->id_diplome;
+    }
+}
+
+//En cas d'erreur de requête
+if($objResultInfosProjet->num_rows == 0){
+    header('Location: ' . $strNiveau . 'erreur/index.php');
+}
+
+$objResultInfosProjet->free_result();
+
+//-----Requete pour aller chercher le nom de l'auteur du projet-----//
+$strSQLEtudiant = "SELECT prenom_diplome, nom_diplome, id_diplome, slug FROM t_diplome WHERE id_diplome = " . $intIdEtudiant;
+if ($objResultEtudiant = $objConnMySQLi->query($strSQLEtudiant)) {
+    while ($objLigneEtudiant = $objResultEtudiant->fetch_object()) {
+        $arrEtudiant =
+            array(
+                'nom'=>$objLigneEtudiant->nom_diplome,
+                'prenom'=>$objLigneEtudiant->prenom_diplome,
+                'slug'=>$objLigneEtudiant->slug,
+                'id'=>$objLigneEtudiant->id_diplome
             );
     }
 }
 
 
 //En cas d'erreur de requête
-if($objResultInfosEtudiant->num_rows == 0){
+if($objResultEtudiant->num_rows == 0){
     header('Location: ' . $strNiveau . 'erreur/index.php');
 }
 
-$objResultInfosEtudiant->free_result();
+$objResultEtudiant->free_result();
 
-//-----Requete pour aller chercher tous les projets du diplômé-----//
-$strSQLProjetsEtudiant = "SELECT * FROM t_projet_diplome WHERE id_diplome = " . $intIdEtudiant;
-if ($objResultProjetsEtudiant = $objConnMySQLi->query($strSQLProjetsEtudiant)) {
-    while ($objLigneProjetsEtudiant = $objResultProjetsEtudiant->fetch_object()) {
-        $arrProjetsEtudiant[] =
+//-----Requete pour aller chercher les autres projets du diplômé-----//
+$strSQLAutresProjets = "SELECT id_projet, titre_projet, slug FROM t_projet_diplome WHERE id_diplome = " . $intIdEtudiant;
+if ($objResultAutresProjets = $objConnMySQLi->query($strSQLAutresProjets)) {
+    while ($objLigneAutresProjets = $objResultAutresProjets->fetch_object()) {
+        if($objLigneAutresProjets->id_projet != $intIdProjet){
+        $arrAutresProjets[] =
             array(
-                'id'=>$objLigneProjetsEtudiant->id_projet,
-                'titre'=>$objLigneProjetsEtudiant->titre_projet,
-                'slug'=>$objLigneProjetsEtudiant->slug,
-                'technologies'=>$objLigneProjetsEtudiant->technologies,
-                'description'=>$objLigneProjetsEtudiant->description,
-                'participation'=>$objLigneProjetsEtudiant->participation,
-                'cadre'=>$objLigneProjetsEtudiant->cadre,
-                'url'=>$objLigneProjetsEtudiant->url_projet,
-                'expose_galerie'=>$objLigneProjetsEtudiant->est_expose_galerie,
-                'id_diplome'=>$objLigneProjetsEtudiant->id_diplome
+                'id'=>$objLigneAutresProjets->id_projet,
+                'titre'=>$objLigneAutresProjets->titre_projet,
+                'slug'=>$objLigneAutresProjets->slug
             );
+        }
     }
 }
 
+var_dump($arrAutresProjets);
+
+
 //En cas d'erreur de requête
-if($objResultProjetsEtudiant->num_rows == 0){
+if($objResultAutresProjets->num_rows == 0){
     header('Location: ' . $strNiveau . 'erreur/index.php');
 }
 
-$objResultProjetsEtudiant->free_result();
+$objResultAutresProjets->free_result();
 
 // fermer la connexion
 $objConnMySQLi->close();
@@ -94,7 +109,7 @@ $objConnMySQLi->close();
 $template = $twig->loadTemplate('pieces/head.html.twig');
 echo $template->render(array(
     'title' => "Techniques d'intégration multimédia | TIM",
-    'page' => $arrInfosEtudiant['prenom'] . " " . $arrInfosEtudiant['nom'] . " | Diplômés | ",
+    'page' => $arrInfosProjet['titre'] . " | Fiche projet | Diplômés | ",
     'niveau' => $strNiveau
 ));
 
@@ -103,12 +118,13 @@ echo $template->render(array(
     'arrMenuLiensActifs' => $arrMenuActif
 ));
 
-$template = $twig->loadTemplate('diplomes/fiche_etudiant/index.html.twig');
+$template = $twig->loadTemplate('diplomes/fiche_projet/index.html.twig');
 echo $template->render(array(
     'niveau' => $strNiveau,
-    'page' => $arrInfosEtudiant['prenom'] . " <span>" . $arrInfosEtudiant['nom'] . "</span>",
-    'arrInfos' => $arrInfosEtudiant,
-    'arrProjets' => $arrProjetsEtudiant
+    'page' => $arrInfosProjet['titre'] . " <span>par " . $arrEtudiant['prenom'] . " " . $arrEtudiant['nom'] . "</span>",
+    'arrInfos' => $arrInfosProjet,
+    'arrInfosEtudiant' => $arrEtudiant,
+    'arrAutresProjets' => $arrAutresProjets
 ));
 
 $template = $twig->loadTemplate('pieces/footer.html.twig');

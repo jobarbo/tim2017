@@ -5,50 +5,30 @@
 <main>
     <section class="haut_page">
         <h1>{{ page | raw }}</h1>
-        <ul class="etudiant_contact">
-            {% if arrInfos.courriel != "" %}
-            <li><a href="mailto:{{ arrInfos.courriel }}">Courriel</a></li>
-            {% endif %}
-            {% if arrInfos.twitter != "" %}
-                <li><a href="https://twitter.com/{{ arrInfos.twitter }}" target="_blank">Twitter</a></li>
-            {% endif %}
-            {% if arrInfos.linkedin != "" %}
-                <li><a href="{{ arrInfos.linkedin }}" target="_blank">Linkedin</a></li>
-            {% endif %}
-            {% if arrInfos.site_web != "" %}
-                <li><a href="{{ arrInfos.site_web }}" target="_blank">Site web</a></li>
-            {% endif %}
-        </ul>
     </section>
-    <section class="texte_intro">
-        <div class="profil">
-            <h2>Profil</h2>
-            {{ arrInfos.profil | raw }}
+    <section class="texte_intro_projet">
+        <div class="description">
+            <h2>Description</h2>
+            {{ arrInfos.description | raw }}
         </div>
-        <div class="forces">
-            <h2>Forces</h2>
-            {{ arrInfos.forces | raw }}
+        <div class="participation">
+            <h2>Participation</h2>
+            {{ arrInfos.participation | raw }}
         </div>
-        <div class="interets">
-            <h2>Intérêts</h2>
-            <h3>Gestion</h3>
-            {{ arrInfos.interet_gestion}}
-            <h3>Design</h3>
-            {{ arrInfos.interet_design}}
-            <h3>Traitement des médias</h3>
-            {{ arrInfos.interet_traitement}}
-            <h3>Programmation</h3>
-            {{ arrInfos.interet_programmation}}
-            <h3>Intégration</h3>
-            {{ arrInfos.interet_integration}}
+        <div class="technologies_cadre">
+            <h2>Technologies</h2>
+            {{ arrInfos.technologies | raw }}
+            <h2>Cadre</h2>
+            {{ arrInfos.cadre | raw }}
         </div>
     </section>
     <section>
-        <div class="projets_etudiant">
-            <h2>Projets</h2>
+        <div class="autres_projets projets_etudiant">
+            <h2>Autres projets</h2>
             <ul>
-                {% for projet in arrProjets %}
-                <li><a href="{{ projet.id }}"></a></li>
+                {% for arrAutresProjets in projet %}
+                <li><a href="{{ arrAutresProjets.id }}">{{ arrAutresProjets.titre }}</a></li>
+                {% endfor %}
             </ul>
             
         </div>
