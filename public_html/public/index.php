@@ -10,7 +10,8 @@ require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 $template = $twig->loadTemplate('pieces/head.html.twig');
 echo $template->render(array(
     'title' => "Techniques d'intégration multimédia | TIM",
-    'page' => ""
+    'page' => "",
+    'niveau' => $strNiveau
 ));
 
 $template = $twig->loadTemplate('pieces/header.html.twig');
