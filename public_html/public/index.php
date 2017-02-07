@@ -15,6 +15,8 @@ echo $template->render(array(
 ));
 
 $template = $twig->loadTemplate('pieces/header.html.twig');
+echo $template->render(array(
+));
 
 $template = $twig->loadTemplate('index.html.twig');
 echo $template->render(array(
