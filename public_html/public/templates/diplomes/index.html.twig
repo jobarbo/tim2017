@@ -26,7 +26,10 @@
         <li>
             <a href="#">
                 <img src="{{ niveau }}images/{{ arrDiplomes.slug}}.jpg" alt="{{ arrDiplomes.nom }}">
-                <p class="nom">{{ arrDiplomes.prenom }}<span>{{ arrDiplomes.nom }}</span></p>
+                <p class="nom">{{ arrDiplomes.prenom }} <span>{{ arrDiplomes.nom }}</span></p>
+                <div>
+                    <p>Voir la fiche</p>
+                </div>
             </a>
         </li>
         {% endfor %}
