@@ -1,6 +1,9 @@
 <!DOCTYPE HTML>
 <html lang="fr">
 <style>
+    body {
+        background-color: white;
+    }
     table {
         font-family: sans-serif;
         font-size: 14px;
@@ -17,11 +20,10 @@
     }
     th {
         height: 50px;
-        background-color: #0066cc;
-        color: white;
+        color: black;
     }
     td {
-        padding: 10px 0 10px 10px;
+        padding: 15px 0 15px 10px;
         min-height: 40px;
     }
     tr:nth-of-type(even) {
@@ -34,6 +36,28 @@
         padding-top: 10px;
         display: block;
     }
+    table:nth-of-type(2), table:nth-of-type(3), table:nth-of-type(4), table:nth-of-type(5) , table:nth-of-type(6) , table:nth-of-type(7)   {
+        margin-top: 50px;
+    }
+    .formationS {
+        background-color: #0066FF;
+        color: white;
+    }
+    .formationG {
+        background-color: #f9774f;
+        color: white;
+    }
+    thead tr.tableau-bleu th {
+        background-color: #0000FF;
+        color: white !important;
+    }
+    .lienS {
+        color: #0066cc;
+    }
+    .lienG {
+        color: #f9774f;
+    }
+
 </style>
 <body>
 <main>
@@ -41,37 +65,69 @@
         <h1>{{ page }}</h1>
     </section>
     <section class="grille_cours">
-        <table class="table">
+        {% for i in 1..6 %}
+        <table>
             <thead>
-            <tr>
+            <tr class="tableau-bleu">
                 <th>
-                    Nom
+                    Session {{ i }}
                 </th>
-                <th>
-                    Durée
-                </th>
-                <th>
-                    Pondération
-                </th>
+                <th></th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
-        {% for cour in cours %}
             <tr>
-                <td>
-                    <a href="programme/grille_cours/fiche_cours?id={{ cour.id }}">{{ cour.nom }}</a>
-                    <span>{{ cour.no }}</span>
+                <td class="formationS">
+                    Formation spécifique
                 </td>
-                <td>
-                    {{ cour.duree }}
-                </td>
-                <td>
-                    {{ cour.ponderation }}
-                </td>
+                <td class="formationS">durée</td>
+                <td class="formationS">pondération</td>
             </tr>
-        {% endfor %}
+            {% for cour in cours %}
+            {% if cour.session == i and cour.specifique == 1 %}
+                <tr>
+                    <td>
+                        <a class="lienS" href="programme/grille_cours/fiche_cours?id={{ cour.id }}">{{ cour.nom }}</a>
+                        <span>{{ cour.no }}</span>
+                    </td>
+                    <td>
+                        {{ cour.duree }}
+                    </td>
+                    <td>
+                        {{ cour.ponderation }}
+                    </td>
+                </tr>
+            {% endif %}
+            {% endfor %}
+            {% if i != 6 %}
+            <tr>
+                <td class="formationG">
+                    Formation générale
+                </td>
+                <td class="formationG"></td>
+                <td class="formationG"></td>
+            </tr>
+            {% endif %}
+            {% for cour in cours %}
+                {% if cour.session == i and cour.specifique == 0 %}
+                    <tr>
+                        <td>
+                            <a class="lienG" href="programme/grille_cours/fiche_cours?id={{ cour.id }}">{{ cour.nom }}</a>
+                            <span>{{ cour.no }}</span>
+                        </td>
+                        <td>
+                            {{ cour.duree }}
+                        </td>
+                        <td>
+                            {{ cour.ponderation }}
+                        </td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
             </tbody>
         </table>
+        {% endfor %}
     </section>
 </main>
 </body>
