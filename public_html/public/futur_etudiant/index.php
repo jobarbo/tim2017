@@ -1,13 +1,22 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: vincentbeland
- * Date: 17-01-25
- * Time: 08:51
+ * Index de la page Futur étudiant
+ *
+ * Cette page décrit en quelques parapgraphes le programme et ce qui attend les futurs étudiants.
+ * Une section étudiant d'un jour permet de contacter Benoît Frigon, par l'intermédiaire de la page contactez-nous
+ *
+ * LICENSE: Cégep de Sainte-Foy - Techniques d'intégration multimédia
+ *
+ * @copyright Copyright (c) 2017 Cégep de Sainte-Foy
+ * @version 1.0
+ * @link timunix.cegep-ste-foy.qc.ca/~hooli/tim2017/public_html/public/futur_etudiant/
+ * @author wcharest <williamcharestpepin@gmail.com>
  */
+
 $strNiveau = "../";
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 
+//Requête permettant d'aller chercher tout le texte de la page Futur Étudiant
 
 $strSQLTextePageFuturEtudiant = "SELECT titre_texte, texte FROM t_texte WHERE section_et_page = 'Futur étudiant'";
 
