@@ -63,8 +63,10 @@ echo $template->render(array(
     'page' => "Fiche étudiant | ",
     'niveau' => $strNiveau
 ));
+
 $template = $twig->loadTemplate('pieces/header.html.twig');
 echo $template->render(array(
+    'arrMenuLiensActifs' => $arrMenuActif
 ));
 
 $template = $twig->loadTemplate('diplomes/fiche_etudiant/index.html.twig');

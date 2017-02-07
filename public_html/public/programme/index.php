@@ -37,7 +37,9 @@ echo $template->render(array(
 ));
 
 $template = $twig->loadTemplate('pieces/header.html.twig');
-echo $template->render(array());
+echo $template->render(array(
+    'arrMenuLiensActifs' => $arrMenuActif
+));
 
 $template = $twig->loadTemplate('programme/index.html.twig');
 echo $template->render(array(

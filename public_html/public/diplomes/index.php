@@ -64,8 +64,10 @@ echo $template->render(array(
     'page' => "Nos diplômés 2017 | ",
     'niveau' => $strNiveau
 ));
+
 $template = $twig->loadTemplate('pieces/header.html.twig');
 echo $template->render(array(
+    'arrMenuLiensActifs' => $arrMenuActif
 ));
 
 $template = $twig->loadTemplate('diplomes/index.html.twig');

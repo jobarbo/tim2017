@@ -4,8 +4,6 @@ $strNiveau="";
 
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 
-
-
 ///////////// EXEMPLE AVEC TWIG //////////////
 $template = $twig->loadTemplate('pieces/head.html.twig');
 echo $template->render(array(
@@ -16,6 +14,7 @@ echo $template->render(array(
 
 $template = $twig->loadTemplate('pieces/header.html.twig');
 echo $template->render(array(
+    'arrMenuLiensActifs' => $arrMenuActif
 ));
 
 $template = $twig->loadTemplate('index.html.twig');
@@ -26,4 +25,3 @@ echo $template->render(array(
 ));
 
 $template = $twig->loadTemplate('pieces/footer.html.twig');
-
