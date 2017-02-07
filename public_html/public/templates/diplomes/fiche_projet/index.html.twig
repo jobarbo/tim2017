@@ -26,8 +26,8 @@
         <div class="autres_projets projets_etudiant">
             <h2>Autres projets</h2>
             <ul>
-                {% for arrAutresProjets in projet %}
-                <li><a href="{{ arrAutresProjets.id }}">{{ arrAutresProjets.titre }}</a></li>
+                {% for projet in arrAutresProjets %}
+                <li><a href="diplomes/fiche_projet?id={{ projet.id }}">{{ projet.titre }}</a></li>
                 {% endfor %}
             </ul>
             
