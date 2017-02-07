@@ -1,12 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: vincentbeland
- * Date: 17-01-25
- * Time: 08:54
- */
-
-
 $strNiveau = "../../";
 $section = "Stages - Alternance travail-études";
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
@@ -20,7 +12,7 @@ $page = $stmt->get_result()->fetch_all(MYSQLI_ASSOC)[0];
 $template = $twig->loadTemplate('pieces/head.html.twig');
 echo $template->render(array(
     'title' => "Techniques d'intégration multimédia | TIM",
-    'page' => "ATE | ",
+    'page' => "Alternance Travail-Etudes",
     'niveau' => $strNiveau
 ));
 
