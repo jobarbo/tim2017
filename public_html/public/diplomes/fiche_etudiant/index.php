@@ -60,17 +60,17 @@ $objConnMySQLi->close();
 $template = $twig->loadTemplate('pieces/head.html.twig');
 echo $template->render(array(
     'title' => "Techniques d'intégration multimédia | TIM",
-    'page' => "Nos diplômés 2017 | ",
+    'page' => "Fiche étudiant | ",
     'niveau' => $strNiveau
 ));
 $template = $twig->loadTemplate('pieces/header.html.twig');
 echo $template->render(array(
 ));
 
-$template = $twig->loadTemplate('diplomes/index.html.twig');
+$template = $twig->loadTemplate('diplomes/fiche_etudiant/index.html.twig');
 echo $template->render(array(
     'niveau' => $strNiveau,
-    'page' => "Nos diplômés 2017",
+    'page' => "Fiche étudiant",
     'texteIntro' => $texteIntro
 ));
 

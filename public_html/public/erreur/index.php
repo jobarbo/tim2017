@@ -28,7 +28,7 @@ $template = $twig->loadTemplate('pieces/header.html.twig');
 echo $template->render(array(
 ));
 
-$template = $twig->loadTemplate('diplomes/index.html.twig');
+$template = $twig->loadTemplate('erreur/index.html.twig');
 echo $template->render(array(
     'niveau' => $strNiveau,
     'page' => "Page inexistante"
