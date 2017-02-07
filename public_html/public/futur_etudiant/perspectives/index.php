@@ -32,7 +32,8 @@ $objConnMySQLi->close();
 $template = $twig->loadTemplate('pieces/head.html.twig');
 echo $template->render(array(
     'title' => "Techniques d'intégration multimédia | TIM",
-    'page' => "Futur étudiant | "
+    'page' => "Futur étudiant | ",
+    'niveau' => $strNiveau
 ));
 
 $template = $twig->loadTemplate('pieces/header.html.twig');
