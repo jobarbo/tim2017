@@ -1,7 +1,78 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: vincentbeland
- * Date: 17-01-25
- * Time: 10:31
- */
+<!DOCTYPE HTML>
+<html lang="fr">
+<style>
+    table {
+        font-family: sans-serif;
+        font-size: 14px;
+        width: 100%;
+        max-width: 1024px;
+        text-align: center;
+    }
+    a {
+        font-size: 16px;
+    }
+    th, td {
+        text-align: left;
+        padding: 0 10px;
+    }
+    th {
+        height: 50px;
+        background-color: #0066cc;
+        color: white;
+    }
+    td {
+        padding: 10px 0 10px 10px;
+        min-height: 40px;
+    }
+    tr:nth-of-type(even) {
+        background-color: #f7f7f7;
+    }
+    tr:nth-of-type(odd) {
+        background-color: white;
+    }
+    span {
+        padding-top: 10px;
+        display: block;
+    }
+</style>
+<body>
+<main>
+    <section class="haut_page">
+        <h1>{{ page }}</h1>
+    </section>
+    <section class="grille_cours">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>
+                    Nom
+                </th>
+                <th>
+                    Durée
+                </th>
+                <th>
+                    Pondération
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+        {% for cour in cours %}
+            <tr>
+                <td>
+                    <a href="programme/grille_cours/fiche_cours?id={{ cour.id }}">{{ cour.nom }}</a>
+                    <span>{{ cour.no }}</span>
+                </td>
+                <td>
+                    {{ cour.duree }}
+                </td>
+                <td>
+                    {{ cour.ponderation }}
+                </td>
+            </tr>
+        {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</main>
+</body>
+</html>

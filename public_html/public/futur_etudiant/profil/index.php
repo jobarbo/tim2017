@@ -58,16 +58,17 @@ foreach($quiz->résultats->resultat as $resultat)
 $template = $twig->loadTemplate('pieces/head.html.twig');
 echo $template->render(array(
     'title' => "Techniques d'intégration multimédia | TIM",
-    'page' => " | As-tu le profil?",
+    'page' => "As-tu le profil? | ",
     'niveau' => $strNiveau
 ));
 $template = $twig->loadTemplate('pieces/header.html.twig');
-echo $template->render(array());
+echo $template->render(array(
+    'arrMenuLiensActifs' => $arrMenuActif
+));
 
 $template = $twig->loadTemplate('futur_etudiant/profil/index.html.twig');
 echo $template->render(array(
     'niveau' => $strNiveau,
-    'will' => "the dog",
     'xml' => $arrQuestions,
     'xmlR' => $arrReponses
 ));
