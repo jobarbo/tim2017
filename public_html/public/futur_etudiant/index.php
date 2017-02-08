@@ -16,46 +16,68 @@
 $strNiveau = "../";
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 
+try {
+
 //Requête permettant d'aller chercher tout le texte de la page Futur Étudiant
 
-$strSQLTextePageFuturEtudiant = "SELECT titre_texte, texte FROM t_texte WHERE section_et_page = 'Futur étudiant'";
+    $strSQLTextePageFuturEtudiant = "SELECT titre_texte, texte FROM t_texte WHERE section_et_page = 'Futur étudiant'";
 
-if ($objResultTexte = $objConnMySQLi->query($strSQLTextePageFuturEtudiant)) {
+    $objResultTexte = $objConnMySQLi->query($strSQLTextePageFuturEtudiant);
 
-    while ($objLigneTexte = $objResultTexte->fetch_object()) {
+    if($objResultTexte == false) {
 
-        $arrTextes[]=
+        $strMessage = "Les textes n'ont pu être affichés, réessayez plus tard";
+        $except = new Exception($strMessage);
 
-            array(
-                'titre'=>$objLigneTexte->titre_texte,
-                'paragraphe'=>$objLigneTexte->texte
-            );
+        throw $except;
 
+    }else{
+
+        while ($objLigneTexte = $objResultTexte->fetch_object()) {
+
+            $arrTextes[] =
+
+                array(
+                    'titre' => $objLigneTexte->titre_texte,
+                    'paragraphe' => $objLigneTexte->texte
+                );
+
+        }
+        $objResultTexte->free_result();
     }
-    $objResultTexte->free_result();
+
+    $template = $twig->loadTemplate('pieces/head.html.twig');
+    echo $template->render(array(
+        'title' => "Techniques d'intégration multimédia | TIM",
+        'page' => "Perspectives | ",
+        'niveau' => $strNiveau
+    ));
+
+    $template = $twig->loadTemplate('pieces/header.html.twig');
+    echo $template->render(array(
+        'arrMenuLiensActifs' => $arrMenuActif
+    ));
+
+    $template = $twig->loadTemplate('futur_etudiant/index.html.twig');
+    echo $template->render(array(
+        'niveau' => "../",
+        'arrTextes' => $arrTextes
+    ));
+
+    $template = $twig->loadTemplate('pieces/footer.html.twig');
+    echo $template->render(array());
+
+
+
 }
+
+catch (Exception $e) {
+
+    echo $e->getMessage();
+
+}
+
 
 $objConnMySQLi->close();
 
-
-$template = $twig->loadTemplate('pieces/head.html.twig');
-echo $template->render(array(
-    'title' => "Techniques d'intégration multimédia | TIM",
-    'page' => "Perspectives | ",
-    'niveau' => $strNiveau
-));
-
-$template = $twig->loadTemplate('pieces/header.html.twig');
-echo $template->render(array(
-    'arrMenuLiensActifs' => $arrMenuActif
-));
-
-$template = $twig->loadTemplate('futur_etudiant/index.html.twig');
-echo $template->render(array(
-    'niveau' => "../",
-    'arrTextes' => $arrTextes
-));
-
-$template = $twig->loadTemplate('pieces/footer.html.twig');
-echo $template->render(array());
 
