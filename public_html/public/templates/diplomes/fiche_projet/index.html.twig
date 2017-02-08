@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+
+<body>
+<a href="diplomes/fiche_projet/index.php#contenu" class="visuallyhidden focusable">Allez au contenu</a>
+<main>
+    <section class="haut_page">
+        <h1 id="contenu">{{ page | raw }}</h1>
+        <span class='retour_fiche_etudiant'><a href="diplomes/fiche_etudiant?id={{ arrInfosEtudiant.id }}">retour vers la fiche de {{ arrInfosEtudiant.prenom ~ " " ~ arrInfosEtudiant.nom }}</a></span>
+    </section>
+    <section class="texte_intro_projet">
+        <div class="description">
+            <h2>Description</h2>
+            {{ arrInfos.description | raw }}
+        </div>
+        <div class="participation">
+            <h2>Participation</h2>
+            {{ arrInfos.participation | raw }}
+        </div>
+        <div class="technologies_cadre">
+            <h2>Technologies</h2>
+            {{ arrInfos.technologies | raw }}
+            <h2>Cadre</h2>
+            {{ arrInfos.cadre | raw }}
+        </div>
+    </section>
+    <section>
+        <div class="autres_projets projets_etudiant">
+            <h2>Autres projets</h2>
+            <ul>
+                {% for projet in arrAutresProjets %}
+                <li><a href="diplomes/fiche_projet?id={{ projet.id }}">{{ projet.titre }}</a></li>
+                {% endfor %}
+            </ul>
+            
+        </div>
+    </section>
+</main>
+</body>
+
+</html>
