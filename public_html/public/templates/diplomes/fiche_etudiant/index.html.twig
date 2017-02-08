@@ -1,19 +1,14 @@
 <a href="diplomes/fiche_etudiant/index.php#contenu" class="visuallyhidden focusable">Allez au contenu</a>
 <main>
     <style>
-        body {
-            font-family: 'Ubuntu', sans-serif;
-            width:960px;
-            background-color: #ffffff;
-        }
 
-        p{
-            color:#525252;
-            font-size:12px;
-        }
-
-        ul{
+        ul.liste_intrerets{
             list-style: none;
+            width:80%;
+        }
+
+        .liste_intrerets li{
+            position: relative;
         }
 
         .barre_progression{
@@ -79,11 +74,13 @@
         }
 
         .pourcentage {
-            right:10px;
+            position: absolute;
+            right:-20px;
             top:0;
-            font-size:11px;
+            font-size:14px;
             height:30px;
             line-height:30px;
+            text-align: left;
             color:#ffffff;
             color:rgba(0, 0, 0, 0.4);
         }
@@ -116,10 +113,10 @@
         </div>
         <div class="interets">
             <h2>Intérêts</h2>
-            <ul>
+            <ul class="liste_intrerets">
                 <li>
                 <div class="barre_progression clearfix " data-percent="{{ arrInfos.interet_gestion }}0%">
-                    <span class='interet_titre'><h3 class="libelle">Gestion</h3></span>
+                    <span class='interet_titre'><span class="libelle">Gestion</span></span>
                     <span class="barre_interet"></span>
 
                 </div>
@@ -127,28 +124,28 @@
                 </li>
                 <li>
                     <div class="barre_progression clearfix " data-percent="{{ arrInfos.interet_design }}0%">
-                        <span class='interet_titre '><h3 class="libelle">Design</h3></span>
+                        <span class='interet_titre '><span class="libelle">Design</span></span>
                         <span class="barre_interet"></span>
                         <span class="pourcentage">{{ arrInfos.interet_design }}</span>
                     </div>
                 </li>
                 <li>
                     <div class="barre_progression clearfix " data-percent="{{ arrInfos.interet_traitement }}0%">
-                        <span class='interet_titre '><h3 class="libelle">Traitement des médias</h3></span>
+                        <span class='interet_titre '><span class="libelle">Traitement des médias</span></span>
                         <span class="barre_interet"></span>
                         <span class="pourcentage">{{ arrInfos.interet_traitement }}</span>
                     </div>
                 </li>
                 <li>
                     <div class="barre_progression clearfix " data-percent="{{ arrInfos.interet_programmation }}0%">
-                        <span class='interet_titre '><h3 class="libelle">Programmation</h3></span>
+                        <span class='interet_titre '><span class="libelle">Programmation</span></span>
                         <span class="barre_interet"></span>
                         <span class="pourcentage">{{ arrInfos.interet_programmation }}</span>
                     </div>
                 </li>
                 <li>
                     <div class="barre_progression clearfix " data-percent="{{ arrInfos.interet_integration }}0%">
-                        <span class='interet_titre '><h3 class="libelle">Intégration</h3></span>
+                        <span class='interet_titre '><span class="libelle">Intégration</span></span>
                         <span class="barre_interet"></span>
                         <span class="pourcentage">{{ arrInfos.interet_integration }}</span>
                     </div>
