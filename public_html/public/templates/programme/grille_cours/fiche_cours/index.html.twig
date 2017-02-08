@@ -1,19 +1,174 @@
 <!DOCTYPE HTML>
 <html lang="fr">
+<style>
+    h2 {
+        clear: both;
+    }
+    body {
+        background-color: white;
+    }
+    .fiche-box {
+        margin-bottom: 40px;
+        max-width: 610px;
+        float: left;
+        padding: 20px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    }
+    .fiche-box {
+        margin-left: 20px;
+    }
+    footer {
+        clear: both;
+    }
+    span {
+        display: block;
+    }
+    table {
+        float: left;
+        font-family: sans-serif;
+        font-size: 14px;
+        width: 100%;
+        margin-left: 20px;
+        max-width: 610px;
+        text-align: center;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    }
+    a {
+        font-size: 16px;
+    }
+    th, td {
+        text-align: left;
+        padding: 0 10px;
+    }
+    th {
+        height: 50px;
+        color: black;
+    }
+    td {
+        padding: 15px 10px 15px 10px;
+        min-height: 40px;
+    }
+    tr:nth-of-type(even) {
+        background-color: #f7f7f7;
+    }
+    tr:nth-of-type(odd) {
+        background-color: white;
+    }
+    span {
+        padding-top: 10px;
+        display: block;
+    }
+    .formationS {
+        background-color: #0066FF;
+        color: white;
+    }
+    .formationG {
+        background-color: #f9774f;
+        color: white;
+    }
+    thead tr.tableau-bleu th {
+        background-color: #0000FF;
+        color: white !important;
+    }
+    .lienS {
+        color: #0066cc;
+    }
+    .lienG {
+        color: #f9774f;
+    }
+    .minWidthTd {
+        width: 75%;
+    }
+</style>
 <body>
 <main>
     <section class="haut_page">
         <h1>{{ page }}</h1>
+        <span>{{ cours.no }}</span>
     </section>
     <br />
-    <p>{{ cours.no }}</p>
-    <p>{{ cours.slug }}</p>
-    <p>{{ cours.url }}</p>
-    <p>{{ cours.duree }}</p>
-    <p>{{ cours.ponderation }}</p>
-    <p>{{ cours.dscr | raw }}</p>
-    <p>{{ cours.specifique }}</p>
-    <p>{{ cours.session }}</p>
+    <div class="fiche-box">
+        <h2>Description</h2>
+        {{ cours.dscr | raw }}
+    </div>
+    <div class="fiche-box">
+        <h2>Informations</h2>
+        <h4>Durée: {{ cours.duree }} heures</h4>
+        <h4>Pondération: {{ cours.ponderation }}</h4>
+        <h4>Spécifications: </h4>
+        {% if cours.specifique == 1 %}
+            <span> - Ce cours est spécifique à la formation TIM.</span>
+        {% else %}
+            <span> - Ce cours fait partie de la formation générale.</span>
+        {% endif %}
+        <span> - Session: {{ cours.session }}</span>
+    </div>
+    <h2>Autres cours de l'année</h2>
+    <section class="grille_cours">
+        {% for i in boucle1..boucle2 %}
+            <table>
+                <thead>
+                <tr class="tableau-bleu">
+                    <th>
+                        Session {{ i }}
+                    </th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="formationS">
+                        Formation spécifique
+                    </td>
+                    <td class="formationS">durée</td>
+                    <td class="formationS">pond.</td>
+                </tr>
+                {% for cour in grille %}
+                    {% if cour.session == i and cour.specifique == 1 %}
+                        <tr>
+                            <td class="minWidthTd">
+                                <a class="lienS" href="programme/grille_cours/fiche_cours?id={{ cour.id }}">{{ cour.nom }}</a>
+                                <span>{{ cour.no }}</span>
+                            </td>
+                            <td>
+                                {{ cour.duree }}
+                            </td>
+                            <td>
+                                {{ cour.ponderation }}
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+                {% if i != 6 %} <!-- changer pour la bonne condition -->
+                    <tr>
+                        <td class="formationG">
+                            Formation générale
+                        </td>
+                        <td class="formationG"></td>
+                        <td class="formationG"></td>
+                    </tr>
+                {% endif %}
+                {% for cour in grille %}
+                    {% if cour.specifique == 0 and cour.session == i %}
+                        <tr>
+                            <td class="minWidthTd">
+                                <a class="lienG" href="programme/grille_cours/fiche_cours?id={{ cour.id }}">{{ cour.nom }}</a>
+                                <span>{{ cour.no }}</span>
+                            </td>
+                            <td>
+                                {{ cour.duree }}
+                            </td>
+                            <td>
+                                {{ cour.ponderation }}
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+                </tbody>
+            </table>
+        {% endfor %}
+    </section>
 </main>
 </body>
 </html>

@@ -1,10 +1,7 @@
-<!DOCTYPE HTML>
-<html lang="fr">
-
-<body>
+<a href="diplomes/index.php#contenu" class="visuallyhidden focusable">Allez au contenu</a>
 <main>
     <section class="haut_page">
-        <h1>{{ page }}</h1>
+        <h1 id="contenu">{{ page }}</h1>
     </section>
     <section class="texte_intro">
         {{ texteIntro | raw }}
@@ -24,7 +21,7 @@
     <ul>
         {% for arrDiplomes in diplomes %}
         <li>
-            <a href="diplomes/fiche_etudiant">
+            <a href="diplomes/fiche_etudiant?id={{ arrDiplomes.id }}">
                 <img src="{{ niveau }}images/{{ arrDiplomes.slug}}.jpg" alt="{{ arrDiplomes.nom }}">
                 <p class="nom">{{ arrDiplomes.prenom }} <span>{{ arrDiplomes.nom }}</span></p>
                 <div>
@@ -37,5 +34,3 @@
     </section>
 
 </main>
-</body>
-</html>
