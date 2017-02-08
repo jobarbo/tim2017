@@ -92,9 +92,6 @@ if ($objResultAutresProjets = $objConnMySQLi->query($strSQLAutresProjets)) {
     }
 }
 
-var_dump($arrAutresProjets);
-
-
 //En cas d'erreur de requête
 if($objResultAutresProjets->num_rows == 0){
     header('Location: ' . $strNiveau . 'erreur/index.php');
@@ -121,11 +118,13 @@ echo $template->render(array(
 $template = $twig->loadTemplate('diplomes/fiche_projet/index.html.twig');
 echo $template->render(array(
     'niveau' => $strNiveau,
-    'page' => $arrInfosProjet['titre'] . " <span>par " . $arrEtudiant['prenom'] . " " . $arrEtudiant['nom'] . "</span>",
+    'page' => $arrInfosProjet['titre'],
     'arrInfos' => $arrInfosProjet,
     'arrInfosEtudiant' => $arrEtudiant,
     'arrAutresProjets' => $arrAutresProjets
 ));
 
 $template = $twig->loadTemplate('pieces/footer.html.twig');
-echo $template->render(array());
+echo $template->render(array(
+    'texte_auteurs' => $strTexteAuteurs
+));

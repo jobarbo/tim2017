@@ -2,9 +2,11 @@
 <html lang="fr">
 
 <body>
+<a href="diplomes/fiche_projet/index.php#contenu" class="visuallyhidden focusable">Allez au contenu</a>
 <main>
     <section class="haut_page">
-        <h1>{{ page | raw }}</h1>
+        <h1 id="contenu">{{ page | raw }}</h1>
+        <span class='retour_fiche_etudiant'><a href="diplomes/fiche_etudiant?id={{ arrInfosEtudiant.id }}">retour vers la fiche de {{ arrInfosEtudiant.prenom ~ " " ~ arrInfosEtudiant.nom }}</a></span>
     </section>
     <section class="texte_intro_projet">
         <div class="description">
@@ -35,4 +37,5 @@
     </section>
 </main>
 </body>
+
 </html>
