@@ -80,6 +80,4 @@ echo $template->render(array(
 ));
 
 $template = $twig->loadTemplate('pieces/footer.html.twig');
-echo $template->render(array(
-    'texte_auteurs' => $strTexteAuteurs
-));
+echo $template->render(array());
