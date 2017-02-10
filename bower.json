@@ -16,6 +16,7 @@
     "jquery": "^3.1.0",
     "picturefill": "^3.0.2",
     "normalize-scss": "^3.0.3",
-    "susy": "^2.2.12"
+    "susy": "^2.2.12",
+    "chart.js": "^2.4.0"
   }
 }
