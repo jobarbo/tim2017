@@ -1,58 +1,65 @@
 <body>
 <header>
+    <div>
+        <div class="row">
+            <div class="col-sm-8"></div>
 
-            <div id="meta_nav">
-                <ul>
-                    <li><a href="" class="{{ arrMenuLiensActifs.accueil }} ">Accueil</a></li>
-                    <li><a href="../nous_joindre" class="{{ arrMenuLiensActifs.nousJoindre }} ">Nous joindre</a></li>
-                    <li>
-                        <a href="http://www.cegep-ste-foy.qc.ca" target="_blank">
-                            <img src="{{ niveau }}dist/images/cegep_logo.svg" alt="Logo du Cégep de Sainte-Foy.">
-                        </a>
-                    </li>
-                </ul>
-            </div>
+        <div id="meta_nav" class="col-sm-4">
+            <ul>
+                <li><a href="" class="{{ arrMenuLiensActifs.accueil }} ">Accueil</a></li>
+                <li><a href="../nous_joindre" class="{{ arrMenuLiensActifs.nousJoindre }} ">Nous joindre</a></li>
+                <li>
+                    <a href="http://www.cegep-ste-foy.qc.ca" target="_blank">
+                        <img src="{{ niveau }}dist/images/cegep_logo.svg" alt="Logo du Cégep de Sainte-Foy.">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        </div>
 
-            <nav id="nav_primary">
-                 <span id="logoTIM"><a href="#"><img src="{{ niveau }}dist/images/tim_logo.svg" alt="Logo du programme en Techniques d'intégration multimédia."></a></span>
+        <nav id="nav_primary">
+            <span id="logoTIM"><a href="#"><img src="{{ niveau }}dist/images/tim_logo.svg" alt="Logo du programme en Techniques d'intégration multimédia."></a></span>
 
-                <ul>
-                    <li class="top_niveau etudiant"><a href="#" class="menu_lien {{ arrMenuLiensActifs.futurEtudiant }}">Futur
-                            étudiant</a>
-                        <ul class="second_nav sub_etudiant">
-                            <li><a href="futur_etudiant" class="{{ arrMenuLiensActifs.bonChoix }} ">Qu'est-ce qu'un
-                                    intégrateur web?</a></li>
-                            <li><a href="futur_etudiant/bon_choix" class="{{ arrMenuLiensActifs.bonChoix }} ">Fais-tu le
-                                    bon choix?</a></li>
-                            <li><a href="futur_etudiant/profil" class="{{ arrMenuLiensActifs.profil }} ">As-tu le
-                                    profil?</a></li>
-                            <li><a href="futur_etudiant/perspectives" class="{{ arrMenuLiensActifs.perspectives }} ">Perspectives</a>
-                            </li>
-                            <li><a href="futur_etudiant/temoignages" class="{{ arrMenuLiensActifs.temoignages }} ">Témoignages</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="top_niveau programme"><a href="#"
-                                              class="menu_lien {{ arrMenuLiensActifs.programme }}">Programme</a>
-                        <ul class="second_nav sub_programme">
-                            <li><a href="programme" class="{{ arrMenuLiensActifs.equipe }} ">Qu'est-ce qu'on
-                                    apprend?</a></li>
-                            <li><a href="programme/equipe" class="{{ arrMenuLiensActifs.equipe }} ">Équipe</a></li>
-                            <li><a href="programme/grille_cours" class="{{ arrMenuLiensActifs.grilleCours }} ">Grilles
-                                    de cours</a></li>
-                        </ul>
-                    </li>
-                    <li class="top_niveau stages"><a href="#" class="menu_lien {{ arrMenuLiensActifs.stages }}">Stages</a>
-                        <ul class="second_nav sub_stages">
-                            <li><a href="stages/ate" class="{{ arrMenuLiensActifs.ate }} ">Stages crédités</a></li>
-                            <li><a href="stages/ate" class="{{ arrMenuLiensActifs.ate }} ">ATE</a></li>
-                            <li><a href="stages/international" class="{{ arrMenuLiensActifs.international }} ">International</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="top_niveau diplomes"><a href="diplomes" class="menu_lien {{ arrMenuLiensActifs.diplomes }}">Diplômés</a>
-                    </li>
-                </ul>
-                <a href="futur_etudiant" class="btn_rouge">Je m'inscris !</a>
-            </nav>
+            <ul>
+                <li class="top_niveau etudiant"><a href="#" class="menu_lien {{ arrMenuLiensActifs.futurEtudiant }}">Futur
+                        étudiant</a>
+                    <ul class="second_nav sub_etudiant">
+                        <li><a href="futur_etudiant" class="{{ arrMenuLiensActifs.bonChoix }} ">Qu'est-ce qu'un
+                                intégrateur web?</a></li>
+                        <li><a href="futur_etudiant/bon_choix" class="{{ arrMenuLiensActifs.bonChoix }} ">Fais-tu le
+                                bon choix?</a></li>
+                        <li><a href="futur_etudiant/profil" class="{{ arrMenuLiensActifs.profil }} ">As-tu le
+                                profil?</a></li>
+                        <li><a href="futur_etudiant/perspectives" class="{{ arrMenuLiensActifs.perspectives }} ">Perspectives</a>
+                        </li>
+                        <li><a href="futur_etudiant/temoignages" class="{{ arrMenuLiensActifs.temoignages }} ">Témoignages</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="top_niveau programme"><a href="#"
+                                                    class="menu_lien {{ arrMenuLiensActifs.programme }}">Programme</a>
+                    <ul class="second_nav sub_programme">
+                        <li><a href="programme" class="{{ arrMenuLiensActifs.equipe }} ">Qu'est-ce qu'on
+                                apprend?</a></li>
+                        <li><a href="programme/equipe" class="{{ arrMenuLiensActifs.equipe }} ">Équipe</a></li>
+                        <li><a href="programme/grille_cours" class="{{ arrMenuLiensActifs.grilleCours }} ">Grilles
+                                de cours</a></li>
+                    </ul>
+                </li>
+                <li class="top_niveau stages"><a href="#" class="menu_lien {{ arrMenuLiensActifs.stages }}">Stages</a>
+                    <ul class="second_nav sub_stages">
+                        <li><a href="stages/ate" class="{{ arrMenuLiensActifs.ate }} ">Stages crédités</a></li>
+                        <li><a href="stages/ate" class="{{ arrMenuLiensActifs.ate }} ">ATE</a></li>
+                        <li><a href="stages/international" class="{{ arrMenuLiensActifs.international }} ">International</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="top_niveau diplomes"><a href="diplomes" class="menu_lien {{ arrMenuLiensActifs.diplomes }}">Diplômés</a>
+                </li>
+            </ul>
+            <a href="futur_etudiant" class="btn_rouge">Je m'inscris !</a>
+        </nav>
+    </div>
+
+
 </header>
