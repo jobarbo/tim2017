@@ -92,7 +92,6 @@ FROM t_prof ORDER BY nom_prof";
 
     $template = $twig->loadTemplate('pieces/footer.html.twig');
     echo $template->render(array(
-        'texte_auteurs' => $strTexteAuteurs
     ));
 
 } catch (Exception $e) {
