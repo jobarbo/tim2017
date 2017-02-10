@@ -14,14 +14,17 @@ echo $template->render(array(
 
 $template = $twig->loadTemplate('pieces/header.html.twig');
 echo $template->render(array(
-    'arrMenuLiensActifs' => $arrMenuActif
+    'arrMenuLiensActifs' => $arrMenuActif,
+    'niveau' => $strNiveau
+));
+$template = $twig->loadTemplate('pieces/footer.html.twig');
+echo $template->render(array(
+    'niveau' => $strNiveau
 ));
 
 $template = $twig->loadTemplate('index.html.twig');
 echo $template->render(array(
-    'niveau' => "../",
     'will' => "the dog",
     'title' => "Techniques d'intégration multimédia | TIM"
 ));
 
-$template = $twig->loadTemplate('pieces/footer.html.twig');
