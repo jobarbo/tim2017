@@ -4,6 +4,11 @@ header{
   width: 100%;
   background-color: white;
   z-index: 999999;
+  #meta_nav{
+    height: 50px;
+    padding: 5px 2%;
+
+  }
   a{ color:black;
     position: relative;
     transition: all 0.3s ease;
@@ -23,7 +28,7 @@ header{
 
   nav#nav_primary{
     height:90px;
-    padding: 10px 155px 24px 6.94444%;
+    padding: 10px 155px 24px 2%;
     position: relative;
     ul{
       list-style: none;
@@ -41,7 +46,7 @@ header{
         ul.second_nav{
           display: none;
           text-align: left;
-          padding: 15px 6.94444% 24px;
+          padding: 15px 2% 24px;
           width: 100vw;
           background-color: #2a8be1;
           color: #fff;
@@ -83,7 +88,7 @@ header{
       right: 0;
       top: 15px;
       transform: translateX(3px);
-      transition: all .5s ease-in-out;
+      transition: all .2s ease-in-out;
       &:hover{
         transform: translateX(0);
         box-shadow: rgba(246, 40, 89, 0.42) 4px 2px 2px 0;
