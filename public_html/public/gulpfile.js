@@ -284,7 +284,7 @@ gulp.task('default', ['clean'], function() {
 });
 
 // ### Compile
-// Watch sans l'OSTI de browser-sync.
+// Watch sans le browser-sync.
 gulp.task('compile', function() {
  gulp.watch([path.source + 'styles/**/*'], ['styles']);
  gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'scripts']);

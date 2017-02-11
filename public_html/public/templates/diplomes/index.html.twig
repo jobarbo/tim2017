@@ -8,17 +8,17 @@
         <div class="triInterets">
             <h2>Trier les diplômés par intérêts</h2>
             <a href="#" class="btnResetTri">Réinitialiser</a>
-            <ul class="listeTrie">
-                <li><a class="btnTri" href="#">Gestion</a></li>
-                <li><a class="btnTri" href="#">Design</a></li>
-                <li><a class="btnTri" href="#">Traitement des médias</a></li>
-                <li><a class="btnTri" href="#">Intégration</a></li>
-                <li><a class="btnTri" href="#">Programmation</a></li>
+            <ul class="listeTri">
+                <li><a class="btnTri gestion" id="interet_gestion_projet" href="diplomes/?tri_interets=gestion_projet">Gestion</a></li>
+                <li><a class="btnTri design" id="interet_design_interface" href="diplomes/?tri_interets=design_interface">Design</a></li>
+                <li><a class="btnTri medias" id="interet_traitement_medias" href="diplomes/?tri_interets=traitement_medias">Traitement des médias</a></li>
+                <li><a class="btnTri integration" id="interet_integration" href="diplomes/?tri_interets=integration">Intégration</a></li>
+                <li><a class="btnTri programmation" id="interet_programmation" href="diplomes/?tri_interets=programmation">Programmation</a></li>
             </ul>
         </div>
     </section>
-    <section class="liste_diplomes">
-    <ul>
+    <section id="diplomes_galerie">
+    <ul id="liste_diplomes">
         {% for arrDiplomes in diplomes %}
         <li>
             <a href="diplomes/fiche_etudiant?id={{ arrDiplomes.id }}">
@@ -34,3 +34,34 @@
     </section>
 
 </main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>$('.btnTri').click(function() {
+        event.preventDefault();
+        console.log($(this).attr('id'));
+        $('#liste_diplomes').fadeTo(300, 0);
+        $( '.loaderWrapper' ).fadeIn(300);
+        $('.listeTri li').removeClass('actif');
+
+        $(this).parent('li').addClass('actif');
+
+        $.ajax({
+            type: 'GET',
+            url: 'inc/scripts/trier_diplomes.php',
+            data: 'tri_interets=' + $(this).attr('id'),
+
+            success: function(data) {
+                $('#liste_diplomes').html(data);
+
+                setTimeout(function(){
+                    $('.loaderWrapper').hide();
+                    $('#liste_diplomes').fadeTo(300, 1);
+                }, 1000);
+            },
+
+            error: function() {
+                $('#diplomes_galerie').html('<p>Un erreur est survenue!</p>');
+            },
+
+        });
+    });</script>

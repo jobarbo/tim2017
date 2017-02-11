@@ -13,6 +13,11 @@
 $strNiveau="../";
 $strTriInterets = "";
 
+if(isset($_GET['tri_interets'])){
+    $strTriInterets = 'interet_' . $_GET['tri_interets'];
+}
+echo $strTriInterets;
+
 
 /*************** INSTANCIATION CONFIG ET TWIG ***********************/
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
@@ -20,7 +25,15 @@ require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 /*************** REQUÊTES DIPLÔMÉS ***********************/
 
 //-----Requete pour aller chercher tous les diplômés-----//
-$strSQLDiplomes = "SELECT prenom_diplome, nom_diplome, slug, id_diplome FROM t_diplome ORDER BY nom_diplome";
+
+//----Requete par défaut, sans option de tri----//
+if($strTriInterets == "") {
+    $strSQLDiplomes = "SELECT prenom_diplome, nom_diplome, slug, id_diplome FROM t_diplome ORDER BY nom_diplome";
+}else {
+//----Requete selon option de tri sélectionné----//
+    $strSQLDiplomes = "SELECT prenom_diplome, nom_diplome, slug, id_diplome FROM t_diplome ORDER BY " . $strTriInterets . " desc";
+}
+
 if ($objResultDiplome = $objConnMySQLi->query($strSQLDiplomes)) {
     while ($objLigneDiplome = $objResultDiplome->fetch_object()) {
         $arrDiplomes[] =
