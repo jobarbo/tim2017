@@ -39,7 +39,7 @@
 <script>$('.btnTri').click(function() {
         event.preventDefault();
         console.log($(this).attr('id'));
-        $('#liste_diplomes').fadeTo(300, 0);
+        $('#liste_diplomes').fadeTo(100, 0);
         $( '.loaderWrapper' ).fadeIn(300);
         $('.listeTri li').removeClass('actif');
 
@@ -55,7 +55,7 @@
 
                 setTimeout(function(){
                     $('.loaderWrapper').hide();
-                    $('#liste_diplomes').fadeTo(300, 1);
+                    $('#liste_diplomes').fadeTo(200, 1);
                 }, 1000);
             },
 
