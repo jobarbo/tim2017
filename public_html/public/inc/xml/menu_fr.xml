@@ -15,17 +15,20 @@
 	</menu>
 	<!-- ajout d'un attribut idref --> 
 	<menu nom="secondaire" idref="etudiant">
+		<item url="#">Qu'est-ce qu'un intégrateur web?</item>
         <item url="#">Fais-tu le bon choix?</item>
 		<item url="#">As-tu le profil?</item>
         <item url="#">Perspectives</item>
         <item url="#">Témoignages</item>
 	</menu>
 	<menu nom="secondaire" idref="programme">
+		<item url="#">Qu'est-ce qu'on apprend?</item>
         <item url="#">Équipe</item>
 		<item url="#">Grilles de cours</item>
 	</menu>
 	<menu nom="secondaire" idref="stages">
-		<item url="#">Alternance Travail-Études</item>
+		<item url="#">Stages crédités</item>
+		<item url="#">ATE</item>
 		<item url="#">International</item>
 	</menu>
 </navigation>

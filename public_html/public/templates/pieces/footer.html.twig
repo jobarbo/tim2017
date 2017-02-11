@@ -1,42 +1,62 @@
-<footer>
-    <section>
+<footer class="">
+    <section class="col-sm-12 pre_footer" >
         <h2 class="visuallyHidden">Liens utiles</h2>
-            <article>
+            <article class="col-sm-6 partie_tim ">
                 <h3>Faire partie de la TIM</h3>
                 <p>Tu t’intéresses à la création et au développement de sites Web ou d’applications multimédia et tu souhaites te joindre à la TIM l’an prochain? Complète ta demande d'admission avant le 1er mars.</p>
                 <a href="futur_etudiant#processusAdmission">S'inscrire</a>
             </article>
-            <article>
+        <article class="col-sm-6 cimmi">
                 <h3>CIMMI</h3>
                 <p>Le cégep de Sainte-Foy est partenaire du Centre en imagerie numérique et médias interactifs (CIMMI) dans la réalisation de projets de recherche appliquée.</p>
                 <a href="http://www.cimmi.ca/" target="_blank">Visiter le site internet</a>
             </article>
     </section>
-    <section>
+    <section class="col-sm-12 main_footer">
         <h2 class="visuallyHidden">Crédits</h2>
-        <div>
-                <p>Ce projet a été choisi parmi les six propositions réalisées dans le cadre du cours Production multimédia VI au printemps 2017. Les auteurs:<a href="diplomes/fiche_etudiant?id=482">Jonathan Barbeau</a>, <a href="diplomes/fiche_etudiant?id=483">Vincent Béland</a>, <a href="diplomes/fiche_etudiant?id=486">William Charest-Pépin</a>, <a href="diplomes/fiche_etudiant?id=505">Erwann Letué</a> et <a href="diplomes/fiche_etudiant?id=502">Annabelle Violette</a> ont remporté les honneurs du Roger d'Or.</p>
 
-                <ul>
+        <div class="col-sm-11">
+                <p style="display: none">Ce projet a été choisi parmi les six propositions réalisées dans le cadre du cours Production multimédia VI au printemps 2017. Les auteurs:<a href="diplomes/fiche_etudiant?id=482">Jonathan Barbeau</a>, <a href="diplomes/fiche_etudiant?id=483">Vincent Béland</a>, <a href="diplomes/fiche_etudiant?id=486">William Charest-Pépin</a>, <a href="diplomes/fiche_etudiant?id=505">Erwann Letué</a> et <a href="diplomes/fiche_etudiant?id=502">Annabelle Violette</a> ont remporté les honneurs du Roger d'Or.</p>
+
+                <ul style="display: none">
                     <li><a href="http://www.facebook.com/timcsf" title="Page Facebook du programme Techniques d'intégration multimédia">Facebook</a></li>
                     <li><a href="http://twitter.com/timcsf" title="Compte Twitter du programme Techniques d'intégration multimédia">Twitter</a></li>
                     <li><a href="http://www.linkedin.com/groups?gid=2211970" title="Groupe LinkedIn du programme Techniques d'intégration multimédia">LinkedIn</a></li>
                 </ul>
 
-                <p>© 2017, Techniques d'intégration multimédia, Cégep de Sainte-Foy.</p>
 
-                <script>
-                    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-                    ga('create', 'UA-338031-1', 'auto');
-                    ga('send', 'pageview');
-
-                </script>
         </div>
+
     </section>
+    <div id="meta_nav">
+        <p>© 2017, Techniques d'intégration multimédia, Cégep de Sainte-Foy.</p>
+
+
+        <ul>
+            <li><a href="" class="{{ arrMenuLiensActifs.accueil }} ">Accueil</a></li>
+            <li><a href="../nous_joindre" class="{{ arrMenuLiensActifs.nousJoindre }} ">Nous joindre</a></li>
+            <li>
+                <a href="http://www.cegep-ste-foy.qc.ca" target="_blank">
+                    <img src="{{ niveau }}dist/images/cegep_logo_white.svg" alt="Logo du Cégep de Sainte-Foy.">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-338031-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    <script type="text/javascript" src="dist/scripts/customizer.js"></script>
+    <script type="text/javascript" src="dist/scripts/jquery.js"></script>
+    <script type="text/javascript" src="dist/scripts/main.js"></script>
+
 </footer>
 </body>
 </html>

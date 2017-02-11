@@ -22,15 +22,6 @@
     	$blnLocal = FALSE;
     }
 
-if ($blnLocal) {
-    // (réglages pour le DÉVELOPPEMENT)
-    // Affiche toutes les Errors, warnings, notices et syntaxes dépréciées
-    error_reporting(E_ALL | E_STRICT);
-    ini_set('display_errors', false); // Modification de la configuration du fichier ini
-} else {
-    ini_set('display_errors', false); // Rendu à l'hébergement, on ne veut pas que le client voit les messages d'erreurs!!
-}
-
     /**
      * Selon l'environnement d'exécution (développement ou hébergement)
      * @todo Adapter les variables de connexion des 2 environnements
@@ -38,7 +29,7 @@ if ($blnLocal) {
     if ($blnLocal) {
 	    $strBdServer   = 'localhost';
         $strBdUsername = 'root';
-        $strBdPassword = 'root';
+        $strBdPassword = '';
         $strBdName     = 'bdtim2017_hooli';
     } else {
         $strBdServer   = 'timunix.cegep-ste-foy.qc.ca';
@@ -47,22 +38,25 @@ if ($blnLocal) {
         $strBdName     = 'bdtim2017_hooli';  //ou bdTraces2015_base selon l'exercice!
                                               //mot de passe: t1m2015
     }
-    try{
 
-        $objConnMySQLi = new mysqli($strBdServer,$strBdUsername,$strBdPassword,$strBdName);
-        if ($objConnMySQLi->connect_error) {
-            $strMessage="La connexion à la base de données cause problème, réessayez plus tard.";
-            $except = new Exception($strMessage);
+    $objConnMySQLi = new mysqli($strBdServer,$strBdUsername,$strBdPassword,$strBdName);
+    // les lignes suivantes forcent mysql à servir les données en utf8 (pour afficher les accents correctement)
+    $objConnMySQLi->query("SET CHARACTER SET utf8");
+    $objConnMySQLi->query("SET NAMES utf8");
 
-            throw $except;
-        }
-        // les lignes suivantes forcent mysql à servir les données en utf8 (pour afficher les accents correctement)
-        $objConnMySQLi->query("SET CHARACTER SET utf8");
-        $objConnMySQLi->query("SET NAMES utf8");
-    }
-    catch(Exception $e){
-        echo $e->getMessage();
-        //Ce message n'est pas récupéré puisqu'il y en aura un autre de généré de toute façon lors de l'appel du SQL.
+    // FIN paramètres du site
+
+
+// DEBUT Gestion des erreurs et fonctions utilitaires
+// (réglages pour le développement ou l'hébergement)
+
+    if ($blnLocal) {
+        // (réglages pour le DÉVELOPPEMENT)
+        // Affiche toutes les Errors, warnings, notices et syntaxes dépréciées
+        error_reporting(E_ALL | E_STRICT);
+        ini_set('display_errors', true); // Modification de la configuration du fichier ini
+    } else {
+        ini_set('display_errors', false); // Rendu à l'hébergement, on ne veut pas que le client voit les messages d'erreurs!!
     }
 
 

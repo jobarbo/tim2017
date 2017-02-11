@@ -14,7 +14,6 @@
 
 
 
-
   $(document).ready(function() {
 
   });
@@ -22,6 +21,19 @@
 
 
   function configurer() {
+
+    $( ".etudiant" ).click(function() {
+
+      $( ".second_nav.sub_etudiant" ).slideToggle( "slow" );
+    });
+    $( ".programme" ).click(function() {
+
+      $( ".second_nav.sub_programme" ).slideToggle( "slow" );
+    });
+    $( ".stages" ).click(function() {
+
+      $( ".second_nav.sub_stages" ).slideToggle( "slow" );
+    });
 
 
 
