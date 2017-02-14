@@ -1,18 +1,26 @@
-<!DOCTYPE HTML>
-<html lang="fr">
-
-<body>
 <main>
     <h1>As-tu le profil?</h1>
-    {% for i in 0..9 %}
-        <p>{{ xml[i]['texteQuestion'] }}</p>
-        {% for j in 0..3 %}
-            <p>{{ xml[i]['texteReponse'][j] }}</p>
-            <p>{{ xml[i]['pointage'][j] }}</p>
+    <div class="contenuInteractif">
+        <p class='progression'></p>
+        <p class='retro'></p>
+        <p class='explication'></p>
+    </div>
+    <form name="quiz_bon_profil" action="#" method="POST">
+        {% for i in 0..9 %}
+            <fieldset id="Q{{ i + 1 }}">
+                <h4>{{ xml[i]['texteQuestion'] }}</h4>
+                <ul class="choixReponses">
+                    {% for j in 0..3 %}
+                    <li>
+                        <input id="Q{{ i }}{{ tId[j] }}" type="radio" name="Q{{ j + 1 }}" value="0">
+                        <label for="Q{{ i }}{{ tId[j] }}">{{ xml[i]['texteReponse'][j] }}</label>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </fieldset>
         {% endfor %}
-        <br />
-    {% endfor %}
     <br /><br />
+    </form>
     {% for i in 0..2 %}
         <p>{{ xmlR[i]['commentaire'] }}</p>
         <p>{{ xmlR[i]['min'] }}</p>
@@ -20,5 +28,3 @@
         <br />
     {% endfor %}
 </main>
-</body>
-</html>
