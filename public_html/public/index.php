@@ -10,6 +10,7 @@ echo $template->render(array(
     'title' => "Techniques d'intégration multimédia | TIM",
     'page' => "",
     'niveau' => $strNiveau
+    
 ));
 
 $template = $twig->loadTemplate('pieces/header.html.twig');
