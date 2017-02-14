@@ -1,24 +1,31 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: annabelleViolette
- * Date: 17-01-25
- * Time: 08:48
+ * @author Annabelle Violette <anna.violette@hotmail.com>
+ * @copyright Copyright (c)2017 – Cégep de sainte-Foy
+ * Date: 2017-02
  *
- *  FICHE DIPLÔMÉ
+ * 1. VARIABLES LOCALES
+ * 2. INSTANCIATION CONFIG ET TWIG
+ * 3. REÇOIT ID DE L'ÉTUDIANT
+ * 4. REQUÊTES FICHE DIPLÔMÉ
+ * 4.1 Requete pour aller chercher tous les infos du diplômé
+ * 4.2 Requete pour aller chercher tous les projets du diplômé
+ * 5. TWIG
+ *
+ *  FICHE ÉTUDIANT
  */
 
 
-/*************** VARIABLES LOCALES ***********************/
+/*************** 1. VARIABLES LOCALES ***********************/
 $strNiveau="../../";
 $strTriInterets = "";
 $intIdEtudiant = null;
 
-/*************** INSTANCIATION CONFIG ET TWIG ***********************/
+/*************** 2. INSTANCIATION CONFIG ET TWIG ***********************/
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 
 
-/*************** REÇOIT ID DE L'ÉTUDIANT ***********************/
+/*************** 3. REÇOIT ID DE L'ÉTUDIANT ***********************/
 if(isset($_GET['id'])){
     $intIdEtudiant = $_GET['id'];
 }
@@ -26,8 +33,8 @@ else{
     header('Location: ' . $strNiveau . 'erreur/index.php');
 }
 
-/*************** REQUÊTES FICHE DIPLÔMÉ ***********************/
-//-----Requete pour aller chercher tous les infos du diplômé-----//
+/*************** 4. REQUÊTES FICHE DIPLÔMÉ ***********************/
+//----- 4.1 Requete pour aller chercher tous les infos du diplômé -----//
 $strSQLInfosEtudiant = "SELECT * FROM t_diplome WHERE id_diplome = " . $intIdEtudiant;
 if ($objResultInfosEtudiant = $objConnMySQLi->query($strSQLInfosEtudiant)) {
     while ($objLigneInfosEtudiant = $objResultInfosEtudiant->fetch_object()) {
@@ -61,7 +68,7 @@ if($objResultInfosEtudiant->num_rows == 0){
 
 $objResultInfosEtudiant->free_result();
 
-//-----Requete pour aller chercher tous les projets du diplômé-----//
+//----- 4.2 Requete pour aller chercher tous les projets du diplômé -----//
 $strSQLProjetsEtudiant = "SELECT id_projet, titre_projet, slug FROM t_projet_diplome WHERE id_diplome = " . $intIdEtudiant;
 if ($objResultProjetsEtudiant = $objConnMySQLi->query($strSQLProjetsEtudiant)) {
     while ($objLigneProjetsEtudiant = $objResultProjetsEtudiant->fetch_object()) {
@@ -84,7 +91,7 @@ $objResultProjetsEtudiant->free_result();
 // fermer la connexion
 $objConnMySQLi->close();
 
-///////////// TWIG //////////////
+/*************** 5. TWIG ***********************/
 $template = $twig->loadTemplate('pieces/head.html.twig');
 echo $template->render(array(
     'title' => "Techniques d'intégration multimédia | TIM",

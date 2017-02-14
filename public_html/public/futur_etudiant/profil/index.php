@@ -53,6 +53,7 @@ foreach($quiz->résultats->resultat as $resultat)
     }
     $cptR++;
 }
+$arrId = ["A", "B", "C", "D"];
 
 ///////////// TWIG //////////////
 $template = $twig->loadTemplate('pieces/head.html.twig');
@@ -70,7 +71,8 @@ $template = $twig->loadTemplate('futur_etudiant/profil/index.html.twig');
 echo $template->render(array(
     'niveau' => $strNiveau,
     'xml' => $arrQuestions,
-    'xmlR' => $arrReponses
+    'xmlR' => $arrReponses,
+    'tId' => $arrId
 ));
 
 $template = $twig->loadTemplate('pieces/footer.html.twig');

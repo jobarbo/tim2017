@@ -22,7 +22,7 @@
         {% for arrDiplomes in diplomes %}
         <li>
             <a href="diplomes/fiche_etudiant?id={{ arrDiplomes.id }}">
-                <img src="{{ niveau }}images/{{ arrDiplomes.slug}}.jpg" alt="{{ arrDiplomes.nom }}">
+                <img src="images/{{ arrDiplomes.slug}}.jpg" alt="{{ arrDiplomes.prenom }} {{ arrDiplomes.nom }}">
                 <p class="nom">{{ arrDiplomes.prenom }} <span>{{ arrDiplomes.nom }}</span></p>
                 <div>
                     <p>Voir la fiche</p>

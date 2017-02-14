@@ -1,24 +1,38 @@
-<!DOCTYPE HTML>
-<html lang="fr">
-
-<body>
-<main>
-    <h1>As-tu le profil?</h1>
-    {% for i in 0..9 %}
-        <p>{{ xml[i]['texteQuestion'] }}</p>
-        {% for j in 0..3 %}
-            <p>{{ xml[i]['texteReponse'][j] }}</p>
-            <p>{{ xml[i]['pointage'][j] }}</p>
+<div class="container">
+    <main>
+        <h1>As-tu le profil?</h1>
+        <div class="contenuInteractif">
+            <p class='progression'></p>
+            <p id='retroaction'></p>
+        </div>
+        <div class="col-sm-6">
+            {% for i in 0..9 %}
+            <h4>{{ xml[i]['texteQuestion'] }}</h4>
+            {% endfor %}
+        </div>
+        <div class="col-sm-6">
+            <form name="quiz_bon_profil" action="" method="POST">
+                {% for i in 0..9 %}
+                    <fieldset id="Q{{ i }}">
+                        <ul class="choixReponses">
+                            {% for j in 0..3 %}
+                                <li>
+                                    <input id="Q{{ i }}{{ tId[j] }}" type="radio" name="Q{{ i }}" value="{{ xml[i]['pointage'][j] }}">
+                                    <label for="Q{{ i }}{{ tId[j] }}">{{ xml[i]['texteReponse'][j] }}</label>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </fieldset>
+                {% endfor %}
+                <input id='validerQuiz' name='validerQuiz' type="submit" value="Valider">
+                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+            </form>
+        </div>
+        {% for i in 0..2 %}
+            <p>{{ xmlR[i]['commentaire'] }}</p>
+            <p>{{ xmlR[i]['min'] }}</p>
+            <p>{{ xmlR[i]['max'] }}</p>
+            <br />
         {% endfor %}
-        <br />
-    {% endfor %}
-    <br /><br />
-    {% for i in 0..2 %}
-        <p>{{ xmlR[i]['commentaire'] }}</p>
-        <p>{{ xmlR[i]['min'] }}</p>
-        <p>{{ xmlR[i]['max'] }}</p>
-        <br />
-    {% endfor %}
-</main>
-</body>
-</html>
+    </main>
+</div>
