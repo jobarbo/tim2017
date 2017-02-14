@@ -7,6 +7,7 @@ var app = $(function configurer(evenement){
     $('#validerQuiz').on("click", validerMonChoix);
     for (var i = 1; i <= 9; i++) {
         $("#Q" + i).hide();
+        $("#qProfil" + i).hide();
     }
 
     /**
@@ -16,6 +17,9 @@ var app = $(function configurer(evenement){
         console.log(no);
         $("#Q" + (no - 1)).hide();
         $("#Q" + (no)).show();
+
+        $("#qProfil" + (no - 1)).hide();
+        $("#qProfil" + (no)).show();
     }
 
     function validerMonChoix(evenement){
