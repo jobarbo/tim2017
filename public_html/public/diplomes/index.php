@@ -1,15 +1,21 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: annabelleViolette
- * Date: 17-01-25
- * Time: 08:48
+ * @author Annabelle Violette <anna.violette@hotmail.com>
+ * @copyright Copyright (c)2017 – Cégep de sainte-Foy
+ * Date: 2017-02
+ *
+ * 1. VARIABLES LOCALES
+ * 2. INSTANCIATION CONFIG ET TWIG
+ * 3. REQUÊTES DIPLÔMÉS
+ * 3.1 Requete pour aller chercher tous les diplômés
+ * 3.2 Requete pour aller chercher le texte d'intro
+ * 4. TWIG
  *
  *  DIPLÔMÉS 2017
  */
 
 
-/*************** VARIABLES LOCALES ***********************/
+/*************** 1. VARIABLES LOCALES ***********************/
 $strNiveau="../";
 $strTriInterets = "";
 
@@ -19,13 +25,12 @@ if(isset($_GET['tri_interets'])){
 echo $strTriInterets;
 
 
-/*************** INSTANCIATION CONFIG ET TWIG ***********************/
+/*************** 2. INSTANCIATION CONFIG ET TWIG ***********************/
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 
-/*************** REQUÊTES DIPLÔMÉS ***********************/
+/*************** 3. REQUÊTES DIPLÔMÉS ***********************/
 
-//-----Requete pour aller chercher tous les diplômés-----//
-
+//----- 3.1 Requete pour aller chercher tous les diplômés -----//
 //----Requete par défaut, sans option de tri----//
 if($strTriInterets == "") {
     $strSQLDiplomes = "SELECT prenom_diplome, nom_diplome, slug, id_diplome FROM t_diplome ORDER BY nom_diplome";
@@ -53,7 +58,7 @@ if($objResultDiplome->num_rows == 0){
 
 $objResultDiplome->free_result();
 
-//-----Requete pour aller chercher le texte d'intro-----//
+//----- 3.2 Requete pour aller chercher le texte d'intro -----//
 $strSQLTexte = "SELECT texte FROM t_texte WHERE section_et_page = 'Diplômés'";
 if ($objResultTexte = $objConnMySQLi->query($strSQLTexte)) {
     while ($objLigneTexte = $objResultTexte->fetch_object()) {
@@ -71,7 +76,7 @@ $objResultTexte->free_result();
 // fermer la connexion
 $objConnMySQLi->close();
 
-///////////// TWIG //////////////
+/*************** 4. TWIG ***********************/
 $template = $twig->loadTemplate('pieces/head.html.twig');
 echo $template->render(array(
     'title' => "Techniques d'intégration multimédia | TIM",
