@@ -1,0 +1,51 @@
+ul.liste_sujets li.conteneur_sujet{
+
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: 3em;
+  width: 45%;
+  float: left;
+  min-height: 10em;
+  border-bottom: 5px solid #0fb8ad;
+
+  p{
+    width: 70%;
+    margin: 0 auto;
+    min-height: 10em;
+    margin-top: 7em;
+    padding-bottom: 2em;
+
+  }
+
+}
+
+ul.liste_sujets li{
+
+  ul{
+
+    background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+    min-height: 5em;
+    padding-left: 1em;
+
+  }
+
+}
+
+ul.liste_sujets li ul li{
+
+  width: 7%;
+  float: left;
+
+  img{
+
+    margin-top: 0.7em;
+
+  }
+
+}
+
+h2{
+
+  clear: both;
+}
+
