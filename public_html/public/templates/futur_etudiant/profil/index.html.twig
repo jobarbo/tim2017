@@ -12,20 +12,21 @@
             {% endfor %}
         </div>
         <div class="col-sm-6">
-            <form name="quiz_bon_profil" action="#" method="POST">
+            <form name="quiz_bon_profil" action="" method="POST">
                 {% for i in 0..9 %}
-                    <fieldset id="Q{{ i + 1 }}">
+                    <fieldset id="Q{{ i }}">
                         <ul class="choixReponses">
                             {% for j in 0..3 %}
                                 <li>
-                                    <input id="Q{{ i }}{{ tId[j] }}" type="radio" name="Q{{ j + 1 }}" value="0">
+                                    <input id="Q{{ i }}{{ tId[j] }}" type="radio" name="Q{{ i }}" value="{{ xml[i]['pointage'][j] }}">
                                     <label for="Q{{ i }}{{ tId[j] }}">{{ xml[i]['texteReponse'][j] }}</label>
                                 </li>
                             {% endfor %}
                         </ul>
                     </fieldset>
                 {% endfor %}
-                <br /><br />
+                <input id='validerQuiz' name='validerQuiz' type="submit" value="Valider">
+                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
             </form>
         </div>
         {% for i in 0..2 %}
