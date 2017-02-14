@@ -8,9 +8,8 @@
  * 2. INSTANCIATION CONFIG ET TWIG
  * 3. REÇOIT ID DU PROJET
  * 4. REQUÊTES FICHE PROJET
- * 4.1 Requete pour aller chercher tous les infos du projet
- * 4.2 Requete pour aller chercher le nom de l'auteur du projet
- * 4.3 Requete pour aller chercher les autres projets du diplômé
+ * 4.1 Requete pour aller chercher tous les infos du diplômé
+ * 4.2 Requete pour aller chercher tous les projets du diplômé
  * 5. TWIG
  *
  *  FICHE PROJET
@@ -64,7 +63,7 @@ if($objResultInfosProjet->num_rows == 0){
 
 $objResultInfosProjet->free_result();
 
-//----- 4.2 Requete pour aller chercher le nom de l'auteur du projet -----//
+//-----Requete pour aller chercher le nom de l'auteur du projet-----//
 $strSQLEtudiant = "SELECT prenom_diplome, nom_diplome, id_diplome, slug FROM t_diplome WHERE id_diplome = " . $intIdEtudiant;
 if ($objResultEtudiant = $objConnMySQLi->query($strSQLEtudiant)) {
     while ($objLigneEtudiant = $objResultEtudiant->fetch_object()) {
@@ -86,17 +85,17 @@ if($objResultEtudiant->num_rows == 0){
 
 $objResultEtudiant->free_result();
 
-//----- 4.3 Requete pour aller chercher les autres projets du diplômé -----//
+//-----Requete pour aller chercher les autres projets du diplômé-----//
 $strSQLAutresProjets = "SELECT id_projet, titre_projet, slug FROM t_projet_diplome WHERE id_diplome = " . $intIdEtudiant;
 if ($objResultAutresProjets = $objConnMySQLi->query($strSQLAutresProjets)) {
     while ($objLigneAutresProjets = $objResultAutresProjets->fetch_object()) {
         if($objLigneAutresProjets->id_projet != $intIdProjet){
-        $arrAutresProjets[] =
-            array(
-                'id'=>$objLigneAutresProjets->id_projet,
-                'titre'=>$objLigneAutresProjets->titre_projet,
-                'slug'=>$objLigneAutresProjets->slug
-            );
+            $arrAutresProjets[] =
+                array(
+                    'id'=>$objLigneAutresProjets->id_projet,
+                    'titre'=>$objLigneAutresProjets->titre_projet,
+                    'slug'=>$objLigneAutresProjets->slug
+                );
         }
     }
 }
@@ -111,7 +110,7 @@ $objResultAutresProjets->free_result();
 // fermer la connexion
 $objConnMySQLi->close();
 
-/*************** 5. TWIG ***********************/
+///////////// TWIG //////////////
 $template = $twig->loadTemplate('pieces/head.html.twig');
 echo $template->render(array(
     'title' => "Techniques d'intégration multimédia | TIM",
