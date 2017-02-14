@@ -25,10 +25,13 @@
             <h2>Autres projets</h2>
             <ul>
                 {% for projet in arrAutresProjets %}
-                <li><a href="diplomes/fiche_projet?id={{ projet.id }}">{{ projet.titre }}</a></li>
+                    <li><a href="diplomes/fiche_projet?id={{ projet.id }}">{{ projet.titre }}</a></li>
                 {% endfor %}
             </ul>
-            
+
         </div>
     </section>
 </main>
+</body>
+
+</html>
