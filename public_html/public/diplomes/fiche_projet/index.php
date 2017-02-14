@@ -1,23 +1,31 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: annabelleViolette
- * Date: 17-01-25
+ * @author Annabelle Violette <anna.violette@hotmail.com>
+ * @copyright Copyright (c)2017 – Cégep de sainte-Foy
+ * Date: 2017-02
  *
- *  FICHE PROJETS
+ * 1. VARIABLES LOCALES
+ * 2. INSTANCIATION CONFIG ET TWIG
+ * 3. REÇOIT ID DU PROJET
+ * 4. REQUÊTES FICHE PROJET
+ * 4.1 Requete pour aller chercher tous les infos du diplômé
+ * 4.2 Requete pour aller chercher tous les projets du diplômé
+ * 5. TWIG
+ *
+ *  FICHE PROJET
  */
 
 
-/*************** VARIABLES LOCALES ***********************/
+/*************** 1. VARIABLES LOCALES ***********************/
 $strNiveau="../../";
 $intIdProjet = null;
 $intIdEtudiant = null;
 
-/*************** INSTANCIATION CONFIG ET TWIG ***********************/
+/*************** 2. INSTANCIATION CONFIG ET TWIG ***********************/
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 
 
-/*************** REÇOIT ID DU PROJET ***********************/
+/*************** 3. REÇOIT ID DU PROJET ***********************/
 if(isset($_GET['id'])){
     $intIdProjet = $_GET['id'];
 }
@@ -25,8 +33,8 @@ else{
     header('Location: ' . $strNiveau . 'erreur/index.php');
 }
 
-/*************** REQUÊTES FICHE PROJET ***********************/
-//-----Requete pour aller chercher tous les infos du projet-----//
+/*************** 4. REQUÊTES FICHE PROJET ***********************/
+//----- 4.1 Requete pour aller chercher tous les infos du projet -----//
 $strSQLInfosProjet = "SELECT * FROM t_projet_diplome WHERE id_projet = " . $intIdProjet;
 if ($objResultInfosProjet = $objConnMySQLi->query($strSQLInfosProjet)) {
     while ($objLigneInfosProjet = $objResultInfosProjet->fetch_object()) {
@@ -82,12 +90,12 @@ $strSQLAutresProjets = "SELECT id_projet, titre_projet, slug FROM t_projet_diplo
 if ($objResultAutresProjets = $objConnMySQLi->query($strSQLAutresProjets)) {
     while ($objLigneAutresProjets = $objResultAutresProjets->fetch_object()) {
         if($objLigneAutresProjets->id_projet != $intIdProjet){
-        $arrAutresProjets[] =
-            array(
-                'id'=>$objLigneAutresProjets->id_projet,
-                'titre'=>$objLigneAutresProjets->titre_projet,
-                'slug'=>$objLigneAutresProjets->slug
-            );
+            $arrAutresProjets[] =
+                array(
+                    'id'=>$objLigneAutresProjets->id_projet,
+                    'titre'=>$objLigneAutresProjets->titre_projet,
+                    'slug'=>$objLigneAutresProjets->slug
+                );
         }
     }
 }
