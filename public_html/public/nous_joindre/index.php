@@ -23,7 +23,7 @@ echo $template->render(array(
     'arrMenuLiensActifs' => $arrMenuActif
 ));
 
-$template = $twig->loadTemplate('stages/index.html.twig');
+$template = $twig->loadTemplate('nous_joindre/index.html.twig');
 echo $template->render(array(
     'niveau' => "../",
     'pages' => $pages
