@@ -1,11 +1,10 @@
 <div class="container">
     <main>
         <h1>As-tu le profil?</h1>
-        <!--<div class="contenuInteractif">
+        <div class="contenuInteractif">
             <p class='progression'></p>
-            <p class='retro'></p>
-            <p class='explication'></p>
-        </div>-->
+            <p id='retroaction'></p>
+        </div>
         <div class="col-sm-6">
             {% for i in 0..9 %}
             <h4>{{ xml[i]['texteQuestion'] }}</h4>

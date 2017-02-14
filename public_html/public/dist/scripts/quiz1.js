@@ -20,12 +20,17 @@ var app = $(function configurer(evenement){
 
     function validerMonChoix(evenement){
         evenement.preventDefault();
-        allerProchaineQuestion(evenement);
+        if($("input[name=Q"+ questionActive + "]:checked").val() == undefined) {
+            $("#retroaction").text("Veuillez sélectionner une réponse.");
+        } else {
+            allerProchaineQuestion(evenement);
+        }
     }
 
     function allerProchaineQuestion(evenement)
     {
         evenement.preventDefault();
+        $("#retroaction").text("");
         pointage = pointage + parseInt($("input[name=Q"+ questionActive + "]:checked").val());
         questionActive++;
         reInitQuestion(questionActive)
