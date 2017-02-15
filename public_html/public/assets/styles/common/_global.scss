@@ -5,6 +5,7 @@
 @font-face {
 	font-family: open_sans_regular;
 	src: url("../fonts/OpenSans-Regular.ttf");
+	
 }
 @font-face {
 	font-family: raleway_black;
@@ -53,6 +54,7 @@ ul{
 		padding: 10px 15px;
 		/* background-color: #2a8be1; */
 		background: linear-gradient(to left, #0098FF, #00ACFF);
+		
 		/* background: gray; */
 		display: inline-block;
 		margin-top: 10px;
@@ -74,7 +76,7 @@ ul{
 }
 
 
-#meta_nav{
+.meta_nav{
 	height: 50px;
 	padding: 0 2% 0 2% ;
 	ul{
@@ -100,4 +102,15 @@ ul{
 
 		}
 	}
+}
+
+
+
+
+
+/* Inputs */
+input[type="text"], input[type="email"]{
+	width: 320px;
+	height: 47px;
+	padding: 3px;
 }

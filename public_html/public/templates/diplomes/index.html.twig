@@ -5,42 +5,55 @@
     </section>
     <section class="texte_intro">
         {{ texteIntro | raw }}
-        <div class="triInterets">
-            <h2>Trier les diplômés par intérêts</h2>
-            <a href="#" class="btnResetTri">Réinitialiser</a>
-            <ul class="listeTri">
-                <li><a class="btnTri gestion" id="interet_gestion_projet" href="diplomes/?tri_interets=gestion_projet">Gestion</a></li>
-                <li><a class="btnTri design" id="interet_design_interface" href="diplomes/?tri_interets=design_interface">Design</a></li>
-                <li><a class="btnTri medias" id="interet_traitement_medias" href="diplomes/?tri_interets=traitement_medias">Traitement des médias</a></li>
-                <li><a class="btnTri integration" id="interet_integration" href="diplomes/?tri_interets=integration">Intégration</a></li>
-                <li><a class="btnTri programmation" id="interet_programmation" href="diplomes/?tri_interets=programmation">Programmation</a></li>
+        {% if erreur != false %}
+            <p>{{ erreur }}</p>
+        {% else %}
+            <div class="triInterets">
+                <h2>Trier les diplômés par intérêts</h2>
+                <a href="#" class="btnResetTri">Réinitialiser</a>
+                <ul class="listeTri">
+                    <li><a class="btnTri gestion" id="interet_gestion_projet"
+                           href="diplomes/?tri_interets=gestion_projet">Gestion</a></li>
+                    <li><a class="btnTri design" id="interet_design_interface"
+                           href="diplomes/?tri_interets=design_interface">Design</a></li>
+                    <li><a class="btnTri medias" id="interet_traitement_medias"
+                           href="diplomes/?tri_interets=traitement_medias">Traitement des médias</a></li>
+                    <li><a class="btnTri integration" id="interet_integration"
+                           href="diplomes/?tri_interets=integration">Intégration</a></li>
+                    <li><a class="btnTri programmation" id="interet_programmation"
+                           href="diplomes/?tri_interets=programmation">Programmation</a></li>
+                </ul>
+            </div>
+        {% endif %}
+    </section>
+    {% if erreur == false %}
+        <section id="diplomes_galerie">
+            <ul id="liste_diplomes">
+                {% for arrDiplomes in diplomes %}
+                    <li>
+                        <a href="diplomes/fiche_etudiant?id={{ arrDiplomes.id }}">
+                            <img src="images/{{ arrDiplomes.slug }}.jpg"
+                                 alt="{{ arrDiplomes.prenom }} {{ arrDiplomes.nom }}">
+                            <p class="nom">{{ arrDiplomes.prenom }} <span>{{ arrDiplomes.nom }}</span></p>
+                            <div>
+                                <p>Voir la fiche</p>
+                            </div>
+                        </a>
+                    </li>
+                {% endfor %}
             </ul>
-        </div>
-    </section>
-    <section id="diplomes_galerie">
-    <ul id="liste_diplomes">
-        {% for arrDiplomes in diplomes %}
-        <li>
-            <a href="diplomes/fiche_etudiant?id={{ arrDiplomes.id }}">
-                <img src="{{ niveau }}images/{{ arrDiplomes.slug}}.jpg" alt="{{ arrDiplomes.nom }}">
-                <p class="nom">{{ arrDiplomes.prenom }} <span>{{ arrDiplomes.nom }}</span></p>
-                <div>
-                    <p>Voir la fiche</p>
-                </div>
-            </a>
-        </li>
-        {% endfor %}
-    </ul>
-    </section>
+        </section>
+    {% endif %}
 
 </main>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script>$('.btnTri').click(function() {
+<script>
+    $('.btnTri').click(function () {
         event.preventDefault();
         console.log($(this).attr('id'));
         $('#liste_diplomes').fadeTo(100, 0);
-        $( '.loaderWrapper' ).fadeIn(300);
+        $('.loaderWrapper').fadeIn(300);
         $('.listeTri li').removeClass('actif');
 
         $(this).parent('li').addClass('actif');
@@ -50,16 +63,16 @@
             url: 'inc/scripts/trier_diplomes.php',
             data: 'tri_interets=' + $(this).attr('id'),
 
-            success: function(data) {
+            success: function (data) {
                 $('#liste_diplomes').html(data);
 
-                setTimeout(function(){
+                setTimeout(function () {
                     $('.loaderWrapper').hide();
                     $('#liste_diplomes').fadeTo(200, 1);
                 }, 1000);
             },
 
-            error: function() {
+            error: function () {
                 $('#diplomes_galerie').html('<p>Un erreur est survenue!</p>');
             },
 

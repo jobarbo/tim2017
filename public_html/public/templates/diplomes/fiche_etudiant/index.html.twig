@@ -1,177 +1,113 @@
 <a href="diplomes/fiche_etudiant/index.php#contenu" class="visuallyhidden focusable">Allez au contenu</a>
 <main>
-    <style>
+    {% if texteErreurFiche == false %}
+        <section class="haut_page">
 
-        ul.liste_intrerets{
-            list-style: none;
-            width:80%;
-        }
-
-        .liste_intrerets li{
-            position: relative;
-        }
-
-        .barre_progression{
-            position:relative;
-            display:block;
-            margin-bottom:15px;
-            width:100%;
-            background:#eee;
-            height:30px;
-            border-radius:3px;
-            -moz-border-radius:3px;
-            -webkit-border-radius:3px;
-            -webkit-transition:0.4s linear;
-            -moz-transition:0.4s linear;
-            -ms-transition:0.4s linear;
-            -o-transition:0.4s linear;
-            transition:0.4s linear;
-            -webkit-transition-property:width, background-color;
-            -moz-transition-property:width, background-color;
-            -ms-transition-property:width, background-color;
-            -o-transition-property:width, background-color;
-            transition-property:width, background-color;
-        }
-
-        .interet_titre {
-            position:absolute;
-            top:0;
-            left:0;
-            font-weight:bold;
-            font-size:13px;
-            color:#ffffff;
-            -webkit-border-top-left-radius:3px;
-            -webkit-border-bottom-left-radius:4px;
-            -moz-border-radius-topleft:3px;
-            -moz-border-radius-bottomleft:3px;
-            border-top-left-radius:3px;
-            border-bottom-left-radius:3px;
-        }
-
-        .interet_titre .libelle {
-            display:block;
-            font-size: 18px;
-            background:rgba(18, 78, 140, 0.8) /*#124e8c*/;
-            padding:0 20px;
-            margin:0;
-            height:30px;
-            line-height:30px;
-            -webkit-border-top-left-radius:3px;
-            -webkit-border-bottom-left-radius:3px;
-            -moz-border-radius-topleft:3px;
-            -moz-border-radius-bottomleft:3px;
-            border-top-left-radius:3px;
-            border-bottom-left-radius:3px;
-        }
-
-        .barre_interet {
-            height:30px;
-            width:0%;
-            background:#4288d0;
-            border-radius:3px;
-            -moz-border-radius:3px;
-            -webkit-border-radius:3px;
-        }
-
-        .pourcentage {
-            position: absolute;
-            right:-20px;
-            top:0;
-            font-size:14px;
-            height:30px;
-            line-height:30px;
-            text-align: left;
-            color:#ffffff;
-            color:rgba(0, 0, 0, 0.4);
-        }
-    </style>
-    <section class="haut_page">
-        <h1 id="contenu">{{ page | raw }}</h1>
-        <ul class="etudiant_contact">
-            {% if arrInfos.courriel != "" %}
-            <li><a href="mailto:{{ arrInfos.courriel }}">Courriel</a></li>
-            {% endif %}
-            {% if arrInfos.twitter != "" %}
-                <li><a href="https://twitter.com/{{ arrInfos.twitter }}" target="_blank">Twitter</a></li>
-            {% endif %}
-            {% if arrInfos.linkedin != "" %}
-                <li><a href="{{ arrInfos.linkedin }}" target="_blank">Linkedin</a></li>
-            {% endif %}
-            {% if arrInfos.site_web != "" %}
-                <li><a href="{{ arrInfos.site_web }}" target="_blank">Site web</a></li>
-            {% endif %}
-        </ul>
-    </section>
-    <section class="texte_intro">
-        <div class="profil">
-            <h2>Profil</h2>
-            {{ arrInfos.profil | raw }}
-        </div>
-        <div class="forces">
-            <h2>Forces</h2>
-            {{ arrInfos.forces | raw }}
-        </div>
-        <div class="interets">
-            <h2>Intérêts</h2>
-            <ul class="liste_intrerets">
-                <li>
-                <div class="barre_progression clearfix " data-percent="{{ arrInfos.interet_gestion }}0%">
-                    <span class='interet_titre'><span class="libelle">Gestion</span></span>
-                    <span class="barre_interet"></span>
-
-                </div>
-                    <span class="pourcentage">{{ arrInfos.interet_gestion }}</span>
-                </li>
-                <li>
-                    <div class="barre_progression clearfix " data-percent="{{ arrInfos.interet_design }}0%">
-                        <span class='interet_titre '><span class="libelle">Design</span></span>
-                        <span class="barre_interet"></span>
-                        <span class="pourcentage">{{ arrInfos.interet_design }}</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="barre_progression clearfix " data-percent="{{ arrInfos.interet_traitement }}0%">
-                        <span class='interet_titre '><span class="libelle">Traitement des médias</span></span>
-                        <span class="barre_interet"></span>
-                        <span class="pourcentage">{{ arrInfos.interet_traitement }}</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="barre_progression clearfix " data-percent="{{ arrInfos.interet_programmation }}0%">
-                        <span class='interet_titre '><span class="libelle">Programmation</span></span>
-                        <span class="barre_interet"></span>
-                        <span class="pourcentage">{{ arrInfos.interet_programmation }}</span>
-                    </div>
-                </li>
-                <li>
-                    <div class="barre_progression clearfix " data-percent="{{ arrInfos.interet_integration }}0%">
-                        <span class='interet_titre '><span class="libelle">Intégration</span></span>
-                        <span class="barre_interet"></span>
-                        <span class="pourcentage">{{ arrInfos.interet_integration }}</span>
-                    </div>
-                </li>
+            <h1 id="contenu">{{ page | raw }}</h1>
+            <ul class="etudiant_contact">
+                {% if arrInfos.courriel != "" %}
+                    <li><a href="mailto:{{ arrInfos.courriel }}">Courriel</a></li>
+                {% endif %}
+                {% if arrInfos.twitter != "" %}
+                    <li><a href="https://twitter.com/{{ arrInfos.twitter }}" target="_blank">Twitter</a></li>
+                {% endif %}
+                {% if arrInfos.linkedin != "" %}
+                    <li><a href="{{ arrInfos.linkedin }}" target="_blank">Linkedin</a></li>
+                {% endif %}
+                {% if arrInfos.site_web != "" %}
+                    <li><a href="{{ arrInfos.site_web }}" target="_blank">Site web</a></li>
+                {% endif %}
             </ul>
+        </section>
+        <section class="texte_intro">
+            <div class="profil">
+                <h2>Profil</h2>
+                {{ arrInfos.profil | raw }}
+            </div>
+            <div class="forces">
+                <h2>Forces</h2>
+                {{ arrInfos.forces | raw }}
+            </div>
+            <div class="interets">
+                <h2>Intérêts</h2>
+                <ul class="liste_intrerets">
+                    <li>
+                        <div class="barre_progression clearfix " data-percent="{{ arrInfos.interet_gestion }}0%">
+                            <span class='interet_titre'><span class="libelle">Gestion</span></span>
+                            <span class="barre_interet"></span>
 
-        </div>
-    </section>
-    <section>
-        <div class="projets_etudiant">
-            <h2>Projets</h2>
-            <ul>
-                {% for projet in arrProjets %}
-                <li><a href="diplomes/fiche_projet?id={{ projet.id }}">{{ projet.titre }}</a></li>
-                {% endfor %}
-            </ul>
-            
-        </div>
-    </section>
+                        </div>
+                        <span class="pourcentage">{{ arrInfos.interet_gestion }}</span>
+                    </li>
+                    <li>
+                        <div class="barre_progression clearfix " data-percent="{{ arrInfos.interet_design }}0%">
+                            <span class='interet_titre '><span class="libelle">Design</span></span>
+                            <span class="barre_interet"></span>
+                            <span class="pourcentage">{{ arrInfos.interet_design }}</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="barre_progression clearfix " data-percent="{{ arrInfos.interet_traitement }}0%">
+                            <span class='interet_titre '><span class="libelle">Traitement des médias</span></span>
+                            <span class="barre_interet"></span>
+                            <span class="pourcentage">{{ arrInfos.interet_traitement }}</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="barre_progression clearfix " data-percent="{{ arrInfos.interet_programmation }}0%">
+                            <span class='interet_titre '><span class="libelle">Programmation</span></span>
+                            <span class="barre_interet"></span>
+                            <span class="pourcentage">{{ arrInfos.interet_programmation }}</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="barre_progression clearfix " data-percent="{{ arrInfos.interet_integration }}0%">
+                            <span class='interet_titre '><span class="libelle">Intégration</span></span>
+                            <span class="barre_interet"></span>
+                            <span class="pourcentage">{{ arrInfos.interet_integration }}</span>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </section>
+        <section>
+            <div class="projets_etudiant">
+                <h2>Projets</h2>
+                {{ texteErreurProjets | raw }}
+                {% if texteErreurProjets == false %}
+                    <ul>
+                        {% for projet in arrProjets %}
+                            <li>
+                                <a href="diplomes/fiche_projet/index.php?id={{ projet.id }}">
+                                    <div class="img_projet">
+                                        <picture>
+                                            <!--<source media="" srcset="../images/projets/prj408_01-mobile.jpg 1x, ../images/projets/prj408_01-mobile@2x.jpg 2x">
+                                            <source media="(min-width: 800px)" srcset="../images/projets/prj408_01-table.jpg 1x, ../images/projets/prj408_01-table@2x.jpg 2x">-->
+                                            <img src="dist/images/projets/prj{{ projet.id }}_01.jpg" alt="{{ projet.titre }}">
+                                        </picture>
+                                    </div>
+                                    <span class="titre_projet">{{ projet.titre }}</span>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    {{ texteErreurProjet | raw }}
+                {% endif %}
+
+            </div>
+        </section>
+    {% else %}
+        {{ texteErreurFiche | raw }}
+    {% endif %}
 </main>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script>
-    jQuery(document).ready(function(){
-        jQuery('.barre_progression').each(function(){
+    jQuery(document).ready(function () {
+        jQuery('.barre_progression').each(function () {
             jQuery(this).find('.barre_interet').animate({
-                width:jQuery(this).attr('data-percent')
-            },4000);
+                width: jQuery(this).attr('data-percent')
+            }, 4000);
         });
     });</script>

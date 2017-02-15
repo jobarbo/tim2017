@@ -67,7 +67,8 @@ try {
         $strMsgErrInfos = false;
     }
 
-    //En cas d'404 de requête
+
+    //En cas d'erreur de requête
     if ($objResultInfosProjet->num_rows == 0) {
         header('Location: ' . $strNiveau . '404/index.php');
     }
@@ -98,7 +99,8 @@ try {
             }
         }
 
-        //En cas d'404 de requête
+
+        //En cas d'erreur de requête
         if ($objResultEtudiant->num_rows == 0) {
             header('Location: ' . $strNiveau . '404/index.php');
         }
@@ -132,7 +134,8 @@ try {
                 $strMsgErrProjets = false;
             }
 
-            //En cas d'404 de requête
+
+            //En cas d'erreur de requête
             if ($objResultAutresProjets->num_rows == 0) {
                 header('Location: ' . $strNiveau . '404/index.php');
             }
