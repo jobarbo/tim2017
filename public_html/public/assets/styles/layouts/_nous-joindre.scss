@@ -1,0 +1,52 @@
+html{
+  font-size: 100%;
+}
+
+.contact, .maps{
+  padding: 2%;
+}
+
+
+
+
+
+/* Section 1 */
+.contact{
+  background-color: #f7f7f7;
+}
+
+.form input, .form select, .form textarea{
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.form, .coordination{
+  display: inline-block;
+}
+
+.form{
+  margin-right: 8%;
+}
+
+.coordination img{
+  width: 20rem;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+
+
+
+
+/* Section 2 */
+iframe, .infos{
+  display: inline-block;
+}
+
+iframe{
+  margin-right: 8%;
+}
+
+ul{
+  padding: 0;
+}
