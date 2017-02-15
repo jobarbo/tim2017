@@ -36,6 +36,13 @@
   vertical-align: bottom;
 }
 
+/* Center verticallement et horizontalement */
+.center-page{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media (min-width: 480px) {
   .row-xs-height {
     display: table;

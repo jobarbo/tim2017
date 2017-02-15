@@ -8,9 +8,11 @@
  * 2. INSTANCIATION CONFIG ET TWIG
  * 3. REÇOIT ID DU PROJET
  * 4. REQUÊTES FICHE PROJET
- * 4.1 Requete pour aller chercher tous les infos du diplômé
- * 4.2 Requete pour aller chercher tous les projets du diplômé
- * 5. TWIG
+ * 4.1 Requete pour aller chercher tous les infos du projet
+ * 4.2 Requete pour aller chercher le nom de l'auteur du projet
+ * 4.3 Requete pour aller chercher les autres projets du diplômé
+ * 5. IMAGES DU PROJET
+ * 6. TWIG
  *
  *  FICHE PROJET
  */
@@ -20,6 +22,7 @@
 $strNiveau="../../";
 $intIdProjet = null;
 $intIdEtudiant = null;
+$strSection = "Fiche projet";
 
 /*************** 2. INSTANCIATION CONFIG ET TWIG ***********************/
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
@@ -30,7 +33,7 @@ if(isset($_GET['id'])){
     $intIdProjet = $_GET['id'];
 }
 else{
-    header('Location: ' . $strNiveau . 'erreur/index.php');
+    header('Location: ' . $strNiveau . '404/index.php');
 }
 
 /*************** 4. REQUÊTES FICHE PROJET ***********************/
@@ -58,12 +61,12 @@ if ($objResultInfosProjet = $objConnMySQLi->query($strSQLInfosProjet)) {
 
 //En cas d'erreur de requête
 if($objResultInfosProjet->num_rows == 0){
-    header('Location: ' . $strNiveau . 'erreur/index.php');
+    header('Location: ' . $strNiveau . '404/index.php');
 }
 
 $objResultInfosProjet->free_result();
 
-//-----Requete pour aller chercher le nom de l'auteur du projet-----//
+//----- 4.2 Requete pour aller chercher le nom de l'auteur du projet -----//
 $strSQLEtudiant = "SELECT prenom_diplome, nom_diplome, id_diplome, slug FROM t_diplome WHERE id_diplome = " . $intIdEtudiant;
 if ($objResultEtudiant = $objConnMySQLi->query($strSQLEtudiant)) {
     while ($objLigneEtudiant = $objResultEtudiant->fetch_object()) {
@@ -80,12 +83,12 @@ if ($objResultEtudiant = $objConnMySQLi->query($strSQLEtudiant)) {
 
 //En cas d'erreur de requête
 if($objResultEtudiant->num_rows == 0){
-    header('Location: ' . $strNiveau . 'erreur/index.php');
+    header('Location: ' . $strNiveau . '404/index.php');
 }
 
 $objResultEtudiant->free_result();
 
-//-----Requete pour aller chercher les autres projets du diplômé-----//
+//----- 4.3 Requete pour aller chercher les autres projets du diplômé -----//
 $strSQLAutresProjets = "SELECT id_projet, titre_projet, slug FROM t_projet_diplome WHERE id_diplome = " . $intIdEtudiant;
 if ($objResultAutresProjets = $objConnMySQLi->query($strSQLAutresProjets)) {
     while ($objLigneAutresProjets = $objResultAutresProjets->fetch_object()) {
@@ -102,7 +105,7 @@ if ($objResultAutresProjets = $objConnMySQLi->query($strSQLAutresProjets)) {
 
 //En cas d'erreur de requête
 if($objResultAutresProjets->num_rows == 0){
-    header('Location: ' . $strNiveau . 'erreur/index.php');
+    header('Location: ' . $strNiveau . '404/index.php');
 }
 
 $objResultAutresProjets->free_result();
@@ -110,7 +113,17 @@ $objResultAutresProjets->free_result();
 // fermer la connexion
 $objConnMySQLi->close();
 
-///////////// TWIG //////////////
+/*************** 5. IMAGES DU PROJET ***********************/
+$intNoImg = 1;
+
+while(file_exists($strNiveau . '/dist/images/projets/prj' . $arrInfosProjet['id'] . '_' . $intNoImg . '.jpg')){
+    echo 'le fichier prj' . $arrInfosProjet['id'] . '_' . $intNoImg . '.jpg existe!';
+    $intNoImg++;
+}
+
+
+
+/*************** 6. TWIG ***********************/
 $template = $twig->loadTemplate('pieces/head.html.twig');
 echo $template->render(array(
     'title' => "Techniques d'intégration multimédia | TIM",
