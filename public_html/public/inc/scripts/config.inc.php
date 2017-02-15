@@ -33,39 +33,7 @@ if ($blnLocal) {
 if ($blnLocal) {
     $strBdServer   = 'localhost';
     $strBdUsername = 'root';
-
-<<<<<<< HEAD
-    // personne responsable des bogues (gestion des erreurs)
-    // nota bene: les envois de courriels sur timunix n'ont fonctionné qu'avec l'adresse de cegep-ste-foy.qc.ca
-    $strCourrielContact= '1461210@etu.cegep-ste-foy.qc.ca'; //VOTRE adresse courriel VALIDE. Sinon, à répétition, cela bloque le serveur de courriel du cegep entier!
-
-    // Verifier si l'exécution se fait sur le serveur de développement (local) ou celui de la production:
-    if (stristr($_SERVER['HTTP_HOST'], 'local') || (substr($_SERVER['HTTP_HOST'], 0, 7) == '192.168')) {
-    	$blnLocal = TRUE;
-    } else {
-    	$blnLocal = FALSE;
-    }
-
-    /**
-     * Selon l'environnement d'exécution (développement ou hébergement)
-     * @todo Adapter les variables de connexion des 2 environnements
-     */
-    if ($blnLocal) {
-	    $strBdServer   = 'localhost';
-        $strBdUsername = 'root';
-        $strBdPassword = 'root';
-        $strBdName     = 'bdtim2017_hooli';
-    } else {
-        $strBdServer   = 'timunix.cegep-ste-foy.qc.ca';
-        $strBdUsername = 't17-hooli';
-        $strBdPassword = 'pinsonnoir';
-        $strBdName     = 'bdtim2017_hooli';  //ou bdTraces2015_base selon l'exercice!
-                                              //mot de passe: t1m2015
-    }
-=======
     $strBdPassword = 'root';
->>>>>>> b7bc5f0199b34c3ac2a4c9ae28fec6984b17720e
-
     $strBdName     = 'bdtim2017_hooli';
 } else {
     $strBdServer   = 'timunix.cegep-ste-foy.qc.ca';

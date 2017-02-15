@@ -78,7 +78,18 @@
                 {% if texteErreurProjets == false %}
                     <ul>
                         {% for projet in arrProjets %}
-                            <li><a href="diplomes/fiche_projet/index.php?id={{ projet.id }}">{{ projet.titre }}</a></li>
+                            <li>
+                                <a href="diplomes/fiche_projet/index.php?id={{ projet.id }}">
+                                    <div class="img_projet">
+                                        <picture>
+                                            <!--<source media="" srcset="../images/projets/prj408_01-mobile.jpg 1x, ../images/projets/prj408_01-mobile@2x.jpg 2x">
+                                            <source media="(min-width: 800px)" srcset="../images/projets/prj408_01-table.jpg 1x, ../images/projets/prj408_01-table@2x.jpg 2x">-->
+                                            <img src="dist/images/projets/prj{{ projet.id }}_01.jpg" alt="{{ projet.titre }}">
+                                        </picture>
+                                    </div>
+                                    <span class="titre_projet">{{ projet.titre }}</span>
+                                </a>
+                            </li>
                         {% endfor %}
                     </ul>
                 {% else %}
