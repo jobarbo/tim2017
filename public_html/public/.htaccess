@@ -1,0 +1,62 @@
+ErrorDocument 404 http://localhost/prod6/TIM2017_team/public/404/
+
+
+# ------------ Cache et expiration ----------
+
+
+# ------------ Compression GZIP -------------
+
+
+# ------------ Notes: ------------
+
+# RewriteRule est le mot-clé obligatoire
+# ^ signifie le début de la regex
+# La première partie détermine l'URL recherché
+# $ signifie la fin de la regex
+# La deuxièmre partie détermine la vrai URL servi
+# [L] permet de spécifier que cette règle sera la dernière appliquée
+# [QSA] ajoute la chaîne de requête de la requête à l'URL substituée
+# () chaînes de requêtes. Voue pouvez en utiliser plusieurs
+# $1 chaîne de requête
+# $2 chaîne de requête
+# $3 etc...
+
+# ------------ Réécriture d'URL: ------------
+
+
+RewriteEngine on
+RewriteBase /public/
+
+# Page accueil
+RewriteRule ^/$ index.php [L]
+
+# Section Futur Étudiant
+RewriteRule ^futur-etudiant/$ futur_etudiant/index.php [L]
+# ...
+
+
+# Section Programme
+RewriteRule ^programme/$ programme/index.php [L]
+RewriteRule ^programme/grille-cours/fiche-cours/(.*)$ programme/grille_cours/fiche_cours/index.php?slug=$1 [L,QSA]
+# ...
+
+# Section Stages
+RewriteRule ^stages/$ stages/index.php [L]
+# ...
+
+# Section Diplome
+RewriteRule ^diplomes/$ diplomes/index.php [L]
+RewriteRule ^diplomes/fiche-projet/([0-9]+)$ diplomes/fiche_projet/index.php?projet=$1 [L,QSA]
+# ...
+
+# Page Nous Joindre
+RewriteRule ^nousJoindre/$ nousJoindre/index.php [L]
+RewriteRule ^nous-joindre/(.*)&(.*)$ nous_joindre/index.php?type=$1&slug=$2 [L,QSA]
+# ...
+
+# Section Admin
+RewriteRule ^csf_admin/$ csf_admin/administration.php [L]
+
+# Page Erreur 404
+RewriteRule ^404/$ 404/index.php [L]
+# ...
