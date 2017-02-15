@@ -71,7 +71,7 @@ try {
 
     //En cas d'erreur de requête
     if ($objResultTexte->num_rows == 0) {
-        header('Location: ' . $strNiveau . 'erreur/index.php');
+        header('Location: ' . $strNiveau . '404/index.php');
     }
 
     $objResultTexte->free_result();
@@ -121,7 +121,7 @@ if ($objResultTexte = $objConnMySQLi->query($strSQLTexte)) {
 
     //En cas d'erreur de requête
     if ($objResultDiplome->num_rows == 0) {
-        header('Location: ' . $strNiveau . 'erreur/index.php');
+        header('Location: ' . $strNiveau . '404/index.php');
     }
 
     $objResultDiplome->free_result();

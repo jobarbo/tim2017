@@ -78,7 +78,7 @@
                 {% if texteErreurProjets == false %}
                     <ul>
                         {% for projet in arrProjets %}
-                            <li><a href="diplomes/fiche_projet?id={{ projet.id }}">{{ projet.titre }}</a></li>
+                            <li><a href="diplomes/fiche_projet/index.php?id={{ projet.id }}">{{ projet.titre }}</a></li>
                         {% endfor %}
                     </ul>
                 {% else %}

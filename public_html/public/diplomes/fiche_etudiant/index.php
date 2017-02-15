@@ -37,7 +37,7 @@ if (isset($_GET['id'])) {
 >>>>>>> 3d8ed281c0758d5209ed5d89ec47dedd3da9e55f
     $intIdEtudiant = $_GET['id'];
 } else {
-    header('Location: ' . $strNiveau . 'erreur/index.php');
+    header('Location: ' . $strNiveau . '404/index.php');
 }
 
 /*************** 4. REQUÊTES FICHE DIPLÔMÉ ***********************/
@@ -108,7 +108,7 @@ try {
 
     //En cas d'erreur de requête
     if ($objResultInfosEtudiant->num_rows == 0) {
-        header('Location: ' . $strNiveau . 'erreur/index.php');
+        header('Location: ' . $strNiveau . '404/index.php');
     }
 
     $objResultInfosEtudiant->free_result();
@@ -154,7 +154,7 @@ if ($objResultProjetsEtudiant = $objConnMySQLi->query($strSQLProjetsEtudiant)) {
 
         //En cas d'erreur de requête
         if ($objResultProjetsEtudiant->num_rows == 0) {
-            header('Location: ' . $strNiveau . 'erreur/index.php');
+            header('Location: ' . $strNiveau . '404/index.php');
         }
 
         $objResultProjetsEtudiant->free_result();
