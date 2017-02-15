@@ -8,9 +8,14 @@
  * 2. INSTANCIATION CONFIG ET TWIG
  * 3. REÇOIT ID DU PROJET
  * 4. REQUÊTES FICHE PROJET
+<<<<<<< HEAD
  * 4.1 Requete pour aller chercher tous les infos du projet
  * 4.2 Requete pour aller chercher le nom de l'auteur du projet
  * 4.3 Requete pour aller chercher les autres projets du diplômé
+=======
+ * 4.1 Requete pour aller chercher tous les infos du diplômé
+ * 4.2 Requete pour aller chercher tous les projets du diplômé
+>>>>>>> 3d8ed281c0758d5209ed5d89ec47dedd3da9e55f
  * 5. TWIG
  *
  *  FICHE PROJET
@@ -91,12 +96,12 @@ $strSQLAutresProjets = "SELECT id_projet, titre_projet, slug FROM t_projet_diplo
 if ($objResultAutresProjets = $objConnMySQLi->query($strSQLAutresProjets)) {
     while ($objLigneAutresProjets = $objResultAutresProjets->fetch_object()) {
         if($objLigneAutresProjets->id_projet != $intIdProjet){
-        $arrAutresProjets[] =
-            array(
-                'id'=>$objLigneAutresProjets->id_projet,
-                'titre'=>$objLigneAutresProjets->titre_projet,
-                'slug'=>$objLigneAutresProjets->slug
-            );
+            $arrAutresProjets[] =
+                array(
+                    'id'=>$objLigneAutresProjets->id_projet,
+                    'titre'=>$objLigneAutresProjets->titre_projet,
+                    'slug'=>$objLigneAutresProjets->slug
+                );
         }
     }
 }

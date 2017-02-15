@@ -10,6 +10,10 @@ var app = $(function configurer(evenement){
 
     $( "fieldset" ).each(function( index ) {
         $("#Q" + index).hide();
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 3d8ed281c0758d5209ed5d89ec47dedd3da9e55f
     });
 
     /**
