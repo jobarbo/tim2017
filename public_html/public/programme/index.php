@@ -15,7 +15,6 @@
 
 $strNiveau = "../";
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
-
 try {
 
 //Requête permettant d'aller chercher tout le texte de la page Programme
