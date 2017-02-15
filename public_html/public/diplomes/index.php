@@ -16,6 +16,8 @@
 /*************** 1. VARIABLES LOCALES ***********************/
 $strNiveau = "../";
 $strTriInterets = "";
+$strSection = "Diplômés";
+
 if (isset($_GET['tri_interets'])) {
     $strTriInterets = 'interet_' . $_GET['tri_interets'];
 }
