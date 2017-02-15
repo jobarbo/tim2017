@@ -15,7 +15,6 @@ $pages = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 require '../inc/lib/PHPMailer-master/PHPMailerAutoload.php';
 
 
-
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $mail = new PHPMailer;
     $mail->CharSet = 'UTF-8';
@@ -38,10 +37,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $mail->Body    = 'Message de '.$_POST['name'].'<br>'.$_POST['email'].'<br><br>'.$_POST['message'];
 
     if(!$mail->send()) {
-        echo 'Message could not be sent.';
+        echo 'Votre message n\'a pas pu être envoyé.';
         echo 'Mailer Error: ' . $mail->ErrorInfo;
     } else {
-        echo 'Message has been sent';
+        echo 'Votre message a bien été envoyé !';
     }
 
 }
