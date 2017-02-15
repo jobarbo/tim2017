@@ -51,7 +51,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 $template = $twig->loadTemplate('pieces/head.html.twig');
 echo $template->render(array(
     'title' => "Techniques d'intégration multimédia | TIM",
-    'page' => "Les Stages en Techniques d'Intégration Multimédia",
+    'page' => "Nous joindre | ",
     'niveau' => $strNiveau
 ));
 
