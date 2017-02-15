@@ -109,7 +109,7 @@ ul{
 
 
 /* Inputs */
-input{
+input[type="text"], input[type="email"]{
 	width: 320px;
 	height: 47px;
 	padding: 3px;
