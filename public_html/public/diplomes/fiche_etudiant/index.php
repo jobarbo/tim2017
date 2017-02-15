@@ -20,6 +20,7 @@
 $strNiveau = "../../";
 $strTriInterets = "";
 $intIdEtudiant = null;
+$strSection = "Fiche étudiant";
 
 /*************** 2. INSTANCIATION CONFIG ET TWIG ***********************/
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
