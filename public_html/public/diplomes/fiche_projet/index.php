@@ -8,15 +8,11 @@
  * 2. INSTANCIATION CONFIG ET TWIG
  * 3. REÇOIT ID DU PROJET
  * 4. REQUÊTES FICHE PROJET
-<<<<<<< HEAD
  * 4.1 Requete pour aller chercher tous les infos du projet
  * 4.2 Requete pour aller chercher le nom de l'auteur du projet
  * 4.3 Requete pour aller chercher les autres projets du diplômé
-=======
- * 4.1 Requete pour aller chercher tous les infos du diplômé
- * 4.2 Requete pour aller chercher tous les projets du diplômé
->>>>>>> 3d8ed281c0758d5209ed5d89ec47dedd3da9e55f
- * 5. TWIG
+ * 5. IMAGES DU PROJET
+ * 6. TWIG
  *
  *  FICHE PROJET
  */
@@ -26,6 +22,7 @@
 $strNiveau="../../";
 $intIdProjet = null;
 $intIdEtudiant = null;
+$strSection = "Fiche projet";
 
 /*************** 2. INSTANCIATION CONFIG ET TWIG ***********************/
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
@@ -116,7 +113,20 @@ $objResultAutresProjets->free_result();
 // fermer la connexion
 $objConnMySQLi->close();
 
-/*************** 5. TWIG ***********************/
+/*************** 5. IMAGES DU PROJET ***********************/
+$intNoImg = 1;
+
+while(file_exists($strNiveau . '/dist/images/projets/prj' . $arrInfosProjet['id'] . '_0' . $intNoImg . '.jpg')){
+    echo 'le fichier prj' . $arrInfosProjet['id'] . '_' . $intNoImg . '.jpg existe!';
+    $arrProjetImg[] = array(
+        'src'=>'prj' . $arrInfosProjet['id'] . '_0' . $intNoImg . '.jpg',
+        'alt'=>'Image numéro ' . $intNoImg . ' du projet ' . $arrInfosProjet['titre']);
+    $intNoImg++;
+}
+
+
+
+/*************** 6. TWIG ***********************/
 $template = $twig->loadTemplate('pieces/head.html.twig');
 echo $template->render(array(
     'title' => "Techniques d'intégration multimédia | TIM",
@@ -135,7 +145,8 @@ echo $template->render(array(
     'page' => $arrInfosProjet['titre'],
     'arrInfos' => $arrInfosProjet,
     'arrInfosEtudiant' => $arrEtudiant,
-    'arrAutresProjets' => $arrAutresProjets
+    'arrAutresProjets' => $arrAutresProjets,
+    'arrImagesPrj' => $arrProjetImg
 ));
 
 $template = $twig->loadTemplate('pieces/footer.html.twig');

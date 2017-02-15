@@ -17,55 +17,24 @@
 
 
 /*************** 1. VARIABLES LOCALES ***********************/
-<<<<<<< HEAD
-$strNiveau="../../";
-=======
 $strNiveau = "../../";
->>>>>>> 3d8ed281c0758d5209ed5d89ec47dedd3da9e55f
 $strTriInterets = "";
 $intIdEtudiant = null;
+$strSection = "Fiche étudiant";
 
 /*************** 2. INSTANCIATION CONFIG ET TWIG ***********************/
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 
 
 /*************** 3. REÇOIT ID DE L'ÉTUDIANT ***********************/
-<<<<<<< HEAD
-if(isset($_GET['id'])){
-=======
 if (isset($_GET['id'])) {
->>>>>>> 3d8ed281c0758d5209ed5d89ec47dedd3da9e55f
     $intIdEtudiant = $_GET['id'];
 } else {
-    header('Location: ' . $strNiveau . '404/index.php');
+    header('Location: ' . $strNiveau . 'erreur/index.php');
 }
 
 /*************** 4. REQUÊTES FICHE DIPLÔMÉ ***********************/
 //----- 4.1 Requete pour aller chercher tous les infos du diplômé -----//
-<<<<<<< HEAD
-$strSQLInfosEtudiant = "SELECT * FROM t_diplome WHERE id_diplome = " . $intIdEtudiant;
-if ($objResultInfosEtudiant = $objConnMySQLi->query($strSQLInfosEtudiant)) {
-    while ($objLigneInfosEtudiant = $objResultInfosEtudiant->fetch_object()) {
-        $arrInfosEtudiant =
-            array(
-                'id'=>$objLigneInfosEtudiant->id_diplome,
-                'prenom'=>$objLigneInfosEtudiant->prenom_diplome,
-                'nom'=>$objLigneInfosEtudiant->nom_diplome,
-                'slug'=>$objLigneInfosEtudiant->slug,
-                'profil'=>$objLigneInfosEtudiant->profil,
-                'forces'=>$objLigneInfosEtudiant->forces,
-                'interet_gestion'=>$objLigneInfosEtudiant->interet_gestion_projet,
-                'interet_design'=>$objLigneInfosEtudiant->interet_design_interface,
-                'interet_traitement'=>$objLigneInfosEtudiant->interet_traitement_medias,
-                'interet_integration'=>$objLigneInfosEtudiant->interet_integration,
-                'interet_programmation'=>$objLigneInfosEtudiant->interet_programmation,
-                'courriel'=>$objLigneInfosEtudiant->courriel_diplome,
-                'twitter'=>$objLigneInfosEtudiant->pseudo_twitter_diplome,
-                'linkedin'=>$objLigneInfosEtudiant->linkedin_diplome,
-                'site_web'=>$objLigneInfosEtudiant->site_web_diplome,
-                'nom_usager_admin'=>$objLigneInfosEtudiant->nom_usager_admin
-            );
-=======
 try {
     $strSQLInfosEtudiant = "SELECT * FROM t_diplome WHERE id_diplome = " . $intIdEtudiant;
 
@@ -102,13 +71,12 @@ try {
         }
 
         $texteErreurFiche = false;
->>>>>>> 3d8ed281c0758d5209ed5d89ec47dedd3da9e55f
     }
 
 
     //En cas d'erreur de requête
     if ($objResultInfosEtudiant->num_rows == 0) {
-        header('Location: ' . $strNiveau . '404/index.php');
+        header('Location: ' . $strNiveau . 'erreur/index.php');
     }
 
     $objResultInfosEtudiant->free_result();
@@ -119,20 +87,6 @@ try {
 
         $objResultProjetsEtudiant = $objConnMySQLi->query($strSQLProjetsEtudiant);
 
-<<<<<<< HEAD
-$objResultInfosEtudiant->free_result();
-
-//----- 4.2 Requete pour aller chercher tous les projets du diplômé -----//
-$strSQLProjetsEtudiant = "SELECT id_projet, titre_projet, slug FROM t_projet_diplome WHERE id_diplome = " . $intIdEtudiant;
-if ($objResultProjetsEtudiant = $objConnMySQLi->query($strSQLProjetsEtudiant)) {
-    while ($objLigneProjetsEtudiant = $objResultProjetsEtudiant->fetch_object()) {
-        $arrProjetsEtudiant[] =
-            array(
-                'id'=>$objLigneProjetsEtudiant->id_projet,
-                'titre'=>$objLigneProjetsEtudiant->titre_projet,
-                'slug'=>$objLigneProjetsEtudiant->slug
-            );
-=======
         if ($objResultProjetsEtudiant == false) {
             $strMsgErrProjets = "<p>Les projets de l'étudiant n'a pu être affichés, réessayez plus tard</p>";
             $except = new Exception($strMsgErrProjets);
@@ -154,7 +108,7 @@ if ($objResultProjetsEtudiant = $objConnMySQLi->query($strSQLProjetsEtudiant)) {
 
         //En cas d'erreur de requête
         if ($objResultProjetsEtudiant->num_rows == 0) {
-            header('Location: ' . $strNiveau . '404/index.php');
+            header('Location: ' . $strNiveau . 'erreur/index.php');
         }
 
         $objResultProjetsEtudiant->free_result();
@@ -162,7 +116,6 @@ if ($objResultProjetsEtudiant = $objConnMySQLi->query($strSQLProjetsEtudiant)) {
 
     } catch (Exception $e) {
         $texteErreurProjets = $e->getMessage();
->>>>>>> 3d8ed281c0758d5209ed5d89ec47dedd3da9e55f
     }
 
 } catch (Exception $e) {
