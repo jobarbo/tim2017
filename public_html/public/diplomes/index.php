@@ -22,11 +22,9 @@
 
 
 /*************** 1. VARIABLES LOCALES ***********************/
-<<<<<<< HEAD
+
 $strNiveau="../";
-=======
-$strNiveau = "../";
->>>>>>> 3d8ed281c0758d5209ed5d89ec47dedd3da9e55f
+
 $strTriInterets = "";
 
 if (isset($_GET['tri_interets'])) {
@@ -39,7 +37,7 @@ echo $strTriInterets;
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 
 /*************** 3. REQUÊTES DIPLÔMÉS ***********************/
-<<<<<<< HEAD
+
 
 //----- 3.1 Requete pour aller chercher tous les diplômés -----//
 //----Requete par défaut, sans option de tri----//
@@ -49,14 +47,12 @@ if($strTriInterets == "") {
 //----Requete selon option de tri sélectionné----//
     $strSQLDiplomes = "SELECT prenom_diplome, nom_diplome, slug, id_diplome FROM t_diplome ORDER BY " . $strTriInterets . " desc";
 }
-=======
 
 //----- 3.1 Requete pour aller chercher le texte d'intro -----//
 try {
     $strSQLTexte = "SELECT texte FROM t_texte WHERE section_et_page = 'Diplômés'";
 
     $objResultTexte = $objConnMySQLi->query($strSQLTexte);
->>>>>>> 3d8ed281c0758d5209ed5d89ec47dedd3da9e55f
 
     if ($objResultTexte == false) {
         $strMsgErr = "<p>Les textes n'ont pu être affichés, réessayez plus tard</p>";
@@ -90,13 +86,12 @@ try {
         $strSQLDiplomes = "SELECT prenom_diplome, nom_diplome, slug, id_diplome FROM t_diplome ORDER BY " . $strTriInterets . " desc";
     }
 
-<<<<<<< HEAD
+
 //----- 3.2 Requete pour aller chercher le texte d'intro -----//
 $strSQLTexte = "SELECT texte FROM t_texte WHERE section_et_page = 'Diplômés'";
 if ($objResultTexte = $objConnMySQLi->query($strSQLTexte)) {
     while ($objLigneTexte = $objResultTexte->fetch_object()) {
         $texteIntro = $objLigneTexte->texte;
-=======
     $objResultDiplome = $objConnMySQLi->query($strSQLDiplomes);
 
     if ($objResultDiplome == false) {
@@ -116,7 +111,7 @@ if ($objResultTexte = $objConnMySQLi->query($strSQLTexte)) {
                 );
         }
         $strMsgErrDiplomes = false;
->>>>>>> 3d8ed281c0758d5209ed5d89ec47dedd3da9e55f
+
     }
 
     //En cas d'erreur de requête
@@ -133,11 +128,9 @@ if ($objResultTexte = $objConnMySQLi->query($strSQLTexte)) {
 // fermer la connexion
 $objConnMySQLi->close();
 
-<<<<<<< HEAD
+
 /*************** 4. TWIG ***********************/
-=======
-/*************** 4 TWIG ***********************/
->>>>>>> 3d8ed281c0758d5209ed5d89ec47dedd3da9e55f
+
 $template = $twig->loadTemplate('pieces/head.html.twig');
 echo $template->render(array(
     'title' => "Techniques d'intégration multimédia | TIM",
