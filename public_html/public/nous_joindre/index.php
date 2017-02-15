@@ -10,8 +10,6 @@ $stmt->execute();
 $pages = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 
 
-<<<<<<< HEAD
-=======
 
 //PHPMailer
 require '../inc/lib/PHPMailer-master/PHPMailerAutoload.php';
@@ -49,7 +47,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
->>>>>>> 3d8ed281c0758d5209ed5d89ec47dedd3da9e55f
 //Templates
 $template = $twig->loadTemplate('pieces/head.html.twig');
 echo $template->render(array(
