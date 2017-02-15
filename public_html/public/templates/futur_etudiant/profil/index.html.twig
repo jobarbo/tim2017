@@ -2,8 +2,9 @@
     <main>
         <h1>As-tu le profil?</h1>
         <div class="contenuInteractif">
-            <p class='progression'></p>
+            <p id='progression'></p>
             <p id='retroaction'></p>
+            <p id="erreurQuiz1">{{ erreur }}</p>
         </div>
         <div class="col-sm-6">
             {% for i in 0..9 %}
@@ -11,7 +12,7 @@
             {% endfor %}
         </div>
         <div class="col-sm-6">
-            <form name="quiz_bon_profil" action="#" method="POST">
+            <form name="quiz_bon_profil" action="futur_etudiant/profil" method="GET">
                 {% for i in 0..9 %}
                     <fieldset id="Q{{ i }}">
                         <ul class="choixReponses">
@@ -25,14 +26,8 @@
                     </fieldset>
                 {% endfor %}
                 <input id='validerQuiz' name='validerQuiz' type="submit" value="Valider">
-                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                <br /><br />
             </form>
         </div>
-        {% for i in 0..2 %}
-            <p>{{ xmlR[i]['commentaire'] }}</p>
-            <p>{{ xmlR[i]['min'] }}</p>
-            <p>{{ xmlR[i]['max'] }}</p>
-            <br />
-        {% endfor %}
     </main>
 </div>
