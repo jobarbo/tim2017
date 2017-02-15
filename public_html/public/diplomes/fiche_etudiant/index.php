@@ -172,7 +172,7 @@ if ($objResultProjetsEtudiant = $objConnMySQLi->query($strSQLProjetsEtudiant)) {
 // fermer la connexion
 $objConnMySQLi->close();
 
-/*************** 5. TWIG ***********************/
+/*************** 6. TWIG ***********************/
 $template = $twig->loadTemplate('pieces/head.html.twig');
 echo $template->render(array(
     'title' => "Techniques d'intégration multimédia | TIM",

@@ -65,7 +65,7 @@ try {
         throw $except;
     }else{
         while ($objLigneTexte = $objResultTexte->fetch_object()) {
-            $strTexteIntro = $objLigneTexte->texte;
+            $texteIntro = $objLigneTexte->texte;
         }
     }
 
@@ -77,7 +77,7 @@ try {
     $objResultTexte->free_result();
 
 } catch (Exception $e) {
-    $srtTexteIntro = $e->getMessage();
+    $texteIntro = $e->getMessage();
 }
 
 //----- 3.2 Requete pour aller chercher tous les diplômés -----//
@@ -154,7 +154,7 @@ $template = $twig->loadTemplate('diplomes/index.html.twig');
 echo $template->render(array(
     'niveau' => $strNiveau,
     'page' => "Nos diplômés 2017",
-    'texteIntro' => $strTexteIntro,
+    'texteIntro' => $texteIntro,
     'diplomes' => $arrDiplomes,
     'erreur' => $strMsgErrDiplomes
 ));

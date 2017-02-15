@@ -7,11 +7,19 @@
         </div>
         <div class="col-sm-6">
             {% for i in 0..9 %}
+<<<<<<< HEAD
+            <h4>{{ xml[i]['texteQuestion'] }}</h4>
+            {% endfor %}
+        </div>
+        <div class="col-sm-6">
+            <form name="quiz_bon_profil" action="" method="POST">
+=======
             <span id="qProfil{{ i }}">{{ xml[i]['texteQuestion'] }}</span>
             {% endfor %}
         </div>
         <div class="col-sm-6">
             <form name="quiz_bon_profil" action="#" method="POST">
+>>>>>>> 3d8ed281c0758d5209ed5d89ec47dedd3da9e55f
                 {% for i in 0..9 %}
                     <fieldset id="Q{{ i }}">
                         <ul class="choixReponses">
