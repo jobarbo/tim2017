@@ -5,13 +5,18 @@
 <body>
 <h1>ÉQUIPE</h1>
 {% for valeur in arrTextes %}
-<h2>{{ valeur['titre'] }}</h2>
-<p>{{ valeur['paragraphe'] | raw }}</p>
+    <h2>{{ valeur['titre'] }}</h2>
+    {{ valeur['paragraphe'] | raw }}
 {% endfor %}
-{% for valeur in arrProfs %}
-    <div>
-        <p>{{ valeur['prenom'] }} {{ valeur['nom'] }}</p>
-        <p>{{ valeur['courriel'] }} {{ valeur['pseudo'] }} {{ valeur['linkedin'] }} {{ valeur['site'] }}</p>
-    </div>
-{% endfor %}
+<div class="conteneur_enseignants">
+    {% for valeur in arrProfs %}
+        <div class="contenu_enseignant">
+            <img src="dist/images/photo_enseignants/{{ valeur['nom'] | lower }}.png"
+                 alt="{{ valeur['prenom'] }} {{ valeur['nom'] }}"/>
+            <hr>
+            <span>{{ valeur['prenom'] }} {{ valeur['nom'] }}</span>
+            <p>{{ valeur['courriel'] }} {{ valeur['pseudo'] }} {{ valeur['linkedin'] }} {{ valeur['site'] }}</p>
+        </div>
+    {% endfor %}
+</div>
 </body>
