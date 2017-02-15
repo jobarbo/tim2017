@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1>Nous joindre</h1>
 
 <h2>Contactez-nous</h2>
@@ -53,3 +54,70 @@
 
     <a href="https://goo.gl/maps/RfnK9Gnm2112">Ouvrir dans google maps</a>
 </div>
+=======
+<head>
+    <meta charset="utf-8"/>
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>Nous joindre</h1>
+
+
+    <section class="contact center-page">
+        <div class="form">
+            <h2>Contactez-nous</h2>
+
+            {# formulaire de contact #}
+            <form action="" class="form" method="post">
+                {# nom complet #}
+                <label for="name">Nom complet</label>
+                <input required type="text" id="name" name="name" title="Entrez votre nom" placeholder="Entrez votre nom complet">
+
+                {# email #}
+                <label for="email">Adresse courriel</label>
+                <input required type="email" id="email" name="email" title="Entrez votre adresse courriel" placeholder="adresse@domaine.com">
+
+                {# destinataire #}
+                <label for="recipient">Destinataire</label>
+                <select name="recipient" id="recipient" title="Sélectionnez un destinataire" aria-describedby="destinataire-tip">
+                    <option value="slamoureux@cegep-ste-foy.qc.ca">Sylvain Lamoureux (Coordonnateur départemental)</option>
+                    <option value="ggaulinlaquerre@cegep-ste-foy.qc.ca">Guillaume Gaulin-Laquerre (Webmestre)</option>
+                    <option value="stages-tim@cegep-ste-foy.qc.ca">Audrey Morneau-Gagnon (Responsable des stages)</option>
+                    <option value="bfrigon@cegep-ste-foy.qc.ca">Benoît Frigon (Responsable "Étudiant d'un jour")</option>
+                </select>
+
+                {# sujet #}
+                <label for="subject">Sujet</label>
+                <input required type="text" id="subject" name="subject" title="Entrez le sujet de votre message" placeholder="Entrez le sujet de votre message">
+
+                {# Message #}
+                <label for="message">Message</label>
+                <textarea name="message" id="message" title="Entrez votre message" aria-describedby="message-tip" placeholder="Entrez votre message"></textarea>
+
+                {# Submit #}
+                <button type="submit" id="submit" name="submit" value="submit">Envoyer</button>
+            </form>
+        </div>
+
+
+        <div class="coordination">
+            <img src="../../assets/images/photo_enseignants/lamoureux.png" alt="Photo de Sylvain Lamoureux">
+            {% for page in pages %}
+                {{ page.texte | raw}}
+            {% endfor %}
+        </div>
+    </section>
+
+
+    <section class="maps center-page">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2731.910858724522!2d-71.28615244180301!3d46.78636084500936!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb896dea093d777%3A0xf81581457f682cd6!2sC%C3%A9gep+de+Sainte-Foy!5e0!3m2!1sen!2sca!4v1487101030511" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+        <div class="infos">
+            <p>Cégep de Sainte-Foy</p>
+            <p>2410 chemin Sainte-Foy, Québec G1V 1T3</p>
+
+            <a href="https://goo.gl/maps/RfnK9Gnm2112">Ouvrir dans google maps</a>
+        </div>
+    </section>
+</body>
+>>>>>>> 7d2022b5f37ede2a1da8aaf8e98976f0e7af85e1
