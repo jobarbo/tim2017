@@ -46,8 +46,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 
-
-//Templates
 $template = $twig->loadTemplate('pieces/head.html.twig');
 echo $template->render(array(
     'title' => "Techniques d'intégration multimédia | TIM",

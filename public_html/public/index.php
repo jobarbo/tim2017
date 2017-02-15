@@ -1,7 +1,7 @@
 <?php
 
 $strNiveau="";
-
+$section = "Accueil";
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 
 ///////////// EXEMPLE AVEC TWIG //////////////
