@@ -7,7 +7,7 @@ css/
 .idea/
 **/.idea/
 
-config.inc.php
+inc/scripts/config.inc.php
 stylesheets/
 bower_components/
 node_modules/
