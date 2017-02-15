@@ -66,6 +66,21 @@
   }
 }
 
+
+
+
+
+/* Centrer dans la page */
+.center-page{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
 @media (min-width: 768px) {
   .row-sm-height {
     display: table;
