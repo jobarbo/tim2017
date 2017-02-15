@@ -29,7 +29,7 @@ require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 if (isset($_GET['id'])) {
     $intIdEtudiant = $_GET['id'];
 } else {
-    header('Location: ' . $strNiveau . 'erreur/index.php');
+    header('Location: ' . $strNiveau . '404/index.php');
 }
 
 /*************** 4. REQUÊTES FICHE DIPLÔMÉ ***********************/
@@ -75,7 +75,7 @@ try {
 
     //En cas d'erreur de requête
     if ($objResultInfosEtudiant->num_rows == 0) {
-        header('Location: ' . $strNiveau . 'erreur/index.php');
+        header('Location: ' . $strNiveau . '404/index.php');
     }
 
     $objResultInfosEtudiant->free_result();
@@ -107,7 +107,7 @@ try {
 
         //En cas d'erreur de requête
         if ($objResultProjetsEtudiant->num_rows == 0) {
-            header('Location: ' . $strNiveau . 'erreur/index.php');
+            header('Location: ' . $strNiveau . '404/index.php');
         }
 
         $objResultProjetsEtudiant->free_result();
