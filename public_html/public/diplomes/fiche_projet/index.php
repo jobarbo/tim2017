@@ -116,8 +116,11 @@ $objConnMySQLi->close();
 /*************** 5. IMAGES DU PROJET ***********************/
 $intNoImg = 1;
 
-while(file_exists($strNiveau . '/dist/images/projets/prj' . $arrInfosProjet['id'] . '_' . $intNoImg . '.jpg')){
+while(file_exists($strNiveau . '/dist/images/projets/prj' . $arrInfosProjet['id'] . '_0' . $intNoImg . '.jpg')){
     echo 'le fichier prj' . $arrInfosProjet['id'] . '_' . $intNoImg . '.jpg existe!';
+    $arrProjetImg[] = array(
+        'src'=>'prj' . $arrInfosProjet['id'] . '_0' . $intNoImg . '.jpg',
+        'alt'=>'Image numéro ' . $intNoImg . ' du projet ' . $arrInfosProjet['titre']);
     $intNoImg++;
 }
 
@@ -142,7 +145,8 @@ echo $template->render(array(
     'page' => $arrInfosProjet['titre'],
     'arrInfos' => $arrInfosProjet,
     'arrInfosEtudiant' => $arrEtudiant,
-    'arrAutresProjets' => $arrAutresProjets
+    'arrAutresProjets' => $arrAutresProjets,
+    'arrImagesPrj' => $arrProjetImg
 ));
 
 $template = $twig->loadTemplate('pieces/footer.html.twig');

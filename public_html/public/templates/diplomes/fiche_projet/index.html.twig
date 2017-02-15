@@ -21,24 +21,19 @@
         </div>
         <div class="photos_projet">
             <ul>
-                <li>
-                    <a href="/dist/images/projets/prj{{ arrInfos.id }}_01.jpg" title="{{ arrInfos.titre }}">
-                        <picture>
-                            <!--<source media="" srcset="../images/projets/prj408_01-mobile.jpg 1x, ../images/projets/prj408_01-mobile@2x.jpg 2x">
-                            <source media="(min-width: 800px)" srcset="../images/projets/prj408_01-table.jpg 1x, ../images/projets/prj408_01-table@2x.jpg 2x">-->
-                            <img src="dist/images/projets/prj{{ arrInfos.id }}_01.jpg" alt="{{ arrInfos.titre }}">
-                        </picture>
-                    </a>
-                </li>
-                <li>
-                    <a href="/dist/images/projets/prj{{ arrInfos.id }}_02.jpg" title="{{ arrInfos.titre }}">
-                        <picture>
-                            <!--<source media="" srcset="../images/projets/prj408_01-mobile.jpg 1x, ../images/projets/prj408_01-mobile@2x.jpg 2x">
-                            <source media="(min-width: 800px)" srcset="../images/projets/prj408_01-table.jpg 1x, ../images/projets/prj408_01-table@2x.jpg 2x">-->
-                            <img src="dist/images/projets/prj{{ arrInfos.id }}_02.jpg" alt="{{ arrInfos.titre }}">
-                        </picture>
-                    </a>
-                </li>
+                {% for imagesPrj in arrImagesPrj %}
+
+                    <li>
+                        <a href="/dist/images/projets/{{ imagesPrj.src }}" title="{{ arrInfos.titre }}">
+                            <picture>
+                                <!--<source media="" srcset="../images/projets/prj408_01-mobile.jpg 1x, ../images/projets/prj408_01-mobile@2x.jpg 2x">
+                                <source media="(min-width: 800px)" srcset="../images/projets/prj408_01-table.jpg 1x, ../images/projets/prj408_01-table@2x.jpg 2x">-->
+                                <img src="dist/images/projets/{{ imagesPrj.src }}" alt="{{ imagesPrj.alt }}">
+                            </picture>
+                        </a>
+                    </li>
+                {% endfor %}
+
             </ul>
         </div>
         </div>
