@@ -15,13 +15,12 @@
  *  ADMIN - ÉDITER FICHE ÉTUDIANT
  */
 /*************** 1. VARIABLES LOCALES ***********************/
-$strNiveau = "";
-$strNiveauAdmin="../public/";
+$strNiveau = "../../";
+$strNiveauAdmin="../../../public/";
 $strSection = "Éditer fiche étudiant";
 
 /*************** 2. INSTANCIATION CONFIG ET TWIG ***********************/
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
-
 /*************** 3. REQUÊTES DIPLÔMÉS ***********************/
 //----- 3.2 Requete pour aller chercher tous les diplômés -----//
 try {
@@ -60,15 +59,17 @@ $template = $twig->loadTemplate('pieces/head.html.twig');
 echo $template->render(array(
     'title' => "Section administrative | TIM",
     'page' => "",
-    'niveau' => $strNiveau
+    'niveau' => $strNiveau,
+    'niveauAdmin' => $strNiveauAdmin
 ));
 
 $template = $twig->loadTemplate('pieces/header.html.twig');
 echo $template->render(array());
 
-$template = $twig->loadTemplate('index.html.twig');
+$template = $twig->loadTemplate('diplomes/index.html.twig');
 echo $template->render(array(
     'niveau' => $strNiveau,
+    'niveauAdmin' => $strNiveauAdmin,
     'page' => "Section administrative",
     'diplomes' => $arrDiplomes,
     'erreurDiplomes' => $strMsgErrDiplomes

@@ -1,0 +1,23 @@
+<a href="diplomes/index.php#contenu" class="visuallyhidden focusable">Allez au contenu</a>
+<main>
+    <section class="haut_page">
+        <h1 id="contenu">{{ page }}</h1>
+    </section>
+    <section>
+        <h2>Évènements</h2>
+    </section>
+    <section>
+        <h2>Fiches des diplômés</h2>
+    {% if erreurDiplomes == false %}
+        <section id="liste_fiche_etudiant">
+            <ul id="liste_diplomes">
+                {% for arrDiplomes in diplomes %}
+                    <li>
+                        <p class="nom">{{ arrDiplomes.prenom }} {{ arrDiplomes.nom }} <span><a href="csf_admin/fiche_etudiant?id={{ arrDiplomes.id }}">Éditer la fiche</a></span></p>
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+    {% endif %}
+    </section>
+</main>
