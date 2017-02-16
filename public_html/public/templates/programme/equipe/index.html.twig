@@ -14,8 +14,9 @@
             <img src="dist/images/photo_enseignants/{{ valeur['nom'] | lower }}.png"
                  alt="{{ valeur['prenom'] }} {{ valeur['nom'] }}"/>
             <hr>
-            <span>{{ valeur['prenom'] }} {{ valeur['nom'] }}</span>
-            <p>{{ valeur['courriel'] }} {{ valeur['pseudo'] }} {{ valeur['linkedin'] }} {{ valeur['site'] }}</p>
+            <span class="nom_prof">{{ valeur['prenom'] }} {{ valeur['nom'] }}</span>
+            <p class="sociaux">{{ valeur['courriel'] }} {{ valeur['pseudo'] }} {{ valeur['linkedin'] }} {{ valeur['site'] }}</p>
+            <hr>
         </div>
     {% endfor %}
 </div>
