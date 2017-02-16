@@ -11,7 +11,7 @@
 <div class="conteneur_enseignants">
     {% for valeur in arrProfs %}
         <div class="contenu_enseignant">
-            <img src="dist/images/photo_enseignants/{{ valeur['nom'] | lower }}.png"
+            <img class="photo_prof" src="dist/images/photo_enseignants/{{ valeur['nom'] }}.png"
                  alt="{{ valeur['prenom'] }} {{ valeur['nom'] }}"/>
             <hr>
             <span class="nom_prof">{{ valeur['prenom'] }} {{ valeur['nom'] }}</span>
