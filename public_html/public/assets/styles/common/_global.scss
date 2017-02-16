@@ -54,6 +54,7 @@ ul{
 		padding: 10px 15px;
 		/* background-color: #2a8be1; */
 		background: linear-gradient(to left, #0098FF, #00ACFF);
+		
 		/* background: gray; */
 		display: inline-block;
 		margin-top: 10px;
@@ -101,4 +102,15 @@ ul{
 
 		}
 	}
+}
+
+
+
+
+
+/* Inputs */
+input[type="text"], input[type="email"]{
+	width: 320px;
+	height: 47px;
+	padding: 3px;
 }
