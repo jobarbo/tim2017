@@ -12,67 +12,140 @@
  * 4.2 Requete pour aller chercher tous les projets du diplômé
  * 5. TWIG
  *
- *  ADMIN - ÉDITER FICHE ÉTUDIANT
+ *  FICHE ÉTUDIANT
  */
+
+
 /*************** 1. VARIABLES LOCALES ***********************/
 $strNiveau = "../../";
-$strNiveauAdmin="../../../public/";
-$strSection = "Éditer fiche étudiant";
+$strTriInterets = "";
+$intIdEtudiant = null;
+$strSection = "Fiche étudiant";
 
 /*************** 2. INSTANCIATION CONFIG ET TWIG ***********************/
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
-/*************** 3. REQUÊTES DIPLÔMÉS ***********************/
-//----- 3.2 Requete pour aller chercher tous les diplômés -----//
-try {
-    $strSQLDiplomes = "SELECT prenom_diplome, nom_diplome, slug, id_diplome FROM t_diplome ORDER BY nom_diplome";
 
-    $objResultDiplome = $objConnMySQLi->query($strSQLDiplomes);
-    if ($objResultDiplome == false) {
-        $strMsgErr = "<p>Les diplômés n'ont pu être affichés, réessayez plus tard</p>";
-        $except = new Exception($strMsgErr);
-        $arrDiplomes = false;
+
+/*************** 3. REÇOIT ID DE L'ÉTUDIANT ***********************/
+if (isset($_GET['id'])) {
+    $intIdEtudiant = $_GET['id'];
+} else {
+    header('Location: ' . $strNiveau . 'erreur/index.php');
+}
+
+/*************** 4. REQUÊTES FICHE DIPLÔMÉ ***********************/
+//----- 4.1 Requete pour aller chercher tous les infos du diplômé -----//
+try {
+    $strSQLInfosEtudiant = "SELECT * FROM t_diplome WHERE id_diplome = " . $intIdEtudiant;
+
+    $objResultInfosEtudiant = $objConnMySQLi->query($strSQLInfosEtudiant);
+
+    if ($objResultInfosEtudiant == false) {
+        $strMsgErrFiche = "<p>La fiche de l'étudiant n'a pu être affichée, réessayez plus tard</p>";
+        $except = new Exception($strMsgErrFiche);
+
+        $arrInfosEtudiant = false;
+
         throw $except;
     } else {
-        while ($objLigneDiplome = $objResultDiplome->fetch_object()) {
-            $arrDiplomes[] =
+        while ($objLigneInfosEtudiant = $objResultInfosEtudiant->fetch_object()) {
+            $arrInfosEtudiant =
                 array(
-                    'prenom' => $objLigneDiplome->prenom_diplome,
-                    'nom' => $objLigneDiplome->nom_diplome,
-                    'id' => $objLigneDiplome->id_diplome
+                    'id' => $objLigneInfosEtudiant->id_diplome,
+                    'prenom' => $objLigneInfosEtudiant->prenom_diplome,
+                    'nom' => $objLigneInfosEtudiant->nom_diplome,
+                    'slug' => $objLigneInfosEtudiant->slug,
+                    'profil' => $objLigneInfosEtudiant->profil,
+                    'forces' => $objLigneInfosEtudiant->forces,
+                    'interet_gestion' => $objLigneInfosEtudiant->interet_gestion_projet,
+                    'interet_design' => $objLigneInfosEtudiant->interet_design_interface,
+                    'interet_traitement' => $objLigneInfosEtudiant->interet_traitement_medias,
+                    'interet_integration' => $objLigneInfosEtudiant->interet_integration,
+                    'interet_programmation' => $objLigneInfosEtudiant->interet_programmation,
+                    'courriel' => $objLigneInfosEtudiant->courriel_diplome,
+                    'twitter' => $objLigneInfosEtudiant->pseudo_twitter_diplome,
+                    'linkedin' => $objLigneInfosEtudiant->linkedin_diplome,
+                    'site_web' => $objLigneInfosEtudiant->site_web_diplome,
+                    'nom_usager_admin' => $objLigneInfosEtudiant->nom_usager_admin
                 );
         }
-        $strMsgErrDiplomes = false;
+
+        $texteErreurFiche = false;
     }
+
+
     //En cas d'erreur de requête
-    if ($objResultDiplome->num_rows == 0) {
-        header('Location: ' . $strNiveau . '404/index.php');
+    if ($objResultInfosEtudiant->num_rows == 0) {
+        header('Location: ' . $strNiveau . 'erreur/index.php');
     }
-    $objResultDiplome->free_result();
+
+    $objResultInfosEtudiant->free_result();
+
+    //----- 4.2 Requete pour aller chercher tous les projets du diplômé -----//
+    try {
+        $strSQLProjetsEtudiant = "SELECT id_projet, titre_projet, slug FROM t_projet_diplome WHERE id_diplome = " . $intIdEtudiant;
+
+        $objResultProjetsEtudiant = $objConnMySQLi->query($strSQLProjetsEtudiant);
+
+        if ($objResultProjetsEtudiant == false) {
+            $strMsgErrProjets = "<p>Les projets de l'étudiant n'a pu être affichés, réessayez plus tard</p>";
+            $except = new Exception($strMsgErrProjets);
+            $arrProjetsEtudiant = false;
+
+            throw $except;
+        }
+        else{
+            while ($objLigneProjetsEtudiant = $objResultProjetsEtudiant->fetch_object()) {
+                $arrProjetsEtudiant[] =
+                    array(
+                        'id' => $objLigneProjetsEtudiant->id_projet,
+                        'titre' => $objLigneProjetsEtudiant->titre_projet,
+                        'slug' => $objLigneProjetsEtudiant->slug
+                    );
+            }
+            $texteErreurProjets = false;
+        }
+
+        //En cas d'erreur de requête
+        if ($objResultProjetsEtudiant->num_rows == 0) {
+            header('Location: ' . $strNiveau . 'erreur/index.php');
+        }
+
+        $objResultProjetsEtudiant->free_result();
+
+
+    } catch (Exception $e) {
+        $texteErreurProjets = $e->getMessage();
+    }
+
 } catch (Exception $e) {
-    $strMsgErrDiplomes = $e->getMessage();
+    $texteErreurFiche = $e->getMessage();
 }
+
 // fermer la connexion
 $objConnMySQLi->close();
 
-/*************** 4 TWIG ***********************/
+/*************** 6. TWIG ***********************/
 $template = $twig->loadTemplate('pieces/head.html.twig');
 echo $template->render(array(
-    'title' => "Section administrative | TIM",
-    'page' => "",
-    'niveau' => $strNiveau,
-    'niveauAdmin' => $strNiveauAdmin
+    'title' => "Techniques d'intégration multimédia | TIM",
+    'page' => $arrInfosEtudiant['prenom'] . " " . $arrInfosEtudiant['nom'] . " | Diplômés | ",
+    'niveau' => $strNiveau
 ));
 
 $template = $twig->loadTemplate('pieces/header.html.twig');
-echo $template->render(array());
+echo $template->render(array(
+    'arrMenuLiensActifs' => $arrMenuActif
+));
 
-$template = $twig->loadTemplate('diplomes/index.html.twig');
+$template = $twig->loadTemplate('diplomes/fiche_etudiant/index.html.twig');
 echo $template->render(array(
     'niveau' => $strNiveau,
-    'niveauAdmin' => $strNiveauAdmin,
-    'page' => "Section administrative",
-    'diplomes' => $arrDiplomes,
-    'erreurDiplomes' => $strMsgErrDiplomes
+    'page' => $arrInfosEtudiant['prenom'] . " <span>" . $arrInfosEtudiant['nom'] . "</span>",
+    'arrInfos' => $arrInfosEtudiant,
+    'arrProjets' => $arrProjetsEtudiant,
+    'texteErreurFiche' => $texteErreurFiche,
+    'texteErreurProjets' => $texteErreurProjets
 ));
 
 $template = $twig->loadTemplate('pieces/footer.html.twig');
