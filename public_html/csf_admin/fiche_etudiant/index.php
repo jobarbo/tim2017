@@ -7,17 +7,19 @@
  * 1. VARIABLES LOCALES
  * 2. INSTANCIATION CONFIG ET TWIG
  * 3. REÇOIT ID DE L'ÉTUDIANT
- * 4. REQUÊTES FICHE DIPLÔMÉ
- * 4.1 Requete pour aller chercher tous les infos du diplômé
- * 4.2 Requete pour aller chercher tous les projets du diplômé
- * 5. TWIG
+ * 4. DÉFINITION CHEMIN ET FICHIER POUR TÉLÉVERSEMENT
+ * 5. REQUÊTE AFFICHER FICHE DIPLÔMÉ
+ * 5.1 Requete pour aller chercher tous les infos du diplômé
+ * 5.2 Requete pour aller chercher tous les projets du diplômé
+ * 6. TWIG
  *
- *  FICHE ÉTUDIANT
+ *  ÉDITER FICHE ÉTUDIANT
  */
 
 
 /*************** 1. VARIABLES LOCALES ***********************/
-$strNiveau = "../../";
+$strNiveau = "../";
+$strNiveauAdmin = "../../public/";
 $strTriInterets = "";
 $intIdEtudiant = null;
 $strSection = "Fiche étudiant";
@@ -33,7 +35,11 @@ if (isset($_GET['id'])) {
     header('Location: ' . $strNiveau . 'erreur/index.php');
 }
 
-/*************** 4. REQUÊTES FICHE DIPLÔMÉ ***********************/
+/*************** 4. DÉFINITION CHEMIN ET FICHIER POUR TÉLÉVERSEMENT ***********************/
+define("CHEMIN_TELEVERSEMENT", "../televersement/");
+define("NAME_FICHIER", "monFichierATeleverser");
+
+/*************** 4. REQUÊTE AFFICHER FICHE DIPLÔMÉ ***********************/
 //----- 4.1 Requete pour aller chercher tous les infos du diplômé -----//
 try {
     $strSQLInfosEtudiant = "SELECT * FROM t_diplome WHERE id_diplome = " . $intIdEtudiant;
@@ -128,24 +134,23 @@ $objConnMySQLi->close();
 /*************** 6. TWIG ***********************/
 $template = $twig->loadTemplate('pieces/head.html.twig');
 echo $template->render(array(
-    'title' => "Techniques d'intégration multimédia | TIM",
-    'page' => $arrInfosEtudiant['prenom'] . " " . $arrInfosEtudiant['nom'] . " | Diplômés | ",
+    'title' => "Section administrative | TIM",
+    'page' => "Éditer la fiche de " . $arrInfosEtudiant['prenom'] . " " . $arrInfosEtudiant['nom'] . " | ",
     'niveau' => $strNiveau
 ));
 
 $template = $twig->loadTemplate('pieces/header.html.twig');
-echo $template->render(array(
-    'arrMenuLiensActifs' => $arrMenuActif
-));
+echo $template->render(array());
 
-$template = $twig->loadTemplate('diplomes/fiche_etudiant/index.html.twig');
+$template = $twig->loadTemplate('fiche_etudiant/index.html.twig');
 echo $template->render(array(
     'niveau' => $strNiveau,
-    'page' => $arrInfosEtudiant['prenom'] . " <span>" . $arrInfosEtudiant['nom'] . "</span>",
+    'page' => "Éditer la fiche du diplomé " . $arrInfosEtudiant['prenom'] . " <span>" . $arrInfosEtudiant['nom'] . "</span>",
     'arrInfos' => $arrInfosEtudiant,
     'arrProjets' => $arrProjetsEtudiant,
     'texteErreurFiche' => $texteErreurFiche,
-    'texteErreurProjets' => $texteErreurProjets
+    'texteErreurProjets' => $texteErreurProjets,
+    'name_fichier' => NAME_FICHIER
 ));
 
 $template = $twig->loadTemplate('pieces/footer.html.twig');

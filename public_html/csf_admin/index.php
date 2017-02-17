@@ -12,7 +12,7 @@
  * 4.2 Requete pour aller chercher tous les projets du diplômé
  * 5. TWIG
  *
- *  ADMIN - ÉDITER FICHE ÉTUDIANT
+ *  ADMIN - ACCUEIL
  */
 /*************** 1. VARIABLES LOCALES ***********************/
 $strNiveau = "";
