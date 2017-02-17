@@ -38,6 +38,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
         addFlash("danger", "Erreur lors de l'envoi du mail");
     } else {
         addFlash("success", 'Votre message a bien été envoyé !');
+        addFlash("success", 'Votre message a bien été envoyéyeziuezhk !');
     }
     header('Location: ' . $_SERVER['PHP_SELF']);
     exit;
