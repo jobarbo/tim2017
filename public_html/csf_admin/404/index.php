@@ -10,16 +10,16 @@
 
 
 /*************** VARIABLES LOCALES ***********************/
-$strNiveau="../";
-
+$strNiveau="../../";
+$strNiveauAdmin="../../../public/";
 
 /*************** INSTANCIATION CONFIG ET TWIG ***********************/
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 
-
 // fermer la connexion
 $objConnMySQLi->close();
-/*************** TWIG ***********************/
+
+/*************** INSTANCIATION CONFIG ET TWIG ***********************/
 $template = $twig->loadTemplate('pieces/head.html.twig');
 echo $template->render(array(
     'title' => "Techniques d'intégration multimédia | TIM",
