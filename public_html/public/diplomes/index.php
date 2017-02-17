@@ -17,11 +17,10 @@
 $strNiveau = "../";
 $strTriInterets = "";
 $strSection = "Diplômés";
-
 if (isset($_GET['tri_interets'])) {
     $strTriInterets = 'interet_' . $_GET['tri_interets'];
 }
-echo $strTriInterets;
+
 /*************** 2. INSTANCIATION CONFIG ET TWIG ***********************/
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 /*************** 3. REQUÊTES DIPLÔMÉS ***********************/
