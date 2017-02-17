@@ -9,12 +9,18 @@
         {# formulaire de contact #}
         <form action="" class="form" method="post">
             {# nom complet #}
-            <label for="name">Nom complet</label>
-            <input required type="text" id="name" name="name" title="Entrez votre nom" placeholder="Entrez votre nom complet">
+            <div class="field">
+                <label for="name">Nom complet</label>
+                <i class="fa fa-user-o" aria-hidden="true"></i>
+                <input required type="text" id="name" name="name" title="Entrez votre nom" placeholder="Entrez votre nom complet">
+            </div>
 
             {# email #}
-            <label for="email">Adresse courriel</label>
-            <input required type="email" id="email" name="email" title="Entrez votre adresse courriel" placeholder="adresse@domaine.com">
+            <div class="field">
+                <label for="email">Adresse courriel</label>
+                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                <input required type="email" id="email" name="email" title="Entrez votre adresse courriel" placeholder="adresse@domaine.com">
+            </div>
 
             {# destinataire #}
             <label for="recipient">Destinataire</label>
@@ -26,12 +32,15 @@
             </select>
 
             {# sujet #}
-            <label for="subject">Sujet</label>
-            <input required type="text" id="subject" name="subject" title="Entrez le sujet de votre message" placeholder="Entrez le sujet de votre message">
+            <div class="field">
+                <label for="subject">Sujet</label>
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                <input required type="text" id="subject" name="subject" title="Entrez le sujet de votre message" placeholder="Entrez le sujet de votre message">
+            </div>
 
             {# Message #}
             <label for="message">Message</label>
-            <textarea name="message" id="message" title="Entrez votre message" aria-describedby="message-tip" placeholder="Entrez votre message"></textarea>
+            <textarea required name="message" id="message" title="Entrez votre message" aria-describedby="message-tip" placeholder="Entrez votre message"></textarea>
 
             {# Submit #}
             <button type="submit" id="submit" name="submit" value="submit">Envoyer</button>

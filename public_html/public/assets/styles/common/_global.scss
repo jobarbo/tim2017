@@ -109,8 +109,39 @@ ul{
 
 
 /* Inputs */
+/*
+Structure :
+<div class="field">
+	<label for=""></label>
+    <i></i> (Pour cette ligne copier / coller code sur la page de font-awesome
+    <input required type="" id="" name="" title="" placeholder="">
+</div>
+*/
+.field{
+	position: relative;
+}
+
+label{
+	display: block;
+}
+
+.fa{
+	position: absolute;
+	color: #00a3ff;
+	padding: 17px;
+	background: rgba(0, 0, 0, 0.04);
+}
+
 input[type="text"], input[type="email"]{
 	width: 320px;
 	height: 47px;
-	padding: 3px;
+	padding: 3px 3px 3px 58px;
+
+	border: none;
+}
+
+input, textarea, select{
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
 }

@@ -20,6 +20,13 @@ html{
   margin-bottom: 1rem;
 }
 
+textarea{
+  width: 320px;
+  height: 100px;
+  border: none;
+  resize: none;
+}
+
 .form, .coordination{
   display: inline-block;
 }
