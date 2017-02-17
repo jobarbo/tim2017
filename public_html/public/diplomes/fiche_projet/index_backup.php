@@ -30,7 +30,7 @@ require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 if (isset($_GET['id'])) {
     $intIdProjet = $_GET['id'];
 } else {
-    header('Location: ' . $strNiveau . 'erreur/index.php');
+    header('Location: ' . $strNiveau . '404/index.php');
 }
 
 /*************** 4. REQUÊTES FICHE PROJET ***********************/
@@ -67,9 +67,10 @@ try {
         $strMsgErrInfos = false;
     }
 
+
     //En cas d'erreur de requête
     if ($objResultInfosProjet->num_rows == 0) {
-        header('Location: ' . $strNiveau . 'erreur/index.php');
+        header('Location: ' . $strNiveau . '404/index.php');
     }
 
     $objResultInfosProjet->free_result();
@@ -98,9 +99,10 @@ try {
             }
         }
 
+
         //En cas d'erreur de requête
         if ($objResultEtudiant->num_rows == 0) {
-            header('Location: ' . $strNiveau . 'erreur/index.php');
+            header('Location: ' . $strNiveau . '404/index.php');
         }
 
         $objResultEtudiant->free_result();
@@ -132,9 +134,10 @@ try {
                 $strMsgErrProjets = false;
             }
 
+
             //En cas d'erreur de requête
             if ($objResultAutresProjets->num_rows == 0) {
-                header('Location: ' . $strNiveau . 'erreur/index.php');
+                header('Location: ' . $strNiveau . '404/index.php');
             }
 
             $objResultAutresProjets->free_result();

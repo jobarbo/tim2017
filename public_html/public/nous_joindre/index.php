@@ -19,13 +19,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $mail = new PHPMailer;
     $mail->CharSet = 'UTF-8';
 
-//$mail->SMTPDebug = 3;                               // Enable verbose debug output
-
     $mail->isSMTP();                                      // Set mailer to use SMTP
     $mail->Host = 'smtp.sendgrid.net';                    // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
     $mail->Username = 'apikey';                           // SMTP username
-    $mail->Password = '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';                           // SMTP password
+    $mail->Password = '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';   // SMTP password
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;                                    // TCP port to connect to
 
@@ -37,14 +35,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $mail->Body    = 'Message de '.$_POST['name'].'<br>'.$_POST['email'].'<br><br>'.$_POST['message'];
 
     if(!$mail->send()) {
-        echo 'Votre message n\'a pas pu être envoyé.';
-        echo 'Mailer Error: ' . $mail->ErrorInfo;
+        addFlash("danger", "Erreur lors de l'envoi du mail");
     } else {
-        echo 'Votre message a bien été envoyé !';
+        addFlash("success", 'Votre message a bien été envoyé !');
     }
-
+    header('Location: ' . $_SERVER['PHP_SELF']);
+    exit;
 }
-
 
 $template = $twig->loadTemplate('pieces/head.html.twig');
 echo $template->render(array(
