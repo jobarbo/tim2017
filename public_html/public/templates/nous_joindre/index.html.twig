@@ -3,7 +3,7 @@
 <h2>Contactez-nous</h2>
 
 
-<div class="contact center-page">
+<section class="contact center-page">
 
     <div class="form">
         {# formulaire de contact #}
@@ -11,14 +11,14 @@
             {# nom complet #}
             <div class="field">
                 <label for="name">Nom complet</label>
-                <i class="fa fa-user-o" aria-hidden="true"></i>
+                <i class="fa fa-user-o icon" aria-hidden="true"></i>
                 <input required type="text" id="name" name="name" title="Entrez votre nom" placeholder="Entrez votre nom complet">
             </div>
 
             {# email #}
             <div class="field">
                 <label for="email">Adresse courriel</label>
-                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                <i class="fa fa-envelope-o icon" aria-hidden="true"></i>
                 <input required type="email" id="email" name="email" title="Entrez votre adresse courriel" placeholder="adresse@domaine.com">
             </div>
 
@@ -34,7 +34,7 @@
             {# sujet #}
             <div class="field">
                 <label for="subject">Sujet</label>
-                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                <i class="fa fa-pencil-square-o icon" aria-hidden="true"></i>
                 <input required type="text" id="subject" name="subject" title="Entrez le sujet de votre message" placeholder="Entrez le sujet de votre message">
             </div>
 
@@ -43,20 +43,21 @@
             <textarea required name="message" id="message" title="Entrez votre message" aria-describedby="message-tip" placeholder="Entrez votre message"></textarea>
 
             {# Submit #}
-            <button type="submit" id="submit" name="submit" value="submit">Envoyer</button>
+            <button type="submit" class="blue-btn" id="submit" name="submit" value="submit"><i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                 Envoyer</button>
         </form>
     </div>
 
     <div class="coordination">
-        {#<img src="../../assets/images/sylvain-lamoureux.jpg" alt="Photo de Sylvain Lamoureux">#}
+        <img src="../../assets/images/photo_enseignants/lamoureux.png" alt="Photo de Sylvain Lamoureux">
         {% for page in pages %}
             {{ page.texte | raw}}
         {% endfor %}
     </div>
-</div>
+</section>
 
 
-<div class="maps center-page">
+<section class="maps center-page">
     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2731.910858724522!2d-71.28615244180301!3d46.78636084500936!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb896dea093d777%3A0xf81581457f682cd6!2sC%C3%A9gep+de+Sainte-Foy!5e0!3m2!1sen!2sca!4v1487101030511" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 
 
@@ -66,4 +67,4 @@
 
         <a href="https://goo.gl/maps/RfnK9Gnm2112">Ouvrir dans google maps</a>
     </div>
-</div>
+</section>

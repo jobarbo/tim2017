@@ -48,33 +48,6 @@ ul{
 ::-webkit-scrollbar {
 	display: none;
 }
-.content_wrap{
-	a {
-		color: #fff;
-		padding: 10px 15px;
-		/* background-color: #2a8be1; */
-		background: linear-gradient(to left, #0098FF, #00ACFF);
-		
-		/* background: gray; */
-		display: inline-block;
-		margin-top: 10px;
-		border-radius: 5px;
-		box-shadow: rgba(0, 172, 255, 0.45) 2px 3px 10px;
-		transition: all .5s ease-in-out;
-		transform: translateY(0px);
-
-		&:hover {
-			transform: translateY(1px);
-
-			box-shadow: rgba(0, 172, 255, 0.65) 0px 1px 3px;
-			text-decoration: none;
-		}
-		&:focus {
-			text-decoration: none;
-		}
-	}
-}
-
 
 .meta_nav{
 	height: 50px;
@@ -108,12 +81,43 @@ ul{
 
 
 
+/* Buttons */
+.blue-btn{
+	color: #fff;
+	padding: 10px 15px;
+	/* background-color: #2a8be1; */
+	background: linear-gradient(to left, #0098FF, #00ACFF);
+
+	/* background: gray; */
+	display: inline-block;
+	margin-top: 10px;
+	border: none;
+	border-radius: 5px;
+	box-shadow: rgba(0, 172, 255, 0.45) 2px 3px 10px;
+	transition: all .5s ease-in-out;
+	transform: translateY(0px);
+
+	&:hover {
+		transform: translateY(1px);
+
+		box-shadow: rgba(0, 172, 255, 0.65) 0px 1px 3px;
+		text-decoration: none;
+	}
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+
+
+
+
 /* Inputs */
 /*
 Structure :
 <div class="field">
 	<label for=""></label>
-    <i></i> (Pour cette ligne copier / coller code sur la page de font-awesome
+    <i></i> (Pour cette ligne copier / coller code sur la page de font-awesome et rajouter la class "icon"
     <input required type="" id="" name="" title="" placeholder="">
 </div>
 */
@@ -125,7 +129,7 @@ label{
 	display: block;
 }
 
-.fa{
+.icon{
 	position: absolute;
 	color: #00a3ff;
 	padding: 17px;
@@ -133,11 +137,12 @@ label{
 }
 
 input[type="text"], input[type="email"]{
-	width: 320px;
+	width: 350px;
 	height: 47px;
-	padding: 3px 3px 3px 58px;
+	padding-left: 58px;
 
 	border: none;
+	border-radius: 5px;
 }
 
 input, textarea, select{

@@ -12,29 +12,6 @@ body{
       display: table;
       article{
         padding-right:6%;
-        a{
-          color: #fff;
-          padding: 10px 15px;
-          /* background-color: #2a8be1; */
-          background: linear-gradient(to left, #0098FF , #00ACFF);
-          /* background: gray; */
-          display: inline-block;
-          margin-top: 10px;
-          border-radius: 5px;
-          box-shadow: rgba(0, 172, 255, 0.45) 2px 3px 10px;
-          transition: all .5s ease-in-out;
-          transform: translateY(0px);
-
-          &:hover{
-            transform: translateY(1px);
-
-            box-shadow: rgba(0, 172, 255, 0.65) 0px 1px 3px;
-            text-decoration: none;
-          }
-          &:focus{
-            text-decoration: none;
-          }
-        }
       }
     }
     section.main_footer{

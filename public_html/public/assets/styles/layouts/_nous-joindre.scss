@@ -13,32 +13,51 @@ html{
 /* Section 1 */
 .contact{
   background-color: #f7f7f7;
-}
 
-.form input, .form select, .form textarea{
-  display: block;
-  margin-bottom: 1rem;
-}
+  .form, .coordination{
+    display: inline-block;
+  }
 
-textarea{
-  width: 320px;
-  height: 100px;
-  border: none;
-  resize: none;
-}
+  .form{
+    margin-right: 8%;
 
-.form, .coordination{
-  display: inline-block;
-}
+    input, select, textarea{
+      display: block;
+      margin-bottom: 1rem;
+    }
 
-.form{
-  margin-right: 8%;
-}
+    select{
+      width: 350px;
+      height: 37px;
+      border: none;
+    }
 
-.coordination img{
-  width: 20rem;
-  height: auto;
-  margin-bottom: 1rem;
+    textarea{
+      width: 350px;
+      height: 100px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      resize: none;
+    }
+
+    button{
+      i{
+        margin-right: 10px;
+      }
+    }
+  }
+
+
+  .coordination {
+    img {
+      width: 20rem;
+      height: auto;
+      margin-bottom: 1rem;
+
+      border: 1px solid red;
+    }
+  }
 }
 
 
@@ -46,14 +65,16 @@ textarea{
 
 
 /* Section 2 */
-iframe, .infos{
-  display: inline-block;
-}
+.maps{
+  iframe, .infos{
+    display: inline-block;
+  }
 
-iframe{
-  margin-right: 8%;
-}
+  iframe{
+    margin-right: 8%;
+  }
 
-ul{
-  padding: 0;
+  ul{
+    padding: 0;
+  }
 }
