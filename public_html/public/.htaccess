@@ -46,13 +46,13 @@ RewriteRule ^stages/$ stages/index.php [L]
 
 # Section Diplome
 RewriteRule ^diplomes/$ diplomes/index.php [L]
-RewriteRule ^diplomes/fiche-etudiant/([0-9]+)$ diplomes/fiche_etudiant/index.php?id=$1 [L,QSA]
-RewriteRule ^diplomes/fiche-projet/([0-9]+)$ diplomes/fiche_projet/index.php?id=$2 [L,QSA]
+RewriteRule ^diplomes/fiche-etudiant/(.*)$ diplomes/fiche_etudiant/index.php?slug=$2 [L,QSA]
+RewriteRule ^diplomes/fiche-projet/([0-9]+)$ diplomes/fiche_projet/index.php?id=$3 [L,QSA]
 # ...
 
 # Page Nous Joindre
 RewriteRule ^nous-joindre/$ nous_joindre/index.php [L]
-RewriteRule ^nous-joindre/(.*)&(.*)$ nous_joindre/index.php?type=$1&slug=$3 [L,QSA]
+RewriteRule ^nous-joindre/(.*)&(.*)$ nous_joindre/index.php?type=$1&slug=$4 [L,QSA]
 # ...
 
 # Section Admin

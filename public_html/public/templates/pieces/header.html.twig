@@ -55,3 +55,4 @@
             <a href="futur_etudiant/index.php" class="btn_rouge">Je m'inscris !</a>
         </nav>
 </header>
+<a href="{{ arrMenuLiensActifs.PHP_SELF }}{% if arrMenuLiensActifs.QUERY_STRING != "" %}?{{ arrMenuLiensActifs.QUERY_STRING }}{% endif %}#contenu" class="visuallyhidden focusable">Allez au contenu</a>

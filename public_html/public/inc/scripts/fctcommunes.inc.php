@@ -5,6 +5,9 @@
  * Date: 17-01-25
  * Time: 08:19
  */
+
+if(!session_id()) session_start();
+
 /*************** INSTANCIATION CONFIG ***********************/
 require_once($strNiveau . 'inc/scripts/config.inc.php');
 
