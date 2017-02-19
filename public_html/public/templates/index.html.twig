@@ -1,21 +1,51 @@
 <div class="hero-image col-sm-12">
 
 </div>
-<div class="accueil_news content_wrap">
-    <div class="actualite_text">
-        <h2>ACTUALITÉS</h2>
+<section>
+    <div class="accueil_news">
+        <div class="actualite_text">
+            <h2>ACTUALITÉS</h2>
 
-        <p class="date">{{nouvelle.date_nouvelle}}</p>
-        
+            <p class="date">{{nouvelle.date_nouvelle}}</p>
+            
 
-        <h3>{{nouvelle.titre_nouvelle}}</h3>
+            <h3>{{nouvelle.titre_nouvelle}}</h3>
 
-        <p>{{nouvelle.description_nouvelle}}</p>
+            <p>{{nouvelle.description_nouvelle}}</p>
 
-        <a href="{{nouvelle.url_nouvelle}}">En savoir plus</a>
+            <a href="{{nouvelle.url_nouvelle}}">En savoir plus</a>
+        </div>
+        <div class="actualite_img">
+
+        </div>
     </div>
-    <div class="actualite_img" style ="">
 
+</section>
+<section>
+    <div class="projet_home">
+        <h2>RÉALISATIONS</h2>
+        {{ texteErreurProjets | raw }}
+                {% if texteErreurProjets == false %}
+                    <ul>
+                        {% for projet in arrProjets %}
+                            <li>
+                                <a href="diplomes/fiche_projet/index.php?id={{ projet.id }}">
+                                    <div class="img_projet" style="background-image: url('dist/images/projets/prj{{ projet.id }}_01.jpg')">
+                                       <!-- <picture>
+                                            <source media="" srcset="../images/projets/prj408_01-mobile.jpg 1x, ../images/projets/prj408_01-mobile@2x.jpg 2x">
+                                            <source media="(min-width: 800px)" srcset="../images/projets/prj408_01-table.jpg 1x, ../images/projets/prj408_01-table@2x.jpg 2x">
+                                            <img src="dist/images/projets/prj{{ projet.id }}_01.jpg" alt="{{ projet.titre }}">
+                                        </picture>-->
+                                    </div>
+                                    <span class="titre_projet">{{ projet.titre }}</span>
+                                    <p>{{ arrInfos.prenom}} {{ arrInfos.nom}}</p>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    {{ texteErreurProjet | raw }}
+                {% endif %}
     </div>
 
-</div>
+</section>
