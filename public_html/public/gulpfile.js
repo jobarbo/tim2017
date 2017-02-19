@@ -19,18 +19,14 @@ var runSequence  = require('run-sequence');
 var sass         = require('gulp-sass');
 var sourcemaps   = require('gulp-sourcemaps');
 var uglify       = require('gulp-uglify');
-
 // See https://github.com/austinpray/asset-builder
 var manifest = require('asset-builder')('./assets/manifest.json');
-
 // `path` - Paths to base asset directories. With trailing slashes.
 // - `path.source` - Path to the source files. Default: `assets/`
 // - `path.dist` - Path to the build directory. Default: `dist/`
 var path = manifest.paths;
-
 // `config` - Store arbitrary configuration values here.
 var config = manifest.config || {};
-
 // `globs` - These ultimately end up in their respective `gulp.src`.
 // - `globs.js` - Array of asset-builder JS dependency objects. Example:
 //   ```
@@ -44,12 +40,10 @@ var config = manifest.config || {};
 // - `globs.images` - Array of image path globs.
 // - `globs.bower` - Array of all the main Bower files.
 var globs = manifest.globs;
-
 // `project` - paths to first-party assets.
 // - `project.js` - Array of first-party JS assets.
 // - `project.css` - Array of first-party CSS assets.
 var project = manifest.getProjectGlobs();
-
 // CLI options
 var enabled = {
   // Enable static asset revisioning when `--production`
@@ -63,13 +57,10 @@ var enabled = {
   // Strip debug statments from javascript when `--production`
   stripJSDebug: argv.production
 };
-
 // Path to the compiled assets manifest in the dist directory
 var revManifest = path.dist + 'assets.json';
-
 // ## Reusable Pipelines
 // See https://github.com/OverZealous/lazypipe
-
 // ### CSS processing pipeline
 // Example
 // ```
@@ -79,40 +70,39 @@ var revManifest = path.dist + 'assets.json';
 // ```
 var cssTasks = function(filename) {
   return lazypipe()
-    .pipe(function() {
-      return gulpif(!enabled.failStyleTask, plumber());
-    })
-    .pipe(function() {
-      return gulpif(enabled.maps, sourcemaps.init());
-    })
-    .pipe(function() {
-      return gulpif('*.less', less());
-    })
-    .pipe(function() {
-      return gulpif('*.scss', sass({
-        outputStyle: 'nested', // libsass doesn't support expanded yet
-        precision: 10,
-        includePaths: ['.'],
-        errLogToConsole: !enabled.failStyleTask
-      }));
-    })
-    .pipe(concat, filename)
-    .pipe(autoprefixer, {
-      browsers: ['last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']
-    })
-    .pipe(cssNano, {
-      safe: true
-    })
-    .pipe(function() {
-      return gulpif(enabled.rev, rev());
-    })
-    .pipe(function() {
-      return gulpif(enabled.maps, sourcemaps.write('.', {
-        sourceRoot: 'assets/styles/'
-      }));
-    })();
+      .pipe(function() {
+        return gulpif(!enabled.failStyleTask, plumber());
+      })
+      .pipe(function() {
+        return gulpif(enabled.maps, sourcemaps.init());
+      })
+      .pipe(function() {
+        return gulpif('*.less', less());
+      })
+      .pipe(function() {
+        return gulpif('*.scss', sass({
+          outputStyle: 'nested', // libsass doesn't support expanded yet
+          precision: 10,
+          includePaths: ['.'],
+          errLogToConsole: !enabled.failStyleTask
+        }));
+      })
+      .pipe(concat, filename)
+      .pipe(autoprefixer, {
+        browsers: ['last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']
+      })
+      .pipe(cssNano, {
+        safe: true
+      })
+      .pipe(function() {
+        return gulpif(enabled.rev, rev());
+      })
+      .pipe(function() {
+        return gulpif(enabled.maps, sourcemaps.write('.', {
+          sourceRoot: 'assets/styles/'
+        }));
+      })();
 };
-
 // ### JS processing pipeline
 // Example
 // ```
@@ -122,42 +112,39 @@ var cssTasks = function(filename) {
 // ```
 var jsTasks = function(filename) {
   return lazypipe()
-    .pipe(function() {
-      return gulpif(enabled.maps, sourcemaps.init());
-    })
-    .pipe(concat, filename)
-    .pipe(uglify, {
-      compress: {
-        'drop_debugger': enabled.stripJSDebug
-      }
-    })
-    .pipe(function() {
-      return gulpif(enabled.rev, rev());
-    })
-    .pipe(function() {
-      return gulpif(enabled.maps, sourcemaps.write('.', {
-        sourceRoot: 'assets/scripts/'
-      }));
-    })();
+      .pipe(function() {
+        return gulpif(enabled.maps, sourcemaps.init());
+      })
+      .pipe(concat, filename)
+      .pipe(uglify, {
+        compress: {
+          'drop_debugger': enabled.stripJSDebug
+        }
+      })
+      .pipe(function() {
+        return gulpif(enabled.rev, rev());
+      })
+      .pipe(function() {
+        return gulpif(enabled.maps, sourcemaps.write('.', {
+          sourceRoot: 'assets/scripts/'
+        }));
+      })();
 };
-
 // ### Write to rev manifest
 // If there are any revved files then write them to the rev manifest.
 // See https://github.com/sindresorhus/gulp-rev
 var writeToManifest = function(directory) {
   return lazypipe()
-    .pipe(gulp.dest, path.dist + directory)
-    .pipe(browserSync.stream, {match: '**/*.{js,css}'})
-    .pipe(rev.manifest, revManifest, {
-      base: path.dist,
-      merge: true
-    })
-    .pipe(gulp.dest, path.dist)();
+      .pipe(gulp.dest, path.dist + directory)
+      .pipe(browserSync.stream, {match: '**/*.{js,css}'})
+      .pipe(rev.manifest, revManifest, {
+        base: path.dist,
+        merge: true
+      })
+      .pipe(gulp.dest, path.dist)();
 };
-
 // ## Gulp tasks
 // Run `gulp -T` for a task summary
-
 // ### Styles
 // `gulp styles` - Compiles, combines, and optimizes Bower CSS and project CSS.
 // By default this task will only log a warning if a precompiler error is
@@ -173,12 +160,11 @@ gulp.task('styles', ['wiredep'], function() {
       });
     }
     merged.add(gulp.src(dep.globs, {base: 'styles'})
-      .pipe(cssTasksInstance));
+        .pipe(cssTasksInstance));
   });
   return merged
-    .pipe(writeToManifest('styles'));
+      .pipe(writeToManifest('styles'));
 });
-
 // ### Scripts
 // `gulp scripts` - Runs JSHint then compiles, combines, and optimizes Bower JS
 // and project JS.
@@ -186,52 +172,47 @@ gulp.task('scripts', ['jshint'], function() {
   var merged = merge();
   manifest.forEachDependency('js', function(dep) {
     merged.add(
-      gulp.src(dep.globs, {base: 'scripts'})
-        .pipe(jsTasks(dep.name))
+        gulp.src(dep.globs, {base: 'scripts'})
+            .pipe(jsTasks(dep.name))
     );
   });
   return merged
-    .pipe(writeToManifest('scripts'));
+      .pipe(writeToManifest('scripts'));
 });
-
 // ### Fonts
 // `gulp fonts` - Grabs all the fonts and outputs them in a flattened directory
 // structure. See: https://github.com/armed/gulp-flatten
 gulp.task('fonts', function() {
   return gulp.src(globs.fonts)
-    .pipe(flatten())
-    .pipe(gulp.dest(path.dist + 'fonts'))
-    .pipe(browserSync.stream());
+      .pipe(flatten())
+      .pipe(gulp.dest(path.dist + 'fonts'))
+      .pipe(browserSync.stream());
 });
-
 // ### Images
 // `gulp images` - Run lossless compression on all the images.
 gulp.task('images', function() {
   return gulp.src(globs.images)
-    .pipe(imagemin({
-      progressive: true,
-      interlaced: true,
-      svgoPlugins: [{removeUnknownsAndDefaults: false}, {cleanupIDs: false}]
-    }))
-    .pipe(gulp.dest(path.dist + 'images'))
-    .pipe(browserSync.stream());
+      .pipe(imagemin({
+        progressive: true,
+        interlaced: true,
+        svgoPlugins: [{removeUnknownsAndDefaults: false}, {cleanupIDs: false}]
+      }))
+      .pipe(gulp.dest(path.dist + 'images'))
+      .pipe(browserSync.stream());
 });
-
 // ### JSHint
 // `gulp jshint` - Lints configuration JSON and project JS.
 gulp.task('jshint', function() {
   return gulp.src([
     'bower.json', 'gulpfile.js'
   ].concat(project.js))
-    .pipe(jshint())
-    .pipe(jshint.reporter('jshint-stylish'))
-    .pipe(gulpif(enabled.failJSHint, jshint.reporter('fail')));
+      .pipe(jshint())
+      .pipe(jshint.reporter('jshint-stylish'))
+      .pipe(gulpif(enabled.failJSHint, jshint.reporter('fail')));
 });
-
 // ### Clean
 // `gulp clean` - Deletes the build folder entirely.
 gulp.task('clean', require('del').bind(null, [path.dist]));
-
 // ### Watch
 // `gulp watch` - Use BrowserSync to proxy your dev server and synchronize code
 // changes across devices. Specify the hostname of your dev server at
@@ -253,39 +234,35 @@ gulp.task('watch', function() {
   gulp.watch([path.source + 'images/**/*'], ['images']);
   gulp.watch(['bower.json', 'assets/manifest.json'], ['build']);
 });
-
 // ### Build
 // `gulp build` - Run all the build tasks but don't clean up beforehand.
 // Generally you should be running `gulp` instead of `gulp build`.
 gulp.task('build', function(callback) {
   runSequence('styles',
-              'scripts',
-              ['fonts', 'images'],
-              callback);
+      'scripts',
+      ['fonts', 'images'],
+      callback);
 });
-
 // ### Wiredep
 // `gulp wiredep` - Automatically inject Less and Sass Bower dependencies. See
 // https://github.com/taptapship/wiredep
 gulp.task('wiredep', function() {
   var wiredep = require('wiredep').stream;
   return gulp.src(project.css)
-    .pipe(wiredep())
-    .pipe(changed(path.source + 'styles', {
-      hasChanged: changed.compareSha1Digest
-    }))
-    .pipe(gulp.dest(path.source + 'styles'));
+      .pipe(wiredep())
+      .pipe(changed(path.source + 'styles', {
+        hasChanged: changed.compareSha1Digest
+      }))
+      .pipe(gulp.dest(path.source + 'styles'));
 });
-
 // ### Gulp
 // `gulp` - Run a complete build. To compile for production run `gulp --production`.
 gulp.task('default', ['clean'], function() {
   gulp.start('build');
 });
-
 // ### Compile
 // Watch sans le browser-sync.
 gulp.task('compile', function() {
- gulp.watch([path.source + 'styles/**/*'], ['styles']);
- gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'scripts']);
+  gulp.watch([path.source + 'styles/**/*'], ['styles']);
+  gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'scripts']);
 });

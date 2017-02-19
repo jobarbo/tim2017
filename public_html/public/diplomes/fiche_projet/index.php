@@ -20,8 +20,7 @@
 
 /*************** 1. VARIABLES LOCALES ***********************/
 $strNiveau="../../";
-$intIdProjet = null;
-$intIdEtudiant = null;
+$strSlugProjet = "";
 $strSection = "Fiche projet";
 
 /*************** 2. INSTANCIATION CONFIG ET TWIG ***********************/
@@ -29,8 +28,8 @@ require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 
 
 /*************** 3. REÇOIT ID DU PROJET ***********************/
-if(isset($_GET['id'])){
-    $intIdProjet = $_GET['id'];
+if(isset($_GET['slug'])){
+    $strSlugProjet = $_GET['slug'];
 }
 else{
     header('Location: ' . $strNiveau . '404/index.php');
@@ -38,7 +37,7 @@ else{
 
 /*************** 4. REQUÊTES FICHE PROJET ***********************/
 //----- 4.1 Requete pour aller chercher tous les infos du projet -----//
-$strSQLInfosProjet = "SELECT * FROM t_projet_diplome WHERE id_projet = " . $intIdProjet;
+$strSQLInfosProjet = "SELECT * FROM t_projet_diplome WHERE slug = '" . $strSlugProjet . "'";
 if ($objResultInfosProjet = $objConnMySQLi->query($strSQLInfosProjet)) {
     while ($objLigneInfosProjet = $objResultInfosProjet->fetch_object()) {
         $arrInfosProjet =
@@ -54,8 +53,6 @@ if ($objResultInfosProjet = $objConnMySQLi->query($strSQLInfosProjet)) {
                 'expose_galerie'=>$objLigneInfosProjet->est_expose_galerie,
                 'id_diplome'=>$objLigneInfosProjet->id_diplome
             );
-
-        $intIdEtudiant = $objLigneInfosProjet->id_diplome;
     }
 }
 
@@ -67,7 +64,7 @@ if($objResultInfosProjet->num_rows == 0){
 $objResultInfosProjet->free_result();
 
 //----- 4.2 Requete pour aller chercher le nom de l'auteur du projet -----//
-$strSQLEtudiant = "SELECT prenom_diplome, nom_diplome, id_diplome, slug FROM t_diplome WHERE id_diplome = " . $intIdEtudiant;
+$strSQLEtudiant = "SELECT prenom_diplome, nom_diplome, id_diplome, slug FROM t_diplome WHERE id_diplome = " . $arrInfosProjet['id_diplome'];
 if ($objResultEtudiant = $objConnMySQLi->query($strSQLEtudiant)) {
     while ($objLigneEtudiant = $objResultEtudiant->fetch_object()) {
         $arrEtudiant =
@@ -89,10 +86,10 @@ if($objResultEtudiant->num_rows == 0){
 $objResultEtudiant->free_result();
 
 //----- 4.3 Requete pour aller chercher les autres projets du diplômé -----//
-$strSQLAutresProjets = "SELECT id_projet, titre_projet, slug FROM t_projet_diplome WHERE id_diplome = " . $intIdEtudiant;
+$strSQLAutresProjets = "SELECT id_projet, titre_projet, slug FROM t_projet_diplome WHERE id_diplome = " . $arrInfosProjet['id_diplome'];
 if ($objResultAutresProjets = $objConnMySQLi->query($strSQLAutresProjets)) {
     while ($objLigneAutresProjets = $objResultAutresProjets->fetch_object()) {
-        if($objLigneAutresProjets->id_projet != $intIdProjet){
+        if($objLigneAutresProjets->id_projet != $arrInfosProjet['id_diplome']){
             $arrAutresProjets[] =
                 array(
                     'id'=>$objLigneAutresProjets->id_projet,

@@ -92,4 +92,4 @@ else {
 // Pour affichage des variables serveur
 // Variables utiles pour les ancres, pour le fil d'Ariane ?...
 $arrMenuActif['PHP_SELF'] = $_SERVER['PHP_SELF'];
-/*$arrMenuActif['QUERY_STRING'] = $_SERVER['QUERY_STRING'];*/
+$arrMenuActif['QUERY_STRING'] = $_SERVER['QUERY_STRING'];

@@ -1,4 +1,3 @@
-<a href="diplomes/index.php#contenu" class="visuallyhidden focusable">Allez au contenu</a>
 <main>
     <section class="haut_page">
         <h1 id="contenu">{{ page }}</h1>
@@ -6,22 +5,22 @@
     <section class="texte_intro">
         {{ texteIntro | raw }}
         {% if erreur != false %}
-            <p>{{ erreur }}</p>
+            <p>{{ erreur | raw }}</p>
         {% else %}
             <div class="triInterets">
                 <h2>Trier les diplômés par intérêts</h2>
-                <a href="#" class="btnResetTri">Réinitialiser</a>
+                <a href="diplomes/index.php" id="btnResetTri" class="btnTri btnReset">Réinitialiser</a>
                 <ul class="listeTri">
                     <li><a class="btnTri gestion" id="interet_gestion_projet"
-                           href="diplomes/?tri_interets=gestion_projet">Gestion</a></li>
+                           href="diplomes/index.php?tri_interets=interet_gestion_projet">Gestion</a></li>
                     <li><a class="btnTri design" id="interet_design_interface"
-                           href="diplomes/?tri_interets=design_interface">Design</a></li>
+                           href="diplomes/index.php?tri_interets=interet_design_interface">Design</a></li>
                     <li><a class="btnTri medias" id="interet_traitement_medias"
-                           href="diplomes/?tri_interets=traitement_medias">Traitement des médias</a></li>
+                           href="diplomes/index.php?tri_interets=interet_traitement_medias">Traitement des médias</a></li>
                     <li><a class="btnTri integration" id="interet_integration"
-                           href="diplomes/?tri_interets=integration">Intégration</a></li>
+                           href="diplomes/index.php?tri_interets=interet_integration">Intégration</a></li>
                     <li><a class="btnTri programmation" id="interet_programmation"
-                           href="diplomes/?tri_interets=programmation">Programmation</a></li>
+                           href="diplomes/index.php?tri_interets=interet_programmation">Programmation</a></li>
                 </ul>
             </div>
         {% endif %}
@@ -31,10 +30,10 @@
             <ul id="liste_diplomes">
                 {% for arrDiplomes in diplomes %}
                     <li>
-                        <a href="diplomes/fiche_etudiant/index.php?id={{ arrDiplomes.id }}">
-                            <img src="images/{{ arrDiplomes.slug }}.jpg"
-                                 alt="{{ arrDiplomes.prenom }} {{ arrDiplomes.nom }}">
-                            <p class="nom">{{ arrDiplomes.prenom }} <span>{{ arrDiplomes.nom }}</span></p>
+                        <a href="diplomes/fiche_etudiant/index.php?slug={{ arrDiplomes.slug }}">
+                            <img src="images/{{ arrDiplomes.id }}.jpg"
+                                 alt="{{ arrDiplomes.prenom }} {{ arrDiplomes.nom }}"/>
+                            <h2 class="nom">{{ arrDiplomes.prenom }} <span>{{ arrDiplomes.nom }}</span></h2>
                             <div>
                                 <p>Voir la fiche</p>
                             </div>
@@ -48,33 +47,4 @@
 </main>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script>
-    $('.btnTri').click(function () {
-        event.preventDefault();
-        console.log($(this).attr('id'));
-        $('#liste_diplomes').fadeTo(100, 0);
-        $('.loaderWrapper').fadeIn(300);
-        $('.listeTri li').removeClass('actif');
-
-        $(this).parent('li').addClass('actif');
-
-        $.ajax({
-            type: 'GET',
-            url: 'inc/scripts/trier_diplomes.php',
-            data: 'tri_interets=' + $(this).attr('id'),
-
-            success: function (data) {
-                $('#liste_diplomes').html(data);
-
-                setTimeout(function () {
-                    $('.loaderWrapper').hide();
-                    $('#liste_diplomes').fadeTo(200, 1);
-                }, 1000);
-            },
-
-            error: function () {
-                $('#diplomes_galerie').html('<p>Un erreur est survenue!</p>');
-            },
-
-        });
-    });</script>
+<script src="assets/scripts/tri_diplomes.js"></script>
