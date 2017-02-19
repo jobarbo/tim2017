@@ -40,10 +40,32 @@ html{
       border-radius: 5px;
       resize: none;
     }
-
+    .blue-btn{
+          box-shadow: 15px 3px 4px rgba(0, 172, 255, 0.31);
+          &:hover{
+            box-shadow: rgba(0, 172, 255, 0.31) 15px 1px 3px;
+          }
+      }
     button{
       i{
         margin-right: 10px;
+      }
+      
+      &:before{
+        border-bottom: 15px solid #f7f7f7;
+        border-right: 15px solid transparent;
+      }
+      .back_slant{
+          //left: -14px;
+          background-color: #f7f7f7;
+          box-shadow: 12px 3px 1px 12px #f7f7f7;
+
+          &:before{
+            left: -14px;
+            border-top: 15px solid #f7f7f7;
+            border-left: 15px solid transparent;
+          }
+          
       }
     }
   }

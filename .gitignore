@@ -11,6 +11,7 @@ config.inc.php
 stylesheets/
 bower_components/
 node_modules/
+dist/
 
 # dossier de cache de sass
 .sass-cache/

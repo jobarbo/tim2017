@@ -81,19 +81,58 @@ header{
       padding: 16px 24px 16px 24px;
       background: linear-gradient(to left, #F5285D , #FF2424); /* For Safari 5.1 to 6.0 */;
       font-family:raleway_black;
-      box-shadow: rgba(246, 40, 89, 0.42) 4px 5px 9px 0;
+      box-shadow: 21px 3px 6px 0 rgba(246,40,89,.42);
       -webkit-font-smoothing: antialiased;
-      border-radius: 6px 0 0 6px;
       font-size : 18px;
       color: white;
       position: absolute;
       right: 0;
       top: 15px;
+      -webkit-backface-visibility: hidden;
       transform: translateX(3px);
       transition: all .2s ease-in-out;
       &:hover{
         transform: translateX(0);
-        box-shadow: rgba(246, 40, 89, 0.42) 4px 2px 2px 0;
+        box-shadow: 20px 2px 2px 0 rgba(246,40,89,.42);
+        &:after{
+          content: "";
+          display: table;
+          position: absolute;
+          bottom: 8px;
+          left: 2px;
+          transform: rotate(45deg);
+          background-color: #ff2425;
+          height: 15px;
+          width: 28px;
+          box-shadow: 1px 3px 3px rgba(246,40,89,.22);
+          z-index: 9;
+        }
+      }
+      &:before{
+        content: "";
+        display: table;
+        position: absolute;
+        bottom: 0px;
+        left: -1px;
+        width: 0;
+        height: 0;
+        z-index: 9;
+        border-bottom: 20px solid #fff;
+        border-right: 20px solid transparent;
+      }
+      &:after{
+        content: "";
+        display: table;
+        position: absolute;
+        bottom: 8px;
+        left: 2px;
+        transform: rotate(45deg);
+        background-color: #ff2425;
+        height: 15px;
+        width: 28px;
+        box-shadow: 2px 3px 8px rgba(246,40,89,.22);
+        z-index: 9;
+        transition: all .2s ease-in-out;
       }
     }
   }
