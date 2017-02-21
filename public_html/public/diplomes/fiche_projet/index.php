@@ -34,7 +34,7 @@ if(isset($_GET['slug'])){
     $intIdEtudiant = $_GET['idEtudiant'];
 }
 else{
-    //header('Location: ' . $strNiveau . '404/index.php');
+    header('Location: ' . $strNiveau . '404/index.php');
 }
 
 /*************** 4. REQUÊTES FICHE PROJET ***********************/
@@ -60,8 +60,7 @@ if ($objResultInfosProjet = $objConnMySQLi->query($strSQLInfosProjet)) {
 
 //En cas d'erreur de requête
 if($objResultInfosProjet->num_rows == 0){
-    //header('Location: ' . $strNiveau . '404/index.php');
-    echo "CA MARCHE PAS";
+    header('Location: ' . $strNiveau . '404/index.php');
 }
 
 $objResultInfosProjet->free_result();
@@ -149,4 +148,7 @@ echo $template->render(array(
 ));
 
 $template = $twig->loadTemplate('pieces/footer.html.twig');
+echo $template->render(array());
+
+$template = $twig->loadTemplate('pieces/scripts.html.twig');
 echo $template->render(array());

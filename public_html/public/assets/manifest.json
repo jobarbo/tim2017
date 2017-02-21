@@ -2,10 +2,7 @@
   "dependencies": {
     "main.js": {
       "files": [
-        "scripts/main.js",
-        "scripts/quiz1.js",
-        "scripts/tri_diplomes.js",
-        "scripts/skillbar.js"
+        "scripts/main.js"
       ],
       "main": true
     },
@@ -14,6 +11,21 @@
         "styles/main.scss"
       ],
       "main": true
+    },
+    "quiz1.js": {
+      "files": [
+        "scripts/quiz1.js"
+      ]
+    },
+    "skillbar.js": {
+      "files": [
+        "scripts/skillbar.js"
+      ]
+    },
+    "tri_driplomes.js": {
+      "files": [
+        "scripts/tri_diplomes.js"
+      ]
     },
     "customizer.js": {
       "files": [
