@@ -72,11 +72,15 @@ html{
 
 
   .coordination {
+    text-align: center;
     img {
       width: 20rem;
       height: auto;
       margin-bottom: 1rem;
-      border: 1px solid red;
+    }
+
+    .coordinateur{
+      text-align: left;
     }
   }
 }

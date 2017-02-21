@@ -50,9 +50,11 @@
 
     <div class="coordination">
         <img src="../../assets/images/photo_enseignants/lamoureux.png" alt="Photo de Sylvain Lamoureux">
-        {% for page in pages %}
-            {{ page.texte | raw}}
-        {% endfor %}
+        <div class="coordinateur">
+            {% for page in pages %}
+                {{ page.texte | raw}}
+            {% endfor %}
+        </div>
     </div>
 </section>
 
