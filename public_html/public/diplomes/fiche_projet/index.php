@@ -22,6 +22,7 @@
 $strNiveau="../../";
 $strSlugProjet = "";
 $strSection = "Fiche projet";
+$intIdEtudiant = null;
 
 /*************** 2. INSTANCIATION CONFIG ET TWIG ***********************/
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
@@ -30,6 +31,7 @@ require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 /*************** 3. REÇOIT ID DU PROJET ***********************/
 if(isset($_GET['slug'])){
     $strSlugProjet = $_GET['slug'];
+    $intIdEtudiant = $_GET['idEtudiant'];
 }
 else{
     header('Location: ' . $strNiveau . '404/index.php');
@@ -37,7 +39,7 @@ else{
 
 /*************** 4. REQUÊTES FICHE PROJET ***********************/
 //----- 4.1 Requete pour aller chercher tous les infos du projet -----//
-$strSQLInfosProjet = "SELECT * FROM t_projet_diplome WHERE slug = '" . $strSlugProjet . "'";
+$strSQLInfosProjet = "SELECT * FROM t_projet_diplome WHERE slug = '" . $strSlugProjet . "' AND id_diplome = " . $intIdEtudiant;
 if ($objResultInfosProjet = $objConnMySQLi->query($strSQLInfosProjet)) {
     while ($objLigneInfosProjet = $objResultInfosProjet->fetch_object()) {
         $arrInfosProjet =
@@ -114,7 +116,6 @@ $objConnMySQLi->close();
 $intNoImg = 1;
 
 while(file_exists($strNiveau . '/dist/images/projets/prj' . $arrInfosProjet['id'] . '_0' . $intNoImg . '.jpg')){
-    echo 'le fichier prj' . $arrInfosProjet['id'] . '_' . $intNoImg . '.jpg existe!';
     $arrProjetImg[] = array(
         'src'=>'prj' . $arrInfosProjet['id'] . '_0' . $intNoImg . '.jpg',
         'alt'=>'Image numéro ' . $intNoImg . ' du projet ' . $arrInfosProjet['titre']);
@@ -124,27 +125,19 @@ while(file_exists($strNiveau . '/dist/images/projets/prj' . $arrInfosProjet['id'
 
 
 /*************** 6. TWIG ***********************/
-$template = $twig->loadTemplate('pieces/head.html.twig');
-echo $template->render(array(
-    'title' => "Techniques d'intégration multimédia | TIM",
-    'page' => $arrInfosProjet['titre'] . " | Fiche projet | Diplômés | ",
-    'niveau' => $strNiveau
-));
-
-$template = $twig->loadTemplate('pieces/header.html.twig');
-echo $template->render(array(
-    'arrMenuLiensActifs' => $arrMenuActif
-));
 
 $template = $twig->loadTemplate('diplomes/fiche_projet/index.html.twig');
 echo $template->render(array(
+    //HEAD
+    'page' => $arrInfosProjet['titre'] . " | Fiche projet | Diplômés ",
     'niveau' => $strNiveau,
-    'page' => $arrInfosProjet['titre'],
+    //HEADER
+    'arrMenuLiensActifs' => $arrMenuActif,
+    //PAGE
+    'title' => $arrInfosProjet['titre'],
     'arrInfos' => $arrInfosProjet,
     'arrInfosEtudiant' => $arrEtudiant,
     'arrAutresProjets' => $arrAutresProjets,
     'arrImagesPrj' => $arrProjetImg
+    //SCRIPTS
 ));
-
-$template = $twig->loadTemplate('pieces/footer.html.twig');
-echo $template->render(array());

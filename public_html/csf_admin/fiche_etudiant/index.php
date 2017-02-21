@@ -6,7 +6,7 @@
  *
  * 1. VARIABLES LOCALES
  * 2. INSTANCIATION CONFIG ET TWIG
- * 3. REÇOIT ID DE L'ÉTUDIANT
+ * 3. REÇOIT MATRICULE DE L'ÉTUDIANT
  * 4. DÉFINITION CHEMIN ET FICHIER POUR TÉLÉVERSEMENT
  * 5. REQUÊTE AFFICHER FICHE DIPLÔMÉ
  * 5.1 Requete pour aller chercher tous les infos du diplômé
@@ -21,28 +21,58 @@
 $strNiveau = "../";
 $strNiveauAdmin = "../../public/";
 $strTriInterets = "";
-$intIdEtudiant = null;
+$intMatriculeEtudiant = null;
 $strSection = "Fiche étudiant";
 
 /*************** 2. INSTANCIATION CONFIG ET TWIG ***********************/
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 
 
-/*************** 3. REÇOIT ID DE L'ÉTUDIANT ***********************/
+/*************** 3. REÇOIT MATRICULE DE L'ÉTUDIANT ***********************/
 if (isset($_GET['id'])) {
-    $intIdEtudiant = $_GET['id'];
+    $intMatriculeEtudiant = $_GET['id'];
 } else {
-    header('Location: ' . $strNiveau . 'erreur/index.php');
+    header('Location: ' . $strNiveau . '404/index.php');
 }
 
 /*************** 4. DÉFINITION CHEMIN ET FICHIER POUR TÉLÉVERSEMENT ***********************/
 define("CHEMIN_TELEVERSEMENT", "../televersement/");
 define("NAME_FICHIER", "monFichierATeleverser");
 
-/*************** 4. REQUÊTE AFFICHER FICHE DIPLÔMÉ ***********************/
-//----- 4.1 Requete pour aller chercher tous les infos du diplômé -----//
+
+/*************** 5. SOUMISSION DES MODIFICATIONS ***********************/
+if (isset($_GET['submitInfosEtudiant'])) {
+    try {
+        $strSQLUpdateInfosEtudiant = "UPDATE t_diplome SET
+                                      profil = '" . $_GET['profil'] . "', 
+                                      forces = '" . $_GET['forces'] . "', 
+                                      interet_gestion_projet = '" . $_GET['interet_gestion'] . "',
+                                      interet_design_interface = '" . $_GET['interet_design'] . "',
+                                      interet_traitement_medias = '" . $_GET['interet_traitement'] . "',
+                                      interet_programmation = '" . $_GET['interet_programmation'] . "',
+                                      interet_integration = '" . $_GET['interet_integration'] . "',
+                                      courriel_diplome = '" . $_GET['courriel'] . "',
+                                      pseudo_twitter_diplome = '" . $_GET['twitter'] . "',
+                                      linkedin_diplome = '" . $_GET['linkedin'] . "',
+                                      site_web_diplome = '" . $_GET['siteweb'] . "'
+                                      WHERE nom_usager_admin = " . $intMatriculeEtudiant . " ";
+
+        if($objConnMySQLi->query($strSQLUpdateInfosEtudiant) === TRUE){
+            echo "MODIFICATIONS OK";
+        }
+        else{
+            echo "ÇA PAS MARCHER";
+        }
+
+    } catch (Exception $e) {
+
+    }
+}
+
+/*************** 5. REQUÊTE AFFICHER FICHE DIPLÔMÉ ***********************/
+//----- 5.1 Requete pour aller chercher tous les infos du diplômé -----//
 try {
-    $strSQLInfosEtudiant = "SELECT * FROM t_diplome WHERE id_diplome = " . $intIdEtudiant;
+    $strSQLInfosEtudiant = "SELECT * FROM t_diplome WHERE nom_usager_admin = " . $intMatriculeEtudiant;
 
     $objResultInfosEtudiant = $objConnMySQLi->query($strSQLInfosEtudiant);
 
@@ -82,14 +112,15 @@ try {
 
     //En cas d'erreur de requête
     if ($objResultInfosEtudiant->num_rows == 0) {
-        header('Location: ' . $strNiveau . 'erreur/index.php');
+        //header('Location: ' . $strNiveau . '404/index.php');
+        echo "MARCHE PAS 1";
     }
 
     $objResultInfosEtudiant->free_result();
 
-    //----- 4.2 Requete pour aller chercher tous les projets du diplômé -----//
+    //----- 5.2 Requete pour aller chercher tous les projets du diplômé -----//
     try {
-        $strSQLProjetsEtudiant = "SELECT id_projet, titre_projet, slug FROM t_projet_diplome WHERE id_diplome = " . $intIdEtudiant;
+        $strSQLProjetsEtudiant = "SELECT id_projet, titre_projet, slug FROM t_projet_diplome WHERE id_diplome = " . $arrInfosEtudiant['id'];
 
         $objResultProjetsEtudiant = $objConnMySQLi->query($strSQLProjetsEtudiant);
 
@@ -99,8 +130,7 @@ try {
             $arrProjetsEtudiant = false;
 
             throw $except;
-        }
-        else{
+        } else {
             while ($objLigneProjetsEtudiant = $objResultProjetsEtudiant->fetch_object()) {
                 $arrProjetsEtudiant[] =
                     array(
@@ -114,7 +144,8 @@ try {
 
         //En cas d'erreur de requête
         if ($objResultProjetsEtudiant->num_rows == 0) {
-            header('Location: ' . $strNiveau . 'erreur/index.php');
+            //header('Location: ' . $strNiveau . '404/index.php');
+            echo "MARCHE PAS 2";
         }
 
         $objResultProjetsEtudiant->free_result();
@@ -132,19 +163,14 @@ try {
 $objConnMySQLi->close();
 
 /*************** 6. TWIG ***********************/
-$template = $twig->loadTemplate('pieces/head.html.twig');
-echo $template->render(array(
-    'title' => "Section administrative | TIM",
-    'page' => "Éditer la fiche de " . $arrInfosEtudiant['prenom'] . " " . $arrInfosEtudiant['nom'] . " | ",
-    'niveau' => $strNiveau
-));
-
-$template = $twig->loadTemplate('pieces/header.html.twig');
-echo $template->render(array());
 
 $template = $twig->loadTemplate('fiche_etudiant/index.html.twig');
 echo $template->render(array(
+    //HEAD
+    'title' => "Section administrative | TIM",
+    'page' => "Éditer la fiche de " . $arrInfosEtudiant['prenom'] . " " . $arrInfosEtudiant['nom'] . " | ",
     'niveau' => $strNiveau,
+    //PAGE
     'page' => "Éditer la fiche du diplomé " . $arrInfosEtudiant['prenom'] . " <span>" . $arrInfosEtudiant['nom'] . "</span>",
     'arrInfos' => $arrInfosEtudiant,
     'arrProjets' => $arrProjetsEtudiant,
@@ -152,6 +178,3 @@ echo $template->render(array(
     'texteErreurProjets' => $texteErreurProjets,
     'name_fichier' => NAME_FICHIER
 ));
-
-$template = $twig->loadTemplate('pieces/footer.html.twig');
-echo $template->render(array());

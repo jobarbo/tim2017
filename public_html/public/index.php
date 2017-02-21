@@ -45,7 +45,7 @@ try{
     }
      //En cas d'erreur de requête
     if ($objResultNouvelle->num_rows == 0) {
-        header('Location: ' . $strNiveau . 'erreur/index.php');
+        header('Location: ' . $strNiveau . '404/index.php');
     }
     $objResultNouvelle->free_result();
 }catch (Exception $e) {
@@ -84,7 +84,7 @@ try {
     }
     //en cas d'erreur de requete'
     if ($objResultProjetsEtudiant->num_rows == 0) {
-        header('location: ' . $strNiveau . 'erreur/index.php');
+        header('location: ' . $strNiveau . '404/index.php');
     }
 
     $objResultProjetsEtudiant->free_result();
@@ -116,7 +116,7 @@ try {
     }
 
     if ($objResultInfosEtudiant->num_rows== 0){
-        header('location: ' . $strNiveau . 'erreur/index.php');
+        header('location: ' . $strNiveau . '404/index.php');
     }
     $objResultInfosEtudiant->free_result();
 } catch (Exception $e){

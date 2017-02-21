@@ -43,23 +43,10 @@ if ($objResultCours = $objConnMySQLi->query($strSQLGrilleCours)) {
 }
 
 ///////////// TWIG //////////////
-$template = $twig->loadTemplate('pieces/head.html.twig');
-echo $template->render(array(
-    'title' => "Techniques d'intégration multimédia | TIM",
-    'page' => "Grille de cours | ",
-    'niveau' => $strNiveau
-));
-$template = $twig->loadTemplate('pieces/header.html.twig');
-echo $template->render(array(
-    'arrMenuLiensActifs' => $arrMenuActif
-));
-
 $template = $twig->loadTemplate('programme/grille_cours/index.html.twig');
 echo $template->render(array(
     'niveau' => $strNiveau,
-    'cours' => $arrCours,
     'page' => "Grille de cours",
+    'arrMenuLiensActifs' => $arrMenuActif,
+    'cours' => $arrCours,
 ));
-
-$template = $twig->loadTemplate('pieces/footer.html.twig');
-echo $template->render(array());

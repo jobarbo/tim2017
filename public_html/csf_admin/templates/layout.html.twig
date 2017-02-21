@@ -1,0 +1,46 @@
+{# HEAD #}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Le programme de Techniques d’intégration multimédia est une formation vivante et actuelle! Vous aimez relever des défis et les nouvelles technologies? Ce programme est fait pour vous!">
+    <meta name="keywords" content="Techniques d’intégration multimédia, TIM, intégration multimédia, multimédia, Cégep Sainte-Foy, Cégep Ste-Foy, Web, CSS, HTML, Technologies, Design, Conception, Programmation, Intégration, Traitement des médias, médias">
+
+    <base href="{{ niveauAdmin }}"/>
+
+
+    <title>{{ page }} | Section Administrative | TIM</title>
+    <link rel="stylesheet" href="dist/styles/main.css">
+</head>
+
+{# HEADER #}
+<body>
+<header>
+    <nav>
+        <a href="">Site public</a>
+        <a href="administration.php">Déconnexion</a>
+    </nav>
+
+</header>
+<a href="{{ arrMenuLiensActifs.PHP_SELF }}{% if arrMenuLiensActifs.QUERY_STRING != "" %}?{{ arrMenuLiensActifs.QUERY_STRING }}{% endif %}#contenu"
+   class="visuallyhidden focusable">Allez au contenu</a>
+
+<main>
+    {# CONTENU DES PAGES #}
+    {% block content %}{% endblock %}
+</main>
+
+
+{# FOOTER #}
+<footer class="">
+    <div class="meta_nav">
+        <p>© 2017, Techniques d'intégration multimédia, Cégep de Sainte-Foy.</p>
+    </div>
+</footer>
+
+{# SCRIPTS SELON PAGE #}
+{% block scripts %}{% endblock %}
+
+</body>
+</html>

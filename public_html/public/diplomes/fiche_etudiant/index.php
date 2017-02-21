@@ -7,10 +7,11 @@
  * 1. VARIABLES LOCALES
  * 2. INSTANCIATION CONFIG ET TWIG
  * 3. REÇOIT ID DE L'ÉTUDIANT
- * 4. REQUÊTES FICHE DIPLÔMÉ
- * 4.1 Requete pour aller chercher tous les infos du diplômé
- * 4.2 Requete pour aller chercher tous les projets du diplômé
- * 5. TWIG
+ * 4. REÇOIT LE TRI PAR INTÉRÊTS
+ * 5. REQUÊTES FICHE DIPLÔMÉ
+ * 5.1 Requete pour aller chercher tous les infos du diplômé
+ * 5.2 Requete pour aller chercher tous les projets du diplômé
+ * 6. TWIG
  *
  *  FICHE ÉTUDIANT
  */
@@ -131,28 +132,21 @@ try {
 $objConnMySQLi->close();
 
 /*************** 6. TWIG ***********************/
-$template = $twig->loadTemplate('pieces/head.html.twig');
-echo $template->render(array(
-    'title' => "Techniques d'intégration multimédia | TIM",
-    'page' => $arrInfosEtudiant['prenom'] . " " . $arrInfosEtudiant['nom'] . " | Diplômés | ",
-    'niveau' => $strNiveau
-));
-
-$template = $twig->loadTemplate('pieces/header.html.twig');
-echo $template->render(array(
-    'arrMenuLiensActifs' => $arrMenuActif
-));
 
 $template = $twig->loadTemplate('diplomes/fiche_etudiant/index.html.twig');
 echo $template->render(array(
+    //HEAD
+    'page' => $arrInfosEtudiant['prenom'] . " " . $arrInfosEtudiant['nom'] . " | Diplômés ",
     'niveau' => $strNiveau,
-    'page' => $arrInfosEtudiant['prenom'] . " <span>" . $arrInfosEtudiant['nom'] . "</span>",
+    //HEADER
+    'arrMenuLiensActifs' => $arrMenuActif,
+    //PAGE
+    'title' => $arrInfosEtudiant['prenom'] . " <span>" . $arrInfosEtudiant['nom'] . "</span>",
     'arrInfos' => $arrInfosEtudiant,
     'arrProjets' => $arrProjetsEtudiant,
     'texteErreurFiche' => $texteErreurFiche,
     'texteErreurProjets' => $texteErreurProjets,
-    'tri_interets' => $strTriInterets
+    'tri_interets' => $strTriInterets,
+    //SCRIPT
+    'fichier_script' => 'skillbar.js'
 ));
-
-$template = $twig->loadTemplate('pieces/footer.html.twig');
-echo $template->render(array());

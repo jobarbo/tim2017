@@ -1,0 +1,22 @@
+{# Intégration du layout de base #}
+{% extends 'layout.html.twig' %}
+
+
+{% block scripts %}
+
+{% if fichier_script is defined %}
+
+    {% if fichier_script == 'nicEdit.js' %}
+        <script type="text/javascript" src="../js/{{ fichier_script }}"></script>
+        <script type="text/javascript">
+            bkLib.onDomLoaded(function () {
+                nicEditors.allTextAreas()
+            });
+        </script>
+    {% else %}
+        <script type="text/javascript" src="../dist/scripts/{{ fichier_script }}"></script>
+    {% endif %}
+
+{% endif %}
+
+{% endblock%}

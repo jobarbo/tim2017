@@ -2,16 +2,35 @@
   "dependencies": {
     "main.js": {
       "files": [
-        "scripts/main.js",
-        "scripts/quiz1.js"
+        "scripts/main.js"
       ],
       "main": true
+    },
+    "quiz2.js": {
+      "files": [
+        "scripts/quiz2.js"
+      ]
     },
     "main.css": {
       "files": [
         "styles/main.scss"
       ],
       "main": true
+    },
+    "quiz1.js": {
+      "files": [
+        "scripts/quiz1.js"
+      ]
+    },
+    "skillbar.js": {
+      "files": [
+        "scripts/skillbar.js"
+      ]
+    },
+    "tri_driplomes.js": {
+      "files": [
+        "scripts/tri_diplomes.js"
+      ]
     },
     "customizer.js": {
       "files": [
