@@ -10,35 +10,33 @@
  * always reference jQuery with $, even when in .noConflict() mode.
  * ======================================================================== */
 
-(function($) {
+(function ($) {
 
 
 
-  $(document).ready(function() {
+  $(document).ready(function () {
 
   });
 
 
 
-  function configurer() {
+  function configurer() {
+$('input.navbox').on('change', function() {
+    $('input.navbox').not(this).prop('checked', false);  
+});
+    
 
-    $( ".etudiant" ).click(function() {
 
-      $( ".second_nav.sub_etudiant" ).slideToggle( "slow" );
-    });
-    $( ".programme" ).click(function() {
-
-      $( ".second_nav.sub_programme" ).slideToggle( "slow" );
-    });
-    $( ".stages" ).click(function() {
-
-      $( ".second_nav.sub_stages" ).slideToggle( "slow" );
-    });
+   
 
 
 
-}
+
+
+
+
+  }
   window.onload = configurer;
-  
+
 
 })(jQuery); // Fully reference jQuery after this point.

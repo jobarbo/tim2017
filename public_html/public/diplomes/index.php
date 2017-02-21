@@ -92,10 +92,12 @@ echo $template->render(array(
     'page' => "Nos diplômés 2017 | ",
     'niveau' => $strNiveau
 ));
+
 $template = $twig->loadTemplate('pieces/header.html.twig');
 echo $template->render(array(
     'arrMenuLiensActifs' => $arrMenuActif
 ));
+
 $template = $twig->loadTemplate('diplomes/index.html.twig');
 echo $template->render(array(
     'niveau' => $strNiveau,
@@ -104,5 +106,11 @@ echo $template->render(array(
     'diplomes' => $arrDiplomes,
     'erreur' => $strMsgErrDiplomes
 ));
+
 $template = $twig->loadTemplate('pieces/footer.html.twig');
 echo $template->render(array());
+
+$template = $twig->loadTemplate('pieces/scripts.html.twig');
+echo $template->render(array(
+    'fichier_script' => 'tri_diplomes.js'
+));

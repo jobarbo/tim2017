@@ -41,9 +41,9 @@ html{
       resize: none;
     }
     .blue-btn{
-          box-shadow: 15px 3px 4px rgba(0, 172, 255, 0.31);
+          box-shadow: 12px 3px 4px rgba(0, 172, 255, 0.31);
           &:hover{
-            box-shadow: rgba(0, 172, 255, 0.31) 15px 1px 3px;
+            box-shadow: 11px 1px 3px rgba(0,172,255,.51);
           }
       }
     button{
@@ -52,8 +52,8 @@ html{
       }
       
       &:before{
-        border-bottom: 15px solid #f7f7f7;
-        border-right: 15px solid transparent;
+        border-bottom: 10px solid #f7f7f7;
+        border-right: 10px solid transparent;
       }
       .back_slant{
           //left: -14px;
@@ -61,9 +61,9 @@ html{
           box-shadow: 12px 3px 1px 12px #f7f7f7;
 
           &:before{
-            left: -14px;
-            border-top: 15px solid #f7f7f7;
-            border-left: 15px solid transparent;
+            left: -10px;
+            border-top: 10px solid #f7f7f7;
+            border-left: 10px solid transparent;
           }
           
       }
@@ -72,12 +72,15 @@ html{
 
 
   .coordination {
+    text-align: center;
     img {
       width: 20rem;
       height: auto;
       margin-bottom: 1rem;
+    }
 
-      border: 1px solid red;
+    .coordinateur{
+      text-align: left;
     }
   }
 }

@@ -33,13 +33,15 @@ foreach($quiz->questions->question as $questions)
         $cpt2 =0;
         foreach ($cle as $itteration)
         {
+            $arrQuestions[$cptQ]['libelleReponse'][$cpt2] = $itteration->libelleReponse;
             $arrQuestions[$cptQ]['texteReponse'][$cpt2] = $itteration->texteReponse;
-            $arrQuestions[$cptQ]['pointage'][$cpt2] = $itteration->pointage;
             $cpt2++;
         }
     }
     $cptQ++;
 }
+
+$arrId = ["A", "B"];
 
 ///////////// TWIG //////////////
 $template = $twig->loadTemplate('pieces/head.html.twig');
@@ -56,7 +58,8 @@ echo $template->render(array(
 $template = $twig->loadTemplate('futur_etudiant/bon_choix/index.html.twig');
 echo $template->render(array(
     'niveau' => $strNiveau,
-    'xml' => $arrQuestions
+    'xml' => $arrQuestions,
+    'tId' => $arrId
 ));
 
 $template = $twig->loadTemplate('pieces/footer.html.twig');
