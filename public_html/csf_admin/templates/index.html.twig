@@ -13,7 +13,7 @@
             <ul id="liste_diplomes">
                 {% for arrDiplomes in diplomes %}
                     <li>
-                        <p class="nom">{{ arrDiplomes.prenom }} {{ arrDiplomes.nom }} <span><a href="fiche_etudiant/index.php?id={{ arrDiplomes.id }}">Éditer la fiche</a></span></p>
+                        <p class="nom">{{ arrDiplomes.prenom }} {{ arrDiplomes.nom }} <span><a href="fiche_etudiant/index.php?id={{ arrDiplomes.matricule }}">Éditer la fiche</a></span></p>
                     </li>
                 {% endfor %}
             </ul>

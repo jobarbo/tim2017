@@ -1,5 +1,8 @@
-<a href="diplomes/fiche_etudiant/index.php#contenu" class="visuallyhidden focusable">Allez au contenu</a>
-<main>
+{# Intégration du layout de base #}
+{% extends 'layout.html.twig' %}
+
+
+{% block content %}
     {% if texteErreurFiche == false %}
 
         <section id="infos_etudiant">
@@ -145,10 +148,5 @@
     {% else %}
         {{ texteErreurFiche | raw }}
     {% endif %}
-</main>
-<script type="text/javascript" src="../js/nicEdit.js"></script>
-<script type="text/javascript">
-    bkLib.onDomLoaded(function () {
-        nicEditors.allTextAreas()
-    });
-</script>
+
+{% endblock%}
