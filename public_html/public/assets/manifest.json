@@ -17,6 +17,21 @@
       ],
       "main": true
     },
+    "quiz1.js": {
+      "files": [
+        "scripts/quiz1.js"
+      ]
+    },
+    "skillbar.js": {
+      "files": [
+        "scripts/skillbar.js"
+      ]
+    },
+    "tri_driplomes.js": {
+      "files": [
+        "scripts/tri_diplomes.js"
+      ]
+    },
     "customizer.js": {
       "files": [
         "scripts/customizer.js"

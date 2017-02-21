@@ -43,7 +43,7 @@
             <ul>
                 {% for projet in arrAutresProjets %}
                     <li>
-                        <a href="diplomes/fiche_projet/index.php?id={{ projet.id }}">
+                        <a href="diplomes/fiche_projet/index.php?slug={{ projet.slug }}&idEtudiant={{ arrInfos.id_diplome }}">
                             <div class="img_projet">
                                 <picture>
                                     <!--<source media="" srcset="../images/projets/prj408_01-mobile.jpg 1x, ../images/projets/prj408_01-mobile@2x.jpg 2x">
@@ -60,6 +60,3 @@
         </div>
     </section>
 </main>
-</body>
-
-</html>
