@@ -136,14 +136,12 @@ $objConnMySQLi->close();
 $template = $twig->loadTemplate('diplomes/fiche_etudiant/index.html.twig');
 echo $template->render(array(
     //HEAD
-    'title' => "Techniques d'intégration multimédia | TIM",
-    'page' => $arrInfosEtudiant['prenom'] . " " . $arrInfosEtudiant['nom'] . " | Diplômés | ",
+    'page' => $arrInfosEtudiant['prenom'] . " " . $arrInfosEtudiant['nom'] . " | Diplômés ",
     'niveau' => $strNiveau,
     //HEADER
     'arrMenuLiensActifs' => $arrMenuActif,
     //PAGE
-    'niveau' => $strNiveau,
-    'page' => $arrInfosEtudiant['prenom'] . " <span>" . $arrInfosEtudiant['nom'] . "</span>",
+    'title' => $arrInfosEtudiant['prenom'] . " <span>" . $arrInfosEtudiant['nom'] . "</span>",
     'arrInfos' => $arrInfosEtudiant,
     'arrProjets' => $arrProjetsEtudiant,
     'texteErreurFiche' => $texteErreurFiche,

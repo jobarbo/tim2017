@@ -6,7 +6,7 @@
     {% if texteErreurFiche == false %}
         <section class="haut_page">
 
-            <h1 id="contenu">{{ page | raw }}</h1>
+            <h1 id="contenu">{{ title | raw }}</h1>
             <span class='retour_precedent'><a href="diplomes/index.php{% if tri_interets %}?tri_interets={{ tri_interets }}{% endif %}">retour vers la liste des diplômés</a></span>
 
             <ul class="etudiant_contact">
