@@ -39,6 +39,36 @@ if (isset($_GET['id'])) {
 define("CHEMIN_TELEVERSEMENT", "../televersement/");
 define("NAME_FICHIER", "monFichierATeleverser");
 
+
+/*************** 5. SOUMISSION DES MODIFICATIONS ***********************/
+if (isset($_GET['submitInfosEtudiant'])) {
+    try {
+        $strSQLUpdateInfosEtudiant = "UPDATE t_diplome SET
+                                      profil = '" . $_GET['profil'] . "', 
+                                      forces = '" . $_GET['forces'] . "', 
+                                      interet_gestion_projet = '" . $_GET['interet_gestion'] . "',
+                                      interet_design_interface = '" . $_GET['interet_design'] . "',
+                                      interet_traitement_medias = '" . $_GET['interet_traitement'] . "',
+                                      interet_programmation = '" . $_GET['interet_programmation'] . "',
+                                      interet_integration = '" . $_GET['interet_integration'] . "',
+                                      courriel_diplome = '" . $_GET['courriel'] . "',
+                                      pseudo_twitter_diplome = '" . $_GET['twitter'] . "',
+                                      linkedin_diplome = '" . $_GET['linkedin'] . "',
+                                      site_web_diplome = '" . $_GET['siteweb'] . "'
+                                      WHERE nom_usager_admin = " . $intMatriculeEtudiant . " ";
+
+        if($objConnMySQLi->query($strSQLUpdateInfosEtudiant) === TRUE){
+            echo "MODIFICATIONS OK";
+        }
+        else{
+            echo "ÇA PAS MARCHER";
+        }
+
+    } catch (Exception $e) {
+
+    }
+}
+
 /*************** 5. REQUÊTE AFFICHER FICHE DIPLÔMÉ ***********************/
 //----- 5.1 Requete pour aller chercher tous les infos du diplômé -----//
 try {
@@ -82,7 +112,8 @@ try {
 
     //En cas d'erreur de requête
     if ($objResultInfosEtudiant->num_rows == 0) {
-        header('Location: ' . $strNiveau . '404/index.php');
+        //header('Location: ' . $strNiveau . '404/index.php');
+        echo "MARCHE PAS 1";
     }
 
     $objResultInfosEtudiant->free_result();
@@ -99,8 +130,7 @@ try {
             $arrProjetsEtudiant = false;
 
             throw $except;
-        }
-        else{
+        } else {
             while ($objLigneProjetsEtudiant = $objResultProjetsEtudiant->fetch_object()) {
                 $arrProjetsEtudiant[] =
                     array(
@@ -114,7 +144,8 @@ try {
 
         //En cas d'erreur de requête
         if ($objResultProjetsEtudiant->num_rows == 0) {
-            header('Location: ' . $strNiveau . '404/index.php');
+            //header('Location: ' . $strNiveau . '404/index.php');
+            echo "MARCHE PAS 2";
         }
 
         $objResultProjetsEtudiant->free_result();

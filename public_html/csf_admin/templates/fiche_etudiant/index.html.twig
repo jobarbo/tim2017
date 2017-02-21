@@ -7,8 +7,8 @@
 
         <section id="infos_etudiant">
             <form enctype="multipart/form-data"
-                  method="post"
-                  action="index.php?id={{ arrInfos.id }}#infos_etudiant"
+                  method="get"
+                  action="index.php"
                   name="fInfosEtudiant">
                 <h2>Informations du diplômé</h2>
                 <div class="profil">
@@ -90,7 +90,7 @@
                     </select>
 
                     <h4>Intégration</h4>
-                    <select name="interet_programmation" id="interet_programmation">
+                    <select name="interet_integration" id="interet_integration">
                         {% for i in 0..10 %}
 
                             <option value="{{ i }}"
@@ -103,7 +103,8 @@
                     </select>
 
                 </div>
-                <input type="submit" name="Submit" value="Modifier les informations"/>
+                <input type="hidden" name="id" value="{{ arrInfos.nom_usager_admin }}">
+                <input type="submit" name="submitInfosEtudiant" value="Modifier les informations"/>
             </form>
             <div id="photo_etudiant">
                 <h3>Photo du diplômé</h3>
@@ -119,7 +120,7 @@
                     <fieldset>
                         <legend>Fichier à téléverser</legend>
                         <input type="file" name="{{ name_fichier }}" value="Parcourir"/><br/>
-                        <input type="submit" name="Submit" value="Téléverser"/>
+                        <input type="submit" name="submitPhotosEtudiant" value="Téléverser"/>
                     </fieldset>
 
                 </form>
@@ -135,7 +136,7 @@
                         <li>
                             {{ projet.titre }}
                             <span>
-                                <a href="fiche_etudiant/fiche_projet/editer.php?id={{ projet.id }}">Éditer</a>
+                                <a href="">Éditer</a>
                             </span>
                         </li>
                     {% endfor %}
@@ -143,7 +144,7 @@
             {% else %}
                 {{ texteErreurProjet | raw }}
             {% endif %}
-            <a href="fiche_etudiant/fiche_projet/ajouter.php">Ajouter un projet</a>
+            <a href="">Ajouter un projet</a>
         </section>
     {% else %}
         {{ texteErreurFiche | raw }}
