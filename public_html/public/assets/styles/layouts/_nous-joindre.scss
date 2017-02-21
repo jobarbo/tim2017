@@ -10,6 +10,10 @@ html{
   margin-right: 10px;
 }
 
+hr{
+  display: none;
+}
+
 
 
 
@@ -73,12 +77,12 @@ html{
 
   .coordination {
     padding-left: 2%;
-    text-align: center;
     width: 50%;
       img {
+        display: block;
+        margin: 0 auto 1rem auto;
         width: 20rem;
         height: auto;
-        margin-bottom: 1rem;
       }
       
       a{
@@ -90,10 +94,6 @@ html{
         a{
           color: #fff;
         }
-      }
-
-      .coordinateur{
-        text-align: left;
       }
   }
 }
@@ -127,5 +127,33 @@ html{
 @media (max-width: 840px) {
   .center-page{
     display: block;
+  }
+
+  .contact{
+    .form, .coordination{
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    .form{
+      input, select, textarea{
+        width: 100%;
+      }
+    }
+  }
+
+  hr{
+    margin: 3rem 8%;
+    display: block;
+    height: 0;
+    border: 1px solid $blue;
+  }
+
+  .maps{
+    iframe{
+      width: 100%;
+      margin-bottom: 2rem;
+    }
   }
 }
