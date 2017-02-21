@@ -70,7 +70,7 @@ if(isset($_GET['validerQuiz']))
             'xml' => $arrQuestions,
             'tId' => $arrId,
             'arrMenuLiensActifs' => $arrMenuActif,
-            'erreur' => "Veuillez compléter à toutes les questions.",
+            'erreur' => "Veuillez compléter toutes les questions.",
             'fichier_script' => 'quiz1.js'
 
         ));
@@ -120,7 +120,6 @@ if(isset($_GET['validerQuiz']))
         'page' => "As-tu le profil? | ",
         'arrMenuLiensActifs' => $arrMenuActif,
         'bonneReponse' => $bonneReponse,
-        'fichier_script' => 'quiz1.js'
     ));
 }
 else
