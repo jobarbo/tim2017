@@ -6,14 +6,11 @@
     <h1>Nous joindre</h1>
     {{ showFlashes() }}
 
-    <h2>Contactez-nous</h2>
-
-
     <section class="contact center-page">
-
         <div class="form">
+            <h2>Contactez-nous</h2>
             {# formulaire de contact #}
-            <form action="" class="form" method="post">
+            <form action="" method="post">
                 {# nom complet #}
                 <div class="field">
                     <label for="name">Nom complet</label>
@@ -49,7 +46,7 @@
                 <textarea required name="message" id="message" title="Entrez votre message" aria-describedby="message-tip" placeholder="Entrez votre message"></textarea>
 
                 {# Submit #}
-                <button type="submit" class="blue-btn" id="submit" name="submit" value="submit"><i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                <button type="submit" class="blue-btn" id="submit" name="submit" value="submit"><i class="fa fa-paper-plane-o i-space" aria-hidden="true"></i>
                      Envoyer<span class="back_slant"></span></button>
             </form>
         </div>
@@ -73,7 +70,10 @@
             <p>Cégep de Sainte-Foy</p>
             <p>2410 chemin Sainte-Foy, Québec G1V 1T3</p>
 
-            <a href="https://goo.gl/maps/RfnK9Gnm2112">Ouvrir dans google maps</a>
+            <button class="blue-btn">
+                <i class="fa fa-map-o i-space" aria-hidden="true"></i>
+                <a href="https://goo.gl/maps/RfnK9Gnm2112">Ouvrir dans google maps</a>
+            </button>
         </div>
     </section>
 {% endblock%}
