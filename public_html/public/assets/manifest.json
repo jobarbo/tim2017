@@ -6,9 +6,9 @@
       ],
       "main": true
     },
-    "quiz1.js": {
+    "quiz2.js": {
       "files": [
-        "scripts/quiz1.js"
+        "scripts/quiz2.js"
       ]
     },
     "main.css": {

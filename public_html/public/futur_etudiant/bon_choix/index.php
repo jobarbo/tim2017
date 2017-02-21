@@ -64,3 +64,8 @@ echo $template->render(array(
 
 $template = $twig->loadTemplate('pieces/footer.html.twig');
 echo $template->render(array());
+
+$template = $twig->loadTemplate('pieces/scripts.html.twig');
+echo $template->render(array(
+    'fichier_script' => 'quiz2.js'
+));
