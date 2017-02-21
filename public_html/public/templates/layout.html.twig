@@ -182,7 +182,9 @@
 <script type="text/javascript" src="dist/scripts/main.js"></script>
 
 {# SCRIPTS SELON PAGE #}
-{% block scripts %}{% endblock %}
+{% if fichier_script is defined %}
+    <script type="text/javascript" src="dist/scripts/{{ fichier_script }}"></script>
+{% endif %}
 
 </body>
 </html>
