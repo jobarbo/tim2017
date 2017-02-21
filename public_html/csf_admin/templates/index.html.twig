@@ -4,7 +4,20 @@
         <h1 id="contenu">{{ page }}</h1>
     </section>
     <section>
-        <h2>Évènements</h2>
+        <h2>Événements</h2>
+        {% if erreurEvenements == false %}
+            <section id="section_liste_evenements">
+                <ul id="liste_evenements">
+                    {% for arrEvenements in evenements %}
+                        <li>
+                            <p>{{ arrEvenements.id_actualite }} <a href="#">{{ arrEvenements.titre_actualite }}</a> {{ arrEvenements.description_actualite }}</p>
+                            <button>Supprimer l'événement</button>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </section>
+        {% endif %}
+        <a href="#">Ajouter un événement</a> <a href="#">Éditer un événement</a>
     </section>
     <section>
         <h2>Fiches des diplômés</h2>
