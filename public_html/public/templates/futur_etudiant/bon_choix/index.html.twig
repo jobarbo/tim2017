@@ -1,9 +1,14 @@
 <div class="container">
     <main>
         <h1>Fais-tu le bon choix?</h1>
+        <div class="contenuInteractif">
+            <p id='progression'></p>
+            <p id='retroaction'></p>
+            <p id="erreurQuiz2">{{ erreur }}</p>
+        </div>
         <div class="col-sm-6">
             {% for i in 0..4 %}
-                <p>{{ xml[i]['texteQuestion'] }}</p>
+                <span id="qProfil{{ i }}">{{ xml[i]['texteQuestion'] }}</span>
             {% endfor %}
         </div>
         <div class="col-sm-6">
@@ -21,6 +26,7 @@
                 </fieldset>
                 <br /><br />
             {% endfor %}
+                <input id='validerQuiz' name='validerQuiz' type="submit" value="Valider">
             </form>
         </div>
     </main>
