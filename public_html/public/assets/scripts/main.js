@@ -18,23 +18,12 @@
 
   });
 
-
-
   function configurer() {
-$('input.navbox').on('change', function() {
-    $('input.navbox').not(this).prop('checked', false);  
-});
-    
 
 
-   
-
-
-
-
-
-
-
+    $('input.navbox').on('change', function () {
+      $('input.navbox').not(this).prop('checked', false);
+    });
   }
   window.onload = configurer;
 
