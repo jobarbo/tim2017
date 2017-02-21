@@ -20,21 +20,15 @@ require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 $objConnMySQLi->close();
 
 /*************** INSTANCIATION CONFIG ET TWIG ***********************/
-$template = $twig->loadTemplate('pieces/head.html.twig');
+
+$template = $twig->loadTemplate('404/index.html.twig');
 echo $template->render(array(
+    //HEAD
     'title' => "Techniques d'intégration multimédia | TIM",
     'page' => "Page inexistante | ",
-    'niveau' => $strNiveau
-));
-$template = $twig->loadTemplate('pieces/header.html.twig');
-echo $template->render(array(
-));
-
-$template = $twig->loadTemplate('erreur/index.html.twig');
-echo $template->render(array(
     'niveau' => $strNiveau,
-    'page' => "Page inexistante"
+    //PAGE
+    'page' => "Page inexistante",
+    //SCRIPTS
+    'fichier_script' => 'nicEdit.js'
 ));
-
-$template = $twig->loadTemplate('pieces/footer.html.twig');
-echo $template->render(array());

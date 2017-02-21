@@ -6,11 +6,9 @@
  *
  * 1. VARIABLES LOCALES
  * 2. INSTANCIATION CONFIG ET TWIG
- * 3. REÇOIT ID DE L'ÉTUDIANT
- * 4. REQUÊTES FICHE DIPLÔMÉ
- * 4.1 Requete pour aller chercher tous les infos du diplômé
- * 4.2 Requete pour aller chercher tous les projets du diplômé
- * 5. TWIG
+ * 3. REQUÊTES DIPLÔMÉS
+ * 3.2 Requete pour aller chercher tous les diplômés
+ * 4. TWIG
  *
  *  ADMIN - ACCUEIL
  */
@@ -58,7 +56,7 @@ try {
 /*************** 3. REQUÊTES DIPLÔMÉS ***********************/
 //----- 3.2 Requete pour aller chercher tous les diplômés -----//
 try {
-    $strSQLDiplomes = "SELECT prenom_diplome, nom_diplome, slug, id_diplome FROM t_diplome ORDER BY nom_diplome";
+    $strSQLDiplomes = "SELECT prenom_diplome, nom_diplome, slug, nom_usager_admin FROM t_diplome ORDER BY nom_diplome";
 
     $objResultDiplome = $objConnMySQLi->query($strSQLDiplomes);
     if ($objResultDiplome == false) {
@@ -72,7 +70,7 @@ try {
                 array(
                     'prenom' => $objLigneDiplome->prenom_diplome,
                     'nom' => $objLigneDiplome->nom_diplome,
-                    'id' => $objLigneDiplome->id_diplome
+                    'matricule' => $objLigneDiplome->nom_usager_admin
                 );
         }
         $strMsgErrDiplomes = false;

@@ -132,18 +132,14 @@ try {
 $objConnMySQLi->close();
 
 /*************** 6. TWIG ***********************/
-$template = $twig->loadTemplate('pieces/head.html.twig');
-echo $template->render(array(
-    'title' => "Section administrative | TIM",
-    'page' => "Éditer la fiche de " . $arrInfosEtudiant['prenom'] . " " . $arrInfosEtudiant['nom'] . " | ",
-    'niveau' => $strNiveau
-));
-
-$template = $twig->loadTemplate('pieces/header.html.twig');
-echo $template->render(array());
 
 $template = $twig->loadTemplate('fiche_etudiant/index.html.twig');
 echo $template->render(array(
+    //HEAD
+    'title' => "Section administrative | TIM",
+    'page' => "Éditer la fiche de " . $arrInfosEtudiant['prenom'] . " " . $arrInfosEtudiant['nom'] . " | ",
+    'niveau' => $strNiveau,
+    //PAGE
     'niveau' => $strNiveau,
     'page' => "Éditer la fiche du diplomé " . $arrInfosEtudiant['prenom'] . " <span>" . $arrInfosEtudiant['nom'] . "</span>",
     'arrInfos' => $arrInfosEtudiant,
@@ -152,6 +148,3 @@ echo $template->render(array(
     'texteErreurProjets' => $texteErreurProjets,
     'name_fichier' => NAME_FICHIER
 ));
-
-$template = $twig->loadTemplate('pieces/footer.html.twig');
-echo $template->render(array());
