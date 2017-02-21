@@ -11,7 +11,17 @@ header{
     padding: 5px 2%;
 
   }
-  a{ color:black;
+  
+
+  #logoTIM{
+    float: left;
+    img{
+      width:200px;
+    }
+  }
+  a{ 
+    cursor:pointer;
+    color:black;
     position: relative;
     transition: all 0.3s ease;
     &:hover{
@@ -24,10 +34,6 @@ header{
       outline:none;
     }}
 
-  #logoTIM{
-    float: left;
-  }
-
   nav#nav_primary{
     height:90px;
     padding: 10px 155px 24px 2%;
@@ -38,12 +44,40 @@ header{
       margin-bottom: 0;
       text-align: right;
 
+      
+
       li.top_niveau{
         display: inline-block;
         font-family:raleway_black;
         font-size : 18px;
         margin-left:4.8611%;
+        cursor:pointer;
+        label{ 
+          cursor:pointer;
+          color:black;
+          position: relative;
+          transition: all 0.3s ease;
+        &:hover{
+          
+          text-decoration: none;
+          color: #0D97F5;
+        }
+        &:focus{
+          text-decoration: none;
+          color: #0D97F5;
+          outline:none;
+        }}
 
+          input[type="checkbox"]{
+           display: none;
+            
+          }
+          input[type="checkbox"]:checked ~ label{
+            color: #0D97F5;
+          }
+          input[type="checkbox"]:checked ~ ul.second_nav {
+              display: block!important;
+            }
 
         ul.second_nav{
           display: none;
@@ -81,7 +115,7 @@ header{
       padding: 16px 24px 16px 24px;
       background: linear-gradient(to left, #F5285D , #FF2424); /* For Safari 5.1 to 6.0 */;
       font-family:raleway_black;
-      box-shadow: 21px 3px 6px 0 rgba(246,40,89,.42);
+      box-shadow: 16px 3px 6px 0 rgba(246,40,89,.42);
       -webkit-font-smoothing: antialiased;
       font-size : 18px;
       color: white;
@@ -93,18 +127,18 @@ header{
       transition: all .2s ease-in-out;
       &:hover{
         transform: translateX(0);
-        box-shadow: 20px 2px 2px 0 rgba(246,40,89,.42);
+        box-shadow: 16px 2px 2px 0 rgba(246,40,89,.42);
         &:after{
-          content: "";
-          display: table;
-          position: absolute;
-          bottom: 8px;
-          left: 2px;
-          transform: rotate(45deg);
-          //background-color: #fe252d;
-          background: transparent;
-          height: 15px;
-          width: 28px;
+        content: "";
+        display: table;
+        position: absolute;
+        bottom: 5px;
+        left: 3px;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        background: rgba(255, 255, 255, 0);
+        height: 11px;
+        width: 19px;
           box-shadow: 1px 3px 3px rgba(246,40,89,.22);
           z-index: 9;
         }
@@ -118,21 +152,23 @@ header{
         width: 0;
         height: 0;
         z-index: 9;
-        border-bottom: 20px solid #fff;
-        border-right: 20px solid transparent;
+        border-bottom: 15px solid #fff;
+        border-right: 15px solid transparent;
       }
       &:after{
         content: "";
         display: table;
         position: absolute;
-        bottom: 8px;
-        left: 2px;
+        bottom: 5px;
+        left: 3px;
+        -webkit-transform: rotate(45deg);
         transform: rotate(45deg);
-        background: transparent;
-        height: 15px;
-        width: 28px;
+        background: rgba(255, 255, 255, 0);
+        height: 11px;
+        width: 19px;
         box-shadow: 2px 3px 8px rgba(246,40,89,.22);
         z-index: 9;
+        -webkit-transition: all .2s ease-in-out;
         transition: all .2s ease-in-out;
       }
     }
