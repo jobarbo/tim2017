@@ -125,30 +125,21 @@ while(file_exists($strNiveau . '/dist/images/projets/prj' . $arrInfosProjet['id'
 
 
 /*************** 6. TWIG ***********************/
-$template = $twig->loadTemplate('pieces/head.html.twig');
-echo $template->render(array(
-    'title' => "Techniques d'intégration multimédia | TIM",
-    'page' => $arrInfosProjet['titre'] . " | Fiche projet | Diplômés | ",
-    'niveau' => $strNiveau
-));
-
-$template = $twig->loadTemplate('pieces/header.html.twig');
-echo $template->render(array(
-    'arrMenuLiensActifs' => $arrMenuActif
-));
 
 $template = $twig->loadTemplate('diplomes/fiche_projet/index.html.twig');
 echo $template->render(array(
+    //HEAD
+    'title' => "Techniques d'intégration multimédia | TIM",
+    'page' => $arrInfosProjet['titre'] . " | Fiche projet | Diplômés | ",
+    'niveau' => $strNiveau,
+    //HEADER
+    'arrMenuLiensActifs' => $arrMenuActif,
+    //PAGE
     'niveau' => $strNiveau,
     'page' => $arrInfosProjet['titre'],
     'arrInfos' => $arrInfosProjet,
     'arrInfosEtudiant' => $arrEtudiant,
     'arrAutresProjets' => $arrAutresProjets,
     'arrImagesPrj' => $arrProjetImg
+    //SCRIPTS
 ));
-
-$template = $twig->loadTemplate('pieces/footer.html.twig');
-echo $template->render(array());
-
-$template = $twig->loadTemplate('pieces/scripts.html.twig');
-echo $template->render(array());

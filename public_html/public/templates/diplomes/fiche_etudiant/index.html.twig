@@ -1,4 +1,8 @@
-<main>
+{# Intégration du layout de base #}
+{% extends 'layout.html.twig' %}
+
+
+{% block content %}
     {% if texteErreurFiche == false %}
         <section class="haut_page">
 
@@ -102,4 +106,5 @@
     {% else %}
         {{ texteErreurFiche | raw }}
     {% endif %}
-</main>
+
+{% endblock%}

@@ -132,33 +132,23 @@ try {
 $objConnMySQLi->close();
 
 /*************** 6. TWIG ***********************/
-$template = $twig->loadTemplate('pieces/head.html.twig');
-echo $template->render(array(
-    'title' => "Techniques d'intégration multimédia | TIM",
-    'page' => $arrInfosEtudiant['prenom'] . " " . $arrInfosEtudiant['nom'] . " | Diplômés | ",
-    'niveau' => $strNiveau
-));
-
-$template = $twig->loadTemplate('pieces/header.html.twig');
-echo $template->render(array(
-    'arrMenuLiensActifs' => $arrMenuActif
-));
 
 $template = $twig->loadTemplate('diplomes/fiche_etudiant/index.html.twig');
 echo $template->render(array(
+    //HEAD
+    'title' => "Techniques d'intégration multimédia | TIM",
+    'page' => $arrInfosEtudiant['prenom'] . " " . $arrInfosEtudiant['nom'] . " | Diplômés | ",
+    'niveau' => $strNiveau,
+    //HEADER
+    'arrMenuLiensActifs' => $arrMenuActif,
+    //PAGE
     'niveau' => $strNiveau,
     'page' => $arrInfosEtudiant['prenom'] . " <span>" . $arrInfosEtudiant['nom'] . "</span>",
     'arrInfos' => $arrInfosEtudiant,
     'arrProjets' => $arrProjetsEtudiant,
     'texteErreurFiche' => $texteErreurFiche,
     'texteErreurProjets' => $texteErreurProjets,
-    'tri_interets' => $strTriInterets
-));
-
-$template = $twig->loadTemplate('pieces/footer.html.twig');
-echo $template->render(array());
-
-$template = $twig->loadTemplate('pieces/scripts.html.twig');
-echo $template->render(array(
+    'tri_interets' => $strTriInterets,
+    //SCRIPT
     'fichier_script' => 'skillbar.js'
 ));

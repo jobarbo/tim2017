@@ -1,4 +1,8 @@
-<main>
+{# Intégration du layout de base #}
+{% extends 'layout.html.twig' %}
+
+
+{% block content %}
     <section class="haut_page">
         <h1 id="contenu">{{ page }}</h1>
     </section>
@@ -44,4 +48,5 @@
         </section>
     {% endif %}
 
-</main>
+
+{% endblock%}

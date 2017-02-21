@@ -22,7 +22,6 @@ if (isset($_GET['tri_interets'])) {
         $strTriInterets = $_GET['tri_interets'];
     }
 }
-echo $strTriInterets . " TRI INTERETS";
 
 /*************** 2. INSTANCIATION CONFIG ET TWIG ***********************/
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
@@ -88,31 +87,21 @@ try {
 $objConnMySQLi->close();
 
 /*************** 4 TWIG ***********************/
-$template = $twig->loadTemplate('pieces/head.html.twig');
-echo $template->render(array(
-    'title' => "Techniques d'intégration multimédia | TIM",
-    'page' => "Nos diplômés 2017 | ",
-    'niveau' => $strNiveau
-));
-
-$template = $twig->loadTemplate('pieces/header.html.twig');
-echo $template->render(array(
-    'arrMenuLiensActifs' => $arrMenuActif
-));
 
 $template = $twig->loadTemplate('diplomes/index.html.twig');
 echo $template->render(array(
+    //HEAD
+    'title' => "Techniques d'intégration multimédia | TIM",
+    'page' => "Nos diplômés 2017 | ",
+    'niveau' => $strNiveau,
+    //HEADER
+    'arrMenuLiensActifs' => $arrMenuActif,
+    //PAGE
     'niveau' => $strNiveau,
     'page' => "Nos diplômés 2017",
     'texteIntro' => $strTexteIntro,
     'diplomes' => $arrDiplomes,
-    'erreur' => $strMsgErrDiplomes
-));
-
-$template = $twig->loadTemplate('pieces/footer.html.twig');
-echo $template->render(array());
-
-$template = $twig->loadTemplate('pieces/scripts.html.twig');
-echo $template->render(array(
+    'erreur' => $strMsgErrDiplomes,
+    //SCRIPTS
     'fichier_script' => 'tri_diplomes.js'
 ));
