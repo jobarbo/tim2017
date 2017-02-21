@@ -129,14 +129,12 @@ while(file_exists($strNiveau . '/dist/images/projets/prj' . $arrInfosProjet['id'
 $template = $twig->loadTemplate('diplomes/fiche_projet/index.html.twig');
 echo $template->render(array(
     //HEAD
-    'title' => "Techniques d'intégration multimédia | TIM",
-    'page' => $arrInfosProjet['titre'] . " | Fiche projet | Diplômés | ",
+    'page' => $arrInfosProjet['titre'] . " | Fiche projet | Diplômés ",
     'niveau' => $strNiveau,
     //HEADER
     'arrMenuLiensActifs' => $arrMenuActif,
     //PAGE
-    'niveau' => $strNiveau,
-    'page' => $arrInfosProjet['titre'],
+    'title' => $arrInfosProjet['titre'],
     'arrInfos' => $arrInfosProjet,
     'arrInfosEtudiant' => $arrEtudiant,
     'arrAutresProjets' => $arrAutresProjets,
