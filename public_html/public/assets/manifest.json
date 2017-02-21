@@ -3,7 +3,9 @@
     "main.js": {
       "files": [
         "scripts/main.js",
-        "scripts/quiz1.js"
+        "scripts/quiz1.js",
+        "scripts/tri_diplomes.js",
+        "scripts/skillbar.js"
       ],
       "main": true
     },
