@@ -6,7 +6,7 @@
  *
  * 1. VARIABLES LOCALES
  * 2. INSTANCIATION CONFIG ET TWIG
- * 3. REÇOIT ID DE L'ÉTUDIANT
+ * 3. REÇOIT MATRICULE DE L'ÉTUDIANT
  * 4. DÉFINITION CHEMIN ET FICHIER POUR TÉLÉVERSEMENT
  * 5. REQUÊTE AFFICHER FICHE DIPLÔMÉ
  * 5.1 Requete pour aller chercher tous les infos du diplômé
@@ -28,7 +28,7 @@ $strSection = "Fiche étudiant";
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 
 
-/*************** 3. REÇOIT ID DE L'ÉTUDIANT ***********************/
+/*************** 3. REÇOIT MATRICULE DE L'ÉTUDIANT ***********************/
 if (isset($_GET['id'])) {
     $intMatriculeEtudiant = $_GET['id'];
 } else {
@@ -39,8 +39,8 @@ if (isset($_GET['id'])) {
 define("CHEMIN_TELEVERSEMENT", "../televersement/");
 define("NAME_FICHIER", "monFichierATeleverser");
 
-/*************** 4. REQUÊTE AFFICHER FICHE DIPLÔMÉ ***********************/
-//----- 4.1 Requete pour aller chercher tous les infos du diplômé -----//
+/*************** 5. REQUÊTE AFFICHER FICHE DIPLÔMÉ ***********************/
+//----- 5.1 Requete pour aller chercher tous les infos du diplômé -----//
 try {
     $strSQLInfosEtudiant = "SELECT * FROM t_diplome WHERE nom_usager_admin = " . $intMatriculeEtudiant;
 
@@ -87,7 +87,7 @@ try {
 
     $objResultInfosEtudiant->free_result();
 
-    //----- 4.2 Requete pour aller chercher tous les projets du diplômé -----//
+    //----- 5.2 Requete pour aller chercher tous les projets du diplômé -----//
     try {
         $strSQLProjetsEtudiant = "SELECT id_projet, titre_projet, slug FROM t_projet_diplome WHERE id_diplome = " . $arrInfosEtudiant['id'];
 

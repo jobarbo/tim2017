@@ -43,23 +43,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 }
 
-$template = $twig->loadTemplate('pieces/head.html.twig');
-echo $template->render(array(
-    'title' => "Techniques d'intégration multimédia | TIM",
-    'page' => "Nous joindre | ",
-    'niveau' => $strNiveau
-));
-
-$template = $twig->loadTemplate('pieces/header.html.twig');
-echo $template->render(array(
-    'arrMenuLiensActifs' => $arrMenuActif
-));
-
 $template = $twig->loadTemplate('nous_joindre/index.html.twig');
 echo $template->render(array(
-    'niveau' => "../",
-    'pages' => $pages
+    'niveau' => $strNiveau,
+    'pages' => $pages,
+    'page' => "Nous joindre",
+    'arrMenuLiensActifs' => $arrMenuActif
 ));
-
-$template = $twig->loadTemplate('pieces/footer.html.twig');
-echo $template->render(array());

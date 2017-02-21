@@ -26,6 +26,7 @@ echo $strTriInterets . " TRI INTERETS";
 
 /*************** 2. INSTANCIATION CONFIG ET TWIG ***********************/
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
+
 /*************** 3. REQUÊTES DIPLÔMÉS ***********************/
 //----- 3.1 Requete pour aller chercher le texte d'intro -----//
 try {
@@ -85,6 +86,7 @@ try {
 }
 // fermer la connexion
 $objConnMySQLi->close();
+
 /*************** 4 TWIG ***********************/
 $template = $twig->loadTemplate('pieces/head.html.twig');
 echo $template->render(array(

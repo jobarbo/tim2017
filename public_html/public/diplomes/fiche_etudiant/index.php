@@ -7,10 +7,11 @@
  * 1. VARIABLES LOCALES
  * 2. INSTANCIATION CONFIG ET TWIG
  * 3. REÇOIT ID DE L'ÉTUDIANT
- * 4. REQUÊTES FICHE DIPLÔMÉ
- * 4.1 Requete pour aller chercher tous les infos du diplômé
- * 4.2 Requete pour aller chercher tous les projets du diplômé
- * 5. TWIG
+ * 4. REÇOIT LE TRI PAR INTÉRÊTS
+ * 5. REQUÊTES FICHE DIPLÔMÉ
+ * 5.1 Requete pour aller chercher tous les infos du diplômé
+ * 5.2 Requete pour aller chercher tous les projets du diplômé
+ * 6. TWIG
  *
  *  FICHE ÉTUDIANT
  */
