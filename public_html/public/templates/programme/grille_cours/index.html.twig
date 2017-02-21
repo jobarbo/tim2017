@@ -1,5 +1,8 @@
-<!DOCTYPE HTML>
-<html lang="fr">
+{# Intégration du layout de base #}
+{% extends 'layout.html.twig' %}
+
+
+{% block content %}
 <style>
     body {
         background-color: white;
@@ -66,8 +69,6 @@
         width: 75%;
     }
 </style>
-<body>
-<main>
     <div class="allovinny">
         <section class="haut_page">
             <h1>{{ page }}</h1>
@@ -138,6 +139,4 @@
             {% endfor %}
         </section>
     </div>
-</main>
-</body>
-</html>
+{% endblock%}

@@ -44,28 +44,12 @@ foreach($quiz->questions->question as $questions)
 $arrId = ["A", "B"];
 
 ///////////// TWIG //////////////
-$template = $twig->loadTemplate('pieces/head.html.twig');
-echo $template->render(array(
-    'title' => "Techniques d'intégration multimédia | TIM",
-    'page' => "Fais-tu le bon choix? | ",
-    'niveau' => $strNiveau
-));
-$template = $twig->loadTemplate('pieces/header.html.twig');
-echo $template->render(array(
-    'arrMenuLiensActifs' => $arrMenuActif
-));
-
 $template = $twig->loadTemplate('futur_etudiant/bon_choix/index.html.twig');
 echo $template->render(array(
     'niveau' => $strNiveau,
+    'arrMenuLiensActifs' => $arrMenuActif,
+    'page' => "Fais-tu le bon choix? | ",
     'xml' => $arrQuestions,
-    'tId' => $arrId
-));
-
-$template = $twig->loadTemplate('pieces/footer.html.twig');
-echo $template->render(array());
-
-$template = $twig->loadTemplate('pieces/scripts.html.twig');
-echo $template->render(array(
+    'tId' => $arrId,
     'fichier_script' => 'quiz2.js'
 ));
