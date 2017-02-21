@@ -18,8 +18,11 @@ $strNiveau = "../";
 $strTriInterets = "";
 $strSection = "Diplômés";
 if (isset($_GET['tri_interets'])) {
-    $strTriInterets = 'interet_' . $_GET['tri_interets'];
+    if($_GET['tri_interets'] != 'btnResetTri') {
+        $strTriInterets = $_GET['tri_interets'];
+    }
 }
+echo $strTriInterets . " TRI INTERETS";
 
 /*************** 2. INSTANCIATION CONFIG ET TWIG ***********************/
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
@@ -32,14 +35,14 @@ try {
         $strMsgErr = "<p>Les textes n'ont pu être affichés, réessayez plus tard</p>";
         $except = new Exception($strMsgErr);
         throw $except;
-    }else{
+    } else {
         while ($objLigneTexte = $objResultTexte->fetch_object()) {
             $strTexteIntro = $objLigneTexte->texte;
         }
     }
     //En cas d'erreur de requête
     if ($objResultTexte->num_rows == 0) {
-        header('Location: ' . $strNiveau . 'erreur/index.php');
+        header('Location: ' . $strNiveau . '404/index.php');
     }
     $objResultTexte->free_result();
 } catch (Exception $e) {
@@ -74,7 +77,7 @@ try {
     }
     //En cas d'erreur de requête
     if ($objResultDiplome->num_rows == 0) {
-        header('Location: ' . $strNiveau . 'erreur/index.php');
+        header('Location: ' . $strNiveau . '404/index.php');
     }
     $objResultDiplome->free_result();
 } catch (Exception $e) {

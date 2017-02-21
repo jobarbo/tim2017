@@ -13,25 +13,73 @@ html{
 /* Section 1 */
 .contact{
   background-color: #f7f7f7;
-}
 
-.form input, .form select, .form textarea{
-  display: block;
-  margin-bottom: 1rem;
-}
+  .form, .coordination{
+    display: inline-block;
+  }
 
-.form, .coordination{
-  display: inline-block;
-}
+  .form{
+    margin-right: 8%;
 
-.form{
-  margin-right: 8%;
-}
+    input, select, textarea{
+      display: block;
+      margin-bottom: 1rem;
+    }
 
-.coordination img{
-  width: 20rem;
-  height: auto;
-  margin-bottom: 1rem;
+    select{
+      width: 350px;
+      height: 37px;
+      border: none;
+    }
+
+    textarea{
+      width: 350px;
+      height: 100px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      resize: none;
+    }
+    .blue-btn{
+          box-shadow: 15px 3px 4px rgba(0, 172, 255, 0.31);
+          &:hover{
+            box-shadow: rgba(0, 172, 255, 0.31) 15px 1px 3px;
+          }
+      }
+    button{
+      i{
+        margin-right: 10px;
+      }
+      
+      &:before{
+        border-bottom: 15px solid #f7f7f7;
+        border-right: 15px solid transparent;
+      }
+      .back_slant{
+          //left: -14px;
+          background-color: #f7f7f7;
+          box-shadow: 12px 3px 1px 12px #f7f7f7;
+
+          &:before{
+            left: -14px;
+            border-top: 15px solid #f7f7f7;
+            border-left: 15px solid transparent;
+          }
+          
+      }
+    }
+  }
+
+
+  .coordination {
+    img {
+      width: 20rem;
+      height: auto;
+      margin-bottom: 1rem;
+
+      border: 1px solid red;
+    }
+  }
 }
 
 
@@ -39,14 +87,16 @@ html{
 
 
 /* Section 2 */
-iframe, .infos{
-  display: inline-block;
-}
+.maps{
+  iframe, .infos{
+    display: inline-block;
+  }
 
-iframe{
-  margin-right: 8%;
-}
+  iframe{
+    margin-right: 8%;
+  }
 
-ul{
-  padding: 0;
+  ul{
+    padding: 0;
+  }
 }

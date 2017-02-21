@@ -48,33 +48,6 @@ ul{
 ::-webkit-scrollbar {
 	display: none;
 }
-.content_wrap{
-	a {
-		color: #fff;
-		padding: 10px 15px;
-		/* background-color: #2a8be1; */
-		background: linear-gradient(to left, #0098FF, #00ACFF);
-		
-		/* background: gray; */
-		display: inline-block;
-		margin-top: 10px;
-		border-radius: 5px;
-		box-shadow: rgba(0, 172, 255, 0.45) 2px 3px 10px;
-		transition: all .5s ease-in-out;
-		transform: translateY(0px);
-
-		&:hover {
-			transform: translateY(1px);
-
-			box-shadow: rgba(0, 172, 255, 0.65) 0px 1px 3px;
-			text-decoration: none;
-		}
-		&:focus {
-			text-decoration: none;
-		}
-	}
-}
-
 
 .meta_nav{
 	height: 50px;
@@ -86,14 +59,14 @@ ul{
 		font-family: open_sans_regular;
 		font-size: 11px;
 		color: black;
-		height: 50px;
+		height: 20px;
 		li{
 			display: inline-block;
 			margin-left:20px;
 			margin-right: 20px;
 
 			img{
-				width:70px;
+				width:65px;
 			}
 
 		}
@@ -108,9 +81,122 @@ ul{
 
 
 
+/* Buttons */
+.blue-btn{
+	color: #fff;
+	padding: 10px 15px;
+	background: linear-gradient(to left, #0098FF, #00ACFF);
+	backface-visibility: hidden;
+	display: inline-block;
+	margin-top: 10px;
+	border: none;
+	box-shadow: 15px 4px 5px rgba(0,172,255,.35);
+	transition: all .2s ease-in-out;
+	transform: translateY(0px);
+	.back_slant{
+		height: 41px;
+		position: absolute;
+		width: 2px;
+		background-color: transparent;
+		top: -2px;
+		right: 0px;
+		box-shadow: 13px 3px 1px 12px #fff;
+		&:before{
+			content: "";
+			display: table;
+			position: absolute;
+			top: 0px;
+			left: -12px;
+			width: 0;
+			height: 0;
+			z-index: 9;
+			border-top: 15px solid #fff;
+			border-left: 15px solid transparent;
+		}
+	}
+
+	&:hover {
+		transform: translateY(1px);
+		color: #fff;
+		box-shadow: rgba(0, 172, 255, 0.65) 15px 1px 3px;
+		text-decoration: none;
+		&:after{
+			box-shadow:1px 0px 8px rgba(0,172,255,.65);
+		}
+	}
+	&:focus {
+		text-decoration: none;
+		color: white;
+    	outline: none;
+	}
+	 &:before{
+        content: "";
+        display: table;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 0;
+        height: 0;
+        z-index: 9;
+        border-bottom: 15px solid #fff;
+        border-right: 15px solid transparent;
+      }
+      &:after{
+
+        content: "";
+        display: table;
+        position: absolute;
+		bottom: 7px;
+    	left: 0px;
+        transform: rotate(45deg);
+        background-color: #00acff;
+   	 	height: 7px;
+    	width: 20px;
+    	box-shadow: 1px 2px 8px rgba(0,172,255,.45);
+        z-index: 9;
+        transition: all .2s ease-in-out;
+      }
+}
+
+
+
+
+
 /* Inputs */
+/*
+Structure :
+<div class="field">
+	<label for=""></label>
+    <i></i> (Pour cette ligne copier / coller code sur la page de font-awesome et rajouter la class "icon"
+    <input required type="" id="" name="" title="" placeholder="">
+</div>
+*/
+.field{
+	position: relative;
+}
+
+label{
+	display: block;
+}
+
+.icon{
+	position: absolute;
+	color: #00a3ff;
+	padding: 17px;
+	background: rgba(0, 0, 0, 0.04);
+}
+
 input[type="text"], input[type="email"]{
-	width: 320px;
+	width: 350px;
 	height: 47px;
-	padding: 3px;
+	padding-left: 58px;
+
+	border: none;
+	border-radius: 5px;
+}
+
+input, textarea, select{
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
 }

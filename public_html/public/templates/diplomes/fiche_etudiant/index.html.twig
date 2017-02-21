@@ -1,9 +1,10 @@
-<a href="diplomes/fiche_etudiant/index.php#contenu" class="visuallyhidden focusable">Allez au contenu</a>
 <main>
     {% if texteErreurFiche == false %}
         <section class="haut_page">
 
             <h1 id="contenu">{{ page | raw }}</h1>
+            <span class='retour_precedent'><a href="diplomes/index.php{% if tri_interets %}?tri_interets={{ tri_interets }}{% endif %}">retour vers la liste des diplômés</a></span>
+
             <ul class="etudiant_contact">
                 {% if arrInfos.courriel != "" %}
                     <li><a href="mailto:{{ arrInfos.courriel }}">Courriel</a></li>
@@ -79,7 +80,7 @@
                     <ul>
                         {% for projet in arrProjets %}
                             <li>
-                                <a href="diplomes/fiche_projet/index.php?id={{ projet.id }}">
+                                <a href="diplomes/fiche_projet/index.php?slug={{ projet.slug }}">
                                     <div class="img_projet">
                                         <picture>
                                             <!--<source media="" srcset="../images/projets/prj408_01-mobile.jpg 1x, ../images/projets/prj408_01-mobile@2x.jpg 2x">
@@ -103,11 +104,4 @@
     {% endif %}
 </main>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script>
-    jQuery(document).ready(function () {
-        jQuery('.barre_progression').each(function () {
-            jQuery(this).find('.barre_interet').animate({
-                width: jQuery(this).attr('data-percent')
-            }, 4000);
-        });
-    });</script>
+<script src="assets/scripts/skillbar.js"></script>
