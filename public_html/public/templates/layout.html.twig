@@ -1,0 +1,152 @@
+{# HEAD #}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Le programme de Techniques d’intégration multimédia est une formation vivante et actuelle! Vous aimez relever des défis et les nouvelles technologies? Ce programme est fait pour vous!">
+    <meta name="keywords" content="Techniques d’intégration multimédia, TIM, intégration multimédia, multimédia, Cégep Sainte-Foy, Cégep Ste-Foy, Web, CSS, HTML, Technologies, Design, Conception, Programmation, Intégration, Traitement des médias, médias">
+
+    <base href="{{ niveau }}"/>
+
+
+    <title>{{ page }} | Techniques d'intégration multimédia | TIM</title>
+    <link rel="stylesheet" href="dist/styles/main.css">
+</head>
+
+
+
+
+
+{# HEADER #}
+<body>
+<header>
+    <div class="meta_nav">
+        <ul>
+            <li><a href="index.php" class="{{ arrMenuLiensActifs.accueil }} ">Accueil</a></li>
+            <li><a href="nous_joindre" class="{{ arrMenuLiensActifs.nousJoindre }} ">Nous joindre</a></li>
+            <li>
+                <a href="http://www.cegep-ste-foy.qc.ca" target="_blank">
+                    <img src="{{ niveau }}dist/images/cegep_logo.svg" alt="Logo du Cégep de Sainte-Foy.">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <nav id="nav_primary">
+        <span id="logoTIM"><a href="index.php"><img src="{{ niveau }}dist/images/tim-logo.svg" alt="Logo du programme en Techniques d'intégration multimédia."></a></span>
+
+        <ul><form class='nav_radio'>
+                <li class="top_niveau etudiant"><input type='checkbox' class="navbox" name='nav' id="etudiant"><label for='etudiant' class="menu_lien">Futur étudiant
+                    </label>
+                    <ul class="second_nav sub_etudiant">
+                        <li><a href="futur_etudiant/index.php" class="{{ arrMenuLiensActifs.futurEtudiant }}">Qu'est-ce qu'un
+                                intégrateur web?</a></li>
+                        <li><a href="futur_etudiant/bon_choix/index.php" class="{{ arrMenuLiensActifs.bonChoix }} ">Fais-tu le
+                                bon choix?</a></li>
+                        <li><a href="futur_etudiant/profil/index.php" class="{{ arrMenuLiensActifs.profil }} ">As-tu le
+                                profil?</a></li>
+                        <li><a href="futur_etudiant/perspectives/index.php" class="{{ arrMenuLiensActifs.perspectives }} ">Perspectives</a>
+                        </li>
+                        <li><a href="futur_etudiant/temoignages/index.php" class="{{ arrMenuLiensActifs.temoignages }} ">Témoignages</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="top_niveau programme"><input type='checkbox' class="navbox" name='nav' id="programme"><label for='programme' class="menu_lien">Programme</label>
+
+                    <ul class="second_nav sub_programme">
+                        <li><a href="programme/index.php" class="{{ arrMenuLiensActifs.programme }} ">Qu'est-ce qu'on
+                                apprend?</a></li>
+                        <li><a href="programme/equipe/index.php" class="{{ arrMenuLiensActifs.equipe }} ">Équipe</a></li>
+                        <li><a href="programme/grille_cours/index.php" class="{{ arrMenuLiensActifs.grilleCours }} ">Grilles
+                                de cours</a></li>
+                    </ul>
+                </li>
+                <li class="top_niveau stages"><input type='checkbox' class="navbox" name='nav' id="stages"><label for='stages' class="menu_lien">Stages</label>
+
+                    <ul class="second_nav sub_stages">
+                        <li><a href="stages/ate/index.php" class="{{ arrMenuLiensActifs.stages }}">Stages crédités</a></li>
+                        <li><a href="stages/ate/index.php" class="{{ arrMenuLiensActifs.ate }} ">ATE</a></li>
+                        <li><a href="stages/international/index.php" class="{{ arrMenuLiensActifs.international }} ">International</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="top_niveau diplomes"><input type='checkbox' class="navbox" id="diplomes"><label for='diplomes' class="menu_lien"><a href="diplomes/index.php" class="menu_lien {{ arrMenuLiensActifs.diplomes }}">Diplômés</a></label>
+
+                </li></form>
+        </ul>
+        <a href="futur_etudiant/index.php" class="btn_rouge"><span class="slant"></span>Je m'inscris !</a>
+    </nav>
+</header>
+<a href="{{ arrMenuLiensActifs.PHP_SELF }}{% if arrMenuLiensActifs.QUERY_STRING != "" %}?{{ arrMenuLiensActifs.QUERY_STRING }}{% endif %}#contenu" class="visuallyhidden focusable">Allez au contenu</a>
+
+
+{# CONTENU DES PAGES #}
+{% block content %}{% endblock %}
+
+
+
+
+
+{# FOOTER #}
+<footer class="">
+    <section class="col-sm-12 pre_footer" >
+        <h2 class="visuallyHidden">Liens utiles</h2>
+        <article class="col-sm-6 partie_tim ">
+            <h3>Faire partie de la TIM</h3>
+            <p>Tu t’intéresses à la création et au développement de sites Web ou d’applications multimédia et tu souhaites te joindre à la TIM l’an prochain? Complète ta demande d'admission avant le 1er mars.</p>
+            <a href="futur_etudiant/index.php#processusAdmission" class="blue-btn">S'inscrire<span class="back_slant"></span></a>
+        </article>
+        <article class="col-sm-6 cimmi">
+            <h3>CIMMI</h3>
+            <p>Le cégep de Sainte-Foy est partenaire du Centre en imagerie numérique et médias interactifs (CIMMI) dans la réalisation de projets de recherche appliquée.</p>
+            <a href="http://www.cimmi.ca/" class="blue-btn" target="_blank">Visiter le site internet<span class="back_slant"></span></a>
+        </article>
+    </section>
+    <section class="col-sm-12 main_footer">
+        <h2 class="visuallyHidden">Crédits</h2>
+
+        <div class="col-sm-11">
+            <p style="display: none">Ce projet a été choisi parmi les six propositions réalisées dans le cadre du cours Production multimédia VI au printemps 2017. Les auteurs:<a href="diplomes/fiche_etudiant/index.php?id=482">Jonathan Barbeau</a>, <a href="diplomes/fiche_etudiant/index.php?id=483">Vincent Béland</a>, <a href="diplomes/fiche_etudiant/index.php?id=486">William Charest-Pépin</a>, <a href="diplomes/fiche_etudiant/index.php?id=505">Erwann Letué</a> et <a href="diplomes/fiche_etudiant/index.php?id=502">Annabelle Violette</a> ont remporté les honneurs du Roger d'Or.</p>
+
+            <ul style="display: none">
+                <li><a href="http://www.facebook.com/timcsf" title="Page Facebook du programme Techniques d'intégration multimédia">Facebook</a></li>
+                <li><a href="http://twitter.com/timcsf" title="Compte Twitter du programme Techniques d'intégration multimédia">Twitter</a></li>
+                <li><a href="http://www.linkedin.com/groups?gid=2211970" title="Groupe LinkedIn du programme Techniques d'intégration multimédia">LinkedIn</a></li>
+            </ul>
+
+
+
+        </div>
+
+    </section>
+    <div class="meta_nav">
+        <p>© 2017, Techniques d'intégration multimédia, Cégep de Sainte-Foy.</p>
+
+
+        <ul>
+            <li><a href="index.php" class="{{ arrMenuLiensActifs.accueil }} ">Accueil</a></li>
+            <li><a href="nous_joindre/index.php" class="{{ arrMenuLiensActifs.nousJoindre }} ">Nous joindre</a></li>
+            <li>
+                <a href="http://www.cegep-ste-foy.qc.ca" target="_blank">
+                    <img src="{{ niveau }}dist/images/cegep_logo_white.svg" alt="Logo du Cégep de Sainte-Foy.">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-338031-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    <script type="text/javascript" src="dist/scripts/jquery.js"></script>
+    <!--<script type="text/javascript" src="dist/scripts/customizer.js"></script>-->
+    <script type="text/javascript" src="dist/scripts/main.js"></script>
+</footer>
+</body>
+</html>
