@@ -21,7 +21,7 @@
 $strNiveau = "../";
 $strNiveauAdmin = "../../public/";
 $strTriInterets = "";
-$intIdEtudiant = null;
+$intMatriculeEtudiant = null;
 $strSection = "Fiche étudiant";
 
 /*************** 2. INSTANCIATION CONFIG ET TWIG ***********************/
@@ -30,9 +30,9 @@ require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 
 /*************** 3. REÇOIT ID DE L'ÉTUDIANT ***********************/
 if (isset($_GET['id'])) {
-    $intIdEtudiant = $_GET['id'];
+    $intMatriculeEtudiant = $_GET['id'];
 } else {
-    header('Location: ' . $strNiveau . 'erreur/index.php');
+    header('Location: ' . $strNiveau . '404/index.php');
 }
 
 /*************** 4. DÉFINITION CHEMIN ET FICHIER POUR TÉLÉVERSEMENT ***********************/
@@ -42,7 +42,7 @@ define("NAME_FICHIER", "monFichierATeleverser");
 /*************** 4. REQUÊTE AFFICHER FICHE DIPLÔMÉ ***********************/
 //----- 4.1 Requete pour aller chercher tous les infos du diplômé -----//
 try {
-    $strSQLInfosEtudiant = "SELECT * FROM t_diplome WHERE id_diplome = " . $intIdEtudiant;
+    $strSQLInfosEtudiant = "SELECT * FROM t_diplome WHERE nom_usager_admin = " . $intMatriculeEtudiant;
 
     $objResultInfosEtudiant = $objConnMySQLi->query($strSQLInfosEtudiant);
 
@@ -82,14 +82,14 @@ try {
 
     //En cas d'erreur de requête
     if ($objResultInfosEtudiant->num_rows == 0) {
-        header('Location: ' . $strNiveau . 'erreur/index.php');
+        header('Location: ' . $strNiveau . '404/index.php');
     }
 
     $objResultInfosEtudiant->free_result();
 
     //----- 4.2 Requete pour aller chercher tous les projets du diplômé -----//
     try {
-        $strSQLProjetsEtudiant = "SELECT id_projet, titre_projet, slug FROM t_projet_diplome WHERE id_diplome = " . $intIdEtudiant;
+        $strSQLProjetsEtudiant = "SELECT id_projet, titre_projet, slug FROM t_projet_diplome WHERE id_diplome = " . $arrInfosEtudiant['id'];
 
         $objResultProjetsEtudiant = $objConnMySQLi->query($strSQLProjetsEtudiant);
 
@@ -114,7 +114,7 @@ try {
 
         //En cas d'erreur de requête
         if ($objResultProjetsEtudiant->num_rows == 0) {
-            header('Location: ' . $strNiveau . 'erreur/index.php');
+            header('Location: ' . $strNiveau . '404/index.php');
         }
 
         $objResultProjetsEtudiant->free_result();

@@ -59,7 +59,7 @@ $objConnMySQLi->close();
 $template = $twig->loadTemplate('pieces/head.html.twig');
 echo $template->render(array(
     'title' => "Section administrative | TIM",
-    'page' => "",
+    'page' => "Connexion | ",
     'niveau' => $strNiveau
 ));
 
