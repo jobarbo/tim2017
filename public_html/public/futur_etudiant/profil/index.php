@@ -60,7 +60,7 @@ if(isset($_GET['validerQuiz']))
             $cptQ++;
         }
 
-        $arrId = ["A", "B", "C", "D"];
+        $arrId = array("A", "B", "C", "D");
 
         ///////////// TWIG //////////////
         $template = $twig->loadTemplate('futur_etudiant/profil/index.html.twig');
@@ -147,7 +147,7 @@ else
         $cptQ++;
     }
 
-    $arrId = ["A", "B", "C", "D"];
+    $arrId = array("A", "B", "C", "D");
 
     ///////////// TWIG //////////////
     $template = $twig->loadTemplate('futur_etudiant/profil/index.html.twig');
