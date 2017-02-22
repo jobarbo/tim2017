@@ -48,7 +48,7 @@ try {
 
 //Requête permettant d'aller chercher toutes les informations sur les enseignants (nom, prénom, courriel, twitter, linkedin, site web)
 
-    $strSQLProfs = "SELECT nom_prof, prenom_prof, courriel_prof, pseudo_twitter_prof, linkedin_prof, site_web_prof
+    $strSQLProfs = "SELECT id_prof, nom_prof, prenom_prof, courriel_prof, pseudo_twitter_prof, linkedin_prof, site_web_prof
 FROM t_prof ORDER BY nom_prof";
 
     if ($objResultProfs = $objConnMySQLi->query($strSQLProfs)) {
@@ -58,6 +58,7 @@ FROM t_prof ORDER BY nom_prof";
             $arrProfs[] =
 
                 array(
+                    'id_prof' => $objLigneProfs->id_prof,
                     'nom' => $objLigneProfs->nom_prof,
                     'prenom' => $objLigneProfs->prenom_prof,
                     'courriel' => $objLigneProfs->courriel_prof,
@@ -70,29 +71,14 @@ FROM t_prof ORDER BY nom_prof";
         $objResultProfs->free_result();
     }
 
-
-    $template = $twig->loadTemplate('pieces/head.html.twig');
-    echo $template->render(array(
-        'title' => "Techniques d'intégration multimédia | TIM",
-        'page' => "Équipe | ",
-        'niveau' => $strNiveau
-    ));
-
-    $template = $twig->loadTemplate('pieces/header.html.twig');
-    echo $template->render(array(
-        'arrMenuLiensActifs' => $arrMenuActif
-    ));
-
     $template = $twig->loadTemplate('programme/equipe/index.html.twig');
     echo $template->render(array(
         'arrTextes' => $arrTextes,
         'arrProfs' => $arrProfs,
+        'page' => "Équipe ",
         'niveau' => $strNiveau
     ));
 
-    $template = $twig->loadTemplate('pieces/footer.html.twig');
-    echo $template->render(array(
-    ));
 
 } catch (Exception $e) {
 

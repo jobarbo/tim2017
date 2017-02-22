@@ -43,26 +43,13 @@ try {
         $objResultTexte->free_result();
     }
 
-    $template = $twig->loadTemplate('pieces/head.html.twig');
-    echo $template->render(array(
-        'title' => "Techniques d'intégration multimédia | TIM",
-        'page' => "Futur étudiant | ",
-        'niveau' => $strNiveau
-    ));
-
-    $template = $twig->loadTemplate('pieces/header.html.twig');
-    echo $template->render(array(
-        'arrMenuLiensActifs' => $arrMenuActif
-    ));
-
     $template = $twig->loadTemplate('futur_etudiant/perspectives/index.html.twig');
     echo $template->render(array(
-        'niveau' => "../",
+        'niveau' => "../../",
+        'page' => "Futur étudiant ",
         'arrTextes' => $arrTextes
     ));
 
-    $template = $twig->loadTemplate('pieces/footer.html.twig');
-    echo $template->render(array());
 } catch (Exception $e) {
 
     echo $e->getMessage();
