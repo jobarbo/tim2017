@@ -8,6 +8,7 @@
     <div class="contenuInteractif">
         <p id='progression'></p>
         <p id='retroaction'></p>
+        <p id='explication'></p>
         <p id="erreurQuiz2">{{ erreur }}</p>
     </div>
     <div class="col-sm-6">
@@ -22,15 +23,16 @@
                     <ul class="choixReponses">
                         {% for j in 0..1 %}
                             <li>
-                                <input id="Q{{ i }}{{ tId[j] }}" type="radio" name="Q{{ i }}" value="{{ xml[i]['libelleReponse'][j] }}">
+                                <input id="Q{{ i }}{{ tId[j] }}" type="radio" name="Q{{ i }}" value="{{ xml[i]['libelleReponse'][j] }}" />
                                 <label for="Q{{ i }}{{ tId[j] }}">{{ xml[i]['libelleReponse'][j] }}</label>
                             </li>
                         {% endfor %}
                     </ul>
+                    <p>{{ reponses[i]['texteReponse'] }}</p>
                 </fieldset>
                 <br /><br />
             {% endfor %}
-            <input id='validerQuiz' name='validerQuiz' type="submit" value="Valider">
+            <input id='validerQuiz' name='validerQuiz' type="submit" value="Revoir mes réponses">
         </form>
     </div>
 </div>

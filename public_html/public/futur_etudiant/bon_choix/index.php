@@ -41,15 +41,76 @@ foreach($quiz->questions->question as $questions)
     $cptQ++;
 }
 
-$arrId = ["A", "B"];
+$arrId = array("A", "B");
 
-///////////// TWIG //////////////
-$template = $twig->loadTemplate('futur_etudiant/bon_choix/index.html.twig');
-echo $template->render(array(
-    'niveau' => $strNiveau,
-    'arrMenuLiensActifs' => $arrMenuActif,
-    'page' => "Fais-tu le bon choix? | ",
-    'xml' => $arrQuestions,
-    'tId' => $arrId,
-    'fichier_script' => 'quiz2.js'
-));
+$erreur = false;
+if(isset($_GET['validerQuiz']))
+{
+    //////////////////// QUIZ COMPLÉTÉ ////////////////////
+    for($cpt = 0; $cpt <= 4; $cpt++)
+    {
+        if(isset($_GET['Q'.$cpt]))
+        {
+            $erreur = false;
+        }
+        else
+        {
+            $erreur = true;
+        }
+    }
+
+    if($erreur == true)
+    {
+        ///////////// TWIG //////////////
+        $template = $twig->loadTemplate('futur_etudiant/bon_choix/index.html.twig');
+        echo $template->render(array(
+            'niveau' => $strNiveau,
+            'arrMenuLiensActifs' => $arrMenuActif,
+            'page' => "Fais-tu le bon choix? | ",
+            'xml' => $arrQuestions,
+            'tId' => $arrId,
+            'erreur' => "Veuillez compléter toutes les questions.",
+            'fichier_script' => 'quiz2.js'
+        ));
+    }
+    else
+    {
+        $arrReponses = array();
+        for($cpt = 0; $cpt <= 4; $cpt++)
+        {
+            if($_GET['Q'.$cpt] == "Oui")
+            {
+                $arrReponses[$cpt]['libelleReponse']= $arrQuestions[$cpt]['libelleReponse'][0];
+                $arrReponses[$cpt]['texteReponse'] = $arrQuestions[$cpt]['texteReponse'][0];
+            }
+            else
+            {
+                $arrReponses[$cpt]['libelleReponse'] = $arrQuestions[$cpt]['libelleReponse'][1];
+                $arrReponses[$cpt]['texteReponse'] = $arrQuestions[$cpt]['texteReponse'][1];
+            }
+        }
+        ///////////// TWIG //////////////
+        $template = $twig->loadTemplate('futur_etudiant/bon_choix/resultat.html.twig');
+        echo $template->render(array(
+            'niveau' => $strNiveau,
+            'arrMenuLiensActifs' => $arrMenuActif,
+            'page' => "Fais-tu le bon choix? | ",
+            'xml' => $arrQuestions,
+            'reponses' => $arrReponses,
+            'tId' => $arrId
+        ));
+    }
+}
+else
+{
+    ///////////// TWIG //////////////
+    $template = $twig->loadTemplate('futur_etudiant/bon_choix/index.html.twig');
+    echo $template->render(array(
+        'niveau' => $strNiveau,
+        'arrMenuLiensActifs' => $arrMenuActif,
+        'page' => "Fais-tu le bon choix? | ",
+        'xml' => $arrQuestions,
+        'tId' => $arrId,
+        'fichier_script' => 'quiz2.js'
+    ));
+}
