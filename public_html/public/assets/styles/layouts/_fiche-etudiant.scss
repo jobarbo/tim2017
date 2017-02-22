@@ -1,0 +1,55 @@
+/** Barre Intérêts **/
+#interets.no-js {
+
+  .barre_progression {
+
+    .barre_interet{
+      display: inline-block;
+    }
+    /* La barre de longueur variable selon l'intéret de l'étudiant */
+    .value-0 {
+      width: 0%;
+    }
+
+    .value-1 {
+      width: 10%;
+    }
+
+    .value-2 {
+      width: 20%;
+    }
+
+    .value-3 {
+      width: 30%;
+    }
+
+    .value-4 {
+      width: 40%;
+    }
+
+    .value-5 {
+      width: 50%;
+    }
+
+    .value-6 {
+      width: 60%;
+    }
+
+    .value-7 {
+      width: 70%;
+    }
+
+    .value-8 {
+      width: 80%;
+    }
+
+    .value-9 {
+      width: 90%;
+    }
+
+    .value-10 {
+      width: 100%;
+    }
+
+  }
+}
