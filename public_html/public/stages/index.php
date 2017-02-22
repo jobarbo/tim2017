@@ -10,24 +10,10 @@ $stmt->execute();
 $pages = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 
 
-//Templates
-$template = $twig->loadTemplate('pieces/head.html.twig');
-echo $template->render(array(
-    'title' => "Techniques d'intégration multimédia | TIM",
-    'page' => "Les Stages en Techniques d'Intégration Multimédia",
-    'niveau' => $strNiveau
-));
-
-$template = $twig->loadTemplate('pieces/header.html.twig');
-echo $template->render(array(
-    'arrMenuLiensActifs' => $arrMenuActif
-));
-
 $template = $twig->loadTemplate('stages/index.html.twig');
 echo $template->render(array(
-    'niveau' => "../",
-    'pages' => $pages
+    'niveau' => $strNiveau,
+    'pages' => $pages,
+    'page' => "Les Stages en Techniques d'Intégration Multimédia",
+    'arrMenuLiensActifs' => $arrMenuActif
 ));
-
-$template = $twig->loadTemplate('pieces/footer.html.twig');
-echo $template->render(array());
