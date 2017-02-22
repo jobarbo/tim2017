@@ -2,11 +2,25 @@
 div.contenu_enseignant{
 
   float: left;
-  width: 30%;
+  width: 25%;
   margin: 0 2em;
   margin-top: 2em;
-  min-height: 40em;
-  max-height: 40em;
+  min-height: 30em;
+
+}
+
+div.contenu_prof{
+
+  min-height: 10em;
+
+}
+
+div.conteneur_sociaux{
+
+  position: relative;
+  float: right;
+  left: -50%;
+  margin-top: 2em;
 
 }
 
@@ -20,11 +34,9 @@ img.photo_prof{
 
 
   display: block;
-  width: 70%;
+  width: 65%;
   margin: 0 auto;
   margin-bottom: -1px;
-
-// MET UN SELECTEUR PETIT FARFADET DE COURNOILLE !!
   display: block;
   margin: 0 auto;
   vertical-align: bottom;
@@ -36,14 +48,30 @@ hr{
 
   margin-top: -1px;
   height: 2em;
-
   background-image: linear-gradient(141deg, #042438 0%, #133850 51%, #1a405b 75%);
-
   background-image: linear-gradient(to left, #f0f0f0, #8c8c8c, #f0f0f0);
-
 
 }
 
+ul.liste_reseaux_sociaux{
+
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  left: 50%;
+  position: relative;
+
+}
+
+ul.liste_reseaux_sociaux li{
+
+  display: block;
+  float: left;
+  padding: 0px 10px;
+  margin: 0px;
+
+
+}
 
 footer{
 
