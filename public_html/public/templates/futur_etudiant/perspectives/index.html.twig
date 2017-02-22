@@ -1,4 +1,8 @@
+{# Intégration du layout de base #}
+{% extends 'layout.html.twig' %}
 
+
+{% block content %}
 <h1>PERSPECTIVES</h1>
 
     <h2>{{ arrTextes[1]['titre'] }}</h2>
@@ -9,4 +13,5 @@
 
     <h2>{{ arrTextes[0]['titre'] }}</h2>
     {{ arrTextes[0]['paragraphe'] | raw }}
+{% endblock %}
 

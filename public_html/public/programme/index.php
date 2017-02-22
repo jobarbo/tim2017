@@ -45,26 +45,12 @@ try {
         $objResultTexte->free_result();
     }
 
-    $template = $twig->loadTemplate('pieces/head.html.twig');
-    echo $template->render(array(
-        'title' => "Techniques d'intégration multimédia | TIM",
-        'page' => "Programme | ",
-        'niveau' => $strNiveau
-    ));
-
-    $template = $twig->loadTemplate('pieces/header.html.twig');
-    echo $template->render(array(
-        'arrMenuLiensActifs' => $arrMenuActif
-    ));
-
     $template = $twig->loadTemplate('programme/index.html.twig');
     echo $template->render(array(
         'niveau' => "../",
+        'page' => "Programme ",
         'arrTextes' => $arrTextes
     ));
-
-    $template = $twig->loadTemplate('pieces/footer.html.twig');
-    echo $template->render(array());
 
 } catch (Exception $e) {
 

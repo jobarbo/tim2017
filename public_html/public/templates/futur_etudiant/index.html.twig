@@ -1,12 +1,11 @@
-<head>
-    <meta charset="utf-8"/>
-    <title>{{ title }}</title>
-</head>
-<body>
+{# Intégration du layout de base #}
+{% extends 'layout.html.twig' %}
+
+
+{% block content %}
 <h1>FUTUR ÉTUDIANT</h1>
 {% for valeur in arrTextes %}
 <h2>{{ valeur['titre'] }}</h2>
 {{ valeur['paragraphe'] | raw }}
 {% endfor %}
-
-</body>
+{% endblock %}
