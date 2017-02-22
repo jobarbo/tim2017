@@ -20,79 +20,73 @@
 {# HEADER #}
 <body>
 <header>
-    <div class="meta_nav">
-        <ul>
-            <li><a href="index.php" class="{{ arrMenuLiensActifs.accueil }} ">Accueil</a></li>
-            <li><a href="nous_joindre" class="{{ arrMenuLiensActifs.nousJoindre }} ">Nous joindre</a></li>
-            <li>
-                <a href="http://www.cegep-ste-foy.qc.ca" target="_blank">
-                    <img src="dist/images/cegep_logo.svg" alt="Logo du Cégep de Sainte-Foy.">
-                </a>
-            </li>
-        </ul>
-    </div>
+        <div class="meta_nav hide_nav">
+            <ul>
+                <li><a href="index.php" class="{{ arrMenuLiensActifs.accueil }} ">Accueil</a></li>
+                <li><a href="nous_joindre" class="{{ arrMenuLiensActifs.nousJoindre }} ">Nous joindre</a></li>
+                <li>
+                    <a href="http://www.cegep-ste-foy.qc.ca" target="_blank">
+                        <img src="{{ niveau }}dist/images/cegep_logo.svg" alt="Logo du Cégep de Sainte-Foy.">
+                    </a>
+                </li>
+            </ul>
+        </div>
 
-    <nav id="nav_primary">
-        <span id="logoTIM"><a href="index.php"><img src="dist/images/tim-logo.svg"
-                                                    alt="Logo du programme en Techniques d'intégration multimédia."></a></span>
+        <nav id="nav_primary">
+            <span id="logoTIM"><a href="index.php"><img src="{{ niveau }}dist/images/tim-logo.svg" alt="Logo du programme en Techniques d'intégration multimédia."></a></span>
 
-        <ul>
-            <form class='nav_radio'>
-                <li class="top_niveau etudiant"><input type='checkbox' class="navbox" name='nav' id="etudiant"><label
-                            for='etudiant' class="menu_lien">Futur étudiant
+            <ul>
+
+                <li class="top_niveau etudiant"><input type='checkbox' class="navbox" name='nav' id="etudiant"><label for='etudiant' class="menu_lien">Futur étudiant
                     </label>
+                    <div class="sub_hide"></div>
                     <ul class="second_nav sub_etudiant">
-                        <li><a href="futur_etudiant/index.php" class="{{ arrMenuLiensActifs.futurEtudiant }}">Qu'est-ce
-                                qu'un
+                    
+                        <li><a href="futur_etudiant/index.php" class="{{ arrMenuLiensActifs.futurEtudiant }}">Qu'est-ce qu'un
                                 intégrateur web?</a></li>
-                        <li><a href="futur_etudiant/bon_choix/index.php" class="{{ arrMenuLiensActifs.bonChoix }} ">Fais-tu
-                                le
+                        <li><a href="futur_etudiant/bon_choix/index.php" class="{{ arrMenuLiensActifs.bonChoix }} ">Fais-tu le
                                 bon choix?</a></li>
                         <li><a href="futur_etudiant/profil/index.php" class="{{ arrMenuLiensActifs.profil }} ">As-tu le
                                 profil?</a></li>
-                        <li><a href="futur_etudiant/perspectives/index.php"
-                               class="{{ arrMenuLiensActifs.perspectives }} ">Perspectives</a>
+                        <li><a href="futur_etudiant/perspectives/index.php" class="{{ arrMenuLiensActifs.perspectives }} ">Perspectives</a>
                         </li>
-                        <li><a href="futur_etudiant/temoignages/index.php"
-                               class="{{ arrMenuLiensActifs.temoignages }} ">Témoignages</a>
+                        <li><a href="futur_etudiant/temoignages/index.php" class="{{ arrMenuLiensActifs.temoignages }} ">Témoignages</a>
                         </li>
+                        
                     </ul>
                 </li>
-                <li class="top_niveau programme"><input type='checkbox' class="navbox" name='nav' id="programme"><label
-                            for='programme' class="menu_lien">Programme</label>
-
+                <li class="top_niveau programme"><input type='checkbox' class="navbox" name='nav' id="programme"><label for='programme' class="menu_lien">Programme</label>
+                    <div class="sub_hide"></div>
                     <ul class="second_nav sub_programme">
+                     
                         <li><a href="programme/index.php" class="{{ arrMenuLiensActifs.programme }} ">Qu'est-ce qu'on
                                 apprend?</a></li>
-                        <li><a href="programme/equipe/index.php" class="{{ arrMenuLiensActifs.equipe }} ">Équipe</a>
-                        </li>
+                        <li><a href="programme/equipe/index.php" class="{{ arrMenuLiensActifs.equipe }} ">Équipe</a></li>
                         <li><a href="programme/grille_cours/index.php" class="{{ arrMenuLiensActifs.grilleCours }} ">Grilles
                                 de cours</a></li>
+                        
                     </ul>
                 </li>
-                <li class="top_niveau stages"><input type='checkbox' class="navbox" name='nav' id="stages"><label
-                            for='stages' class="menu_lien">Stages</label>
-
+                <li class="top_niveau stages"><input type='checkbox' class="navbox" name='nav' id="stages"><label for='stages' class="menu_lien">Stages</label>
+                <div class="sub_hide"></div>
                     <ul class="second_nav sub_stages">
-                        <li><a href="stages/ate/index.php" class="{{ arrMenuLiensActifs.stages }}">Stages crédités</a>
-                        </li>
+                     
+                        <li><a href="stages/ate/index.php" class="{{ arrMenuLiensActifs.stages }}">Stages crédités</a></li>
                         <li><a href="stages/ate/index.php" class="{{ arrMenuLiensActifs.ate }} ">ATE</a></li>
                         <li><a href="stages/international/index.php" class="{{ arrMenuLiensActifs.international }} ">International</a>
                         </li>
+                       
                     </ul>
                 </li>
-                <li class="top_niveau diplomes"><input type='checkbox' class="navbox" id="diplomes"><label
-                            for='diplomes' class="menu_lien"><a href="diplomes/index.php"
-                                                                class="menu_lien {{ arrMenuLiensActifs.diplomes }}">Diplômés</a></label>
-
+                <li class="top_niveau diplomes"><input type='checkbox' class="navbox" id="diplomes"><label for='diplomes' class="menu_lien"><a href="diplomes/index.php" class="menu_lien {{ arrMenuLiensActifs.diplomes }}">Diplômés</a></label>
+                 
                 </li>
-            </form>
-        </ul>
-        <a href="futur_etudiant/index.php" class="btn_rouge"><span class="slant"></span>Je m'inscris !</a>
-    </nav>
+            </ul>
+            <a href="futur_etudiant/index.php" class="btn_rouge"><span class="slant"></span>Je m'inscris !</a>
+        </nav>
 </header>
 <a href="{{ arrMenuLiensActifs.PHP_SELF }}{% if arrMenuLiensActifs.QUERY_STRING != "" %}?{{ arrMenuLiensActifs.QUERY_STRING }}{% endif %}#contenu"
-   class="visuallyhidden focusable">Allez au contenu</a>
+   class="visuallyhidden focusable" style="display:none;">Allez au contenu</a>
 
 <main>
     {# CONTENU DES PAGES #}
@@ -154,7 +148,7 @@
             <li><a href="nous_joindre/index.php" class="{{ arrMenuLiensActifs.nousJoindre }} ">Nous joindre</a></li>
             <li>
                 <a href="http://www.cegep-ste-foy.qc.ca" target="_blank">
-                    <img src="{{ niveau }}dist/images/cegep_logo_white.svg" alt="Logo du Cégep de Sainte-Foy.">
+                    <img src="dist/images/cegep_logo_white.svg" alt="Logo du Cégep de Sainte-Foy.">
                 </a>
             </li>
         </ul>
@@ -182,7 +176,9 @@
 <script type="text/javascript" src="dist/scripts/main.js"></script>
 
 {# SCRIPTS SELON PAGE #}
-{% block scripts %}{% endblock %}
+{% if fichier_script is defined %}
+    <script type="text/javascript" src="dist/scripts/{{ fichier_script }}"></script>
+{% endif %}
 
 </body>
 </html>

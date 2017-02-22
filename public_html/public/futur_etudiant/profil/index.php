@@ -60,30 +60,20 @@ if(isset($_GET['validerQuiz']))
             $cptQ++;
         }
 
-        $arrId = ["A", "B", "C", "D"];
+        $arrId = array("A", "B", "C", "D");
 
         ///////////// TWIG //////////////
-        $template = $twig->loadTemplate('pieces/head.html.twig');
-        echo $template->render(array(
-            'title' => "Techniques d'intégration multimédia | TIM",
-            'page' => "As-tu le profil? | ",
-            'niveau' => $strNiveau
-        ));
-        $template = $twig->loadTemplate('pieces/header.html.twig');
-        echo $template->render(array(
-            'arrMenuLiensActifs' => $arrMenuActif
-        ));
-
         $template = $twig->loadTemplate('futur_etudiant/profil/index.html.twig');
         echo $template->render(array(
             'niveau' => $strNiveau,
+            'page' => "As-tu le profil? | ",
             'xml' => $arrQuestions,
             'tId' => $arrId,
-            'erreur' => "Veuillez compléter à toutes les questions."
-        ));
+            'arrMenuLiensActifs' => $arrMenuActif,
+            'erreur' => "Veuillez compléter toutes les questions.",
+            'fichier_script' => 'quiz1.js'
 
-        $template = $twig->loadTemplate('pieces/footer.html.twig');
-        echo $template->render(array());
+        ));
     }
     $pointage = $pointage * 2;
     echo $pointage;
@@ -124,29 +114,12 @@ if(isset($_GET['validerQuiz']))
     }
 
     ///////////// TWIG //////////////
-    $template = $twig->loadTemplate('pieces/head.html.twig');
-    echo $template->render(array(
-        'title' => "Techniques d'intégration multimédia | TIM",
-        'page' => "As-tu le profil? | ",
-        'niveau' => $strNiveau
-    ));
-    $template = $twig->loadTemplate('pieces/header.html.twig');
-    echo $template->render(array(
-        'arrMenuLiensActifs' => $arrMenuActif
-    ));
-
     $template = $twig->loadTemplate('futur_etudiant/profil/resultat.html.twig');
     echo $template->render(array(
         'niveau' => $strNiveau,
-        'bonneReponse' => $bonneReponse
-    ));
-
-    $template = $twig->loadTemplate('pieces/footer.html.twig');
-    echo $template->render(array());
-
-    $template = $twig->loadTemplate('pieces/scripts.html.twig');
-    echo $template->render(array(
-        'fichier_script' => 'quiz1.js'
+        'page' => "As-tu le profil? | ",
+        'arrMenuLiensActifs' => $arrMenuActif,
+        'bonneReponse' => $bonneReponse,
     ));
 }
 else
@@ -174,32 +147,16 @@ else
         $cptQ++;
     }
 
-    $arrId = ["A", "B", "C", "D"];
+    $arrId = array("A", "B", "C", "D");
 
     ///////////// TWIG //////////////
-    $template = $twig->loadTemplate('pieces/head.html.twig');
-    echo $template->render(array(
-        'title' => "Techniques d'intégration multimédia | TIM",
-        'page' => "As-tu le profil? | ",
-        'niveau' => $strNiveau
-    ));
-    $template = $twig->loadTemplate('pieces/header.html.twig');
-    echo $template->render(array(
-        'arrMenuLiensActifs' => $arrMenuActif
-    ));
-
     $template = $twig->loadTemplate('futur_etudiant/profil/index.html.twig');
     echo $template->render(array(
         'niveau' => $strNiveau,
+        'page' => "As-tu le profil? | ",
         'xml' => $arrQuestions,
-        'tId' => $arrId
-    ));
-
-    $template = $twig->loadTemplate('pieces/footer.html.twig');
-    echo $template->render(array());
-
-    $template = $twig->loadTemplate('pieces/scripts.html.twig');
-    echo $template->render(array(
+        'tId' => $arrId,
+        'arrMenuLiensActifs' => $arrMenuActif,
         'fichier_script' => 'quiz1.js'
     ));
 }

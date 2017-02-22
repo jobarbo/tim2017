@@ -15,10 +15,13 @@
         <nav id="nav_primary">
             <span id="logoTIM"><a href="index.php"><img src="{{ niveau }}dist/images/tim-logo.svg" alt="Logo du programme en Techniques d'intégration multimédia."></a></span>
 
-            <ul><form class='nav_radio'>
+            <ul>
+
                 <li class="top_niveau etudiant"><input type='checkbox' class="navbox" name='nav' id="etudiant"><label for='etudiant' class="menu_lien">Futur étudiant
                     </label>
+                    <div class="sub_hide"></div>
                     <ul class="second_nav sub_etudiant">
+                    
                         <li><a href="futur_etudiant/index.php" class="{{ arrMenuLiensActifs.futurEtudiant }}">Qu'est-ce qu'un
                                 intégrateur web?</a></li>
                         <li><a href="futur_etudiant/bon_choix/index.php" class="{{ arrMenuLiensActifs.bonChoix }} ">Fais-tu le
@@ -29,30 +32,35 @@
                         </li>
                         <li><a href="futur_etudiant/temoignages/index.php" class="{{ arrMenuLiensActifs.temoignages }} ">Témoignages</a>
                         </li>
+                        
                     </ul>
                 </li>
                 <li class="top_niveau programme"><input type='checkbox' class="navbox" name='nav' id="programme"><label for='programme' class="menu_lien">Programme</label>
-                    
+                    <div class="sub_hide"></div>
                     <ul class="second_nav sub_programme">
+                     
                         <li><a href="programme/index.php" class="{{ arrMenuLiensActifs.programme }} ">Qu'est-ce qu'on
                                 apprend?</a></li>
                         <li><a href="programme/equipe/index.php" class="{{ arrMenuLiensActifs.equipe }} ">Équipe</a></li>
                         <li><a href="programme/grille_cours/index.php" class="{{ arrMenuLiensActifs.grilleCours }} ">Grilles
                                 de cours</a></li>
+                        
                     </ul>
                 </li>
                 <li class="top_niveau stages"><input type='checkbox' class="navbox" name='nav' id="stages"><label for='stages' class="menu_lien">Stages</label>
-                
+                <div class="sub_hide"></div>
                     <ul class="second_nav sub_stages">
+                     
                         <li><a href="stages/ate/index.php" class="{{ arrMenuLiensActifs.stages }}">Stages crédités</a></li>
                         <li><a href="stages/ate/index.php" class="{{ arrMenuLiensActifs.ate }} ">ATE</a></li>
                         <li><a href="stages/international/index.php" class="{{ arrMenuLiensActifs.international }} ">International</a>
                         </li>
+                       
                     </ul>
                 </li>
                 <li class="top_niveau diplomes"><input type='checkbox' class="navbox" id="diplomes"><label for='diplomes' class="menu_lien"><a href="diplomes/index.php" class="menu_lien {{ arrMenuLiensActifs.diplomes }}">Diplômés</a></label>
                  
-                </li></form>
+                </li>
             </ul>
             <a href="futur_etudiant/index.php" class="btn_rouge"><span class="slant"></span>Je m'inscris !</a>
         </nav>

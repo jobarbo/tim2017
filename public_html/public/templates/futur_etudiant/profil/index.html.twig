@@ -1,33 +1,37 @@
+{# Intégration du layout de base #}
+{% extends 'layout.html.twig' %}
+
+
+{% block content %}
 <div class="container">
-    <main>
-        <h1>As-tu le profil?</h1>
-        <div class="contenuInteractif">
-            <p id='progression'></p>
-            <p id='retroaction'></p>
-            <p id="erreurQuiz1">{{ erreur }}</p>
-        </div>
-        <div class="col-sm-6">
+    <h1>As-tu le profil?</h1>
+    <div class="contenuInteractif">
+        <p id='progression'></p>
+        <p id='retroaction'></p>
+        <p id="erreurQuiz1">{{ erreur }}</p>
+    </div>
+    <div class="col-sm-6">
+        {% for i in 0..9 %}
+            <span id="qProfil{{ i }}">{{ xml[i]['texteQuestion'] }}</span>
+        {% endfor %}
+    </div>
+    <div class="col-sm-6">
+        <form name="quiz_bon_profil" action="futur_etudiant/profil" method="GET">
             {% for i in 0..9 %}
-                <span id="qProfil{{ i }}">{{ xml[i]['texteQuestion'] }}</span>
+                <fieldset id="Q{{ i }}">
+                    <ul class="choixReponses">
+                        {% for j in 0..3 %}
+                            <li>
+                                <input id="Q{{ i }}{{ tId[j] }}" type="radio" name="Q{{ i }}" value="{{ xml[i]['pointage'][j] }}">
+                                <label for="Q{{ i }}{{ tId[j] }}">{{ xml[i]['texteReponse'][j] }}</label>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </fieldset>
             {% endfor %}
-        </div>
-        <div class="col-sm-6">
-            <form name="quiz_bon_profil" action="futur_etudiant/profil" method="GET">
-                {% for i in 0..9 %}
-                    <fieldset id="Q{{ i }}">
-                        <ul class="choixReponses">
-                            {% for j in 0..3 %}
-                                <li>
-                                    <input id="Q{{ i }}{{ tId[j] }}" type="radio" name="Q{{ i }}" value="{{ xml[i]['pointage'][j] }}">
-                                    <label for="Q{{ i }}{{ tId[j] }}">{{ xml[i]['texteReponse'][j] }}</label>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    </fieldset>
-                {% endfor %}
-                <input id='validerQuiz' name='validerQuiz' type="submit" value="Valider">
-                <br /><br />
-            </form>
-        </div>
-    </main>
+            <input id='validerQuiz' name='validerQuiz' type="submit" value="Valider">
+            <br /><br />
+        </form>
+    </div>
 </div>
+{% endblock%}

@@ -1,9 +1,14 @@
-<div class="hero-image col-sm-12">
+{# Intégration du layout de base #}
+{% extends 'layout.html.twig' %}
 
+
+{% block content %}
+<div class="hero-image col-sm-12">
+<h1 class="hero_title"> TECHNIQUES D'INTÉGRATION MULTIMÉDIA </h1>
 </div>
 <section>
-    <div class="accueil_news">
-        <div class="actualite_text">
+    <div class="accueil_news row">
+        <div class="actualite_text col-sm-6">
             <h2>ACTUALITÉS</h2>
 
             <p class="date">{{nouvelle.date_nouvelle}}</p>
@@ -13,9 +18,12 @@
 
             <p>{{nouvelle.description_nouvelle}}</p>
 
-            <a href="{{nouvelle.url_nouvelle}}">En savoir plus</a>
+            <a href="{{nouvelle.url_nouvelle}}" class="blue-btn">En savoir plus<span
+                        class="back_slant"></span></a>
         </div>
-        <div class="actualite_img">
+        <div class="col-sm-6">
+            <div class="actualite_img">
+            </div>
 
         </div>
     </div>
@@ -38,7 +46,7 @@
                                         </picture>-->
                                     </div>
                                     <span class="titre_projet">{{ projet.titre }}</span>
-                                    <p>{{ arrInfos.prenom}} {{ arrInfos.nom}}</p>
+                                    <p>{{ projet.prenom}} {{ projet.nom}}</p>
                                 </a>
                             </li>
                         {% endfor %}
@@ -49,3 +57,4 @@
     </div>
 
 </section>
+{% endblock%}

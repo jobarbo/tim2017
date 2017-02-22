@@ -56,7 +56,7 @@ try{
 //----- 3.2 Requete pour aller chercher les projets et les afficher sur l'accueil' -----//
 
 try {
-    $strSQLProjetsEtudiant = "SELECT id_projet, titre_projet, slug FROM t_projet_diplome WHERE id_diplome = " . $intIdEtudiant;
+    $strSQLProjetsEtudiant = "SELECT t_projet_diplome.id_diplome, id_projet, titre_projet, t_projet_diplome.slug, nom_diplome, prenom_diplome FROM t_projet_diplome INNER JOIN t_diplome ON t_projet_diplome.id_diplome = t_diplome.id_diplome ORDER BY RAND() LIMIT 4";
     $objResultProjetsEtudiant = $objConnMySQLi->query($strSQLProjetsEtudiant);
     
 
@@ -72,6 +72,8 @@ try {
          while ($objLigneProjetsEtudiant = $objResultProjetsEtudiant->fetch_object()) {
                 $arrProjetsEtudiant[] =
                     array(
+                        'prenom' => $objLigneProjetsEtudiant->prenom_diplome,
+                        'nom' => $objLigneProjetsEtudiant->nom_diplome,
                         'id' => $objLigneProjetsEtudiant->id_projet,
                         'titre' => $objLigneProjetsEtudiant->titre_projet,
                         'slug' => $objLigneProjetsEtudiant->slug
@@ -93,7 +95,7 @@ try {
 
 //----- 3.3 Requete pour aller chercher le nom de létudiant pour les projets -----//
 
-try{
+/*try{
     $strSQLInfoEtudiant = "SELECT nom_diplome, prenom_diplome, slug FROM t_diplome WHERE id_diplome = " . $intIdEtudiant;
     $objResultInfosEtudiant =  $objConnMySQLi->query($strSQLInfoEtudiant);
     if($objResultInfosEtudiant == false){
@@ -119,12 +121,12 @@ try{
     $objResultInfosEtudiant->free_result();
 } catch (Exception $e){
     $texteErreurFiche = $e->getMessage();
-}
+}*/
 
 // fermer la connexion
 $objConnMySQLi->close();
 /*************** 4 TWIG ***********************/
-$template = $twig->loadTemplate('pieces/head.html.twig');
+/*$template = $twig->loadTemplate('pieces/head.html.twig');
 echo $template->render(array(
     'title' => "Techniques d'intégration multimédia | TIM",
     'page' => "",
@@ -132,26 +134,25 @@ echo $template->render(array(
     
 ));
 
-
 $template = $twig->loadTemplate('pieces/header.html.twig');
 echo $template->render(array(
     'arrMenuLiensActifs' => $arrMenuActif,
     'niveau' => $strNiveau
-));
+));*/
 $template = $twig->loadTemplate('index.html.twig');
 echo $template->render(array(
     'niveau' => $strNiveau,
     'page' => "Techniques d'intégration multimédia",
     'nouvelle' => $arrNouvelle,
-    'arrInfos' => $arrInfosEtudiant,
     'arrProjets' => $arrProjetsEtudiant,
     'texteErreurNouvelle'=> $strMsgErrNouvelle,
     'texteErreurProjets' => $texteErreurProjets
 ));
 
-$template = $twig->loadTemplate('pieces/footer.html.twig');
+/*$template = $twig->loadTemplate('pieces/footer.html.twig');
 echo $template->render(array(
     'niveau' => $strNiveau
-));
+));*/
+
 
 

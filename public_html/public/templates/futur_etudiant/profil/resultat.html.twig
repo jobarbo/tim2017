@@ -1,7 +1,11 @@
+{# Intégration du layout de base #}
+{% extends 'layout.html.twig' %}
+
+
+{% block content %}
 <div class="container">
-    <main>
-        <h1>As-tu le profil?</h1>
-        <h2>Résultat</h2>
-        <p>{{ bonneReponse }}</p>
-    </main>
+    <h1>As-tu le profil?</h1>
+    <h2>Résultat</h2>
+    <p>{{ bonneReponse }}</p>
 </div>
+{% endblock%}

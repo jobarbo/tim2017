@@ -91,14 +91,12 @@ $objConnMySQLi->close();
 $template = $twig->loadTemplate('diplomes/index.html.twig');
 echo $template->render(array(
     //HEAD
-    'title' => "Techniques d'intégration multimédia | TIM",
-    'page' => "Nos diplômés 2017 | ",
+    'page' => "Nos diplômés 2017 ",
     'niveau' => $strNiveau,
     //HEADER
     'arrMenuLiensActifs' => $arrMenuActif,
     //PAGE
-    'niveau' => $strNiveau,
-    'page' => "Nos diplômés 2017",
+    'title' => "Nos diplômés 2017",
     'texteIntro' => $strTexteIntro,
     'diplomes' => $arrDiplomes,
     'erreur' => $strMsgErrDiplomes,
