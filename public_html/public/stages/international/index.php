@@ -10,7 +10,7 @@ $stmt->execute();
 $pages = $stmt->get_result()->fetch_all(MYSQLI_ASSOC)[0];
 
 
-$template = $twig->loadTemplate('stages/ate/index.html.twig');
+$template = $twig->loadTemplate('stages/International/index.html.twig');
 echo $template->render(array(
     'niveau' => $strNiveau,
     'pages' => $pages,
