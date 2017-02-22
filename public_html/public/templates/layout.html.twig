@@ -20,7 +20,7 @@
 {# HEADER #}
 <body>
 <header>
-        <div class="meta_nav">
+        <div class="meta_nav hide_nav">
             <ul>
                 <li><a href="index.php" class="{{ arrMenuLiensActifs.accueil }} ">Accueil</a></li>
                 <li><a href="nous_joindre" class="{{ arrMenuLiensActifs.nousJoindre }} ">Nous joindre</a></li>
@@ -86,7 +86,7 @@
         </nav>
 </header>
 <a href="{{ arrMenuLiensActifs.PHP_SELF }}{% if arrMenuLiensActifs.QUERY_STRING != "" %}?{{ arrMenuLiensActifs.QUERY_STRING }}{% endif %}#contenu"
-   class="visuallyhidden focusable">Allez au contenu</a>
+   class="visuallyhidden focusable" style="display:none;">Allez au contenu</a>
 
 <main>
     {# CONTENU DES PAGES #}

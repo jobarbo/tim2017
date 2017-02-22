@@ -15,6 +15,10 @@
 	font-family: raleway_semi_bold;
 	src: url("../fonts/Raleway-SemiBold.ttf");
 }
+@font-face {
+	font-family: workSans;
+	src: url("../fonts/WorkSans-ExtraBold.ttf");
+}
 
 body{
 	background-color:white;
@@ -31,7 +35,12 @@ body{
 		background-color:white;
 	}
 }
-
+h1.hero_title{
+font-family: workSans;
+    font-size: 38px;
+    color: #fff;
+    width: 250px;
+}
 h3{
 	font-family: raleway_semi_bold;
 	font-size: 28px;
@@ -87,6 +96,7 @@ ul{
 	margin-top: 10px;
 	border: none;
 	box-shadow: 11px 3px 5px rgba(0,172,255,.35);
+	backface-visibility: hidden;
 	transition: all .2s ease-in-out;
 	transform: translateY(0px);
 	.back_slant{
@@ -112,10 +122,10 @@ ul{
 	}
 
 	&:hover {
-		transform: translateY(1px);
-		color: #fff;
-		box-shadow: rgba(0, 172, 255, 0.55) 11px 2px 3px;
-		text-decoration: none;
+    transform: translateY(3px);
+    color: #fff;
+    box-shadow: 11px 1.75px 3px rgba(0,172,255,.45);
+    text-decoration: none;
 		&:after{
 			box-shadow:1px 0px 8px rgba(0,172,255,.65);
 		}

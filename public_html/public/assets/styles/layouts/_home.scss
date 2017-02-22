@@ -3,14 +3,18 @@
   background-image: url("../../dist/images/hero.jpg");
   background-size:cover;
   background-position: center center;
+      padding-top: 112px;
 
 }
 .actualite_img{
-  background-image: url("../../dist/images/news_img_placeholder.png");
-  background-size:cover;
-  background-position: center center;
-  height: 312px;
-  width: 30%;
-  border-radius: 10px;
+      background-image: url('../../dist/images/news_img_placeholder.png');
+    height: 312px;
+    width: 75%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: table;
+    margin: auto;
+    border-radius: 10px;
 
 }

@@ -25,9 +25,13 @@ header{
   
 
   #logoTIM{
+    
     float: left;
     img{
-      width:200px;
+      width: 230px;
+      top: 3px;
+      position: absolute;
+      backface-visibility: hidden;
     }
   }
   a{ 
@@ -76,6 +80,7 @@ header{
             top: -8px;
             font-family: OpenSans-Light;
             right: -10px;
+            color: #0D97F5;
             background: hsla(0,0%,100%,0);
             z-index: 9;
             transition: transform 0.3s ease-out;
@@ -101,18 +106,20 @@ header{
 
           input[type="checkbox"]{
            display: none;
+
             
           }
           input[type="checkbox"]:checked ~ label{
             color: #0D97F5;
-            //transition: transform 0.3s ease-out;
+            
             &:after{
               content: "+";
               display: table;
               position: absolute;
-              transform: translateX(8px) rotate(225deg) scale(1.5,1.5) ;
+              transform: translateX(4px) rotate(225deg) scale(1.5,1.5) ;
               top: -8px;
               font-family: OpenSans-Light;
+              color:red;
               right: -10px;
               background: hsla(0,0%,100%,0);
               transition: transform 0.3s ease-out;
