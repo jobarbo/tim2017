@@ -1,1 +1,5 @@
-{{ pages.texte | raw }}
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    {{ pages.texte | raw }}
+{% endblock %}

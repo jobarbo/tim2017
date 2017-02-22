@@ -1,3 +1,7 @@
-{% for page in pages %}
-    {{ page.texte | raw}}
-{% endfor %}
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    {% for page in pages %}
+        {{ page.texte | raw}}
+    {% endfor %}
+{% endblock %}
