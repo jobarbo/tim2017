@@ -24,6 +24,12 @@
 	src: url("../fonts/WorkSans-ExtraBold.ttf");
 }
 
+::-webkit-scrollbar {
+	display: none;
+}
+
+
+
 body{
 	background-color:white;
 	transition:0.5s transform ease-in-out;
