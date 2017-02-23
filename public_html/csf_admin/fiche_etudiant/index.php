@@ -32,7 +32,7 @@ require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 if (isset($_GET['id'])) {
     $intMatriculeEtudiant = $_GET['id'];
 } else {
-    header('Location: ' . $strNiveau . '404/index.php');
+    header('Location: ' . $strNiveau . '404/');
 }
 
 /*************** 4. DÉFINITION CHEMIN ET FICHIER POUR TÉLÉVERSEMENT ***********************/
@@ -112,7 +112,7 @@ try {
 
     //En cas d'erreur de requête
     if ($objResultInfosEtudiant->num_rows == 0) {
-        //header('Location: ' . $strNiveau . '404/index.php');
+        //header('Location: ' . $strNiveau . '404/');
         echo "MARCHE PAS 1";
     }
 
@@ -170,6 +170,7 @@ echo $template->render(array(
     'title' => "Section administrative | TIM",
     'page' => "Éditer la fiche de " . $arrInfosEtudiant['prenom'] . " " . $arrInfosEtudiant['nom'] . " | ",
     'niveau' => $strNiveau,
+    'niveauAdmi' => $strNiveauAdmin,
     //PAGE
     'page' => "Éditer la fiche du diplomé " . $arrInfosEtudiant['prenom'] . " <span>" . $arrInfosEtudiant['nom'] . "</span>",
     'arrInfos' => $arrInfosEtudiant,

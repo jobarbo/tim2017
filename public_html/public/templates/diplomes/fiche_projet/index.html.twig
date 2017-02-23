@@ -5,7 +5,7 @@
 {% block content %}
     <section class="haut_page">
         <h1 id="contenu">{{ page | raw }}</h1>
-        <span class='retour_precedent'><a href="diplomes/fiche_etudiant/index.php?slug={{ arrInfosEtudiant.slug }}">retour vers la fiche de {{ arrInfosEtudiant.prenom ~ " " ~ arrInfosEtudiant.nom }}</a></span>
+        <span class='retour_precedent'><a href="diplomes/fiche-etudiant/slug={{ arrInfosEtudiant.slug }}">retour vers la fiche de {{ arrInfosEtudiant.prenom ~ " " ~ arrInfosEtudiant.nom }}</a></span>
     </section>
     <section class="texte_intro_projet">
         <div class="description">
@@ -47,7 +47,7 @@
             <ul>
                 {% for projet in arrAutresProjets %}
                     <li>
-                        <a href="diplomes/fiche_projet/index.php?slug={{ projet.slug }}&idEtudiant={{ arrInfos.id_diplome }}">
+                        <a href="diplomes/fiche-projet/{{ projet.slug }}&{{ arrInfos.id_diplome }}">
                             <div class="img_projet">
                                 <picture>
                                     <!--<source media="" srcset="../images/projets/prj408_01-mobile.jpg 1x, ../images/projets/prj408_01-mobile@2x.jpg 2x">

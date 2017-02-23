@@ -13,18 +13,18 @@
         {% else %}
             <div class="triInterets">
                 <h2>Trier les diplômés par intérêts</h2>
-                <a href="diplomes/index.php" id="btnResetTri" class="btnTri btnReset">Réinitialiser</a>
+                <a href="diplomes" id="btnResetTri" class="btnTri btnReset">Réinitialiser</a>
                 <ul class="listeTri">
                     <li><a class="btnTri gestion" id="interet_gestion_projet"
-                           href="diplomes/index.php?tri_interets=interet_gestion_projet">Gestion</a></li>
+                           href="diplomes/interet_gestion_projet">Gestion</a></li>
                     <li><a class="btnTri design" id="interet_design_interface"
-                           href="diplomes/index.php?tri_interets=interet_design_interface">Design</a></li>
+                           href="diplomes/interet_design_interface">Design</a></li>
                     <li><a class="btnTri medias" id="interet_traitement_medias"
-                           href="diplomes/index.php?tri_interets=interet_traitement_medias">Traitement des médias</a></li>
+                           href="diplomes/interet_traitement_medias">Traitement des médias</a></li>
                     <li><a class="btnTri integration" id="interet_integration"
-                           href="diplomes/index.php?tri_interets=interet_integration">Intégration</a></li>
+                           href="diplomes/interet_integration">Intégration</a></li>
                     <li><a class="btnTri programmation" id="interet_programmation"
-                           href="diplomes/index.php?tri_interets=interet_programmation">Programmation</a></li>
+                           href="diplomes/interet_programmation">Programmation</a></li>
                 </ul>
             </div>
         {% endif %}
@@ -34,7 +34,7 @@
             <ul id="liste_diplomes">
                 {% for arrDiplomes in diplomes %}
                     <li>
-                        <a href="diplomes/fiche_etudiant/index.php?slug={{ arrDiplomes.slug }}">
+                        <a href="diplomes/fiche-etudiant/{{ arrDiplomes.slug }}">
                             <img src="images/{{ arrDiplomes.id }}.jpg"
                                  alt="{{ arrDiplomes.prenom }} {{ arrDiplomes.nom }}"/>
                             <h2 class="nom">{{ arrDiplomes.prenom }} <span>{{ arrDiplomes.nom }}</span></h2>
