@@ -1,14 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="104px" height="42px" viewBox="0 0 104 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
-    <title>TIM</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="Desktop-HD" sketch:type="MSArtboardGroup" transform="translate(-100.000000, -56.000000)" fill="#2A8BE1">
-            <g id="nav" sketch:type="MSLayerGroup" transform="translate(0.000000, -2.000000)">
-                <path d="M136.436195,68.056338 L124.12993,68.056338 L124.12993,100 L112.366589,100 L112.366589,68.056338 L100,68.056338 L100,58 L136.436195,58 L136.436195,68.056338 Z M140.719258,100 L140.719258,58 L152.482599,58 L152.482599,100 L140.719258,100 Z M192.236659,100 L192.236659,77.8760563 L185.058005,93.4338028 L178.784223,93.4338028 L171.605568,77.8760563 L171.605568,100 L159.842227,100 L159.842227,58 L172.691415,58 L181.921114,77.7577465 L191.211137,58 L204,58 L204,100 L192.236659,100 Z" id="TIM" sketch:type="MSShapeGroup"></path>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg width="104" height="42" viewBox="0 0 104 42" version="1.1" xmlns="http://www.w3.org/2000/svg"><title>TIM</title><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Desktop-HD" transform="translate(-100 -56)" fill="#2A8BE1"><g id="nav" transform="translate(0 -2)"><path d="M136.436 68.056H124.13V100h-11.763V68.056H100V58h36.436v10.056zM140.72 100V58h11.764v42h-11.764zm51.518 0V77.876l-7.179 15.558h-6.274l-7.178-15.558V100h-11.764V58h12.85l9.23 19.758L191.211 58H204v42h-11.763z" id="TIM"/></g></g></g></svg>
