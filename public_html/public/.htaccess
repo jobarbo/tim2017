@@ -28,7 +28,7 @@ RewriteEngine on
 #RewriteBase /public/
 
 # Page accueil
-RewriteRule ^/$ index.php [L]
+RewriteRule ^accueil$ index.php [L]
 
 # Section Futur Étudiant
 RewriteRule ^futur-etudiant/$ futur_etudiant/index.php [L]
