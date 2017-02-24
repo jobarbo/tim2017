@@ -1,13 +1,22 @@
 <?php
 $strNiveau = "../";
-$section = "Nous joindre";
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 
 //Requête permettant d'aller chercher tout le texte de la page Programme
-$stmt = $objConnMySQLi->prepare("SELECT * FROM t_texte WHERE t_texte.section_et_page = ?");
-$stmt->bind_param("s", $section);
-$stmt->execute();
-$pages = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+$arrContact = array();
+$request = "SELECT * FROM t_texte WHERE section_et_page = 'Nous joindre'";
+
+if ($objResult = $objConnMySQLi->query($request)) {
+    while ($objLigne = $objResult->fetch_object()) {
+        $arrContact[] = array(
+            'id'=>$objLigne->id_texte,
+            'title'=>$objLigne->titre_texte,
+            'text'=>$objLigne->texte,
+            'section'=>$objLigne->section_et_page
+        );
+    }
+    $objResult->free_result();
+}
 
 
 
@@ -43,10 +52,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 }
 
+
+
 $template = $twig->loadTemplate('nous_joindre/index.html.twig');
 echo $template->render(array(
     'niveau' => $strNiveau,
-    'pages' => $pages,
     'page' => "Nous joindre",
-    'arrMenuLiensActifs' => $arrMenuActif
+    'arrMenuLiensActifs' => $arrMenuActif,
+    'contact' => $arrContact
 ));

@@ -15,14 +15,14 @@ if ($objResult = $objConnMySQLi->query($request)) {
             'section'=>$objLigne->section_et_page
         );
     }
-    $objResult->free_result();
+/*    $objResult->free_result();*/
 }
 
 
-$template = $twig->loadTemplate('stages/International/index.html.twig');
+$template = $twig->loadTemplate('stages/international/index.html.twig');
 echo $template->render(array(
     'niveau' => $strNiveau,
     'page' => "Stage International",
     'arrMenuLiensActifs' => $arrMenuActif,
-    'stage' => $arrStage
+/*    'stage' => $arrStage*/
 ));
