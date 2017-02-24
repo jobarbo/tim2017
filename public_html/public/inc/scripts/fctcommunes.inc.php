@@ -36,8 +36,8 @@ $twig->addFunction($flashesFonction);
 function addFlash ($type, $message){
     if(!session_id()) session_start();
     //if (!isset($_SESSION) && !session_start() && !session_id()) session_start();
-    if(!isset($_SESSION['flashes'])) $_SESSION['flashes'] = [];
-    if(!isset($_SESSION['flashes'][$type])) $_SESSION['flashes'][$type] = [];
+    if(!isset($_SESSION['flashes'])) $_SESSION['flashes'] = array();
+    if(!isset($_SESSION['flashes'][$type])) $_SESSION['flashes'][$type] = array();
     array_push($_SESSION['flashes'][$type], $message);
 
 }
