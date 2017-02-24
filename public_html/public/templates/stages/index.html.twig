@@ -1,7 +1,95 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    {% for page in pages %}
+    {#{% for page in pages %}
         {{ page.texte | raw}}
-    {% endfor %}
+    {% endfor %}#}
+
+    {# Champs 1 #}
+    <section class="section1 center-page">
+        <div class="infos">
+            <h2>Dates de début des stages en 2017</h2>
+            <p>13 mars (3e année)</p>
+            <p>à partir du 31 mai (1ère et 2e année)</p>
+            <button class="blue-btn"><i class="fa fa-calendar-o i-space" aria-hidden="true"></i>
+                <a href="#">Calendrier complet</a></button>
+        </div>
+    </section>
+
+
+
+
+
+    {# Champ 2 #}
+    <section class="section2 center-page">
+        <div class="sequence-all">
+            <h2>Séquence des stages 2017-2018</h2>
+
+            <div class="sequence1">
+                <h3>Stage des étudiants de 3e année</h3>
+
+                <h4>ATE-2 + crédité</h4>
+
+                <p>Début 13 mars 2018 / Durée min. de 330 h / 10 semaines (avec interruption)</p>
+
+                <p>Ce stage est rémunéré. Les stages rémunérés sont admissibles à des crédits d'impôt avantageux. Notez que pour les deux dernières semaines du stage (22 mai 2018 au 2 juin 2018), la rémunération est optionnelle.</p>
+
+
+                <h4>En détail</h4>
+
+                <ul>
+                    <li><strong> Stage ATE-2</strong><br> (8 semaines) <br> du 13 mars au 5 mai 2018</li>
+                    <li><strong> Retour en classe</strong> <br> du 8 mai au 19 mai 2018</li>
+                    <li><strong> Stage crédité</strong><br> (2 semaines) <br> du 22 mai au 2 juin 2018</li>
+                </ul>
+            </div>
+
+
+            <div class="sequence2">
+                <h4>Crédité seulement</h4>
+                <p>Début 13 mars 2018 / Durée de 130 h / 4 semaines</p>
+                <p>Pour les étudiants qui ne participent pas au programme ATE, il s'agit d'un stage de quatre semaines non rémunéré. Notez que très peu d'étudiants sont disponibles pour cette variante du dernier stage.</p>
+                <h4>Attention</h4>
+                <p>Notez qu'à partir de l'hiver 2019, le stage de nos étudiants de 3e année sera obligatoirement un stage d'une durée de huit semaines.</p>
+            </div>
+
+
+            <div class="sequence3">
+                <h3>Stage des étudiants de 2<sup>e</sup> année</h3>
+
+                <h4>ATE-2</h4>
+
+                <p>Début à partir du 31 mai 2018 / Durée min. de 280 h / 8 semaines</p>
+
+                <p>Il s'agit d'un stage rémunéré. Les stages rémunérés sont admissibles à des crédits d'impôt avantageux.</p>
+            </div>
+
+
+            <div class="sequence4">
+                <h3>Stage des étudiants de 1e année</h3>
+
+                <h4>ATE-1</h4>
+
+                <p>Début à partir du 31 mai 2018 / Durée min. de 280 h / 8 semaines</p>
+
+                <p>Il s'agit d'un stage rémunéré. Les stages rémunérés sont admissibles à des crédits d'impôt avantageux.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    {# Champs 3 #}
+    <h2>Pour nous joindre:</h2>
+
+    <h4>Responsable des stages</h4>
+
+    <ul>
+        <li> AUDREY MORNEAU-GAGNON</li>
+        <li> tel: (418) 659-6600 </li>
+        <li>poste 6668</li>
+    </ul>
+    <a href="#">contacter</a>
 {% endblock %}
