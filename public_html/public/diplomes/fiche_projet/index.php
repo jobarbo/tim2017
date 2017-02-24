@@ -34,7 +34,7 @@ if(isset($_GET['slug'])){
     $intIdEtudiant = $_GET['idEtudiant'];
 }
 else{
-    header('Location: ' . $strNiveau . '404/index.php');
+    header('Location: ' . $strNiveau . '404/');
 }
 
 /*************** 4. REQUÊTES FICHE PROJET ***********************/
@@ -60,7 +60,7 @@ if ($objResultInfosProjet = $objConnMySQLi->query($strSQLInfosProjet)) {
 
 //En cas d'erreur de requête
 if($objResultInfosProjet->num_rows == 0){
-    header('Location: ' . $strNiveau . '404/index.php');
+    header('Location: ' . $strNiveau . '404/');
 }
 
 $objResultInfosProjet->free_result();
@@ -82,7 +82,7 @@ if ($objResultEtudiant = $objConnMySQLi->query($strSQLEtudiant)) {
 
 //En cas d'erreur de requête
 if($objResultEtudiant->num_rows == 0){
-    header('Location: ' . $strNiveau . '404/index.php');
+    header('Location: ' . $strNiveau . '404/');
 }
 
 $objResultEtudiant->free_result();
@@ -104,7 +104,7 @@ if ($objResultAutresProjets = $objConnMySQLi->query($strSQLAutresProjets)) {
 
 //En cas d'erreur de requête
 if($objResultAutresProjets->num_rows == 0){
-    header('Location: ' . $strNiveau . '404/index.php');
+    header('Location: ' . $strNiveau . '404/');
 }
 
 $objResultAutresProjets->free_result();

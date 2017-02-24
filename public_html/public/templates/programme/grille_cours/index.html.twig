@@ -68,8 +68,8 @@
     .minWidthTd {
         width: 75%;
     }
-    h1 {
-        padding: 20px 0;
+    h1, h2 {
+        padding: 20px;
     }
 </style>
     <div class="allovinny">
@@ -78,6 +78,15 @@
         </section>
         <section class="grille_cours">
             {% for i in 1..6 %}
+                {% if  (i  == 1) %}
+                    <h2>Première année</h2>
+                {% endif %}
+                {% if  (i  == 3) %}
+                    <h2>Deuxième année</h2>
+                {% endif %}
+                {% if  (i  == 5) %}
+                    <h2>Troisième année</h2>
+                {% endif %}
                 <div class="col-sm-6">
                     <table>
                         <thead>

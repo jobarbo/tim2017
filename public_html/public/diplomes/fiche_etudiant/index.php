@@ -31,7 +31,7 @@ require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 if (isset($_GET['slug'])) {
     $strSlugEtudiant = $_GET['slug'];
 } else {
-    header('Location: ' . $strNiveau . '404/index.php');
+    header('Location: ' . $strNiveau . '404/');
 }
 
 /*************** 4. REÇOIT LE TRI PAR INTÉRÊTS ***********************/
@@ -82,7 +82,7 @@ try {
 
     //En cas d'erreur de requête
     if ($objResultInfosEtudiant->num_rows == 0) {
-        header('Location: ' . $strNiveau . '404/index.php');
+        header('Location: ' . $strNiveau . '404/');
     }
 
     $objResultInfosEtudiant->free_result();
@@ -114,7 +114,7 @@ try {
 
         //En cas d'erreur de requête
         if ($objResultProjetsEtudiant->num_rows == 0) {
-            header('Location: ' . $strNiveau . '404/index.php');
+            header('Location: ' . $strNiveau . '404/');
         }
 
         $objResultProjetsEtudiant->free_result();

@@ -19,7 +19,7 @@ $strTriInterets = "";
 $strSection = "Diplômés";
 if (isset($_GET['tri_interets'])) {
     if($_GET['tri_interets'] != 'btnResetTri') {
-        $strTriInterets = $_GET['tri_interets'];
+        $strTriInterets = "interet_" . $_GET['tri_interets'];
     }
 }
 
@@ -42,7 +42,7 @@ try {
     }
     //En cas d'erreur de requête
     if ($objResultTexte->num_rows == 0) {
-        header('Location: ' . $strNiveau . '404/index.php');
+        header('Location: ' . $strNiveau . '404/');
     }
     $objResultTexte->free_result();
 } catch (Exception $e) {
@@ -77,7 +77,7 @@ try {
     }
     //En cas d'erreur de requête
     if ($objResultDiplome->num_rows == 0) {
-        header('Location: ' . $strNiveau . '404/index.php');
+        header('Location: ' . $strNiveau . '404/');
     }
     $objResultDiplome->free_result();
 } catch (Exception $e) {

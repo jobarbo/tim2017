@@ -7,7 +7,7 @@
         <section class="haut_page">
 
             <h1 id="contenu">{{ title | raw }}</h1>
-            <span class='retour_precedent'><a href="diplomes/index.php{% if tri_interets %}?tri_interets={{ tri_interets }}{% endif %}">retour vers la liste des diplômés</a></span>
+            <span class='retour_precedent'><a href="diplomes/{% if tri_interets %}{{ tri_interets }}{% endif %}">retour vers la liste des diplômés</a></span>
 
             <ul class="etudiant_contact">
                 {% if arrInfos.courriel != "" %}
@@ -84,7 +84,7 @@
                     <ul>
                         {% for projet in arrProjets %}
                             <li>
-                                <a href="diplomes/fiche_projet/index.php?slug={{ projet.slug }}&idEtudiant={{ arrInfos.id }}">
+                                <a href="diplomes/fiche-projet/{{ projet.slug }}&{{ arrInfos.id }}">
                                     <div class="img_projet">
                                         <picture>
                                             <!--<source media="" srcset="../images/projets/prj408_01-mobile.jpg 1x, ../images/projets/prj408_01-mobile@2x.jpg 2x">

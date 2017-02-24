@@ -33,6 +33,7 @@ if ($blnLocal) {
 if ($blnLocal) {
     $strBdServer   = 'localhost';
     $strBdUsername = 'root';
+
     $strBdPassword = 'root';
 
     $strBdName     = 'bdtim2017_hooli';

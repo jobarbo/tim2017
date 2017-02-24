@@ -46,7 +46,7 @@ try {
     }
     //En cas d'erreur de requête
     if ($objResultEvenement->num_rows == 0) {
-        header('Location: ' . $strNiveau . '404/index.php');
+        header('Location: ' . $strNiveau . '404/');
     }
     $objResultEvenement->free_result();
 } catch (Exception $e) {
@@ -77,7 +77,7 @@ try {
     }
     //En cas d'erreur de requête
     if ($objResultDiplome->num_rows == 0) {
-        header('Location: ' . $strNiveau . '404/index.php');
+        header('Location: ' . $strNiveau . '404/');
     }
     $objResultDiplome->free_result();
 } catch (Exception $e) {

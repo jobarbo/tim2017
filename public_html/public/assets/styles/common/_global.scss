@@ -12,6 +12,10 @@
 	src: url("../fonts/Raleway-Black.ttf");
 }
 @font-face {
+	font-family: raleway_bold;
+	src: url("../fonts/Raleway-Bold.ttf");
+}
+@font-face {
 	font-family: raleway_semi_bold;
 	src: url("../fonts/Raleway-SemiBold.ttf");
 }
@@ -19,6 +23,9 @@
 	font-family: workSans;
 	src: url("../fonts/WorkSans-ExtraBold.ttf");
 }
+
+
+
 
 body{
 	background-color:white;
@@ -35,21 +42,36 @@ body{
 		background-color:white;
 	}
 }
-h1.hero_title{
-font-family: workSans;
+main{
+	h1.hero_title{
+	font-family: workSans;
     font-size: 38px;
     color: #fff;
     width: 250px;
-}
-h3{
-	font-family: raleway_semi_bold;
-	font-size: 28px;
-}
-p{
+	}
+	h3{
+		font-family: raleway_semi_bold;
+		font-size: 28px;
+	}
+	h2{
+		font-family:raleway_semi_bold;
+		font-size: 32px;
+		margin-top:0px; 
+	}
+	h4{
+		font-family: raleway_bold;
+		font-size:22px;
+		//letter-spacing: 1px;
+		
+	}
+	p{
 
-	font-family: open_sans_regular;
-	font-size: 16px;
+		font-family: open_sans_regular;
+		font-size: 16px;
+	}
 }
+
+
 ul{
 	list-style: none;
 }
