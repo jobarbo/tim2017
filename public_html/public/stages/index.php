@@ -3,6 +3,7 @@ $strNiveau = "../";
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 
 //Requête permettant d'aller chercher tout le texte de la page Programme
+$arrStage = array();
 $request = "SELECT * FROM t_texte WHERE section_et_page = 'Stages'";
 
 if ($objResult = $objConnMySQLi->query($request)) {
