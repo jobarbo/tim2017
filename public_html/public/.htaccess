@@ -1,5 +1,5 @@
-ErrorDocument 404 http://localhost/prod6/TIM2017_team/public/404/
-
+#ErrorDocument 404 http://localhost/prod6/TIM2017_team/public/404/
+#ErrorDocument 404 http://timunix.cegep-ste-foy.qc.ca/~hooli/public/404/
 
 # ------------ Cache et expiration ----------
 
@@ -25,39 +25,49 @@ ErrorDocument 404 http://localhost/prod6/TIM2017_team/public/404/
 
 
 RewriteEngine on
-RewriteBase /public/
+#RewriteBase /~hooli/public/
+#RewriteBase /public/
 
 # Page accueil
-RewriteRule ^/$ index.php [L]
+RewriteRule ^accueil$ index.php [L]
 
 # Section Futur Étudiant
 RewriteRule ^futur-etudiant/$ futur_etudiant/index.php [L]
-# ...
+RewriteRule ^futur-etudiant/bon-choix/$ futur_etudiant/bon_choix/index.php [L]
+RewriteRule ^futur-etudiant/profil/$ futur_etudiant/profil/index.php [L]
+RewriteRule ^futur-etudiant/perspectives/$ futur_etudiant/perspectives/index.php [L]
+RewriteRule ^futur-etudiant/temoignages/$ futur_etudiant/temoignages/index.php [L]
 
 
 # Section Programme
 RewriteRule ^programme/$ programme/index.php [L]
+RewriteRule ^programme/equipe/$ programme/equipe/index.php [L]
+RewriteRule ^programme/grille-cours/$ programme/grille_cours/index.php [L]
 RewriteRule ^programme/grille-cours/fiche-cours/(.*)$ programme/grille_cours/fiche_cours/index.php?slug=$1 [L,QSA]
 # ...
 
 # Section Stages
 RewriteRule ^stages/$ stages/index.php [L]
-# ...
+RewriteRule ^stages/ate/$ stages/ate/index.php [L]
+RewriteRule ^stages/international/$ stages/international/index.php [L]
 
 # Section Diplome
-RewriteRule ^diplomes/$ diplomes/index.php [L]
-RewriteRule ^diplomes/fiche-etudiant/(.*)$ diplomes/fiche_etudiant/index.php?slug=$2 [L,QSA]
-RewriteRule ^diplomes/fiche-projet/([0-9]+)$ diplomes/fiche_projet/index.php?id=$3 [L,QSA]
-# ...
+RewriteRule ^diplomes$ diplomes/index.php [L]
+RewriteRule ^diplomes/interet_(.*)$ diplomes/index.php?tri_interets=$1 [L,QSA]
+RewriteRule ^diplomes/fiche-etudiant/(.*)$ diplomes/fiche_etudiant/index.php?slug=$1 [L,QSA]
+RewriteRule ^diplomes/fiche-projet/(.*)&(.*)$ diplomes/fiche_projet/index.php?slug=$1&idEtudiant=$2 [L,QSA]
+
 
 # Page Nous Joindre
 RewriteRule ^nous-joindre/$ nous_joindre/index.php [L]
-RewriteRule ^nous-joindre/(.*)&(.*)$ nous_joindre/index.php?type=$1&slug=$4 [L,QSA]
+RewriteRule ^nous-joindre/(.*)&(.*)$ nous_joindre/index.php?type=$1&slug=$2 [L,QSA]
 # ...
 
 # Section Admin
-RewriteRule ^csf_admin/$ csf_admin/administration.php [L]
+#RewriteRule ^csf-admin/$ csf_admin/administration.php [L]
+#RewriteRule ^csf-admin/fiche-etudiant/(.*)$ csf_admin/fiche_etudiant/index.php?id=$1 [L,QSA]
 
 # Page Erreur 404
 RewriteRule ^404/$ 404/index.php [L]
 # ...
+

@@ -1,0 +1,38 @@
+{# Intégration du layout de base #}
+{% extends 'layout.html.twig' %}
+
+
+{% block content %}
+    <div class="container">
+        <h1>Fais-tu le bon choix?</h1>
+        <div class="contenuInteractif">
+            <p id='progression'></p>
+            <p id='retroaction'></p>
+            <p id='explication'></p>
+            <p id="erreurQuiz2">{{ erreur }}</p>
+        </div>
+        <div class="col-sm-6">
+            {% for i in 0..4 %}
+                <span id="qProfil{{ i }}">{{ xml[i]['texteQuestion'] }}</span>
+            {% endfor %}
+        </div>
+        <div class="col-sm-6">
+            <form name="quiz_bon_choix" action="futur_etudiant/bon_choix" method="GET">
+                {% for i in 0..4 %}
+                    <fieldset id="Q{{ i }}">
+                        <ul class="choixReponses">
+                            {% for j in 0..1 %}
+                                <li>
+                                    <input id="Q{{ i }}{{ tId[j] }}" type="radio" name="Q{{ i }}" value="{{ xml[i]['libelleReponse'][j] }}" {% if (reponses[i]['libelleReponse'] == xml[i]['libelleReponse'][j]) %}checked="checked"{% endif %}>
+                                    <label for="Q{{ i }}{{ tId[j] }}">{{ xml[i]['libelleReponse'][j] }}</label>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <p>{{ reponses[i]['texteReponse'] }}</p>
+                    </fieldset>
+                    <br /><br />
+                {% endfor %}
+            </form>
+        </div>
+    </div>
+{% endblock%}

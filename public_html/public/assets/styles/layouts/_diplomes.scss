@@ -1,0 +1,235 @@
+/***** DIPLOMES *****/
+
+.diplomes {
+
+  #hero-section {
+    clear: both;
+    height: 360px;
+
+    .hero-image {
+      height: 360px;
+      background-image: url("../../dist/images/hero.jpg");
+      background-size: cover;
+      background-position: center center;
+      padding-top: 112px;
+      position: relative;
+
+    }
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  #texte_intro{
+    margin: 1em 0;
+    overflow: hidden;
+
+    p{
+      width: 100%;
+
+      @media screen and (min-width: $desktop) {
+        width: 43%;
+        display: inline-block;
+        margin: 1em;
+      }
+    }
+
+    #tri_interets{
+      margin-top : 1em;
+
+      ul{
+
+        li{
+          display: inline-block;
+          margin-left: 1em;
+
+          .actif {
+            transform: translateY(3px);
+            color: #fff;
+            box-shadow: 11px 1.75px 3px rgba(0,172,255,.45);
+            text-decoration: none;
+            &:after{
+              box-shadow:1px 0px 8px rgba(0,172,255,.65);
+            }
+          }
+
+          .btn_reset{
+            background: inherit;
+            background-color: #F8F8FF;
+            color: #042438;
+            box-shadow: 11px 3px 5px rgba(1,1,1,0.15);
+            &:before {
+              content: "";
+              display: table;
+              position: absolute;
+              bottom: 0px;
+              left: 0px;
+              width: 0;
+              height: 0;
+              z-index: 9;
+              border-bottom: 10px solid #fff;
+              border-right: 10px solid transparent;
+            }
+            &:after {
+              box-shadow: 1px 2px 8px rgba(1,1,1,0.15);
+            }
+          }
+
+        }
+      }
+    }
+  }
+
+  #diplomes_galerie {
+
+    #liste_diplomes {
+
+      li {
+        overflow: hidden;
+        text-align: center;
+        margin: 1em 0;
+
+        @media screen and (max-width: $mobilePortrait2) {
+          width: 100%;
+        }
+
+        @media screen and (min-width: $tablettePortrait) {
+          margin: 3em 0;
+        }
+
+        a {
+          display: block;
+          width: 100%;
+          text-decoration: none;
+          z-index: 9;
+
+          img {
+            height: 200px;
+
+            @media screen and (min-width: $tablettePortrait) {
+              height: 280px;
+            }
+          }
+
+          h2 {
+            color: #0098ff;
+            font-size: 16px;
+            z-index: 2;
+            display: block;
+            margin-top: 1em;
+
+            @media screen and (min-width: $tablettePortrait) {
+              font-size: 20px;
+            }
+
+            span {
+              font-size: 14px;
+              display: block;
+
+              @media screen and (min-width: $tablettePortrait) {
+                font-size: 18px;
+              }
+            }
+          }
+
+          span.voir {
+            opacity: 0;
+
+            @media screen and (min-width: $tablettePortrait) {
+              margin: 0.5em;
+              z-index: 1;
+              display: block;
+              padding: 8px 0;
+              color: rgba(0, 0, 0, 0.4);
+              text-shadow: none;
+              text-transform: none;
+              font-style: italic;
+              font-size: 1em;
+              -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+              -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+              transition: transform 0.3s, opacity 0.3s;
+              -webkit-transform: translateY(-30%);
+              -moz-transform: translateY(-30%);
+              transform: translateY(-30%);
+            }
+
+          }
+
+        }
+
+        /** Effets d'hover sur les noms des diplômés **/
+        a::before, a::after {
+          position: absolute;
+          top: 71.5%;
+          left: 0;
+          width: 100%;
+          height: 5px;
+
+          @media screen and (min-width: $mobilePortrait2) {
+            left: 0;
+            width: 99.5%;
+          }
+
+          @media screen and (min-width: $mobilePaysage2) {
+            left: 5%;
+            width: 90%;
+          }
+
+          @media screen and (min-width: $tablettePortrait) {
+            top: 71%;
+            height: 3px;
+          }
+
+
+          background: linear-gradient(270deg,#0098ff,#00acff);
+          //background-color: #042438;
+          content: '';
+          opacity: 0.5;
+          -webkit-transition: opacity 0.3s, height 0.3s;
+          -moz-transition: opacity 0.3s, height 0.3s;
+          transition: opacity 0.3s, height 0.3s;
+        }
+
+        a::after {
+          top: 98%;
+          opacity: 0;
+          -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+          -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+          transition: transform 0.3s, opacity 0.3s;
+          -webkit-transform: translateY(-15px);
+          -moz-transform: translateY(-15px);
+          transform: translateY(-15px);
+        }
+
+        @media screen and (min-width: $tablettePaysage) {
+
+          a:hover::before,
+          a:focus::before {
+            height: 6px;
+          }
+
+          a:hover::before,
+          a:hover::after,
+          a:focus::before,
+          a:focus::after {
+            opacity: 1;
+            -webkit-transform: translateY(0px);
+            -moz-transform: translateY(0px);
+            transform: translateY(0px);
+          }
+
+          a:hover span.voir,
+          a:focus span.voir {
+            opacity: 1;
+            -webkit-transform: translateY(0%);
+            -moz-transform: translateY(0%);
+            transform: translateY(0%);
+          }
+
+        }
+
+      }
+    }
+  }
+}

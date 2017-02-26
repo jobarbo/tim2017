@@ -1,14 +1,14 @@
 /**
  * Created by AnnabelleViolette on 17-02-18.
  */
-$('.btnTri').click(function () {
+$('.btn_tri').click(function () {
     event.preventDefault();
     $('#liste_diplomes').fadeTo(100, 0);
-    $('.loaderWrapper').fadeIn(300);
-    $('.listeTri li').removeClass('actif');
+    $('.loader_wrapper').fadeIn(300);
+    $('.liste_tri li a').removeClass('actif');
 
     if($(this).attr('id') != "btnResetTri"){
-        $(this).parent('li').addClass('actif');
+        $(this).parent('li').children('a').addClass('actif');
     }
 
     $.ajax({
@@ -20,7 +20,7 @@ $('.btnTri').click(function () {
             $('#liste_diplomes').html(data);
 
             setTimeout(function () {
-                $('.loaderWrapper').hide();
+                $('.loader-wrapper').hide();
                 $('#liste_diplomes').fadeTo(200, 1);
             }, 1000);
         },

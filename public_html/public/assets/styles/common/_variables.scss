@@ -22,3 +22,20 @@ $blue:                  #00a3ff;
     font-style: normal;
 
 }
+
+/* POINTS DE RUPTURES **/
+
+/* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+$mobilePortrait : 320px;
+$mobilePortrait2 : 400px;
+/* smartphones, Android phones, landscape iPhone */
+$mobilePaysage : 500px;
+$mobilePaysage2 : 550px;
+/* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+$tablettePortrait : 600px;
+/* tablet, landscape iPad, lo-res laptops ands desktops */
+$tablettePaysage : 900px;
+/* big landscape tablets, laptops, and desktops */
+$desktop : 950px;
+/* hi-res laptops and desktops */
+$desktopLarge : 1220px;
