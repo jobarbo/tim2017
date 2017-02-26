@@ -13,25 +13,26 @@
         </section>
         <div class="container-fluid borderBox">
             <div class="col-sm-12">
-                <section class="texte_intro">
+                <section id="texte_intro">
                     {{ texteIntro | raw }}
                     {% if erreur != false %}
                         <p>{{ erreur | raw }}</p>
                     {% else %}
-                        <div class="triInterets">
+                        <div id="tri_interets">
                             <h2>Trier les diplômés par intérêts</h2>
-                            <a href="diplomes" id="btnResetTri" class="btnTri btnReset">Réinitialiser</a>
-                            <ul class="listeTri">
-                                <li><a class="btnTri blue-btn gestion" id="interet_gestion_projet"
+
+                            <ul class="liste_tri col-xs-12 col-md-10">
+                                <li><a class="btn_tri blue-btn gestion" id="interet_gestion_projet"
                                        href="diplomes/interet_gestion_projet">Gestion</a></li>
-                                <li><a class="btnTri blue-btn design" id="interet_design_interface"
+                                <li><a class="btn_tri blue-btn design" id="interet_design_interface"
                                        href="diplomes/interet_design_interface">Design</a></li>
-                                <li><a class="btnTri blue-btn medias" id="interet_traitement_medias"
+                                <li><a class="btn_tri blue-btn medias" id="interet_traitement_medias"
                                        href="diplomes/interet_traitement_medias">Traitement des médias</a></li>
-                                <li><a class="btnTri blue-btn integration" id="interet_integration"
+                                <li><a class="btn_tri blue-btn integration" id="interet_integration"
                                        href="diplomes/interet_integration">Intégration</a></li>
-                                <li><a class="btnTri blue-btn programmation" id="interet_programmation"
+                                <li><a class="btn_tri blue-btn programmation" id="interet_programmation"
                                        href="diplomes/interet_programmation">Programmation</a></li>
+                                <li><a href="diplomes" id="btn_reset_tri" class="btn_tri blue-btn btn_reset">Réinitialiser <i class="fa fa-refresh" aria-hidden="true"></i></a></li>
                             </ul>
                         </div>
                     {% endif %}

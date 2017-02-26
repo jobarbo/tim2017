@@ -21,6 +21,66 @@
     font-size: 24px;
   }
 
+  #texte_intro{
+    margin: 1em 0;
+    overflow: hidden;
+
+    p{
+      width: 100%;
+
+      @media screen and (min-width: $desktop) {
+        width: 43%;
+        display: inline-block;
+        margin: 1em;
+      }
+    }
+
+    #tri_interets{
+      margin-top : 1em;
+
+      ul{
+
+        li{
+          display: inline-block;
+          margin-left: 1em;
+
+          .actif {
+            transform: translateY(3px);
+            color: #fff;
+            box-shadow: 11px 1.75px 3px rgba(0,172,255,.45);
+            text-decoration: none;
+            &:after{
+              box-shadow:1px 0px 8px rgba(0,172,255,.65);
+            }
+          }
+
+          .btn_reset{
+            background: inherit;
+            background-color: #F8F8FF;
+            color: #042438;
+            box-shadow: 11px 3px 5px rgba(1,1,1,0.15);
+            &:before {
+              content: "";
+              display: table;
+              position: absolute;
+              bottom: 0px;
+              left: 0px;
+              width: 0;
+              height: 0;
+              z-index: 9;
+              border-bottom: 10px solid #fff;
+              border-right: 10px solid transparent;
+            }
+            &:after {
+              box-shadow: 1px 2px 8px rgba(1,1,1,0.15);
+            }
+          }
+
+        }
+      }
+    }
+  }
+
   #diplomes_galerie {
 
     #liste_diplomes {
