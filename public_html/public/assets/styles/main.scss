@@ -9,6 +9,7 @@
 // endbower
 
 @import "common/global";
+@import "common/mixins";
 @import "components/buttons";
 @import "components/grid";
 @import "components/skillbar";
@@ -21,8 +22,7 @@
 @import "layouts/single";
 @import "layouts/profil";
 @import "layouts/nous-joindre";
+@import "layouts/diplomes";
 @import "layouts/fiche-etudiant";
 @import "common/font-awesome.min";
 @import "layouts/stages";
-
-

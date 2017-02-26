@@ -3,50 +3,61 @@
 
 
 {% block content %}
-    <section class="haut_page">
-        <h1 id="contenu">{{ page }}</h1>
-    </section>
-    <section class="texte_intro">
-        {{ texteIntro | raw }}
-        {% if erreur != false %}
-            <p>{{ erreur | raw }}</p>
-        {% else %}
-            <div class="triInterets">
-                <h2>Trier les diplômés par intérêts</h2>
-                <a href="diplomes" id="btnResetTri" class="btnTri btnReset">Réinitialiser</a>
-                <ul class="listeTri">
-                    <li><a class="btnTri gestion" id="interet_gestion_projet"
-                           href="diplomes/interet_gestion_projet">Gestion</a></li>
-                    <li><a class="btnTri design" id="interet_design_interface"
-                           href="diplomes/interet_design_interface">Design</a></li>
-                    <li><a class="btnTri medias" id="interet_traitement_medias"
-                           href="diplomes/interet_traitement_medias">Traitement des médias</a></li>
-                    <li><a class="btnTri integration" id="interet_integration"
-                           href="diplomes/interet_integration">Intégration</a></li>
-                    <li><a class="btnTri programmation" id="interet_programmation"
-                           href="diplomes/interet_programmation">Programmation</a></li>
-                </ul>
+    <div class="diplomes">
+
+        <section id="hero-section">
+            <div class="hero-image col-sm-12">
+
+                <h1 class="hero_title">{{ page }}</h1>
             </div>
-        {% endif %}
-    </section>
-    {% if erreur == false %}
-        <section id="diplomes_galerie">
-            <ul id="liste_diplomes">
-                {% for arrDiplomes in diplomes %}
-                    <li>
-                        <a href="diplomes/fiche-etudiant/{{ arrDiplomes.slug }}">
-                            <img src="images/{{ arrDiplomes.id }}.jpg"
-                                 alt="{{ arrDiplomes.prenom }} {{ arrDiplomes.nom }}"/>
-                            <h2 class="nom">{{ arrDiplomes.prenom }} <span>{{ arrDiplomes.nom }}</span></h2>
-                            <div>
-                                <p>Voir la fiche</p>
-                            </div>
-                        </a>
-                    </li>
-                {% endfor %}
-            </ul>
         </section>
-    {% endif %}
+        <div class="container-fluid borderBox">
+            <div class="col-sm-12">
+                <section class="texte_intro">
+                    {{ texteIntro | raw }}
+                    {% if erreur != false %}
+                        <p>{{ erreur | raw }}</p>
+                    {% else %}
+                        <div class="triInterets">
+                            <h2>Trier les diplômés par intérêts</h2>
+                            <a href="diplomes" id="btnResetTri" class="btnTri btnReset">Réinitialiser</a>
+                            <ul class="listeTri">
+                                <li><a class="btnTri blue-btn gestion" id="interet_gestion_projet"
+                                       href="diplomes/interet_gestion_projet">Gestion</a></li>
+                                <li><a class="btnTri blue-btn design" id="interet_design_interface"
+                                       href="diplomes/interet_design_interface">Design</a></li>
+                                <li><a class="btnTri blue-btn medias" id="interet_traitement_medias"
+                                       href="diplomes/interet_traitement_medias">Traitement des médias</a></li>
+                                <li><a class="btnTri blue-btn integration" id="interet_integration"
+                                       href="diplomes/interet_integration">Intégration</a></li>
+                                <li><a class="btnTri blue-btn programmation" id="interet_programmation"
+                                       href="diplomes/interet_programmation">Programmation</a></li>
+                            </ul>
+                        </div>
+                    {% endif %}
+                </section>
+                {% if erreur == false %}
+                    <section id="diplomes_galerie">
+                        <ul id="liste_diplomes">
+                            {% for arrDiplomes in diplomes %}
+                                <li class="col-xxs-12 col-xs-6 col-sm-6 col-md-4">
+                                    <a href="diplomes/fiche-etudiant/{{ arrDiplomes.slug }}">
+                                        <img src="dist/images/diplomes/{{ arrDiplomes.id }}.png"
+                                             alt="{{ arrDiplomes.prenom }} {{ arrDiplomes.nom }}"/>
+
+                                            <h2 class="nom">{{ arrDiplomes.prenom }}<span>{{ arrDiplomes.nom }}</span></h2>
+                                            <span class="voir">
+                                            Voir la fiche</span>
+
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </section>
+                {% endif %}
+            </div>
+        </div>
+    </div>
 
 
-{% endblock%}
+{% endblock %}
