@@ -91,7 +91,7 @@ $objResultEtudiant->free_result();
 $strSQLAutresProjets = "SELECT id_projet, titre_projet, slug FROM t_projet_diplome WHERE id_diplome = " . $arrInfosProjet['id_diplome'];
 if ($objResultAutresProjets = $objConnMySQLi->query($strSQLAutresProjets)) {
     while ($objLigneAutresProjets = $objResultAutresProjets->fetch_object()) {
-        if($objLigneAutresProjets->id_projet != $arrInfosProjet['id_diplome']){
+        if($objLigneAutresProjets->id_projet != $arrInfosProjet['id']){
             $arrAutresProjets[] =
                 array(
                     'id'=>$objLigneAutresProjets->id_projet,
@@ -115,9 +115,9 @@ $objConnMySQLi->close();
 /*************** 5. IMAGES DU PROJET ***********************/
 $intNoImg = 1;
 
-while(file_exists($strNiveau . '/dist/images/projets/prj' . $arrInfosProjet['id'] . '_0' . $intNoImg . '.jpg')){
+while(file_exists($strNiveau . '/dist/images/projets/prj' . $arrInfosProjet['id'] . '_0' . $intNoImg . '-small.jpg')){
     $arrProjetImg[] = array(
-        'src'=>'prj' . $arrInfosProjet['id'] . '_0' . $intNoImg . '.jpg',
+        'src'=>'prj' . $arrInfosProjet['id'] . '_0' . $intNoImg,
         'alt'=>'Image numéro ' . $intNoImg . ' du projet ' . $arrInfosProjet['titre']);
     $intNoImg++;
 }
