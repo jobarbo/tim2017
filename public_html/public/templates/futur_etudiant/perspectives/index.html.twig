@@ -3,15 +3,17 @@
 
 
 {% block content %}
-<h1>PERSPECTIVES</h1>
+    <div class="container">
+        <h1>PERSPECTIVES</h1>
 
-    <h2>{{ arrTextes[1]['titre'] }}</h2>
-    {{ arrTextes[1]['paragraphe'] | raw }}
+        <h2>{{ arrTextes[1]['titre'] }}</h2>
+        {{ arrTextes[1]['paragraphe'] | raw }}
 
-    <h2>{{ arrTextes[2]['titre'] }}</h2>
-    {{ arrTextes[2]['paragraphe'] | raw }}
+        <h2>{{ arrTextes[2]['titre'] }}</h2>
+        {{ arrTextes[2]['paragraphe'] | raw }}
 
-    <h2>{{ arrTextes[0]['titre'] }}</h2>
-    {{ arrTextes[0]['paragraphe'] | raw }}
+        <h2>{{ arrTextes[0]['titre'] }}</h2>
+        {{ arrTextes[0]['paragraphe'] | raw }}
+    </div>
 {% endblock %}
 

@@ -2,7 +2,7 @@
 div.contenu_enseignant{
 
   float: left;
-  width: 25%;
+  width: 100%;
   margin: 0 2em;
   margin-top: 2em;
   min-height: 30em;
@@ -41,11 +41,10 @@ img.photo_prof{
   margin: 0 auto;
   vertical-align: bottom;
 
-
 }
 
-hr{
-
+hr.trait_decoratif{
+  display: block;
   margin-top: -1px;
   height: 2em;
   background-image: linear-gradient(141deg, #042438 0%, #133850 51%, #1a405b 75%);

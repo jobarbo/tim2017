@@ -2,39 +2,50 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-<h1>ÉQUIPE</h1>
-{% for valeur in arrTextes %}
-    <h2>{{ valeur['titre'] }}</h2>
-    {{ valeur['paragraphe'] | raw }}
-{% endfor %}
-<div class="conteneur_enseignants">
-    {% for valeur in arrProfs %}
-        <div class="contenu_enseignant">
-            <img class="photo_prof" src="dist/images/photo_enseignants/enseignant_{{ valeur['id_prof'] }}.png"
-                 alt="{{ valeur['prenom'] }} {{ valeur['nom'] }}"/>
-            <hr>
-            <div class="contenu_prof">
-                <span class="nom_prof">{{ valeur['prenom'] }} {{ valeur['nom'] }}</span>
-                <div class="conteneur_sociaux">
-                <ul class="liste_reseaux_sociaux">
-                    {% if valeur['courriel'] is not null %}
-                        <li><a href="{{ valeur['courriel'] }}"><img src="dist/images/icone_sociaux.png" alt="icone sociaux" /></a></li>
-                    {% endif %}
-                    {% if valeur['pseudo'] is not null %}
-                        <li><a href="{{ valeur['pseudo'] }}"><img src="dist/images/icone_sociaux.png" alt="icone sociaux" /></a></li>
-                    {% endif %}
-                    {% if valeur['linkedin'] is not null %}
-                        <li><a href="{{ valeur['linkedin'] }}"><img src="dist/images/icone_sociaux.png" alt="icone sociaux" /></a></li>
-                    {% endif %}
-                    {% if valeur['site'] is not null %}
-                        <li><a href="{{ valeur['site'] }}"><img src="dist/images/icone_sociaux.png" alt="icone sociaux" /></a></li>
-                    {% endif %}
-                </ul>
-                </div>
+    <div class="container">
 
-            </div>
-            <hr>
+        <h1>ÉQUIPE</h1>
+        {% for valeur in arrTextes %}
+            <h2>{{ valeur['titre'] }}</h2>
+            {{ valeur['paragraphe'] | raw }}
+        {% endfor %}
+        <div class="conteneur_enseignants">
+            {% for valeur in arrProfs %}
+                <div class="col-sm-4">
+                    <div class="contenu_enseignant">
+                        <img class="photo_prof"
+                             src="dist/images/photo_enseignants/enseignant_{{ valeur['id_prof'] }}.png"
+                             alt="{{ valeur['prenom'] }} {{ valeur['nom'] }}"/>
+                        <hr class="trait_decoratif">
+                        <div class="contenu_prof">
+                            <span class="nom_prof">{{ valeur['prenom'] }} {{ valeur['nom'] }}</span>
+                            <div class="conteneur_sociaux">
+                                <ul class="liste_reseaux_sociaux">
+                                    {% if valeur['courriel'] is not null %}
+                                        <li><a href="{{ valeur['courriel'] }}"><img src="dist/images/icone_sociaux.png"
+                                                                                    alt="icone sociaux"/></a></li>
+                                    {% endif %}
+                                    {% if valeur['pseudo'] is not null %}
+                                        <li><a href="{{ valeur['pseudo'] }}"><img src="dist/images/icone_sociaux.png"
+                                                                                  alt="icone sociaux"/></a></li>
+                                    {% endif %}
+                                    {% if valeur['linkedin'] is not null %}
+                                        <li><a href="{{ valeur['linkedin'] }}"><img src="dist/images/icone_sociaux.png"
+                                                                                    alt="icone sociaux"/></a></li>
+                                    {% endif %}
+                                    {% if valeur['site'] is not null %}
+                                        <li><a href="{{ valeur['site'] }}"><img src="dist/images/icone_sociaux.png"
+                                                                                alt="icone sociaux"/></a></li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+
+                        </div>
+                        <hr class="trait_decoratif">
+                    </div>
+                </div>
+            {% endfor %}
+
         </div>
-    {% endfor %}
-</div>
+    </div>
 {% endblock %}
