@@ -94,11 +94,11 @@
                             {% for projet in arrProjets %}
                                 <li>
                                     <a href="diplomes/fiche-projet/{{ projet.slug }}&{{ arrInfos.id }}">
-                                        <div class="img_projet">
+                                        <div class="img_projet col-sm-12 col-md-5">
                                             <picture>
-                                                <source media=""
+                                                <source media="(min-width: 900px)"
                                                         srcset="dist/images/projets/prj{{ projet.id }}_01-small.jpg">
-                                                <source media="(min-width: 800px)"
+                                                <source media="(max-width: 900px)"
                                                         srcset="dist/images/projets/prj{{ projet.id }}_01-large.jpg">
                                                 <img src="dist/images/projets/prj{{ projet.id }}_01-small.jpg"
                                                      alt="{{ projet.titre }}">

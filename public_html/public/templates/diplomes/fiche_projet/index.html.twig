@@ -43,11 +43,11 @@
         </div>
     </section>
     <section>
-        <div class="autres_projets projets_etudiant">
+        <div class="autres_projets projets_etudiant col-sm-12">
             <h2>Autres projets</h2>
             <ul>
                 {% for projet in arrAutresProjets %}
-                    <li>
+                    <li class="col-sm-12 col-md-3">
                         <a href="diplomes/fiche-projet/{{ projet.slug }}&{{ arrInfos.id_diplome }}">
                             <div class="img_projet">
                                 <picture>
