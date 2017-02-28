@@ -19,10 +19,20 @@
 
 {# HEADER #}
 <body>
+
+<script>
+
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <header>
         <div class="meta_nav hide_nav">
             <ul>
-                <li><a href="accueil" class="{{ arrMenuLiensActifs.accueil }} ">Accueil</a></li>
+                <li><a href=" " class="{{ arrMenuLiensActifs.accueil }} ">Accueil</a></li>
                 <li><a href="nous-joindre/" class="{{ arrMenuLiensActifs.nousJoindre }} ">Nous joindre</a></li>
                 <li>
                     <a href="http://www.cegep-ste-foy.qc.ca" target="_blank">
@@ -33,7 +43,7 @@
         </div>
 
         <nav id="nav_primary">
-            <span id="logoTIM"><a href="accueil"><img src="dist/images/tim-logo.svg" alt="Logo du programme en Techniques d'intégration multimédia."></a></span>
+            <span id="logoTIM"><a href=" "><img src="dist/images/tim-logo.svg" alt="Logo du programme en Techniques d'intégration multimédia."></a></span>
 
             <ul>
 
@@ -144,7 +154,7 @@
 
 
         <ul>
-            <li><a href="accueil" class="{{ arrMenuLiensActifs.accueil }} ">Accueil</a></li>
+            <li><a href=" " class="{{ arrMenuLiensActifs.accueil }} ">Accueil</a></li>
             <li><a href="nous-joindre/" class="{{ arrMenuLiensActifs.nousJoindre }} ">Nous joindre</a></li>
             <li>
                 <a href="http://www.cegep-ste-foy.qc.ca" target="_blank">

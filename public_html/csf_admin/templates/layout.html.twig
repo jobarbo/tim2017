@@ -7,19 +7,19 @@
     <meta name="description" content="Le programme de Techniques d’intégration multimédia est une formation vivante et actuelle! Vous aimez relever des défis et les nouvelles technologies? Ce programme est fait pour vous!">
     <meta name="keywords" content="Techniques d’intégration multimédia, TIM, intégration multimédia, multimédia, Cégep Sainte-Foy, Cégep Ste-Foy, Web, CSS, HTML, Technologies, Design, Conception, Programmation, Intégration, Traitement des médias, médias">
 
-    <base href="{{ niveauAdmin }}"/>
+    <base href="{{ niveau }}"/>
 
 
     <title>{{ page }} | Section Administrative | TIM</title>
-    <link rel="stylesheet" href="dist/styles/main.css">
+    <link rel="stylesheet" href="{{ niveauAdmin }}dist/styles/admin.css">
 </head>
 
 {# HEADER #}
 <body>
 <header>
     <nav>
-        <a href="/">Site public</a>
-        <a href="csf-admin/administration.php">Déconnexion</a>
+        <a href="../public">Site public</a>
+        <a href="administration.php">Déconnexion</a>
     </nav>
 
 </header>

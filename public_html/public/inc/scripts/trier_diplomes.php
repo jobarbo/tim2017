@@ -11,8 +11,14 @@
 require_once('config.inc.php');
 
 try {
+    if($_GET["tri_interets"] != 'btn_reset_tri'){
+        $strSQL = "SELECT prenom_diplome, nom_diplome, slug, id_diplome FROM t_diplome ORDER BY " . $_GET["tri_interets"] . " desc";
+    }
+    else{
+        $strSQL = "SELECT prenom_diplome, nom_diplome, slug, id_diplome FROM t_diplome ORDER BY nom_diplome";
+    }
     //Requete pour aller chercher les diplomés selom le tri
-    $strSQL = "SELECT prenom_diplome, nom_diplome, slug, id_diplome FROM t_diplome ORDER BY " . $_GET["tri_interets"] . " desc";
+
 
     $objResultTri = $objConnMySQLi->query($strSQL);
 

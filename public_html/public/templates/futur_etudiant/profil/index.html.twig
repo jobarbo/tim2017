@@ -3,33 +3,35 @@
 
 
 {% block content %}
-<div class="container">
+<div class="allovinny quiz-layout">
     <h1>As-tu le profil?</h1>
     <div class="contenuInteractif">
         <p id='progression'></p>
         <p id='retroaction'></p>
         <p id="erreurQuiz1">{{ erreur }}</p>
     </div>
-    <div class="col-sm-6">
-        {% for i in 0..9 %}
-            <span id="qProfil{{ i }}">{{ xml[i]['texteQuestion'] }}</span>
-        {% endfor %}
-    </div>
-    <div class="col-sm-6">
+    <div class="col-md-12">
         <form name="quiz_bon_profil" action="futur_etudiant/profil" method="GET">
             {% for i in 0..9 %}
-                <fieldset id="Q{{ i }}">
-                    <ul class="choixReponses">
-                        {% for j in 0..3 %}
-                            <li>
-                                <input id="Q{{ i }}{{ tId[j] }}" type="radio" name="Q{{ i }}" value="{{ xml[i]['pointage'][j] }}">
-                                <label for="Q{{ i }}{{ tId[j] }}">{{ xml[i]['texteReponse'][j] }}</label>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </fieldset>
+                <div class="row">
+                    <fieldset id="Q{{ i }}">
+                        <div class="col-sm-6 back-rouge">
+                            <h3 id="qProfil{{ i }}">{{ xml[i]['texteQuestion'] }}</h3>
+                        </div>
+                        <div class="col-sm-6 back-blanc-rouge">
+                            <ul class="choixReponses">
+                                {% for j in 0..3 %}
+                                    <li>
+                                        <input id="Q{{ i }}{{ tId[j] }}" type="radio" name="Q{{ i }}" value="{{ xml[i]['pointage'][j] }}">
+                                        <label for="Q{{ i }}{{ tId[j] }}"><span class="number">{{ j + 1 }}</span>{{ xml[i]['texteReponse'][j] }}</label>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </fieldset>
+                </div>
             {% endfor %}
-            <input id='validerQuiz' name='validerQuiz' type="submit" value="Valider">
+            <input id='validerQuiz' class="blue-btn" name='validerQuiz' type="submit" value="Valider">
             <br /><br />
         </form>
     </div>

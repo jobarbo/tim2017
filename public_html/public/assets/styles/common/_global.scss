@@ -114,6 +114,31 @@ ul {
     }
   }
 }
+/* SOULIGNEMENT DES TITRES*/
+hr.title-underline{
+  display: block;
+  background: linear-gradient(270deg,#0098ff,#00acff);
+  height: 1px;
+  width: 210px;
+  margin: 0 0 35px 0;
+}
+
+/* BANNIÈRE BLEUE*/
+#hero-section {
+  clear: both;
+  height: 360px;
+  margin-bottom: 2em;
+
+  .hero-image {
+    height: 360px;
+    background-image: url("../../dist/images/hero.jpg");
+    background-size: cover;
+    background-position: center center;
+    padding-top: 112px;
+    position: relative;
+
+  }
+}
 
 /* Buttons */
 .blue-btn {
@@ -193,6 +218,7 @@ ul {
   }
 
 }
+
 
 /* Inputs */
 /*

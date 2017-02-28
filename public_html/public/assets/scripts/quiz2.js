@@ -1,14 +1,14 @@
 /**
  * Created by vincentbeland on 17-02-21.
  */
-var app = $(function configurer(evenement){
+var app = $(function configurer(evenement) {
 
     $('#validerQuiz').hide();
     var questionActive = 0;
     $("#progression").text("1/5");
     for (var i = 1; i <= 5; i++) {
         $("#Q" + i).hide();
-        $("#qProfil" + i).hide();
+        /*$("#qProfil" + i).hide();*/
     }
 
     /* Configuration: ajouts des écouteurs d'événements et état initial de l'app */
@@ -31,8 +31,7 @@ var app = $(function configurer(evenement){
      * @param {int} no  -> le numéro de la question à afficher
      */
     function reInitQuestion(no) {
-        switch (no)
-        {
+        switch (no) {
             case 0:
                 $qo = $q0o;
                 $qn = $q0n;
@@ -56,20 +55,30 @@ var app = $(function configurer(evenement){
         }
 
         console.log(no);
-        if (no > 0)
-        {
+        if (no > 0) {
             $("#progression").text((no + 1).toString() + "/5");
         }
         $("#explication").text("");
         $("#explication").removeClass();
         $("#Q" + (no - 1)).hide();
-        $("#Q" + (no)).show();
-        $("#qProfil" + (no - 1)).hide();
-        $("#qProfil" + (no)).show();
-        $('#Q' + no).after("<input id='validerQuestion' name='validerQuestion' type='submit' value='Valider mon choix' />");
+        if (no > 0)
+        {
+            slideQuiz(no);
+        }
+        else
+        {
+            $("#Q" + (no)).show();
+        }
+        /*$("#qProfil" + (no - 1)).hide();
+         $("#qProfil" + (no)).show();*/
+        $('#Q' + no).after("<input id='validerQuestion' class='blue-btn' name='validerQuestion' type='submit' value='Valider mon choix' />");
         $('#validerQuestion').on("click", validerMonChoix);
     }
 
+    function slideQuiz(no)
+    {
+        $("#Q" + (no)).slideToggle({easing: "swing"});
+    }
     function validerMonChoix(evenement)
     {
         $("#retroaction").text("");
@@ -96,7 +105,7 @@ var app = $(function configurer(evenement){
 
             if (questionActive < 4)
             {
-                $('#Q' + questionActive).after("<input id='questionSuivante' name='questionSuivante' type='submit' value='Question suivante' />");
+                $('#Q' + questionActive).after("<input id='questionSuivante' class='blue-btn' name='questionSuivante' type='submit' value='Question suivante' />");
                 $('#questionSuivante').on("click", allerProchaineQuestion);
             }
             else
