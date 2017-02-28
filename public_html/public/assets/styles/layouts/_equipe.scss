@@ -19,7 +19,11 @@ div.contenu_enseignant{
 
 span.nom_prof{
 
+  font-family: raleway_semi_bold;
+  color: #0098ff;
+  font-size: 16px;
   font-weight: 800;
+  margin-top: 1em;
 
 }
 
@@ -60,7 +64,8 @@ img.photo_prof{
 hr.trait_decoratif{
   display: block;
   margin-top: -1px;
-  background-image: linear-gradient(141deg, #042438 0%, #133850 51%, #1a405b 75%);
+  height: 0.3em;
+  background-image: linear-gradient(141deg, #42cef4 0%, #30b6db 51%, #0ca4ce 75%);
   //background-image: linear-gradient(to left, #f0f0f0, #8c8c8c, #f0f0f0);
 
 }
