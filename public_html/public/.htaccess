@@ -60,7 +60,7 @@ RewriteRule ^diplomes/fiche-projet/(.*)&(.*)$ diplomes/fiche_projet/index.php?sl
 
 # Page Nous Joindre
 RewriteRule ^nous-joindre/$ nous_joindre/index.php [L]
-RewriteRule ^nous-joindre/(.*)&(.*)$ nous_joindre/index.php?type=$1&slug=$2 [L,QSA]
+#RewriteRule ^nous-joindre/(.*)&(.*)$ nous_joindre/index.php?type=$1&slug=$2 [L,QSA]
 # ...
 
 # Page Erreur 404
