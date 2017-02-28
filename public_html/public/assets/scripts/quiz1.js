@@ -8,7 +8,7 @@ var app = $(function configurer(evenement){
     $('#validerQuiz').on("click", allerProchaineQuestion);
     for (var i = 1; i <= 9; i++) {
         $("#Q" + i).hide();
-        $("#qProfil" + i).hide();
+        /*$("#qProfil" + i).hide();*/
     }
     /**
      * @param {int} no  -> le numéro de la question à afficher
@@ -16,9 +16,9 @@ var app = $(function configurer(evenement){
     function reInitQuestion(no){
         console.log(no);
         $("#Q" + (no - 1)).hide();
-        $("#Q" + (no)).show();
-        $("#qProfil" + (no - 1)).hide();
-        $("#qProfil" + (no)).show();
+        $("#Q" + (no)).slideToggle({easing: "swing"});
+        /*$("#qProfil" + (no - 1)).hide();
+        $("#qProfil" + (no)).show();*/
     }
     function allerProchaineQuestion(evenement)
     {

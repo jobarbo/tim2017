@@ -2,6 +2,7 @@
 $brand-primary:         #f42534;
 $biaRed:                #f42534;
 $blue:                  #00a3ff;
+$moreBlue:              #0098ff;
 
 //Font : Druk Medium
 @font-face {
@@ -33,6 +34,7 @@ $mobilePaysage : 500px;
 $mobilePaysage2 : 550px;
 /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
 $tablettePortrait : 600px;
+$breakquiz : 767px;
 /* tablet, landscape iPad, lo-res laptops ands desktops */
 $tablettePaysage : 900px;
 /* big landscape tablets, laptops, and desktops */

@@ -4,107 +4,120 @@
 
 {% block content %}
     {% if texteErreurFiche == false %}
-        <section class="haut_page">
+        <div class="fiche_etudiant">
+        <section id="hero-section">
+            <div class="hero-image col-sm-12">
+                <h1 class="hero_title">{{ title | raw }}</h1>
+                <span class='retour_precedent'><a href="diplomes/{% if tri_interets %}{{ tri_interets }}{% endif %}">retour vers la liste des diplômés</a></span>
 
-            <h1 id="contenu">{{ title | raw }}</h1>
-            <span class='retour_precedent'><a href="diplomes/{% if tri_interets %}{{ tri_interets }}{% endif %}">retour vers la liste des diplômés</a></span>
-
-            <ul class="etudiant_contact">
-                {% if arrInfos.courriel != "" %}
-                    <li><a href="mailto:{{ arrInfos.courriel }}">Courriel</a></li>
-                {% endif %}
-                {% if arrInfos.twitter != "" %}
-                    <li><a href="https://twitter.com/{{ arrInfos.twitter }}" target="_blank">Twitter</a></li>
-                {% endif %}
-                {% if arrInfos.linkedin != "" %}
-                    <li><a href="{{ arrInfos.linkedin }}" target="_blank">Linkedin</a></li>
-                {% endif %}
-                {% if arrInfos.site_web != "" %}
-                    <li><a href="{{ arrInfos.site_web }}" target="_blank">Site web</a></li>
-                {% endif %}
-            </ul>
-        </section>
-        <section class="texte_intro">
-            <div id="profil">
-                <h2>Profil</h2>
-                {{ arrInfos.profil | raw }}
-            </div>
-            <div id="forces">
-                <h2>Forces</h2>
-                {{ arrInfos.forces | raw }}
-            </div>
-            <div id="interets" class="no-js">
-                <h2>Intérêts</h2>
-                <ul class="liste_intrerets">
-                    <li>
-                        <div class="barre_progression clearfix " data-percent="{{ arrInfos.interet_gestion }}0%">
-                            <span class='interet_titre'><span class="libelle">Gestion</span></span>
-                            <span class="barre_interet value-{{ arrInfos.interet_gestion }}"></span>
-
-                        </div>
-                        <span class="pourcentage">{{ arrInfos.interet_gestion }}</span>
-                    </li>
-                    <li>
-                        <div class="barre_progression clearfix " data-percent="{{ arrInfos.interet_design }}0%">
-                            <span class='interet_titre '><span class="libelle">Design</span></span>
-                            <span class="barre_interet value-{{ arrInfos.interet_design }}"></span>
-                            <span class="pourcentage">{{ arrInfos.interet_design }}</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="barre_progression clearfix " data-percent="{{ arrInfos.interet_traitement }}0%">
-                            <span class='interet_titre '><span class="libelle">Traitement des médias</span></span>
-                            <span class="barre_interet value-{{ arrInfos.interet_traitement }}"></span>
-                            <span class="pourcentage">{{ arrInfos.interet_traitement }}</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="barre_progression clearfix " data-percent="{{ arrInfos.interet_programmation }}0%">
-                            <span class='interet_titre '><span class="libelle">Programmation</span></span>
-                            <span class="barre_interet value-{{ arrInfos.interet_programmation }}"></span>
-                            <span class="pourcentage">{{ arrInfos.interet_programmation }}</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="barre_progression clearfix " data-percent="{{ arrInfos.interet_integration }}0%">
-                            <span class='interet_titre '><span class="libelle">Intégration</span></span>
-                            <span class="barre_interet value-{{ arrInfos.interet_integration }}"></span>
-                            <span class="pourcentage">{{ arrInfos.interet_integration }}</span>
-                        </div>
-                    </li>
+                <ul class="etudiant_contact">
+                    {% if arrInfos.courriel != "" %}
+                        <li><a href="nous-joindre/diplome&{{ arrInfos.slug }}"><i class="fa fa-envelope" title="Courriel"></i></a></li>
+                    {% endif %}
+                    {% if arrInfos.twitter != "" %}
+                        <li><a href="https://twitter.com/{{ arrInfos.twitter }}" target="_blank"><i class="fa fa-twitter" title="Twitter"></i></a></li>
+                    {% endif %}
+                    {% if arrInfos.linkedin != "" %}
+                        <li><a href="{{ arrInfos.linkedin }}" target="_blank"><i class="fa fa-linkedin" title="LinkedIn"></i></a></li>
+                    {% endif %}
+                    {% if arrInfos.site_web != "" %}
+                        <li><a href="{{ arrInfos.site_web }}" target="_blank"><i class="fa fa-globe" title="Site web"></i></a></li>
+                    {% endif %}
                 </ul>
-
             </div>
+
+
         </section>
-        <section>
-            <div id="projets_etudiant">
-                <h2>Projets</h2>
-                {{ texteErreurProjets | raw }}
-                {% if texteErreurProjets == false %}
-                    <ul>
-                        {% for projet in arrProjets %}
-                            <li>
-                                <a href="diplomes/fiche-projet/{{ projet.slug }}&{{ arrInfos.id }}">
-                                    <div class="img_projet">
-                                        <picture>
-                                            <source media="" srcset="dist/images/projets/prj{{ projet.id }}_01-small.jpg">
-                                            <source media="(min-width: 800px)" srcset="dist/images/projets/prj{{ projet.id }}_01-large.jpg">
-                                            <img src="dist/images/projets/prj{{ projet.id }}_01-small.jpg" alt="{{ projet.titre }}">
-                                        </picture>
-                                    </div>
-                                    <span class="titre_projet">{{ projet.titre }}</span>
-                                </a>
-                            </li>
-                        {% endfor %}
+        <div class="container-fluid borderBox" id="contenu">
+            <section class="col-sm-12 col-md-6">
+                <div id="profil">
+                    <h2>Profil</h2>
+                    {{ arrInfos.profil | raw }}
+                </div>
+                <div id="forces">
+                    <h2>Forces</h2>
+                    {{ arrInfos.forces | raw }}
+                </div>
+            </section>
+            <section class="col-sm-12 col-md-6">
+                <div id="interets" class="no-js">
+                    <h2>Intérêts</h2>
+                    <ul class="liste_intrerets">
+                        <li>
+                            <div class="barre_progression clearfix " data-percent="{{ arrInfos.interet_gestion }}0%">
+                                <span class='interet_titre'><span class="libelle">Gestion</span></span>
+                                <span class="barre_interet value-{{ arrInfos.interet_gestion }}"></span>
+
+                            </div>
+                            <span class="pourcentage">{{ arrInfos.interet_gestion }}</span>
+                        </li>
+                        <li>
+                            <div class="barre_progression clearfix " data-percent="{{ arrInfos.interet_design }}0%">
+                                <span class='interet_titre '><span class="libelle">Design</span></span>
+                                <span class="barre_interet value-{{ arrInfos.interet_design }}"></span>
+                                <span class="pourcentage">{{ arrInfos.interet_design }}</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="barre_progression clearfix " data-percent="{{ arrInfos.interet_traitement }}0%">
+                                <span class='interet_titre '><span class="libelle">Traitement des médias</span></span>
+                                <span class="barre_interet value-{{ arrInfos.interet_traitement }}"></span>
+                                <span class="pourcentage">{{ arrInfos.interet_traitement }}</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="barre_progression clearfix "
+                                 data-percent="{{ arrInfos.interet_programmation }}0%">
+                                <span class='interet_titre '><span class="libelle">Programmation</span></span>
+                                <span class="barre_interet value-{{ arrInfos.interet_programmation }}"></span>
+                                <span class="pourcentage">{{ arrInfos.interet_programmation }}</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="barre_progression clearfix "
+                                 data-percent="{{ arrInfos.interet_integration }}0%">
+                                <span class='interet_titre '><span class="libelle">Intégration</span></span>
+                                <span class="barre_interet value-{{ arrInfos.interet_integration }}"></span>
+                                <span class="pourcentage">{{ arrInfos.interet_integration }}</span>
+                            </div>
+                        </li>
                     </ul>
-                {% else %}
-                    {{ texteErreurProjet | raw }}
-                {% endif %}
 
-            </div>
-        </section>
+                </div>
+            </section>
+            <section>
+                <div id="projets_etudiant" class="col-sm-12">
+                    <h2>Projets</h2>
+                    {{ texteErreurProjets | raw }}
+                    {% if texteErreurProjets == false %}
+                        <ul>
+                            {% for projet in arrProjets %}
+                                <li>
+                                    <a href="diplomes/fiche-projet/{{ projet.slug }}&{{ arrInfos.id }}">
+                                        <div class="img_projet col-sm-12 col-md-5">
+                                            <picture>
+                                                <source media="(min-width: 900px)"
+                                                        srcset="dist/images/projets/prj{{ projet.id }}_01-small.jpg">
+                                                <source media="(max-width: 900px)"
+                                                        srcset="dist/images/projets/prj{{ projet.id }}_01-large.jpg">
+                                                <img src="dist/images/projets/prj{{ projet.id }}_01-small.jpg"
+                                                     alt="{{ projet.titre }}">
+                                            </picture>
+                                        </div>
+                                        <span class="titre_projet">{{ projet.titre }}</span>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        {{ texteErreurProjet | raw }}
+                    {% endif %}
+
+                </div>
+            </section>
+        </div>
     {% else %}
         {{ texteErreurFiche | raw }}
     {% endif %}
-
-{% endblock%}
+    </div>
+{% endblock %}

@@ -3,12 +3,27 @@
 
 
 {% block content %}
-    {% if texteErreurFiche == false %}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
 
+    <script>
+        $(document).ready(function() {
+
+            // http://malsup.com/jquery/form/#options-object
+            var options = {
+                target:     '#divToUpdate',
+                success:    function() {  },
+                error:      function() {  },
+            };
+
+            $('#uploadform').ajaxForm(options);
+        });
+    </script>
+    {% if texteErreurFiche == false %}
         <section id="infos_etudiant">
             <form enctype="multipart/form-data"
                   method="get"
-                  action="index.php"
+                  action="fiche_etudiant/index.php"
                   name="fInfosEtudiant">
                 <h2>Informations du diplômé</h2>
                 <div class="profil">
@@ -109,17 +124,18 @@
             <div id="photo_etudiant">
                 <h3>Photo du diplômé</h3>
                 <h4>Photo actuelle</h4>
-                <img src="dist/images/diplomes/{{ arrInfos.id }}.jpg" alt="{{ arrInfos.prenom }} {{ arrInfos.nom }}">
+                <img src="../public/dist/images/diplomes/{{ arrInfos.id }}.png" alt="{{ arrInfos.prenom }} {{ arrInfos.nom }}">
 
-                <h4>Nouvelle photo</h4>
+                <h4>Changer de photo</h4>
                 <form enctype="multipart/form-data"
                       method="post"
-                      action="index.php?id={{ arrInfos.id }}#photo_etudiant"
+                      action="fiche_etudiant/upload.php"
                       name="fTeleversement">
 
                     <fieldset>
                         <legend>Fichier à téléverser</legend>
-                        <input type="file" name="{{ name_fichier }}" value="Parcourir"/><br/>
+                        <input type="file" name="photoEtudiant" value="Parcourir"/>
+                        <input type="hidden" name="matricule" value="{{ arrInfos.nom_usager_admin }}">
                         <input type="submit" name="submitPhotosEtudiant" value="Téléverser"/>
                     </fieldset>
 
@@ -146,6 +162,9 @@
             {% endif %}
             <a href="">Ajouter un projet</a>
         </section>
+    <div id="divToUpdate">
+
+        </div>
     {% else %}
         {{ texteErreurFiche | raw }}
     {% endif %}
