@@ -29,7 +29,7 @@ RewriteEngine on
 #RewriteBase /public/
 
 # Page accueil
-RewriteRule ^accueil$ index.php [L]
+RewriteRule ^/$ index.php [L]
 
 # Section Futur Étudiant
 RewriteRule ^futur-etudiant/$ futur_etudiant/index.php [L]
@@ -62,10 +62,6 @@ RewriteRule ^diplomes/fiche-projet/(.*)&(.*)$ diplomes/fiche_projet/index.php?sl
 RewriteRule ^nous-joindre/$ nous_joindre/index.php [L]
 #RewriteRule ^nous-joindre/(.*)&(.*)$ nous_joindre/index.php?type=$1&slug=$2 [L,QSA]
 # ...
-
-# Section Admin
-#RewriteRule ^csf-admin/$ csf_admin/administration.php [L]
-#RewriteRule ^csf-admin/fiche-etudiant/(.*)$ csf_admin/fiche_etudiant/index.php?id=$1 [L,QSA]
 
 # Page Erreur 404
 RewriteRule ^404/$ 404/index.php [L]
