@@ -16,5 +16,3 @@ dist/
 # dossier de cache de sass
 .sass-cache/
 **/.sass-cache/
-
-inc/scripts/
