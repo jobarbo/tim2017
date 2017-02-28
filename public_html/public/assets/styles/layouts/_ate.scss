@@ -9,5 +9,23 @@ html{
   .content-2{
     margin-top: 3rem;
     @include clearfix();
+
+    .features{
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        padding-left: 1.3em;
+      }
+      li:before {
+        content: "\f00c";
+        font-family: FontAwesome;
+        display: inline-block;
+        margin-left: -1.09rem;
+        width: 1.1rem;
+        color: $blue;
+      }
+    }
   }
 }
