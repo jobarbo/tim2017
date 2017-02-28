@@ -19,7 +19,7 @@
                              alt="{{ valeur['prenom'] }} {{ valeur['nom']}}"/>
                         <hr class="trait_decoratif">
                         <div class="contenu_prof">
-                            <span class="nom_prof">{{ valeur['prenom'] }} {{ valeur['nom'] | upper  }}</span>
+                            <span class="nom_prof">{{ valeur['prenom'] }}<br/>{{ valeur['nom'] | upper  }}</span>
                             <div class="conteneur_sociaux">
                                 <ul class="liste_reseaux_sociaux">
                                     {% if valeur['courriel'] is not null %}
@@ -27,7 +27,7 @@
                                                                                     alt="Courriel"/></a></li>
                                     {% endif %}
                                     {% if valeur['pseudo'] is not null %}
-                                        <li><a href="{{ valeur['pseudo'] }}"><img src="dist/images/sociaux/twitter.png"
+                                        <li><a href="https://twitter.com/{{ valeur['pseudo'] }}"><img src="dist/images/sociaux/twitter.png"
                                                                                   alt="Twitter"/></a></li>
                                     {% endif %}
                                     {% if valeur['linkedin'] is not null %}
@@ -40,9 +40,7 @@
                                     {% endif %}
                                 </ul>
                             </div>
-
                         </div>
-                        <hr class="trait_decoratif">
                     </div>
                 </div>
             {% endfor %}

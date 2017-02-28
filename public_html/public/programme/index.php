@@ -19,7 +19,7 @@ try {
 
 //Requête permettant d'aller chercher tout le texte de la page Programme
 
-    $strSQLTextePageProgramme = "SELECT titre_texte, texte FROM t_texte WHERE section_et_page = 'Programme - Page d''entrée de la section'";
+    $strSQLTextePageProgramme = "SELECT titre_texte, texte FROM t_texte WHERE id_texte = 91";
 
     $objResultTexte = $objConnMySQLi->query($strSQLTextePageProgramme);
 

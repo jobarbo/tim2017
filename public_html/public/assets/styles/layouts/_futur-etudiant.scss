@@ -1,0 +1,109 @@
+div.futur_etudiant{
+
+  h1{
+
+    height: 360px;
+    background-color: blue;
+
+  }
+
+  hr.trait_decoratif{
+
+    border: 0;
+    display:block;
+    width: 100%;
+    background-color: #d4d6d8;
+    height: 1px;
+    margin: 0;
+
+  }
+
+
+  ul li{
+
+    font-family: open_sans_regular;
+    font-size: 16px;
+    margin-left: 2em;
+    margin-top: 1em;
+    list-style-image: url('../images/fleche_liste.png');
+
+  }
+
+  h2, h3{
+
+    margin-top: 2em;
+    margin-bottom: 1em;
+
+  }
+
+}
+
+p.travail_integrateur{
+
+  font-family: raleway_bold;
+  padding-top: 0.7em;
+
+}
+
+span.ou{
+
+  font-size: 30px;
+  margin-left: 1em;
+
+}
+
+div.formationVivante>p, div.integrateur, div.continuum{
+
+  max-width: 80%;
+
+}
+
+
+div.prealables{
+
+  width: 45%;
+  float: left;
+
+}
+
+div.processus{
+
+  width: 50%;
+  float: right;
+
+}
+
+div.etudiantUnJour{
+
+  clear: both;
+
+  div.contact_benoit{
+
+    width: 70%;
+    float: left;
+
+  }
+
+  div.image_benoit{
+
+    width: 30%;
+    float: right;
+
+  }
+
+}
+
+@media screen and (max-width: 1000px) {
+
+  div.prealables, div.processus{
+
+    float: none;
+    width: 100%;
+
+  }
+
+
+
+}
+
+
