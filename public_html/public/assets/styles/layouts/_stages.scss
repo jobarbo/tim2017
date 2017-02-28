@@ -8,24 +8,55 @@ button{
   }
 }
 
-.section1{
-  .infos{
-
-  }
+.section1, .section2, .section3{
+  @include clearfix();
+  margin: 2rem 0;
 }
 
 .section2{
-  .sequence-all{
-    .sequence1, .sequence2, .sequence3, .sequence4{
-      width: 50%;
-    }
+  background-color: #f7f7f7;
+  @include clearfix();
 
-    .sequence1, .sequence2{
-      display: inline-block;
-    }
+  .sequence1{
+    .details{
+      display: flex;
+      justify-content: space-between;
 
-    .sequence3, .sequence4{
-      display: inline-block;
+      li{
+        width: 31%;
+        height: 11rem;
+        background-color: #fff;
+
+        -webkit-box-shadow: 0px 0px 6px 0px rgba(196,196,196,1);
+        -moz-box-shadow: 0px 0px 6px 0px rgba(196,196,196,1);
+        box-shadow: 0px 0px 6px 0px rgba(196,196,196,1);
+
+        .title{
+          margin: 10% auto 0.8rem auto;
+          width: 80%;
+          height: 3rem;
+          background-color: $blue;
+          color: #fff;
+
+          strong{
+            font-size: 1rem;
+          }
+        }
+
+        .dates{
+          margin: 0 10%;
+
+          p{
+            margin-bottom: 0.2rem;
+          }
+        }
+      }
     }
+  }
+}
+
+.section3{
+  button{
+    margin-bottom: 1.4rem;
   }
 }

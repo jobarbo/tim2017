@@ -10,9 +10,9 @@ if ($objResult = $objConnMySQLi->query($request)) {
     while ($objLigne = $objResult->fetch_object()) {
         $arrContact[] = array(
             'id'=>$objLigne->id_texte,
-            'title'=>$objLigne->titre_texte,
-            'text'=>$objLigne->texte,
-            'section'=>$objLigne->section_et_page
+            'titre_texte'=>$objLigne->titre_texte,
+            'texte'=>$objLigne->texte,
+            'section_et_page'=>$objLigne->section_et_page
         );
     }
     $objResult->free_result();
@@ -59,5 +59,5 @@ echo $template->render(array(
     'niveau' => $strNiveau,
     'page' => "Nous joindre",
     'arrMenuLiensActifs' => $arrMenuActif,
-    'contact' => $arrContact
+    'contacts' => $arrContact
 ));
