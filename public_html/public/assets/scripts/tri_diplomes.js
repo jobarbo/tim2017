@@ -7,7 +7,9 @@ $('.btn_tri').click(function () {
     $('.loader_wrapper').fadeIn(300);
     $('.liste_tri li a').removeClass('actif');
 
-    if($(this).attr('id') != "btnResetTri"){
+    console.log($(this).attr('id'));
+
+    if($(this).attr('id') != "btn_reset_tri"){
         $(this).parent('li').children('a').addClass('actif');
     }
 

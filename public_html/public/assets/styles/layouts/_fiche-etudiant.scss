@@ -1,3 +1,20 @@
+.fiche_etudiant {
+
+  #hero-section {
+    clear: both;
+    height: 360px;
+
+    .hero-image {
+      height: 360px;
+      background-image: url("../../dist/images/hero.jpg");
+      background-size: cover;
+      background-position: center center;
+      padding-top: 112px;
+      position: relative;
+
+    }
+  }
+}
 /** Barre Intérêts **/
 #interets.no-js {
 
