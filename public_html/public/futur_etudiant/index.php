@@ -20,11 +20,14 @@ try {
 
 //Requête permettant d'aller chercher tout le texte de la page Futur Étudiant
 
-    $strSQLTextePageFuturEtudiant = "SELECT titre_texte, texte FROM t_texte WHERE section_et_page = 'Futur étudiant'";
+    $strSQLTexteFormationVivante = "SELECT titre_texte, texte FROM t_texte WHERE id_texte = 1";
+    $strSQLTextePrealables = "SELECT titre_texte, texte FROM t_texte WHERE id_texte = 33";
+    $strSQLTexteProcessus = "SELECT titre_texte, texte FROM t_texte WHERE id_texte = 40";
+    $strSQLTexteEtudiantUnJour = "SELECT titre_texte, texte FROM t_texte WHERE id_texte = 64";
 
-    $objResultTexte = $objConnMySQLi->query($strSQLTextePageFuturEtudiant);
+    $objResultTexte1 = $objConnMySQLi->query($strSQLTexteFormationVivante);
 
-    if($objResultTexte == false) {
+    if($objResultTexte1 == false) {
 
         $strMessage = "Les textes n'ont pu être affichés, réessayez plus tard";
         $except = new Exception($strMessage);
@@ -33,24 +36,99 @@ try {
 
     }else{
 
-        while ($objLigneTexte = $objResultTexte->fetch_object()) {
+        while ($objLigneTexte1 = $objResultTexte1->fetch_object()) {
 
-            $arrTextes[] =
+            $arrTexteFormationVivante[] =
 
                 array(
-                    'titre' => $objLigneTexte->titre_texte,
-                    'paragraphe' => $objLigneTexte->texte
+                    'titre' => $objLigneTexte1->titre_texte,
+                    'paragraphe' => $objLigneTexte1->texte
                 );
 
         }
-        $objResultTexte->free_result();
+        $objResultTexte1->free_result();
+    }
+
+    $objResultTexte2 = $objConnMySQLi->query($strSQLTextePrealables);
+
+    if($objResultTexte2 == false) {
+
+        $strMessage = "Les textes n'ont pu être affichés, réessayez plus tard";
+        $except = new Exception($strMessage);
+
+        throw $except;
+
+    }else{
+
+        while ($objLigneTexte2 = $objResultTexte2->fetch_object()) {
+
+            $arrTextePrealables[] =
+
+                array(
+                    'titre' => $objLigneTexte2->titre_texte,
+                    'paragraphe' => $objLigneTexte2->texte
+                );
+
+        }
+        $objResultTexte2->free_result();
+    }
+
+    $objResultTexte3 = $objConnMySQLi->query($strSQLTexteProcessus);
+
+    if($objResultTexte3 == false) {
+
+        $strMessage = "Les textes n'ont pu être affichés, réessayez plus tard";
+        $except = new Exception($strMessage);
+
+        throw $except;
+
+    }else{
+
+        while ($objLigneTexte3 = $objResultTexte3->fetch_object()) {
+
+            $arrTexteProcessus[] =
+
+                array(
+                    'titre' => $objLigneTexte3->titre_texte,
+                    'paragraphe' => $objLigneTexte3->texte
+                );
+
+        }
+        $objResultTexte3->free_result();
+    }
+
+    $objResultTexte4 = $objConnMySQLi->query($strSQLTexteEtudiantUnJour);
+
+    if($objResultTexte4 == false) {
+
+        $strMessage = "Les textes n'ont pu être affichés, réessayez plus tard";
+        $except = new Exception($strMessage);
+
+        throw $except;
+
+    }else{
+
+        while ($objLigneTexte4 = $objResultTexte4->fetch_object()) {
+
+            $arrTexteEtudiantUnJour[] =
+
+                array(
+                    'titre' => $objLigneTexte4->titre_texte,
+                    'paragraphe' => $objLigneTexte4->texte
+                );
+
+        }
+        $objResultTexte4->free_result();
     }
 
     $template = $twig->loadTemplate('futur_etudiant/index.html.twig');
     echo $template->render(array(
         'niveau' => "../",
-        'page' => "Perspectives ",
-        'arrTextes' => $arrTextes
+        'page' => "Futur étudiant ",
+        'arrTexteFormationVivante' => $arrTexteFormationVivante,
+        'arrTextePrealables' => $arrTextePrealables,
+        'arrTexteProcessus' => $arrTexteProcessus,
+        'arrTexteEtudiantUnJour' => $arrTexteEtudiantUnJour
     ));
 
 }

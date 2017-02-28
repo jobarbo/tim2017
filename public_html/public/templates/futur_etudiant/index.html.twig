@@ -3,11 +3,44 @@
 
 
 {% block content %}
-    <div class="container">
+    <div class="container_page futur_etudiant">
         <h1>FUTUR ÉTUDIANT</h1>
-        {% for valeur in arrTextes %}
-            <h2>{{ valeur['titre'] }}</h2>
-            {{ valeur['paragraphe'] | raw }}
-        {% endfor %}
+        <div class="formationVivante">
+            {% for valeur in arrTexteFormationVivante %}
+                <h2>{{ valeur['titre'] }}</h2>
+                <hr class="trait_decoratif">
+                {{ valeur['paragraphe'] | raw }}
+            {% endfor %}
+        </div>
+
+        <div class="prealables">
+            {% for valeur in arrTextePrealables %}
+                <h2>{{ valeur['titre'] }}</h2>
+                <hr class="trait_decoratif">
+                {{ valeur['paragraphe'] | raw }}
+            {% endfor %}
+        </div>
+
+        <div class="processus">
+            {% for valeur in arrTexteProcessus %}
+                <h2>{{ valeur['titre'] }}</h2>
+                <hr class="trait_decoratif">
+                {{ valeur['paragraphe'] | raw }}
+            {% endfor %}
+        </div>
+
+        <div class="etudiantUnJour">
+
+            <div class="contact_benoit">
+                {% for valeur in arrTexteEtudiantUnJour %}
+                    <h2>{{ valeur['titre'] }}</h2>
+                    <hr class="trait_decoratif">
+                    {{ valeur['paragraphe'] | raw }}
+                {% endfor %}
+            </div>
+            <div class="image_benoit">
+                <img src="dist/images/photo_enseignants/enseignant_1.png" alt="Benoît Frigon"/>
+            </div>
+        </div>
     </div>
 {% endblock %}

@@ -12,8 +12,10 @@ div.contenu_enseignant{
   float: left;
   width: 100%;
   margin: 0 2em;
-  margin-top: 2em;
+  margin-left: 0em;
+  margin-top: 4em;
   min-height: 30em;
+  box-shadow: 0 3px 10px #8e97a5;
 
 }
 
@@ -54,6 +56,7 @@ img.photo_prof{
   display: block;
   width: 65%;
   margin: 0 auto;
+  padding-top: 2em;
   margin-bottom: -1px;
   display: block;
   margin: 0 auto;
@@ -64,9 +67,8 @@ img.photo_prof{
 hr.trait_decoratif{
   display: block;
   margin-top: -1px;
-  height: 0.3em;
-  background-image: linear-gradient(141deg, #42cef4 0%, #30b6db 51%, #0ca4ce 75%);
-  //background-image: linear-gradient(to left, #f0f0f0, #8c8c8c, #f0f0f0);
+  height: 0.2em;
+  //background-image: linear-gradient(141deg, #42cef4 0%, #30b6db 51%, #0ca4ce 75%);
 
 }
 
@@ -103,7 +105,7 @@ footer{
 
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 1200px) {
 
   div.col-sm-4{
 
@@ -113,7 +115,39 @@ footer{
 
 }
 
+@media screen and (max-width: 840px) {
+
+  hr.trait_decoratif{
+
+    border: 0;
+    display:block;
+    width: 100%;
+    background-color: #d4d6d8;
+    height: 1px;
+    margin: 0;
+
+  }
+
+}
+
 @media screen and (max-width: 770px) {
+
+  div.contenu_enseignant{
+
+  margin-left: 2em;
+
+  }
+
+  div.col-sm-4{
+
+    width: 90%;
+
+  }
+
+
+}
+
+@media screen and (max-width: 600px) {
 
   div.contenu_enseignant{
 
@@ -126,5 +160,6 @@ footer{
     width: 100%;
 
   }
+
 
 }
