@@ -1,10 +1,17 @@
 .allovinny {
   form {
     fieldset {
+      margin-bottom: 20px;
       box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
       height: 400px;
+      @media screen and (max-width: $breakquiz) {
+        height: auto;
+      }
       .back-bleu {
         height: 100%;
+        @media screen and (max-width: $breakquiz) {
+          height: auto;
+        }
         background-color: $blue;
         h3 {
           color: white;
@@ -14,11 +21,19 @@
           position: relative;
           top: 50%;
           transform: translateY(-50%);
+          @media screen and (max-width: $breakquiz) {
+            top: 0;
+            transform: translateY(0%);
+            padding: 20px 0;
+          }
         }
       }
       .back-blanc {
         height: 100%;
         text-align: center;
+        @media screen and (max-width: $breakquiz) {
+          height: auto;
+        }
         .choixReponses {
           display: block;
           margin: 0 auto;
@@ -28,6 +43,12 @@
           transform: translateY(-50%);
           list-style-type: none;
           padding: 0;
+          @media screen and (max-width: $breakquiz) {
+            max-width: 90%;
+            top: 0;
+            transform: translateY(0%);
+            padding: 20px 0;
+          }
           li {
             display: block;
             margin-bottom: 13px;
@@ -45,6 +66,12 @@
                 width: 25%;
                 color: white;
                 background-color: $blue;
+                @media screen and (max-width: $breakquiz) {
+                  width: 15%;
+                }
+                @media screen and (max-width: $mobilePaysage) {
+                  width: 22%;
+                }
               }
               transition: all ease 0.3s;
               &:hover {
@@ -58,6 +85,93 @@
                 background-color: $blue;
               }
               border: 2px solid $blue;
+              border-radius: 2px;
+              line-height: 50px;
+              display: block;
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+      }
+      .back-rouge {
+        height: 100%;
+        background-color: $biaRed;
+        @media screen and (max-width: $breakquiz) {
+          height: auto;
+        }
+        h3 {
+          color: white;
+          font-size: 20px;
+          margin: 0;
+          width: 100%;
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+          @media screen and (max-width: $breakquiz) {
+            top: 0;
+            transform: translateY(0%);
+            padding: 20px 0;
+          }
+        }
+      }
+      .back-blanc-rouge {
+        height: 100%;
+        text-align: center;
+        @media screen and (max-width: $breakquiz) {
+          height: auto;
+        }
+        .choixReponses {
+          display: block;
+          margin: 0 auto;
+          max-width: 50%;
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+          list-style-type: none;
+          padding: 0;
+          @media screen and (max-width: $breakquiz) {
+            max-width: 90%;
+            top: 0;
+            transform: translateY(0%);
+            padding: 20px 0;
+          }
+          li {
+            display: block;
+            margin-bottom: 13px;
+            height: 50px;
+            input[type="radio"]:checked + label {
+              color: white;
+              background-color: $biaRed;
+            }
+            label {
+              .number {
+                float: left;
+                display: inline-block;
+                height: 100%;
+                border: 1px solid $biaRed;
+                width: 25%;
+                color: white;
+                background-color: $biaRed;
+                @media screen and (max-width: $breakquiz) {
+                  width: 15%;
+                }
+                @media screen and (max-width: $mobilePaysage) {
+                  width: 22%;
+                }
+              }
+              transition: all ease 0.3s;
+              &:hover {
+                color: white;
+                cursor: pointer;
+                background-color: $biaRed;
+              }
+              &:active {
+                color: white;
+                cursor: pointer;
+                background-color: $biaRed;
+              }
+              border: 2px solid $biaRed;
               border-radius: 2px;
               line-height: 50px;
               display: block;
