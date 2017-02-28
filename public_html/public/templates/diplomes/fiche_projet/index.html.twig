@@ -27,11 +27,12 @@
                 {% for imagesPrj in arrImagesPrj %}
 
                     <li>
-                        <a href="/dist/images/projets/{{ imagesPrj.src }}" title="{{ arrInfos.titre }}">
+                        <a href="/dist/images/projets/{{ imagesPrj.src }}.jpg" title="{{ arrInfos.titre }}">
                             <picture>
-                                <!--<source media="" srcset="../images/projets/prj408_01-mobile.jpg 1x, ../images/projets/prj408_01-mobile@2x.jpg 2x">
-                                <source media="(min-width: 800px)" srcset="../images/projets/prj408_01-table.jpg 1x, ../images/projets/prj408_01-table@2x.jpg 2x">-->
-                                <img src="dist/images/projets/{{ imagesPrj.src }}" alt="{{ imagesPrj.alt }}">
+                                <source media="" srcset="dist/images/projets/{{ imagesPrj.src }}-small.jpg">
+                                <source media="(min-width: 800px)"
+                                        srcset="dist/images/projets/{{ imagesPrj.src }}-large.jpg">
+                                <img src="dist/images/projets/{{ imagesPrj.src }}-small.jpg" alt="{{ imagesPrj.alt }}">
                             </picture>
                         </a>
                     </li>
@@ -50,9 +51,11 @@
                         <a href="diplomes/fiche-projet/{{ projet.slug }}&{{ arrInfos.id_diplome }}">
                             <div class="img_projet">
                                 <picture>
-                                    <!--<source media="" srcset="../images/projets/prj408_01-mobile.jpg 1x, ../images/projets/prj408_01-mobile@2x.jpg 2x">
-                                    <source media="(min-width: 800px)" srcset="../images/projets/prj408_01-table.jpg 1x, ../images/projets/prj408_01-table@2x.jpg 2x">-->
-                                    <img src="dist/images/projets/prj{{ projet.id }}_01.jpg" alt="{{ projet.titre }}">
+                                    <source media="" srcset="dist/images/projets/prj{{ projet.id }}_01-small.jpg">
+                                    <source media="(min-width: 800px)"
+                                            srcset="dist/images/projets/prj{{ projet.id }}_01-large.jpg">
+                                    <img src="dist/images/projets/prj{{ projet.id }}_01-small.jpg"
+                                         alt="{{ projet.id }}">
                                 </picture>
                             </div>
                             <span class="titre_projet">{{ projet.titre }}</span>
@@ -63,4 +66,4 @@
 
         </div>
     </section>
-{% endblock%}
+{% endblock %}

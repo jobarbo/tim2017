@@ -54,11 +54,21 @@
         <hr>
 
         <div class="coordination">
-            <img src="../../assets/images/photo_enseignants/enseignant_12.png" alt="Photo de Sylvain Lamoureux">
+            <img src="dist/images/photo_enseignants/enseignant_12.png" alt="Photo de Sylvain Lamoureux">
             <div class="coordinateur">
-                {% for page in pages %}
+                {#{% for page in pages %}
                     {{ page.texte | raw}}
-                {% endfor %}
+                {% endfor %}#}
+
+                <p>Pour obtenir plus amples renseignements, contactez la coordination:</p>
+                <h4>Coordonateur</h4>
+                <ul>
+                    <li> SYLVAIN LAMOUREUX</li>
+                    <li> tel: (418) 659-6600 </li>
+                    <li>poste 6662</li>
+                </ul>
+                <button class="blue-btn"><i class="fa fa-envelope-o i-space" aria-hidden="true"></i><a href="#">Contacter</a></button>
+
             </div>
         </div>
     </section>
