@@ -17,12 +17,12 @@ if(isset($_SESSION['arrAuthentification'])){
     switch($arrAuthentification["niveau_acces"]){
 
         case 1:
-            header('Location: csf-admin/fiche-etudiant/' . $arrAuthentification["nom_usager_admin"]);
+            header('Location: fiche_etudiant/index.php?id=' . $arrAuthentification["nom_usager_admin"]);
             exit;
             break;
 
         case 3:
-            header('Location: csf-admin/index.php');
+            header('Location: index.php');
             exit;
             break;
 

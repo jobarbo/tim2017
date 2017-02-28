@@ -2,9 +2,10 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <div class="container">
+    <h1 class="titre_equipe">ÉQUIPE</h1>
+    <div class="container_page">
 
-        <h1>ÉQUIPE</h1>
+
         {% for valeur in arrTextes %}
             <h2>{{ valeur['titre'] }}</h2>
             {{ valeur['paragraphe'] | raw }}
@@ -15,27 +16,27 @@
                     <div class="contenu_enseignant">
                         <img class="photo_prof"
                              src="dist/images/photo_enseignants/enseignant_{{ valeur['id_prof'] }}.png"
-                             alt="{{ valeur['prenom'] }} {{ valeur['nom'] }}"/>
+                             alt="{{ valeur['prenom'] }} {{ valeur['nom']}}"/>
                         <hr class="trait_decoratif">
                         <div class="contenu_prof">
-                            <span class="nom_prof">{{ valeur['prenom'] }} {{ valeur['nom'] }}</span>
+                            <span class="nom_prof">{{ valeur['prenom'] }} {{ valeur['nom'] | upper  }}</span>
                             <div class="conteneur_sociaux">
                                 <ul class="liste_reseaux_sociaux">
                                     {% if valeur['courriel'] is not null %}
-                                        <li><a href="{{ valeur['courriel'] }}"><img src="dist/images/icone_sociaux.png"
-                                                                                    alt="icone sociaux"/></a></li>
+                                        <li><a href="{{ valeur['courriel'] }}"><img src="dist/images/sociaux/mail.png"
+                                                                                    alt="Courriel"/></a></li>
                                     {% endif %}
                                     {% if valeur['pseudo'] is not null %}
-                                        <li><a href="{{ valeur['pseudo'] }}"><img src="dist/images/icone_sociaux.png"
-                                                                                  alt="icone sociaux"/></a></li>
+                                        <li><a href="{{ valeur['pseudo'] }}"><img src="dist/images/sociaux/twitter.png"
+                                                                                  alt="Twitter"/></a></li>
                                     {% endif %}
                                     {% if valeur['linkedin'] is not null %}
-                                        <li><a href="{{ valeur['linkedin'] }}"><img src="dist/images/icone_sociaux.png"
-                                                                                    alt="icone sociaux"/></a></li>
+                                        <li><a href="{{ valeur['linkedin'] }}"><img src="dist/images/sociaux/linkedin.png"
+                                                                                    alt="Linkedin"/></a></li>
                                     {% endif %}
                                     {% if valeur['site'] is not null %}
-                                        <li><a href="{{ valeur['site'] }}"><img src="dist/images/icone_sociaux.png"
-                                                                                alt="icone sociaux"/></a></li>
+                                        <li><a href="{{ valeur['site'] }}"><img src="dist/images/sociaux/internet.png"
+                                                                                alt="Internet"/></a></li>
                                     {% endif %}
                                 </ul>
                             </div>

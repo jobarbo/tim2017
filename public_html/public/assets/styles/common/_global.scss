@@ -29,6 +29,14 @@
   src: url("../fonts/WorkSans-ExtraBold.ttf");
 }
 
+
+div.container_page{
+
+  max-width: 1440px;
+  margin: 0 auto;
+
+}
+
 body {
   background-color: white;
   transition: 0.5s transform ease-in-out;
