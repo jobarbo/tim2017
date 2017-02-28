@@ -1,0 +1,22 @@
+/** FICHE DU PROJET **/
+.fiche_projet {
+
+  /** BANNIÈRE PROJET **/
+  .hero-image {
+
+    .hero_title {
+      display: block;
+      width:100%;
+    }
+
+    a {
+      color: #1a405b;
+    }
+
+    .retour_precedent {
+      position: absolute;
+      bottom: 10px;
+    }
+  }
+
+}
