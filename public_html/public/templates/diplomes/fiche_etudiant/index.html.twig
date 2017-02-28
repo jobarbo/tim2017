@@ -29,7 +29,7 @@
 
         </section>
         <div class="container-fluid borderBox" id="contenu">
-            <section class="texte_intro">
+            <section class="col-sm-12 col-md-6">
                 <div id="profil">
                     <h2>Profil</h2>
                     {{ arrInfos.profil | raw }}
@@ -38,6 +38,8 @@
                     <h2>Forces</h2>
                     {{ arrInfos.forces | raw }}
                 </div>
+            </section>
+            <section class="col-sm-12 col-md-6">
                 <div id="interets" class="no-js">
                     <h2>Intérêts</h2>
                     <ul class="liste_intrerets">
@@ -84,7 +86,7 @@
                 </div>
             </section>
             <section>
-                <div id="projets_etudiant">
+                <div id="projets_etudiant" class="col-sm-12">
                     <h2>Projets</h2>
                     {{ texteErreurProjets | raw }}
                     {% if texteErreurProjets == false %}
