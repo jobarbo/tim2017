@@ -27,11 +27,11 @@ try {
         echo "<p>Aucun diplômé trouvé</p>";
     } else {
         while ($objLigneTri = $objResultTri->fetch_object()) {
-            echo '<li>';
+            echo '<li class="col-xxs-12 col-xs-6 col-sm-6 col-md-4">';
             echo "<a href='diplomes/fiche-etudiant/" . $objLigneTri->slug . "'>";
-            echo "<img src='images/" . $objLigneTri->slug . ".jpg' alt='" . $objLigneTri->prenom_diplome . " " . $objLigneTri->nom_diplome . "'/>";
-            echo "<p class='nom'>" . $objLigneTri->prenom_diplome . " <span>" . $objLigneTri->nom_diplome . "</span></p>";
-            echo "<div><p>Voir la fiche</p></div>";
+            echo "<img src='dist/images/diplomes/" . $objLigneTri->id_diplome . ".png' alt='" . $objLigneTri->prenom_diplome . " " . $objLigneTri->nom_diplome . "'/>";
+            echo "<h2 class='nom'>" . $objLigneTri->prenom_diplome . " <span>" . $objLigneTri->nom_diplome . "</span></h2>";
+            echo "<span class='voir'>Voir la fiche</span>";
             echo '</a>';
             echo '</li>';
         }
