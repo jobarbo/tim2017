@@ -8,10 +8,12 @@
  * 2. INSTANCIATION CONFIG ET TWIG
  * 3. REÇOIT MATRICULE DE L'ÉTUDIANT
  * 4. DÉFINITION CHEMIN ET FICHIER POUR TÉLÉVERSEMENT
- * 5. REQUÊTE AFFICHER FICHE DIPLÔMÉ
- * 5.1 Requete pour aller chercher tous les infos du diplômé
- * 5.2 Requete pour aller chercher tous les projets du diplômé
- * 6. TWIG
+ * 5. SOUMISSION DES MODIFICATIONS INFOS
+ * 6. SOUMISSION NOUVELLE PHOTO
+ * 7. REQUÊTE AFFICHER FICHE DIPLÔMÉ
+ * 7.1 Requete pour aller chercher tous les infos du diplômé
+ * 7.2 Requete pour aller chercher tous les projets du diplômé
+ * 8. TWIG
  *
  *  ÉDITER FICHE ÉTUDIANT
  */
@@ -31,16 +33,12 @@ require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 /*************** 3. REÇOIT MATRICULE DE L'ÉTUDIANT ***********************/
 if (isset($_GET['id'])) {
     $intMatriculeEtudiant = $_GET['id'];
-} else {
+}
+else{
     header('Location: ' . $strNiveau . '404/');
 }
 
-/*************** 4. DÉFINITION CHEMIN ET FICHIER POUR TÉLÉVERSEMENT ***********************/
-define("CHEMIN_TELEVERSEMENT", "../televersement/");
-define("NAME_FICHIER", "monFichierATeleverser");
-
-
-/*************** 5. SOUMISSION DES MODIFICATIONS ***********************/
+/*************** 5. SOUMISSION DES MODIFICATIONS INFOS ***********************/
 if (isset($_GET['submitInfosEtudiant'])) {
     try {
         $strSQLUpdateInfosEtudiant = "UPDATE t_diplome SET
@@ -58,19 +56,28 @@ if (isset($_GET['submitInfosEtudiant'])) {
                                       WHERE nom_usager_admin = " . $intMatriculeEtudiant . " ";
 
         if($objConnMySQLi->query($strSQLUpdateInfosEtudiant) === TRUE){
-            echo "MODIFICATIONS OK";
+            //$texteErreurUpdate = "";
         }
         else{
-            echo "ÇA PAS MARCHER";
+            //$strMsgErrUpdate= "<p>Les modifications n'ont pu être apportées, réessayez plus tard</p>";
+            //$except = new Exception($strMsgErrUpdate);
+
+            //throw $except;
         }
 
     } catch (Exception $e) {
-
+        //$texteErreurUpdate = $e->getMessage();
     }
 }
 
-/*************** 5. REQUÊTE AFFICHER FICHE DIPLÔMÉ ***********************/
-//----- 5.1 Requete pour aller chercher tous les infos du diplômé -----//
+/*************** 6. SOUMISSION NOUVELLE PHOTO ***********************/
+if (isset($_GET['submitPhotosEtudiant'])) {
+    echo "POST submitPhotosEtudiant";
+
+}
+
+/*************** 7. REQUÊTE AFFICHER FICHE DIPLÔMÉ ***********************/
+//----- 7.1 Requete pour aller chercher tous les infos du diplômé -----//
 try {
     $strSQLInfosEtudiant = "SELECT * FROM t_diplome WHERE nom_usager_admin = " . $intMatriculeEtudiant;
 
@@ -118,7 +125,7 @@ try {
 
     $objResultInfosEtudiant->free_result();
 
-    //----- 5.2 Requete pour aller chercher tous les projets du diplômé -----//
+    //----- 7.2 Requete pour aller chercher tous les projets du diplômé -----//
     try {
         $strSQLProjetsEtudiant = "SELECT id_projet, titre_projet, slug FROM t_projet_diplome WHERE id_diplome = " . $arrInfosEtudiant['id'];
 
@@ -162,7 +169,7 @@ try {
 // fermer la connexion
 $objConnMySQLi->close();
 
-/*************** 6. TWIG ***********************/
+/*************** 8. TWIG ***********************/
 
 $template = $twig->loadTemplate('fiche_etudiant/index.html.twig');
 echo $template->render(array(
@@ -170,12 +177,12 @@ echo $template->render(array(
     'title' => "Section administrative | TIM",
     'page' => "Éditer la fiche de " . $arrInfosEtudiant['prenom'] . " " . $arrInfosEtudiant['nom'] . " | ",
     'niveau' => $strNiveau,
-    'niveauAdmi' => $strNiveauAdmin,
+    'niveauAdmin' => $strNiveauAdmin,
     //PAGE
     'page' => "Éditer la fiche du diplomé " . $arrInfosEtudiant['prenom'] . " <span>" . $arrInfosEtudiant['nom'] . "</span>",
     'arrInfos' => $arrInfosEtudiant,
     'arrProjets' => $arrProjetsEtudiant,
     'texteErreurFiche' => $texteErreurFiche,
     'texteErreurProjets' => $texteErreurProjets,
-    'name_fichier' => NAME_FICHIER
+    //'texteErreurUpdate' =>  $texteErreurUpdate
 ));
