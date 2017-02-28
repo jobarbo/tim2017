@@ -2,12 +2,13 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-<h1>PROGRAMME</h1>
-{% for valeur in arrTextes %}
-    <h2>{{ valeur['titre'] }}</h2>
-    {{ valeur['paragraphe'] | raw }}
-{% endfor %}
-
+    <h1>PROGRAMME</h1>
+    <div class="container">
+        {% for valeur in arrTextes %}
+            <h2>{{ valeur['titre'] }}</h2>
+            {{ valeur['paragraphe'] | raw }}
+        {% endfor %}
+    </div>
 {% endblock %}
 
 

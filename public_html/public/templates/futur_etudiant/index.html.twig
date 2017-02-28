@@ -3,9 +3,11 @@
 
 
 {% block content %}
-<h1>FUTUR ÉTUDIANT</h1>
-{% for valeur in arrTextes %}
-<h2>{{ valeur['titre'] }}</h2>
-{{ valeur['paragraphe'] | raw }}
-{% endfor %}
+    <div class="container">
+        <h1>FUTUR ÉTUDIANT</h1>
+        {% for valeur in arrTextes %}
+            <h2>{{ valeur['titre'] }}</h2>
+            {{ valeur['paragraphe'] | raw }}
+        {% endfor %}
+    </div>
 {% endblock %}

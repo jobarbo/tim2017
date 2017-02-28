@@ -1,11 +1,25 @@
+h1.titre_equipe{
+
+  background-color: blue;
+  height: 360px;
+  padding-left: 8em;
+  padding-top: 4em;
+
+}
 
 div.contenu_enseignant{
 
   float: left;
-  width: 25%;
+  width: 100%;
   margin: 0 2em;
   margin-top: 2em;
   min-height: 30em;
+
+}
+
+span.nom_prof{
+
+  font-weight: 800;
 
 }
 
@@ -41,15 +55,13 @@ img.photo_prof{
   margin: 0 auto;
   vertical-align: bottom;
 
-
 }
 
-hr{
-
+hr.trait_decoratif{
+  display: block;
   margin-top: -1px;
-  height: 2em;
   background-image: linear-gradient(141deg, #042438 0%, #133850 51%, #1a405b 75%);
-  background-image: linear-gradient(to left, #f0f0f0, #8c8c8c, #f0f0f0);
+  //background-image: linear-gradient(to left, #f0f0f0, #8c8c8c, #f0f0f0);
 
 }
 
@@ -69,6 +81,13 @@ ul.liste_reseaux_sociaux li{
   float: left;
   padding: 0px 10px;
   margin: 0px;
+  transition: 0.3s;
+
+  &:hover{
+
+    transform: scale(1.05);
+
+  }
 
 
 }
@@ -76,5 +95,31 @@ ul.liste_reseaux_sociaux li{
 footer{
 
   clear: both;
+
+}
+
+@media screen and (max-width: 980px) {
+
+  div.col-sm-4{
+
+    width: 50%;
+
+  }
+
+}
+
+@media screen and (max-width: 770px) {
+
+  div.contenu_enseignant{
+
+    margin-left: 0em;
+
+  }
+
+  div.col-sm-4{
+
+    width: 100%;
+
+  }
 
 }
