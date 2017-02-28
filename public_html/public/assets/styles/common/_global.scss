@@ -114,6 +114,15 @@ ul {
     }
   }
 }
+/* SOULIGNEMENT DES TITRES*/
+hr.title-underline{
+  display: block;
+  background: linear-gradient(270deg,#0098ff,#00acff);
+  height: 1px;
+  width: 210px;
+  margin: 0 0 35px 0;
+}
+
 /* BANNIÈRE BLEUE*/
 #hero-section {
   clear: both;
@@ -133,7 +142,7 @@ ul {
 
 /* Buttons */
 .blue-btn {
-  color: #fff!important;
+  color: #fff;
   padding: 10px 15px;
   background: linear-gradient(to left, #0098FF, #00ACFF);
   backface-visibility: hidden;

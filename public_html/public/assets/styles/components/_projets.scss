@@ -1,0 +1,107 @@
+/** IMAGES DES PROJETS **/
+#projet-section {
+  hr.title-underline {
+    display: block;
+    background: linear-gradient(270deg, #0098ff, #00acff);
+    height: 1px;
+    width: 210px;
+    margin: 0 0 35px 0;
+  }
+  ul {
+    padding: 0px;
+  }
+  a {
+    color: white;
+    .arrow {
+      -webkit-transform: rotate(1turn);
+      transform: rotate(1turn);
+      position: absolute;
+      bottom: 0;
+      font-family: OpenSans-Light;
+      right: 0;
+      color: #0d97f5;
+      background: hsla(0, 0%, 100%, 0);
+      z-index: 9;
+      border-style: solid;
+      border-width: 0 0 100px 100px;
+      border-color: transparent transparent #fff transparent;
+      -webkit-transition: all .2s ease-out;
+      transition: all .2s ease-out;
+      i {
+        left: -35px;
+        top: 55px;
+        margin: 0;
+        font-size: 35px;
+        -webkit-transition: all .2s ease-out;
+        transition: all .2s ease-out;
+        position: absolute;
+      }
+    }
+    hr.title-underline {
+      display: block;
+      background: white;
+      height: 1px;
+      width: 210px;
+      margin: 0 0 5px 0;
+
+    }
+    &:hover {
+      text-decoration: none;
+      .img_projet {
+        .arrow {
+          background: hsla(0, 0%, 100%, 0);
+          border-width: 0 0 150px 170px;
+          border-color: transparent transparent #0098ff transparent;
+
+          i {
+            left: -50px;
+            top: 85px;
+            font-size: 42px;
+          }
+        }
+      }
+    }
+  }
+  .img_projet {
+    height: 350px;
+    margin-bottom: 30px;
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    display: block;
+
+    .degrader_projet {
+      display: block;
+      height: 50%;
+      bottom: 0;
+      position: absolute;
+      width: 100%;
+      background: -webkit-linear-gradient(270deg, hsla(0, 0%, 50%, 0), rgba(0, 0, 0, .80));
+      background: linear-gradient(180deg, hsla(0, 0%, 50%, 0), rgba(0, 0, 0, 0.80));
+    }
+    .content_projet {
+      position: absolute;
+      bottom: 0;
+      padding-left: 25px;
+      padding-bottom: 15px;
+      width: 100%;
+
+    }
+    h4 {
+      color: white;
+      margin-bottom: 5px;
+      width: 400px;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    &:hover {
+      .arrow {
+        i {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

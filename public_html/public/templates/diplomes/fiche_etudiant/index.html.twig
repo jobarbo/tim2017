@@ -12,16 +12,20 @@
 
                 <ul class="etudiant_contact">
                     {% if arrInfos.courriel != "" %}
-                        <li><a href="nous-joindre/diplome&{{ arrInfos.slug }}"><i class="fa fa-envelope" title="Courriel"></i></a></li>
+                        <li><a href="nous-joindre/diplome&{{ arrInfos.slug }}"><i class="fa fa-envelope"
+                                                                                  title="Courriel"></i></a></li>
                     {% endif %}
                     {% if arrInfos.twitter != "" %}
-                        <li><a href="https://twitter.com/{{ arrInfos.twitter }}" target="_blank"><i class="fa fa-twitter" title="Twitter"></i></a></li>
+                        <li><a href="https://twitter.com/{{ arrInfos.twitter }}" target="_blank"><i
+                                        class="fa fa-twitter" title="Twitter"></i></a></li>
                     {% endif %}
                     {% if arrInfos.linkedin != "" %}
-                        <li><a href="{{ arrInfos.linkedin }}" target="_blank"><i class="fa fa-linkedin" title="LinkedIn"></i></a></li>
+                        <li><a href="{{ arrInfos.linkedin }}" target="_blank"><i class="fa fa-linkedin"
+                                                                                 title="LinkedIn"></i></a></li>
                     {% endif %}
                     {% if arrInfos.site_web != "" %}
-                        <li><a href="{{ arrInfos.site_web }}" target="_blank"><i class="fa fa-globe" title="Site web"></i></a></li>
+                        <li><a href="{{ arrInfos.site_web }}" target="_blank"><i class="fa fa-globe"
+                                                                                 title="Site web"></i></a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -32,16 +36,19 @@
             <section class="col-sm-12 col-md-6">
                 <div id="profil">
                     <h2>Profil</h2>
+                    <hr class="title-underline">
                     {{ arrInfos.profil | raw }}
                 </div>
                 <div id="forces">
                     <h2>Forces</h2>
+                    <hr class="title-underline">
                     {{ arrInfos.forces | raw }}
                 </div>
             </section>
             <section class="col-sm-12 col-md-6">
                 <div id="interets" class="no-js">
                     <h2>Intérêts</h2>
+                    <hr class="title-underline">
                     <ul class="liste_intrerets">
                         <li>
                             <div class="barre_progression clearfix " data-percent="{{ arrInfos.interet_gestion }}0%">
@@ -85,35 +92,42 @@
 
                 </div>
             </section>
-            <section>
-                <div id="projets_etudiant" class="col-sm-12">
+            <section id="projet-section">
+                <div class="projet_fiche container-fluid borderBox">
                     <h2>Projets</h2>
+                    <hr class="title-underline">
                     {{ texteErreurProjets | raw }}
                     {% if texteErreurProjets == false %}
+                    <div class="list-projets">
                         <ul>
                             {% for projet in arrProjets %}
-                                <li>
-                                    <a href="diplomes/fiche-projet/{{ projet.slug }}&{{ arrInfos.id }}">
-                                        <div class="img_projet col-sm-12 col-md-5">
-                                            <picture>
-                                                <source media="(min-width: 900px)"
-                                                        srcset="dist/images/projets/prj{{ projet.id }}_01-small.jpg">
-                                                <source media="(max-width: 900px)"
-                                                        srcset="dist/images/projets/prj{{ projet.id }}_01-large.jpg">
-                                                <img src="dist/images/projets/prj{{ projet.id }}_01-small.jpg"
-                                                     alt="{{ projet.titre }}">
-                                            </picture>
-                                        </div>
-                                        <span class="titre_projet">{{ projet.titre }}</span>
-                                    </a>
-                                </li>
+                                <div class="single-projet col-sm-6">
+                                    <li>
+
+                                        <a href="diplomes/fiche-projet/{{ projet.slug }}&{{ arrInfos.id }}">
+                                            <div class="img_projet"
+                                                 style="background-image: url('dist/images/projets/prj{{ projet.id }}_01.jpg')">
+                                                <div class="degrader_projet">
+                                                    <div class="content_projet">
+                                                        <h4 class="titre_projet">{{ projet.titre }}</h4>
+                                                        <hr class="title-underline">
+                                                        <span class="arrow"><i class="fa fa-angle-right i-space"
+                                                                               title="Voir le projet"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </a>
+
+                                    </li>
+                                </div>
                             {% endfor %}
                         </ul>
-                    {% else %}
-                        {{ texteErreurProjet | raw }}
-                    {% endif %}
-
+                    </div>
                 </div>
+                {% else %}
+                    {{ texteErreurProjet | raw }}
+                {% endif %}
             </section>
         </div>
     {% else %}
