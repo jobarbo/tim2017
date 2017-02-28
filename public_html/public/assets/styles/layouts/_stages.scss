@@ -10,12 +10,11 @@ button{
 
 .section1, .section2, .section3{
   @include clearfix();
-  margin: 2rem 0;
+  padding: 2rem 0;
 }
 
 .section2{
   background-color: #f7f7f7;
-  @include clearfix();
 
   .sequence1{
     .details{
