@@ -20,7 +20,8 @@
 
   function configurer() {
 
-
+$('#svg_logo').addClass("big_svg");
+$('#logo_text').addClass("big_text");
     $('input.navbox').on('change', function () {
       $('input.navbox').not(this).prop('checked', false);
     });
@@ -38,16 +39,19 @@
         if (currentScroll > previousScroll) {
           console.log(currentScroll);
           $('.hide_nav').slideUp();
-          
-          console.log(previousScroll);
+          $('#svg_logo').removeClass("big_svg");
+          $('#logo_text').removeClass("big_text");
+
         } else {
-          console.log(previousScroll);
+          
           $('.hide_nav').slideDown();
+          $('#svg_logo').addClass("big_svg");
+          $('#logo_text').addClass("big_text");
         }
       } else {
-        console.log("top");
-        
         $('.hide_nav').slideDown();
+        $('#svg_logo').addClass("big_svg");
+        $('#logo_text').addClass("big_text");
       }
       previousScroll = currentScroll;
     });
