@@ -7,6 +7,10 @@
   background: -moz-linear-gradient(top, #f4f4f4 0%, #ededed 100%);
   background: -ms-linear-gradient(top, #f4f4f4 0%, #ededed 100%);
 }
+.container{
+  max-width: 1440px;
+  width :100%;
+}
 .inside-full-height {
 
   height: 100%;
