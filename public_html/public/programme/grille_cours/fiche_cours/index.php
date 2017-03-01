@@ -20,7 +20,7 @@ require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 /*************** REQUÊTES DATABASE + CODE ***********************/
 
 $arrCour = array();
-$strSQLCours = "SELECT * FROM t_cours WHERE id_cours = " . $_GET['id'];
+$strSQLCours = "SELECT * FROM t_cours WHERE slug = '" . $_GET['slug'] . "'";
 
 if ($objResultCours = $objConnMySQLi->query($strSQLCours)) {
 

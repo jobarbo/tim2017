@@ -205,7 +205,7 @@ foreach($arrTwitter as $tweet){
 
     $strActualiteTweet =  parseTweet($tweet->text);        
 
-            
+
 }
 
 $tPos=strpos($strActualiteTweet,">http");
