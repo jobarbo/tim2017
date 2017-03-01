@@ -1,61 +1,89 @@
 html{
   font-size: 100%;
-}
 
-button{
-  a{
-    color: inherit;
+  .section1, .section2, .section3{
+    @include clearfix();
+    padding: 3rem 0;
   }
-}
 
-.section1, .section2, .section3{
-  @include clearfix();
-  padding: 2rem 0;
-}
 
-.section2{
-  background-color: #f7f7f7;
 
-  .sequence1{
-    .details{
-      display: flex;
-      justify-content: space-between;
+  .section1{
+    background-color: $grey;
+  }
 
-      li{
-        width: 31%;
-        height: 11rem;
-        background-color: #fff;
 
-        -webkit-box-shadow: 0px 0px 6px 0px rgba(196,196,196,1);
-        -moz-box-shadow: 0px 0px 6px 0px rgba(196,196,196,1);
-        box-shadow: 0px 0px 6px 0px rgba(196,196,196,1);
 
-        .title{
-          margin: 10% auto 0.8rem auto;
-          width: 80%;
-          height: 3rem;
-          background-color: $blue;
-          color: #fff;
+  .section2{
+    .sequences1-2 {
+      h3{
+        margin-top: 1rem;
+      }
 
-          strong{
-            font-size: 1rem;
+      h4 {
+        margin-top: 2rem;
+      }
+
+      .details{
+        display: flex;
+        justify-content: space-between;
+
+        li{
+          width: 31%;
+          height: 11rem;
+          background-color: $grey;
+
+          -webkit-box-shadow: 0px 0px 6px 0px rgba(196,196,196,1);
+          -moz-box-shadow: 0px 0px 6px 0px rgba(196,196,196,1);
+          box-shadow: 0px 0px 6px 0px rgba(196,196,196,1);
+
+          .title{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5%;
+
+            margin: 10% auto 0.8rem auto;
+            width: 80%;
+            height: 3rem;
+
+            background-color: $blue;
+            color: #fff;
+
+            -webkit-box-shadow: 0px 0px 3px 0px rgba(82,156,212,0.73);
+            -moz-box-shadow: 0px 0px 3px 0px rgba(82,156,212,0.73);
+            box-shadow: 0px 0px 3px 0px rgba(82,156,212,0.73);
+
+            strong{
+              font-size: 1rem;
+            }
           }
-        }
 
-        .dates{
-          margin: 0 10%;
+          .dates{
+            margin: 0 10%;
 
-          p{
-            margin-bottom: 0.2rem;
+            p{
+              margin-bottom: 0.2rem;
+            }
           }
         }
       }
     }
-  }
-}
 
-.section3{
-  button{
-    margin-bottom: 1.4rem;
+    .sequences3-4{
+      margin-top: 5rem;
+    }
+  }
+
+
+
+  .section3{
+    background-color: $grey;
+    padding-top: 1rem;
+    padding-bottom: 0;
+
+    button{
+      margin-bottom: 1.4rem;
+    }
   }
 }
