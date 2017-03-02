@@ -8,15 +8,17 @@
         <div class="formationVivante">
             {% for valeur in arrTexteFormationVivante %}
                 <h2>{{ valeur['titre'] }}</h2>
-                <hr class="trait_decoratif">
+                <hr class="title-underline">
                 {{ valeur['paragraphe'] | raw }}
             {% endfor %}
         </div>
 
+        <img class="imgtest" src="dist/images/test_image.jpg" alt="test" />
+
         <div class="prealables">
             {% for valeur in arrTextePrealables %}
                 <h2>{{ valeur['titre'] }}</h2>
-                <hr class="trait_decoratif">
+                <hr class="title-underline">
                 {{ valeur['paragraphe'] | raw }}
             {% endfor %}
         </div>
@@ -24,17 +26,20 @@
         <div class="processus">
             {% for valeur in arrTexteProcessus %}
                 <h2>{{ valeur['titre'] }}</h2>
-                <hr class="trait_decoratif">
+                <hr class="title-underline">
                 {{ valeur['paragraphe'] | raw }}
             {% endfor %}
         </div>
+
+        <img class="imgtest" src="dist/images/test_image.jpg" alt="test" />
+
 
         <div class="etudiantUnJour">
 
             <div class="contact_benoit">
                 {% for valeur in arrTexteEtudiantUnJour %}
                     <h2>{{ valeur['titre'] }}</h2>
-                    <hr class="trait_decoratif">
+                    <hr class="title-underline">
                     {{ valeur['paragraphe'] | raw }}
                 {% endfor %}
             </div>

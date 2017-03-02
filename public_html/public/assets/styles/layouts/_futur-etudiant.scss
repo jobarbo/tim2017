@@ -1,5 +1,11 @@
 div.futur_etudiant{
 
+  img.imgtest{
+
+    width: 100%;
+
+  }
+
   h1{
 
     height: 360px;
@@ -32,7 +38,6 @@ div.futur_etudiant{
   h2, h3{
 
     margin-top: 2em;
-    margin-bottom: 1em;
 
   }
 
@@ -58,11 +63,17 @@ div.formationVivante>p, div.integrateur, div.continuum{
 
 }
 
+div.formationVivante{
+
+  margin-bottom: 4em;
+
+}
 
 div.prealables{
 
   width: 45%;
   float: left;
+  margin-bottom: 4em;
 
 }
 
@@ -70,23 +81,25 @@ div.processus{
 
   width: 50%;
   float: right;
+  margin-bottom: 4em;
 
 }
 
 div.etudiantUnJour{
 
   clear: both;
+  margin-top: 4em;
 
   div.contact_benoit{
 
-    width: 70%;
+    width: 50%;
     float: left;
 
   }
 
   div.image_benoit{
 
-    width: 30%;
+    width: 50%;
     float: right;
 
   }
