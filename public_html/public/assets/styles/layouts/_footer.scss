@@ -4,8 +4,9 @@ body{
   }
   footer{
     z-index: 0;
-    display: table;
+    display: block;
     float: none!important;
+
     section.pre_footer{
       margin: auto;
       float: none!important;

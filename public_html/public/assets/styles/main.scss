@@ -10,6 +10,7 @@
 
 @import "common/global";
 @import "common/mixins";
+@import "common/font-awesome.min";
 @import "components/buttons";
 @import "components/grid";
 @import "components/skillbar";
@@ -27,7 +28,7 @@
 @import "layouts/nous-joindre";
 @import "layouts/diplomes";
 @import "layouts/fiche-etudiant";
-@import "common/font-awesome.min";
+@import "layouts/fiche-projet";
 @import "layouts/stages";
 @import "layouts/ate";
 @import "layouts/grille-cours";

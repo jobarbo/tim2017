@@ -7,38 +7,63 @@ header{
   box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.22);
 
   .meta_nav{
-    height: 50px;
+    height:30px;
     padding: 5px 2%;
 
   }
   .sub_hide{
     height: 60px;
     position: absolute;
-    width: 100%;
+    width: 100vw;
     display: table;
     left: 0;
     background-color: white;
-    top: 30px;
+    top: 10px;
     z-index: -1;
     /* color: black; */
   }
   
 
   #logoTIM{
-    
+    position: relative;
+    top:-5px;
     float: left;
     img{
-      width: 230px;
-      top: 3px;
-      position: absolute;
-      backface-visibility: hidden;
+    width: 110px;
+    top: 16px;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: all 0.2s ease-in-out;
+    }
+    img.big_svg{
+      width: 140px;
+      top: 0px;
+      transition: all 0.2s ease-in-out;
     }
   }
   a{ 
     cursor:pointer;
     color:black;
     position: relative;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease-in-out;
+    p{
+    position: absolute;
+    left: 120px;
+    top: 20px;
+    line-height: 14px;
+    font-family: raleway_semi_bold;
+    font-size: 12px;
+    transition: all 0.2s ease-in-out;
+    }
+    p.big_text{
+    position: absolute;
+    left: 150px;
+    top: 6px;
+    line-height: 18px;
+    font-family: raleway_semi_bold;
+    font-size: 14px;
+    transition: all 0.2s ease-in-out;
+    }
     &:hover{
       text-decoration: none;
       color: #0D97F5;
@@ -50,12 +75,12 @@ header{
     }}
 
   nav#nav_primary{
-    height:90px;
-    padding: 10px 155px 24px 2%;
+    height:70px;
+    padding: 0px 155px 24px 2%;
     position: relative;
     ul{
       list-style: none;
-      padding: 22px 0 0;
+      padding: 25px 0 0;
       margin-bottom: 0;
       text-align: right;
 
@@ -64,7 +89,10 @@ header{
       li.top_niveau{
         display: inline-block;
         font-family:raleway_black;
-        font-size : 18px;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size : 14px;
         margin-left:4.8611%;
         cursor:pointer;
         label{ 
@@ -72,13 +100,20 @@ header{
           color:black;
           position: relative;
           transition: all 0.3s ease;
+          font-weight: 500;
+          text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
           &:after{
 
             content: "+";
             display: table;
             position: absolute;
             top: -8px;
-            font-family: OpenSans-Light;
+            font-family: Open_sans_bold;
+            text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
             right: -10px;
             color: #0D97F5;
             background: hsla(0,0%,100%,0);
@@ -118,7 +153,10 @@ header{
               position: absolute;
               transform: translateX(4px) rotate(225deg) scale(1.5,1.5) ;
               top: -8px;
-              font-family: OpenSans-Light;
+              font-family: Open_sans_bold;
+              text-rendering: optimizeLegibility;
+              -webkit-font-smoothing: antialiased;
+              -moz-osx-font-smoothing: grayscale;
               color:red;
               right: -10px;
               background: hsla(0,0%,100%,0);
@@ -128,11 +166,12 @@ header{
           }
           input[type="checkbox"] ~ ul.second_nav {
               display: block!important;
-             transition : transform .4s  ease-out;
+             transition : transform .4s, box-shadow .4s .3s  ease-out;
             }
           input[type="checkbox"]:checked ~ ul.second_nav {
               display: block!important;
-              transform:translateY(60px);
+              transform:translateY(50px);
+              box-shadow:2px 3px 5px rgba(0,172,255,.25);
               opacity:100;
                //transition : transform 0.6s, opacity 0.5s 0.3s  ease-out;
             }
@@ -142,15 +181,15 @@ header{
           text-align: left;
           padding: 15px 2% 24px;
           width: 100vw;
-          background-color: #2a8be1;
+          background: linear-gradient(270deg,#0098ff,#00acff);
           color: #fff;
           position: absolute;
           left: 0;
           opacity: 1;
-          top: 30px;
+          top: 20px;
           z-index: -50;
           cursor:default;
-          height: 60px;
+          height: 50px;
           //transition : transform 0.6s, opacity 0.5s 0.5s  ease-in-out;
           li{
 
@@ -173,21 +212,23 @@ header{
       }
     }
     .btn_rouge{
-      padding: 16px 24px 16px 24px;
+      padding: 12px 24px 12px 24px;
       background: linear-gradient(to left, #F5285D , #FF2424); /* For Safari 5.1 to 6.0 */;
       font-family:raleway_black;
       box-shadow: 16px 3px 6px 0 rgba(246,40,89,.42);
-      -webkit-font-smoothing: antialiased;
-      font-size : 18px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      font-size : 14px;
       color: white;
       position: absolute;
-      right: 0;
-      top: 15px;
+      right: -3.6px;
+      top: 13px;
       -webkit-backface-visibility: hidden;
-      transform: translateX(3px);
+      transform: translateX(0px);
       transition: all .2s ease-in-out;
       &:hover{
-        transform: translateX(0);
+        transform: translateX(-3.6px);
+        //right: -0px;
         box-shadow: 16px 2px 2px 0 rgba(246,40,89,.42);
         &:after{
         content: "";

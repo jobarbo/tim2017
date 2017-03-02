@@ -1,5 +1,37 @@
 /** FICHE ÉTUDIANT **/
-.fiche_etudiant {
+  .fiche_etudiant {
+
+    /** COORDONNÉES ÉTUDIANT **/
+    .hero-image {
+
+      .hero_title{
+        display: block;
+
+        span{
+          font-size: 34px;
+          display: block;
+        }
+      }
+
+      a {
+        color: #1a405b;
+      }
+
+      .retour_precedent{
+        position:absolute;
+        bottom: 10px;
+      }
+
+      ul li{
+        display: inline-block;
+        margin-right: 2em;
+
+        a{
+          font-size: 40px;
+        }
+      }
+
+    }
 
   /** PROFIL ET FORCES **/
   #profil, #forces {

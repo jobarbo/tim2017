@@ -1,1 +1,27 @@
-<svg width="310" height="80" viewBox="0 0 310 80" version="1.1" xmlns="http://www.w3.org/2000/svg"><title>Rectangle 11 + TIM + TIM</title><defs><linearGradient x1="0%" y1="0%" x2="100.896%" y2="99.907%" id="linearGradient-1"><stop stop-color="#00ABFF" offset="0%"/><stop stop-color="#009AFF" offset="100%"/></linearGradient><linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2"><stop stop-color="#009CFF" stop-opacity=".276" offset="0%"/><stop stop-color="#004183" offset="100%"/></linearGradient></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Desktop-HD" transform="translate(-24 -29)"><g id="nav" transform="translate(0 -2)"><g id="Rectangle-11-+-TIM-+-TIM" transform="translate(24 31)"><text id="Techniques" font-family="Raleway" font-size="18" font-weight="bold" fill="#000"><tspan x="200" y="30">Techniques</tspan> <tspan x="200" y="51">d’intégration</tspan> <tspan x="200" y="72">multimédia</tspan></text><path d="M.134 0h169.484l15.248 17v63H14.596L.62 60.488.134 0z" id="Rectangle-11" fill="url(#linearGradient-1)"/><path d="M54.218 68.22H38.731l4.558-42.295H27.007l1.01-9.368.425-3.947h47.973L74.98 25.925H58.777L54.218 68.22zm43.324-55.61l-5.994 55.61H76.06l5.995-55.61h15.487zm37.833 46.916h-8.26l-7.231-20.6-3.158 29.294h-15.488l.5-4.635 5.494-50.975h16.918l9.332 26.16 15.051-26.16h16.839l-.537 4.977-4.81 44.625-.648 6.008H143.89l3.157-29.294-11.672 20.6z" id="TIM" fill="url(#linearGradient-2)"/><path d="M70.309 25.925H54.106V68.22H38.618V25.925H22.336V12.61h47.973v13.315zm5.639 42.295V12.61h15.488v55.61H75.948zm67.83 0V38.926l-9.452 20.6h-8.26l-9.452-20.6V68.22h-15.488V12.61h16.917l12.152 26.16 12.232-26.16h16.838V68.22h-15.488z" id="TIM" fill="#FFF"/></g></g></g></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="185px" height="80px" viewBox="0 0 185 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 11 + TIM + TIM</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100.896164%" y2="99.9069865%" id="linearGradient-1">
+            <stop stop-color="#00ABFF" offset="0%"></stop>
+            <stop stop-color="#009AFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#009CFF" stop-opacity="0.276381341" offset="0%"></stop>
+            <stop stop-color="#004183" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Desktop-HD" sketch:type="MSArtboardGroup" transform="translate(-24.000000, -29.000000)">
+            <g id="nav" sketch:type="MSLayerGroup" transform="translate(0.000000, -2.000000)">
+                <g id="Rectangle-11-+-TIM-+-TIM" transform="translate(24.000000, 31.000000)" sketch:type="MSShapeGroup">
+                    <path d="M0.133951138,0 L169.61806,0 L184.866053,17 L184.866049,80 L14.5968387,79.9999979 L0.619515443,60.4878033 L0.133951138,0 Z" id="Rectangle-11" fill="url(#linearGradient-1)"></path>
+                    <path d="M54.2184401,68.2195122 L38.7305161,68.2195122 L43.2894536,25.9247681 L27.0072771,25.9247681 L28.0169869,16.5573622 L28.4424982,12.6097561 L76.41535,12.6097561 L74.9801289,25.9247681 L58.7773776,25.9247681 L54.2184401,68.2195122 Z M97.5424669,12.6097561 L91.5483083,68.2195122 L76.0603843,68.2195122 L82.0545428,12.6097561 L97.5424669,12.6097561 Z M135.375059,59.5255926 L127.114833,59.5255926 L119.883599,38.9264857 L116.726113,68.2195122 L101.238189,68.2195122 L101.737702,63.5853659 L107.232348,12.6097561 L124.149926,12.6097561 L133.482202,38.7698385 L148.533478,12.6097561 L165.37163,12.6097561 L164.835117,17.5871725 L160.024988,62.2122855 L159.377473,68.2195122 L143.889549,68.2195122 L147.047035,38.9264857 L135.375059,59.5255926 Z" id="TIM" fill="url(#linearGradient-2)"></path>
+                    <path d="M70.3088098,25.9247681 L54.1060586,25.9247681 L54.1060586,68.2195122 L38.6181345,68.2195122 L38.6181345,25.9247681 L22.335958,25.9247681 L22.335958,16.5573622 L22.335958,12.6097561 L70.3088098,12.6097561 L70.3088098,25.9247681 Z M75.9480027,68.2195122 L75.9480027,12.6097561 L91.4359267,12.6097561 L91.4359267,68.2195122 L75.9480027,68.2195122 Z M143.777167,68.2195122 L143.777167,38.9264857 L134.325562,59.5255926 L126.065336,59.5255926 L116.613731,38.9264857 L116.613731,68.2195122 L101.125807,68.2195122 L101.125807,63.5853659 L101.125807,12.6097561 L118.043386,12.6097561 L130.195449,38.7698385 L142.426938,12.6097561 L159.265089,12.6097561 L159.265091,17.5871725 L159.265089,62.2122855 L159.265092,68.2195122 L143.777167,68.2195122 Z" id="TIM" fill="#FFFFFF"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

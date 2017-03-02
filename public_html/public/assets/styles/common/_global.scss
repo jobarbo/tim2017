@@ -8,6 +8,11 @@
   src: url("../fonts/OpenSans-Regular.ttf");
 
 }
+@font-face {
+  font-family: open_sans_bold;
+  src: url("../fonts/OpenSans-bold.ttf");
+
+}
 
 @font-face {
   font-family: raleway_black;
@@ -43,8 +48,34 @@ body {
   overflow-x: hidden;
   height: auto;
   width: 100%;
-  top: 120px;
+  top: 100px;
   position: relative;
+  h1.hero_title {
+    font-family: workSans;
+    font-size: 38px;
+    color: #fff;
+    width: 250px;
+  }
+  h3 {
+    font-family: raleway_semi_bold;
+    font-size: 28px;
+  }
+  h2 {
+    font-family: raleway_semi_bold;
+    font-size: 32px;
+    margin-top: 0px;
+  }
+  h4 {
+    font-family: raleway_bold;
+    font-size: 22px;
+    //letter-spacing: 1px;
+
+  }
+  p {
+
+    font-family: open_sans_regular;
+    font-size: 16px;
+  }
 
   //overflow: hidden;
 
@@ -105,6 +136,7 @@ ul {
 
       img {
         width: 65px;
+        backface-visibility: hidden;
       }
 
     }
@@ -128,12 +160,13 @@ hr.title-underline{
   clear: both;
   height: 360px;
   margin-bottom: 2em;
+  background-image: url("../../dist/images/hero.jpg");
+    background-size: cover;
+    background-position: 50%;
 
   .hero-image {
     height: 360px;
-    background-image: url("../../dist/images/hero.jpg");
-    background-size: cover;
-    background-position: center center;
+   
     padding-top: 112px;
     position: relative;
 
@@ -176,7 +209,7 @@ hr.title-underline{
   }
 
   &:hover {
-    transform: translateY(3px);
+    transform: translateY(2.7px);
     color: #fff;
     box-shadow: 11px 1.75px 3px rgba(0, 172, 255, .45);
     text-decoration: none;
