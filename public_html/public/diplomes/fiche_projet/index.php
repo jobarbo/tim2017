@@ -19,7 +19,7 @@
 
 
 /*************** 1. VARIABLES LOCALES ***********************/
-$strNiveau="../../";
+$strNiveau = "../../";
 $strSlugProjet = "";
 $strSection = "Fiche projet";
 $intIdEtudiant = null;
@@ -29,11 +29,10 @@ require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 
 
 /*************** 3. REÇOIT ID DU PROJET ***********************/
-if(isset($_GET['slug'])){
+if (isset($_GET['slug'])) {
     $strSlugProjet = $_GET['slug'];
     $intIdEtudiant = $_GET['idEtudiant'];
-}
-else{
+} else {
     header('Location: ' . $strNiveau . '404/');
 }
 
@@ -44,22 +43,22 @@ if ($objResultInfosProjet = $objConnMySQLi->query($strSQLInfosProjet)) {
     while ($objLigneInfosProjet = $objResultInfosProjet->fetch_object()) {
         $arrInfosProjet =
             array(
-                'id'=>$objLigneInfosProjet->id_projet,
-                'titre'=>$objLigneInfosProjet->titre_projet,
-                'slug'=>$objLigneInfosProjet->slug,
-                'technologies'=>$objLigneInfosProjet->technologies,
-                'description'=>$objLigneInfosProjet->description,
-                'participation'=>$objLigneInfosProjet->participation,
-                'cadre'=>$objLigneInfosProjet->cadre,
-                'url'=>$objLigneInfosProjet->url_projet,
-                'expose_galerie'=>$objLigneInfosProjet->est_expose_galerie,
-                'id_diplome'=>$objLigneInfosProjet->id_diplome
+                'id' => $objLigneInfosProjet->id_projet,
+                'titre' => $objLigneInfosProjet->titre_projet,
+                'slug' => $objLigneInfosProjet->slug,
+                'technologies' => $objLigneInfosProjet->technologies,
+                'description' => $objLigneInfosProjet->description,
+                'participation' => $objLigneInfosProjet->participation,
+                'cadre' => $objLigneInfosProjet->cadre,
+                'url' => $objLigneInfosProjet->url_projet,
+                'expose_galerie' => $objLigneInfosProjet->est_expose_galerie,
+                'id_diplome' => $objLigneInfosProjet->id_diplome
             );
     }
 }
 
 //En cas d'erreur de requête
-if($objResultInfosProjet->num_rows == 0){
+if ($objResultInfosProjet->num_rows == 0) {
     header('Location: ' . $strNiveau . '404/');
 }
 
@@ -71,17 +70,17 @@ if ($objResultEtudiant = $objConnMySQLi->query($strSQLEtudiant)) {
     while ($objLigneEtudiant = $objResultEtudiant->fetch_object()) {
         $arrEtudiant =
             array(
-                'nom'=>$objLigneEtudiant->nom_diplome,
-                'prenom'=>$objLigneEtudiant->prenom_diplome,
-                'slug'=>$objLigneEtudiant->slug,
-                'id'=>$objLigneEtudiant->id_diplome
+                'nom' => $objLigneEtudiant->nom_diplome,
+                'prenom' => $objLigneEtudiant->prenom_diplome,
+                'slug' => $objLigneEtudiant->slug,
+                'id' => $objLigneEtudiant->id_diplome
             );
     }
 }
 
 
 //En cas d'erreur de requête
-if($objResultEtudiant->num_rows == 0){
+if ($objResultEtudiant->num_rows == 0) {
     header('Location: ' . $strNiveau . '404/');
 }
 
@@ -91,19 +90,19 @@ $objResultEtudiant->free_result();
 $strSQLAutresProjets = "SELECT id_projet, titre_projet, slug FROM t_projet_diplome WHERE id_diplome = " . $arrInfosProjet['id_diplome'];
 if ($objResultAutresProjets = $objConnMySQLi->query($strSQLAutresProjets)) {
     while ($objLigneAutresProjets = $objResultAutresProjets->fetch_object()) {
-        if($objLigneAutresProjets->id_projet != $arrInfosProjet['id']){
+        if ($objLigneAutresProjets->id_projet != $arrInfosProjet['id']) {
             $arrAutresProjets[] =
                 array(
-                    'id'=>$objLigneAutresProjets->id_projet,
-                    'titre'=>$objLigneAutresProjets->titre_projet,
-                    'slug'=>$objLigneAutresProjets->slug
+                    'id' => $objLigneAutresProjets->id_projet,
+                    'titre' => $objLigneAutresProjets->titre_projet,
+                    'slug' => $objLigneAutresProjets->slug
                 );
         }
     }
 }
 
 //En cas d'erreur de requête
-if($objResultAutresProjets->num_rows == 0){
+if ($objResultAutresProjets->num_rows == 0) {
     header('Location: ' . $strNiveau . '404/');
 }
 
@@ -115,13 +114,13 @@ $objConnMySQLi->close();
 /*************** 5. IMAGES DU PROJET ***********************/
 $intNoImg = 1;
 
-while(file_exists($strNiveau . '/dist/images/projets/prj' . $arrInfosProjet['id'] . '_0' . $intNoImg . '-small.jpg')){
+while (file_exists($strNiveau . '/dist/images/projets/prj' . $arrInfosProjet['id'] . '_0' . $intNoImg . '-small.jpg')) {
     $arrProjetImg[] = array(
-        'src'=>'prj' . $arrInfosProjet['id'] . '_0' . $intNoImg,
-        'alt'=>'Image numéro ' . $intNoImg . ' du projet ' . $arrInfosProjet['titre']);
+        'src' => 'prj' . $arrInfosProjet['id'] . '_0' . $intNoImg,
+        'alt' => 'Image numéro ' . $intNoImg . ' du projet ' . $arrInfosProjet['titre'],
+        'no' => $intNoImg);
     $intNoImg++;
 }
-
 
 
 /*************** 6. TWIG ***********************/
@@ -138,6 +137,7 @@ echo $template->render(array(
     'arrInfos' => $arrInfosProjet,
     'arrInfosEtudiant' => $arrEtudiant,
     'arrAutresProjets' => $arrAutresProjets,
-    'arrImagesPrj' => $arrProjetImg
+    'arrImagesPrj' => $arrProjetImg,
     //SCRIPTS
+    'fichier_script' => 'visionneuse.js'
 ));

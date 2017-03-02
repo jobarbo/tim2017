@@ -32,6 +32,11 @@
         "scripts/tri_diplomes.js"
       ]
     },
+    "visionneuse.js": {
+      "files": [
+        "scripts/visionneuse.js"
+      ]
+    },
     "customizer.js": {
       "files": [
         "scripts/customizer.js"
