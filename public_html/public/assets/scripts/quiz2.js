@@ -71,7 +71,7 @@ var app = $(function configurer(evenement) {
         }
         /*$("#qProfil" + (no - 1)).hide();
          $("#qProfil" + (no)).show();*/
-        $('#Q' + no).after("<input id='validerQuestion' class='blue-btn' name='validerQuestion' type='submit' value='Valider mon choix' />");
+        $('#Q' + no).after("<input id='validerQuestion' class='btnQuizBleu' name='validerQuestion' type='submit' value='Valider mon choix' />");
         $('#validerQuestion').on("click", validerMonChoix);
     }
 
@@ -105,7 +105,7 @@ var app = $(function configurer(evenement) {
 
             if (questionActive < 4)
             {
-                $('#Q' + questionActive).after("<input id='questionSuivante' class='blue-btn' name='questionSuivante' type='submit' value='Question suivante' />");
+                $('#Q' + questionActive).after("<input id='questionSuivante' class='btnQuizBleu' name='questionSuivante' type='submit' value='Question suivante' />");
                 $('#questionSuivante').on("click", allerProchaineQuestion);
             }
             else
