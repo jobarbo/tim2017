@@ -47,15 +47,18 @@
                     <textarea required name="message" id="message" title="Entrez votre message" aria-describedby="message-tip" placeholder="Entrez votre message"></textarea>
 
                     {# Submit #}
-                    <button type="submit" class="blue-btn" id="submit" name="submit" value="submit"><i class="fa fa-paper-plane-o i-space" aria-hidden="true"></i>
-                         Envoyer<span class="back_slant"></span></button>
+                    <button type="submit" class="blue-btn" id="submit" name="submit" value="submit">
+                        <i class="fa fa-paper-plane-o i-space" aria-hidden="true"></i>
+                        Envoyer
+                        <span class="back_slant"></span>
+                    </button>
                 </form>
             </div>
 
             <hr>
 
             <div class="coordination">
-                <img src="dist/images/photo_enseignants/lamoureux.png" alt="Photo de Sylvain Lamoureux">
+                <img src="dist/images/photo_enseignants/enseignant_12.png" alt="Photo de Sylvain Lamoureux">
                 <div class="coordinateur">
                     {% for contact in contacts %}
                         {{ contact.texte | raw}}
