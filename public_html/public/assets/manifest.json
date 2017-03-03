@@ -37,6 +37,11 @@
         "scripts/visionneuse.js"
       ]
     },
+    "slider.js": {
+      "files": [
+        "scripts/slider.js"
+      ]
+    },
     "customizer.js": {
       "files": [
         "scripts/customizer.js"
