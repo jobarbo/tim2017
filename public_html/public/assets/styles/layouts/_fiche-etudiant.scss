@@ -31,7 +31,10 @@
       margin-right: 2em;
 
       a {
-        font-size: 40px;
+        font-size: 35px;
+        @media screen and (min-width: $tablettePortrait) {
+          font-size: 40px;
+        }
       }
     }
 
@@ -51,6 +54,13 @@
         top: 0;
         height: 100%;
         width: 30%;
+      }
+    }
+
+    .etudiant_contact{
+      width: 40%;
+      @media screen and (min-width: $tablettePortrait) {
+        width:inherit;
       }
     }
 
@@ -127,7 +137,7 @@
   }
 
   /** PROJETS **/
-  #projets_etudiant {
+  .projets_etudiant {
     margin-top: 3em;
 
     .img_projet {
@@ -143,6 +153,14 @@
         transition: transform 0.35s;
         -webkit-transform: translate3d(0, 20px, 0);
         transform: translate3d(0, 20px, 0);
+      }
+    }
+
+    .single-projet{
+      //padding: 0;
+
+      @media screen and (min-width: $tablettePortrait) {
+
       }
     }
   }
