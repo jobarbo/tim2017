@@ -14,6 +14,7 @@
                 <div class="col-sm-6">
                     <div class="fiche-box">
                         <h2 class="in-div">Description</h2>
+                        <hr class="title-underline">
                         {{ cours.dscr | raw }}
 
                     </div>
@@ -22,15 +23,18 @@
             <div class="col-sm-6">
                 <div class="fiche-box">
                     <h2>Informations</h2>
+                    <hr class="title-underline">
                     <h4>Durée: {{ cours.duree }} heures</h4>
                     <h4>Pondération: {{ cours.ponderation }}</h4>
                     <h4>Spécifications: </h4>
-                    {% if cours.specifique == 1 %}
-                        <p> - Ce cours est spécifique à la formation TIM.</p>
-                    {% else %}
-                        <p> - Ce cours fait partie de la formation générale.</p>
-                    {% endif %}
-                    <p> - Session: {{ cours.session }}</p>
+                    <ul>
+                        {% if cours.specifique == 1 %}
+                            <li>Ce cours est spécifique à la formation TIM.</li>
+                        {% else %}
+                            <li>Ce cours fait partie de la formation générale.</li>
+                        {% endif %}
+                        <li>Session: {{ cours.session }}</li>
+                    </ul>
                 </div>
             </div>
         </div>

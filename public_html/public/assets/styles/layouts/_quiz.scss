@@ -1,5 +1,32 @@
 .allovinny {
   form {
+    input[type="submit"] {
+      position: absolute;
+      left: 75%;
+      transform: translateX(-50%);
+      margin-top: -45px;
+      @media screen and (max-width: $breakquiz) {
+        left: 50%;
+      }
+    }
+    .btnQuizBleu, .btnQuizRouge {
+      height: 50px;
+      width: 200px;
+      border: none;
+      color: white;
+    }
+    .btnQuizBleu {
+      background-color: $blue;
+      &:hover {
+        background-color: #0098ff;
+      }
+    }
+    .btnQuizRouge {
+      background-color: $biaRed;
+      &:hover {
+        background-color: red;
+      }
+    }
     fieldset {
       margin-bottom: 20px;
       box-shadow: 0 1px 2px rgba(0,0,0,.1);
@@ -8,16 +35,21 @@
         height: auto;
       }
       .back-bleu {
+        text-align: center;
         height: 100%;
         @media screen and (max-width: $breakquiz) {
           height: auto;
+          padding: 20px;
         }
         background-color: $blue;
         h3 {
+          text-align: left;
           color: white;
           font-size: 20px;
-          margin: 0;
+          font-family: open_sans_regular;
+          margin: 0 auto;
           width: 100%;
+          max-width: 400px;
           position: relative;
           top: 50%;
           transform: translateY(-50%);
@@ -25,6 +57,7 @@
             top: 0;
             transform: translateY(0%);
             padding: 20px 0;
+            font-size: 16px;
           }
         }
       }
@@ -33,6 +66,7 @@
         text-align: center;
         @media screen and (max-width: $breakquiz) {
           height: auto;
+          padding: 20px;
         }
         .choixReponses {
           display: block;
@@ -97,14 +131,19 @@
       .back-rouge {
         height: 100%;
         background-color: $biaRed;
+        text-align: center;
         @media screen and (max-width: $breakquiz) {
           height: auto;
+          padding: 20px;
         }
         h3 {
+          text-align: left;
           color: white;
           font-size: 20px;
-          margin: 0;
+          font-family: open_sans_regular;
+          margin: 0 auto;
           width: 100%;
+          max-width: 400px;
           position: relative;
           top: 50%;
           transform: translateY(-50%);
@@ -112,6 +151,7 @@
             top: 0;
             transform: translateY(0%);
             padding: 20px 0;
+            font-size: 16px;
           }
         }
       }
@@ -120,6 +160,7 @@
         text-align: center;
         @media screen and (max-width: $breakquiz) {
           height: auto;
+          padding: 20px;
         }
         .choixReponses {
           display: block;

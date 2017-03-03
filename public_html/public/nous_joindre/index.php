@@ -39,9 +39,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $mail->setFrom('tim@csf.ca', 'Cegep de Sainte-Foy');
     $mail->addAddress('erwann.letue@gmail.com', 'Destinataire');  // Add a recipient
 
+    $message = $_POST['message'];
     $mail->isHTML(true);  // Set email format to HTML
     $mail->Subject = $_POST['subject'];
-    $mail->Body    = 'Message de '.$_POST['name'].'<br>'.$_POST['email'].'<br><br>'.$_POST['message'];
+    $mail->Body    = 'Message de '.$_POST['name'].'<br>'.$_POST['email'].'<br><br>'.nl2br($message);
 
     if(!$mail->send()) {
         addFlash("danger", "Erreur lors de l'envoi du mail");

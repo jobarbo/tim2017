@@ -15,7 +15,6 @@ div.contenu_enseignant{
   margin-left: 0em;
   margin-top: 4em;
   min-height: 30em;
-  box-shadow: 0 0 2px #8e97a5;
 
 }
 
@@ -67,8 +66,9 @@ img.photo_prof{
 hr.trait_decoratif{
   display: block;
   margin-top: -1px;
-  height: 0.3em;
-  //background-image: linear-gradient(141deg, #42cef4 0%, #30b6db 51%, #0ca4ce 75%);
+  height: 0.2em;
+  background-image: linear-gradient(to left, #0098FF, #00ACFF);
+  box-shadow: 0 1px 1px #42cef4;
 
 }
 
@@ -90,12 +90,18 @@ ul.liste_reseaux_sociaux li{
   margin: 0px;
   transition: 0.3s;
 
-  &:hover{
+  a.blue-btn{
 
-    transform: scale(1.05);
+    padding: 0;
+    margin-top: 0;
 
   }
 
+  a.blue-btn span.back_slant{
+
+    width: 0px;
+
+  }
 
 }
 

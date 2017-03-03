@@ -22,9 +22,12 @@ hr{
 .contact{
   background-color: #f7f7f7;
 
+  .form, .coordination{
+    display: inline-block;
+  }
+
   .form{
     padding-right: 2%;
-    width: 50%;
 
       h2{
         margin-top: 0;

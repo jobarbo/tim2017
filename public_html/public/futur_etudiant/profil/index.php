@@ -76,7 +76,6 @@ if(isset($_GET['validerQuiz']))
         ));
     }
     $pointage = $pointage * 2;
-    echo $pointage;
     $bonneReponse = "";
 
     $quiz = simplexml_load_file($strNiveau . 'inc/xml/quiz1.xml');

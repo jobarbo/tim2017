@@ -3,11 +3,13 @@
 
 {% block content %}
     <h1>PROGRAMME</h1>
-    <div class="container_page">
+    <div class="container programme">
+        <div class="col-sm-12">
         {% for valeur in arrTextes %}
             <h2>{{ valeur['titre'] }}</h2>
             {{ valeur['paragraphe'] | raw }}
         {% endfor %}
+        </div>
     </div>
 {% endblock %}
 
