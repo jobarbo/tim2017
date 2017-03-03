@@ -203,7 +203,7 @@ foreach($arrTwitter as $tweet){
     $dateTweet= rtrim(strftime('%e %B %G',strtotime($tweet->created_at)),'.');
     $bonneDateTweet = utf8_encode($dateTweet);
 
-    $strActualiteTweet =  parseTweet($tweet->text);        
+    $strActualiteTweet =  parseTweet($tweet->text);
 
 
 }
