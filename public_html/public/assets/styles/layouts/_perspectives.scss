@@ -6,10 +6,39 @@ div.perspectives{
 
   }
 
+  div.col-sm-6{
+
+    margin-bottom: 4em;
+
+  }
+
   h1{
 
     height: 360px;
     background-color: blue;
+
+  }
+
+  div.col-sm-6 h3{
+
+        background-image: linear-gradient(to left, #0098FF, #00ACFF);
+        box-shadow: 0 3px 7px #0ca4ce;
+        min-height: 2em;
+        text-align: center;
+        padding-top: 0.5em;
+        color: white;
+
+  }
+
+
+  span.taux{
+
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-family: "open_sans_light";
+    font-size: 72px;
+    padding-top: 0.5em;
 
   }
 
@@ -20,6 +49,53 @@ div.perspectives{
     margin-left: 2em;
     margin-top: 1em;
     list-style-image: url('../images/fleche_liste.png');
+
+  }
+
+  li.type{
+
+    font-size: 32px;
+    
+  }
+
+  li.type:first-of-type{
+
+    padding-top: 0.5em;
+
+  }
+
+  li.montant:last-of-type{
+
+    padding-bottom: 0.5em;
+
+  }
+
+  li.montant{
+
+    font-size: 24px;
+
+  }
+
+  li.type, li.montant{
+
+    font-family: "open_sans_light";
+    text-align: center;
+    list-style-image: none;
+    margin-left: 0em;
+    margin-top: 0em;
+    
+
+  }
+
+  div.stats{
+
+    margin-top: 4em;
+
+  }
+
+  div.poursuite_etudes{
+
+    margin-top: 4em;
 
   }
 

@@ -3,7 +3,8 @@
 
 
 {% block content %}
-    <div class="container_page futur_etudiant">
+    <div class="container futur_etudiant">
+    <div class="col-sm-12">
         <h1>FUTUR ÉTUDIANT</h1>
         <div class="formationVivante">
             {% for valeur in arrTexteFormationVivante %}
@@ -12,10 +13,10 @@
                 {{ valeur['paragraphe'] | raw }}
             {% endfor %}
         </div>
-
+        </div>
         <img class="imgtest" src="dist/images/test_image.jpg" alt="test" />
 
-        <div class="prealables">
+        <div class="col-sm-6 prealables">
             {% for valeur in arrTextePrealables %}
                 <h2>{{ valeur['titre'] }}</h2>
                 <hr class="title-underline">
@@ -23,7 +24,7 @@
             {% endfor %}
         </div>
 
-        <div class="processus">
+        <div class="col-sm-6 processus">
             {% for valeur in arrTexteProcessus %}
                 <h2>{{ valeur['titre'] }}</h2>
                 <hr class="title-underline">
@@ -36,14 +37,14 @@
 
         <div class="etudiantUnJour">
 
-            <div class="contact_benoit">
+            <div class="col-sm-6 contact_benoit">
                 {% for valeur in arrTexteEtudiantUnJour %}
                     <h2>{{ valeur['titre'] }}</h2>
                     <hr class="title-underline">
                     {{ valeur['paragraphe'] | raw }}
                 {% endfor %}
             </div>
-            <div class="image_benoit">
+            <div class=" col-sm-6 image_benoit">
                 <img src="dist/images/photo_enseignants/enseignant_1.png" alt="Benoît Frigon"/>
             </div>
         </div>
