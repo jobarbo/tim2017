@@ -2,21 +2,6 @@
 
 .diplomes {
 
-  #hero-section {
-    clear: both;
-    height: 360px;
-
-    .hero-image {
-      height: 360px;
-      background-image: url("../../dist/images/hero.jpg");
-      background-size: cover;
-      background-position: center center;
-      padding-top: 112px;
-      position: relative;
-
-    }
-  }
-
   h2 {
     font-size: 24px;
   }
@@ -36,7 +21,7 @@
     }
 
     #tri_interets{
-      margin-top : 1em;
+      margin: 1em 0 0 1em;
 
       ul{
 
