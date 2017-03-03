@@ -6,7 +6,7 @@
     <div class="fiche_projet">
 
     <section id="hero-section">
-        <div class="container">
+        <div class="container_page">
             <div class="hero-image col-sm-12">
                 <h1 class="hero_title">{{ title | raw }}</h1>
                 <span class='retour_precedent'><a href="diplomes/fiche-etudiant/{{ arrInfosEtudiant.slug }}"><i
@@ -16,7 +16,7 @@
         </div>
     </section>
     <div class="container-fluid borderBox">
-        <div class="container">
+        <div class="container_page">
             <section class="texte_intro_projet col-sm-12 col-md-6">
                 <div class="description">
                     <h2>Description</h2>
@@ -38,28 +38,39 @@
                 </div>
             </section>
             <section class="photos_projet col-sm-12 col-md-6" id="projet-section">
-                <ul>
+                <ul class="slides">
                     {% for imagesPrj in arrImagesPrj %}
-                    <div class="single-projet">
-                        <li>
-                            <a href="dist/images/projets/{{ imagesPrj.src }}.jpg" title="{{ arrInfos.titre }}">
-                                <div class="img_projet"
-                                     style="background-image: url('dist/images/projets/{{ imagesPrj.src }}-large.jpg')" title="{{ imagesPrj.alt }}">
-                                    <div>
-                                        <div class="content_projet">
+                        <input type="radio" name="radio-btn" id="img-{{ imagesPrj.no }}" checked/>
+                        <div class="single-projet">
+                            <li class="slide-container">
+                                <a href="dist/images/projets/{{ imagesPrj.src }}.jpg" title="{{ arrInfos.titre }}">
+                                    <div class="img_projet slide"
+                                         style="background-image: url('dist/images/projets/{{ imagesPrj.src }}-large.jpg')"
+                                         title="{{ imagesPrj.alt }}">
+                                        <div>
+                                            <div class="content_projet">
                                             <span class="arrow"><i class="fa fa-search-plus i-space"
                                                                    title="Agrandir l'image"></i></span>
+                                            </div>
                                         </div>
                                     </div>
-                                    </div>
-
-
-
-                            </a>
-                        </li>
-                    </div>
+                                </a>
+                            </li>
+                        </div>
                     {% endfor %}
                 </ul>
+                {% for i in 1..nombreImages %}
+                        <div class="nav-slides">
+                            <label for="img-{% if arrImagesPrj[i-1]['prev'] == 0 %}{{ nombreImages }}{% elseif arrImagesPrj[i-1]['prev'] != 0 %}{{ arrImagesPrj[i-1]['prev'] }}{% else %}{{ arrImagesPrj[i-1]['next'] }}{% endif %}"
+                                   class="prev"><i
+                                        class="fa fa-angle-left i-space"
+                                        title="Voir l'image précédente"></i></label>
+                            <label for="img-{% if arrImagesPrj[i-1]['next'] > nombreImages %}1{% elseif arrImagesPrj[i-1]['next'] == nombreImages %}{{ nombreImages }}{% else %}{{ arrImagesPrj[i-1]['next'] }}{% endif %}"
+                                   class="next"><i
+                                        class="fa fa-angle-right i-space"
+                                        title="Voir l'image suivante"></i></label>
+                        </div>
+                {% endfor %}
             </section>
             <section id="projet-section">
                 <div class="projet_fiche container-fluid borderBox">
@@ -85,7 +96,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </a>
 
                                     </li>
