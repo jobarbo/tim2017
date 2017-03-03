@@ -1,21 +1,26 @@
 {# Intégration du layout de base #}
 {% extends 'layout.html.twig' %}
 
-
 {% block content %}
-    <div class="container_page perspectives">
+    <div class="container perspectives">
         <h1>PERSPECTIVES</h1>
-
+<div class="col-sm-12">
         <h2>{{ arrTextes[1]['titre'] }}</h2>
+        <hr class="title-underline">
         {{ arrTextes[1]['paragraphe'] | raw }}
-
+    <div class="stats">
         <h2>{{ arrTextes[2]['titre'] }}</h2>
+        <hr class="title-underline">
         {{ arrTextes[2]['paragraphe'] | raw }}
+    </div>
 
+</div>
         <img class="imgtest" src="dist/images/test_image.jpg" alt="test" />
-
+<div class="col-sm-12 poursuite_etudes">
         <h2>{{ arrTextes[0]['titre'] }}</h2>
+        <hr class="title-underline">
         {{ arrTextes[0]['paragraphe'] | raw }}
+</div>
     </div>
 {% endblock %}
 

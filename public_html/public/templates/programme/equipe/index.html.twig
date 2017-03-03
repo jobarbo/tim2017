@@ -3,7 +3,7 @@
 
 {% block content %}
     <h1 class="titre_equipe">ÉQUIPE</h1>
-    <div class="container_page">
+    <div class="container">
 
 
         {% for valeur in arrTextes %}
@@ -23,20 +23,20 @@
                             <div class="conteneur_sociaux">
                                 <ul class="liste_reseaux_sociaux">
                                     {% if valeur['courriel'] is not null %}
-                                        <li><a href="{{ valeur['courriel'] }}"><img src="dist/images/sociaux/mail.png"
-                                                                                    alt="Courriel"/></a></li>
+                                        <li><a  class="blue-btn" href="{{ valeur['courriel'] }}"><img src="dist/images/sociaux/mail.png"
+                                                                                    alt="Courriel"/><span class="back_slant"></span></a></li>
                                     {% endif %}
                                     {% if valeur['pseudo'] is not null %}
-                                        <li><a href="https://twitter.com/{{ valeur['pseudo'] }}"><img src="dist/images/sociaux/twitter.png"
-                                                                                  alt="Twitter"/></a></li>
+                                        <li><a  class="blue-btn" href="https://twitter.com/{{ valeur['pseudo'] }}"><img src="dist/images/sociaux/twitter.png"
+                                                                                  alt="Twitter"/><span class="back_slant"></span></a></li>
                                     {% endif %}
                                     {% if valeur['linkedin'] is not null %}
-                                        <li><a href="{{ valeur['linkedin'] }}"><img src="dist/images/sociaux/linkedin.png"
-                                                                                    alt="Linkedin"/></a></li>
+                                        <li><a  class="blue-btn" href="{{ valeur['linkedin'] }}"><img src="dist/images/sociaux/linkedin.png"
+                                                                                    alt="Linkedin"/><span class="back_slant"></span></a></li>
                                     {% endif %}
                                     {% if valeur['site'] is not null %}
-                                        <li><a href="{{ valeur['site'] }}"><img src="dist/images/sociaux/internet.png"
-                                                                                alt="Internet"/></a></li>
+                                        <li><a  class="blue-btn" href="{{ valeur['site'] }}"><img src="dist/images/sociaux/internet.png"
+                                                                                alt="Internet"/><span class="back_slant"></span></a></li>
                                     {% endif %}
                                 </ul>
                             </div>
