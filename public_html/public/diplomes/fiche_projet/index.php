@@ -118,9 +118,13 @@ while (file_exists($strNiveau . '/dist/images/projets/prj' . $arrInfosProjet['id
     $arrProjetImg[] = array(
         'src' => 'prj' . $arrInfosProjet['id'] . '_0' . $intNoImg,
         'alt' => 'Image numéro ' . $intNoImg . ' du projet ' . $arrInfosProjet['titre'],
-        'no' => $intNoImg);
+        'no' => $intNoImg,
+        'prev' => $intNoImg -1,
+        'next' => $intNoImg +1);
     $intNoImg++;
 }
+
+$intNbImages = count($arrProjetImg);
 
 
 /*************** 6. TWIG ***********************/
@@ -138,6 +142,7 @@ echo $template->render(array(
     'arrInfosEtudiant' => $arrEtudiant,
     'arrAutresProjets' => $arrAutresProjets,
     'arrImagesPrj' => $arrProjetImg,
+    'nombreImages' => $intNbImages,
     //SCRIPTS
     'fichier_script' => 'visionneuse.js'
 ));
