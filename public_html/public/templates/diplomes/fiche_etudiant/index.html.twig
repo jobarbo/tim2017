@@ -11,7 +11,7 @@
 
                     <h1 class="hero_title">{{ title | raw }}</h1>
 
-
+                    <div class='photo-etudiant' style="background-image: url('dist/images/diplomes/{{ arrInfos.id }}.png')"></div>
                     <ul class="etudiant_contact">
                         {% if arrInfos.courriel != "" %}
                             <li><a href="nous-joindre/diplome&{{ arrInfos.slug }}"><i class="fa fa-envelope"
@@ -34,6 +34,7 @@
                                 href="diplomes/{% if tri_interets %}{{ tri_interets }}{% endif %}"><i
                                     class="fa fa-arrow-left"
                                     aria-hidden="true"></i> retour vers la liste des diplômés</a></span>
+
                 </div>
             </div>
 
@@ -60,42 +61,46 @@
                         <hr class="title-underline">
                         <ul class="liste_intrerets">
                             <li>
+                                <span class='interet_titre'><span class="libelle">Gestion</span></span>
                                 <div class="barre_progression clearfix "
                                      data-percent="{{ arrInfos.interet_gestion }}0%">
-                                    <span class='interet_titre'><span class="libelle">Gestion</span></span>
                                     <span class="barre_interet value-{{ arrInfos.interet_gestion }}"></span>
 
                                 </div>
                                 <span class="pourcentage">{{ arrInfos.interet_gestion }}</span>
                             </li>
                             <li>
+                                <span class='interet_titre '><span class="libelle">Design</span></span>
                                 <div class="barre_progression clearfix " data-percent="{{ arrInfos.interet_design }}0%">
-                                    <span class='interet_titre '><span class="libelle">Design</span></span>
+
                                     <span class="barre_interet value-{{ arrInfos.interet_design }}"></span>
                                     <span class="pourcentage">{{ arrInfos.interet_design }}</span>
                                 </div>
                             </li>
                             <li>
+                                <span class='interet_titre '><span
+                                            class="libelle">Traitement des médias</span></span>
                                 <div class="barre_progression clearfix "
                                      data-percent="{{ arrInfos.interet_traitement }}0%">
-                                    <span class='interet_titre '><span
-                                                class="libelle">Traitement des médias</span></span>
+
                                     <span class="barre_interet value-{{ arrInfos.interet_traitement }}"></span>
                                     <span class="pourcentage">{{ arrInfos.interet_traitement }}</span>
                                 </div>
                             </li>
                             <li>
+                                <span class='interet_titre '><span class="libelle">Programmation</span></span>
                                 <div class="barre_progression clearfix "
                                      data-percent="{{ arrInfos.interet_programmation }}0%">
-                                    <span class='interet_titre '><span class="libelle">Programmation</span></span>
+
                                     <span class="barre_interet value-{{ arrInfos.interet_programmation }}"></span>
                                     <span class="pourcentage">{{ arrInfos.interet_programmation }}</span>
                                 </div>
                             </li>
                             <li>
+                                <span class='interet_titre '><span class="libelle">Intégration</span></span>
                                 <div class="barre_progression clearfix "
                                      data-percent="{{ arrInfos.interet_integration }}0%">
-                                    <span class='interet_titre '><span class="libelle">Intégration</span></span>
+
                                     <span class="barre_interet value-{{ arrInfos.interet_integration }}"></span>
                                     <span class="pourcentage">{{ arrInfos.interet_integration }}</span>
                                 </div>
@@ -104,8 +109,8 @@
 
                     </div>
                 </section>
-                <section id="projet-section">
-                    <div class="projet_fiche container-fluid borderBox">
+                <section id="projet-section" class="projets_etudiant">
+                    <div class="projet_fiche borderBox">
                         <h2>Projets</h2>
                         <hr class="title-underline">
                         {{ texteErreurProjets | raw }}
