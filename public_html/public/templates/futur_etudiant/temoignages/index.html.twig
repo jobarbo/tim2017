@@ -4,18 +4,43 @@
 
 {% block content %}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{% endblock%}
+<div class="temoignages">
+    <section id="hero-section">
+        <div class="container">
+            <div class="hero-image col-sm-12">
+                <h1 class="hero_title"> TÉMOIGNAGES </h1>
+            </div>
+        </div>
+    </section>
+    <section id="info-temoignages">
+        <div class="container">
+            <div class="col-sm-12">
+                <h2 class="temoignages_title"> LIRE LES TEMOIGNAGES DE NOS DIPLOMÉS </h2>
+                <p>Les techniciens en intégration multimédia doivent se perfectionner constamment pour suivre l'évolution rapide du secteur de la production multimédia.</p>
+                <p>Voici quelques portraits témoignant du parcours de nos diplômés :</p>
+            </div>
+        </div>
+    </section>
+    <section id="liste-temoignages">
+    <div class="container">
+        {% for temoignages in arrTemoignages %}
+            <div class="col-sm-4">
+                <div class="info_temoin">
+                <img class="photo_temoin"
+                             src="dist/images/temoin/{{ temoignages['id_temoignage'] }}.jpg"
+                             alt="photo de {{ temoignages['temoin'] }}"/>
+                        <hr class="trait_decoratif">
+                        <p>{{ temoignages['temoin'] }}</p>
+                        <p>Graduation : {{ temoignages['annee_diplomation'] }}</p>
+                        <a href="{{ temoignages['url_entreprise'] }}" >{{ temoignages['entreprise'] }}</a>
+                        <p>{{ temoignages['titre_poste'] }}</p>
+                </div>
+                <div class="contenu_temoignage">
+                <p>{{ temoignages['temoignage'] }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>    
+    </section>
+</div>
+{% endblock %}
