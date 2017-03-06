@@ -33,9 +33,7 @@ if ($blnLocal) {
 if ($blnLocal) {
     $strBdServer   = 'localhost';
     $strBdUsername = 'root';
-
     $strBdPassword = 'root';
-
     $strBdName     = 'bdtim2017_hooli';
 } else {
     $strBdServer   = 'timunix.cegep-ste-foy.qc.ca';

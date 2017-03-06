@@ -11,9 +11,11 @@
   height: 360px;
 
   .actualite_img {
-    background-image: url(../../dist/images/news_img_placeholder.png);
+    //background-image: url(../../dist/images/news_img_placeholder.png);
     height: 250px;
     width: 437px;
+    color: #009eff;
+    font-size:200px;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;

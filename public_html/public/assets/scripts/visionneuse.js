@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     $('.photos_projet').magnificPopup({
         delegate: 'a',
         type: 'image',
@@ -7,11 +7,11 @@ $(document).ready(function() {
         gallery: {
             enabled: true,
             navigateByImgClick: true,
-            preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+            preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
         },
         image: {
             tError: '<a href="%url%">L\'image #%curr%</a> n\'a pu être chargée.',
-            titleSrc: function(item) {
+            titleSrc: function (item) {
                 return item.el.attr('title');
             }
         }
