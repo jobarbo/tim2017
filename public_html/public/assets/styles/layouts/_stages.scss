@@ -4,6 +4,12 @@ html{
   .section1, .section2, .section3{
     @include clearfix();
     padding: 3rem 0;
+
+    .blue-btn{
+      .back_slant{
+        box-shadow: 13px 3px 1px 12px $grey;
+      }
+    }
   }
 
 
