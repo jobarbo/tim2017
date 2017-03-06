@@ -8,6 +8,7 @@
 $strNiveau = "";
 $strNiveauAdmin="../public/";
 $strSection = "Connexion";
+$erreurGlobale = "";
 
 session_start();
 
@@ -44,7 +45,7 @@ if(isset($_POST["btnConnecter"])){
 
     }else{
 
-        echo "Le nom d'utilisateur ou le mot de passe est incorrect. Veuillez réessayer";
+        $erreurGlobale = "Le nom d'utilisateur ou le mot de passe est incorrect. Veuillez réessayer";
     }
 
 
@@ -55,22 +56,11 @@ if(isset($_POST["btnConnecter"])){
 
 $objConnMySQLi->close();
 
-/*************** 4 TWIG ***********************/
-$template = $twig->loadTemplate('pieces/head.html.twig');
-echo $template->render(array(
-    'title' => "Section administrative | TIM",
-    'page' => "Connexion | ",
-    'niveau' => $strNiveau
-));
-
-$template = $twig->loadTemplate('pieces/header.html.twig');
-echo $template->render(array());
-
 $template = $twig->loadTemplate('connexion.html.twig');
 echo $template->render(array(
+    'title' => "Connexion | TIM",
+    'niveauAdmin' => $strNiveauAdmin,
     'niveau' => $strNiveau,
-    'page' => "Section administrative"
+    'page' => "Connexion",
+    'erreurGlobale' => $erreurGlobale
 ));
-
-$template = $twig->loadTemplate('pieces/footer.html.twig');
-echo $template->render(array());

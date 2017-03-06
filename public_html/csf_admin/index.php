@@ -94,18 +94,15 @@ echo $template->render(array(
     'niveau' => $strNiveau
 ));
 
-$template = $twig->loadTemplate('pieces/header.html.twig');
-echo $template->render(array());
-
 $template = $twig->loadTemplate('index.html.twig');
 echo $template->render(array(
     'niveau' => $strNiveau,
     'page' => "Section administrative",
+    'title' => "Admin | TIM",
+    'niveau' => $strNiveau,
+    'page' => "Administration",
     'diplomes' => $arrDiplomes,
     'evenements' => $arrEvenements,
     'erreurDiplomes' => $strMsgErrDiplomes,
     'erreurEvenements' => $strMsgErrEvenement
 ));
-
-$template = $twig->loadTemplate('pieces/footer.html.twig');
-echo $template->render(array());

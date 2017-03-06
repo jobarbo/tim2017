@@ -11,15 +11,17 @@
 
 
     <title>{{ page }} | Section Administrative | TIM</title>
-    <link rel="stylesheet" href="{{ niveauAdmin }}dist/styles/admin.css">
+    <link rel="stylesheet" href="{{ niveauAdmin }}dist/styles/main.css">
 </head>
 
 {# HEADER #}
 <body>
 <header>
     <nav>
-        <a href="../public">Site public</a>
-        <a href="administration.php">Déconnexion</a>
+        <a href="">Site public</a>
+        <form action="administration.php" method="post" novalidate role="form">
+            <button id="btnDeconnecter" class="btnDeconnecter" name="btnDeconnecter" type="submit">Déconnexion</button>
+        </form>
     </nav>
 
 </header>
