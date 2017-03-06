@@ -22,7 +22,7 @@ if(isset($_SESSION['arrAuthentification'])){
             break;
 
         case 3:
-            header('Location: index.php');
+            header('Location: administration.php');
             exit;
             break;
 
