@@ -1,9 +1,8 @@
-h1.titre_equipe{
+div.equipe{
 
-  background-color: blue;
-  height: 360px;
-  padding-left: 8em;
-  padding-top: 4em;
+p{
+
+  max-width: 80%;
 
 }
 
@@ -105,10 +104,6 @@ ul.liste_reseaux_sociaux li{
 
 }
 
-footer{
-
-  clear: both;
-
 }
 
 @media screen and (max-width: 1200px) {
@@ -121,26 +116,11 @@ footer{
 
 }
 
-@media screen and (max-width: 840px) {
-
-  hr.trait_decoratif{
-
-    border: 0;
-    display:block;
-    width: 100%;
-    background-color: #d4d6d8;
-    height: 1px;
-    margin: 0;
-
-  }
-
-}
-
 @media screen and (max-width: 770px) {
 
   div.contenu_enseignant{
 
-  margin-left: 2em;
+    margin-left: 2em !important;
 
   }
 
@@ -153,11 +133,31 @@ footer{
 
 }
 
+
+@media screen and (max-width: 900px) {
+
+div.contenu_enseignant{
+
+  margin-left: 2em;
+
+}
+
+div.equipe{
+
+  p{
+
+    max-width: 100%;
+
+  }
+
+}
+}
+
 @media screen and (max-width: 600px) {
 
   div.contenu_enseignant{
 
-    margin-left: 0em;
+    margin-left: 0em !important;
 
   }
 
@@ -169,3 +169,7 @@ footer{
 
 
 }
+
+
+
+

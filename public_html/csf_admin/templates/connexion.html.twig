@@ -1,13 +1,17 @@
-<main>
+{# Intégration du layout de base #}
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+<div class="col-sm-4 formConnexion">
     <form action="administration.php" method="post" novalidate role="form">
         <h1>Connexion</h1>
+        <span class="erreurGlobale">{{ erreurGlobale }}</span>
         <fieldset>
             <legend>Connectez-vous</legend>
 
             <p>
                 <label for="nomUsager">Nom d'usager<span class="asterisque" aria-hidden="true"> *</span></label>
                 <input id="nomUsager" name="nomUsager" type="text"/><span class="icone"></span><br/>
-                <span class="erreur"></span>
 
             </p>
 
@@ -15,10 +19,10 @@
                 <label for="motDePasse">Mot de passe<span class="asterisque" aria-hidden="true"> *</span></label>
                 <input id="motDePasse" class="inputMotDePasse" name="motDePasse" type="password"
                        pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" required/><span class="icone"></span><br/>
-                <span class="erreur"></span>
 
             </p>
-            <button id="btnConnecter" class="btnConnecter" name="btnConnecter" type="submit">Se connecter</button>
+            <button id="btnConnecter" class="btnConnecter blue-btn" name="btnConnecter" type="submit">Se connecter<span class="back_slant"></span></button>
         </fieldset>
     </form>
-</main>
+</div>
+{% endblock %}

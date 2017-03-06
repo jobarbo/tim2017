@@ -82,5 +82,40 @@ div.etudiantUnJour{
 
 }
 
+div.profil_quiz{
+
+  p{
+
+    max-width: 90%;
+
+  }
+
+}
+
+div.image_benoit{
+
+  img{
+
+    display: block;
+    margin: 0 auto;
+
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+
+  div.futur_etudiant{
+
+div.formationVivante>p, div.integrateur, div.continuum{
+
+  max-width: 100%;
+
+}
+
+  }
+
+}
+
 
 

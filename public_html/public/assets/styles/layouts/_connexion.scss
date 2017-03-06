@@ -1,0 +1,34 @@
+div.formConnexion{
+
+    float: none;
+    margin: 0 auto;
+
+    legend{
+
+        display: none;
+
+    }
+
+    input#nomUsager, input#motDePasse{
+        
+        width: 100%;
+        height: 47px;
+        padding-left: 1em;
+        border: none;
+        border-radius: 5px;
+
+    }
+
+    .asterisque, .erreurGlobale{
+
+        color: red;
+
+    }
+
+    button{
+
+        margin-bottom: 4em;
+
+    }
+
+}

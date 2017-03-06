@@ -12,6 +12,15 @@ require_once($strNiveauAdmin . 'inc/scripts/config.inc.php');
 require_once($strNiveau . 'inc/pieces/header.php');
 require_once($strNiveau . 'inc/pieces/footer.php');
 
+/*************** GÉRER LA DÉCONNEXION ***********************/
+
+    if(isset($_GET['btnDeconnecter'])){
+
+        header('Location: administration.php');
+        session_destroy();
+
+    }
+
 /*************** TWIG ***********************/
 include_once($strNiveauAdmin .'inc/lib/Twig/Autoloader.php');
 Twig_Autoloader::register();
