@@ -9,10 +9,8 @@ $request = "SELECT * FROM t_texte WHERE section_et_page = 'Nous joindre'";
 if ($objResult = $objConnMySQLi->query($request)) {
     while ($objLigne = $objResult->fetch_object()) {
         $arrContact[] = array(
-            'id'=>$objLigne->id_texte,
             'titre_texte'=>$objLigne->titre_texte,
-            'texte'=>$objLigne->texte,
-            'section_et_page'=>$objLigne->section_et_page
+            'texte'=>$objLigne->texte
         );
     }
     $objResult->free_result();
@@ -62,3 +60,6 @@ echo $template->render(array(
     'arrMenuLiensActifs' => $arrMenuActif,
     'contacts' => $arrContact
 ));
+
+
+$objConnMySQLi->close();

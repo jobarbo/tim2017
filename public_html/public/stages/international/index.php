@@ -9,10 +9,8 @@ $request = "SELECT * FROM t_texte WHERE section_et_page = 'Stages - Internationa
 if ($objResult = $objConnMySQLi->query($request)) {
     while ($objLigne = $objResult->fetch_object()) {
         $arrStage[] = array(
-            'id'=>$objLigne->id_texte,
-            'title'=>$objLigne->titre_texte,
+            'titre_texte'=>$objLigne->titre_texte,
             'text'=>$objLigne->texte,
-            'section'=>$objLigne->section_et_page
         );
     }
 /*    $objResult->free_result();*/
@@ -24,5 +22,5 @@ echo $template->render(array(
     'niveau' => $strNiveau,
     'page' => "Stage International",
     'arrMenuLiensActifs' => $arrMenuActif,
-/*    'stage' => $arrStage*/
+    'stage' => $arrStage
 ));

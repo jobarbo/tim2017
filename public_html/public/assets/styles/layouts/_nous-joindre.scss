@@ -1,33 +1,40 @@
 html{
   font-size: 100%;
-}
 
-.contact, .maps{
-  padding: 2%;
-}
-
-.i-space{
-  margin-right: 10px;
-}
-
-hr{
-  display: none;
-}
-
-
-
-
-
-/* Section 1 */
-.contact{
-  background-color: #f7f7f7;
-
-  .form, .coordination{
-    display: inline-block;
+  .contact, .maps{
+    padding: 2%;
   }
 
-  .form{
-    padding-right: 2%;
+  .i-space{
+    margin-right: 10px;
+  }
+
+  hr{
+    display: none;
+    @include clearfix();
+
+    @media (max-width: 991px) {
+      display: block;
+      margin: 3rem 8%;
+      height: 0;
+      border: 1px solid $blue;
+    }
+  }
+
+
+
+
+
+  /* Section 1 */
+  .contact{
+    background-color: #f7f7f7;
+
+    .form, .coordination{
+      display: inline-block;
+    }
+
+    .form{
+      padding-right: 2%;
 
       h2{
         margin-top: 0;
@@ -36,7 +43,7 @@ hr{
       input, select, textarea{
         display: block;
         margin-bottom: 1rem;
-        width: 90%;
+        width: 100%;
       }
 
       select{
@@ -51,73 +58,61 @@ hr{
         border-radius: 5px;
         resize: none;
       }
-      .blue-btn{
-            box-shadow: 12px 3px 4px rgba(0, 172, 255, 0.31);
-            &:hover{
-              box-shadow: 11px 1px 3px rgba(0,172,255,.51);
-            }
-        }
-      button{
-        &:before{
-          border-bottom: 10px solid #f7f7f7;
-          border-right: 10px solid transparent;
-        }
-        .back_slant{
-            //left: -14px;
-            background-color: #f7f7f7;
-            box-shadow: 12px 3px 1px 12px #f7f7f7;
-
-            &:before{
-              left: -10px;
-              border-top: 10px solid #f7f7f7;
-              border-left: 10px solid transparent;
-            }
-          
-      }
     }
-  }
 
 
-  .coordination {
-    padding-left: 2%;
-    width: 50%;
+    .coordination {
+      padding-left: 2%;
+      width: 50%;
       img {
         display: block;
         margin: 0 auto 1rem auto;
         width: 20rem;
         height: auto;
       }
-      
-      a{
-        color: $blue;
-      }
-    
-      button{
-        display: block;
-        a{
-          color: #fff;
+    }
+
+
+    button{
+      .blue-btn{
+        box-shadow: 12px 3px 4px rgba(0, 172, 255, 0.31);
+
+        &:hover{
+          box-shadow: 11px 1px 3px rgba(0,172,255,.51);
         }
       }
+
+      &:before{
+        border-bottom: 10px solid #f7f7f7;
+        border-right: 10px solid transparent;
+      }
+      .back_slant{
+        //left: -14px;
+        background-color: #f7f7f7;
+        box-shadow: 12px 3px 1px 12px #f7f7f7;
+
+        &:before{
+          left: -10px;
+          border-top: 10px solid #f7f7f7;
+          border-left: 10px solid transparent;
+        }
+
+      }
+    }
   }
-}
 
 
 
 
 
-/* Section 2 */
-.maps{
-  iframe{
-    margin-right: 8%;
-  }
+  /* Section 2 */
+  .maps{
+    iframe{
+      margin-right: 8%;
+    }
 
-  ul{
-    padding: 0;
-  }
-
-  .infos{
-    a{
-      color: inherit;
+    ul{
+      padding: 0;
     }
   }
 }
@@ -138,19 +133,6 @@ hr{
       padding: 0;
       width: 100%;
     }
-
-    .form{
-      input, select, textarea{
-        width: 100%;
-      }
-    }
-  }
-
-  hr{
-    margin: 3rem 8%;
-    display: block;
-    height: 0;
-    border: 1px solid $blue;
   }
 
   .maps{

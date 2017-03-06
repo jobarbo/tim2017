@@ -16,7 +16,7 @@ require_once($strNiveau . 'inc/pieces/footer.php');
 
     if(isset($_GET['btnDeconnecter'])){
 
-        header('Location: administration.php');
+        header('Location: index.php');
         session_destroy();
 
     }

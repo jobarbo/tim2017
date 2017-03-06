@@ -6,8 +6,7 @@
 <div class="allovinny quiz-layout">
     <h1>As-tu le profil?</h1>
     <div class="contenuInteractif">
-        <p id='progression'></p>
-        <p id='retroaction'></p>
+        <p id='progression' class="progressionRouge"></p>
         <p id="erreurQuiz1">{{ erreur }}</p>
     </div>
     <div class="col-md-12">
@@ -32,6 +31,7 @@
                 </div>
             {% endfor %}
             <input id='validerQuiz' class="btnQuizRouge" name='validerQuiz' type="submit" value="Valider">
+            <p id='retroaction'></p>
             <br /><br />
         </form>
     </div>

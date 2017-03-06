@@ -1,0 +1,35 @@
+section#section_liste_evenements ul li{
+
+    min-height: 10em;
+    margin-bottom: 2em;
+    float: left;
+
+}
+
+a.lien_editer{
+
+    img{
+
+        width: 15px;
+        height: 15px;
+        margin-right: 1em;
+
+    }
+
+}
+
+button.lien_supprimer{
+
+    margin-left: 1em;
+    background: none;
+    border: none;
+
+    img{
+
+        width: 15px;
+        height: 15px;
+        margin-right: 1em;
+
+    }
+
+}
