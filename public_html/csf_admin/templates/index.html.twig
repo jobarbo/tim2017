@@ -1,9 +1,11 @@
-<a href="diplomes/index.php#contenu" class="visuallyhidden focusable">Allez au contenu</a>
-<main>
+{# Intégration du layout de base #}
+{% extends 'layout.html.twig' %}
+
+{% block content %}
     <section class="haut_page">
         <h1 id="contenu">{{ page }}</h1>
     </section>
-    <section>
+    <section class="col-sm-6">
         <h2>Événements</h2>
         {% if erreurEvenements == false %}
             <section id="section_liste_evenements">
@@ -12,14 +14,15 @@
                         <li>
                             <p>{{ arrEvenements.id_actualite }} <a href="#">{{ arrEvenements.titre_actualite }}</a> {{ arrEvenements.description_actualite }}</p>
                             <button>Supprimer l'événement</button>
+                            <a href="#">Éditer un événement</a>
                         </li>
                     {% endfor %}
                 </ul>
             </section>
         {% endif %}
-        <a href="#">Ajouter un événement</a> <a href="#">Éditer un événement</a>
+        <a href="#">Ajouter un événement</a>
     </section>
-    <section>
+    <section class="col-sm-6">
         <h2>Fiches des diplômés</h2>
     {% if erreurDiplomes == false %}
         <section id="liste_fiche_etudiant">
@@ -33,4 +36,4 @@
         </section>
     {% endif %}
     </section>
-</main>
+{% endblock %}

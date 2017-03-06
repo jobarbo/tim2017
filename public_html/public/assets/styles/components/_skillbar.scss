@@ -13,10 +13,10 @@ ul.liste_intrerets{
   margin-bottom:15px;
   width:100%;
   background:#eee;
-  height:30px;
-  border-radius:3px;
-  -moz-border-radius:3px;
-  -webkit-border-radius:3px;
+  height:15px;
+  border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
   -webkit-transition:0.4s linear;
   -moz-transition:0.4s linear;
   -ms-transition:0.4s linear;
@@ -30,12 +30,9 @@ ul.liste_intrerets{
 }
 
 .interet_titre {
-  position:absolute;
-  top:0;
-  left:0;
   font-weight:bold;
-  font-size:13px;
-  color:#ffffff;
+  font-size:18px;
+  color: #000;
   -webkit-border-top-left-radius:3px;
   -webkit-border-bottom-left-radius:4px;
   -moz-border-radius-topleft:3px;
@@ -44,35 +41,20 @@ ul.liste_intrerets{
   border-bottom-left-radius:3px;
 }
 
-.interet_titre .libelle {
-  display:block;
-  font-size: 18px;
-  background:rgba(18, 78, 140, 0.8) /*#124e8c*/;
-  padding:0 20px;
-  margin:0;
-  height:30px;
-  line-height:30px;
-  -webkit-border-top-left-radius:3px;
-  -webkit-border-bottom-left-radius:3px;
-  -moz-border-radius-topleft:3px;
-  -moz-border-radius-bottomleft:3px;
-  border-top-left-radius:3px;
-  border-bottom-left-radius:3px;
-}
 
 .barre_interet {
-  height:30px;
+  height:15px;
   width:0%;
-  background:#4288d0;
-  border-radius:3px;
-  -moz-border-radius:3px;
-  -webkit-border-radius:3px;
+  background: #0d97f5;
+  border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
 }
 
 .pourcentage {
   position: absolute;
   right:-20px;
-  top:0;
+  top: 0;
   font-size:14px;
   height:30px;
   line-height:30px;

@@ -6,7 +6,7 @@
     <div class="diplomes">
 
         <section id="hero-section">
-            <div class="container">
+            <div class="container_page">
                 <div class="hero-image col-sm-12">
                     <h1 class="hero_title">{{ page }}</h1>
                 </div>
@@ -15,7 +15,7 @@
         <div class="container-fluid borderBox">
             <div class="col-sm-12">
                 <section id="texte_intro">
-                    <div class="container">
+                    <div class="container_page">
                         {{ texteIntro | raw }}
                         {% if erreur != false %}
                             <p>{{ erreur | raw }}</p>
@@ -43,7 +43,7 @@
                 </section>
                 {% if erreur == false %}
                     <section id="diplomes_galerie">
-                        <div class="container">
+                        <div class="container_page">
                             <ul id="liste_diplomes">
                                 {% for arrDiplomes in diplomes %}
                                     <li class="col-xxs-12 col-xs-6 col-sm-6 col-md-4">
