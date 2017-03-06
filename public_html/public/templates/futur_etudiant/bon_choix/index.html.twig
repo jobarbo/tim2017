@@ -7,9 +7,7 @@
     <h1>Fais-tu le bon choix?</h1>
     <div class="col-md-12">
         <div class="contenuInteractif">
-            <p id='progression'></p>
-            <p id='retroaction'></p>
-            <p id='explication'></p>
+            <p id='progression' class="progressionBleu"></p>
             <p id="erreurQuiz2">{{ erreur }}</p>
         </div>
     </div>
@@ -36,6 +34,8 @@
                 </div>
             {% endfor %}
             <input id='validerQuiz' class="btnQuizBleu" name='validerQuiz' type="submit" value="Valider mes réponses">
+            <p id='retroaction'></p>
+            <p id='explication'></p>
         </form>
     </div>
 </div>

@@ -5,10 +5,9 @@ var app = $(function configurer(evenement) {
 
     $('#validerQuiz').hide();
     var questionActive = 0;
-    $("#progression").text("1/5");
+    $("#progression").html("<span class='total'>1</span>/5");
     for (var i = 1; i <= 5; i++) {
         $("#Q" + i).hide();
-        /*$("#qProfil" + i).hide();*/
     }
 
     /* Configuration: ajouts des écouteurs d'événements et état initial de l'app */
@@ -56,7 +55,7 @@ var app = $(function configurer(evenement) {
 
         console.log(no);
         if (no > 0) {
-            $("#progression").text((no + 1).toString() + "/5");
+            $("#progression").html("<span class='total'>" + (no + 1).toString() + "</span>/5");
         }
         $("#explication").text("");
         $("#explication").removeClass();
