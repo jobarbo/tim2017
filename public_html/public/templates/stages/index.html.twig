@@ -1,9 +1,8 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    {#{% for page in pages %}
-        {{ page.texte | raw}}
-    {% endfor %}#}
+
+    <h1>{{ stage[1]['titre_texte'] }}</h1>
 
     {# Champs 1 #}
     <section class="section1">
@@ -142,7 +141,7 @@
             <div class="sequence3-infos col-md-6 col-sm-6">
                 <h2>Pour nous joindre:</h2>
 
-                <h4>Responsable des stages</h4>
+                <h4>{{ stage[2]['titre_texte'] }}</h4>
 
                 <ul>
                     <li> AUDREY MORNEAU-GAGNON</li>
