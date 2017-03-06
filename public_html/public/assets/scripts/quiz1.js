@@ -4,11 +4,10 @@
 var app = $(function configurer(evenement){
     var questionActive = 0;
     var pointage = 0;
-    $("#progression").text("1/10");
+    $("#progression").html("<span class='total2'>1</span>/10");
     $('#validerQuiz').on("click", allerProchaineQuestion);
     for (var i = 1; i <= 9; i++) {
         $("#Q" + i).hide();
-        /*$("#qProfil" + i).hide();*/
     }
     /**
      * @param {int} no  -> le numéro de la question à afficher
@@ -41,7 +40,7 @@ var app = $(function configurer(evenement){
                     $("#retroaction").text("");
                     pointage = pointage + parseInt($("input[name=Q"+ questionActive + "]:checked").val());
                     questionActive++;
-                    $("#progression").text((1 + questionActive).toString() + "/10");
+                    $("#progression").html("<span class='total2'>" + (1 + questionActive).toString() + "</span>/10");
                     reInitQuestion(questionActive);
                 }
             }

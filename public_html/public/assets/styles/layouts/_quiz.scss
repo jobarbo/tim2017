@@ -231,3 +231,55 @@
 [type="radio"] {
   @include visuallyhidden();
 }
+
+.contenuInteractif {
+  text-align: left;
+  #progression {
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    margin: 0 auto;
+    width: 100%;
+    width: 70px;
+    height: 70px;
+    border-radius: 2px;
+    line-height: 70px;
+    @media screen and (max-width: $breakquiz) {
+      transform: translateY(-35px) translateX(-100%);
+      left: 100%;
+    }
+    .total {
+      font-size: 24px;
+      font-weight: bold;
+      color: $blue;
+    }
+    .total2 {
+      font-size: 24px;
+      font-weight: bold;
+      color: $biaRed;
+    }
+  }
+  .progressionBleu {
+    border: 2px solid $blue;
+  }
+  .progressionRouge {
+    border: 2px solid $biaRed;
+  }
+}
+#retroaction {
+  @media screen and (max-width: $breakquiz) {
+    text-align: center;
+  }
+  color: red;
+  text-align: right;
+  padding-top: 20px;
+}
+.bon {
+  color: darkgreen;
+}
+.mauvais {
+  color: red;
+}
