@@ -5,9 +5,30 @@ html{
     @include clearfix();
     padding: 3rem 0;
 
-    .blue-btn{
+    button{
+      .blue-btn{
+        box-shadow: 12px 3px 4px rgba(0, 172, 255, 0.31);
+
+        &:hover{
+          box-shadow: 11px 1px 3px rgba(0,172,255,.51);
+        }
+      }
+
+      &:before{
+        border-bottom: 10px solid #f7f7f7;
+        border-right: 10px solid transparent;
+      }
       .back_slant{
-        box-shadow: 13px 3px 1px 12px $grey;
+        //left: -14px;
+        background-color: #f7f7f7;
+        box-shadow: 12px 3px 1px 12px #f7f7f7;
+
+        &:before{
+          left: -10px;
+          border-top: 10px solid #f7f7f7;
+          border-left: 10px solid transparent;
+        }
+
       }
     }
   }
