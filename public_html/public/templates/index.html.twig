@@ -3,102 +3,103 @@
 
 
 {% block content %}
-<div class="accueil">
-<section id="hero-section">
-<div class="container">
-    <div class="hero-image col-sm-12">
-    
+    <div class="accueil">
+        <section id="hero-section">
+            <div class="container">
+                <div class="hero-image col-sm-12">
 
-        <h1 class="hero_title"> TECHNIQUES D'INTÉGRATION MULTIMÉDIA </h1>
-    
-    </div>
-</div>
-</section>
-<section id="news-section">
-    <div class="news_home container borderBox">
-        <div class="col-sm-12">
-        <h2>ACTUALITÉS</h2>
-            <hr class="title-underline">
-        </div>
-        <div class="actualite_text col-sm-6">
-            <p class="date">{{nouvelle.date_nouvelle}}</p>
-            <h3>{{nouvelle.titre_nouvelle}}</h3>
-            <p class="desc_nouvelle">{{nouvelle.description_nouvelle}}</p>
-            <a href="{{nouvelle.url_nouvelle}}" class="blue-btn">En savoir plus<span class="back_slant"></span></a>
-        </div>
-        <div class="col-sm-6">
-            <div class="actualite_img">
-            <i class="fa fa-newspaper-o" aria-hidden="true"></i>
-            </div> 
-    </div>
 
-</section>
-<section id="social-section">
-    <div class="social_home container borderBox">
-        <div class="col-sm-12">
-            <h2>MÉDIAS SOCIAUX</h2>
-            <hr class="title-underline">
-        </div>
-        <div class="fb_feed col-sm-6">
-            <p class="date">{{date_fb}}</p>
-            <h3><a target=_blank href='https://www.facebook.com/timcsf'><i class="fa fa-facebook i-space" aria-hidden="true"></i>/timcsf<i class="fa fa-external-link-square i-space share" aria-hidden="true"></i></a></h3>
-            <p class="desc_social">{{texte_fb}}</p>
-            <a class="blue-btn" target='_blank' href='{{lien_fb}}'>Consulter la nouvelle<span class="back_slant"></span></a>
-            
-        </div> 
-        <div class="twitter_feed col-sm-6">
-            <p class="date">{{date_tweet}}</p>
-            <h3><a  target=_blank href="https://twitter.com/timcsf"><i class="fa fa-twitter i-space" aria-hidden="true"></i>/timcsf<i class="fa fa-external-link-square i-space share" aria-hidden="true"></i></a></h3>
-            <p class="desc_social">{{texte_tweet|raw}}</p>
-            
-            <a class="blue-btn" target='_blank' href='{{lien_tweet}}'>Consulter la nouvelle <span class="back_slant"></span></a>
-        </div> 
-    
-    </div>
-</section>
-<section id="projet-section">
-    <div class="projet_home container borderBox">
-    <div class="col-sm-12">
-        <h2>RÉALISATIONS</h2>
-        <hr class="title-underline">
-    </div>
-        {{ texteErreurProjets | raw }}
+                    <h1 class="hero_title"> TECHNIQUES D'INTÉGRATION MULTIMÉDIA </h1>
+
+                </div>
+            </div>
+        </section>
+        <section id="news-section">
+            <div class="news_home container borderBox">
+                <div class="col-sm-12">
+                    <h2>ACTUALITÉS</h2>
+                    <hr class="title-underline">
+                </div>
+                <div class="actualite_text col-sm-6">
+                    <p class="date">{{ nouvelle.date_nouvelle }}</p>
+                    <h3>{{ nouvelle.titre_nouvelle }}</h3>
+                    <p class="desc_nouvelle">{{ nouvelle.description_nouvelle }}</p>
+                    <a href="{{ nouvelle.url_nouvelle }}" class="blue-btn">En savoir plus<span
+                                class="back_slant"></span></a>
+                </div>
+                <div class="col-sm-6">
+                    <div class="actualite_img">
+                        <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+        </section>
+        <section id="social-section">
+            <div class="social_home container borderBox">
+                <div class="col-sm-12">
+                    <h2>MÉDIAS SOCIAUX</h2>
+                    <hr class="title-underline">
+                </div>
+                <div class="fb_feed col-sm-6">
+                    <p class="date">{{ date_fb }}</p>
+                    <h3><a target=_blank href='https://www.facebook.com/timcsf'><i class="fa fa-facebook i-space"
+                                                                                   aria-hidden="true"></i>/timcsf<i
+                                    class="fa fa-external-link-square i-space share" aria-hidden="true"></i></a></h3>
+                    <p class="desc_social">{{ texte_fb }}</p>
+                    <a class="blue-btn" target='_blank' href='{{ lien_fb }}'>Consulter la nouvelle<span
+                                class="back_slant"></span></a>
+
+                </div>
+                <div class="twitter_feed col-sm-6">
+                    <p class="date">{{ date_tweet }}</p>
+                    <h3><a target=_blank href="https://twitter.com/timcsf"><i class="fa fa-twitter i-space"
+                                                                              aria-hidden="true"></i>/timcsf<i
+                                    class="fa fa-external-link-square i-space share" aria-hidden="true"></i></a></h3>
+                    <p class="desc_social">{{ texte_tweet|raw }}</p>
+
+                    <a class="blue-btn" target='_blank' href='{{ lien_tweet }}'>Consulter la nouvelle <span
+                                class="back_slant"></span></a>
+                </div>
+
+            </div>
+        </section>
+        <section id="projet-section">
+            <div class="projet_home container borderBox">
+                <div class="col-sm-12">
+                    <h2>RÉALISATIONS</h2>
+                    <hr class="title-underline">
+                </div>
+                {{ texteErreurProjets | raw }}
                 {% if texteErreurProjets == false %}
-                <div class="list-projets">
-                    <ul>
-                        {% for projet in arrProjets %}
-                        <div class="single-projet col-sm-6">
-                            <li>
-                            
-                                <a href="diplomes/fiche-projet/{{projet.slug}}&{{ projet.id_diplome }}">
-                                    <span class="img_projet" style="background-image: url('dist/images/projets/prj{{ projet.id }}_01.jpg')">
+                    <div class="list-projets">
+                        <ul>
+                            {% for projet in arrProjets %}
+                                <div class="single-projet col-sm-6">
+                                    <li>
+
+                                        <a href="diplomes/fiche-projet/{{ projet.slug }}&{{ projet.id_diplome }}">
+                                    <span class="img_projet"
+                                          style="background-image: url('dist/images/projets/prj{{ projet.id }}_01.jpg')">
                                     <span class="degrader_projet">
                                         <span class="content_projet">
                                             <h4 class="titre_projet">{{ projet.titre }}</h4>
                                             <hr class="title-underline">
-                                            <p>{{ projet.prenom}} {{ projet.nom}}</p>
+                                            <p>{{ projet.prenom }} {{ projet.nom }}</p>
                                             <span class="arrow"><i class="fa fa-angle-right i-space"></i></span>
                                         </span>
-                                    <span>
-                                       <!-- <picture>
-                                            <source media="" srcset="../images/projets/prj408_01-mobile.jpg 1x, ../images/projets/prj408_01-mobile@2x.jpg 2x">
-                                            <source media="(min-width: 800px)" srcset="../images/projets/prj408_01-table.jpg 1x, ../images/projets/prj408_01-table@2x.jpg 2x">
-                                            <img src="dist/images/projets/prj{{ projet.id }}_01.jpg" alt="{{ projet.titre }}">
-                                        </picture>-->
-                                    </span>
-                                    
-                                </a>
-                            
-                            </li>
-                            </div>
-                        {% endfor %}
-                    </ul>
-                </div>
+
+                                        </a>
+
+                                    </li>
+                                </div>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 {% else %}
                     {{ texteErreurProjet | raw }}
                 {% endif %}
-    </div>
+            </div>
 
-</section>
-</div>
-{% endblock%}
+        </section>
+    </div>
+{% endblock %}
