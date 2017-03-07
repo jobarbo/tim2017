@@ -66,7 +66,7 @@ if(isset($_GET['validerQuiz']))
         echo $template->render(array(
             'niveau' => $strNiveau,
             'arrMenuLiensActifs' => $arrMenuActif,
-            'page' => "Fais-tu le bon choix? | ",
+            'page' => "Fais-tu le bon choix?",
             'xml' => $arrQuestions,
             'tId' => $arrId,
             'erreur' => "Veuillez compléter toutes les questions.",
@@ -94,7 +94,7 @@ if(isset($_GET['validerQuiz']))
         echo $template->render(array(
             'niveau' => $strNiveau,
             'arrMenuLiensActifs' => $arrMenuActif,
-            'page' => "Fais-tu le bon choix? | ",
+            'page' => "Fais-tu le bon choix?",
             'xml' => $arrQuestions,
             'reponses' => $arrReponses,
             'tId' => $arrId
@@ -108,7 +108,7 @@ else
     echo $template->render(array(
         'niveau' => $strNiveau,
         'arrMenuLiensActifs' => $arrMenuActif,
-        'page' => "Fais-tu le bon choix? | ",
+        'page' => "Fais-tu le bon choix?",
         'xml' => $arrQuestions,
         'tId' => $arrId,
         'fichier_script' => 'quiz2.js'

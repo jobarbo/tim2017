@@ -66,7 +66,7 @@ if(isset($_GET['validerQuiz']))
         $template = $twig->loadTemplate('futur_etudiant/profil/index.html.twig');
         echo $template->render(array(
             'niveau' => $strNiveau,
-            'page' => "As-tu le profil? | ",
+            'page' => "As-tu le profil?",
             'xml' => $arrQuestions,
             'tId' => $arrId,
             'arrMenuLiensActifs' => $arrMenuActif,
@@ -116,7 +116,7 @@ if(isset($_GET['validerQuiz']))
     $template = $twig->loadTemplate('futur_etudiant/profil/resultat.html.twig');
     echo $template->render(array(
         'niveau' => $strNiveau,
-        'page' => "As-tu le profil? | ",
+        'page' => "As-tu le profil?",
         'arrMenuLiensActifs' => $arrMenuActif,
         'bonneReponse' => $bonneReponse,
     ));
@@ -152,7 +152,7 @@ else
     $template = $twig->loadTemplate('futur_etudiant/profil/index.html.twig');
     echo $template->render(array(
         'niveau' => $strNiveau,
-        'page' => "As-tu le profil? | ",
+        'page' => "As-tu le profil?",
         'xml' => $arrQuestions,
         'tId' => $arrId,
         'arrMenuLiensActifs' => $arrMenuActif,

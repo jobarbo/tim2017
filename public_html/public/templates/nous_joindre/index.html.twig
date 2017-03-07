@@ -3,108 +3,110 @@
 
 
 {% block content %}
-    <h1>Nous joindre</h1>
-    {{ showFlashes() }}
+    <div class="body-contact">
+        <h1>Nous joindre</h1>
+        {{ showFlashes() }}
 
-    <section class="contact center-page">
-        <div class="container">
-            <div class="form col-md-6 col-sm-12">
-                <h2>Contactez-nous</h2>
-                {# formulaire de contact #}
-                <form action="" method="post">
-                    {# nom complet #}
-                    <div class="field">
-                        <label for="name">Nom complet</label>
-                        <i class="fa fa-user-o icon" aria-hidden="true"></i>
-                        <input required type="text" id="name" name="name" title="Entrez votre nom" placeholder="Entrez votre nom complet">
+        <section class="contact center-page">
+            <div class="container">
+                <div class="form col-md-6 col-sm-12">
+                    <h2>Contactez-nous</h2>
+                    {# formulaire de contact #}
+                    <form action="" method="post">
+                        {# nom complet #}
+                        <div class="field">
+                            <label for="name">Nom complet</label>
+                            <i class="fa fa-user-o icon" aria-hidden="true"></i>
+                            <input required type="text" id="name" name="name" title="Entrez votre nom" placeholder="Entrez votre nom complet">
+                        </div>
+
+                        {# email #}
+                        <div class="field">
+                            <label for="email">Adresse courriel</label>
+                            <i class="fa fa-envelope-o icon" aria-hidden="true"></i>
+                            <input required type="email" id="email" name="email" title="Entrez votre adresse courriel" placeholder="adresse@domaine.com">
+                        </div>
+
+                        {# destinataire #}
+                        <label for="recipient">Destinataire</label>
+                        <select name="recipient" id="recipient" title="Sélectionnez un destinataire" aria-describedby="destinataire-tip">
+                            <option value="slamoureux@cegep-ste-foy.qc.ca">Sylvain Lamoureux (Coordonnateur départemental)</option>
+                            <option value="ggaulinlaquerre@cegep-ste-foy.qc.ca">Guillaume Gaulin-Laquerre (Webmestre)</option>
+                            <option value="stages-tim@cegep-ste-foy.qc.ca">Audrey Morneau-Gagnon (Responsable des stages)</option>
+                            <option value="bfrigon@cegep-ste-foy.qc.ca">Benoît Frigon (Responsable "Étudiant d'un jour")</option>
+                        </select>
+
+                        {# sujet #}
+                        <div class="field">
+                            <label for="subject">Sujet</label>
+                            <i class="fa fa-pencil-square-o icon" aria-hidden="true"></i>
+                            <input required type="text" id="subject" name="subject" title="Entrez le sujet de votre message" placeholder="Entrez le sujet de votre message">
+                        </div>
+
+                        {# Message #}
+                        <label for="message">Message</label>
+                        <textarea required name="message" id="message" title="Entrez votre message" aria-describedby="message-tip" placeholder="Entrez votre message"></textarea>
+
+                        {# Submit #}
+                        <button type="submit" class="blue-btn" id="submit" name="submit" value="submit">
+                            <i class="fa fa-paper-plane-o i-space" aria-hidden="true"></i>
+                            Envoyer
+                            <span class="back_slant"></span>
+                        </button>
+                    </form>
+                </div>
+
+                <hr>
+
+                <div class="coordination col-md-6 col-sm-12">
+                    <img src="dist/images/photo_enseignants/enseignant_12.png" alt="Photo de Sylvain Lamoureux">
+                    <div class="coordinateur">
+                        <h2>{{ contacts[0]['titre_texte'] }}</h2>
+                        {# Champ 1 #}
+                        <p>Pour obtenir plus amples renseignements, contactez la coordination:</p>
+                        <h4>Coordonateur</h4>
+                        <ul>
+                            <li> SYLVAIN LAMOUREUX</li>
+                            <li> tel: (418) 659-6600 </li>
+                            <li>poste 6662</li>
+                        </ul>
+                        <a href="#">
+                            <button class="blue-btn">
+                                <i class="fa fa-envelope-o i-space" aria-hidden="true"></i>
+                                Contacter
+                                <span class="back_slant"></span>
+                            </button>
+                        </a>
+
+
+                        {# !!! Champ 2 à supprimer !!! #}
                     </div>
-
-                    {# email #}
-                    <div class="field">
-                        <label for="email">Adresse courriel</label>
-                        <i class="fa fa-envelope-o icon" aria-hidden="true"></i>
-                        <input required type="email" id="email" name="email" title="Entrez votre adresse courriel" placeholder="adresse@domaine.com">
-                    </div>
-
-                    {# destinataire #}
-                    <label for="recipient">Destinataire</label>
-                    <select name="recipient" id="recipient" title="Sélectionnez un destinataire" aria-describedby="destinataire-tip">
-                        <option value="slamoureux@cegep-ste-foy.qc.ca">Sylvain Lamoureux (Coordonnateur départemental)</option>
-                        <option value="ggaulinlaquerre@cegep-ste-foy.qc.ca">Guillaume Gaulin-Laquerre (Webmestre)</option>
-                        <option value="stages-tim@cegep-ste-foy.qc.ca">Audrey Morneau-Gagnon (Responsable des stages)</option>
-                        <option value="bfrigon@cegep-ste-foy.qc.ca">Benoît Frigon (Responsable "Étudiant d'un jour")</option>
-                    </select>
-
-                    {# sujet #}
-                    <div class="field">
-                        <label for="subject">Sujet</label>
-                        <i class="fa fa-pencil-square-o icon" aria-hidden="true"></i>
-                        <input required type="text" id="subject" name="subject" title="Entrez le sujet de votre message" placeholder="Entrez le sujet de votre message">
-                    </div>
-
-                    {# Message #}
-                    <label for="message">Message</label>
-                    <textarea required name="message" id="message" title="Entrez votre message" aria-describedby="message-tip" placeholder="Entrez votre message"></textarea>
-
-                    {# Submit #}
-                    <button type="submit" class="blue-btn" id="submit" name="submit" value="submit">
-                        <i class="fa fa-paper-plane-o i-space" aria-hidden="true"></i>
-                        Envoyer
-                        <span class="back_slant"></span>
-                    </button>
-                </form>
+                </div>
             </div>
+        </section>
 
-            <hr>
 
-            <div class="coordination">
-                <img src="dist/images/photo_enseignants/enseignant_12.png" alt="Photo de Sylvain Lamoureux">
-                <div class="coordinateur">
-                    <h2>{{ contacts[0]['titre_texte'] }}</h2>
-                    {# Champ 1 #}
-                    <p>Pour obtenir plus amples renseignements, contactez la coordination:</p>
-                    <h4>Coordonateur</h4>
-                    <ul>
-                        <li> SYLVAIN LAMOUREUX</li>
-                        <li> tel: (418) 659-6600 </li>
-                        <li>poste 6662</li>
-                    </ul>
-                    <a href="#">
+
+        <section class="maps center-page">
+            <div class="container">
+                <div class="col-md-7 col-sm-12">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2731.910858724522!2d-71.28615244180301!3d46.78636084500936!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb896dea093d777%3A0xf81581457f682cd6!2sC%C3%A9gep+de+Sainte-Foy!5e0!3m2!1sen!2sca!4v1487101030511" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+
+
+                <div class="infos col-md-5 col-sm-12">
+                    <p>Cégep de Sainte-Foy</p>
+                    <p>2410 chemin Sainte-Foy, Québec G1V 1T3</p>
+
+                    <a href="https://goo.gl/maps/RfnK9Gnm2112">
                         <button class="blue-btn">
-                            <i class="fa fa-envelope-o i-space" aria-hidden="true"></i>
-                            Contacter
+                            <i class="fa fa-map-o i-space" aria-hidden="true"></i>
+                            Ouvrir dans google maps
                             <span class="back_slant"></span>
                         </button>
                     </a>
-
-
-                    {# !!! Champ 2 à supprimer !!! #}
                 </div>
             </div>
-        </div>
-    </section>
-
-
-
-    <section class="maps center-page">
-        <div class="container">
-            <div class="col-md-7 col-sm-12">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2731.910858724522!2d-71.28615244180301!3d46.78636084500936!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb896dea093d777%3A0xf81581457f682cd6!2sC%C3%A9gep+de+Sainte-Foy!5e0!3m2!1sen!2sca!4v1487101030511" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-            </div>
-
-
-            <div class="infos col-md-5 col-sm-12">
-                <p>Cégep de Sainte-Foy</p>
-                <p>2410 chemin Sainte-Foy, Québec G1V 1T3</p>
-
-                <a href="https://goo.gl/maps/RfnK9Gnm2112">
-                    <button class="blue-btn">
-                        <i class="fa fa-map-o i-space" aria-hidden="true"></i>
-                        Ouvrir dans google maps
-                        <span class="back_slant"></span>
-                    </button>
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
 {% endblock%}

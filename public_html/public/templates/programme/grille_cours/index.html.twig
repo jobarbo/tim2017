@@ -3,10 +3,17 @@
 
 
 {% block content %}
+    <div id="hero-section">
+        <div class="container">
+            <div class="hero-image col-sm-12">
+
+
+                <h1 id="h1-no-width">{{ page }}</h1>
+
+            </div>
+        </div>
+    </div>
     <div class="allovinny">
-        <section class="haut_page">
-            <h1>{{ page }}</h1>
-        </section>
         <section class="grille_cours">
             {% for i in 1..6 %}
                 {% if  (i  == 1) %}

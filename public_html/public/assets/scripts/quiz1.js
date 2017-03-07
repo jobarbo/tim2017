@@ -2,6 +2,7 @@
  * Created by vincentbeland on 17-02-14.
  */
 var app = $(function configurer(evenement){
+    $("#progression").removeClass("no-js");
     var questionActive = 0;
     var pointage = 0;
     $("#progression").html("<span class='total2'>1</span>/10");
