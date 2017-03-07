@@ -77,7 +77,8 @@ try {
                         'nom' => $objLigneProjetsEtudiant->nom_diplome,
                         'id' => $objLigneProjetsEtudiant->id_projet,
                         'titre' => $objLigneProjetsEtudiant->titre_projet,
-                        'slug' => $objLigneProjetsEtudiant->slug
+                        'slug' => $objLigneProjetsEtudiant->slug,
+                        'id_diplome' => $objLigneProjetsEtudiant->id_diplome
                     );
             }
        
