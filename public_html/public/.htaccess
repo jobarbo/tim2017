@@ -66,4 +66,3 @@ RewriteRule ^nous-joindre/(.*)&(.*)$ nous_joindre/index.php?type=$1&slug=$2 [L,Q
 # Page Erreur 404
 RewriteRule ^404/$ 404/index.php [L]
 # ...
-

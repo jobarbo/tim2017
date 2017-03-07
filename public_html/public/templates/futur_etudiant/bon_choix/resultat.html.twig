@@ -3,24 +3,26 @@
 
 
 {% block content %}
-    <div class="allovinny quiz-layout">
-        <h1>Fais-tu le bon choix?</h1>
-        <div class="contenuInteractif">
-            <p id='progression'></p>
-            <p id='retroaction'></p>
-            <p id='explication'></p>
-            <p id="erreurQuiz2">{{ erreur }}</p>
+    <div id="hero-section">
+        <div class="container">
+            <div class="hero-image col-sm-12">
+
+
+                <h1 id="h1-no-width">{{ page }}</h1>
+
+            </div>
         </div>
+    </div>
+    <div class="allovinny quiz-layout">
         <div class="col-md-12">
             <form name="quiz_bon_choix" action="futur_etudiant/bon_choix" method="GET">
                 {% for i in 0..4 %}
                     <div class="row">
                         <fieldset id="Q{{ i }}">
-                            <div class="col-md-6 back-bleu">
+                            <div class="col-sm-6 back-bleu">
                                 <h3 id="qProfil{{ i }}">{{ xml[i]['texteQuestion'] }}</h3>
-                                <p>{{ reponses[i]['texteReponse'] }}</p>
                             </div>
-                            <div class="col-md-6 back-blanc">
+                            <div class="col-sm-6 back-blanc">
                                 <ul class="choixReponses">
                                     {% for j in 0..1 %}
                                         <li>
@@ -31,6 +33,7 @@
                                 </ul>
                             </div>
                         </fieldset>
+                        <p style="max-width: 700px; float: right">{{ reponses[i]['texteReponse'] }}</p>
                     </div>
                     <br /><br />
                 {% endfor %}

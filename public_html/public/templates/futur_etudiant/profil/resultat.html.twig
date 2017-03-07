@@ -3,11 +3,21 @@
 
 
 {% block content %}
+    <div id="hero-section">
+        <div class="container">
+            <div class="hero-image col-sm-12">
+
+
+                <h1 id="h1-no-width">{{ page }}</h1>
+
+            </div>
+        </div>
+    </div>
 <div class="allovinny">
     <div class="col-md-6">
-        <h1>As-tu le profil?</h1>
         <h2>Résultat</h2>
-        <p>{{ bonneReponse }}</p>
+        <hr class="title-underline" style="margin-left: 20px;">
+        <p style="padding-left: 20px;">{{ bonneReponse }}</p>
     </div>
 </div>
 {% endblock%}

@@ -3,10 +3,19 @@
 
 
 {% block content %}
+    <div id="hero-section">
+        <div class="container">
+            <div class="hero-image col-sm-12">
+
+
+                <h1 id="h1-no-width">{{ page }}</h1>
+
+            </div>
+        </div>
+    </div>
 <div class="allovinny quiz-layout">
-    <h1>As-tu le profil?</h1>
     <div class="contenuInteractif">
-        <p id='progression' class="progressionRouge"></p>
+        <p id='progression' class="progressionRouge no-js"></p>
         <p id="erreurQuiz1">{{ erreur }}</p>
     </div>
     <div class="col-md-12">

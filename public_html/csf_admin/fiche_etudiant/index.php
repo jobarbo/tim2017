@@ -22,6 +22,7 @@
 /*************** 1. VARIABLES LOCALES ***********************/
 $strNiveau = "../";
 $strNiveauAdmin = "../../public/";
+$strNiveauCSS = "../public/";
 $strTriInterets = "";
 $intMatriculeEtudiant = null;
 $strSection = "Fiche étudiant";
@@ -178,6 +179,7 @@ echo $template->render(array(
     'page' => "Éditer la fiche de " . $arrInfosEtudiant['prenom'] . " " . $arrInfosEtudiant['nom'] . " | ",
     'niveau' => $strNiveau,
     'niveauAdmin' => $strNiveauAdmin,
+    'niveauCSS' => $strNiveauCSS,
     //PAGE
     'page' => "Éditer la fiche du diplomé " . $arrInfosEtudiant['prenom'] . " <span>" . $arrInfosEtudiant['nom'] . "</span>",
     'arrInfos' => $arrInfosEtudiant,
