@@ -30,6 +30,10 @@ require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
         }
     }
 
+    if (isset($_GET['modif_actu'])){
+        
+    }
+
 
 
 
