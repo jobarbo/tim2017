@@ -2,7 +2,7 @@
  * Created by vincentbeland on 17-02-21.
  */
 var app = $(function configurer(evenement) {
-
+    $("#progression").removeClass("no-js");
     $('#validerQuiz').hide();
     var questionActive = 0;
     $("#progression").html("<span class='total'>1</span>/5");

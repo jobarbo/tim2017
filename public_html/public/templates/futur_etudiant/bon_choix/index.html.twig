@@ -3,11 +3,20 @@
 
 
 {% block content %}
+    <div id="hero-section">
+        <div class="container">
+            <div class="hero-image col-sm-12">
+
+
+                <h1 id="h1-no-width">{{ page }}</h1>
+
+            </div>
+        </div>
+    </div>
 <div class="allovinny quiz-layout">
-    <h1>Fais-tu le bon choix?</h1>
     <div class="col-md-12">
         <div class="contenuInteractif">
-            <p id='progression' class="progressionBleu"></p>
+            <p id='progression' class="progressionBleu no-js"></p>
             <p id="erreurQuiz2">{{ erreur }}</p>
         </div>
     </div>
@@ -18,7 +27,6 @@
                     <fieldset id="Q{{ i }}">
                         <div class="col-sm-6 back-bleu">
                             <h3 id="qProfil{{ i }}">{{ xml[i]['texteQuestion'] }}</h3>
-                            <p>{{ reponses[i]['texteReponse'] }}</p>
                         </div>
                         <div class="col-sm-6 back-blanc">
                             <ul class="choixReponses">
