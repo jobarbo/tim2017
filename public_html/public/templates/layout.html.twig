@@ -14,6 +14,10 @@
 
     <title>{{ page }} | Techniques d'intégration multimédia | TIM</title>
     <link rel="stylesheet" href="dist/styles/main.css">
+    {% if section == 'Fiche projet' %}
+        <link rel="stylesheet" type="text/css" href="dist/slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="dist/slick/slick-theme.css"/>
+    {% endif %}
 </head>
 
 
@@ -22,14 +26,16 @@
 
 <script>
 
-(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.5";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.5";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 <header>
+
         <div class="meta_nav hide_nav">
             <ul>
                 <li><a href=" " class="{{ arrMenuLiensActifs.accueil }} ">Accueil</a></li>
@@ -42,58 +48,81 @@
             </ul>
         </div>
 
-        <nav id="nav_primary">
-            <span id="logoTIM"><a href=" "><img class ="big_svg" id="svg_logo" src="dist/images/tim-logo.svg" alt="Logo du programme en Techniques d'intégration multimédia."><p id="logo_text" class="big_text">Techniques d'intégration multimédia</p></a></span>
+    <div class="meta_nav hide_nav">
+        <ul>
+            <li><a href=" " class="{{ arrMenuLiensActifs.accueil }} ">Accueil</a></li>
+            <li><a href="nous-joindre/" class="{{ arrMenuLiensActifs.nousJoindre }} ">Nous joindre</a></li>
+            <li>
+                <a href="http://www.cegep-ste-foy.qc.ca" target="_blank">
+                    <img src="dist/images/cegep_logo.svg" alt="Logo du Cégep de Sainte-Foy.">
 
-            <ul>
 
-                <li class="top_niveau etudiant"><input type='checkbox' class="navbox" name='nav' id="etudiant"><label for='etudiant' class="menu_lien">Futur étudiant
-                    </label>
-                    <div class="sub_hide"></div>
-                    <ul class="second_nav sub_etudiant">
-                    
-                        <li><a href="futur-etudiant/" class="{{ arrMenuLiensActifs.futurEtudiant }}">Qu'est-ce qu'un
-                                intégrateur web?</a></li>
-                        <li><a href="futur-etudiant/bon-choix/" class="{{ arrMenuLiensActifs.bonChoix }} ">Fais-tu le
-                                bon choix?</a></li>
-                        <li><a href="futur-etudiant/profil/" class="{{ arrMenuLiensActifs.profil }} ">As-tu le
-                                profil?</a></li>
-                        <li><a href="futur-etudiant/perspectives/" class="{{ arrMenuLiensActifs.perspectives }} ">Perspectives</a>
-                        </li>
-                        <li><a href="futur-etudiant/temoignages/" class="{{ arrMenuLiensActifs.temoignages }} ">Témoignages</a>
-                        </li>
-                        
-                    </ul>
-                </li>
-                <li class="top_niveau programme"><input type='checkbox' class="navbox" name='nav' id="programme"><label for='programme' class="menu_lien">Programme</label>
-                    <div class="sub_hide"></div>
-                    <ul class="second_nav sub_programme">
-                     
-                        <li><a href="programme/" class="{{ arrMenuLiensActifs.programme }} ">Qu'est-ce qu'on
-                                apprend?</a></li>
-                        <li><a href="programme/equipe/" class="{{ arrMenuLiensActifs.equipe }} ">Équipe</a></li>
-                        <li><a href="programme/grille-cours/" class="{{ arrMenuLiensActifs.grilleCours }} ">Grilles
-                                de cours</a></li>
-                        
-                    </ul>
-                </li>
-                <li class="top_niveau stages"><input type='checkbox' class="navbox" name='nav' id="stages"><label for='stages' class="menu_lien">Stages</label>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <nav id="nav_primary">
+        <span id="logoTIM"><a href=" "><img class="big_svg" id="svg_logo" src="dist/images/tim-logo.svg"
+                                            alt="Logo du programme en Techniques d'intégration multimédia."><p
+                        id="logo_text" class="big_text">Techniques d'intégration multimédia</p></a></span>
+
+        <ul>
+
+            <li class="top_niveau etudiant"><input type='checkbox' class="navbox" name='nav' id="etudiant"><label
+                        for='etudiant' class="menu_lien">Futur étudiant
+                </label>
                 <div class="sub_hide"></div>
-                    <ul class="second_nav sub_stages">
-                     
-                        <li><a href="stages/" class="{{ arrMenuLiensActifs.stages }}">Séquence des stages</a></li>
-                        <li><a href="stages/ate/" class="{{ arrMenuLiensActifs.ate }} ">ATE</a></li>
-                        <li><a href="stages/international/" class="{{ arrMenuLiensActifs.international }} ">International</a>
-                        </li>
-                       
-                    </ul>
-                </li>
-                <li class="top_niveau diplomes"><input type='checkbox' class="navbox" id="diplomes"><label for='diplomes' class="menu_lien"><a href="diplomes" class="menu_lien {{ arrMenuLiensActifs.diplomes }}">Diplômés</a></label>
-                 
-                </li>
-            </ul>
-            <a href="futur-etudiant/" class="btn_rouge"><span class="slant"></span>Je m'inscris !</a>
-        </nav>
+                <ul class="second_nav sub_etudiant">
+
+                    <li><a href="futur-etudiant/" class="{{ arrMenuLiensActifs.futurEtudiant }}">Qu'est-ce qu'un
+                            intégrateur web?</a></li>
+                    <li><a href="futur-etudiant/bon-choix/" class="{{ arrMenuLiensActifs.bonChoix }} ">Fais-tu le
+                            bon choix?</a></li>
+                    <li><a href="futur-etudiant/profil/" class="{{ arrMenuLiensActifs.profil }} ">As-tu le
+                            profil?</a></li>
+                    <li><a href="futur-etudiant/perspectives/" class="{{ arrMenuLiensActifs.perspectives }} ">Perspectives</a>
+                    </li>
+                    <li><a href="futur-etudiant/temoignages/"
+                           class="{{ arrMenuLiensActifs.temoignages }} ">Témoignages</a>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="top_niveau programme"><input type='checkbox' class="navbox" name='nav' id="programme"><label
+                        for='programme' class="menu_lien">Programme</label>
+                <div class="sub_hide"></div>
+                <ul class="second_nav sub_programme">
+
+                    <li><a href="programme/" class="{{ arrMenuLiensActifs.programme }} ">Qu'est-ce qu'on
+                            apprend?</a></li>
+                    <li><a href="programme/equipe/" class="{{ arrMenuLiensActifs.equipe }} ">Équipe</a></li>
+                    <li><a href="programme/grille-cours/" class="{{ arrMenuLiensActifs.grilleCours }} ">Grilles
+                            de cours</a></li>
+
+                </ul>
+            </li>
+            <li class="top_niveau stages"><input type='checkbox' class="navbox" name='nav' id="stages"><label
+                        for='stages' class="menu_lien">Stages</label>
+                <div class="sub_hide"></div>
+                <ul class="second_nav sub_stages">
+
+                    <li><a href="stages/" class="{{ arrMenuLiensActifs.stages }}">Séquence des stages</a></li>
+                    <li><a href="stages/ate/" class="{{ arrMenuLiensActifs.ate }} ">ATE</a></li>
+                    <li><a href="stages/international/"
+                           class="{{ arrMenuLiensActifs.international }} ">International</a>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="top_niveau diplomes"><input type='checkbox' class="navbox" id="diplomes"><label for='diplomes'
+                                                                                                       class="menu_lien"><a
+                            href="diplomes" class="menu_lien {{ arrMenuLiensActifs.diplomes }}">Diplômés</a></label>
+
+            </li>
+        </ul>
+        <a href="futur-etudiant/" class="btn_rouge"><span class="slant"></span>Je m'inscris !</a>
+    </nav>
 </header>
 <a href="{{ arrMenuLiensActifs.PHP_SELF }}{% if arrMenuLiensActifs.QUERY_STRING != "" %}?{{ arrMenuLiensActifs.QUERY_STRING }}{% endif %}#contenu"
    class="visuallyhidden focusable" style="display:none;">Allez au contenu</a>
@@ -133,7 +162,8 @@
                         href="diplomes/fiche-etudiant/vincent-beland">Vincent Béland</a>, <a
                         href="diplomes/fiche-etudiant/william-charest-pepin">William Charest-Pépin</a>, <a
                         href="diplomes/fiche-etudiant/erwann-letue">Erwann Letué</a> et <a
-                        href="diplomes/fiche-etudiant/annabelle-violette">Annabelle Violette</a> ont remporté les honneurs
+                        href="diplomes/fiche-etudiant/annabelle-violette">Annabelle Violette</a> ont remporté les
+                honneurs
                 du Roger d'Or.</p>
 
             <ul style="display: none">
@@ -150,22 +180,22 @@
 
     </section>
     <section class="meta_nav">
-    <div class="container">
-        <div class="col-sm-12">
-        <p>© 2017, Techniques d'intégration multimédia, Cégep de Sainte-Foy.</p>
+        <div class="container">
+            <div class="col-sm-12">
+                <p>© 2017, Techniques d'intégration multimédia, Cégep de Sainte-Foy.</p>
 
 
-        <ul>
-            <li><a href=" " class="{{ arrMenuLiensActifs.accueil }} ">Accueil</a></li>
-            <li><a href="nous-joindre/" class="{{ arrMenuLiensActifs.nousJoindre }} ">Nous joindre</a></li>
-            <li>
-                <a href="http://www.cegep-ste-foy.qc.ca" target="_blank">
-                    <img src="dist/images/cegep_logo_white.svg" alt="Logo du Cégep de Sainte-Foy.">
-                </a>
-            </li>
-        </ul>
+                <ul>
+                    <li><a href=" " class="{{ arrMenuLiensActifs.accueil }} ">Accueil</a></li>
+                    <li><a href="nous-joindre/" class="{{ arrMenuLiensActifs.nousJoindre }} ">Nous joindre</a></li>
+                    <li>
+                        <a href="http://www.cegep-ste-foy.qc.ca" target="_blank">
+                            <img src="dist/images/cegep_logo_white.svg" alt="Logo du Cégep de Sainte-Foy.">
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
     </section>
 </footer>
 <script>
@@ -192,6 +222,11 @@
 {# SCRIPTS SELON PAGE #}
 {% if fichier_script is defined %}
     <script type="text/javascript" src="dist/scripts/{{ fichier_script }}"></script>
+{% endif %}
+
+{# LIBRAIRIES SELON PAGE #}
+{% if librairie is defined %}
+    {{ librairie | raw }}
 {% endif %}
 
 </body>
