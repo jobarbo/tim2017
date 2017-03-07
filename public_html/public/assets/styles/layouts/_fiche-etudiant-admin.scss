@@ -30,7 +30,7 @@
           margin-right: 3em;
         }
       }
-      div:last-child{
+      div:last-child {
         width: inherit;
 
         @media screen and (min-width: $tablettePortrait) {
@@ -79,34 +79,12 @@
         border: none;
       }
 
-      .fileUpload {
-        position: relative;
-        overflow: hidden;
-        margin: 10px;
-        box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);
-        height: 47px;
-        width: 150px;
-        border: none;
-        border-radius: 5px;
-        text-align: center;
-        background-color: rgb(248, 248, 248);
+      input[type=file] {
+        box-shadow: inherit;
+      }
 
-        span {
-          display: block;
-          margin: 1em auto;
-        }
-
-        #upload_img {
-          position: absolute;
-          top: 0;
-          right: 0;
-          margin: 0;
-          padding: 0;
-          font-size: 20px;
-          cursor: pointer;
-          opacity: 0;
-          filter: alpha(opacity=0);
-        }
+      .btn_reset{
+        margin-left: 0.5em;
       }
     }
 

@@ -39,38 +39,6 @@
             }
           }
 
-          .btn_reset{
-            background: inherit;
-            background-color: #F8F8FF;
-            color: #042438;
-            box-shadow: 11px 3px 5px rgba(1,1,1,0.15);
-            &:before {
-              content: inherit;
-              display: table;
-              position: absolute;
-              bottom: 0px;
-              left: 0px;
-              width: 0;
-              height: 0;
-              z-index: 9;
-              border-bottom: 10px solid #fff;
-              border-right: 10px solid transparent;
-            }
-            &:after {
-              bottom: inherit;
-              -webkit-transform: inherit;
-              transform: inherit;
-              background: inherit;
-              height: inherit;
-              width: inherit;
-              box-shadow: inherit;
-            }
-
-            .back_slant{
-              background-color: #f7f7f7;
-            }
-          }
-
         }
       }
     }

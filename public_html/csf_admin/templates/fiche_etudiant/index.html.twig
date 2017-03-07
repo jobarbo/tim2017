@@ -141,6 +141,12 @@
                         Modifier les informations
                         <span class="back_slant"></span>
                         </button>
+
+                        <a href="fiche_etudiant/index.php?id={{ arrInfos.nom_usager_admin }}" value="Rétablir" class="blue-btn btn_reset">
+                            <i class="fa fa-refresh i-space" aria-hidden="true"></i>
+                            Rétablir
+                            <span class="back_slant"></span>
+                        </a>
                     </div>
 
                 </form>
@@ -162,11 +168,7 @@
                         <fieldset>
                             <label for="photoEtudiant" class="visuallyhidden focusable">Fichier à téléverser</label>
 
-
-                            <div class="fileUpload">
-                                <span>Parcourir ...</span>
-                                <input type="file" name="photoEtudiant" id="upload_img"/>
-                            </div>
+                            <input type="file" name="photoEtudiant" id="upload_img"/>
 
                             <input type="hidden" name="matricule" value="{{ arrInfos.nom_usager_admin }}">
                             <button type="submit" name="submitPhotosEtudiant" value="Téléverser" class="blue-btn">
