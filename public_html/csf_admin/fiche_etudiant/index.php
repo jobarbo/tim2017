@@ -25,7 +25,7 @@ $strNiveauAdmin = "../../public/";
 $strNiveauCSS = "../public/";
 $strTriInterets = "";
 $intMatriculeEtudiant = null;
-$strSection = "Fiche étudiant";
+$strSection = "Éditer fiche étudiant";
 
 /*************** 2. INSTANCIATION CONFIG ET TWIG ***********************/
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
@@ -175,6 +175,7 @@ $objConnMySQLi->close();
 $template = $twig->loadTemplate('fiche_etudiant/index.html.twig');
 echo $template->render(array(
     //HEAD
+    'section' => $strSection,
     'title' => "Section administrative | TIM",
     'page' => "Éditer la fiche de " . $arrInfosEtudiant['prenom'] . " " . $arrInfosEtudiant['nom'] . " | ",
     'niveau' => $strNiveau,
@@ -185,6 +186,6 @@ echo $template->render(array(
     'arrInfos' => $arrInfosEtudiant,
     'arrProjets' => $arrProjetsEtudiant,
     'texteErreurFiche' => $texteErreurFiche,
-    'texteErreurProjets' => $texteErreurProjets,
+    'texteErreurProjets' => $texteErreurProjets
     //'texteErreurUpdate' =>  $texteErreurUpdate
 ));

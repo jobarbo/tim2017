@@ -3,170 +3,205 @@
 
 
 {% block content %}
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
-    <script src="http://malsup.github.com/jquery.form.js"></script>
+    <div class="editer_etudiant container_page">
+        {% if texteErreurFiche == false %}
 
-    <script>
-        $(document).ready(function() {
-
-            // http://malsup.com/jquery/form/#options-object
-            var options = {
-                target:     '#divToUpdate',
-                success:    function() {  },
-                error:      function() {  },
-            };
-
-            $('#uploadform').ajaxForm(options);
-        });
-    </script>
-    {% if texteErreurFiche == false %}
-        <section id="infos_etudiant">
-            <form enctype="multipart/form-data"
-                  method="get"
-                  action="fiche_etudiant/index.php"
-                  name="fInfosEtudiant">
-                <h2>Informations du diplômé</h2>
-                <div class="profil">
-                    <h3>Profil</h3>
-                    <textarea name="profil" cols="40">{{ arrInfos.profil | raw }}</textarea>
-                </div>
-                <div class="forces">
-                    <h3>Forces</h3>
-                    <textarea name="forces" cols="40">{{ arrInfos.forces | raw }}</textarea>
-                </div>
-                <div class="contact_etudiant">
-                    <h3>Coordonnées</h3>
-
-                    <h4>Courriel</h4>
-                    <input type="text" name="courriel" value="{{ arrInfos.courriel }}"/>
-
-                    <h4>Pseudo Twitter</h4>
-                    <input type="text" name="twitter" value="{{ arrInfos.twitter }}"/>
-
-                    <h4>LinkedIn</h4>
-                    <input type="text" name="linkedin" value="{{ arrInfos.linkedin }}"/>
-
-                    <h4>Site web</h4>
-                    <input type="text" name="siteweb" value="{{ arrInfos.site_web }}"/>
-
-                </div>
-                <div class="interets_etudiant">
-                    <h3>Intérêts</h3>
-                    <h4>Gestion</h4>
-                    <select name="interet_gestion" id="interet_gestion">
-                        {% for i in 0..10 %}
-
-                            <option value="{{ i }}"
-                                    {% if i == arrInfos.interet_gestion %}
-                                        selected="selected"
-                                    {% endif %}
-                            >{{ i }}</option>
-
-                        {% endfor %}
-                    </select>
-
-                    <h4>Design</h4>
-                    <select name="interet_design" id="interet_design">
-                        {% for i in 0..10 %}
-
-                            <option value="{{ i }}"
-                                    {% if i == arrInfos.interet_design %}
-                                        selected="selected"
-                                    {% endif %}
-                            >{{ i }}</option>
-
-                        {% endfor %}
-                    </select>
-
-                    <h4>Traitement des médias</h4>
-                    <select name="interet_traitement" id="interet_traitement">
-                        {% for i in 0..10 %}
-
-                            <option value="{{ i }}"
-                                    {% if i == arrInfos.interet_traitement %}
-                                        selected="selected"
-                                    {% endif %}
-                            >{{ i }}</option>
-
-                        {% endfor %}
-                    </select>
-
-                    <h4>Programmation</h4>
-                    <select name="interet_programmation" id="interet_programmation">
-                        {% for i in 0..10 %}
-
-                            <option value="{{ i }}"
-                                    {% if i == arrInfos.interet_programmation %}
-                                        selected="selected"
-                                    {% endif %}
-                            >{{ i }}</option>
-
-                        {% endfor %}
-                    </select>
-
-                    <h4>Intégration</h4>
-                    <select name="interet_integration" id="interet_integration">
-                        {% for i in 0..10 %}
-
-                            <option value="{{ i }}"
-                                    {% if i == arrInfos.interet_integration %}
-                                        selected="selected"
-                                    {% endif %}
-                            >{{ i }}</option>
-
-                        {% endfor %}
-                    </select>
-
-                </div>
-                <input type="hidden" name="id" value="{{ arrInfos.nom_usager_admin }}">
-                <input type="submit" name="submitInfosEtudiant" value="Modifier les informations"/>
-            </form>
-            <div id="photo_etudiant">
-                <h3>Photo du diplômé</h3>
-                <h4>Photo actuelle</h4>
-                <img src="../public/dist/images/diplomes/{{ arrInfos.id }}.png" alt="{{ arrInfos.prenom }} {{ arrInfos.nom }}">
-
-                <h4>Changer de photo</h4>
+            <section id="infos_etudiant" class="col-sm-12 col-md-8">
                 <form enctype="multipart/form-data"
-                      method="post"
-                      action="fiche_etudiant/upload.php"
-                      name="fTeleversement">
+                      method="get"
+                      action="fiche-etudiant/"
+                      name="fInfosEtudiant">
+                    <h2>Informations du diplômé</h2>
+                    <hr class="title-underline">
+                    <div class="profil">
+                        <label for="profil" class="h3">Profil</label>
+                        <textarea name="profil" cols="40"
+                                  class="col-sm-12 col-md-10">{{ arrInfos.profil | raw }}</textarea>
+                    </div>
+                    <div class="forces">
+                        <label for="forces" class="h3">Forces</label>
+                        <textarea name="forces" cols="40"
+                                  class="col-sm-12 col-md-10">{{ arrInfos.forces | raw }}</textarea>
+                    </div>
+                    <div class="interets_etudiant">
+                        <h3>Intérêts</h3>
+                        <div>
+                            <label for="interet_gestion">Gestion</label>
+                            <select name="interet_gestion" id="interet_gestion">
+                                {% for i in 0..10 %}
 
-                    <fieldset>
-                        <legend>Fichier à téléverser</legend>
-                        <input type="file" name="photoEtudiant" value="Parcourir"/>
-                        <input type="hidden" name="matricule" value="{{ arrInfos.nom_usager_admin }}">
-                        <input type="submit" name="submitPhotosEtudiant" value="Téléverser"/>
-                    </fieldset>
+                                    <option value="{{ i }}"
+                                            {% if i == arrInfos.interet_gestion %}
+                                                selected="selected"
+                                            {% endif %}
+                                    >{{ i }}</option>
+
+                                {% endfor %}
+                            </select>
+                        </div>
+
+
+                        <div>
+                            <label for="interet_design">Design</label>
+                            <select name="interet_design" id="interet_design">
+                                {% for i in 0..10 %}
+
+                                    <option value="{{ i }}"
+                                            {% if i == arrInfos.interet_design %}
+                                                selected="selected"
+                                            {% endif %}
+                                    >{{ i }}</option>
+
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="interet_programmation">Programmation</label>
+                            <select name="interet_programmation" id="interet_programmation">
+                                {% for i in 0..10 %}
+
+                                    <option value="{{ i }}"
+                                            {% if i == arrInfos.interet_programmation %}
+                                                selected="selected"
+                                            {% endif %}
+                                    >{{ i }}</option>
+
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="interet_integration">Intégration</label>
+                            <select name="interet_integration" id="interet_integration">
+                                {% for i in 0..10 %}
+
+                                    <option value="{{ i }}"
+                                            {% if i == arrInfos.interet_integration %}
+                                                selected="selected"
+                                            {% endif %}
+                                    >{{ i }}</option>
+
+                                {% endfor %}
+                            </select>
+                        </div>
+
+
+                        <div>
+                            <label for="interet_traitement">Traitement des médias</label>
+                            <select name="interet_traitement" id="interet_traitement">
+                                {% for i in 0..10 %}
+
+                                    <option value="{{ i }}"
+                                            {% if i == arrInfos.interet_traitement %}
+                                                selected="selected"
+                                            {% endif %}
+                                    >{{ i }}</option>
+
+                                {% endfor %}
+                            </select>
+                        </div>
+
+
+                    </div>
+                    <div class="contact_etudiant col-sm-12 col-md-5">
+                        <h3>Coordonnées</h3>
+                        <div>
+                            <label for="courriel">Courriel</label>
+                            <i class="fa fa-envelope icon" title="Courriel" aria-hidden="true"></i>
+                            <input type="text" name="courriel" value="{{ arrInfos.courriel }}"/>
+                        </div>
+
+                        <div>
+                            <label for="twitter">Pseudo Twitter</label>
+                            <i class="fa fa-twitter icon" title="Twitter" aria-hidden="true"></i>
+                            <input type="text" name="twitter" value="{{ arrInfos.twitter }}"/>
+                        </div>
+
+                        <div>
+                            <label for="linkedin">LinkedIn</label>
+                            <i class="fa fa-linkedin icon" title="LinkedIn" aria-hidden="true"></i>
+                            <input type="text" name="linkedin" value="{{ arrInfos.linkedin }}"/>
+                        </div>
+
+                        <div>
+                            <label for="siteweb">Site web</label>
+                            <i class="fa fa-globe icon" title="Site web" aria-hidden="true"></i>
+                            <input type="text" name="siteweb" value="{{ arrInfos.site_web }}"/>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-sm-12">
+                        <input type="hidden" name="id" value="{{ arrInfos.nom_usager_admin }}">
+                        <button type="submit" name="submitInfosEtudiant" value="Modifier les informations"
+                                class="blue-btn"/>
+                        <i class="fa fa-check-circle-o i-space" aria-hidden="true"></i>
+                        Modifier les informations
+                        <span class="back_slant"></span>
+                        </button>
+                    </div>
 
                 </form>
+            </section>
+            <section id="photo_etudiant" class="col-sm-12 col-md-4">
+                <div class="photo_actuelle">
+                    <h2>Photo actuelle</h2>
+                    <hr class="title-underline">
+                    <img src="../public/dist/images/diplomes/{{ arrInfos.id }}.png"
+                         alt="{{ arrInfos.prenom }} {{ arrInfos.nom }}">
+                </div>
+                <div class="televersement">
+                    <h3>Changer de photo</h3>
+                    <form enctype="multipart/form-data"
+                          method="post"
+                          action="fiche_etudiant/upload.php"
+                          name="fTeleversement">
 
-            </div>
-        </section>
-        <section>
-            <h2>Gestion des projets du diplômé</h2>
-            {{ texteErreurProjets | raw }}
-            {% if texteErreurProjets == false %}
-                <ul>
-                    {% for projet in arrProjets %}
-                        <li>
-                            {{ projet.titre }}
-                            <span>
-                                <a href="">Éditer</a>
-                            </span>
-                        </li>
-                    {% endfor %}
-                </ul>
-            {% else %}
-                {{ texteErreurProjet | raw }}
-            {% endif %}
-            <a href="">Ajouter un projet</a>
-        </section>
-    <div id="divToUpdate">
+                        <fieldset>
+                            <label for="photoEtudiant" class="visuallyhidden focusable">Fichier à téléverser</label>
 
-        </div>
-    {% else %}
-        {{ texteErreurFiche | raw }}
-    {% endif %}
 
-{% endblock%}
+                            <div class="fileUpload">
+                                <span>Parcourir ...</span>
+                                <input type="file" name="photoEtudiant" id="upload_img"/>
+                            </div>
+
+                            <input type="hidden" name="matricule" value="{{ arrInfos.nom_usager_admin }}">
+                            <button type="submit" name="submitPhotosEtudiant" value="Téléverser" class="blue-btn">
+                                <i class="fa fa-upload i-space" aria-hidden="true"></i>
+                                Téléverser la nouvelle photo
+                                <span class="back_slant"></span>
+                            </button>
+                        </fieldset>
+
+                    </form>
+                </div>
+
+
+                <div id="nouvelle_photo">
+
+                </div>
+            </section>
+            <section id="projets_diplome" class="col-sm-12 col-md-4">
+                <h2>Projets du diplômé</h2>
+                <hr class="title-underline">
+                {{ texteErreurProjets | raw }}
+                {% if texteErreurProjets == false %}
+                    <ul>
+                        {% for projet in arrProjets %}
+                            <li>
+                                {{ projet.titre }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    {{ texteErreurProjet | raw }}
+                {% endif %}
+            </section>
+        {% else %}
+            {{ texteErreurFiche | raw }}
+        {% endif %}
+    </div>
+{% endblock %}

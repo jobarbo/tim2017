@@ -1,4 +1,4 @@
-JS/* NicEdit - Micro Inline WYSIWYG
+/* NicEdit - Micro Inline WYSIWYG
  * Copyright 2007-2008 Brian Kirchoff
  *
  * NicEdit is distributed under the terms of the MIT license
@@ -28,7 +28,7 @@ var nicEditorConfig = bkClass.extend({
 		'outdent' : {name : __('Remove Indent'), command : 'outdent', noActive : true},
 		'hr' : {name : __('Horizontal Rule'), command : 'insertHorizontalRule', noActive : true}
 	},
-	iconsPath : '../js/nicEditorIcons.gif',
+	iconsPath : 'js/nicEditorIcons.gif',
 	buttonList : ['save','bold','italic','underline','left','center','right','justify','ol','ul','fontSize','fontFamily','fontFormat','indent','outdent','image','upload','link','unlink','forecolor','bgcolor'],
 	iconList : {"bold":1,"center":2,"hr":3,"indent":4,"italic":5,"justify":6,"left":7,"ol":8,"outdent":9,"removeformat":10,"right":11,"save":12,"strikethrough":13,"subscript":14,"superscript":15,"ul":16,"underline":17}
 	

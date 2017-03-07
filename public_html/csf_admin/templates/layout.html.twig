@@ -4,8 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Le programme de Techniques d’intégration multimédia est une formation vivante et actuelle! Vous aimez relever des défis et les nouvelles technologies? Ce programme est fait pour vous!">
-    <meta name="keywords" content="Techniques d’intégration multimédia, TIM, intégration multimédia, multimédia, Cégep Sainte-Foy, Cégep Ste-Foy, Web, CSS, HTML, Technologies, Design, Conception, Programmation, Intégration, Traitement des médias, médias">
+    <meta name="description"
+          content="Le programme de Techniques d’intégration multimédia est une formation vivante et actuelle! Vous aimez relever des défis et les nouvelles technologies? Ce programme est fait pour vous!">
+    <meta name="keywords"
+          content="Techniques d’intégration multimédia, TIM, intégration multimédia, multimédia, Cégep Sainte-Foy, Cégep Ste-Foy, Web, CSS, HTML, Technologies, Design, Conception, Programmation, Intégration, Traitement des médias, médias">
 
     <base href="{{ niveau }}"/>
 
@@ -17,11 +19,14 @@
 {# HEADER #}
 <body>
 <header class="header_admin">
-<span id="logoTIM"><a href="../../public_html/csf_admin/administration.php"><img class ="big_svg" id="svg_logo" src="../../public_html/public/dist/images/tim-logo.svg" alt="Logo du programme en Techniques d'intégration multimédia."><p id="logo_text" class="big_text">Techniques d'intégration multimédia</p></a></span>
+    <span id="logoTIM"><a href="../../public_html/csf_admin/administration.php"><img class="big_svg" id="svg_logo"
+                                                                                     src="../../public_html/public/dist/images/tim-logo.svg"
+                                                                                     alt="Logo du programme en Techniques d'intégration multimédia."><p
+                    id="logo_text" class="big_text">Techniques d'intégration multimédia</p></a></span>
     <nav>
         <a href="">Site public</a>
         <a href="http://www.cegep-ste-foy.qc.ca" target="_blank">Cégep Sainte-Foy</a>
-        <form action="index.php" method="post" novalidate role="form">
+        <form action="index.php" method="post" novalidate>
             <button id="btnDeconnecter" class="btnDeconnecter" name="btnDeconnecter" type="submit">Déconnexion</button>
         </form>
 
@@ -45,7 +50,36 @@
 </footer>
 
 {# SCRIPTS SELON PAGE #}
-{% block scripts %}{% endblock %}
+{% if section is defined %}
+
+    {% if section == 'Éditer fiche étudiant' %}
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+        <script src="http://malsup.github.com/jquery.form.js"></script>
+
+        <script>
+            $(document).ready(function () {
+
+                // http://malsup.com/jquery/form/#options-object
+                var options = {
+                    target: '#nouvelle_photo',
+                    success: function () {
+                    },
+                    error: function () {
+                    },
+                };
+
+                $('#uploadform').ajaxForm(options);
+            });
+        </script>
+        <script type="text/javascript" src="js/nicEdit.js"></script>
+        <script type="text/javascript">
+            bkLib.onDomLoaded(function () {
+                nicEditors.allTextAreas()
+            });
+        </script>
+    {% endif %}
+
+{% endif %}
 
 </body>
 </html>

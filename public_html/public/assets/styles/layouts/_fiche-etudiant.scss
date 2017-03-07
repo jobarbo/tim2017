@@ -47,12 +47,11 @@
       width: 70%;
 
       @media screen and (min-width: $tablettePortrait) {
-        width: 40%;
+        width: 45%;
       }
 
       @media screen and (min-width: $tablettePaysage) {
-        top: 0;
-        height: 100%;
+        height: 90%;
         width: 30%;
       }
     }
@@ -153,14 +152,6 @@
         transition: transform 0.35s;
         -webkit-transform: translate3d(0, 20px, 0);
         transform: translate3d(0, 20px, 0);
-      }
-    }
-
-    .single-projet{
-      //padding: 0;
-
-      @media screen and (min-width: $tablettePortrait) {
-
       }
     }
   }

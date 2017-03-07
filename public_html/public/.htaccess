@@ -29,7 +29,7 @@ RewriteEngine on
 #RewriteBase /public/
 
 # Page accueil
-RewriteRule ^/$ index.php [L]
+RewriteRule ^/$ public/index.php [L]
 
 # Section Futur Étudiant
 RewriteRule ^futur-etudiant/$ futur_etudiant/index.php [L]
@@ -40,29 +40,28 @@ RewriteRule ^futur-etudiant/temoignages/$ futur_etudiant/temoignages/index.php [
 
 
 # Section Programme
-RewriteRule ^programme/$ programme/index.php [L]
-RewriteRule ^programme/equipe/$ programme/equipe/index.php [L]
-RewriteRule ^programme/grille-cours/$ programme/grille_cours/index.php [L]
-RewriteRule ^programme/grille-cours/fiche-cours/(.*)$ programme/grille_cours/fiche_cours/index.php?slug=$1 [L,QSA]
+RewriteRule ^programme/$  programme/index.php [L]
+RewriteRule ^programme/equipe/$  programme/equipe/index.php [L]
+RewriteRule ^programme/grille-cours/$  programme/grille_cours/index.php [L]
+RewriteRule ^programme/grille-cours/fiche-cours/(.*)$  programme/grille_cours/fiche_cours/index.php?slug=$1 [L,QSA]
 # ...
 
 # Section Stages
-RewriteRule ^stages/$ stages/index.php [L]
-RewriteRule ^stages/ate/$ stages/ate/index.php [L]
-RewriteRule ^stages/international/$ stages/international/index.php [L]
+RewriteRule ^stages/$  stages/index.php [L]
+RewriteRule ^stages/ate/$  stages/ate/index.php [L]
+RewriteRule ^stages/international/$  stages/international/index.php [L]
 
 # Section Diplome
-RewriteRule ^diplomes$ diplomes/index.php [L]
-RewriteRule ^diplomes/interet_(.*)$ diplomes/index.php?tri_interets=$1 [L,QSA]
-RewriteRule ^diplomes/fiche-etudiant/(.*)$ diplomes/fiche_etudiant/index.php?slug=$1 [L,QSA]
-RewriteRule ^diplomes/fiche-projet/(.*)&(.*)$ diplomes/fiche_projet/index.php?slug=$1&idEtudiant=$2 [L,QSA]
+RewriteRule ^diplomes$  diplomes/index.php [L]
+RewriteRule ^diplomes/interet_(.*)$  diplomes/index.php?tri_interets=$1 [L,QSA]
+RewriteRule ^diplomes/fiche-etudiant/(.*)$  diplomes/fiche_etudiant/index.php?slug=$1 [L,QSA]
+RewriteRule ^diplomes/fiche-projet/(.*)&(.*)$  diplomes/fiche_projet/index.php?slug=$1&idEtudiant=$2 [L,QSA]
 
 
 # Page Nous Joindre
-RewriteRule ^nous-joindre/$ nous_joindre/index.php [L]
-RewriteRule ^nous-joindre/(.*)&(.*)$ nous_joindre/index.php?type=$1&slug=$2 [L,QSA]
+RewriteRule ^nous-joindre/$  nous_joindre/index.php [L]
+RewriteRule ^nous-joindre/(.*)&(.*)$  nous_joindre/index.php?type=$1&slug=$2 [L,QSA]
 # ...
 
 # Page Erreur 404
-RewriteRule ^404/$ 404/index.php [L]
-# ...
+RewriteRule ^404/$  404/index.php [L]

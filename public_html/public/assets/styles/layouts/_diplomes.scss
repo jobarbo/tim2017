@@ -45,7 +45,7 @@
             color: #042438;
             box-shadow: 11px 3px 5px rgba(1,1,1,0.15);
             &:before {
-              content: "";
+              content: inherit;
               display: table;
               position: absolute;
               bottom: 0px;
@@ -57,7 +57,17 @@
               border-right: 10px solid transparent;
             }
             &:after {
-              box-shadow: 1px 2px 8px rgba(1,1,1,0.15);
+              bottom: inherit;
+              -webkit-transform: inherit;
+              transform: inherit;
+              background: inherit;
+              height: inherit;
+              width: inherit;
+              box-shadow: inherit;
+            }
+
+            .back_slant{
+              background-color: #f7f7f7;
             }
           }
 
@@ -75,7 +85,7 @@
         text-align: center;
         margin: 1em 0;
 
-        @media screen and (max-width: $mobilePortrait2) {
+        @media screen and (max-width: $mobilePaysage) {
           width: 100%;
         }
 
