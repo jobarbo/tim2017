@@ -14,13 +14,13 @@
                         <li>
                             <p>{{ arrEvenements.id_actualite }} <a href="#">{{ arrEvenements.titre_actualite }}</a> {{ arrEvenements.description_actualite }}</p>
                             <button>Supprimer l'événement</button>
-                            <a href="#">Éditer un événement</a>
+                            <a href="evenement/index.php?edit">Éditer un événement</a>
                         </li>
                     {% endfor %}
                 </ul>
             </section>
         {% endif %}
-        <a href="evenement/index.php">Ajouter un événement</a>
+        <a href="evenement/index.php?ajout">Ajouter un événement</a>
     </section>
     <section class="col-sm-6">
         <h2>Fiches des diplômés</h2>
