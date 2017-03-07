@@ -15,6 +15,7 @@
 /*************** 1. VARIABLES LOCALES ***********************/
 $strNiveau = "";
 $strNiveauAdmin="../public/";
+$strNiveauCSS="../public/";
 $strSection = "Éditer fiche étudiant";
 
 /*************** 2. INSTANCIATION CONFIG ET TWIG ***********************/
@@ -100,6 +101,7 @@ echo $template->render(array(
     'page' => "Section administrative",
     'title' => "Admin | TIM",
     'niveau' => $strNiveau,
+    'niveauCSS' => $strNiveauCSS,
     'page' => "Administration",
     'diplomes' => $arrDiplomes,
     'evenements' => $arrEvenements,
