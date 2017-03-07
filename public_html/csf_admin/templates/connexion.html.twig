@@ -1,7 +1,18 @@
-{# Intégration du layout de base #}
-{% extends 'layout.html.twig' %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Le programme de Techniques d’intégration multimédia est une formation vivante et actuelle! Vous aimez relever des défis et les nouvelles technologies? Ce programme est fait pour vous!">
+    <meta name="keywords" content="Techniques d’intégration multimédia, TIM, intégration multimédia, multimédia, Cégep Sainte-Foy, Cégep Ste-Foy, Web, CSS, HTML, Technologies, Design, Conception, Programmation, Intégration, Traitement des médias, médias">
 
-{% block content %}
+    <base href="{{ niveau }}"/>
+
+
+    <title>{{ page }} | Section Administrative | TIM</title>
+    <link rel="stylesheet" href="{{ niveauCSS }}dist/styles/main.css">
+</head>
+<body>
 <div class="col-sm-4 formConnexion">
     <form action="index.php" method="post" novalidate role="form">
         <h1>Connexion</h1>
@@ -27,4 +38,10 @@
         </fieldset>
     </form>
 </div>
-{% endblock %}
+</body>
+{# FOOTER #}
+<footer class="">
+    <div class="meta_nav">
+        <p>© 2017, Techniques d'intégration multimédia, Cégep de Sainte-Foy.</p>
+    </div>
+</footer>

@@ -1,0 +1,50 @@
+header.header_admin{
+
+    span#logoTIM{
+
+        padding-top:  0.5em;
+        padding-left: 0.5em;
+
+    }
+
+    nav{
+
+        padding: 2em 2em 1em 0em;
+        float: right;
+
+        button{
+
+            background: none;
+            border: none;
+            transition: all .2s ease-in-out;
+
+            &:hover{
+
+                color: #0d97f5;
+
+            }
+
+        }
+    
+
+        form{
+
+            display: inline;
+
+        }
+        
+        a{
+
+            margin-right: 1em;
+
+        }
+
+    }
+
+}
+
+a.visuallyhidden.focusable{
+
+    display: none;
+
+}

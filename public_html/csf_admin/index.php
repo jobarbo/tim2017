@@ -7,6 +7,7 @@
 /*************** 1. VARIABLES LOCALES ***********************/
 $strNiveau = "";
 $strNiveauAdmin="../public/";
+$strNiveauCSS="../public/";
 $strSection = "Connexion";
 $erreurGlobale = "";
 
@@ -60,6 +61,7 @@ $template = $twig->loadTemplate('connexion.html.twig');
 echo $template->render(array(
     'title' => "Connexion | TIM",
     'niveauAdmin' => $strNiveauAdmin,
+    'niveauCSS' => $strNiveauCSS,
     'niveau' => $strNiveau,
     'page' => "Connexion",
     'erreurGlobale' => $erreurGlobale
