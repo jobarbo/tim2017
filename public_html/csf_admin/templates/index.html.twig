@@ -5,16 +5,16 @@
     <section class="haut_page">
         <h1 id="contenu">{{ page }}</h1>
     </section>
-    <section class="col-sm-6">
+    <section class="col-sm-12">
         <h2>Événements</h2>
         {% if erreurEvenements == false %}
             <section id="section_liste_evenements">
                 <ul id="liste_evenements">
                     {% for arrEvenements in evenements %}
-                        <li>
+                        <li class="col-sm-4">
                             <p>{{ arrEvenements.id_actualite }} <a href="#">{{ arrEvenements.titre_actualite }}</a> {{ arrEvenements.description_actualite }}</p>
-                            <button>Supprimer l'événement</button>
-                            <a href="#">Éditer un événement</a>
+                            <a class="lien_editer" href="#"><img src="../../public_html/public/dist/images/editer.png" alt="Éditer un événement" />Éditer un événement</a>
+                            <button class="lien_supprimer"><img src="../../public_html/public/dist/images/supprimer.png" alt="Éditer un événement" />Supprimer l'événement</button>
                         </li>
                     {% endfor %}
                 </ul>
@@ -22,7 +22,7 @@
         {% endif %}
         <a href="evenement/index.php">Ajouter un événement</a>
     </section>
-    <section class="col-sm-6">
+    <section class="col-sm-12">
         <h2>Fiches des diplômés</h2>
     {% if erreurDiplomes == false %}
         <section id="liste_fiche_etudiant">
