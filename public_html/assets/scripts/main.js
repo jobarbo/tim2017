@@ -33,8 +33,9 @@
 
     //$('header').height($('.meta_nav').height());
 $(window).scroll(function () {
-      console.log("checkSize");
-      if ($(".meta_nav").css("height") != "29px") {
+      console.log($(".meta_nav").css("height"));
+      if ($(".meta_nav").css("height") > "26px") {
+        
         
           var currentScroll = $(this).scrollTop();
           if (currentScroll > headerOrgOffset) {
