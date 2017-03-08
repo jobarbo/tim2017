@@ -15,14 +15,14 @@
                     {% for arrEvenements in evenements %}
                         <li class="col-sm-6">
                             <p><a href="#">{{ arrEvenements.titre_actualite }}</a> {{ arrEvenements.description_actualite }}</p>
-                            <a class="lien_editer" href="evenement/index.php?edit"><img src="../../public_html/public/dist/images/editer.png" alt="Éditer un événement" />Éditer un événement</a>
+                            <a class="lien_editer" href="#"><img src="../../public_html/public/dist/images/editer.png" alt="Éditer un événement" />Éditer un événement</a>
                             <button class="lien_supprimer"><img src="../../public_html/public/dist/images/supprimer.png" alt="Supprimer un événement" />Supprimer l'événement</button>
                         </li>
                     {% endfor %}
                 </ul>
             </section>
         {% endif %}
-        <a href="evenement/index.php?ajout">Ajouter un événement</a>
+        <a href="evenement/index.php">Ajouter un événement</a>
     </section>
     <section class="col-sm-12 liste_diplomes">
         <h2>Fiches des diplômés</h2>
