@@ -3,9 +3,17 @@
 
 
 {% block content %}
+    <div id="hero-section">
+        <div class="container">
+            <div class="hero-image col-sm-12">
+            
+                <h1 id="h1-no-width">{{ page }}</h1>
+
+            </div>
+        </div>
+    </div>
     <div class="container futur_etudiant">
     <div class="col-sm-12">
-        <h1>FUTUR ÉTUDIANT</h1>
         <div class="formationVivante">
             {% for valeur in arrTexteFormationVivante %}
                 <h2>{{ valeur['titre'] }}</h2>

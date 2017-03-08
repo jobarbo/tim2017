@@ -85,6 +85,8 @@ try {
     $strMsgErrDiplomes = $e->getMessage();
 }
 
+/* SUPPRESION DES ACTUALITES */
+
 if(isset($_POST['btnSupprimer']) && count($arrEvenements) > 1){
 
         try{
