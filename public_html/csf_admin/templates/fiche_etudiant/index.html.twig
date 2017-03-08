@@ -5,7 +5,7 @@
 {% block content %}
     <div class="editer_etudiant container_page">
         {% if texteErreurFiche == false %}
-
+            <h1>{{ pageh1 | raw }}</h1>
             <section id="infos_etudiant" class="col-sm-12 col-md-8">
                 <form enctype="multipart/form-data"
                       method="get"
@@ -135,14 +135,15 @@
 
                     <div class="col-sm-12">
                         <input type="hidden" name="id" value="{{ arrInfos.nom_usager_admin }}">
-                        <button type="submit" name="submitInfosEtudiant" value="Modifier les informations"
+                        <button type="submit" name="submitInfosEtudiant" value="Sauvegarder"
                                 class="blue-btn"/>
                         <i class="fa fa-check-circle-o i-space" aria-hidden="true"></i>
-                        Modifier les informations
+                        Sauvegarder
                         <span class="back_slant"></span>
                         </button>
 
-                        <a href="fiche_etudiant/index.php?id={{ arrInfos.nom_usager_admin }}" value="Rétablir" class="blue-btn btn_reset">
+                        <a href="fiche_etudiant/index.php?id={{ arrInfos.nom_usager_admin }}" value="Rétablir"
+                           class="blue-btn btn_reset">
                             <i class="fa fa-refresh i-space" aria-hidden="true"></i>
                             Rétablir
                             <span class="back_slant"></span>
@@ -160,6 +161,7 @@
                 </div>
                 <div class="televersement">
                     <h3>Changer de photo</h3>
+                    <p>Le fichier à télécharger doit être au format PNG. Pour de meilleurs résultats d'affichage dans le site web, la photo doit avoir un fond transparent et une hauteur de 360px.</p>
                     <form enctype="multipart/form-data"
                           method="post"
                           action="fiche_etudiant/upload.php"
@@ -171,9 +173,9 @@
                             <input type="file" name="photoEtudiant" id="upload_img"/>
 
                             <input type="hidden" name="matricule" value="{{ arrInfos.nom_usager_admin }}">
-                            <button type="submit" name="submitPhotosEtudiant" value="Téléverser" class="blue-btn">
+                            <button type="submit" name="submitPhotosEtudiant" value="Sauvegarder" class="blue-btn">
                                 <i class="fa fa-upload i-space" aria-hidden="true"></i>
-                                Téléverser la nouvelle photo
+                                Sauvegarder la nouvelle photo
                                 <span class="back_slant"></span>
                             </button>
                         </fieldset>
@@ -185,6 +187,7 @@
                 <div id="nouvelle_photo">
 
                 </div>
+
             </section>
             <section id="projets_diplome" class="col-sm-12 col-md-4">
                 <h2>Projets du diplômé</h2>
