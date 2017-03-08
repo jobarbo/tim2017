@@ -4,7 +4,13 @@
 
 {% block content %}
     <div class="body-international">
-        <h1>{{ stage[0]['titre_texte'] }}</h1>
+        <section id="hero-section">
+            <div class="container">
+                <div class="hero-image col-sm-12">
+                    <h1 class="hero_title">{{ stage[0]['titre_texte'] }}</h1>
+                </div>
+            </div>
+        </section>
 
         {# Champs1 #}
         <section class="main">
