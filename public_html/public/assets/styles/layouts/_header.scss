@@ -9,6 +9,10 @@ header{
   .meta_nav{
     height:30px;
     padding: 5px 2%;
+    @media (max-width: 769px) {
+    display: none;
+    height:29px;
+}
 
   }
   .sub_hide{
@@ -39,6 +43,13 @@ header{
       width: 140px;
       top: 0px;
       transition: all 0.2s ease-in-out;
+      @media (max-width: 769px){
+        width: 110px;
+        top: 16px;
+        position: absolute;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
     }
   }
   a{ 
@@ -63,6 +74,12 @@ header{
     font-family: raleway_semi_bold;
     font-size: 14px;
     transition: all 0.2s ease-in-out;
+      @media (max-width: 769px){
+        left: 120px;
+        top: 20px;
+        line-height: 14px;
+        font-size: 12px;
+      }
     }
     &:hover{
       text-decoration: none;

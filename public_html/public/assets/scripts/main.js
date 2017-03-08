@@ -20,8 +20,8 @@
 
   function configurer() {
 
-$('#svg_logo').addClass("big_svg");
-$('#logo_text').addClass("big_text");
+    $('#svg_logo').addClass("big_svg");
+    $('#logo_text').addClass("big_text");
     $('input.navbox').on('change', function () {
       $('input.navbox').not(this).prop('checked', false);
     });
@@ -29,32 +29,39 @@ $('#logo_text').addClass("big_text");
 
     var previousScroll = 0,
       headerOrgOffset = $('.meta_nav').height();
-      console.log(headerOrgOffset);
+    
 
     //$('header').height($('.meta_nav').height());
+$(window).scroll(function () {
+      console.log("checkSize");
+      if ($(".meta_nav").css("height") != "29px") {
+        
+          var currentScroll = $(this).scrollTop();
+          if (currentScroll > headerOrgOffset) {
+            if (currentScroll > previousScroll) {
+              
+              $('.hide_nav').slideUp();
+              $('#svg_logo').removeClass("big_svg");
+              $('#logo_text').removeClass("big_text");
 
-    $(window).scroll(function () {
-      var currentScroll = $(this).scrollTop();
-      if (currentScroll > headerOrgOffset) {
-        if (currentScroll > previousScroll) {
-          console.log(currentScroll);
-          $('.hide_nav').slideUp();
-          $('#svg_logo').removeClass("big_svg");
-          $('#logo_text').removeClass("big_text");
+            } else {
 
-        } else {
-          
-          $('.hide_nav').slideDown();
-          $('#svg_logo').addClass("big_svg");
-          $('#logo_text').addClass("big_text");
-        }
-      } else {
-        $('.hide_nav').slideDown();
-        $('#svg_logo').addClass("big_svg");
-        $('#logo_text').addClass("big_text");
+              $('.hide_nav').slideDown();
+              $('#svg_logo').addClass("big_svg");
+              $('#logo_text').addClass("big_text");
+            }
+          } else {
+            $('.hide_nav').slideDown();
+            $('#svg_logo').addClass("big_svg");
+            $('#logo_text').addClass("big_text");
+          }
+          previousScroll = currentScroll;
+       
       }
-      previousScroll = currentScroll;
-    });
+
+    
+ });
+
   }
   window.onload = configurer;
 
