@@ -146,6 +146,11 @@ ul {
     }
   }
 }
+
+
+
+
+
 /* SOULIGNEMENT DES TITRES*/
 hr.title-underline{
   display: block;
@@ -154,6 +159,10 @@ hr.title-underline{
   width: 210px;
   margin: 0 0 35px 0;
 }
+
+
+
+
 
 /* BANNIÈRE BLEUE*/
 #hero-section {
@@ -172,6 +181,10 @@ hr.title-underline{
 
   }
 }
+
+
+
+
 
 /* Buttons */
 .partie_tim{
@@ -272,6 +285,9 @@ hr.title-underline{
 }
 
 
+
+
+
 /* Inputs */
 /*
 Structure :
@@ -327,5 +343,41 @@ input, textarea, select {
     overflow: visible;
     position: static;
     width: auto;
+  }
+}
+
+
+
+
+
+/* Témoignages */
+.testimonials{
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  .testimonial{
+    margin-bottom: 2.2rem;
+    padding: 1rem;
+    background-color: #fff;
+
+    -webkit-box-shadow: 0px 0px 6px 0px rgba(196,196,196,1);
+    -moz-box-shadow: 0px 0px 6px 0px rgba(196,196,196,1);
+    box-shadow: 0px 0px 6px 0px rgba(196,196,196,1);
+
+    img{
+      display: block;
+      margin: 0 auto;
+
+      -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.37);
+      -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.37);
+      box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.37);
+    }
+
+    p{
+      margin-top: 1rem;
+      text-align: left;
+    }
   }
 }

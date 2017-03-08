@@ -12,6 +12,9 @@
             </div>
         </div>
     </section>
+
+
+
     <section id="info-temoignages">
         <div class="container">
             <div class="col-sm-12">
@@ -21,22 +24,26 @@
             </div>
         </div>
     </section>
+
+
+
     <section id="liste-temoignages">
-    <div class="container">
+    <div class="container testimonials">
         {% for temoignages in arrTemoignages %}
-            <div class="col-sm-4">
+            <div class="testimonial col-md-5 col-sm-12">
                 <div class="info_temoin">
-                <img class="photo_temoin"
-                             src="dist/images/temoin/{{ temoignages['id_temoignage'] }}.jpg"
-                             alt="photo de {{ temoignages['temoin'] }}"/>
+                    <img class="photo_temoin" src="dist/images/temoin/{{ temoignages['id_temoignage'] }}.jpg" alt="photo de {{ temoignages['temoin'] }}"/>
                         <hr class="trait_decoratif">
                         <p>{{ temoignages['temoin'] }}</p>
                         <p>Graduation : {{ temoignages['annee_diplomation'] }}</p>
-                        <a href="{{ temoignages['url_entreprise'] }}" >{{ temoignages['entreprise'] }}</a>
+                        <a href="{{ temoignages['url_entreprise'] }}" >
+                            {{ temoignages['entreprise'] }}
+                        </a>
                         <p>{{ temoignages['titre_poste'] }}</p>
                 </div>
+
                 <div class="contenu_temoignage">
-                <p>{{ temoignages['temoignage'] }}</p>
+                    <p>{{ temoignages['temoignage'] }}</p>
                 </div>
             </div>
         {% endfor %}
