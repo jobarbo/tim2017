@@ -87,14 +87,6 @@ try {
 // fermer la connexion
 $objConnMySQLi->close();
 
-/*************** 4 TWIG ***********************/
-$template = $twig->loadTemplate('pieces/head.html.twig');
-echo $template->render(array(
-    'title' => "Section administrative | TIM",
-    'page' => "",
-    'niveau' => $strNiveau
-));
-
 $template = $twig->loadTemplate('index.html.twig');
 echo $template->render(array(
     'niveau' => $strNiveau,
