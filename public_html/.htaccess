@@ -29,7 +29,7 @@ RewriteEngine on
 #RewriteBase /public/
 
 # Page accueil
-RewriteRule ^/$ public/index.php [L]
+RewriteRule ^/$ index.php [L]
 
 # Section Futur Étudiant
 RewriteRule ^futur-etudiant/$ futur_etudiant/index.php [L]
