@@ -354,12 +354,17 @@ input, textarea, select {
 .testimonials{
   margin: 1.5rem 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
 
   .testimonial{
     margin-bottom: 2.2rem;
     padding: 1rem;
+    background-color: #fff;
+
+    -webkit-box-shadow: 0px 0px 6px 0px rgba(196,196,196,1);
+    -moz-box-shadow: 0px 0px 6px 0px rgba(196,196,196,1);
+    box-shadow: 0px 0px 6px 0px rgba(196,196,196,1);
 
     img{
       display: block;
@@ -374,9 +379,5 @@ input, textarea, select {
       margin-top: 1rem;
       text-align: left;
     }
-  }
-
-  .testimonial:last-of-type{
-    margin-right: auto;
   }
 }
