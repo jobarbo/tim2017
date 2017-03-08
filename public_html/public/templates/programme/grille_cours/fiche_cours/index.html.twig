@@ -22,7 +22,6 @@
                         <h2 class="in-div">Description</h2>
                         <hr class="title-underline">
                         {{ cours.dscr | raw }}
-
                     </div>
                 </div>
             {% endif %}
@@ -40,6 +39,9 @@
                             <li>Ce cours fait partie de la formation générale.</li>
                         {% endif %}
                         <li>Session: {{ cours.session }}</li>
+                        {% if cours.url %}
+                        <li>Lien: <a href="{{ cours.url }}">{{ page }}</a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
