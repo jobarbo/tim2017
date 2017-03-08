@@ -14,8 +14,8 @@
  */
 /*************** 1. VARIABLES LOCALES ***********************/
 $strNiveau = "";
-$strNiveauAdmin="../public/";
-$strNiveauCSS="../public/";
+$strNiveauAdmin="../";
+$strNiveauCSS="../";
 $strSection = "Éditer fiche étudiant";
 
 /*************** 2. INSTANCIATION CONFIG ET TWIG ***********************/

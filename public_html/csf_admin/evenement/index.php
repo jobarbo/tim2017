@@ -1,7 +1,7 @@
 <?php
 /*************** 1. VARIABLES LOCALES ***********************/
 $strNiveau = "../";
-$strNiveauAdmin = "../../public/";
+$strNiveauAdmin = "../../";
 $strSection = "Ajout d'évenement";
 
 /*************** 2. INSTANCIATION CONFIG ET TWIG ***********************/
