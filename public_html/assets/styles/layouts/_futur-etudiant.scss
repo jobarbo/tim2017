@@ -82,6 +82,28 @@ div.etudiantUnJour{
 
 }
 
+div.sectionQuiz{
+
+  display: inline-block;
+  background-color: $grey;
+  padding-top: 2em;
+  padding-bottom: 4em;
+
+  span.back_slant{
+
+    &:before{
+      left: -10px;
+      border-top: 10px solid #f7f7f7;
+      border-left: 10px solid transparent;
+    }
+    
+    background-color: #f7f7f7;
+    box-shadow: 12px 3px 1px 12px #f7f7f7;
+
+  }
+
+}
+
 div.profil_quiz{
 
   p{
