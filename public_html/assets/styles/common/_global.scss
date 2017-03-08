@@ -8,7 +8,6 @@
   src: url("../fonts/OpenSans-Regular.ttf");
 
 }
-
 @font-face {
   font-family: open_sans_bold;
   src: url("../fonts/OpenSans-bold.ttf");
@@ -35,7 +34,8 @@
   src: url("../fonts/WorkSans-ExtraBold.ttf");
 }
 
-div.container_page {
+
+div.container_page{
 
   max-width: 1440px;
   margin: 0 auto;
@@ -148,32 +148,31 @@ ul {
   }
 }
 
+
+
+
+
 /* SOULIGNEMENT DES TITRES*/
-hr.title-underline {
+hr.title-underline{
   display: block;
-  background: linear-gradient(270deg, #0098ff, #00acff);
+  background: linear-gradient(270deg,#0098ff,#00acff);
   height: 1px;
   width: 210px;
   margin: 0 0 35px 0;
 }
+
+
+
+
 
 /* BANNIÈRE BLEUE*/
 #hero-section {
   clear: both;
   height: 360px;
   margin-bottom: 2em;
-
-  background-image: url("../../dist/images/hero_bkg_pattern@1x.png");
-
-  @media only screen and (-o-min-device-pixel-ratio: 5/4),
-  only screen and (-webkit-min-device-pixel-ratio: 1.25),
-  only screen and (min--moz-device-pixel-ratio: 1.25),
-  only screen and (min-device-pixel-ratio: 1.25),
-  only screen and (min-resolution: 1.25dppx) {
-    background-image: url("../../dist/images/hero_bkg_pattern@2x.png");
-  }
-  background-size: cover;
-  background-position: 50%;
+  background-image: url("../../dist/images/hero.jpg");
+    background-size: cover;
+    background-position: 50%;
 
   .hero-image {
     height: 360px;
@@ -191,23 +190,26 @@ hr.title-underline {
   }
 }
 
+
+
+
+
 /* Buttons */
-.partie_tim {
-  .inscription-btn {
-    background: linear-gradient(to left, #F5285D, #FF2424);
-    box-shadow: 12px 3px 6px 0 rgba(246, 40, 89, .42);
-    &:hover {
-      box-shadow: 12px 2px 2px 0 rgba(246, 40, 89, .42);
-      &:after {
-        box-shadow: 2px 3px 3px rgba(246, 40, 89, .32)
+.partie_tim{
+  .inscription-btn{
+  background: linear-gradient(to left, #F5285D, #FF2424);
+  box-shadow: 12px 3px 6px 0 rgba(246,40,89,.42);
+    &:hover{
+      box-shadow: 12px 2px 2px 0 rgba(246,40,89,.42);
+      &:after{
+        box-shadow: 2px 3px 3px rgba(246,40,89,.32)
       }
     }
-    &:after {
-      box-shadow: 2px 3px 8px rgba(246, 40, 89, .22);
+    &:after{
+      box-shadow: 2px 3px 8px rgba(246,40,89,.22);
     }
   }
 }
-
 .blue-btn {
   color: #fff;
   padding: 10px 15px;
@@ -284,11 +286,15 @@ hr.title-underline {
     transition: all .2s ease-in-out;
   }
 
-  .i-space {
+  .i-space{
     margin-right: 10px;
   }
 
 }
+
+
+
+
 
 /* Inputs */
 /*
@@ -348,34 +354,33 @@ input, textarea, select {
   }
 }
 
+
+
+
+
 /* Témoignages */
-.testimonials {
-  margin: 1.5rem 0;
+.testimonials{
+  margin: 1.5rem auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
 
-  .testimonial {
+  .testimonial{
     margin-bottom: 2.2rem;
     padding: 1rem;
-    background-color: #fff;
 
-    -webkit-box-shadow: 0px 0px 6px 0px rgba(196, 196, 196, 1);
-    -moz-box-shadow: 0px 0px 6px 0px rgba(196, 196, 196, 1);
-    box-shadow: 0px 0px 6px 0px rgba(196, 196, 196, 1);
-
-    img {
+    img{
       display: block;
       margin: 0 auto;
-
-      -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.37);
-      -moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.37);
-      box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.37);
     }
 
-    p {
+    p{
       margin-top: 1rem;
       text-align: left;
     }
+  }
+
+  .testimonial:last-of-type{
+    margin-right: auto;
   }
 }
