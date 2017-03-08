@@ -7,6 +7,6 @@ jQuery(document).ready(function () {
     jQuery('.barre_progression').each(function () {
         jQuery(this).find('.barre_interet').animate({
             width: jQuery(this).attr('data-percent')
-        }, 4000);
+        }, 2000);
     });
 });

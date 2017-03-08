@@ -26,10 +26,11 @@
 
 <script>
 
-    (function(d, s, id) {
+    (function (d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
+        js = d.createElement(s);
+        js.id = id;
         js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.5";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
@@ -48,11 +49,14 @@
     </div>
 
     <nav id="nav_primary">
-        <span id="logoTIM"><a href=" "><img class ="big_svg" id="svg_logo" src="dist/images/tim-logo.svg" alt="Logo du programme en Techniques d'intégration multimédia."><p id="logo_text" class="big_text">Techniques d'intégration multimédia</p></a></span>
+        <span id="logoTIM"><a href=" "><img class="big_svg" id="svg_logo" src="dist/images/tim-logo.svg"
+                                            alt="Logo du programme en Techniques d'intégration multimédia."><p
+                        id="logo_text" class="big_text">Techniques d'intégration multimédia</p></a></span>
 
         <ul>
 
-            <li class="top_niveau etudiant"><input type='checkbox' class="navbox" name='nav' id="etudiant"><label for='etudiant' class="menu_lien">Futur étudiant
+            <li class="top_niveau etudiant"><input type='checkbox' class="navbox" name='nav' id="etudiant"><label
+                        for='etudiant' class="menu_lien">Futur étudiant
                 </label>
                 <div class="sub_hide"></div>
                 <ul class="second_nav sub_etudiant">
@@ -65,12 +69,14 @@
                             profil?</a></li>
                     <li><a href="futur-etudiant/perspectives/" class="{{ arrMenuLiensActifs.perspectives }} ">Perspectives</a>
                     </li>
-                    <li><a href="futur-etudiant/temoignages/" class="{{ arrMenuLiensActifs.temoignages }} ">Témoignages</a>
+                    <li><a href="futur-etudiant/temoignages/"
+                           class="{{ arrMenuLiensActifs.temoignages }} ">Témoignages</a>
                     </li>
 
                 </ul>
             </li>
-            <li class="top_niveau programme"><input type='checkbox' class="navbox" name='nav' id="programme"><label for='programme' class="menu_lien">Programme</label>
+            <li class="top_niveau programme"><input type='checkbox' class="navbox" name='nav' id="programme"><label
+                        for='programme' class="menu_lien">Programme</label>
                 <div class="sub_hide"></div>
                 <ul class="second_nav sub_programme">
 
@@ -82,18 +88,22 @@
 
                 </ul>
             </li>
-            <li class="top_niveau stages"><input type='checkbox' class="navbox" name='nav' id="stages"><label for='stages' class="menu_lien">Stages</label>
+            <li class="top_niveau stages"><input type='checkbox' class="navbox" name='nav' id="stages"><label
+                        for='stages' class="menu_lien">Stages</label>
                 <div class="sub_hide"></div>
                 <ul class="second_nav sub_stages">
 
                     <li><a href="stages/" class="{{ arrMenuLiensActifs.stages }}">Séquence des stages</a></li>
                     <li><a href="stages/ate/" class="{{ arrMenuLiensActifs.ate }} ">ATE</a></li>
-                    <li><a href="stages/international/" class="{{ arrMenuLiensActifs.international }} ">International</a>
+                    <li><a href="stages/international/"
+                           class="{{ arrMenuLiensActifs.international }} ">International</a>
                     </li>
 
                 </ul>
             </li>
-            <li class="top_niveau diplomes"><input type='checkbox' class="navbox" id="diplomes"><label for='diplomes' class="menu_lien"><a href="diplomes" class="menu_lien {{ arrMenuLiensActifs.diplomes }}">Diplômés</a></label>
+            <li class="top_niveau diplomes"><input type='checkbox' class="navbox" id="diplomes"><label for='diplomes'
+                                                                                                       class="menu_lien"><a
+                            href="diplomes" class="menu_lien {{ arrMenuLiensActifs.diplomes }}">Diplômés</a></label>
 
             </li>
         </ul>
@@ -110,9 +120,9 @@
 
 
 {# FOOTER #}
-<footer class="">
+<footer>
     <section class="pre_footer container">
-        <h2 class="visuallyHidden">Liens utiles</h2>
+        <h2 class="visuallyhidden focusable">Liens utiles</h2>
         <article class="col-sm-6 partie_tim ">
             <h3>Faire partie de la TIM</h3>
             <p>Tu t’intéresses à la création et au développement de sites Web ou d’applications multimédia et tu
@@ -128,29 +138,34 @@
                         class="back_slant"></span></a>
         </article>
     </section>
-    <section class="main_footer">
-        <h2 class="visuallyHidden">Crédits</h2>
+    <section class="main_footer container">
+        <h2>Crédits</h2>
+        <div class="col-sm-12 col-md-6">
 
-        <div class="container">
-            <p style="display: none">Ce projet a été choisi parmi les six propositions réalisées dans le cadre du cours
-                Production multimédia VI au printemps 2017. Les auteurs:<a
+                <p>Ce projet a été choisi parmi les six propositions réalisées dans le cadre du cours
+                    Production multimédia VI au printemps 2017. Les auteurs : <a
                         href="diplomes/fiche-etudiant/jonathan-barbeau">Jonathan Barbeau</a>, <a
                         href="diplomes/fiche-etudiant/vincent-beland">Vincent Béland</a>, <a
                         href="diplomes/fiche-etudiant/william-charest-pepin">William Charest-Pépin</a>, <a
                         href="diplomes/fiche-etudiant/erwann-letue">Erwann Letué</a> et <a
-                        href="diplomes/fiche-etudiant/annabelle-violette">Annabelle Violette</a> ont remporté les honneurs
+                        href="diplomes/fiche-etudiant/annabelle-violette">Annabelle Violette</a> ont remporté les
+                honneurs
                 du Roger d'Or.</p>
-
-            <ul style="display: none">
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <ul>
                 <li><a href="http://www.facebook.com/timcsf"
-                       title="Page Facebook du programme Techniques d'intégration multimédia">Facebook</a></li>
+                       title="Page Facebook du programme Techniques d'intégration multimédia"><i class="fa fa-facebook"
+                                                                                                 aria-hidden="true"></i></a>
+                </li>
                 <li><a href="http://twitter.com/timcsf"
-                       title="Compte Twitter du programme Techniques d'intégration multimédia">Twitter</a></li>
+                       title="Compte Twitter du programme Techniques d'intégration multimédia"><i class="fa fa-twitter"
+                                                                                                  aria-hidden="true"></i></a>
+                </li>
                 <li><a href="http://www.linkedin.com/groups?gid=2211970"
-                       title="Groupe LinkedIn du programme Techniques d'intégration multimédia">LinkedIn</a></li>
+                       title="Groupe LinkedIn du programme Techniques d'intégration multimédia"><i
+                                class="fa fa-linkedin" aria-hidden="true"></i></a></li>
             </ul>
-
-
         </div>
 
     </section>
@@ -158,6 +173,7 @@
         <div class="container">
             <div class="col-sm-12">
                 <p>© 2017, Techniques d'intégration multimédia, Cégep de Sainte-Foy.</p>
+
 
 
                 <ul>

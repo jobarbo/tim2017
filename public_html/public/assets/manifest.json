@@ -32,11 +32,6 @@
         "scripts/tri_diplomes.js"
       ]
     },
-    "visionneuse.js": {
-      "files": [
-        "scripts/visionneuse.js"
-      ]
-    },
     "slider.js": {
       "files": [
         "scripts/slider.js"
@@ -49,6 +44,11 @@
     },
     "jquery.js": {
       "bower": ["jquery"]
+    },
+    "visionneuse.js": {
+      "files": [
+        "scripts/visionneuse.js"
+      ]
     }
   },
   "config": {
