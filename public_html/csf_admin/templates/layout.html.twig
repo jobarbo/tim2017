@@ -8,14 +8,10 @@
           content="Le programme de Techniques d’intégration multimédia est une formation vivante et actuelle! Vous aimez relever des défis et les nouvelles technologies? Ce programme est fait pour vous!">
     <meta name="keywords"
           content="Techniques d’intégration multimédia, TIM, intégration multimédia, multimédia, Cégep Sainte-Foy, Cégep Ste-Foy, Web, CSS, HTML, Technologies, Design, Conception, Programmation, Intégration, Traitement des médias, médias">
-
     <base href="{{ niveau }}"/>
-
-
     <title>{{ page }} | Section Administrative | TIM</title>
     <link rel="stylesheet" href="{{ niveauCSS }}dist/styles/main.css">
 </head>
-
 {# HEADER #}
 <body>
 <header class="header_admin">
@@ -29,36 +25,27 @@
         <form action="index.php" method="post" novalidate>
             <button id="btnDeconnecter" class="btnDeconnecter" name="btnDeconnecter" type="submit">Déconnexion</button>
         </form>
-
     </nav>
-
 </header>
 <a href="{{ arrMenuLiensActifs.PHP_SELF }}{% if arrMenuLiensActifs.QUERY_STRING != "" %}?{{ arrMenuLiensActifs.QUERY_STRING }}{% endif %}#contenu"
    class="visuallyhidden focusable">Allez au contenu</a>
-
 <main>
     {# CONTENU DES PAGES #}
     {% block content %}{% endblock %}
 </main>
-
-
 {# FOOTER #}
 <footer class="">
     <div class="meta_nav">
         <p>© 2017, Techniques d'intégration multimédia, Cégep de Sainte-Foy.</p>
     </div>
 </footer>
-
 {# SCRIPTS SELON PAGE #}
 {% if section is defined %}
-
     {% if section == 'Éditer fiche étudiant' %}
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
         <script src="http://malsup.github.com/jquery.form.js"></script>
-
         <script>
             $(document).ready(function () {
-
                 // http://malsup.com/jquery/form/#options-object
                 var options = {
                     target: '#nouvelle_photo',
@@ -67,7 +54,6 @@
                     error: function () {
                     },
                 };
-
                 $('#uploadform').ajaxForm(options);
             });
         </script>
@@ -78,8 +64,6 @@
             });
         </script>
     {% endif %}
-
 {% endif %}
-
 </body>
 </html>

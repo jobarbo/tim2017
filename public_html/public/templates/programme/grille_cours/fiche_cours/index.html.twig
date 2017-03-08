@@ -5,7 +5,7 @@
 {% block content %}
     <div id="hero-section">
         <div class="container">
-            <div class="hero-image col-sm-12">
+            <div class="hero-image-center col-sm-12">
 
 
                 <h1 id="h1-no-width">{{ page }}</h1>
@@ -22,7 +22,6 @@
                         <h2 class="in-div">Description</h2>
                         <hr class="title-underline">
                         {{ cours.dscr | raw }}
-
                     </div>
                 </div>
             {% endif %}
@@ -40,13 +39,16 @@
                             <li>Ce cours fait partie de la formation générale.</li>
                         {% endif %}
                         <li>Session: {{ cours.session }}</li>
+                        {% if cours.url %}
+                        <li>Lien: <a href="{{ cours.url }}">{{ page }}</a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
         </div>
         <div class="row">
             <h2>Autres cours de l'année</h2>
-            <section class="grille_cours">
+            <div class="grille_cours">
                 {% for i in boucle1..boucle2 %}
                     <div class="col-sm-6">
                         <table>
@@ -112,7 +114,7 @@
                         </table>
                     </div>
                 {% endfor %}
-            </section>
+            </div>
         </div>
     </div>
 {% endblock%}

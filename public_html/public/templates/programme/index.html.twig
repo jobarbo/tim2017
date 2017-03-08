@@ -13,12 +13,13 @@
         </div>
     </div>
     <div class="container programme">
-        <div class="col-sm-12">
+        
         {% for valeur in arrTextes %}
             <h2>{{ valeur['titre'] }}</h2>
+            <hr class="title-underline">
             {{ valeur['paragraphe'] | raw }}
         {% endfor %}
-        </div>
+
     </div>
 {% endblock %}
 

@@ -177,12 +177,12 @@ echo $template->render(array(
     //HEAD
     'section' => $strSection,
     'title' => "Section administrative | TIM",
-    'page' => "Éditer la fiche de " . $arrInfosEtudiant['prenom'] . " " . $arrInfosEtudiant['nom'] . " | ",
+    'page' => "Éditer la fiche du diplomé " . $arrInfosEtudiant['prenom'] . " " . $arrInfosEtudiant['nom'],
     'niveau' => $strNiveau,
     'niveauAdmin' => $strNiveauAdmin,
     'niveauCSS' => $strNiveauCSS,
     //PAGE
-    'page' => "Éditer la fiche du diplomé " . $arrInfosEtudiant['prenom'] . " <span>" . $arrInfosEtudiant['nom'] . "</span>",
+    'pageh1' => "Éditer la fiche du diplomé " . $arrInfosEtudiant['prenom'] . " <span>" . $arrInfosEtudiant['nom'] . "</span>",
     'arrInfos' => $arrInfosEtudiant,
     'arrProjets' => $arrProjetsEtudiant,
     'texteErreurFiche' => $texteErreurFiche,

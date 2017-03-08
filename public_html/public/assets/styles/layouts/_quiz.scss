@@ -277,8 +277,14 @@
     text-align: center;
   }
   color: red;
-  text-align: right;
-  padding-top: 20px;
+}
+#icone-explication {
+}
+#explication {
+  @media screen and (max-width: $breakquiz) {
+    text-align: center;
+  }
+  max-width: 700px;
 }
 .bon {
   color: green;
