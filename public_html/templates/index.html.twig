@@ -5,7 +5,7 @@
 {% block content %}
     <div class="accueil">
         <section id="hero-section">
-            <div class="container">
+            <div class="container_page">
                 <div class="hero-image col-sm-12">
 
 
@@ -42,9 +42,7 @@
                 </div>
                 <div class="fb_feed col-sm-6">
                     <p class="date">{{ date_fb }}</p>
-                    <h3><a target=_blank href='https://www.facebook.com/timcsf'><i class="fa fa-facebook i-space"
-                                                                                   aria-hidden="true"></i>/timcsf<i
-                                    class="fa fa-external-link-square i-space share" aria-hidden="true"></i></a></h3>
+                    <h3><a target=_blank href='https://www.facebook.com/timcsf'><i class="fa fa-facebook i-space" aria-hidden="true"></i>/timcsf<i class="fa fa-external-link-square i-space share" aria-hidden="true"></i></a></h3>
                     <p class="desc_social">{{ texte_fb }}</p>
                     <a class="blue-btn" target='_blank' href='{{ lien_fb }}'>Consulter la nouvelle<span
                                 class="back_slant"></span></a>
@@ -57,8 +55,7 @@
                                     class="fa fa-external-link-square i-space share" aria-hidden="true"></i></a></h3>
                     <p class="desc_social">{{ texte_tweet|raw }}</p>
 
-                    <a class="blue-btn" target='_blank' href='{{ lien_tweet }}'>Consulter la nouvelle <span
-                                class="back_slant"></span></a>
+                    <a class="blue-btn" target='_blank' href='{{ lien_tweet }}'>Consulter la nouvelle <span class="back_slant"></span></a>
                 </div>
 
             </div>

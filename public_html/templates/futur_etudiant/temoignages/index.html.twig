@@ -36,10 +36,12 @@
                         <hr class="trait_decoratif">
                         <p>{{ temoignages['temoin'] }}</p>
                         <p>Graduation : {{ temoignages['annee_diplomation'] }}</p>
-                        <a href="{{ temoignages['url_entreprise'] }}" >
-                            <i class="fa fa-external-link i-space" aria-hidden="true"></i>
-                            {{ temoignages['entreprise'] }}
-                        </a>
+                        <div class="link">
+                            <a href="{{ temoignages['url_entreprise'] }}" >
+                                {{ temoignages['entreprise'] }}
+                                <i class="fa fa-external-link-square i-space share" aria-hidden="true"></i>
+                            </a>
+                        </div>
                         <p>{{ temoignages['titre_poste'] }}</p>
                 </div>
 
