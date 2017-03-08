@@ -84,6 +84,28 @@ try {
 } catch (Exception $e) {
     $strMsgErrDiplomes = $e->getMessage();
 }
+
+if(isset($_POST['btnSupprimer']) && count($arrEvenements) > 1){
+
+        try{
+            $SQLDeleteActualite = "DELETE FROM t_evenement WHERE id_actualite=". $_POST['btnSupprimer'];
+
+            if($objConnMySQLi->query($SQLDeleteActualite) === TRUE){
+                $texteErreurUpdate = "";
+                header("Location: administration.php");
+            }
+            else{
+                $strMsgErrUpdate= "<p>La suppression n'a pu être éffectué, réessayez plus tard</p>";
+                $except = new Exception($strMsgErrUpdate);
+
+                throw $except;
+            }
+        }
+        catch (Exception $e) {
+            $texteErreurUpdate = $e->getMessage();
+        }
+
+}
 // fermer la connexion
 $objConnMySQLi->close();
 
