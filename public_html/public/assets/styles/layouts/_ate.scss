@@ -2,6 +2,10 @@ html{
   font-size: 100%;
 
   .body-ate{
+    #hero-section{
+      margin: 0;
+    }
+
     .main{
       background-color: $grey;
       padding: 2rem 0;

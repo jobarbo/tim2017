@@ -2,6 +2,10 @@ html{
   font-size: 100%;
 
   .body-stage{
+    #hero-section{
+      margin: 0;
+    }
+
     .section1, .section2, .section3{
       @include clearfix();
       padding: 3rem 0;
