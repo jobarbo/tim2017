@@ -6,8 +6,8 @@
  *
 /*************** 1. VARIABLES LOCALES ***********************/
 $strNiveau = "";
-$strNiveauAdmin="../public/";
-$strNiveauCSS="../public/";
+$strNiveauAdmin="../";
+$strNiveauCSS="../";
 $strSection = "Connexion";
 $erreurGlobale = "";
 
