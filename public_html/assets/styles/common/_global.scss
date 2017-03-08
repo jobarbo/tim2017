@@ -90,6 +90,7 @@ main {
     font-size: 38px;
     color: #fff;
     width: 250px;
+
   }
   h3 {
     font-family: raleway_semi_bold;
@@ -176,9 +177,16 @@ hr.title-underline {
 
   .hero-image {
     height: 360px;
-
+    background-image: url("../../dist/images/finissants.png");
+    background-repeat: no-repeat;
+    background-position: bottom center;
     padding-top: 112px;
     position: relative;
+
+    @media screen and (min-width: $tablettePortrait) {
+      background-size: inherit;
+      background-position: bottom right;
+    }
 
   }
 }
