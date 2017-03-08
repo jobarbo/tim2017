@@ -4,7 +4,7 @@ session_start();
 
 /*************** 1. VARIABLES LOCALES ***********************/
 $strNiveau = "";
-$strNiveauAdmin="../public/";
+$strNiveauAdmin="../";
 
 
 /*************** 2. INSTANCIATION CONFIG ET TWIG ***********************/

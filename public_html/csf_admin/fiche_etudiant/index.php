@@ -21,8 +21,8 @@
 
 /*************** 1. VARIABLES LOCALES ***********************/
 $strNiveau = "../";
-$strNiveauAdmin = "../../public/";
-$strNiveauCSS = "../public/";
+$strNiveauAdmin = "../../";
+$strNiveauCSS = "../";
 $strTriInterets = "";
 $intMatriculeEtudiant = null;
 $strSection = "Éditer fiche étudiant";
