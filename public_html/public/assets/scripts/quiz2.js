@@ -13,6 +13,7 @@ var app = $(function configurer(evenement) {
     /* Configuration: ajouts des écouteurs d'événements et état initial de l'app */
     var $qo = "";
     var $qn = "";
+    var bon = 0;
 
     var $q0o = "Oui, Tim te permettra d’apprendre à concevoir et réaliser des éléments visuels et sonores de toutes sortes à l’aide de logiciels professionnels, sur plateforme Mac et PC avec par exemple la suite professionnelle d’Adobe.";
     var $q0n = "Attention, le programme Tim comporte un important pourcentage de cours dédiés à la conception et réalisation d’éléments visuels et sonores de toutes sortes à l’aide de logiciels professionnels, sur plateforme Mac et PC avec par exemple la suite professionnelle d’Adobe.";
@@ -34,22 +35,27 @@ var app = $(function configurer(evenement) {
             case 0:
                 $qo = $q0o;
                 $qn = $q0n;
+                bon = 0;
                 break;
             case 1:
                 $qo = $q1o;
                 $qn = $q1n;
+                bon = 0;
                 break;
             case 2:
                 $qo = $q2o;
                 $qn = $q2n;
+                bon = 1;
                 break;
             case 3:
                 $qo = $q3o;
                 $qn = $q3n;
+                bon = 1;
                 break;
             case 4:
                 $qo = $q4o;
                 $qn = $q4n;
+                bon = 1;
                 break;
         }
 
@@ -59,6 +65,8 @@ var app = $(function configurer(evenement) {
         }
         $("#explication").text("");
         $("#explication").removeClass();
+        $("#icone-explication").html("");
+        $("#icone-explication").removeClass();
         $("#Q" + (no - 1)).hide();
         if (no > 0)
         {
@@ -81,22 +89,50 @@ var app = $(function configurer(evenement) {
     function validerMonChoix(evenement)
     {
         $("#retroaction").text("");
+        $("#icone-explication").html("");
+        $("#icone-explication").removeClass();
         evenement.preventDefault();
         if($("input[name=Q"+ questionActive + "]:checked").val() === undefined)
         {
             $("#retroaction").text("Veuillez sélectionner une réponse.");
+            $("#icone-explication").html('<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>');
+            $("#icone-explication").addClass("mauvais");
         }
         else
         {
-            if($("input[name=Q"+ questionActive + "]:checked").val() == "Oui")
+            if($("input[name=Q"+ questionActive + "]:checked").val() == "Oui" && questionActive < 2)
             {
                 $("#explication").text($qo);
                 $("#explication").addClass("bon");
+                $("#icone-explication").html('<i class="fa fa-check" aria-hidden="true"></i>');
+                $("#icone-explication").addClass("bon");
             }
             else
             {
-                $("#explication").text($qn);
-                $("#explication").addClass("mauvais");
+                if($("input[name=Q"+ questionActive + "]:checked").val() == "Non" && questionActive >= 2)
+                {
+                    $("#explication").text($qn);
+                    $("#explication").addClass("bon");
+                    $("#icone-explication").html('<i class="fa fa-check" aria-hidden="true"></i>');
+                    $("#icone-explication").addClass("bon");
+                }
+                else
+                {
+                    if($("input[name=Q"+ questionActive + "]:checked").val() == "Oui" && questionActive >= 2)
+                    {
+                        $("#explication").text($qo);
+                        $("#explication").addClass("mauvais");
+                        $("#icone-explication").html('<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>');
+                        $("#icone-explication").addClass("mauvais");
+                    }
+                    else
+                    {
+                        $("#explication").text($qn);
+                        $("#explication").addClass("mauvais");
+                        $("#icone-explication").html('<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>');
+                        $("#icone-explication").addClass("mauvais");
+                    }
+                }
             }
 
             $("input[name=Q" + questionActive + "]").attr('disabled', 'disabled');

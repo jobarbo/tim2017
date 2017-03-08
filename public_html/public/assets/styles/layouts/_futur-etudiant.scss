@@ -6,10 +6,9 @@ div.futur_etudiant{
 
   }
 
-  h1{
+  h2.h2Benoit{
 
-    height: 360px;
-    background-color: blue;
+    margin-top: 3em;
 
   }
 
@@ -35,7 +34,7 @@ div.futur_etudiant{
 
   }
 
-  h2, h3{
+  h3{
 
     margin-top: 2em;
 
@@ -71,6 +70,7 @@ div.formationVivante{
 
 div.prealables, div.processus{
   
+  margin-top: 2em;
   margin-bottom: 4em;
 
 }
@@ -112,6 +112,12 @@ div.formationVivante>p, div.integrateur, div.continuum{
   max-width: 100%;
 
 }
+
+  h2.h2Benoit{
+
+    margin-top: 3em;
+
+  }
 
   }
 

@@ -47,7 +47,7 @@ try {
     }
     //En cas d'erreur de requête
     if ($objResultEvenement->num_rows == 0) {
-        header('Location: ' . $strNiveau . '404/');
+        $arrEvenements = null;
     }
     $objResultEvenement->free_result();
 } catch (Exception $e) {
@@ -83,6 +83,30 @@ try {
     $objResultDiplome->free_result();
 } catch (Exception $e) {
     $strMsgErrDiplomes = $e->getMessage();
+}
+
+/* SUPPRESION DES ACTUALITES */
+
+if(isset($_POST['btnSupprimer'])){
+
+        try{
+            $SQLDeleteActualite = "DELETE FROM t_evenement WHERE id_actualite=". $_POST['btnSupprimer'];
+
+            if($objConnMySQLi->query($SQLDeleteActualite) === TRUE){
+                $texteErreurUpdate = "";
+                header("Location: administration.php");
+            }
+            else{
+                $strMsgErrUpdate= "<p>La suppression n'a pu être éffectué, réessayez plus tard</p>";
+                $except = new Exception($strMsgErrUpdate);
+
+                throw $except;
+            }
+        }
+        catch (Exception $e) {
+            $texteErreurUpdate = $e->getMessage();
+        }
+
 }
 // fermer la connexion
 $objConnMySQLi->close();

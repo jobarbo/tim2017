@@ -46,7 +46,7 @@ try{
     }
      //En cas d'erreur de requête
     if ($objResultNouvelle->num_rows == 0) {
-        header('Location: ' . $strNiveau . '404/index.php');
+        $arrNouvelle = null;
     }
     $objResultNouvelle->free_result();
 }catch (Exception $e) {

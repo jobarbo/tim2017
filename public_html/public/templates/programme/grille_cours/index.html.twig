@@ -5,7 +5,7 @@
 {% block content %}
     <div id="hero-section">
         <div class="container">
-            <div class="hero-image col-sm-12">
+            <div class="hero-image-center col-sm-12">
 
 
                 <h1 id="h1-no-width">{{ page }}</h1>
@@ -14,7 +14,7 @@
         </div>
     </div>
     <div class="allovinny">
-        <section class="grille_cours">
+        <div class="grille_cours">
             {% for i in 1..6 %}
                 {% if  (i  == 1) %}
                     <h2>Première année</h2>
@@ -89,6 +89,6 @@
                     </table>
                 </div>
             {% endfor %}
-        </section>
+        </div>
     </div>
 {% endblock%}

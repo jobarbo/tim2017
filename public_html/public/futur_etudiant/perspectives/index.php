@@ -46,7 +46,7 @@ try {
     $template = $twig->loadTemplate('futur_etudiant/perspectives/index.html.twig');
     echo $template->render(array(
         'niveau' => "../../",
-        'page' => "Futur étudiant ",
+        'page' => "Perspectives ",
         'arrTextes' => $arrTextes
     ));
 
