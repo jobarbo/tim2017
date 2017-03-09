@@ -11,7 +11,7 @@
 
 /*************** VARIABLES LOCALES ***********************/
 $strNiveau="../";
-$strNiveauAdmin="../../public/";
+$strNiveauAdmin="../../";
 
 /*************** INSTANCIATION CONFIG ET TWIG ***********************/
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');

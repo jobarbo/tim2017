@@ -119,6 +119,8 @@ ul {
   }
 }
 
+
+
 /* SOULIGNEMENT DES TITRES*/
 hr.title-underline {
   display: block;
@@ -129,6 +131,23 @@ hr.title-underline {
 }
 
 /* BANNIÈRE BLEUE*/
+
+#h1-no-width {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: workSans;
+  font-size: 38px;
+  text-transform: uppercase;
+  color: #fff;
+  width: inherit;
+  max-width: 700px;
+}
+#hero-section .hero-image-center {
+  height: 360px;
+  padding-top: 0;
+  position: relative;
+}
 
 #hero-section {
   clear: both;

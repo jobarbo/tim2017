@@ -156,16 +156,18 @@
                 <div class="photo_actuelle">
                     <h2>Photo actuelle</h2>
                     <hr class="title-underline">
-                    <img src="../public/dist/images/diplomes/{{ arrInfos.id }}.png"
+                    <img src="../dist/images/diplomes/{{ arrInfos.id }}.png"
                          alt="{{ arrInfos.prenom }} {{ arrInfos.nom }}">
                 </div>
                 <div class="televersement">
                     <h3>Changer de photo</h3>
-                    <p>Le fichier à télécharger doit être au format PNG. Pour de meilleurs résultats d'affichage dans le site web, la photo doit avoir un fond transparent et une hauteur de 360px.</p>
+                    <p>Le fichier à télécharger doit être au format PNG. Pour de meilleurs résultats d'affichage dans le
+                        site web, la photo doit avoir un fond transparent et une hauteur de 360px.</p>
                     <form enctype="multipart/form-data"
                           method="post"
                           action="fiche_etudiant/upload.php"
-                          name="fTeleversement">
+                          name="fTeleversement"
+                          class="fTeleversement">
 
                         <fieldset>
                             <label for="photoEtudiant" class="visuallyhidden focusable">Fichier à téléverser</label>
@@ -173,6 +175,11 @@
                             <input type="file" name="photoEtudiant" id="upload_img"/>
 
                             <input type="hidden" name="matricule" value="{{ arrInfos.nom_usager_admin }}">
+                            {% if texteErreurPhoto != false %}
+                                <p><span class="erreurGlobale"><i class="fa fa-exclamation-triangle"
+                                                                  aria-hidden="true"></i>{{ texteErreurPhoto }}</span>
+                                </p>
+                            {% endif %}
                             <button type="submit" name="submitPhotosEtudiant" value="Sauvegarder" class="blue-btn">
                                 <i class="fa fa-upload i-space" aria-hidden="true"></i>
                                 Sauvegarder la nouvelle photo
