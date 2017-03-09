@@ -8,6 +8,9 @@
     .hero_title {
       display: block;
       width: 100%;
+      a {
+        color: white;
+      }
     }
 
     a {
@@ -46,6 +49,12 @@
   /* icône de loupe */
   .fa-search-plus {
     font-size: 24px!important;
+  }
+
+  .url-projet{
+    font-size: 40px;
+    position: absolute;
+    top: 65%;
   }
 
 }
