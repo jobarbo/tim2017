@@ -9,7 +9,7 @@
  * 3. REÇOIT MATRICULE DE L'ÉTUDIANT
  * 4. DÉFINITION CHEMIN ET FICHIER POUR TÉLÉVERSEMENT
  * 5. SOUMISSION DES MODIFICATIONS INFOS
- * 6. SOUMISSION NOUVELLE PHOTO
+ * 6. MESSAGE ERREUR UPDATE PHOTO
  * 7. REQUÊTE AFFICHER FICHE DIPLÔMÉ
  * 7.1 Requete pour aller chercher tous les infos du diplômé
  * 7.2 Requete pour aller chercher tous les projets du diplômé
@@ -23,7 +23,6 @@
 $strNiveau = "../";
 $strNiveauAdmin = "../../";
 $strNiveauCSS = "../";
-$strTriInterets = "";
 $intMatriculeEtudiant = null;
 $strSection = "Éditer fiche étudiant";
 
@@ -57,24 +56,26 @@ if (isset($_GET['submitInfosEtudiant'])) {
                                       WHERE nom_usager_admin = " . $intMatriculeEtudiant . " ";
 
         if($objConnMySQLi->query($strSQLUpdateInfosEtudiant) === TRUE){
-            //$texteErreurUpdate = "";
+            $texteErreurUpdate = "";
         }
         else{
-            //$strMsgErrUpdate= "<p>Les modifications n'ont pu être apportées, réessayez plus tard</p>";
-            //$except = new Exception($strMsgErrUpdate);
+            $strMsgErrUpdate= "<p>Les modifications n'ont pu être apportées, réessayez plus tard</p>";
+            $except = new Exception($strMsgErrUpdate);
 
-            //throw $except;
+            throw $except;
         }
 
     } catch (Exception $e) {
-        //$texteErreurUpdate = $e->getMessage();
+        $texteErreurUpdate = $e->getMessage();
     }
 }
 
-/*************** 6. SOUMISSION NOUVELLE PHOTO ***********************/
-if (isset($_GET['submitPhotosEtudiant'])) {
-    echo "POST submitPhotosEtudiant";
-
+/*************** 6. MESSAGE ERREUR UPDATE PHOTO ***********************/
+if (isset($_GET['erreur'])) {
+    $strMessageErreurPhoto = $_GET['erreur'];
+}
+else{
+    $strMessageErreurPhoto = false;
 }
 
 /*************** 7. REQUÊTE AFFICHER FICHE DIPLÔMÉ ***********************/
@@ -120,8 +121,7 @@ try {
 
     //En cas d'erreur de requête
     if ($objResultInfosEtudiant->num_rows == 0) {
-        //header('Location: ' . $strNiveau . '404/');
-        echo "MARCHE PAS 1";
+        header('Location: ' . $strNiveau . '404/');
     }
 
     $objResultInfosEtudiant->free_result();
@@ -152,8 +152,7 @@ try {
 
         //En cas d'erreur de requête
         if ($objResultProjetsEtudiant->num_rows == 0) {
-            //header('Location: ' . $strNiveau . '404/index.php');
-            echo "MARCHE PAS 2";
+            header('Location: ' . $strNiveau . '404/index.php');
         }
 
         $objResultProjetsEtudiant->free_result();
@@ -186,6 +185,6 @@ echo $template->render(array(
     'arrInfos' => $arrInfosEtudiant,
     'arrProjets' => $arrProjetsEtudiant,
     'texteErreurFiche' => $texteErreurFiche,
-    'texteErreurProjets' => $texteErreurProjets
-    //'texteErreurUpdate' =>  $texteErreurUpdate
+    'texteErreurProjets' => $texteErreurProjets,
+    'texteErreurPhoto' => $strMessageErreurPhoto
 ));

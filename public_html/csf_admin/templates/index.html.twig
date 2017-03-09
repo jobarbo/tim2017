@@ -15,9 +15,9 @@
                     {% for arrEvenements in evenements %}
                         <li class="col-sm-6">
                             <p><a href="#">{{ arrEvenements.titre_actualite }}</a> {{ arrEvenements.description_actualite }}</p>
-                            <a class="lien_editer" href="#"><img src="../../public_html/public/dist/images/editer.png" alt="Éditer un événement" />Éditer un événement</a>
+                            <a class="lien_editer" href="#"><img src="../../public_html/dist/images/editer.png" alt="Éditer un événement" />Éditer un événement</a>
                             <form action="administration.php" method="post">
-                                <button id="btnSupprimer" name="btnSupprimer" value="{{ arrEvenements['id_actualite'] }}" class="lien_supprimer"><img src="../../public_html/public/dist/images/supprimer.png" alt="Supprimer un événement" />Supprimer l'événement</button>
+                                <button id="btnSupprimer" name="btnSupprimer" value="{{ arrEvenements['id_actualite'] }}" class="lien_supprimer"><img src="../../public_html/dist/images/supprimer.png" alt="Supprimer un événement" />Supprimer l'événement</button>
                             </form>
                         </li>
                     {% endfor %}
@@ -34,7 +34,7 @@
             <ul id="liste_diplomes">
                 {% for arrDiplomes in diplomes %}
                     <li>
-                        <p class="nom">{{ arrDiplomes.prenom }} {{ arrDiplomes.nom }} <span><a href="fiche_etudiant/index.php?id={{ arrDiplomes.matricule }}"><img src="../../public_html/public/dist/images/editer.png" alt="Éditer un événement" />Éditer la fiche</a></span></p>
+                        <p class="nom">{{ arrDiplomes.prenom }} {{ arrDiplomes.nom }} <span><a href="fiche_etudiant/index.php?id={{ arrDiplomes.matricule }}"><img src="../../public_html/dist/images/editer.png" alt="Éditer un événement" />Éditer la fiche</a></span></p>
                     </li>
                 {% endfor %}
             </ul>

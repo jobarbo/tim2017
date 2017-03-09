@@ -1,6 +1,10 @@
 /** FICHE ÉTUDIANT **/
 .editer_etudiant {
 
+  h1{
+    margin-bottom: 2em;
+  }
+
   padding: 2em 0;
 
   /* Espacement entre chaque blocs et sections */
@@ -86,7 +90,26 @@
       .btn_reset{
         margin-left: 0.5em;
       }
+
+
+    }
+
+    form.fTeleversement{
+      p{
+        margin-top: 1em;
+        color: red;
+        .erreurGlobale{
+          padding: 1em;
+          border-radius: 5px;
+
+          i{
+            margin-right: 1em;
+          }
+        }
+      }
     }
 
   }
+
+
 }
