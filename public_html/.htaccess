@@ -2,7 +2,7 @@
 #ErrorDocument 404 http://timunix.cegep-ste-foy.qc.ca/~hooli/public/404/
 
 # ------------ Cache et expiration ----------
-:
+
 
 # ------------ Compression GZIP -------------
 

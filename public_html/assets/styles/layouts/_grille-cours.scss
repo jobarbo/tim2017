@@ -41,11 +41,11 @@ table {
     display: block;
   }
   .formationS {
-    background-color: $blue;
+    background-color: $greyBlue;
     color: white;
   }
   .formationG {
-    background-color: $biaRed;
+    background-color: $blue;
     color: white;
   }
   thead tr.tableau-bleu th {
@@ -53,10 +53,10 @@ table {
     color: white !important;
   }
   .lienS {
-    color: $blue;
+    color: $greyBlue;
   }
   .lienG {
-    color: $biaRed;
+    color: $blue;
   }
   .minWidthTd {
     width: 75%;
