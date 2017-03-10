@@ -17,17 +17,34 @@
         width: 43%;
         display: inline-block;
         margin: 1em;
+
+        &:first-child{
+          margin-left: 0;
+        }
       }
     }
 
     #tri_interets{
-      margin: 1em 0 0 1em;
+      margin-top: 2em;
 
       ul{
+        padding-left: 0!important;
 
+        @media screen and (min-width: $tablettePortrait) {
+          padding-left: 15px;
+        }
         li{
-          display: inline-block;
-          margin-left: 1em;
+          display: block;
+          margin: 5px 0;
+          @media screen and (min-width: $tablettePortrait) {
+            display: inline-block;
+            margin-left: 1em;
+
+            &:first-child{
+              margin-left: 0;
+            }
+          }
+
 
           .actif {
             transform: translateY(3px);
@@ -36,6 +53,13 @@
             text-decoration: none;
             &:after{
               box-shadow:1px 0px 8px rgba(0,172,255,.65);
+            }
+          }
+
+          a{
+            margin: 5px 0;
+            @media screen and (min-width: $tablettePortrait) {
+              display: inline-block;
             }
           }
 

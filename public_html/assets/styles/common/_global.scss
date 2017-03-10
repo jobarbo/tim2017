@@ -53,9 +53,12 @@ body {
   position: relative;
   h1.hero_title {
     font-family: workSans;
-    font-size: 38px;
+    font-size: 32px;
     color: #fff;
     width: 250px;
+    @media screen and (min-width: $tablettePortrait) {
+      font-size: 38px;
+    }
   }
   h3 {
     font-family: raleway_semi_bold;
@@ -137,11 +140,14 @@ hr.title-underline {
   top: 50%;
   transform: translateY(-50%);
   font-family: workSans;
-  font-size: 38px;
+  font-size: 32px;
   text-transform: uppercase;
   color: #fff;
   width: inherit;
   max-width: 700px;
+  @media screen and (min-width: $tablettePortrait) {
+    font-size: 38px;
+  }
 }
 #hero-section .hero-image-center {
   height: 360px;
