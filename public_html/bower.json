@@ -12,8 +12,6 @@
     "normalize-scss": "normalize.scss#^6.0.0",
     "matchMedia": "matchmedia#^0.3.0",
     "picturefill": "^3.0.2",
-    "susy": "^2.2.12",
-    "slick-carousel": "^1.6.0",
     "magnific-popup": "^1.1.0"
   },
   "overrides": {
