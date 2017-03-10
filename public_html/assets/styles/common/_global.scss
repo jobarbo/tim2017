@@ -8,6 +8,7 @@
   src: url("../fonts/OpenSans-Regular.ttf");
 
 }
+
 @font-face {
   font-family: open_sans_bold;
   src: url("../fonts/OpenSans-bold.ttf");
@@ -34,8 +35,7 @@
   src: url("../fonts/WorkSans-ExtraBold.ttf");
 }
 
-
-div.container_page{
+div.container_page {
 
   max-width: 1440px;
   margin: 0 auto;
@@ -85,36 +85,6 @@ body {
   }
 }
 
-main {
-  h1.hero_title {
-    font-family: workSans;
-    font-size: 38px;
-    color: #fff;
-    width: 250px;
-
-  }
-  h3 {
-    font-family: raleway_semi_bold;
-    font-size: 28px;
-  }
-  h2 {
-    font-family: raleway_semi_bold;
-    font-size: 32px;
-    margin-top: 0px;
-  }
-  h4 {
-    font-family: raleway_bold;
-    font-size: 22px;
-    //letter-spacing: 1px;
-
-  }
-  p {
-
-    font-family: open_sans_regular;
-    font-size: 16px;
-  }
-}
-
 ul {
   list-style: none;
   padding: 0;
@@ -151,27 +121,41 @@ ul {
 
 
 
-
-
 /* SOULIGNEMENT DES TITRES*/
-hr.title-underline{
+hr.title-underline {
   display: block;
-  background: linear-gradient(270deg,#0098ff,#00acff);
+  background: linear-gradient(270deg, #0098ff, #00acff);
   height: 1px;
   width: 210px;
   margin: 0 0 35px 0;
 }
 
-
-
-
-
 /* BANNIÈRE BLEUE*/
+
+#h1-no-width {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: workSans;
+  font-size: 38px;
+  text-transform: uppercase;
+  color: #fff;
+  width: inherit;
+  max-width: 700px;
+}
+#hero-section .hero-image-center {
+  height: 360px;
+  padding-top: 0;
+  position: relative;
+}
 
 #hero-section {
   clear: both;
   height: 360px;
   margin-bottom: 2em;
+  background-image: url("../../dist/images/hero_bkg_pattern@1x.png");
+    background-size: cover;
+    background-position: 50%;
 
   background-image: url("../../dist/images/hero_bkg_pattern@1x.png");
 
@@ -187,37 +171,33 @@ hr.title-underline{
 
   .hero-image {
     height: 360px;
-
-    background-image: url("../../dist/images/finissants.png");
-    background-repeat: no-repeat;
-    background-position: bottom center;
     padding-top: 112px;
     position: relative;
 
-    @media screen and (min-width: $tablettePortrait) {
-      background-size: inherit;
-      background-position: bottom right;
-    }
+  }
 
+  .container {
+    padding: 0;
   }
 }
 
 /* Buttons */
-.partie_tim{
-  .inscription-btn{
-  background: linear-gradient(to left, #F5285D, #FF2424);
-  box-shadow: 12px 3px 6px 0 rgba(246,40,89,.42);
-    &:hover{
-      box-shadow: 12px 2px 2px 0 rgba(246,40,89,.42);
-      &:after{
-        box-shadow: 2px 3px 3px rgba(246,40,89,.32)
+.partie_tim {
+  .inscription-btn {
+    background: linear-gradient(to left, #F5285D, #FF2424);
+    box-shadow: 12px 3px 6px 0 rgba(246, 40, 89, .42);
+    &:hover {
+      box-shadow: 12px 2px 2px 0 rgba(246, 40, 89, .42);
+      &:after {
+        box-shadow: 2px 3px 3px rgba(246, 40, 89, .32)
       }
     }
-    &:after{
-      box-shadow: 2px 3px 8px rgba(246,40,89,.22);
+    &:after {
+      box-shadow: 2px 3px 8px rgba(246, 40, 89, .22);
     }
   }
 }
+
 .blue-btn {
   color: #fff;
   padding: 10px 15px;
@@ -294,15 +274,11 @@ hr.title-underline{
     transition: all .2s ease-in-out;
   }
 
-  .i-space{
+  .i-space {
     margin-right: 10px;
   }
 
 }
-
-
-
-
 
 /* Inputs */
 /*
@@ -362,33 +338,41 @@ input, textarea, select {
   }
 }
 
-
-
-
-
 /* Témoignages */
-.testimonials{
+.testimonials {
   margin: 1.5rem auto;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 
-  .testimonial{
+  .testimonial {
     margin-bottom: 2.2rem;
     padding: 1rem;
 
-    img{
-      display: block;
-      margin: 0 auto;
-    }
-
-    p{
+    p {
       margin-top: 1rem;
       text-align: left;
     }
   }
 
-  .testimonial:last-of-type{
+  .testimonial:last-of-type {
     margin-right: auto;
   }
+}
+
+a i.fa{
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+
+a i.fa:hover{
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }

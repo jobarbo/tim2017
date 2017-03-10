@@ -2,7 +2,7 @@
 #ErrorDocument 404 http://timunix.cegep-ste-foy.qc.ca/~hooli/public/404/
 
 # ------------ Cache et expiration ----------
-
+:
 
 # ------------ Compression GZIP -------------
 
@@ -65,3 +65,6 @@ RewriteRule ^nous-joindre/(.*)&(.*)$  nous_joindre/index.php?type=$1&slug=$2 [L,
 
 # Page Erreur 404
 RewriteRule ^404/$  404/index.php [L]
+
+# Admin
+# RewriteRule ^admin$  csf_admin/index.php [L]

@@ -7,11 +7,22 @@
 
     <section id="hero-section">
         <div class="container_page">
-            <div class="hero-image col-sm-12">
-                <h1 class="hero_title">{{ title | raw }}</h1>
-                <span class='retour_precedent'><a href="diplomes/fiche-etudiant/{{ arrInfosEtudiant.slug }}"><i
+            <div class="hero-image-center col-sm-12">
+                <h1 class="hero_title" id="h1-no-width">
+                    {% if arrInfos.url != "" %}
+                    <a href="{{ arrInfos.url | raw }}" target="_blank">{{ title | raw }}</a>
+                    {% else %}
+                    {{ title | raw }}
+                    {% endif %}
+                    </h1>
+                {% if arrInfos.url != "" %}
+                    <span class="url-projet"><a href="{{ arrInfos.url | raw }}" target="_blank"><i class="fa fa-globe"
+                                                                                                   title="Lien vers le projet"></i></a></span>
+                {% endif %}
+                <div class='retour_precedent'><a href="diplomes/fiche-etudiant/{{ arrInfosEtudiant.slug }}"><i
                                 class="fa fa-arrow-left"
-                                aria-hidden="true"></i> retour vers la fiche de {{ arrInfosEtudiant.prenom ~ " " ~ arrInfosEtudiant.nom }}</a></span>
+                                aria-hidden="true"></i> retour vers la fiche
+                        de {{ arrInfosEtudiant.prenom ~ " " ~ arrInfosEtudiant.nom }}</a></div>
             </div>
         </div>
     </section>

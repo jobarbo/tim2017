@@ -4,6 +4,10 @@
   /** COORDONNÉES ÉTUDIANT **/
   .hero-image {
 
+    #h1-no-width {
+      top: 10%;
+    }
+
     .hero_title {
       display: block;
 
@@ -26,14 +30,18 @@
       }
     }
 
-    ul li {
-      display: inline-block;
-      margin-right: 2em;
+    ul {
+      li {
 
-      a {
-        font-size: 35px;
-        @media screen and (min-width: $tablettePortrait) {
-          font-size: 40px;
+        display: inline-block;
+        margin-right: 2em;
+
+
+        a {
+          font-size: 35px;
+          @media screen and (min-width: $tablettePortrait) {
+            font-size: 40px;
+          }
         }
       }
     }
@@ -56,10 +64,10 @@
       }
     }
 
-    .etudiant_contact{
+    .etudiant_contact {
       width: 40%;
       @media screen and (min-width: $tablettePortrait) {
-        width:inherit;
+        width: inherit;
       }
     }
 
