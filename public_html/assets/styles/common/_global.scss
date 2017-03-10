@@ -145,6 +145,7 @@ hr.title-underline {
   color: #fff;
   width: inherit;
   max-width: 700px;
+  z-index: 3;
   @media screen and (min-width: $tablettePortrait) {
     font-size: 38px;
   }

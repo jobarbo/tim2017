@@ -13,6 +13,10 @@
     p{
       width: 100%;
 
+      &:first-child{
+        margin-left: 0;
+      }
+
       @media screen and (min-width: $desktop) {
         width: 43%;
         display: inline-block;
@@ -22,10 +26,21 @@
           margin-left: 0;
         }
       }
+
+      @media screen and (min-width: $desktopLarge2) {
+        &:first-child{
+          margin-left: 15px;
+        }
+      }
     }
 
     #tri_interets{
       margin-top: 2em;
+      padding: 0;
+
+      @media screen and (min-width: $desktopLarge2) {
+        padding: 0 1em;
+      }
 
       ul{
         padding-left: 0!important;
@@ -218,5 +233,9 @@
 
       }
     }
+  }
+
+  div.container-fluid .col-sm-12{
+    padding: 0;
   }
 }

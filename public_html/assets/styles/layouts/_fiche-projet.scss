@@ -19,7 +19,7 @@
 
     .retour_precedent {
       position: absolute;
-      bottom: 10px;
+      bottom: 10%;
     }
   }
 
@@ -29,21 +29,44 @@
       margin-bottom: 3em;
     }
 
+    padding: 0;
+
     @media screen and (min-width: $desktop2) {
       padding-right: 3em;
     }
+
+    @media screen and (min-width: $desktopLarge2) {
+      padding: 0 15px;
+    }
+  }
+
+  /* Photos projet */
+  .photos_projet .single-projet {
+    margin-right : 0;
   }
 
   /* Technologies et cadre du projet */
   .technologies_cadre div{
     display: inline-block;
-    margin-left: 1em;
+    margin-left: 0;
+
+    &:first-child{
+      margin-left: 0;
+    }
   }
 
   /* Autres projets */
   #autres_projets{
     clear: both;
     padding-top: 3em;
+
+    div.container-fluid{
+      padding: 0;
+
+      @media screen and (min-width: $desktopLarge2) {
+        padding: 0 15px;
+      }
+    }
   }
 
   /* icône de loupe */
@@ -57,9 +80,12 @@
     top: 65%;
   }
 
-  .single-projet:first-child{
+  .list-projets .single-projet:first-child{
     padding-left: 0;
-    padding-right: 30px;
+    padding-right: 0;
+    @media screen and (min-width: $tablettePortrait2) {
+      padding-right: 30px;
+    }
   }
 
 }
