@@ -358,11 +358,8 @@ input, textarea, select {
     p {
       margin-top: 1rem;
       text-align: left;
+      max-width: 90%;
     }
-  }
-
-  .testimonial:last-of-type {
-    margin-right: auto;
   }
 }
 

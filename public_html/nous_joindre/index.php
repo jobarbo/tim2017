@@ -26,21 +26,38 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $mail = new PHPMailer;
     $mail->CharSet = 'UTF-8';
 
-    $mail->isSMTP();                                      // Set mailer to use SMTP
-    $mail->Host = 'smtp.sendgrid.net';                    // Specify main and backup SMTP servers
-    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'apikey';                           // SMTP username
-    $mail->Password = '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';   // SMTP password
-    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-    $mail->Port = 587;                                    // TCP port to connect to
+    // Set mailer to use SMTP
+    $mail->isSMTP();
+    // Specify main and backup SMTP servers
+    $mail->Host = 'smtp.sendgrid.net';
+    // Enable SMTP authentication
+    $mail->SMTPAuth = true;
+    // SMTP username
+    $mail->Username = 'apikey';
+    // SMTP password
+    $mail->Password = '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';
+    // Enable TLS encryption, `ssl` also accepted
+    $mail->SMTPSecure = 'tls';
+    // TCP port to connect to
+    $mail->Port = 587;
 
+    // Sender
     $mail->setFrom('tim@csf.ca', 'Cegep de Sainte-Foy');
-    $mail->addAddress('erwann.letue@gmail.com', 'Destinataire');  // Add a recipient
+
+    // Recipient
+    /*if (){
+
+    } else{
+        $recipient = $_GET['recipient'];
+    }*/
+    $recipient = isset($_GET['recipient']) ? $_GET['recipient'] : NULL;
+    $mail->addAddress($recipient, 'Destinataire');
 
     $message = $_POST['message'];
-    $mail->isHTML(true);  // Set email format to HTML
+    // Set email format to HTML
+    $mail->isHTML(true);
     $mail->Subject = $_POST['subject'];
-    $mail->Body    = 'Message de '.$_POST['name'].'<br>'.$_POST['email'].'<br><br>'.nl2br($message);
+    $mail->Body = 'Message de '.$_POST['name'].'<br>'.$_POST['email'].'<br><br>'.nl2br($message);
 
     if(!$mail->send()) {
         addFlash("danger", "Erreur lors de l'envoi du mail");
@@ -50,8 +67,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     header('Location: ' . $_SERVER['PHP_SELF']);
     exit;
 }
-
-
 
 $template = $twig->loadTemplate('nous_joindre/index.html.twig');
 echo $template->render(array(
