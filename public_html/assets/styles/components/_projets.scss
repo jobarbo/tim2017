@@ -78,6 +78,9 @@
       background-repeat: no-repeat;
       position: relative;
       display: block;
+      @media(max-width:550px){
+            height: 170px;
+      }
     }
 
     .degrader_projet {
@@ -95,6 +98,10 @@
       padding-left: 25px;
       padding-bottom: 15px;
       width: 100%;
+      @media(max-width:769px){
+        padding-left: 15px;
+        padding-bottom: 5px;
+      }
 
     }
     h4 {

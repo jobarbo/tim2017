@@ -48,7 +48,6 @@
     }
   }
   .news_home {
-    padding-top: 40px;
     height: auto;
     position: relative;
     .actualite_text {
@@ -76,6 +75,7 @@
       margin: 0;
     }
     .fb_feed {
+          margin-bottom: 25px;
       a {
         color: #4862A3;
         &:hover {

@@ -204,6 +204,10 @@ header {
         @media(max-width:550px) {
           top: 14px;
           font-size: 12px;
+          &:after{
+            top: -6px;
+            right: -6px;
+          }
         }
       }
     }
