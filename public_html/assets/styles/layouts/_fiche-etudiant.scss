@@ -144,24 +144,33 @@
   }
 
   /** PROJETS **/
-  .projets_etudiant {
-    margin-top: 3em;
+  #projet-section{
+    clear: both;
 
-    .img_projet {
+    h2, hr{
+      margin-left: 15px;
+    }
 
-      img {
-        width: 100%;
-      }
+    .projets_etudiant {
+      margin-top: 3em;
 
-      span.titre_projet {
-        word-spacing: -0.15em;
-        font-weight: 800;
-        -webkit-transition: -webkit-transform 0.35s;
-        transition: transform 0.35s;
-        -webkit-transform: translate3d(0, 20px, 0);
-        transform: translate3d(0, 20px, 0);
+      .img_projet {
+
+        img {
+          width: 100%;
+        }
+
+        span.titre_projet {
+          word-spacing: -0.15em;
+          font-weight: 800;
+          -webkit-transition: -webkit-transform 0.35s;
+          transition: transform 0.35s;
+          -webkit-transform: translate3d(0, 20px, 0);
+          transform: translate3d(0, 20px, 0);
+        }
       }
     }
   }
+
 
 }
