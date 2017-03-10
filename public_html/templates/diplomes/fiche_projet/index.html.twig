@@ -5,115 +5,117 @@
 {% block content %}
     <div class="fiche_projet">
 
-    <section id="hero-section">
-        <div class="container_page">
-            <div class="hero-image-center col-sm-12">
-                <h1 class="hero_title" id="h1-no-width">
-                    {% if arrInfos.url != "" %}
-                    <a href="{{ arrInfos.url | raw }}" target="_blank">{{ title | raw }}</a>
-                    {% else %}
-                    {{ title | raw }}
-                    {% endif %}
+        <section id="hero-section">
+            <div class="container_page">
+                <div class="hero-image-center col-sm-12">
+                    <h1 class="hero_title" id="h1-no-width">
+                        {% if arrInfos.url != "" %}
+                            <a href="{{ arrInfos.url | raw }}" target="_blank">{{ title | raw }}</a>
+                        {% else %}
+                            {{ title | raw }}
+                        {% endif %}
                     </h1>
-                {% if arrInfos.url != "" %}
-                    <span class="url-projet"><a href="{{ arrInfos.url | raw }}" target="_blank"><i class="fa fa-globe"
-                                                                                                   title="Lien vers le projet"></i></a></span>
-                {% endif %}
-                <div class='retour_precedent'><a href="diplomes/fiche-etudiant/{{ arrInfosEtudiant.slug }}"><i
-                                class="fa fa-arrow-left"
-                                aria-hidden="true"></i> retour vers la fiche
-                        de {{ arrInfosEtudiant.prenom ~ " " ~ arrInfosEtudiant.nom }}</a></div>
+                    {% if arrInfos.url != "" %}
+                        <span class="url-projet"><a href="{{ arrInfos.url | raw }}" target="_blank"><i
+                                        class="fa fa-globe"
+                                        title="Lien vers le projet"></i></a></span>
+                    {% endif %}
+                    <div class='retour_precedent'><a href="diplomes/fiche-etudiant/{{ arrInfosEtudiant.slug }}"><i
+                                    class="fa fa-arrow-left"
+                                    aria-hidden="true"></i> retour vers la fiche
+                            de {{ arrInfosEtudiant.prenom ~ " " ~ arrInfosEtudiant.nom }}</a></div>
+                </div>
             </div>
-        </div>
-    </section>
-    <div class="container-fluid borderBox">
-        <div class="container_page">
-            <section class="texte_intro_projet col-sm-12 col-md-6">
-                <div class="description">
-                    <h2>Description</h2>
-                    <hr class="title-underline">
-                    {{ arrInfos.description | raw }}
-                </div>
-                <div class="participation">
-                    <h2>Participation</h2>
-                    <hr class="title-underline">
-                    {{ arrInfos.participation | raw }}
-                </div>
-            </section>
-            <section class="photos_projet col-sm-12 col-md-6 projet-section">
-                <div class="slides single-item">
+        </section>
+        <div class="container-fluid borderBox">
+            <div class="container_page">
+                <section class="texte_intro_projet col-sm-12 col-md-6">
+                    <div class="description">
+                        <h2>Description</h2>
+                        <hr class="title-underline">
+                        {{ arrInfos.description | raw }}
+                    </div>
+                    <div class="participation">
+                        <h2>Participation</h2>
+                        <hr class="title-underline">
+                        {{ arrInfos.participation | raw }}
+                    </div>
+                </section>
+                <section class="photos_projet col-sm-12 col-md-6 projet-section">
+                    <div class="slides single-item">
 
-                    {% for imagesPrj in arrImagesPrj %}
-                        <div class="slide-container">
+                        {% for imagesPrj in arrImagesPrj %}
+                            <div class="slide-container">
 
-                            <div class="single-projet">
-                                <a href="dist/images/projets/{{ imagesPrj.src }}.jpg" title="{{ arrInfos.titre }}">
-                                    <div class="img_projet slide"
-                                         style="background-image: url('dist/images/projets/{{ imagesPrj.src }}-large.jpg');"
-                                         title="{{ imagesPrj.alt }}">
-                                        <div>
-                                            <div class="content_projet">
+                                <div class="single-projet">
+                                    <a href="dist/images/projets/{{ imagesPrj.src }}.jpg" title="{{ arrInfos.titre }}">
+                                        <div class="img_projet slide"
+                                             style="background-image: url('dist/images/projets/{{ imagesPrj.src }}-large.jpg');"
+                                             title="{{ imagesPrj.alt }}">
+                                            <div>
+                                                <div class="content_projet">
                                             <span class="arrow"><i class="fa fa-search-plus i-space"
                                                                    title="Agrandir l'image"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                        </div>
-                    {% endfor %}
-
-                </div>
-                <div class="technologies_cadre">
-                    <div><h3>Technologies</h3>
-                        <hr class="title-underline">
-                        {{ arrInfos.technologies | raw }}
-                    </div>
-                    <div><h3>Cadre</h3>
-                        <hr class="title-underline">
-                        {{ arrInfos.cadre | raw }}
-                    </div>
-
-                </div>
-            </section>
-            <section class="projet-section" id="autres_projets">
-                <div class="projet_fiche container-fluid borderBox">
-                    <h2>Autres projets</h2>
-                    <hr class="title-underline">
-                    {{ texteErreurProjets | raw }}
-                    {% if texteErreurProjets == false %}
-                    <div class="list-projets">
-                        <ul>
-                            {% for projet in arrAutresProjets %}
-                                <div class="single-projet col-sm-6">
-                                    <li>
-
-                                        <a href="diplomes/fiche-projet/{{ projet.slug }}&{{ arrInfos.id_diplome }}">
-                                            <div class="img_projet"
-                                                 style="background-image: url('dist/images/projets/prj{{ projet.id }}_01-large.jpg')">
-                                                <div class="degrader_projet">
-                                                    <div class="content_projet">
-                                                        <h4 class="titre_projet">{{ projet.titre }}</h4>
-                                                        <hr class="title-underline">
-                                                        <span class="arrow"><i class="fa fa-angle-right i-space"
-                                                                               title="Voir le projet"></i></span>
-                                                    </div>
                                                 </div>
                                             </div>
-                                        </a>
-
-                                    </li>
+                                        </div>
+                                    </a>
                                 </div>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </div>
-                {% else %}
-                    {{ texteErreurProjet | raw }}
-                {% endif %}
-            </section>
 
+                            </div>
+                        {% endfor %}
+
+                    </div>
+                    <div class="technologies_cadre">
+                        <div><h3>Technologies</h3>
+                            <hr class="title-underline">
+                            {{ arrInfos.technologies | raw }}
+                        </div>
+                        <div><h3>Cadre</h3>
+                            <hr class="title-underline">
+                            {{ arrInfos.cadre | raw }}
+                        </div>
+
+                    </div>
+                </section>
+                <section class="projet-section" id="autres_projets">
+                    <div class="projet_fiche container-fluid borderBox">
+                        <h2>Autres projets</h2>
+                        <hr class="title-underline">
+                        {{ texteErreurProjets | raw }}
+                        {% if texteErreurProjets == false %}
+                        <div class="list-projets">
+                            <ul>
+                                {% for projet in arrAutresProjets %}
+
+                                    <li>
+                                        <div class="single-projet col-sm-6">
+                                            <a href="diplomes/fiche-projet/{{ projet.slug }}&{{ arrInfos.id_diplome }}">
+                                                <div class="img_projet"
+                                                     style="background-image: url('dist/images/projets/prj{{ projet.id }}_01-large.jpg')">
+                                                    <div class="degrader_projet">
+                                                        <div class="content_projet">
+                                                            <h4 class="titre_projet">{{ projet.titre }}</h4>
+                                                            <hr class="title-underline">
+                                                            <span class="arrow"><i class="fa fa-angle-right i-space"
+                                                                                   title="Voir le projet"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    {% else %}
+                        {{ texteErreurProjet | raw }}
+                    {% endif %}
+                </section>
+
+            </div>
         </div>
     </div>
 {% endblock %}
