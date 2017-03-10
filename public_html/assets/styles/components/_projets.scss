@@ -70,6 +70,15 @@
     background-repeat: no-repeat;
     position: relative;
     display: block;
+    @media(max-width:769px){
+      height: 220px;
+      margin-bottom: 30px;
+      background-position: top;
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: relative;
+      display: block;
+    }
 
     .degrader_projet {
       display: block;

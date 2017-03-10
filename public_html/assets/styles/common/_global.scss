@@ -42,6 +42,19 @@ div.container_page {
   @include clearfix();
 
 }
+section{
+    clear: both;
+    display: block;
+    height: auto;
+    position: relative;
+    margin-bottom:25px;
+    .container{
+      padding-top: 0px;
+      height: auto;
+      position: relative;
+      display: table;
+    }
+  }
 
 body {
   background-color: white;
@@ -51,31 +64,53 @@ body {
   width: 100%;
   top: 100px;
   position: relative;
+  @media(max-width:769px){
+    top:70px;
+    @media(max-width:550px){
+      top:45px;
+    }
+  }
   h1.hero_title {
     font-family: workSans;
     font-size: 38px;
     color: #fff;
     width: 250px;
+    @media(max-width:769px){
+      font-size:30px;
+    }
   }
-  h3 {
-    font-family: raleway_semi_bold;
-    font-size: 28px;
-  }
+ 
   h2 {
     font-family: raleway_semi_bold;
     font-size: 32px;
     margin-top: 0px;
+    @media(max-width:769px){
+      font-size:22px;
+    }
+  }
+   h3 {
+    font-family: raleway_semi_bold;
+    font-size: 28px;
+    @media(max-width:769px){
+      font-size:20px;
+    }
   }
   h4 {
     font-family: raleway_bold;
     font-size: 22px;
     //letter-spacing: 1px;
+    @media(max-width:769px){
+      font-size:16px;
+    }
 
   }
   p {
 
     font-family: open_sans_regular;
-    font-size: 16px;
+    font-size: 14px;
+    @media(max-width:769px){
+      font-size:14px;
+    }
   }
 
   //overflow: hidden;
@@ -152,7 +187,6 @@ hr.title-underline {
 #hero-section {
   clear: both;
   height: 360px;
-  margin-bottom: 2em;
   background-image: url("../../dist/images/hero_bkg_pattern@1x.png");
     background-size: cover;
     background-position: 50%;
@@ -174,10 +208,6 @@ hr.title-underline {
     padding-top: 112px;
     position: relative;
 
-  }
-
-  .container {
-    padding: 0;
   }
 }
 
@@ -291,6 +321,10 @@ Structure :
 */
 label {
   display: block;
+}
+main{
+  height: auto;
+  //display: flex;
 }
 
 .icon {
