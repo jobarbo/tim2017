@@ -1,7 +1,7 @@
 .btn_reset{
   background: inherit;
   background-color: #F8F8FF;
-  color: #042438;
+  color: #042438!important;
   box-shadow: 11px 3px 5px rgba(1,1,1,0.15);
   &:before {
     content: inherit;
@@ -30,7 +30,9 @@
   }
 
   &:hover {
-    color: #042438;
     box-shadow: 11px 1.75px 3px rgba(1,1,1,0.15);
+  }
+  &:active {
+    color: #042438!important;
   }
 }

@@ -11,7 +11,8 @@
 
                     <h1 class="hero_title" id="h1-no-width">{{ title | raw }}</h1>
 
-                    <div class='photo-etudiant' style="background-image: url('dist/images/diplomes/{{ arrInfos.id }}.png')"></div>
+                    <div class='photo-etudiant'
+                         style="background-image: url('dist/images/diplomes/{{ arrInfos.id }}.png')"></div>
                     <ul class="etudiant_contact">
                         {% if arrInfos.courriel != "" %}
                             <li><a href="nous-joindre/diplome&{{ arrInfos.slug }}"><i class="fa fa-envelope"
@@ -114,7 +115,7 @@
                     </div>
                 </section>
                 <section id="projet-section" class="projets_etudiant">
-                    <div class="projet_fiche borderBox">
+                    <div class="borderBox">
                         <h2>Projets</h2>
                         <hr class="title-underline">
                         {{ texteErreurProjets | raw }}
@@ -122,8 +123,9 @@
                         <div class="list-projets">
                             <ul>
                                 {% for projet in arrProjets %}
-                                    <div class="single-projet col-sm-6">
-                                        <li>
+                                    <li>
+                                        <div class="single-projet col-sm-6">
+
 
                                             <a href="diplomes/fiche-projet/{{ projet.slug }}&{{ arrInfos.id }}">
                                                 <div class="img_projet"
@@ -140,8 +142,9 @@
 
                                             </a>
 
-                                        </li>
-                                    </div>
+
+                                        </div>
+                                    </li>
                                 {% endfor %}
                             </ul>
                         </div>
