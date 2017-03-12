@@ -12,6 +12,7 @@
  *
  *  ADMIN - ACCUEIL
  */
+ session_start();
 /*************** 1. VARIABLES LOCALES ***********************/
 $strNiveau = "";
 $strNiveauAdmin="../";
@@ -21,8 +22,17 @@ $strSection = "Éditer fiche étudiant";
 /*************** 2. INSTANCIATION CONFIG ET TWIG ***********************/
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 
-/*************** 3. REQUÊTES ÉVÉNEMENTS ***********************/
-//----- 3.2 Requete pour aller chercher tous les événements -----//
+/**************** 3.  VÉRIFICATION ET DROITS D'ACCÈS **********************/
+
+if(isset($_SESSION['arrAuthentification'])){
+    $arrAuthentification = unserialize($_SESSION['arrAuthentification']);
+    if($arrAuthentification["niveau_acces"] == 1){
+        header('Location: fiche_etudiant/index.php?id=' . $arrAuthentification["nom_usager_admin"]);
+    }
+}
+
+/*************** 4. REQUÊTES ÉVÉNEMENTS ***********************/
+//----- 4.1 Requete pour aller chercher tous les événements -----//
 try {
     $strSQLEvenements = "SELECT id_actualite, titre_actualite, description_actualite, date_publication, date_expiration FROM t_evenement";
 
@@ -54,8 +64,8 @@ try {
     $strMsgErrEvenement = $e->getMessage();
 }
 
-/*************** 3. REQUÊTES DIPLÔMÉS ***********************/
-//----- 3.2 Requete pour aller chercher tous les diplômés -----//
+/*************** 5. REQUÊTES DIPLÔMÉS ***********************/
+//----- 5.1 Requete pour aller chercher tous les diplômés -----//
 try {
     $strSQLDiplomes = "SELECT prenom_diplome, nom_diplome, slug, nom_usager_admin FROM t_diplome ORDER BY nom_diplome";
 
