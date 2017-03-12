@@ -17,6 +17,11 @@
       ],
       "main": true
     },
+    "sketch.js":{
+      "files": [
+        "scripts/sketch.js"
+      ]
+    },
     "quiz1.js": {
       "files": [
         "scripts/quiz1.js"
