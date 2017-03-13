@@ -67,7 +67,7 @@ try {
 /*************** 5. REQUÊTES DIPLÔMÉS ***********************/
 //----- 5.1 Requete pour aller chercher tous les diplômés -----//
 try {
-    $strSQLDiplomes = "SELECT prenom_diplome, nom_diplome, slug, nom_usager_admin FROM t_diplome ORDER BY nom_diplome";
+    $strSQLDiplomes = "SELECT prenom_diplome, nom_diplome, id_diplome, slug, nom_usager_admin FROM t_diplome ORDER BY nom_diplome";
 
     $objResultDiplome = $objConnMySQLi->query($strSQLDiplomes);
     if ($objResultDiplome == false) {
@@ -81,6 +81,7 @@ try {
                 array(
                     'prenom' => $objLigneDiplome->prenom_diplome,
                     'nom' => $objLigneDiplome->nom_diplome,
+                    'id_diplome' => $objLigneDiplome->id_diplome,
                     'matricule' => $objLigneDiplome->nom_usager_admin
                 );
         }

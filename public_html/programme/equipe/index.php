@@ -48,7 +48,7 @@ try {
 
 //Requête permettant d'aller chercher toutes les informations sur les enseignants (nom, prénom, courriel, twitter, linkedin, site web)
 
-    $strSQLProfs = "SELECT id_prof, nom_prof, prenom_prof, courriel_prof, pseudo_twitter_prof, linkedin_prof, site_web_prof
+    $strSQLProfs = "SELECT id_prof, nom_prof, prenom_prof, slug, courriel_prof, pseudo_twitter_prof, linkedin_prof, site_web_prof
 FROM t_prof ORDER BY nom_prof";
 
     if ($objResultProfs = $objConnMySQLi->query($strSQLProfs)) {
@@ -61,6 +61,7 @@ FROM t_prof ORDER BY nom_prof";
                     'id_prof' => $objLigneProfs->id_prof,
                     'nom' => $objLigneProfs->nom_prof,
                     'prenom' => $objLigneProfs->prenom_prof,
+                    'slug' => $objLigneProfs->slug,
                     'courriel' => $objLigneProfs->courriel_prof,
                     'pseudo' => $objLigneProfs->pseudo_twitter_prof,
                     'linkedin' => $objLigneProfs->linkedin_prof,
