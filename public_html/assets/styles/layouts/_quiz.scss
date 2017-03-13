@@ -1,4 +1,8 @@
 .allovinny {
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
   form {
     input[type="submit"] {
       position: absolute;
@@ -22,9 +26,9 @@
       }
     }
     .btnQuizRouge {
-      background-color: $biaRed;
+      background-color: #1a405b;
       &:hover {
-        background-color: red;
+        background-color: #1a405b;
       }
     }
     fieldset {
@@ -46,7 +50,8 @@
           text-align: left;
           color: white;
           font-size: 20px;
-          font-family: open_sans_regular;
+          font-family: work sans, sans-serif;
+          line-height: 24px;
           margin: 0 auto;
           width: 100%;
           max-width: 400px;
@@ -96,7 +101,6 @@
                 float: left;
                 display: inline-block;
                 height: 100%;
-                border: 1px solid $blue;
                 width: 25%;
                 color: white;
                 background-color: $blue;
@@ -120,7 +124,7 @@
               }
               border: 2px solid $blue;
               border-radius: 2px;
-              line-height: 50px;
+              line-height: 46px;
               display: block;
               width: 100%;
               height: 100%;
@@ -130,7 +134,7 @@
       }
       .back-rouge {
         height: 100%;
-        background-color: $biaRed;
+        background-color: #1a405b;
         text-align: center;
         @media screen and (max-width: $breakquiz) {
           height: auto;
@@ -140,7 +144,8 @@
           text-align: left;
           color: white;
           font-size: 20px;
-          font-family: open_sans_regular;
+          font-family: work sans, sans-serif;
+          line-height: 24px;
           margin: 0 auto;
           width: 100%;
           max-width: 400px;
@@ -183,17 +188,16 @@
             height: 50px;
             input[type="radio"]:checked + label {
               color: white;
-              background-color: $biaRed;
+              background-color: #1a405b;
             }
             label {
               .number {
                 float: left;
                 display: inline-block;
                 height: 100%;
-                border: 1px solid $biaRed;
                 width: 25%;
                 color: white;
-                background-color: $biaRed;
+                background-color: #1a405b;
                 @media screen and (max-width: $breakquiz) {
                   width: 15%;
                 }
@@ -205,16 +209,16 @@
               &:hover {
                 color: white;
                 cursor: pointer;
-                background-color: $biaRed;
+                background-color: #1a405b;
               }
               &:active {
                 color: white;
                 cursor: pointer;
-                background-color: $biaRed;
+                background-color: #1a405b;
               }
-              border: 2px solid $biaRed;
+              border: 2px solid #1a405b;
               border-radius: 2px;
-              line-height: 50px;
+              line-height: 46px;
               display: block;
               width: 100%;
               height: 100%;
@@ -226,7 +230,14 @@
   }
 }
 .quiz-layout {
-  padding: 0 20px;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+}
+.quiz-layout2 {
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 0;
 }
 [type="radio"] {
   @include visuallyhidden();
@@ -259,14 +270,14 @@
     .total2 {
       font-size: 24px;
       font-weight: bold;
-      color: $biaRed;
+      color: #1a405b;
     }
   }
   .progressionBleu {
     border: 2px solid $blue;
   }
   .progressionRouge {
-    border: 2px solid $biaRed;
+    border: 2px solid #1a405b;
   }
   .no-js {
     display: none;
@@ -276,7 +287,7 @@
   @media screen and (max-width: $breakquiz) {
     text-align: center;
   }
-  color: red;
+  color: #1a405b;
 }
 #icone-explication {
 }

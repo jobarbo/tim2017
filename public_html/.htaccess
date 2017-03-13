@@ -1,5 +1,5 @@
 #ErrorDocument 404 http://localhost/prod6/TIM2017_team/public/404/
-#ErrorDocument 404 http://timunix.cegep-ste-foy.qc.ca/~hooli/public/404/
+#ErrorDocument 404 http://timunix.cegep-ste-foy.qc.ca/~hooli/404/
 
 # ------------ Cache et expiration ----------
 
@@ -25,7 +25,7 @@
 
 
 RewriteEngine on
-#RewriteBase /~hooli/public/
+#RewriteBase /~hooli/
 #RewriteBase /public/
 
 # Page accueil
