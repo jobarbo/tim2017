@@ -25,6 +25,10 @@ $strNiveauAdmin = "../../";
 $strNiveauCSS = "../";
 $intMatriculeEtudiant = null;
 $strSection = "Éditer fiche étudiant";
+$strMessageErreurSauvegarde = false;
+$strMessageErreurPhoto = false;
+$boolErreurSauvegarde = false;
+$boolErreurPhoto = false;
 
 /*************** 2. INSTANCIATION CONFIG ET TWIG ***********************/
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
@@ -56,7 +60,8 @@ if (isset($_GET['submitInfosEtudiant'])) {
                                       WHERE nom_usager_admin = " . $intMatriculeEtudiant . " ";
 
         if($objConnMySQLi->query($strSQLUpdateInfosEtudiant) === TRUE){
-            $texteErreurUpdate = "";
+            $strMessageErreurSauvegarde = $arrMsgErreurs["fiche_etudiant"]["sauvegarde"]["succes"];
+            $boolErreurSauvegarde = false;
         }
         else{
             $strMsgErrUpdate= "<p>Les modifications n'ont pu être apportées, réessayez plus tard</p>";
@@ -66,13 +71,21 @@ if (isset($_GET['submitInfosEtudiant'])) {
         }
 
     } catch (Exception $e) {
-        $texteErreurUpdate = $e->getMessage();
+        $strMessageErreurSauvegarde = $e->getMessage();
+        $boolErreurSauvegarde = true;
     }
+}else{
+    $strMessageErreurSauvegarde = false;
 }
 
 /*************** 6. MESSAGE ERREUR UPDATE PHOTO ***********************/
 if (isset($_GET['erreur'])) {
-    $strMessageErreurPhoto = $_GET['erreur'];
+    $strMessageErreurPhoto = $arrMsgErreurs["fiche_etudiant"]["img"][$_GET['erreur']];
+    $boolErreurPhoto = true;
+}
+elseif (isset($_GET['sauvegardePhoto'])) {
+    $strMessageErreurPhoto = $arrMsgErreurs["fiche_etudiant"]["img"][$_GET['sauvegardePhoto']];
+    $boolErreurPhoto = false;
 }
 else{
     $strMessageErreurPhoto = false;
@@ -186,5 +199,8 @@ echo $template->render(array(
     'arrProjets' => $arrProjetsEtudiant,
     'texteErreurFiche' => $texteErreurFiche,
     'texteErreurProjets' => $texteErreurProjets,
+    'erreurSauvegarde' => $boolErreurSauvegarde,
+    'texteErreurSauvegarde' => $strMessageErreurSauvegarde,
+    'erreurPhoto' => $boolErreurPhoto,
     'texteErreurPhoto' => $strMessageErreurPhoto
 ));

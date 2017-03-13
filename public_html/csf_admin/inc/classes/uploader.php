@@ -41,7 +41,7 @@ class Uploader
     }
 
     function setMaxSize($sizeMB){
-        $this->maxSize = $sizeMB * (1024*1024);
+        $this->maxSize = $sizeMB * (800*360);
     }
 
     function setExtensions($options){
@@ -95,13 +95,17 @@ class Uploader
         $name   =   $_FILES[$fileBrowse]["name"];
         $ext    =   $this->getExtension($name);
         if(!is_dir($this->destinationPath)){
-            $this->setMessage("Dossier de destination invalide");
+            //$this->setMessage("Dossier de destination invalide");
+            $this->setMessage("dossier");
         }else if(!is_writable($this->destinationPath)){
-            $this->setMessage("Permission d'écriture non définie !");
+            //$this->setMessage("Permission d'écriture non définie !");
+            $this->setMessage("permissions");
         }else if(empty($name)){
-            $this->setMessage("Fichier non sélectionné ");
+            //$this->setMessage("Fichier non sélectionné ");
+            $this->setMessage("vide");
         }else if($size>$this->maxSize){
-            $this->setMessage("Taille du fichier trop grande !");
+            //$this->setMessage("Taille du fichier trop grande !");
+            $this->setMessage("taille");
         }else if($this->allowAll || (!$this->allowAll && in_array($ext, $this->extensions))){
 
             if($this->sameName==false){
@@ -111,12 +115,15 @@ class Uploader
             }
 
             if(move_uploaded_file($_FILES[$fileBrowse]["tmp_name"],$this->destinationPath.$this->uploadName)){
+                $this->setMessage("succes");
                 $result = true;
             }else{
-                $this->setMessage("Échec du téléversement, essayez plus tard!");
+                //$this->setMessage("Échec du téléversement, essayez plus tard!");
+                $this->setMessage("echec");
             }
         }else{
-            $this->setMessage("Format de fichier invalide !");
+            //$this->setMessage("Format de fichier invalide !");
+            $this->setMessage("type");
         }
         return $result;
     }

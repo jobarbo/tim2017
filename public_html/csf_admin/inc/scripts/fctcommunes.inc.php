@@ -21,6 +21,10 @@ require_once($strNiveau . 'inc/pieces/footer.php');
 
     }
 
+/*************** MESSAGES JSON ***********************/
+$strDonneesJSON = file_get_contents($strNiveau . "js/messages.json");
+$arrMsgErreurs = json_decode($strDonneesJSON, true);
+
 /*************** TWIG ***********************/
 include_once($strNiveauAdmin .'inc/lib/Twig/Autoloader.php');
 Twig_Autoloader::register();

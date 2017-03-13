@@ -11,9 +11,34 @@
   .profil, .forces, .contact_etudiant, .interets_etudiant, .photo_actuelle, .televersement, .nouvelle_photo, #projets_diplome {
     margin-bottom: 2em;
   }
+  .message{
+    p{
+      font-size: 20px;
+
+      i{
+        font-size: 30px;
+        padding-right: 15px;
+      }
+    }
+  }
+
+  .succes_sauvegarde{
+    color: green;
+  }
+  .err_sauvegarde{
+    color: red;
+  }
+
+  img{
+    display: block;
+    margin: 0 auto;
+  }
+
+
 
   section {
     padding-bottom: 2em;
+    clear: none;
 
     .h3 {
       font-family: raleway_semi_bold;
@@ -97,10 +122,10 @@
     form.fTeleversement{
       p{
         margin-top: 1em;
-        color: red;
         .erreurGlobale{
           padding: 1em;
           border-radius: 5px;
+          display: block;
 
           i{
             margin-right: 1em;
