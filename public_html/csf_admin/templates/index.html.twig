@@ -19,7 +19,7 @@
                             </form>
                             <span class="nom_activite">{{ arrEvenements.titre_actualite }}</span><br />
                             <p>{{ arrEvenements.description_actualite }}</p>
-                            <a class="lien_editer" href="evenement/index.php?id={{ arrEvenements.titre_actualite }}">Éditer l'événement<img src="../../public_html/dist/images/editer.png" alt="Éditer un événement" /></a>
+                            <a class="lien_editer" href="evenement/index.php?id={{ arrEvenements.id_actualite }}&edit">Éditer l'événement<img src="../../public_html/dist/images/editer.png" alt="Éditer un événement" /></a>
                         </li>
                     {% endfor %}
                 </ul>
@@ -32,7 +32,7 @@
         <hr class="title-underline">
     {% if erreurDiplomes == false %}
         <section id="liste_fiche_etudiant">
-            <ul id="liste_diplomes">
+            <ul id="liste_diplome">
                 {% for arrDiplomes in diplomes %}
                     <li>
                         <p class="nom">{{ arrDiplomes.id_diplome }} - {{ arrDiplomes.prenom }} {{ arrDiplomes.nom }} <span class="lien_edition_diplome"><a href="fiche_etudiant/index.php?id={{ arrDiplomes.matricule }}">Éditer la fiche<img src="../../public_html/dist/images/editer.png" alt="Éditer un événement" /></a></span></p>

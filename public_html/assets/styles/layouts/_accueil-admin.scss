@@ -105,13 +105,13 @@ section.liste_diplomes{
 
 }
 
-ul#liste_diplomes li{
+ul#liste_diplome li{
 
     padding: 5em;
 
 }
 
-ul#liste_diplomes li:nth-child(odd){
+ul#liste_diplome li:nth-child(odd){
 
     background-color: $grey;
 
