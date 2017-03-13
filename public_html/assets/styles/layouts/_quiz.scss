@@ -26,9 +26,9 @@
       }
     }
     .btnQuizRouge {
-      background-color: $biaRed;
+      background-color: #1a405b;
       &:hover {
-        background-color: red;
+        background-color: #1a405b;
       }
     }
     fieldset {
@@ -134,7 +134,7 @@
       }
       .back-rouge {
         height: 100%;
-        background-color: $biaRed;
+        background-color: #1a405b;
         text-align: center;
         @media screen and (max-width: $breakquiz) {
           height: auto;
@@ -188,7 +188,7 @@
             height: 50px;
             input[type="radio"]:checked + label {
               color: white;
-              background-color: $biaRed;
+              background-color: #1a405b;
             }
             label {
               .number {
@@ -197,7 +197,7 @@
                 height: 100%;
                 width: 25%;
                 color: white;
-                background-color: $biaRed;
+                background-color: #1a405b;
                 @media screen and (max-width: $breakquiz) {
                   width: 15%;
                 }
@@ -209,14 +209,14 @@
               &:hover {
                 color: white;
                 cursor: pointer;
-                background-color: $biaRed;
+                background-color: #1a405b;
               }
               &:active {
                 color: white;
                 cursor: pointer;
-                background-color: $biaRed;
+                background-color: #1a405b;
               }
-              border: 2px solid $biaRed;
+              border: 2px solid #1a405b;
               border-radius: 2px;
               line-height: 46px;
               display: block;
@@ -270,14 +270,14 @@
     .total2 {
       font-size: 24px;
       font-weight: bold;
-      color: $biaRed;
+      color: #1a405b;
     }
   }
   .progressionBleu {
     border: 2px solid $blue;
   }
   .progressionRouge {
-    border: 2px solid $biaRed;
+    border: 2px solid #1a405b;
   }
   .no-js {
     display: none;
@@ -287,7 +287,7 @@
   @media screen and (max-width: $breakquiz) {
     text-align: center;
   }
-  color: red;
+  color: #1a405b;
 }
 #icone-explication {
 }
