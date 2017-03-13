@@ -432,8 +432,13 @@ a i.fa{
   -webkit-transition-property: transform;
   transition-property: transform;
 }
+@media screen and (min-width: $tablettePortrait) {
+  a i.fa:hover{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
 
-a i.fa:hover{
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+a i.fa-external-link-square{
+  padding: 0 5px 15px;
 }
