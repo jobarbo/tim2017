@@ -10,6 +10,9 @@
 
                 <h1 id="h1-no-width">{{ page }}</h1>
                 <span class="no-cours">{{ cours.no }}</span>
+                <span class="retour-precedent-cours"><i
+                            class="fa fa-arrow-left"
+                            aria-hidden="true"></i><a class="lien-retour" href="programme/grille-cours/">Retour à la grille de cours</a></span>
 
             </div>
         </div>
@@ -48,7 +51,7 @@
         </div>
         <div class="row">
             <h2>Autres cours de l'année</h2>
-            <div class="grille_cours">
+            <div>
                 {% for i in boucle1..boucle2 %}
                     <div class="col-sm-6">
                         <table>

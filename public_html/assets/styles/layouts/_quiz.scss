@@ -1,4 +1,8 @@
 .allovinny {
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
   form {
     input[type="submit"] {
       position: absolute;
@@ -46,7 +50,8 @@
           text-align: left;
           color: white;
           font-size: 20px;
-          font-family: open_sans_regular;
+          font-family: work sans, sans-serif;
+          line-height: 24px;
           margin: 0 auto;
           width: 100%;
           max-width: 400px;
@@ -96,7 +101,6 @@
                 float: left;
                 display: inline-block;
                 height: 100%;
-                border: 1px solid $blue;
                 width: 25%;
                 color: white;
                 background-color: $blue;
@@ -120,7 +124,7 @@
               }
               border: 2px solid $blue;
               border-radius: 2px;
-              line-height: 50px;
+              line-height: 46px;
               display: block;
               width: 100%;
               height: 100%;
@@ -140,7 +144,8 @@
           text-align: left;
           color: white;
           font-size: 20px;
-          font-family: open_sans_regular;
+          font-family: work sans, sans-serif;
+          line-height: 24px;
           margin: 0 auto;
           width: 100%;
           max-width: 400px;
@@ -190,7 +195,6 @@
                 float: left;
                 display: inline-block;
                 height: 100%;
-                border: 1px solid $biaRed;
                 width: 25%;
                 color: white;
                 background-color: $biaRed;
@@ -214,7 +218,7 @@
               }
               border: 2px solid $biaRed;
               border-radius: 2px;
-              line-height: 50px;
+              line-height: 46px;
               display: block;
               width: 100%;
               height: 100%;
@@ -226,7 +230,14 @@
   }
 }
 .quiz-layout {
-  padding: 0 20px;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+}
+.quiz-layout2 {
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 0;
 }
 [type="radio"] {
   @include visuallyhidden();
