@@ -52,6 +52,9 @@
                         <label for="message">Message</label>
                         <textarea required name="message" id="message" title="Entrez votre message" aria-describedby="message-tip" placeholder="Entrez votre message"></textarea>
 
+                        {# reCAPTCHA #}
+                        <div class="g-recaptcha" data-sitekey="6LeHzxgUAAAAAKfaMEfUk2kUbV4nV-awR4eXxIAZ"></div>
+
                         {# Submit #}
                         <button type="submit" class="blue-btn" id="submit" name="submit" value="submit">
                             <i class="fa fa-paper-plane-o i-space" aria-hidden="true"></i>
@@ -114,4 +117,6 @@
             </div>
         </section>
     </div>
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 {% endblock%}
