@@ -1,5 +1,7 @@
 div.futur_etudiant{
 
+  margin-top: 2em;
+
   img.imgtest{
 
     width: 100%;
@@ -117,7 +119,6 @@ div.profil_quiz{
 div.image_benoit{
 
   img{
-
     display: block;
     margin: 0 auto;
 
@@ -144,6 +145,21 @@ div.formationVivante>p, div.integrateur, div.continuum{
   }
 
 }
+
+
+@media screen and (max-width: 320px) {
+
+  div.image_benoit{
+
+  img{
+
+    width: 100%;
+
+  }
+
+}
+}
+
 
 
 
