@@ -11,6 +11,10 @@ header {
   .meta_nav {
     height: 30px;
     padding: 5px 2%;
+    a{
+      font-weight: 400;
+    font-family: 'work sans',sans-serif;
+    }
     @media (max-width: 769px) {
       display: none;
       height: 25px;
@@ -80,7 +84,7 @@ header {
     position: relative;
     transition: all .2s ease-in-out;
 
-    p {
+    span {
       position: absolute;
       left: 120px;
       top: 20px;
@@ -90,12 +94,13 @@ header {
       transition: all .2s ease-in-out;
     }
 
-    p.big_text {
+    span.big_text {
       position: absolute;
       left: 150px;
       top: 6px;
       line-height: 18px;
-      font-family: raleway_semi_bold;
+      font-family: work sans;
+      font-weight: 500;
       font-size: 14px;
       transition: all .2s ease-in-out;
       @media (max-width: 769px) {
@@ -256,7 +261,8 @@ header {
           color: black;
           position: relative;
           transition: all .3s ease;
-          font-weight: 500;
+          font-weight: 600;
+          font-family: 'work sans',sans-serif;
           text-rendering: optimizeLegibility;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
@@ -395,6 +401,8 @@ header {
             }
 
             a {
+              font-weight: 600;
+              font-family: 'work sans',sans-serif;
               color: #fff;
               -webkit-font-smoothing: antialiased;
             }
@@ -480,7 +488,6 @@ header {
       
       font-family: raleway_black;
       box-shadow: 16px 3px 6px 0 rgba(246, 40, 89, .42);
-      -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       font-size: 14px;
       color: white;
@@ -521,6 +528,8 @@ header {
       #label_inscription {
         display: table;
         margin: auto;
+        font-weight: 600;
+        font-family: 'work sans',sans-serif;
       }
 
       &:hover {

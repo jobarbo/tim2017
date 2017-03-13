@@ -35,6 +35,7 @@
   src: url("../fonts/WorkSans-ExtraBold.ttf");
 }
 
+
 div.container_page {
 
   max-width: 1440px;
@@ -71,7 +72,8 @@ body {
     }
   }
   h1.hero_title {
-    font-family: workSans;
+    font-family: 'Work Sans',sans-serif;
+    font-weight: 700;
     font-size: 32px;
     color: #fff;
     width: 250px;
@@ -81,23 +83,27 @@ body {
   }
  
   h2 {
-    font-family: raleway_semi_bold;
-    font-size: 32px;
-    margin-top: 0px;
+    font-family: 'Work Sans',sans-serif;
+    font-size: 26px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: darkslategrey;
     @media(max-width:769px){
       font-size:22px;
     }
   }
    h3 {
-    font-family: raleway_semi_bold;
+    font-family: 'work sans',sans-serif;
     font-size: 28px;
+    font-weight: 500;
     @media(max-width:769px){
       font-size:20px;
     }
   }
   h4 {
-    font-family: raleway_bold;
+    font-family: 'work sans',sans-serif;
     font-size: 22px;
+    font-weight: 500;
     //letter-spacing: 1px;
     @media(max-width:769px){
       font-size:16px;
@@ -106,11 +112,21 @@ body {
   }
   p {
 
-    font-family: open_sans_regular;
-    font-size: 14px;
+    font-family: 'work sans',sans-serif;
+    font-weight: 400;
+    font-size:14px;
     @media(max-width:769px){
-      font-size:14px;
+      font-size:12px;
     }
+  }
+  main a{
+        font-family: 'work sans',sans-serif;
+        font-weight: 400;
+  }
+  p.date{
+    font-family: 'work sans',sans-serif;
+    font-weight: 300;
+    color: #999;
   }
   #hero_canvas{
     position: absolute;
@@ -167,7 +183,7 @@ hr.title-underline {
   background: linear-gradient(270deg, #0098ff, #00acff);
   height: 1px;
   width: 210px;
-  margin: 0 0 35px 0;
+  margin: 0 0 25px 0;
 }
 
 /* BANNIÈRE BLEUE*/
@@ -249,6 +265,11 @@ hr.title-underline {
   backface-visibility: hidden;
   transition: all .2s ease-in-out;
   transform: translateY(0px);
+  @media(max-width:769px){
+    
+      font-size: 12px;
+    
+  }
   .back_slant {
     height: 41px;
     position: absolute;
