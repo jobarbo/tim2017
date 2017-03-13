@@ -8,17 +8,25 @@
         <h2> Modification d'un événement </h2>
         <div class="titre_actu">
             <h3>Titre de l'actualité</h3>
-            <input type="text" name="titre_actu"></input>
+            <input type="text" name="titre_actu" value="{{arrEditNouvelle.titre_actualite}}" ></input>
+        </div>
+        <div class="date_publication_actu">
+            <h3>Date de publication de la nouvelle</h3>
+            <input type="text" name="date_publication_actu" value="{{arrEditNouvelle.date_publication}}"></input>
+        </div>
+        <div class="date_expiration_actu">
+            <h3>Date de l'évenement</h3>
+            <input type="text" name="date_expiration_actu" value="{{arrEditNouvelle.date_expiration}}"></input>
         </div>
         <div class="desc_actu">
             <h3>Description de l'actualité</h3>
-            <textarea name="desc_actu" cols="40"></textarea>
+            <textarea name="desc_actu" cols="40" >{{arrEditNouvelle.description_actualite}}</textarea>
         </div>
         <div class="url_actu">
             <h3>Url de l'actualité</h3>
-            <input type="text" name="url_actu"></input>
+            <input type="text" name="url_actu" value="{{arrEditNouvelle.url_actualite}}"></input>
         </div>
-
+        <input type="hidden" name="id_actu" value="1"/>
         <input type="submit" name="modif_actu" value="modifier l'événement"/>
     </form>
     
