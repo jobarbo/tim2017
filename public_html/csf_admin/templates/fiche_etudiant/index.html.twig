@@ -6,10 +6,25 @@
     <div class="editer_etudiant container_page">
         {% if texteErreurFiche == false %}
             <h1>{{ pageh1 | raw }}</h1>
+            {% if erreurSauvegarde == false %}
+                {% if texteErreurSauvegarde != false %}
+                    <div class="succes_sauvegarde container message">
+                        <p><span><i class="fa fa-check-circle-o"
+                                    aria-hidden="true"></i>{{ texteErreurSauvegarde }}</span>
+                        </p>
+                    </div>
+                {% endif %}
+            {% else %}
+                <div class="err_sauvegarde message">
+                    <p><span class="erreurGlobale"><i class="fa fa-exclamation-triangle"
+                                                      aria-hidden="true"></i>{{ texteErreurSauvegarde }}</span>
+                    </p>
+                </div>
+            {% endif %}
             <section id="infos_etudiant" class="col-sm-12 col-md-8">
                 <form enctype="multipart/form-data"
                       method="get"
-                      action="fiche-etudiant/"
+                      action="fiche_etudiant/index.php?id={{ arrInfos.nom_usager_admin }}"
                       name="fInfosEtudiant">
                     <h2>Informations du diplômé</h2>
                     <hr class="title-underline">
@@ -175,10 +190,16 @@
                             <input type="file" name="photoEtudiant" id="upload_img"/>
 
                             <input type="hidden" name="matricule" value="{{ arrInfos.nom_usager_admin }}">
-                            {% if texteErreurPhoto != false %}
-                                <p><span class="erreurGlobale"><i class="fa fa-exclamation-triangle"
+                            {% if erreurPhoto != false %}
+                                <p><span class="erreurGlobale message err_sauvegarde"><i class="fa fa-exclamation-triangle"
                                                                   aria-hidden="true"></i>{{ texteErreurPhoto }}</span>
                                 </p>
+                            {% elseif erreurPhoto == false %}
+                                {% if texteErreurPhoto != false %}
+                                    <p><span class="erreurGlobale message succes_sauvegarde"><i class="fa fa-check-circle-o"
+                                                                      aria-hidden="true"></i>{{ texteErreurPhoto }}</span>
+                                    </p>
+                                {% endif %}
                             {% endif %}
                             <button type="submit" name="submitPhotosEtudiant" value="Sauvegarder" class="blue-btn">
                                 <i class="fa fa-upload i-space" aria-hidden="true"></i>
