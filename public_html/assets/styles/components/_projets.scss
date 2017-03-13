@@ -5,7 +5,7 @@
     background: linear-gradient(270deg, #0098ff, #00acff);
     height: 1px;
     width: 210px;
-    margin: 0 0 35px 0;
+    margin: 0 0 25px 0;
   }
   ul {
     padding: 0px;
@@ -40,7 +40,7 @@
     hr.title-underline {
       display: block;
       background: white;
-      height: 1px;
+      height: 0px;
       width: 210px;
       margin: 0 0 5px 0;
 
@@ -102,6 +102,12 @@
         padding-left: 15px;
         padding-bottom: 5px;
       }
+      p{
+        font-family: work sans,sans-serif;
+        font-weight: 300;
+        font-size: 14px;
+      }
+
 
     }
     h4 {
