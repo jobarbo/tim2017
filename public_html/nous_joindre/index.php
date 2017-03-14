@@ -17,6 +17,22 @@ if ($objResult = $objConnMySQLi->query($request)) {
 }
 
 
+/* Définiton recipient */
+$type = (isset($_GET['type']) && $_GET['type'] !== "") ? $_GET['type'] : null;
+$slug = (isset($_GET['slug']) && $_GET['slug'] !== "") ? $_GET['slug'] : null;
+$recipient = null;
+if ($slug){
+    if (!$type) $type = 'diplome';
+    /* Request */
+    $request_recipient = "SELECT courriel_$type FROM t_$type WHERE slug = ?";
+    $stmt = $objConnMySQLi->prepare($request_recipient);
+    $stmt->bind_param('s', $slug);
+    $stmt->execute();
+    $stmt->bind_result($recipient);
+    $stmt->fetch();
+}
+
+
 
 
 
@@ -61,18 +77,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
                 // Recipient
-                if (isset($_GET['type']) && isset($_GET['slug'])) {
-                    $slug = $_GET['slug'];
-                    $request_recipient = "SELECT courriel_diplome FROM t_diplome WHERE slug = ?";
-                    $stmt = $objConnMySQLi->prepare($request_recipient);
-                    $stmt->bind_param('s', $slug);
-                    $stmt->execute();
-                    $stmt->bind_result($recipient);
-                    $stmt->fetch();
-                } else{
-                    $recipient = $_POST['recipient'];
-                }
-                $mail->addAddress($recipient, 'Destinataire');
+                $mail->addAddress($_POST['recipient'], 'Destinataire');
 
 
                 $message = $_POST['message'];
@@ -87,17 +92,17 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                 } else {
                     addFlash("success", 'Votre message a bien été envoyé !');
                 }
-                header('Location: ' . $_SERVER['PHP_SELF']);
+                header('Location: ' . $_SERVER['REQUEST_URI']);
                 exit;
 
             } else {
                 addFlash('danger', 'Erreur lors de la vérification du captcha');
-                header('Location: ' . $_SERVER['PHP_SELF']);
+                header('Location: ' . $_SERVER['REQUEST_URI']);
                 exit;
             }
         } else{
             addFlash('danger', 'Cochez la case "Je ne suis pas un robot"');
-            header('Location: ' . $_SERVER['PHP_SELF']);
+            header('Location: ' . $_SERVER['REQUEST_URI']);
             exit;
         }
     }
@@ -112,7 +117,8 @@ echo $template->render(array(
     'niveau' => $strNiveau,
     'page' => "Nous joindre",
     'arrMenuLiensActifs' => $arrMenuActif,
-    'contacts' => $arrContact
+    'contacts' => $arrContact,
+    'recipient' => $recipient
 ));
 
 

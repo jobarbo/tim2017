@@ -16,7 +16,7 @@ var app = $(function configurer(evenement){
     function reInitQuestion(no){
         console.log(no);
         $("#Q" + (no - 1)).hide();
-        $("#Q" + (no)).slideToggle({easing: "swing"});
+        $("#Q" + (no)).fadeToggle({easing: "swing"});
         /*$("#qProfil" + (no - 1)).hide();
         $("#qProfil" + (no)).show();*/
     }
