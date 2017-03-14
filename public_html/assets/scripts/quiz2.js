@@ -84,7 +84,7 @@ var app = $(function configurer(evenement) {
 
     function slideQuiz(no)
     {
-        $("#Q" + (no)).slideToggle({easing: "swing"});
+        $("#Q" + (no)).fadeToggle({easing: "swing"});
     }
     function validerMonChoix(evenement)
     {

@@ -288,18 +288,27 @@
     text-align: center;
   }
   color: #1a405b;
+  display: inline-block;
+  max-width: 700px;
 }
 #icone-explication {
+  position: absolute;
+  display: inline-block;
 }
 #explication {
   @media screen and (max-width: $breakquiz) {
     text-align: center;
   }
+  display: inline-block;
   max-width: 700px;
+  padding-left: 20px;
 }
 .bon {
   color: green;
 }
 .mauvais {
   color: red;
+}
+.contenuInteractif2 {
+  padding-top: 20px;
 }
