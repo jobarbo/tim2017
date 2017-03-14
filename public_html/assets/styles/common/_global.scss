@@ -147,8 +147,14 @@ ul {
 }
 
 .meta_nav {
-  height: 50px;
   padding: 0 2% 0 2%;
+
+  p{
+    width: 100%;
+    @media screen and (min-width: $tablettePaysage) {
+      width: initial;
+    }
+  }
   ul {
     padding: 0;
     text-align: right;
@@ -156,7 +162,6 @@ ul {
     font-family: open_sans_regular;
     font-size: 11px;
     color: black;
-    height: 20px;
     li {
       display: inline-block;
       margin-left: 20px;
