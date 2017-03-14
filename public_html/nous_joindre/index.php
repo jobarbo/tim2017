@@ -20,16 +20,22 @@ if ($objResult = $objConnMySQLi->query($request)) {
 /* Définiton recipient */
 $type = (isset($_GET['type']) && $_GET['type'] !== "") ? $_GET['type'] : null;
 $slug = (isset($_GET['slug']) && $_GET['slug'] !== "") ? $_GET['slug'] : null;
-$recipient = null;
+$arrPerson = null;
 if ($slug){
     if (!$type) $type = 'diplome';
     /* Request */
-    $request_recipient = "SELECT courriel_$type FROM t_$type WHERE slug = ?";
+    $request_recipient = "SELECT id_$type, nom_$type, prenom_$type, courriel_$type FROM t_$type WHERE slug = ?";
     $stmt = $objConnMySQLi->prepare($request_recipient);
     $stmt->bind_param('s', $slug);
     $stmt->execute();
-    $stmt->bind_result($recipient);
+    $stmt->bind_result($id, $nom, $prenom, $recipient);
     $stmt->fetch();
+    $arrPerson = array(
+        'id' => $id,
+        'nom' => $nom,
+        'prenom' => $prenom,
+        'recipient' => $recipient
+    );
 }
 
 
@@ -117,8 +123,9 @@ echo $template->render(array(
     'niveau' => $strNiveau,
     'page' => "Nous joindre",
     'arrMenuLiensActifs' => $arrMenuActif,
+    'type' => $type,
     'contacts' => $arrContact,
-    'recipient' => $recipient
+    'person' => $arrPerson
 ));
 
 
