@@ -15,7 +15,7 @@
                          style="background-image: url('dist/images/diplomes/{{ arrInfos.id }}.png')"></div>
                     <ul class="etudiant_contact">
                         {% if arrInfos.courriel != "" %}
-                            <li><a href="nous-joindre/?type=diplome&slug={{ arrInfos.slug }}"><i class="fa fa-envelope"
+                            <li><a href="nous-joindre/diplome&{{ arrInfos.slug }}"><i class="fa fa-envelope"
                                                                                       title="Courriel"></i></a></li>
                         {% endif %}
                         {% if arrInfos.twitter != "" %}

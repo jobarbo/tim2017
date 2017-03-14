@@ -69,6 +69,8 @@
 
     .etudiant_contact {
       width: 40%;
+      margin-top: -10px;
+
       @media screen and (min-width: $tablettePortrait) {
         width: inherit;
       }
