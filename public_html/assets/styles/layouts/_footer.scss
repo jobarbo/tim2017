@@ -1,15 +1,29 @@
 body {
 
   footer {
+    background-color: $bgFooter;
     clear: both;
     padding-top: 0em;
     z-index: 0;
     display: block;
     float: none !important;
-a{
-        font-family: 'work sans',sans-serif;
-        font-weight: 400;
-  }
+
+    a {
+      font-family: 'work sans', sans-serif;
+      font-weight: 400;
+    }
+
+    .blue-btn:before {
+      border-bottom: 10px solid $bgFooter!important;
+    }
+
+    .back_slant {
+      box-shadow: 13px 3px 1px 12px $bgFooter!important;
+    }
+
+    .blue-btn .back_slant:before{
+      border-top: 10px solid $bgFooter;
+    }
 
     section.pre_footer {
 
@@ -31,13 +45,17 @@ a{
         padding: 1em;
         li {
           display: inline-block;
-          margin-right: 2em;
+
+          @media screen and (min-width: $mobilePortrait2) {
+            margin-right: 2em;
+          }
+
           i {
             font-size: 30px;
             color: #0d97f5;
           }
         }
-        li:last-child{
+        li:last-child {
           margin-right: 0;
         }
       }
@@ -50,14 +68,14 @@ a{
     }
 
     .meta_nav {
-      float: left;
       background: linear-gradient(to left, #0098FF, #00ACFF);
       width: 100%;
+      margin-bottom: 0;
 
       p {
         float: left;
         color: #fff;
-        font-family: work sans,sans-serif;
+        font-family: work sans, sans-serif;
         font-weight: 400;
         font-size: 14px;
         padding: 15px 0 0 0;
@@ -70,6 +88,10 @@ a{
           }
 
         }
+      }
+
+      .col-sm-12{
+        padding: 0;
       }
     }
   }

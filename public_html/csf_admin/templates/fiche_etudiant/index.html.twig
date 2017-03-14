@@ -30,13 +30,11 @@
                     <hr class="title-underline">
                     <div class="profil">
                         <label for="profil" class="h3">Profil</label>
-                        <textarea name="profil" cols="40"
-                                  class="col-sm-12 col-md-10">{{ arrInfos.profil | raw }}</textarea>
+                        <textarea name="profil" id="profil" cols="40" class="col-sm-12 col-md-10">{{ arrInfos.profil | raw }}</textarea>
                     </div>
                     <div class="forces">
                         <label for="forces" class="h3">Forces</label>
-                        <textarea name="forces" cols="40"
-                                  class="col-sm-12 col-md-10">{{ arrInfos.forces | raw }}</textarea>
+                        <textarea name="forces" id="forces" cols="40" class="col-sm-12 col-md-10">{{ arrInfos.forces | raw }}</textarea>
                     </div>
                     <div class="interets_etudiant">
                         <h3>Intérêts</h3>
@@ -124,25 +122,25 @@
                         <div>
                             <label for="courriel">Courriel</label>
                             <i class="fa fa-envelope icon" title="Courriel" aria-hidden="true"></i>
-                            <input type="text" name="courriel" value="{{ arrInfos.courriel }}"/>
+                            <input type="text" name="courriel" id="courriel" value="{{ arrInfos.courriel }}"/>
                         </div>
 
                         <div>
                             <label for="twitter">Pseudo Twitter</label>
                             <i class="fa fa-twitter icon" title="Twitter" aria-hidden="true"></i>
-                            <input type="text" name="twitter" value="{{ arrInfos.twitter }}"/>
+                            <input type="text" name="twitter" id="twitter" value="{{ arrInfos.twitter }}"/>
                         </div>
 
                         <div>
                             <label for="linkedin">LinkedIn</label>
                             <i class="fa fa-linkedin icon" title="LinkedIn" aria-hidden="true"></i>
-                            <input type="text" name="linkedin" value="{{ arrInfos.linkedin }}"/>
+                            <input type="text" name="linkedin" id="linkedin" value="{{ arrInfos.linkedin }}"/>
                         </div>
 
                         <div>
                             <label for="siteweb">Site web</label>
                             <i class="fa fa-globe icon" title="Site web" aria-hidden="true"></i>
-                            <input type="text" name="siteweb" value="{{ arrInfos.site_web }}"/>
+                            <input type="text" name="siteweb" id="siteweb" value="{{ arrInfos.site_web }}"/>
                         </div>
 
 
@@ -151,13 +149,13 @@
                     <div class="col-sm-12">
                         <input type="hidden" name="id" value="{{ arrInfos.nom_usager_admin }}">
                         <button type="submit" name="submitInfosEtudiant" value="Sauvegarder"
-                                class="blue-btn"/>
+                                class="blue-btn">
                         <i class="fa fa-check-circle-o i-space" aria-hidden="true"></i>
                         Sauvegarder
                         <span class="back_slant"></span>
                         </button>
 
-                        <a href="fiche_etudiant/index.php?id={{ arrInfos.nom_usager_admin }}" value="Rétablir"
+                        <a href="fiche_etudiant/index.php?id={{ arrInfos.nom_usager_admin }}"
                            class="blue-btn btn_reset">
                             <i class="fa fa-refresh i-space" aria-hidden="true"></i>
                             Rétablir
@@ -185,8 +183,7 @@
                           class="fTeleversement">
 
                         <fieldset>
-                            <label for="photoEtudiant" class="visuallyhidden focusable">Fichier à téléverser</label>
-
+                            <label for="upload_img" class="visuallyhidden focusable">Fichier à téléverser</label>
                             <input type="file" name="photoEtudiant" id="upload_img"/>
 
                             <input type="hidden" name="matricule" value="{{ arrInfos.nom_usager_admin }}">

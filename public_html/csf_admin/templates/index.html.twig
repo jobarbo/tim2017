@@ -19,14 +19,14 @@
                             </form>
                             <span class="nom_activite">{{ arrEvenements.titre_actualite }}</span><br />
                             <p>{{ arrEvenements.description_actualite }}</p>
-                            <a class="lien_editer" href="evenement/index.php?id={{ arrEvenements.id_actualite }}&edit">Éditer l'événement<img src="../../public_html/dist/images/editer.png" alt="Éditer un événement" /></a>
+                            <a class="lien_editer" href="evenement/index.php?id_actu={{ arrEvenements.id_actualite }}&edit">Éditer l'événement<img src="../../public_html/dist/images/editer.png" alt="Éditer un événement" /></a>
                         </li>
                     {% endfor %}
                 </ul>
             </section>
         {% endif %}
     </section>
-    <a class="lien_ajouter blue-btn" href="evenement/index.php">Ajouter un événement<span class="back_slant"></span></a>
+    <a class="lien_ajouter blue-btn" href="evenement/index.php?ajout">Ajouter un événement<span class="back_slant"></span></a>
     <section class="col-sm-12 liste_diplomes">
         <h2>Fiches des diplômés</h2>
         <hr class="title-underline">
