@@ -4,10 +4,12 @@
  **/
 var objMessagesJSON = {
     "connexion": {
-
+        "echec": "Le nom d'utilisateur ou le mot de passe est incorrect. Veuillez réessayer."
     },
     "fiche_etudiant": {
         "img": {
+            "permissions": "Les permissions d'écriture du dossier ne sont pas définies. Veuillez contacter l'administrateur du site.",
+            "dossier": "Le dossier de destination est invalide. Veuillez contacter l'administrateur du site.",
             "poids": "Veuillez fournir un fichier qui ne dépasse pas la limite de poids permise (5Mo).",
             "type": "Veuillez fournir un fichier qui respecte le bon format (png).",
             "vide": "Veuillez sélectionner un fichier.",
