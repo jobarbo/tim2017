@@ -4,7 +4,7 @@
  **/
 var objMessagesJSON = {
     "connexion": {
-
+        "echec": "Le nom d'utilisateur ou le mot de passe est incorrect. Veuillez réessayer."
     },
     "fiche_etudiant": {
         "img": {

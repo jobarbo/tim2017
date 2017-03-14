@@ -209,14 +209,20 @@ hr.title-underline {
   }
 }
 #hero-section .hero-image-center {
-  height: 360px;
+  height: 300px;
+  @media screen and (min-width: $tablettePortrait) {
+    height: 360px;
+  }
   padding-top: 0;
   position: relative;
 }
 
 #hero-section {
   clear: both;
-  height: 360px;
+  height: 300px;
+  @media screen and (min-width: $tablettePortrait) {
+    height: 360px;
+  }
   background-image: url("../../dist/images/hero_bkg_pattern@1x.png");
     background-size: cover;
     background-position: 50%;
@@ -234,8 +240,12 @@ hr.title-underline {
   background-position: 50%;
 
   .hero-image {
-    height: 360px;
-    padding-top: 112px;
+    height: 300px;
+    padding-top: 60px;
+    @media screen and (min-width: $tablettePortrait) {
+      height: 360px;
+      padding-top: 112px;
+    }
     position: relative;
 
   }

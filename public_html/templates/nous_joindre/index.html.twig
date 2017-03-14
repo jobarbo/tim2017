@@ -33,10 +33,10 @@
                         </div>
 
                         {# destinataire #}
-                        {% if recipient %}
+                        {% if person %}
                             <label for="recipient">Destinataire</label>
                             <i class="fa fa-share icon" aria-hidden="true"></i>
-                            <input type="text" name="recipient" value="{{ recipient }}" readonly>
+                            <input type="text" name="recipient" value="{{ person.recipient }}" readonly>
                         {% else %}
                             <label for="recipient">Destinataire</label>
                             <select name="recipient" id="recipient" title="Sélectionnez un destinataire" aria-describedby="destinataire-tip">
@@ -73,28 +73,37 @@
                 <hr>
 
                 <div class="coordination col-md-6 col-sm-12">
-                    <img src="dist/images/photo_enseignants/enseignant_12.png" alt="Photo de Sylvain Lamoureux">
-                    <div class="coordinateur">
-                        <h2>{{ contacts[0]['titre_texte'] }}</h2>
-                        {# Champ 1 #}
-                        <p>Pour obtenir plus amples renseignements, contactez la coordination:</p>
-                        <h4>Coordonateur</h4>
-                        <ul>
-                            <li> SYLVAIN LAMOUREUX</li>
-                            <li> tel: (418) 659-6600 </li>
-                            <li>poste 6662</li>
-                        </ul>
-                        <a href="nous-joindre/prof&sylvain-lamoureux">
-                            <button class="blue-btn">
-                                <i class="fa fa-envelope-o i-space" aria-hidden="true"></i>
-                                Contacter
-                                <span class="back_slant"></span>
-                            </button>
-                        </a>
+                    {% if person %}
+                        {% if type == 'diplome' %}
+                            <img src="assets/images/diplomes/{{ person.id }}.png" alt="Image de la personne que vous souhaitez contacter">
+                        {% else %}
+                            <img src="assets/images/photo_enseignants/enseignant_{{ person.id }}.png" alt="Image de la personne que vous souhaitez contacter">
+                        {% endif %}
+                        <h3 class="name-person">{{ person.prenom }} {{ person.nom }}</h3>
+                    {% else %}
+                        <img src="dist/images/photo_enseignants/enseignant_12.png" alt="Photo de Sylvain Lamoureux">
+                        <div class="coordinateur">
+                            <h2>{{ contacts[0]['titre_texte'] }}</h2>
+                            {# Champ 1 #}
+                            <p>Pour obtenir plus amples renseignements, contactez la coordination:</p>
+                            <h4>Coordonateur</h4>
+                            <ul>
+                                <li> SYLVAIN LAMOUREUX</li>
+                                <li> tel: (418) 659-6600 </li>
+                                <li>poste 6662</li>
+                            </ul>
+                            <a href="nous-joindre/prof&sylvain-lamoureux">
+                                <button class="blue-btn">
+                                    <i class="fa fa-envelope-o i-space" aria-hidden="true"></i>
+                                    Contacter
+                                    <span class="back_slant"></span>
+                                </button>
+                            </a>
+                        </div>
+                    {% endif %}
 
 
                         {# !!! Champ 2 à supprimer !!! #}
-                    </div>
                 </div>
             </div>
         </section>

@@ -9,7 +9,7 @@ $strNiveau = "";
 $strNiveauAdmin="../";
 $strNiveauCSS="../";
 $strSection = "Connexion";
-$erreurGlobale = "";
+$strMessageErreurConnexion = null;
 
 session_start();
 
@@ -46,7 +46,7 @@ if(isset($_POST["btnConnecter"])){
 
     }else{
 
-        $erreurGlobale = "Le nom d'utilisateur ou le mot de passe est incorrect. Veuillez réessayer";
+        $strMessageErreurConnexion = $arrMsgErreurs["connexion"]["echec"];
     }
 
 
@@ -64,5 +64,5 @@ echo $template->render(array(
     'niveauCSS' => $strNiveauCSS,
     'niveau' => $strNiveau,
     'page' => "Connexion",
-    'erreurGlobale' => $erreurGlobale
+    'strMessageErreurConnexion' => $strMessageErreurConnexion
 ));

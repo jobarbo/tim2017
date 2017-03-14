@@ -4,7 +4,7 @@
 
 {% block content %}
     <div id="hero-section">
-        <div class="container">
+        <div class="container_page">
             <div class="hero-image-center col-sm-12">
 
 
@@ -14,10 +14,12 @@
         </div>
     </div>
 <div class="allovinny">
-    <div class="col-md-6">
-        <h2>Résultat</h2>
-        <hr class="title-underline" style="margin-left: 20px;">
-        <p style="padding-left: 20px;">{{ bonneReponse }}</p>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Résultat</h2>
+            <hr class="title-underline" style="margin-left: 20px;">
+            <p style="padding-bottom: 30px; padding-left: 20px;">{{ bonneReponse }}</p>
+        </div>
     </div>
 </div>
 {% endblock%}
