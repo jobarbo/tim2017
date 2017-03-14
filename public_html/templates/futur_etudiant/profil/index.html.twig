@@ -4,7 +4,7 @@
 
 {% block content %}
     <div id="hero-section">
-        <div class="container">
+        <div class="container_page">
             <div class="hero-image-center col-sm-12">
 
 
@@ -14,9 +14,11 @@
         </div>
     </div>
 <div class="quiz-layout2 allovinny">
-    <div class="contenuInteractif">
-        <p id='progression' class="progressionRouge no-js"></p>
-        <p id="erreurQuiz1">{{ erreur }}</p>
+    <div class="col-md-12">
+        <div class="contenuInteractif">
+            <p id='progression' class="progressionRouge no-js"></p>
+            <p id="erreurQuiz1">{{ erreur }}</p>
+        </div>
     </div>
     <div class="col-md-12">
         <form name="quiz_bon_profil" action="futur_etudiant/profil" method="GET">
