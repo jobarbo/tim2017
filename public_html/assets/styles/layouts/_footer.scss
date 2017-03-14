@@ -1,7 +1,7 @@
 body {
 
   footer {
-    background-color: $bgFooter;
+    background-color: #ceedff;
     clear: both;
     padding-top: 0em;
     z-index: 0;
@@ -10,19 +10,19 @@ body {
 
     a {
       font-family: 'work sans', sans-serif;
-      font-weight: 400;
+      font-weight: 300;
     }
 
     .blue-btn:before {
-      border-bottom: 10px solid $bgFooter!important;
+      border-bottom: 10px solid #ceedff!important;
     }
 
     .back_slant {
-      box-shadow: 13px 3px 1px 12px $bgFooter!important;
+      box-shadow: 15px 3px 0px 12px #ceedff!important;
     }
 
     .blue-btn .back_slant:before{
-      border-top: 10px solid $bgFooter;
+      border-top: 10px solid #ceedff;
     }
 
     section.pre_footer {
@@ -71,14 +71,34 @@ body {
       background: linear-gradient(to left, #0098FF, #00ACFF);
       width: 100%;
       margin-bottom: 0;
-
+      padding: 0;
+      .credit{
+        margin-top: 20px;
+      }
+      .roger {
+        a{
+          font-weight: 500;
+          color: white;
+        }
+        p{
+          font-size: 8px;
+        }
+        
+      }
+      .meta_social{
+        ul{
+          margin-top: 5px;
+        }
+      }
       p {
         float: left;
         color: #fff;
         font-family: work sans, sans-serif;
-        font-weight: 400;
-        font-size: 14px;
-        padding: 15px 0 0 0;
+        font-weight: 300;
+        font-size: 10px;
+      }
+      i{
+        font-size: 18px;
       }
       ul {
         li {
@@ -90,9 +110,7 @@ body {
         }
       }
 
-      .col-sm-12{
-        padding: 0;
-      }
+
     }
   }
 }

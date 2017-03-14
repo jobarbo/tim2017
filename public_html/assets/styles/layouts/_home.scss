@@ -40,6 +40,7 @@
     i{
     display: table;
     position: relative;
+    font-size: 175px;
     margin: auto;
       @media(max-width:769px){
         float: right;
@@ -67,7 +68,6 @@
 
 #social-section {
   .social_home {
-    margin-bottom: 50px;
     h3 {
       margin: 5px 0 5px 0;
     }
@@ -75,7 +75,6 @@
       margin: 0;
     }
     .fb_feed {
-          margin-bottom: 25px;
       a {
         color: #4862A3;
         &:hover {
