@@ -33,13 +33,19 @@
                         </div>
 
                         {# destinataire #}
-                        <label for="recipient">Destinataire</label>
-                        <select name="recipient" id="recipient" title="Sélectionnez un destinataire" aria-describedby="destinataire-tip">
-                            <option value="erwann.letue@gmail.com">Sylvain Lamoureux (Coordonnateur départemental)</option>
-                            <option value="omar.jbara2@gmail.com">Guillaume Gaulin-Laquerre (Webmestre)</option>
-                            <option value="stages-tim@cegep-ste-foy.qc.ca">Audrey Morneau-Gagnon (Responsable des stages)</option>
-                            <option value="bfrigon@cegep-ste-foy.qc.ca">Benoît Frigon (Responsable "Étudiant d'un jour")</option>
-                        </select>
+                        {% if recipient %}
+                            <label for="recipient">Destinataire</label>
+                            <i class="fa fa-share icon" aria-hidden="true"></i>
+                            <input type="text" name="recipient" value="{{ recipient }}" readonly>
+                        {% else %}
+                            <label for="recipient">Destinataire</label>
+                            <select name="recipient" id="recipient" title="Sélectionnez un destinataire" aria-describedby="destinataire-tip">
+                                <option value="erwann.letue@gmail.com">Sylvain Lamoureux (Coordonnateur départemental)</option>
+                                <option value="omar.jbara2@gmail.com">Guillaume Gaulin-Laquerre (Webmestre)</option>
+                                <option value="stages-tim@cegep-ste-foy.qc.ca">Audrey Morneau-Gagnon (Responsable des stages)</option>
+                                <option value="bfrigon@cegep-ste-foy.qc.ca">Benoît Frigon (Responsable "Étudiant d'un jour")</option>
+                            </select>
+                        {% endif %}
 
                         {# sujet #}
                         <div class="field">
@@ -78,7 +84,7 @@
                             <li> tel: (418) 659-6600 </li>
                             <li>poste 6662</li>
                         </ul>
-                        <a href="#">
+                        <a href="nous-joindre/prof&sylvain-lamoureux">
                             <button class="blue-btn">
                                 <i class="fa fa-envelope-o i-space" aria-hidden="true"></i>
                                 Contacter

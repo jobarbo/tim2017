@@ -33,7 +33,7 @@
                             <div class="conteneur_sociaux">
                                 <ul class="liste_reseaux_sociaux">
                                     {% if valeur['courriel'] is not null %}
-                                        <li><a  class="blue-btn" target="_blank" href="nous_joindre/index.php?courriel={{ valeur['courriel'] }}"><img src="dist/images/sociaux/mail.png"
+                                        <li><a  class="blue-btn" target="_blank" href="nous_joindre/?type=prof&slug={{ valeur['slug'] }}"><img src="dist/images/sociaux/mail.png"
                                                                                     alt="Courriel"/><span class="back_slant"></span></a></li>
                                     {% endif %}
                                     {% if valeur['pseudo'] is not null %}

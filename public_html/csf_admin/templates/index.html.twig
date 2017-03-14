@@ -13,28 +13,29 @@
             <section id="section_liste_evenements">
                 <ul id="liste_evenements">
                     {% for arrEvenements in evenements %}
-                        <li class="col-sm-6">
-                            <p><a href="#">{{ arrEvenements.titre_actualite }}</a> {{ arrEvenements.description_actualite }}</p>
-                            <a class="lien_editer" href="#"><img src="../../public_html/dist/images/editer.png" alt="Éditer un événement" />Éditer un événement</a>
-                            <form action="administration.php" method="post">
-                                <button id="btnSupprimer" name="btnSupprimer" value="{{ arrEvenements['id_actualite'] }}" class="lien_supprimer"><img src="../../public_html/dist/images/supprimer.png" alt="Supprimer un événement" />Supprimer l'événement</button>
+                        <li class="col-sm-12">
+                            <form class="fSupprimer" action="administration.php" method="post">
+                                <button id="btnSupprimer" name="btnSupprimer" value="{{ arrEvenements['id_actualite'] }}" class="lien_supprimer"><img src="../../public_html/dist/images/supprimer.png" alt="Supprimer un événement" /></button>
                             </form>
+                            <span class="nom_activite">{{ arrEvenements.titre_actualite }}</span><br />
+                            <p>{{ arrEvenements.description_actualite }}</p>
+                            <a class="lien_editer" href="evenement/index.php?id={{ arrEvenements.id_actualite }}&edit">Éditer l'événement<img src="../../public_html/dist/images/editer.png" alt="Éditer un événement" /></a>
                         </li>
                     {% endfor %}
                 </ul>
             </section>
         {% endif %}
-        <a href="evenement/index.php">Ajouter un événement</a>
     </section>
+    <a class="lien_ajouter blue-btn" href="evenement/index.php">Ajouter un événement<span class="back_slant"></span></a>
     <section class="col-sm-12 liste_diplomes">
         <h2>Fiches des diplômés</h2>
         <hr class="title-underline">
     {% if erreurDiplomes == false %}
         <section id="liste_fiche_etudiant">
-            <ul id="liste_diplomes">
+            <ul id="liste_diplome">
                 {% for arrDiplomes in diplomes %}
                     <li>
-                        <p class="nom">{{ arrDiplomes.prenom }} {{ arrDiplomes.nom }} <span><a href="fiche_etudiant/index.php?id={{ arrDiplomes.matricule }}"><img src="../../public_html/dist/images/editer.png" alt="Éditer un événement" />Éditer la fiche</a></span></p>
+                        <p class="nom">{{ arrDiplomes.id_diplome }} - {{ arrDiplomes.prenom }} {{ arrDiplomes.nom }} <span class="lien_edition_diplome"><a href="fiche_etudiant/index.php?id={{ arrDiplomes.matricule }}">Éditer la fiche<img src="../../public_html/dist/images/editer.png" alt="Éditer un événement" /></a></span></p>
                     </li>
                 {% endfor %}
             </ul>

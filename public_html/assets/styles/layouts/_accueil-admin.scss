@@ -1,8 +1,7 @@
 section#section_liste_evenements ul li{
 
     min-height: 10em;
-    margin-bottom: 2em;
-    float: left;
+    margin: 0.2em;
 
 }
 
@@ -12,21 +11,61 @@ h1.h1admin{
 
 }
 
-a.lien_editer{
+span.nom_activite{
 
-    img{
+    font-size: 20px;
 
-        width: 15px;
-        height: 15px;
-        margin-right: 1em;
+}
+
+ul#liste_evenements li.col-sm-12:nth-child(odd){
+
+        background-color: $grey;
+
+}
+
+ul#liste_evenements li.col-sm-12{
+
+    padding: 5em;
+
+    p{
+
+        margin-top: 1em;
+        margin-bottom: 3em;
+        max-width: 50%;
 
     }
 
 }
 
+a.lien_ajouter{
+
+    margin-left: 20px;
+    margin-bottom: 4em;
+
+}
+
+a.lien_editer{
+
+    margin-top: 2em;
+
+    img{
+
+        width: 15px;
+        height: 15px;
+        margin-left: 1em;
+
+    }
+
+}
+
+form.fSupprimer{
+    float: right;
+    display: inline;
+
+}
+
 button.lien_supprimer{
 
-    margin-left: 1em;
     background: none;
     border: none;
 
@@ -34,7 +73,7 @@ button.lien_supprimer{
 
         width: 15px;
         height: 15px;
-        margin-right: 1em;
+        margin-left: 2em;
 
     }
 
@@ -42,11 +81,19 @@ button.lien_supprimer{
 
 p.nom{
 
-    img{
+    margin: 0em !important;
 
-               width: 15px;
+    img{
+        width: 15px;
         height: 15px;
-        margin-right: 1em; 
+        margin-left: 2em;
+        margin-right: 0.5em; 
+
+    }
+
+    span.lien_edition_diplome{
+
+        float: right;
 
     }
 
@@ -55,5 +102,17 @@ p.nom{
 section.liste_diplomes{
 
     margin-bottom: 4em;
+
+}
+
+ul#liste_diplome li{
+
+    padding: 5em;
+
+}
+
+ul#liste_diplome li:nth-child(odd){
+
+    background-color: $grey;
 
 }

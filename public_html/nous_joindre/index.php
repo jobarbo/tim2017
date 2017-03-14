@@ -17,6 +17,22 @@ if ($objResult = $objConnMySQLi->query($request)) {
 }
 
 
+/* Définiton recipient */
+$type = (isset($_GET['type']) && $_GET['type'] !== "") ? $_GET['type'] : null;
+$slug = (isset($_GET['slug']) && $_GET['slug'] !== "") ? $_GET['slug'] : null;
+$recipient = null;
+if ($slug){
+    if (!$type) $type = 'diplome';
+    /* Request */
+    $request_recipient = "SELECT courriel_$type FROM t_$type WHERE slug = ?";
+    $stmt = $objConnMySQLi->prepare($request_recipient);
+    $stmt->bind_param('s', $slug);
+    $stmt->execute();
+    $stmt->bind_result($recipient);
+    $stmt->fetch();
+}
+
+
 
 
 
@@ -39,6 +55,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $mail = new PHPMailer;
                 $mail->CharSet = 'UTF-8';
 
+
                 // Set mailer to use SMTP
                 $mail->isSMTP();
                 // Specify main and backup SMTP servers
@@ -54,17 +71,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // TCP port to connect to
                 $mail->Port = 587;
 
+
                 // Sender
-                $mail->setFrom('tim@csf.ca', 'Cegep de Sainte-Foy');
+                $mail->setFrom('contact@timcsf.ca', 'Cegep de Sainte-Foy');
+
 
                 // Recipient
-                /*if (){
+                $mail->addAddress($_POST['recipient'], 'Destinataire');
 
-                } else{
-                    $recipient = $_POST['recipient'];
-                }*/
-                $recipient = $_POST['recipient'];
-                $mail->addAddress($recipient, 'Destinataire');
 
                 $message = $_POST['message'];
                 // Set email format to HTML
@@ -72,22 +86,23 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $mail->Subject = $_POST['subject'];
                 $mail->Body = 'Message de ' . $_POST['name'] . '<br>' . $_POST['email'] . '<br><br>' . nl2br($message);
 
+
                 if (!$mail->send()) {
                     addFlash("danger", "Erreur lors de l'envoi du mail");
                 } else {
                     addFlash("success", 'Votre message a bien été envoyé !');
                 }
-                header('Location: ' . $_SERVER['PHP_SELF']);
+                header('Location: ' . $_SERVER['REQUEST_URI']);
                 exit;
 
             } else {
                 addFlash('danger', 'Erreur lors de la vérification du captcha');
-                header('Location: ' . $_SERVER['PHP_SELF']);
+                header('Location: ' . $_SERVER['REQUEST_URI']);
                 exit;
             }
         } else{
             addFlash('danger', 'Cochez la case "Je ne suis pas un robot"');
-            header('Location: ' . $_SERVER['PHP_SELF']);
+            header('Location: ' . $_SERVER['REQUEST_URI']);
             exit;
         }
     }
@@ -102,7 +117,8 @@ echo $template->render(array(
     'niveau' => $strNiveau,
     'page' => "Nous joindre",
     'arrMenuLiensActifs' => $arrMenuActif,
-    'contacts' => $arrContact
+    'contacts' => $arrContact,
+    'recipient' => $recipient
 ));
 
 
