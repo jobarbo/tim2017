@@ -1,6 +1,8 @@
 div.perspectives{
 
   margin-top: 2em;
+  margin-bottom: 4em;
+  overflow: hidden;
 
   img.imgtest{
 
@@ -23,7 +25,7 @@ div.perspectives{
   div.col-sm-6 h3{
 
         background-image: linear-gradient(to left, #0098FF, #00ACFF);
-        box-shadow: 0 3px 7px #0ca4ce;
+        box-shadow: 0 3px 5px #0ca4ce;
         min-height: 2em;
         text-align: center;
         margin-top: 2em;
@@ -47,6 +49,7 @@ div.perspectives{
   ul li{
 
     font-family: work sans;
+    font-size: 16px;
     margin-left: 2em;
     margin-top: 1em;
     list-style-image: url('../images/fleche_liste.png');
@@ -59,7 +62,7 @@ div.perspectives{
     
   }
 
-  li.type:first-of-type{
+  li.type:first-of-type, li.superieur{
 
     padding-top: 0.5em;
 
@@ -99,6 +102,13 @@ div.perspectives{
     margin-top: 4em;
 
   }
+
+}
+
+p.uni_design, p.uni_prog{
+
+   font-family: raleway_bold;
+   margin-top: 2em;
 
 }
 

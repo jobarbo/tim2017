@@ -33,20 +33,33 @@
                             <div class="conteneur_sociaux">
                                 <ul class="liste_reseaux_sociaux">
                                     {% if valeur['courriel'] is not null %}
-                                        <li><a  class="blue-btn" target="_blank" href="nous_joindre/?type=prof&slug={{ valeur['slug'] }}"><img src="dist/images/sociaux/mail.png"
-                                                                                    alt="Courriel"/><span class="back_slant"></span></a></li>
+                                        <li><a  class="blue-btn" target="_blank" href="nous_joindre/?type=prof&slug={{ valeur['slug'] }}">
+                                        <picture>
+                                            <img src="dist/images/sociaux/mail.png" srcset="dist/images/sociaux/mail.png 1x, dist/images/sociaux/mail2x.png 2x" alt="Courriel" />
+                                        </picture>
+                                        <span class="back_slant"></span></a></li>
                                     {% endif %}
+
                                     {% if valeur['pseudo'] is not null %}
-                                        <li><a  class="blue-btn" target="_blank" href="https://twitter.com/{{ valeur['pseudo'] }}"><img src="dist/images/sociaux/twitter.png"
-                                                                                  alt="Twitter"/><span class="back_slant"></span></a></li>
+                                        <li><a  class="blue-btn" target="_blank" href="https://twitter.com/{{ valeur['pseudo'] }}">
+                                        <picture>
+                                            <img src="dist/images/sociaux/twitter.png" srcset="dist/images/sociaux/twitter.png 1x, dist/images/sociaux/twitter2x.png 2x" alt="Twitter" />
+                                        </picture>
+                                        <span class="back_slant"></span></a></li>
                                     {% endif %}
                                     {% if valeur['linkedin'] is not null %}
-                                        <li><a  class="blue-btn" target="_blank" href="{{ valeur['linkedin'] }}"><img src="dist/images/sociaux/linkedin.png"
-                                                                                    alt="Linkedin"/><span class="back_slant"></span></a></li>
+                                        <li><a  class="blue-btn" target="_blank" href="{{ valeur['linkedin'] }}">
+                                        <picture>
+                                            <img src="dist/images/sociaux/linkedin.png" srcset="dist/images/sociaux/linkedin.png 1x, dist/images/sociaux/linkedin2x.png 2x" alt="Linkedin" />
+                                        </picture>
+                                        <span class="back_slant"></span></a></li>
                                     {% endif %}
                                     {% if valeur['site'] is not null %}
-                                        <li><a  class="blue-btn" target="_blank" href="{{ valeur['site'] }}"><img src="dist/images/sociaux/internet.png"
-                                                                                alt="Internet"/><span class="back_slant"></span></a></li>
+                                        <li><a  class="blue-btn" target="_blank" href="{{ valeur['site'] }}">
+                                        <picture>
+                                            <img src="dist/images/sociaux/internet.png" srcset="dist/images/sociaux/internet.png 1x, dist/images/sociaux/internet2x.png 2x" alt="Site internet" />
+                                        </picture>                        
+                                        <span class="back_slant"></span></a></li>
                                     {% endif %}
                                 </ul>
                             </div>

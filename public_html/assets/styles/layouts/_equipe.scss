@@ -1,6 +1,8 @@
 div.equipe{
 
 margin-top: 2em;
+margin-bottom: 4em;
+overflow: hidden;
 
 p{
 
@@ -95,6 +97,7 @@ ul.liste_reseaux_sociaux li{
 
     padding: 0;
     margin-top: 0;
+    box-shadow: 12px 2px 5px rgba(0,172,255,.35);
 
   }
 
@@ -160,6 +163,7 @@ div.equipe{
   div.contenu_enseignant{
 
     margin-left: 0em !important;
+    margin-top: 0em !important;
 
   }
 
@@ -168,7 +172,6 @@ div.equipe{
     width: 100%;
 
   }
-
 
 }
 
@@ -179,7 +182,6 @@ div.equipe{
     padding: 0 5px;
 
   }
-
 
 }
 

@@ -14,7 +14,7 @@
                 <ul id="liste_evenements">
                     {% for arrEvenements in evenements %}
                         <li class="col-sm-12">
-                            <form class="fSupprimer" action="administration.php" method="post">
+                            <form class="fSupprimer" action="administration.php" method="post" onsubmit='return confirm("Une actualité sera supprimée");'>
                                 <button id="btnSupprimer" name="btnSupprimer" value="{{ arrEvenements['id_actualite'] }}" class="lien_supprimer"><img src="../../public_html/dist/images/supprimer.png" alt="Supprimer un événement" /></button>
                             </form>
                             <span class="nom_activite">{{ arrEvenements.titre_actualite }}</span><br />

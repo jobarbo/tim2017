@@ -1,6 +1,6 @@
 div.futur_etudiant{
 
-  margin-top: 2em;
+  margin-top: 3em;
 
   img.imgtest{
 
@@ -28,6 +28,7 @@ div.futur_etudiant{
 
   ul li{
     font-family: work sans;
+    font-size: 16px;
     margin-left: 2em;
     margin-top: 1em;
     list-style-image: url('../images/fleche_liste.png');
@@ -91,7 +92,7 @@ div.etudiantUnJour{
 div.sectionQuiz{
 
   display: inline-block;
-  background-color: $grey;
+  //background-color: $grey;
   padding-top: 2em;
   padding-bottom: 4em;
 
@@ -99,12 +100,12 @@ div.sectionQuiz{
 
     &:before{
       left: -10px;
-      border-top: 10px solid #f7f7f7;
+      border-top: 10px solid white;
       border-left: 10px solid transparent;
     }
     
-    background-color: #f7f7f7;
-    box-shadow: 12px 3px 1px 12px #f7f7f7;
+    background-color: white;
+    box-shadow: 12px 3px 1px 12px white;
 
   }
 
@@ -151,13 +152,40 @@ div.formationVivante>p, div.integrateur, div.continuum{
 }
 
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 600px) {
+
+  div.image_benoit{
+
+  img{
+    padding-top: 2em;
+    width: 100%;
+
+  }
+
+}
+}
+
+@media screen and (min-width: 600px) {
 
   div.image_benoit{
 
   img{
 
-    width: 100%;
+    width: 50%;
+
+  }
+
+}
+}
+
+@media screen and (min-width: 768px) {
+
+  div.image_benoit{
+
+  img{
+
+    width: 70%;
+    padding-top: 4em;
 
   }
 
