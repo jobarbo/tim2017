@@ -23,9 +23,46 @@
     $('#svg_logo').addClass("big_svg");
     $('#logo_text').addClass("big_text");
 
-      $('input.navbox').on('change', function () {
-          $('input.navbox').not(this).prop('checked', false);
-        });
+
+    $('#etudiant').click(function () {
+      
+      if ($('#etudiant').is(':checked')) {
+        $(".etudiant").css("height", "256px");
+        $(".programme").css("height", "50px");
+        $(".stages").css("height", "50px");
+      }else{
+        $('.etudiant').css('height',"50px");
+      }
+    });
+     $('#programme').click(function () {
+      
+      if ($('#programme').is(':checked')) {
+        $('.programme').css("height", "178px");
+        $(".etudiant").css("height", "50px");
+        $(".stages").css("height", "50px");
+
+      }else{
+        $('.programme').css("height", "50px");
+      }
+    });
+     $('#stages').click(function () {
+      
+      if ($('#stages').is(':checked')) {
+        $('.stages').css("height", "178px");
+        $(".etudiant").css("height", "50px");
+        $(".programme").css("height", "50px");
+
+      }else{
+        $('.stages').css("height", "50px");
+      }
+    });
+
+   
+
+
+    $('input.navbox').on('change', function () {
+      $('input.navbox').not(this).prop('checked', false);
+    });
 
     var previousScroll = 0,
       headerOrgOffset = $('.meta_nav').height();
@@ -36,7 +73,7 @@
       console.log($(".meta_nav").css("height"));
       if ($(".meta_nav").css("height") > "26px") {
 
-  
+
 
 
         var currentScroll = $(this).scrollTop();
