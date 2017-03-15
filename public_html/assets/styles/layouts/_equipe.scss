@@ -1,6 +1,8 @@
 div.equipe{
 
 margin-top: 2em;
+margin-bottom: 4em;
+overflow: hidden;
 
 p{
 
@@ -160,6 +162,7 @@ div.equipe{
   div.contenu_enseignant{
 
     margin-left: 0em !important;
+    margin-top: 0em !important;
 
   }
 
@@ -168,7 +171,6 @@ div.equipe{
     width: 100%;
 
   }
-
 
 }
 
@@ -179,7 +181,6 @@ div.equipe{
     padding: 0 5px;
 
   }
-
 
 }
 
