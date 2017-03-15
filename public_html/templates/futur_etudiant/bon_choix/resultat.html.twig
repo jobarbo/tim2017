@@ -4,7 +4,7 @@
 
 {% block content %}
     <div id="hero-section">
-        <div class="container">
+        <div class="container_page">
             <div class="hero-image-center col-sm-12">
 
 
@@ -13,8 +13,10 @@
             </div>
         </div>
     </div>
-    <div class="quiz-layout allovinny">
-        <h2>Récapitulatif des résultats</h2>
+    <div class="quiz-layout2 allovinny">
+        <div class="row">
+            <h2>Récapitulatif des résultats</h2>
+        </div>
         <div class="col-md-12">
             <form name="quiz_bon_choix" action="futur_etudiant/bon_choix" method="GET">
                 {% for i in 0..4 %}
