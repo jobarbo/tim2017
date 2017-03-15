@@ -40,9 +40,26 @@ div.perspectives{
     display: inline-block;
     width: 100%;
     text-align: center;
-    font-family: "open_sans_light";
+    font-family: work sans;
+    color: #0098FF;
     font-size: 72px;
     padding-top: 0.5em;
+
+  }
+
+  span.voir_temoignages{
+
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin-top: 0.5em;
+
+    img{
+
+      margin-right: 0.5em;
+      margin-bottom: 0.5em;
+
+    }
 
   }
 
@@ -58,13 +75,14 @@ div.perspectives{
 
   li.type{
 
-    font-size: 32px;
+    font-family: work sans;
+    font-size: 16px;
     
   }
 
   li.type:first-of-type, li.superieur{
 
-    padding-top: 0.5em;
+    padding-top: 1em;
 
   }
 
@@ -76,13 +94,15 @@ div.perspectives{
 
   li.montant{
 
-    font-size: 24px;
+    font-family: work sans;
+    font-size: 32px;
+    color: #0098FF;
 
   }
 
   li.type, li.montant{
 
-    font-family: "open_sans_light";
+    font-family: work sans;
     text-align: center;
     list-style-image: none;
     margin-left: 0em;
