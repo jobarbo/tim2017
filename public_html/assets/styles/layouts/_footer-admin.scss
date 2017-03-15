@@ -4,6 +4,19 @@ footer.footer_admin, footer.footer_connexion{
     bottom:0;
     left: 0;
     right: 0;
-    padding-top: 0em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background: linear-gradient(to left, #0098FF, #00ACFF);
+
+    div.meta_nav{
+
+        box-shadow: none;
+
+        p{
+            width: 100%;
+            text-align: center;
+        }
+
+    }
 
 }
