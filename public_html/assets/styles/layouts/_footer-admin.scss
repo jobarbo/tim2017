@@ -1,6 +1,5 @@
-footer.footer_admin, footer.footer_connexion{
-
-    position:fixed;
+footer.footer_connexion{
+    position: fixed;
     bottom:0;
     left: 0;
     right: 0;
@@ -15,6 +14,27 @@ footer.footer_admin, footer.footer_connexion{
         p{
             width: 100%;
             text-align: center;
+        }
+
+    }
+
+}
+
+footer.footer_admin{
+
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background: linear-gradient(to left, #0098FF, #00ACFF);
+
+    div.meta_nav{
+
+        box-shadow: none;
+
+        p{
+            float: none;
+            width: 100%;
+            text-align: center;
+            padding-bottom: 1em;
         }
 
     }
