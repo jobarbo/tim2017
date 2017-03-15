@@ -152,13 +152,40 @@ div.formationVivante>p, div.integrateur, div.continuum{
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
+
+  div.image_benoit{
+
+  img{
+    padding-top: 2em;
+    width: 100%;
+
+  }
+
+}
+}
+
+@media screen and (min-width: 600px) {
 
   div.image_benoit{
 
   img{
 
-    width: 100%;
+    width: 50%;
+
+  }
+
+}
+}
+
+@media screen and (min-width: 768px) {
+
+  div.image_benoit{
+
+  img{
+
+    width: 80%;
+    padding-top: 3em;
 
   }
 
