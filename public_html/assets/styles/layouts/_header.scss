@@ -201,7 +201,7 @@ header {
       border-bottom: #FFF solid 1px!important;
     }
 
-    ul.mobile_ul label.lien_actif, ul.mobile_ul label#lien_diplomes a {
+    ul.mobile_ul label.lien_actif, ul.mobile_ul label#lien_diplomes.lien_actif a {
       color: $blue!important;
     }
 
