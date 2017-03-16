@@ -8,9 +8,43 @@ body {
     display: block;
     float: none !important;
 
-        p{
-          font-size:14px;
-        }
+    h4{
+
+      margin-top: 1em;
+
+    }
+
+ul.menu-meta-footer{
+
+  @media screen and (max-width: 765px) {
+
+    text-align: left;
+
+    li{
+
+      margin-left: 0em;
+
+    }
+
+  }
+
+}
+    ul.footer-social{
+
+      text-align: left;
+      padding-bottom: 1em;
+
+      li{
+
+        margin-left: 0em;
+
+      }
+
+    }
+
+    p{
+      font-size:14px;
+    }
       
 
     a {
