@@ -18,10 +18,12 @@ $arrMenuActif['perspectives'] = "";
 $arrMenuActif['temoignages'] = "";
 
 $arrMenuActif['programme'] = "";
+$arrMenuActif['apprend'] = "";
 $arrMenuActif['equipe'] = "";
 $arrMenuActif['grilleCours'] = "";
 
 $arrMenuActif['stages'] = "";
+$arrMenuActif['sequences'] = "";
 $arrMenuActif['ate'] = "";
 $arrMenuActif['international'] = "";
 
@@ -65,6 +67,7 @@ else if (strpos($_SERVER['PHP_SELF'], 'programme/grille_cours')) {
 }
 else if (strpos($_SERVER['PHP_SELF'], 'programme/')) {
     $arrMenuActif['programme'] = "lien_actif";
+    $arrMenuActif['apprend'] = "lien_actif";
 }
 
 /*********** SECTION STAGES ***********/
@@ -78,10 +81,11 @@ else if (strpos($_SERVER['PHP_SELF'], 'stages/international')) {
 }
 else if (strpos($_SERVER['PHP_SELF'], 'stages/')) {
     $arrMenuActif['stages'] = "lien_actif";
+    $arrMenuActif['sequences'] = "lien_actif";
 }
 
 /*********** SECTION DIPLOMES ***********/
-else if (strpos($_SERVER['PHP_SELF'], 'diplomes')) {
+else if (strpos($_SERVER['PHP_SELF'], 'diplomes/')) {
     $arrMenuActif['diplomes'] = "lien_actif";
 }
 

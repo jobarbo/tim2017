@@ -80,11 +80,11 @@
                 </ul>
             </li>
             <li class="top_niveau menu_programme"><input type='checkbox' class="navbox" name='nav' id="programme"><label
-                        for='programme' class="menu_lien">Programme</label>
+                        for='programme' class="menu_lien {{ arrMenuLiensActifs.programme }}">Programme</label>
                 <div class="sub_hide"></div>
                 <ul class="second_nav sub_programme">
 
-                    <li><a href="programme/" class="{{ arrMenuLiensActifs.programme }}">Qu'est-ce qu'on
+                    <li><a href="programme/" class="{{ arrMenuLiensActifs.apprend }}">Qu'est-ce qu'on
                             apprend?</a></li>
                     <li><a href="programme/equipe/" class="{{ arrMenuLiensActifs.equipe }}">Équipe</a></li>
                     <li><a href="programme/grille-cours/" class="{{ arrMenuLiensActifs.grilleCours }}">Grilles
@@ -93,11 +93,11 @@
                 </ul>
             </li>
             <li class="top_niveau menu_stages"><input type='checkbox' class="navbox" name='nav' id="stages"><label
-                        for='stages' class="menu_lien">Stages</label>
+                        for='stages' class="menu_lien {{ arrMenuLiensActifs.stages }}">Stages</label>
                 <div class="sub_hide"></div>
                 <ul class="second_nav sub_stages">
 
-                    <li><a href="stages/" class="{{ arrMenuLiensActifs.stages }}">Séquence des stages</a></li>
+                    <li><a href="stages/" class="{{ arrMenuLiensActifs.sequences }}">Séquence des stages</a></li>
                     <li><a href="stages/ate/" class="{{ arrMenuLiensActifs.ate }}">ATE</a></li>
                     <li><a href="stages/international/"
                            class="{{ arrMenuLiensActifs.international }}">International</a>
@@ -106,8 +106,8 @@
                 </ul>
             </li>
             <li class="top_niveau menu_diplomes"><input type='checkbox' class="navbox" id="diplomes"><label for='diplomes'
-                                                                                                       class="menu_lien"><a
-                            href="diplomes" class="menu_lien {{ arrMenuLiensActifs.diplomes }}">Diplômés</a></label>
+                                                                                                       class="menu_lien {{ arrMenuLiensActifs.diplomes }}"><a
+                            href="diplomes" class="menu_lien">Diplômés</a></label>
 
             </li>
             <li class="mobile_meta_nav">
