@@ -64,6 +64,8 @@ $template = $twig->loadTemplate('futur_etudiant/temoignages/index.html.twig');
 echo $template->render(array(
     'niveau' => $strNiveau,
     'page' => "Témoignages",
+    //HEADER
+    'arrMenuLiensActifs' => $arrMenuActif,
     'arrTemoignages' => $arrTemoignages
 
 ));

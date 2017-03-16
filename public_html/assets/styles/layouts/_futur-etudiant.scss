@@ -29,7 +29,7 @@ div.futur_etudiant{
   ul li{
     font-family: work sans;
     font-size: 16px;
-    margin-left: 2em;
+    margin-left: 1.5em;
     margin-top: 1em;
     list-style-image: url('../images/fleche_liste.png');
 
@@ -66,7 +66,12 @@ span.ou{
 
 div.formationVivante>p, div.integrateur, div.continuum{
 
-  max-width: 80%;
+  max-width: 70%;
+
+  @media screen and (max-width: 950px) {
+
+    max-width: 100%;
+}
 
 }
 
@@ -132,7 +137,7 @@ div.image_benoit{
 
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 1000px) {
 
   div.integrateur, div.continuum{
 

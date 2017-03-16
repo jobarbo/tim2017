@@ -3,7 +3,7 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
           content="Le programme de Techniques d’intégration multimédia est une formation vivante et actuelle! Vous aimez relever des défis et les nouvelles technologies? Ce programme est fait pour vous!">
     <meta name="keywords"
@@ -15,6 +15,7 @@
     <title>{{ page }} | Techniques d'intégration multimédia | TIM</title>
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="dist/styles/main.css">
+    <link rel="icon" type="image/png" href="dist/images/favicon.png" />
 
     {% if section == 'Fiche projet' %}
         <link rel="stylesheet" type="text/css" href="dist/slick/slick.css"/>
@@ -39,8 +40,8 @@
 <header>
     <div class="meta_nav hide_nav">
         <ul>
-            <li><a href=" " class="{{ arrMenuLiensActifs.accueil }} ">Accueil</a></li>
-            <li><a href="nous-joindre/" class="{{ arrMenuLiensActifs.nousJoindre }} ">Nous joindre</a></li>
+            <li><a href=" " class="{{ arrMenuLiensActifs.accueil }}">Accueil</a></li>
+            <li><a href="nous-joindre/" class="{{ arrMenuLiensActifs.nousJoindre }}">Nous joindre</a></li>
             <li>
                 <a href="http://www.cegep-ste-foy.qc.ca" target="_blank" title="Lien externe (nouvelle fenêtre)">
                     <img src="dist/images/cegep_logo.svg" alt="Logo du Cégep de Sainte-Foy.">
@@ -60,89 +61,93 @@
         <ul class="mobile_ul">
 
             <li class="top_niveau menu_etudiant"><input type='checkbox' class="navbox" name='nav' id="etudiant"><label
-                        for='etudiant' class="menu_lien">Futur étudiant
+                        for='etudiant' class="menu_lien {{ arrMenuLiensActifs.futurEtudiant }}">Futur étudiant
                 </label>
                 <div class="sub_hide"></div>
                 <ul class="second_nav sub_etudiant">
 
-                    <li><a href="futur-etudiant/" class="{{ arrMenuLiensActifs.futurEtudiant }}">Qu'est-ce qu'un
+                    <li><a href="futur-etudiant/" class="{{ arrMenuLiensActifs.integrateur }}">Qu'est-ce qu'un
                             intégrateur web?</a></li>
-                    <li><a href="futur-etudiant/bon-choix/" class="{{ arrMenuLiensActifs.bonChoix }} ">Fais-tu le
+                    <li><a href="futur-etudiant/bon-choix/" class="{{ arrMenuLiensActifs.bonChoix }}">Fais-tu le
                             bon choix?</a></li>
-                    <li><a href="futur-etudiant/profil/" class="{{ arrMenuLiensActifs.profil }} ">As-tu le
+                    <li><a href="futur-etudiant/profil/" class="{{ arrMenuLiensActifs.profil }}">As-tu le
                             profil?</a></li>
-                    <li><a href="futur-etudiant/perspectives/" class="{{ arrMenuLiensActifs.perspectives }} ">Perspectives</a>
+                    <li><a href="futur-etudiant/perspectives/" class="{{ arrMenuLiensActifs.perspectives }}">Perspectives</a>
                     </li>
                     <li><a href="futur-etudiant/temoignages/"
-                           class="{{ arrMenuLiensActifs.temoignages }} ">Témoignages</a>
+                           class="{{ arrMenuLiensActifs.temoignages }}">Témoignages</a>
                     </li>
 
                 </ul>
             </li>
             <li class="top_niveau menu_programme"><input type='checkbox' class="navbox" name='nav' id="programme"><label
-                        for='programme' class="menu_lien">Programme</label>
+                        for='programme' class="menu_lien {{ arrMenuLiensActifs.programme }}">Programme</label>
                 <div class="sub_hide"></div>
                 <ul class="second_nav sub_programme">
 
-                    <li><a href="programme/" class="{{ arrMenuLiensActifs.programme }} ">Qu'est-ce qu'on
+                    <li><a href="programme/" class="{{ arrMenuLiensActifs.apprend }}">Qu'est-ce qu'on
                             apprend?</a></li>
-                    <li><a href="programme/equipe/" class="{{ arrMenuLiensActifs.equipe }} ">Équipe</a></li>
-                    <li><a href="programme/grille-cours/" class="{{ arrMenuLiensActifs.grilleCours }} ">Grilles
+                    <li><a href="programme/equipe/" class="{{ arrMenuLiensActifs.equipe }}">Équipe</a></li>
+                    <li><a href="programme/grille-cours/" class="{{ arrMenuLiensActifs.grilleCours }}">Grilles
                             de cours</a></li>
 
                 </ul>
             </li>
             <li class="top_niveau menu_stages"><input type='checkbox' class="navbox" name='nav' id="stages"><label
-                        for='stages' class="menu_lien">Stages</label>
+                        for='stages' class="menu_lien {{ arrMenuLiensActifs.stages }}">Stages</label>
                 <div class="sub_hide"></div>
                 <ul class="second_nav sub_stages">
 
-                    <li><a href="stages/" class="{{ arrMenuLiensActifs.stages }}">Séquence des stages</a></li>
-                    <li><a href="stages/ate/" class="{{ arrMenuLiensActifs.ate }} ">ATE</a></li>
+                    <li><a href="stages/" class="{{ arrMenuLiensActifs.sequences }}">Séquence des stages</a></li>
+                    <li><a href="stages/ate/" class="{{ arrMenuLiensActifs.ate }}">ATE</a></li>
                     <li><a href="stages/international/"
-                           class="{{ arrMenuLiensActifs.international }} ">International</a>
+                           class="{{ arrMenuLiensActifs.international }}">International</a>
                     </li>
 
                 </ul>
             </li>
-            <li class="top_niveau menu_diplomes"><input type='checkbox' class="navbox" id="diplomes"><label for='diplomes'
-                                                                                                       class="menu_lien"><a
-                            href="diplomes" class="menu_lien {{ arrMenuLiensActifs.diplomes }}">Diplômés</a></label>
+            <li class="top_niveau menu_diplomes"><input type='checkbox' class="navbox" id="diplomes"><label
+                        for='diplomes'
+                        class="menu_lien {{ arrMenuLiensActifs.diplomes }}" id="lien_diplomes"><a
+                            href="diplomes" class="menu_lien">Diplômés</a></label>
 
             </li>
             <li class="mobile_meta_nav">
-            
+
                 <ul>
-                    <li><a href=" " class="{{ arrMenuLiensActifs.accueil }} ">Accueil</a></li>
-                    <li><a href="nous-joindre/" class="{{ arrMenuLiensActifs.nousJoindre }} ">Nous joindre</a></li>
+                    <li><a href=" " class="{{ arrMenuLiensActifs.accueil }}">Accueil</a></li>
+                    <li><a href="nous-joindre/" class="{{ arrMenuLiensActifs.nousJoindre }}">Nous joindre</a></li>
                     <li>
-                        <a href="http://www.cegep-ste-foy.qc.ca" target="_blank" title="Lien externe (nouvelle fenêtre)">
+                        <a href="http://www.cegep-ste-foy.qc.ca" target="_blank"
+                           title="Lien externe (nouvelle fenêtre)">
                             <img src="dist/images/cegep_logo.svg" alt="Logo du Cégep de Sainte-Foy.">
 
                         </a>
                     </li>
                 </ul>
-       
+
             </li>
             <li class="mobile_meta_nav social_mobile">
-            
+
                 <ul>
                     <li><a href="http://www.facebook.com/timcsf"
-                        title="Page Facebook du programme Techniques d'intégration multimédia"><i class="fa fa-facebook"
-                                                                                                    aria-hidden="true"></i></a>
+                           title="Page Facebook du programme Techniques d'intégration multimédia"><i
+                                    class="fa fa-facebook"
+                                    aria-hidden="true"></i></a>
                     </li>
                     <li><a href="http://twitter.com/timcsf"
-                        title="Compte Twitter du programme Techniques d'intégration multimédia"><i class="fa fa-twitter"
-                                                                                                    aria-hidden="true"></i></a>
+                           title="Compte Twitter du programme Techniques d'intégration multimédia"><i
+                                    class="fa fa-twitter"
+                                    aria-hidden="true"></i></a>
                     </li>
                     <li><a href="http://www.linkedin.com/groups?gid=2211970"
-                        title="Groupe LinkedIn du programme Techniques d'intégration multimédia"><i
+                           title="Groupe LinkedIn du programme Techniques d'intégration multimédia"><i
                                     class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                 </ul>
-       
+
             </li>
         </ul>
-        
+
         <a href="futur-etudiant/" class="btn_rouge"><span class="slant"></span><span id="label_inscription">Je m'inscris !</span></a>
     </nav>
 </header>
@@ -163,25 +168,27 @@
             <h3>Faire partie de la TIM</h3>
             <p>Tu t’intéresses à la création et au développement de sites Web ou d’applications multimédia et tu
                 souhaites te joindre à la TIM l’an prochain? Complète ta demande d'admission avant le 1er mars.</p>
-            <a href="futur-etudiant/#processusAdmission" class="blue-btn inscription-btn">Je m'inscris !<span
-                        class="back_slant"></span></a>
+            <a href="futur-etudiant/#processusAdmission" class="inscription-btn">Je m'inscris !</a>
         </article>
         <article class="col-sm-6 cimmi">
             <h4>CIMMI</h4>
-            <p>Le cégep de Sainte-Foy est partenaire du <a href="http://www.cimmi.ca/" target="_blank" title="Lien externe (nouvelle fenêtre)">Centre en imagerie numérique et médias interactifs<i class="fa fa-external-link-square i-space" aria-hidden="true"></i></a> (CIMMI) dans
+            <p>Le cégep de Sainte-Foy est partenaire du <a href="http://www.cimmi.ca/" target="_blank"
+                                                           title="Lien externe (nouvelle fenêtre)">Centre en imagerie
+                    numérique et médias interactifs<i class="fa fa-external-link-square i-space" aria-hidden="true"></i></a>
+                (CIMMI) dans
                 la réalisation de projets de recherche appliquée.</p>
         </article>
         <article class="col-sm-6 roger">
-              <h4>Crédits</h4>
-                <p>Ce projet a été choisi parmi les six propositions réalisées dans le cadre du cours
-                    Production multimédia VI au printemps 2017. Les auteurs : <a
-                            href="diplomes/fiche-etudiant/jonathan-barbeau">Jonathan Barbeau</a>, <a
-                            href="diplomes/fiche-etudiant/vincent-beland">Vincent Béland</a>, <a
-                            href="diplomes/fiche-etudiant/william-charest-pepin">William Charest-Pépin</a>, <a
-                            href="diplomes/fiche-etudiant/erwann-letue">Erwann Letué</a> et <a
-                            href="diplomes/fiche-etudiant/annabelle-violette">Annabelle Violette</a> ont remporté les
-                    honneurs
-                    du Roger d'Or.</p>
+            <h4>Crédits</h4>
+            <p>Ce projet a été choisi parmi les six propositions réalisées dans le cadre du cours
+                Production multimédia VI au printemps 2017. Les auteurs : <a
+                        href="diplomes/fiche-etudiant/jonathan-barbeau">Jonathan Barbeau</a>, <a
+                        href="diplomes/fiche-etudiant/vincent-beland">Vincent Béland</a>, <a
+                        href="diplomes/fiche-etudiant/william-charest-pepin">William Charest-Pépin</a>, <a
+                        href="diplomes/fiche-etudiant/erwann-letue">Erwann Letué</a> et <a
+                        href="diplomes/fiche-etudiant/annabelle-violette">Annabelle Violette</a> ont remporté les
+                honneurs
+                du Roger d'Or.</p>
         </article>
     </section>
     <!--<section class="main_footer container">
@@ -219,7 +226,7 @@
     <section class="meta_nav">
         <div class="container">
             <div class="col-sm-6 credit">
-                  <p>© 2017, Techniques d'intégration multimédia, Cégep de Sainte-Foy.</p>
+                <p>© 2017, Techniques d'intégration multimédia, Cégep de Sainte-Foy.</p>
             </div>
             <div class="col-sm-6">
                 <ul class="menu-meta-footer">
@@ -233,29 +240,30 @@
                     </li>
                 </ul>
             </div>
-             </div>
-            <div class="container">
+        </div>
+        <div class="container">
 
-                <h2 class="visuallyhidden" aria-hidden="true">Copyright</h2>
-                <div class="col-sm-6 meta_social">
+            <h2 class="visuallyhidden" aria-hidden="true">Copyright</h2>
+            <div class="col-sm-6 meta_social">
                 <ul class="footer-social">
                     <li><a href="http://www.facebook.com/timcsf"
-                        title="Page Facebook du programme Techniques d'intégration multimédia"><i class="fa fa-facebook"
-                                                                                                    aria-hidden="true"></i></a>
+                           title="Page Facebook du programme Techniques d'intégration multimédia"><i
+                                    class="fa fa-facebook"
+                                    aria-hidden="true"></i></a>
                     </li>
                     <li><a href="http://twitter.com/timcsf"
-                        title="Compte Twitter du programme Techniques d'intégration multimédia"><i class="fa fa-twitter"
-                                                                                                    aria-hidden="true"></i></a>
+                           title="Compte Twitter du programme Techniques d'intégration multimédia"><i
+                                    class="fa fa-twitter"
+                                    aria-hidden="true"></i></a>
                     </li>
                     <li><a href="http://www.linkedin.com/groups?gid=2211970"
-                        title="Groupe LinkedIn du programme Techniques d'intégration multimédia"><i
+                           title="Groupe LinkedIn du programme Techniques d'intégration multimédia"><i
                                     class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                 </ul>
-                
-                </div>
-                </div>
+
             </div>
-       
+        </div>
+
     </section>
 </footer>
 <script>

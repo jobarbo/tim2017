@@ -29,6 +29,10 @@
       position: absolute;
       bottom: -30px;
 
+      i{
+        padding-right: 0.5em;
+      }
+
       @media screen and (min-width: $tablettePortrait) {
         bottom: 10px;
       }

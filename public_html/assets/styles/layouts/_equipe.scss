@@ -6,7 +6,12 @@ overflow: hidden;
 
 p{
 
-  max-width: 80%;
+  max-width: 70%;
+
+@media screen and (max-width: 950px) {
+
+    max-width: 100%;
+}
 
 }
 

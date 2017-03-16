@@ -254,16 +254,19 @@ hr.title-underline {
 /* Buttons */
 .partie_tim {
   .inscription-btn {
-    background: linear-gradient(to left, #F5285D, #FF2424);
-    box-shadow: 12px 3px 6px 0 rgba(246, 40, 89, .42);
-    &:hover {
-      box-shadow: 12px 2px 2px 0 rgba(246, 40, 89, .42);
-      &:after {
-        box-shadow: 2px 3px 3px rgba(246, 40, 89, .32)
-      }
-    }
-    &:after {
-      box-shadow: 2px 3px 8px rgba(246, 40, 89, .22);
+    //display: block;
+    background-image: url("../../dist/images/btn_inscription@1x.png");
+    background-repeat: no-repeat;
+    padding: 10px 15px;
+    margin-top: 10px;
+    color: #FFF;
+
+    @media only screen and (-o-min-device-pixel-ratio: 5/4),
+    only screen and (-webkit-min-device-pixel-ratio: 1.25),
+    only screen and (min--moz-device-pixel-ratio: 1.25),
+    only screen and (min-device-pixel-ratio: 1.25),
+    only screen and (min-resolution: 1.25dppx) {
+      background-image: url("../../dist/images/btn_inscription@2x.png");
     }
   }
 }
@@ -428,8 +431,9 @@ input, textarea, select {
   }
 
   .testimonial {
-    margin-bottom: 2.2rem;
+    //margin-bottom: 2.2rem;
     padding: 1rem;
+    min-height: 54em;
 
     p {
       margin-top: 1rem;
