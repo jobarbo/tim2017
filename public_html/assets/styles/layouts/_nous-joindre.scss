@@ -59,15 +59,15 @@ html{
 
 
       .coordination {
-        text-align: center;
         img {
-          margin-bottom: 1rem;
+          display: block;
+          margin: 0 auto 1rem auto;
           width: 20rem;
           height: auto;
         }
 
         .name-person{
-
+          text-align: center;
         }
       }
 

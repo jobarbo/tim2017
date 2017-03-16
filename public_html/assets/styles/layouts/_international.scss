@@ -5,10 +5,13 @@ html{
     .main{
       .intro{
         margin-bottom: 2.6rem;
-        padding: 2rem;
 
         p{
           max-width: 70%;
+
+          @media (max-width: 1094px){
+            max-width: 100%;
+          }
         }
       }
 

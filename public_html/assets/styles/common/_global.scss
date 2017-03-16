@@ -44,18 +44,18 @@ div.container_page {
 
 }
 section{
-    clear: both;
-    display: block;
+  clear: both;
+  display: block;
+  height: auto;
+  position: relative;
+  margin-bottom:25px;
+  .container{
+    padding-top: 0px;
     height: auto;
     position: relative;
-    margin-bottom:25px;
-    .container{
-      padding-top: 0px;
-      height: auto;
-      position: relative;
-      display: table;
-    }
+    display: table;
   }
+}
 
 body {
   background-color: white;
@@ -81,7 +81,7 @@ body {
       font-size:30px;
     }
   }
- 
+
   h2 {
     font-family: 'Work Sans',sans-serif;
     font-size: 26px;
@@ -92,7 +92,7 @@ body {
       font-size:20px;
     }
   }
-   h3 {
+  h3 {
     font-family: 'work sans',sans-serif;
     font-size: 28px;
     font-weight: 500;
@@ -120,8 +120,8 @@ body {
     }
   }
   main a{
-        font-family: 'work sans',sans-serif;
-        font-weight: 400;
+    font-family: 'work sans',sans-serif;
+    font-weight: 400;
   }
   p.date{
     font-family: 'work sans',sans-serif;
@@ -224,8 +224,8 @@ hr.title-underline {
     height: 360px;
   }
   background-image: url("../../dist/images/hero_bkg_pattern@1x.png");
-    background-size: cover;
-    background-position: 50%;
+  background-size: cover;
+  background-position: 50%;
 
   background-image: url("../../dist/images/hero_bkg_pattern@1x.png");
 
@@ -283,9 +283,9 @@ hr.title-underline {
   transition: all .2s ease-in-out;
   transform: translateY(0px);
   @media(max-width:769px){
-    
-      font-size: 14px;
-    
+
+    font-size: 14px;
+
   }
   .back_slant {
     height: 41px;
@@ -422,9 +422,6 @@ input, textarea, select {
 /* Témoignages */
 .testimonials {
   margin: 1.5rem auto;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
 
   .testimonial {
     margin-bottom: 2.2rem;
@@ -434,7 +431,19 @@ input, textarea, select {
       margin-top: 1rem;
       text-align: left;
       max-width: 90%;
+
+      @media (max-width: 1094px){
+        max-width: 100%;
+      }
     }
+  }
+}
+
+/* Listes */
+.liste-arrow{
+  i{
+    color: $blue;
+    margin-right: 5px;
   }
 }
 
