@@ -14,7 +14,7 @@ header {
 
     a {
       font-weight: 400;
-      font-family: 'work sans',sans-serif;
+      font-family: 'work sans', sans-serif;
     }
     @media (max-width: 769px) {
       display: none;
@@ -34,7 +34,7 @@ header {
     /* color: black; */
     @media (max-width: 769px) {
       display: none;
-      @media (max-width:550px) {
+      @media (max-width: 550px) {
         height: 45px;
       }
     }
@@ -42,7 +42,7 @@ header {
 
   .sub_hide.mobile {
     display: table;
-    box-shadow: 0 2px 3px rgba(0,0,0,.12);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .12);
   }
 
   #logoTIM {
@@ -71,7 +71,7 @@ header {
         position: absolute;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
-        @media (max-width:550px) {
+        @media (max-width: 550px) {
           width: 70px;
           top: 12px;
         }
@@ -102,7 +102,7 @@ header {
         top: 20px;
         line-height: 14px;
         font-size: 12px;
-        @media(max-width:550px) {
+        @media(max-width: 550px) {
           display: none;
           left: 75px;
           top: 12px;
@@ -142,7 +142,7 @@ header {
   }
 
   .mobile_ul {
-    @media(min-width:770px) {
+    @media(min-width: 770px) {
       height: 10px;
     }
   }
@@ -154,7 +154,7 @@ header {
     @media (max-width: 769px) {
       padding: 0 0 24px;
 
-      input[type="checkbox"]:checked~label {
+      input[type="checkbox"]:checked ~ label {
         color: #0D97F5;
 
         &:after {
@@ -163,40 +163,51 @@ header {
           position: absolute;
           transform: translateX(4px) rotate(225deg) scale(1.5, 1.5);
           top: -8px;
-          color: red!important;
+          color: red !important;
           right: -10px;
           transition: transform .3s ease-out;
           z-index: 9;
         }
       }
 
-      input[type="checkbox"]~ul.mobile_ul {
-        display: block!important;
+      input[type="checkbox"] ~ ul.mobile_ul {
+        display: block !important;
         transition: transform .6s, box-shadow .4s .3s ease-out;
         //padding: 15px 0px 0px 0px;
       }
 
-      input[type="checkbox"]:checked~ul.mobile_ul {
-        display: block!important;
+      input[type="checkbox"]:checked ~ ul.mobile_ul {
+        display: block !important;
         transform: translateY(492px);
         box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.18);
         opacity: 100;
         //transition : transform 0.6s, opacity 0.5s 0.3s  ease-out;
       }
-      @media(max-width:550px) {
+      @media(max-width: 550px) {
         padding: 0;
         height: 45px;
 
-        input[type="checkbox"]:checked~ul.mobile_ul {
+        input[type="checkbox"]:checked ~ ul.mobile_ul {
           transform: translateY(478px);
 
         }
       }
     }
 
+
+    /* LIENS ACTIFS */
+
+    ul.second_nav a.lien_actif {
+      border-bottom: #FFF solid 1px;
+    }
+    ul.mobile_ul label.lien_actif {
+      color: $blue!important;
+    }
+
+
     .mobile_meta_nav {
       display: none;
-      @media(max-width:769px) {
+      @media(max-width: 769px) {
         display: block;
       }
     }
@@ -206,7 +217,7 @@ header {
     }
 
     #menu_mobile {
-      font-family: 'work sans',sans-serif;
+      font-family: 'work sans', sans-serif;
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -226,12 +237,12 @@ header {
         -webkit-transition: -webkit-transform .3s ease-out;
         transition: transform .3s ease-out;
       }
-      @media(max-width:769px) {
+      @media(max-width: 769px) {
         display: table;
         margin: auto;
         position: relative;
         top: 20px;
-        @media(max-width:550px) {
+        @media(max-width: 550px) {
           top: 14px;
           font-size: 12px;
 
@@ -263,7 +274,7 @@ header {
 
       li.top_niveau {
         display: inline-block;
-        font-family: 'work sans',sans-serif;
+        font-family: 'work sans', sans-serif;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -276,7 +287,7 @@ header {
           display: table;
           position: relative;
           width: 100%;
-          @media(max-width:550px) {
+          @media(max-width: 550px) {
             font-size: 12px;
           }
           //margin-bottom: 15px;
@@ -288,11 +299,11 @@ header {
           position: relative;
           transition: all .3s ease;
           font-weight: 600;
-          font-family: 'work sans',sans-serif;
+          font-family: 'work sans', sans-serif;
           text-rendering: optimizeLegibility;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
-                    &:after {
+          &:after {
             content: "+";
             display: table;
             position: absolute;
@@ -327,14 +338,13 @@ header {
             background-color: #fff;
 
             &:after {
-              color: black!important;
+              color: black !important;
             }
 
             &:hover {
               color: black;
             }
           }
-
 
         }
 
@@ -348,7 +358,7 @@ header {
           display: none;
         }
 
-        input[type="checkbox"]:checked~label {
+        input[type="checkbox"]:checked ~ label {
           color: #0D97F5;
 
           &:after {
@@ -367,33 +377,32 @@ header {
             transition: transform .3s ease-out;
             z-index: 9;
           }
-          @media(max-width:769px) {
-            
+          @media(max-width: 769px) {
 
             &:after {
-              display: none!important;
+              display: none !important;
             }
           }
         }
 
-        input[type="checkbox"]~ul.second_nav {
-          display: block!important;
+        input[type="checkbox"] ~ ul.second_nav {
+          display: block !important;
           transition: transform .7s ease-out, box-shadow .4s .3s ease-out;
-          @media(max-width:769px) {
+          @media(max-width: 769px) {
             transform: translateY(0px);
-            display: table!important;
+            display: table !important;
           }
         }
 
-        input[type="checkbox"]:checked~ul.second_nav {
-          display: block!important;
+        input[type="checkbox"]:checked ~ ul.second_nav {
+          display: block !important;
           transform: translateY(50px);
           box-shadow: 2px 3px 5px rgba(0, 172, 255, .25);
           opacity: 100;
           //transition : transform 0.6s, opacity 0.5s 0.3s  ease-out;
-          @media(max-width:769px) {
+          @media(max-width: 769px) {
             transform: translateY(0);
-            display: table!important;
+            display: table !important;
           }
         }
 
@@ -432,7 +441,7 @@ header {
 
             a {
               font-weight: 600;
-              font-family: 'work sans',sans-serif;
+              font-family: 'work sans', sans-serif;
               color: #fff;
               -webkit-font-smoothing: antialiased;
             }
@@ -474,15 +483,15 @@ header {
 
       .top_niveau.menu_etudiant {
         top: 0;
-        @media(min-width:770px) {
-          height: 25px!important;
+        @media(min-width: 770px) {
+          height: 25px !important;
         }
-        @media(max-width:769px) {
+        @media(max-width: 769px) {
           top: 0;
           height: 50px;
           display: block;
           transition: all .3s ease-out;
-          @media(max-width:550px){
+          @media(max-width: 550px) {
             height: 45px;
           }
         }
@@ -490,31 +499,31 @@ header {
 
       .top_niveau.menu_programme {
         top: 195px;
-        @media(min-width:770px) {
-          height: 25px!important;
+        @media(min-width: 770px) {
+          height: 25px !important;
         }
-        @media(max-width:769px) {
+        @media(max-width: 769px) {
           top: 0;
           height: 50px;
           display: block;
           transition: all .3s ease-out;
-           @media(max-width:550px){
+          @media(max-width: 550px) {
             height: 45px;
           }
         }
       }
 
       .top_niveau.menu_stages {
-        @media(min-width:770px) {
-          height: 25px!important;
+        @media(min-width: 770px) {
+          height: 25px !important;
         }
         top: 312px;
-        @media(max-width:769px) {
+        @media(max-width: 769px) {
           top: 0;
           height: 50px;
           display: block;
           transition: all .3s ease-out;
-           @media(max-width:550px){
+          @media(max-width: 550px) {
             height: 45px;
           }
         }
@@ -522,9 +531,9 @@ header {
 
       .top_niveau.menu_diplomes {
         top: 428px;
-        @media(max-width:769px) {
+        @media(max-width: 769px) {
           top: 0;
-          a{
+          a {
             height: 100%;
             width: 100%;
             display: table;
@@ -533,7 +542,7 @@ header {
       }
 
       .mobile_meta_nav {
-        @media(min-width:770px) {
+        @media(min-width: 770px) {
           display: none;
         }
         margin: auto;
@@ -562,7 +571,7 @@ header {
             font-family: 'work sans', sans-serif;
             font-size: 12px;
             margin-right: 15px;
-            @media(max-width:550px){
+            @media(max-width: 550px) {
 
               width: 75px;
             }
@@ -621,19 +630,19 @@ header {
         box-shadow: 0 0 0 0 rgba(246, 40, 89, .42);
 
         &:hover {
-          transform: translateX(0px)!important;
-          box-shadow: 0 0 0 0 rgba(246, 40, 89, .42)!important;
+          transform: translateX(0px) !important;
+          box-shadow: 0 0 0 0 rgba(246, 40, 89, .42) !important;
           //right: -0px;
         }
 
         &:before {
-          display: none!important;
+          display: none !important;
         }
 
         &:after {
-          display: none!important;
+          display: none !important;
         }
-        @media(max-width:550px) {
+        @media(max-width: 550px) {
           padding: 4% 8px;
           font-size: 12px;
         }
@@ -643,7 +652,7 @@ header {
         display: table;
         margin: auto;
         font-weight: 600;
-        font-family: 'work sans',sans-serif;
+        font-family: 'work sans', sans-serif;
       }
 
       &:hover {
@@ -697,5 +706,6 @@ header {
         transition: all .2s ease-in-out;
       }
     }
+
   }
 }
