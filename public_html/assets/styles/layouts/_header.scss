@@ -49,6 +49,10 @@ header {
     position: relative;
     top: -5px;
     float: left;
+    -moz-margin-top: 10px;
+    -webkit-margin-top: 0;
+    margin-top: 5px;
+
     @media(max-width: 769px) {
       left: 2%;
     }
@@ -83,7 +87,7 @@ header {
       left: 120px;
       top: 20px;
       line-height: 14px;
-      font-family: raleway_semi_bold;
+      font-family: raleway_bold;
       font-size: 12px;
       transition: all .2s ease-in-out;
     }
