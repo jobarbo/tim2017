@@ -15,11 +15,11 @@
                     {% for arrEvenements in evenements %}
                         <li class="col-sm-12">
                             <form class="fSupprimer" action="administration.php" method="post" onsubmit='return confirm("Une actualité sera supprimée");'>
-                                <button id="btnSupprimer" name="btnSupprimer" value="{{ arrEvenements['id_actualite'] }}" class="lien_supprimer"><img src="../../public_html/dist/images/supprimer.png" alt="Supprimer un événement" /></button>
+                                <button id="btnSupprimer" name="btnSupprimer" value="{{ arrEvenements['id_actualite'] }}" class="lien_supprimer"><img src="../dist/images/supprimer.png" alt="Supprimer un événement" /></button>
                             </form>
                             <span class="nom_activite">{{ arrEvenements.titre_actualite }}</span><br />
                             <p>{{ arrEvenements.description_actualite }}</p>
-                            <a class="lien_editer" href="evenement/index.php?id_actu={{ arrEvenements.id_actualite }}&edit">Éditer l'événement<img src="../../public_html/dist/images/editer.png" alt="Éditer un événement" /></a>
+                            <a class="lien_editer" href="evenement/index.php?id_actu={{ arrEvenements.id_actualite }}&edit">Éditer l'événement<img src="../dist/images/editer.png" alt="Éditer un événement" /></a>
                         </li>
                     {% endfor %}
                 </ul>
@@ -35,7 +35,7 @@
             <ul id="liste_diplome">
                 {% for arrDiplomes in diplomes %}
                     <li>
-                        <p class="nom">{{ arrDiplomes.id_diplome }} - {{ arrDiplomes.prenom }} {{ arrDiplomes.nom }} <span class="lien_edition_diplome"><a href="fiche_etudiant/index.php?id={{ arrDiplomes.matricule }}">Éditer la fiche<img src="../../public_html/dist/images/editer.png" alt="Éditer un événement" /></a></span></p>
+                        <p class="nom">{{ arrDiplomes.id_diplome }} - {{ arrDiplomes.prenom }} {{ arrDiplomes.nom }} <span class="lien_edition_diplome"><a href="fiche_etudiant/index.php?id={{ arrDiplomes.matricule }}">Éditer la fiche<img src="../dist/images/editer.png" alt="Éditer un événement" /></a></span></p>
                     </li>
                 {% endfor %}
             </ul>
