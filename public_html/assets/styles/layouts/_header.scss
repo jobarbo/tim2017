@@ -257,7 +257,7 @@ header {
 
     ul {
       list-style: none;
-      padding: 25px 0 0;
+      padding: 25px 40px 0;
       margin-bottom: 0;
       text-align: right;
       @media(max-width: 769px) {
@@ -388,8 +388,8 @@ header {
 
         input[type="checkbox"] ~ ul.second_nav {
           display: block !important;
-          transition: transform .7s ease-out, box-shadow .4s .3s ease-out;
           @media(max-width: 769px) {
+          transition: transform .3s ease-out, box-shadow .4s .3s ease-out;
             transform: translateY(0px);
             display: table !important;
           }
@@ -570,11 +570,11 @@ header {
             margin-left: 15px;
             width: 85px;
             font-family: 'work sans', sans-serif;
-            font-size: 12px;
+            font-size: 11px;
             margin-right: 15px;
             @media(max-width: 550px) {
 
-              width: 75px;
+              width: 70px;
             }
 
             a {
