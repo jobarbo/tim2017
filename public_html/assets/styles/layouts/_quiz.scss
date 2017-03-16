@@ -237,7 +237,10 @@
 .quiz-layout2 {
   width: 100%;
   overflow: hidden;
-  padding: 40px 20px;
+  padding: 100px 20px;
+  @media screen and (max-width: $breakquiz) {
+    padding: 40px 20px;
+  }
 }
 [type="radio"] {
   @include visuallyhidden();
