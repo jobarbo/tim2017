@@ -1,0 +1,33 @@
+.evenement{
+
+h1{
+    padding-left: 15px;
+}
+    section{
+        margin-top: 2em;
+    }
+
+
+    div{
+        margin: 15px 0;
+    }
+    button{
+        clear: both;
+        margin-bottom: 2em;
+    }
+
+    textarea, input{
+        width: 100%;
+        @media screen and (min-width: $desktop2) {
+            width: 80%;
+        }
+    }
+
+    textarea{
+        height: 200px;
+    }
+
+    small{
+        color: GrayText;
+    }
+}

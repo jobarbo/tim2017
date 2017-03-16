@@ -3,38 +3,72 @@
 
 
 {% block content %}
-<section id="ajoutEvenement">
-    <form method="get" action="" name="fInfosEtudiant">
-        <h2> Modification d'un événement </h2>
-        <div class="titre_actu">
-            <h3>Titre de l'actualité</h3>
-            <input type="text" name="titre_actu" value="{{arrEditNouvelle.titre_actualite}}" ></input>
-        </div>
-        <div class="date_publication_actu">
-            <h3>Date de publication de la nouvelle</h3>
-            <input type="text" name="date_publication_actu" value="{{arrEditNouvelle.date_publication}}"></input>
-        </div>
-        <div class="date_expiration_actu">
-            <h3>Date de l'évenement</h3>
-            <input type="text" name="exp_actu" value="{{arrEditNouvelle.date_expiration}}"></input>
-        </div>
-        <div class="desc_actu">
-            <h3>Description de l'actualité</h3>
-            <textarea name="desc_actu" cols="40" >{{arrEditNouvelle.description_actualite}}</textarea>
-        </div>
-        <div class="url_actu">
-            <h3>Url de l'actualité</h3>
-            <input type="text" name="url_actu" value="{{arrEditNouvelle.url_actualite}}"></input>
-        </div>
-        <input type="hidden" name="id_actu" value="{{arrEditNouvelle.id}}"/>
-        <input type="submit" name="modif_actu" value="modifier l'événement"/>
-    </form>
-    
+    <div class="evenement container_page">
+        <section id="ajoutEvenement">
+            <h1> Modification d'un événement </h1>
+            <form method="get" action="" name="fInfosEtudiant">
+                <div class="col-sm-12 col-md-8">
+                    <div class="titre_actu">
+                        <label for="titre_actu">Titre de l'actualité</label>
+                        <i class="fa fa-font icon" aria-hidden="true"></i>
+                        <input type="text" name="titre_actu" value="{{ arrEditNouvelle.titre_actualite }}"
+                               id="titre_actu"/>
+                    </div>
 
-</section>
+                    <div class="desc_actu">
+                        <label for="desc_actu">Description de l'actualité</label>
+                        <textarea name="desc_actu" cols="40"
+                                  id="desc_actu">{{ arrEditNouvelle.description_actualite }}</textarea>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <div class="date_publication_actu">
+                        <label for="date_publication_actu">Date de publication de la nouvelle</label>
+                        <i class="fa fa-calendar icon" aria-hidden="true"></i>
+                        <input type="text" name="date_publication_actu"
+                               value="{{ arrEditNouvelle.date_publication }}" id="date_publication_actu"/>
+                        <p>
+                            <small><i>AAAA-MM-JJ</i></small>
+                        </p>
+                    </div>
+                    <div class="date_expiration_actu">
+                        <label for="exp_actu">Date de l'évenement</label>
+                        <i class="fa fa-calendar icon" aria-hidden="true"></i>
+                        <input type="text" name="exp_actu" value="{{ arrEditNouvelle.date_expiration }}" id="exp_actu"/>
+                        <p>
+                            <small><i>AAAA-MM-JJ</i></small>
+                        </p>
+                    </div>
+                    <div class="url_actu">
+                        <label for="url_actu">Url de l'actualité</label>
+                        <i class="fa fa-globe icon" title="Site web" aria-hidden="true"></i>
+                        <input type="text" name="url_actu" value="{{ arrEditNouvelle.url_actualite }}" id="url_actu"/>
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <input type="hidden" name="id_actu" value="{{ arrEditNouvelle.id }}"/>
+                    <button type="submit" name="modif_actu" value="modifier l'événement"
+                            class="blue-btn">
+                        <i class="fa fa-check-circle-o i-space" aria-hidden="true"></i>
+                        Modifier l'événement
+                        <span class="back_slant"></span>
+                    </button>
+
+                    <a href="evenement/index.php?id_actu={{ arrEditNouvelle.id }}&edit"
+                       class="blue-btn btn_reset">
+                        <i class="fa fa-refresh i-space" aria-hidden="true"></i>
+                        Rétablir
+                        <span class="back_slant"></span>
+                    </a>
+                </div>
+            </form>
+
+
+        </section>
+    </div>
 
 
 
 
-
-{% endblock%}
+{% endblock %}
