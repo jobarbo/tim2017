@@ -18,7 +18,7 @@
  *  ÉDITER FICHE ÉTUDIANT
  */
 
-
+session_start();
 /*************** 1. VARIABLES LOCALES ***********************/
 $strNiveau = "../";
 $strNiveauAdmin = "../../";
@@ -33,14 +33,24 @@ $boolErreurPhoto = false;
 /*************** 2. INSTANCIATION CONFIG ET TWIG ***********************/
 require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 
-
 /*************** 3. REÇOIT MATRICULE DE L'ÉTUDIANT ***********************/
 if (isset($_GET['id'])) {
     $intMatriculeEtudiant = $_GET['id'];
+    if(isset($_SESSION['arrAuthentification'])){
+    $arrAuthentification = unserialize($_SESSION['arrAuthentification']);
+    if($arrAuthentification["nom_usager_admin"] != $intMatriculeEtudiant && $arrAuthentification["niveau_acces"] != 3){
+        header('Location: index.php?id=' . $arrAuthentification["nom_usager_admin"]);
+        var_dump($_SESSION['arrAuthentification']);
+    }
+}
 }
 else{
     header('Location: ' . $strNiveau . '404/');
 }
+
+
+
+
 
 /*************** 5. SOUMISSION DES MODIFICATIONS INFOS ***********************/
 if (isset($_GET['submitInfosEtudiant'])) {

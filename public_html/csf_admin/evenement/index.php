@@ -1,4 +1,5 @@
 <?php
+ session_start();
 /*************** 1. VARIABLES LOCALES ***********************/
 $strNiveau = "../";
 $strNiveauAdmin = "../../";
@@ -8,6 +9,15 @@ setlocale(LC_TIME,"fr_CA");
 $today_date = date("Y-m-d");
 //var_dump("Today is " . date("Y-m-d") . "<br>");
 $date_formater = strftime("%A %e %B", strtotime($today_date));
+
+/**************** 3.  VÉRIFICATION ET DROITS D'ACCÈS **********************/
+
+if(isset($_SESSION['arrAuthentification'])){
+    $arrAuthentification = unserialize($_SESSION['arrAuthentification']);
+    if($arrAuthentification["niveau_acces"] == 1){
+        header('Location: ../fiche_etudiant/index.php?id=' . $arrAuthentification["nom_usager_admin"]);
+    }
+}
 
 if (isset($_GET['errorDate'])){
     echo 'vous ne pouvez publié un evenement qui se produira dans plus de 15 jours.';
