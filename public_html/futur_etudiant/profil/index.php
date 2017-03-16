@@ -71,7 +71,7 @@ if(isset($_GET['validerQuiz']))
             'tId' => $arrId,
             'arrMenuLiensActifs' => $arrMenuActif,
             'erreur' => "Veuillez compléter toutes les questions.",
-            'fichier_script' => 'quiz1.js'
+            'fichier_script' => 'quiz1.js',
 
         ));
     }
