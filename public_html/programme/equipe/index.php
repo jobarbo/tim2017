@@ -77,7 +77,9 @@ FROM t_prof ORDER BY nom_prof";
         'arrTextes' => $arrTextes,
         'arrProfs' => $arrProfs,
         'page' => "Équipe ",
-        'niveau' => $strNiveau
+        'niveau' => $strNiveau,
+        //HEADER
+        'arrMenuLiensActifs' => $arrMenuActif
     ));
 
 

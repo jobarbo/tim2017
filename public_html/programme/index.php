@@ -49,7 +49,9 @@ try {
     echo $template->render(array(
         'niveau' => "../",
         'page' => "Programme ",
-        'arrTextes' => $arrTextes
+        'arrTextes' => $arrTextes,
+        //HEADER
+        'arrMenuLiensActifs' => $arrMenuActif
     ));
 
 } catch (Exception $e) {
