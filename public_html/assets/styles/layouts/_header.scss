@@ -147,6 +147,10 @@ header {
     }
   }
 
+  div.meta_nav a.lien_actif {
+    color: $blue!important;
+  }
+
   nav#nav_primary {
     height: 70px;
     padding: 0 155px 24px 2%;
