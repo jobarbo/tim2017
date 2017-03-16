@@ -17,5 +17,10 @@
             "succes": "Votre mise à jour a été effectuée avec succès!",
             "erreur": "Votre mise à jour n'a pas été effectuée. Veuillez réessayer."
         }
+    },
+    "evenement": {
+        "titre" : " Veuillez entrer un titre pour l'événement",
+        "description" : " Veuillez entrer une description pour l'événement",
+        "date" : "Veuillez entrer une date pour l'événement"
     }
 }

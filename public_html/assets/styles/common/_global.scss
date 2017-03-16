@@ -437,13 +437,33 @@ input, textarea, select {
   margin: 1.5rem auto;
 
   .testimonial, .col-md-6, .col-sm-12{
-    padding: 0 !important;
+    padding: 0 ;
   }
 
   .testimonial {
     //margin-bottom: 2.2rem;
-    padding: 1rem;
+    padding: 0rem;
     min-height: 54em;
+    @media(max-width:769px){
+      min-height: 30em;
+    margin-top: 30px;
+    }
+    .info_temoin{
+      img{
+        @media(max-width:769px){
+          width:30%;
+          @media(max-width:550px){
+            width: 55%;
+          }
+        }
+        
+      }
+    }
+
+    .contenu_temoignage{
+      padding-left:15px;
+      padding-right: 15px;
+    }
 
     p {
       margin-top: 1rem;

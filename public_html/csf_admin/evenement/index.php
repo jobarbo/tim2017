@@ -10,6 +10,10 @@ $today_date = date("Y-m-d");
 //var_dump("Today is " . date("Y-m-d") . "<br>");
 $date_formater = strftime("%A %e %B", strtotime($today_date));
 
+
+/*************** 2. INSTANCIATION CONFIG ET TWIG ***********************/
+require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
+
 /**************** 3.  VÉRIFICATION ET DROITS D'ACCÈS **********************/
 
 if(isset($_SESSION['arrAuthentification'])){
@@ -19,8 +23,39 @@ if(isset($_SESSION['arrAuthentification'])){
     }
 }
 
+$errTitre="";
+$errDate="";
+$errDesc="";
+
+
+$titreFill='';
+$dateFill='';
+$descFill='';
+
+
+
+if (isset($_GET['submit_actu']) || isset($_GET['modif_actu'])){
+    $titreFill = $_GET['titre_actu'];
+    $dateFill = $_GET['exp_actu'];
+    $descFill = $_GET['desc_actu'];
+    if ($_GET['titre_actu']==''){
+    $errTitre = $arrMsgErreurs["evenement"]["titre"];
+}
+
+if ($_GET['exp_actu']==''){
+    $errDate = $arrMsgErreurs["evenement"]["date"];
+}
+
+if ($_GET['desc_actu']==''){
+    $errDesc = $arrMsgErreurs["evenement"]["description"];
+}
+}
+
+
+
 if (isset($_GET['errorDate'])){
-    echo 'vous ne pouvez publié un evenement qui se produira dans plus de 15 jours.';
+    //echo 'vous ne pouvez publié un evenement qui se produira dans plus de 15 jours.';
+   // $strMessageErreurAjoutDate = 'vous ne pouvez publié un evenement qui se produira dans plus de 15 jours.';
 }
 
 if (isset($_GET['submit_actu'])) {
@@ -49,8 +84,6 @@ function check_in_range($start_date, $end_date, $date_from_user)
 
 
 
-/*************** 2. INSTANCIATION CONFIG ET TWIG ***********************/
-require_once($strNiveau . 'inc/scripts/fctcommunes.inc.php');
 
 
 if (isset($_GET['submit_actu'])) {
@@ -76,7 +109,7 @@ if (isset($_GET['submit_actu'])) {
         }
     }
     else{
-        header('Location:'. 'index.php?ajout&errorDate="true"');
+        //header('Location:'. 'index.php?ajout&errorDate="true"');
     }
     
 }
@@ -89,7 +122,7 @@ if (isset($_GET['modif_actu'])){
         titre_actualite = "' . $_GET['titre_actu'] . '",
         description_actualite = "' . $_GET['desc_actu'] . '",
         date_publication = "' . $_GET['date_publication_actu'] . '",
-        date_expiration = "' . $_GET['date_expiration_actu'] . '",
+        date_expiration = "' . $_GET['exp_actu'] . '",
         url_actualite = "' . $_GET['url_actu'] . '"
         WHERE id_actualite = ' . $_GET['id_actu'] . '';
         if($objConnMySQLi->query($strSQLUpdateEvenement)=== TRUE){
@@ -149,11 +182,8 @@ if (isset($_GET['edit'])){
 
 
 
-
-
-
 /*************** 8. TWIG ***********************/
-if (isset($_GET['ajout'])){
+if (isset($_GET['ajout']) || isset($_GET['submit_actu'])){
     $template = $twig->loadTemplate('evenement/ajout.html.twig');
     echo $template->render(array(
     //HEAD
@@ -161,7 +191,13 @@ if (isset($_GET['ajout'])){
     'page' => "",
     'niveau' => $strNiveau,
     'niveauAdmin' => $strNiveauAdmin,
-    'date_ajd' => $today_date
+    'date_ajd' => $today_date,
+    'erreur_titre' => $errTitre,
+    'erreur_desc' => $errDesc,
+    'erreur_date'=> $errDate,
+    'titre_fill'=>$titreFill,
+    'desc_fill'=>$descFill,
+    'date_fill'=>$dateFill
     
     
     ));
@@ -174,7 +210,13 @@ if (isset($_GET['edit'])){
     'page' => "",
     'niveau' => $strNiveau,
     'niveauAdmin' => $strNiveauAdmin,
-    'arrEditNouvelle' => $arrEditNouvelle
+    'arrEditNouvelle' => $arrEditNouvelle,
+    'erreur_titre' => $errTitre,
+    'erreur_desc' => $errDesc,
+    'erreur_date'=> $errDate,
+    'titre_fill'=>$titreFill,
+    'desc_fill'=>$descFill,
+    'date_fill'=>$dateFill
 
     
     ));
