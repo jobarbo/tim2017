@@ -1,40 +1,37 @@
-html{
+html {
   font-size: 100%;
 
-  .body-contact{
-    #hero-section{
+  .body-contact {
+    #hero-section {
       margin: 0;
     }
 
     .contact, .maps{
-      padding: 2% 0;
+      padding: 2rem 0;
     }
 
-
-
-
-
     /* Section 1 */
-    .contact{
+    .contact {
       background-color: $grey;
 
-      .form{
-        h2{
+      .form {
+        padding: 0 15px;
+        h2 {
           margin-top: 0;
         }
 
-        input, select, textarea{
+        input, select, textarea {
           display: block;
           margin-bottom: 1rem;
           width: 100%;
         }
 
-        select{
+        select {
           height: 37px;
           border: none;
         }
 
-        textarea{
+        textarea {
           height: 100px;
           padding: 10px;
           border: none;
@@ -43,55 +40,54 @@ html{
         }
       }
 
-
-
-      hr{
+      hr {
         display: none;
 
         @media (max-width: 991px) {
           display: block;
-          /*margin: 3rem 8%;*/
+          width: 80%;
           height: 0;
           border: 1px solid $blue;
         }
       }
 
 
-
       .coordination {
         img {
           display: block;
           margin: 0 auto 1rem auto;
-          width: 20rem;
+          max-width: 20rem;
           height: auto;
+
+          @media (max-width: 991px) {
+            max-width: 13rem;
+          }
         }
 
-        .name-person{
+        .name-person {
           text-align: center;
         }
       }
 
-
-
-      button{
-        .blue-btn{
+      button {
+        .blue-btn {
           box-shadow: 12px 3px 4px rgba(0, 172, 255, 0.31);
 
-          &:hover{
-            box-shadow: 11px 1px 3px rgba(0,172,255,.51);
+          &:hover {
+            box-shadow: 11px 1px 3px rgba(0, 172, 255, .51);
           }
         }
 
-        &:before{
+        &:before {
           border-bottom: 10px solid #f7f7f7;
           border-right: 10px solid transparent;
         }
-        .back_slant{
+        .back_slant {
           //left: -14px;
           background-color: #f7f7f7;
           box-shadow: 12px 3px 1px 12px #f7f7f7;
 
-          &:before{
+          &:before {
             left: -10px;
             border-top: 10px solid #f7f7f7;
             border-left: 10px solid transparent;
@@ -101,13 +97,9 @@ html{
       }
     }
 
-
-
-
-
     /* Section 2 */
-    .maps{
-      ul{
+    .maps {
+      ul {
         padding: 0;
       }
     }
