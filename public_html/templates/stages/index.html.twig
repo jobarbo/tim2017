@@ -3,7 +3,7 @@
 {% block content %}
     <div class="body-stage">
         <section id="hero-section">
-            <div class="container">
+            <div class="container-page">
                 <div class="hero-image-center col-sm-12">
                     <h1 id="h1-no-width" class="hero_title">{{ stage[1]['titre_texte'] }}</h1>
                 </div>
@@ -13,9 +13,10 @@
 
         {# Champs 1 #}
         <section class="section1">
-            <div class="container">
+            <div class="container-page">
                 <div class="infos col-md-6 col-sm-6">
                     <h2>Dates de début des stages en 2017</h2>
+                    <hr class="title-underline">
                     <p>13 mars (3e année)</p>
                     <p>à partir du 31 mai (1ère et 2e année)</p>
                     <a href="stages/#details">
@@ -28,6 +29,7 @@
                 </div>
                 <div class="bonus col-md-6 col-sm-6">
                     <h2 class="margin-top-mq">Voir aussi</h2>
+                    <hr class="title-underline">
                     <a href="pdf/profilCompetences.pdf">
                         <button class="blue-btn">
                             <i class="fa fa-file-o i-space" aria-hidden="true"></i>
@@ -53,11 +55,14 @@
 
         {# Champ 2 #}
         <section class="section2">
-            <div class="container">
-                <div class="sequence-all">
+            <div class="container-page">
+                <div class="sequence-all col-md-12">
                     <div class="sequences1-2">
                         <div class="sequence1">
                             <h2>Séquence des stages 2017-2018</h2>
+                            <hr class="title-underline">
+
+
                             <h3>Stage des étudiants de 3e année</h3>
 
                             <h4>ATE-2 + crédité</h4>
@@ -69,9 +74,9 @@
 
                             <h4>En détail</h4>
 
-                            <ul class="details" id="details">
+                            <ul id="details">
                                 <li class="margin-bottom-mq">
-                                    <div class="title center-page">
+                                    <div class="title">
                                         <strong> Stage ATE-2</strong>
                                     </div>
                                     <div class="dates">
@@ -81,7 +86,7 @@
                                 </li>
 
                                 <li class="margin-bottom-mq">
-                                    <div class="title center-page">
+                                    <div class="title">
                                         <strong> Retour en classe</strong>
                                     </div>
                                     <div class="dates">
@@ -90,7 +95,7 @@
                                 </li>
 
                                 <li>
-                                    <div class="title center-page">
+                                    <div class="title">
                                         <strong> Stage crédité</strong>
                                     </div>
                                     <div class="dates">
@@ -142,28 +147,79 @@
 
 
 
+        {# Champs 4 #}
+        <section class="section3">
+            <div class="container-page">
+                <div class="etudiant col-md-6 col-sm-12">
+                    <h2>Étudiant?</h2>
+                    <hr class="title-underline">
+
+                    <ul class="liste-arrow">
+                        <li>
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            Démystifie le cours <a href="#">Stage en entreprise</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            Découvre l'<a href="#">Alternance travail-études</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            Explore les <a href="#">possibilités de stage en Europe</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="employeur col-md-6 col-sm-12">
+                    <h2>Employeur?</h2>
+                    <hr class="title-underline">
+
+                    <ul class="liste-arrow">
+                        <li>
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            Consultez les <a href="#">profils de compétences (format pdf)</a> des étudiants de 1e, 2e et 3e année
+                        </li>
+                        <li>
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            Faites votre <a href="#f">Offre de stage (format pdf)</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            Consultez le <a href="#">Guide des employeurs (format pdf)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
         {# Champs 3 #}
-        <section class="section3 center-page">
-            <div class="container">
+        <section class="section4">
+            <div class="container-page">
                 <div class="sequence3-infos col-md-6 col-sm-6">
                     <h2>Pour nous joindre:</h2>
-
-                    <h4>{{ stage[2]['titre_texte'] }}</h4>
-
-                    <ul>
-                        <li> AUDREY MORNEAU-GAGNON</li>
-                        <li> tel: (418) 659-6600 </li>
-                        <li>poste 6668</li>
-                    </ul>
+                    <hr class="title-underline">
+                    <h3>{{ stage[2]['titre_texte'] }}</h3>
+                    <p>AUDREY MORNEAU-GAGNON</p>
                     <a href="nous-joindre/prof&audrey-morneau">
                         <button class="blue-btn">
                             <i class="fa fa-envelope-o i-space" aria-hidden="true"></i>
-                            Contacter
+                            Contacter par mail
+                            <span class="back_slant"></span>
+                        </button>
+                    </a>
+                    <a href="tel:+14186596600">
+                        <button class="blue-btn">
+                            <i class="fa fa-phone i-space" aria-hidden="true"></i>
+                            tel: (418) 659-6600 | poste 6668
                             <span class="back_slant"></span>
                         </button>
                     </a>
 
-                    <p>Voir la fiche de cours <a href="#">Stages et activités professionnelles</a></p>
+                    <p>Voir la fiche de cours <a href="programme/grille-cours/fiche-cours/stage-et-activites-professionnelles">Stages et activités professionnelles</a></p>
                 </div>
 
                 <div class="sequence3-img col-md-6 col-sm-6">
