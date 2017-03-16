@@ -423,6 +423,10 @@ input, textarea, select {
 .testimonials {
   margin: 1.5rem auto;
 
+  .testimonial, .col-md-6, .col-sm-12{
+    padding: 0 !important;
+  }
+
   .testimonial {
     margin-bottom: 2.2rem;
     padding: 1rem;

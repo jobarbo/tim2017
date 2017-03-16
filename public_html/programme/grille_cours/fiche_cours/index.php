@@ -100,5 +100,7 @@ echo $template->render(array(
     'page' => $arrCour['nom'],
     'grille' => $arrCours,
     'boucle1' => $boucleTwig1,
-    'boucle2' => $boucleTwig2
+    'boucle2' => $boucleTwig2,
+    //HEADER
+    'arrMenuLiensActifs' => $arrMenuActif,
 ));
