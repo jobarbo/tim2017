@@ -6,9 +6,10 @@ html{
       margin: 0;
     }
 
-    .section1, .section2, .section3{
+    .section1, .section2, .section3, .section4{
       @include clearfix();
       padding: 3rem 0;
+      margin-bottom: 0;
 
       button{
         .blue-btn{
@@ -52,11 +53,11 @@ html{
 
     .section2{
       h2{
-        margin: 0;
+        margin-top: 0;
       }
 
       h3{
-        margin-top: 3rem;
+        margin-top: 2rem;
       }
 
       h4 {
@@ -74,10 +75,16 @@ html{
       .sequences1-2 {
         @include clearfix();
 
-        .details{
+        ul[id="details"]{
           display: flex;
           justify-content: space-around;
           flex-wrap: wrap;
+
+          /* Positionnement ancre */
+          padding-top: 120px;
+          position: relative;
+          top: -120px;
+          margin-bottom: -120px;
 
           li{
             width: 350px;
@@ -130,6 +137,12 @@ html{
 
 
     .section3{
+      padding-top: 1.5rem;
+    }
+
+
+
+    .section4{
       background-color: $grey;
       padding-top: 1rem;
       padding-bottom: 0 !important;

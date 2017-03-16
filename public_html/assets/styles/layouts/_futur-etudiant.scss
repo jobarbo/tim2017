@@ -132,6 +132,16 @@ div.image_benoit{
 
 }
 
+@media screen and (max-width: 750px) {
+
+  div.integrateur, div.continuum{
+
+    max-width: 100%;
+
+  }
+
+}
+
 @media screen and (max-width: 500px) {
 
   div.futur_etudiant{
