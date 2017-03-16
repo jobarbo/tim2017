@@ -49,4 +49,6 @@ echo $template->render(array(
     'page' => "Grille de cours",
     'arrMenuLiensActifs' => $arrMenuActif,
     'cours' => $arrCours,
+    //HEADER
+    'arrMenuLiensActifs' => $arrMenuActif
 ));

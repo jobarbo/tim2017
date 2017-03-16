@@ -70,7 +70,9 @@ if(isset($_GET['validerQuiz']))
             'xml' => $arrQuestions,
             'tId' => $arrId,
             'erreur' => "Veuillez compléter toutes les questions.",
-            'fichier_script' => 'quiz2.js'
+            'fichier_script' => 'quiz2.js',
+            //HEADER
+            'arrMenuLiensActifs' => $arrMenuActif
         ));
     }
     else
@@ -97,7 +99,9 @@ if(isset($_GET['validerQuiz']))
             'page' => "Fais-tu le bon choix?",
             'xml' => $arrQuestions,
             'reponses' => $arrReponses,
-            'tId' => $arrId
+            'tId' => $arrId,
+            //HEADER
+            'arrMenuLiensActifs' => $arrMenuActif
         ));
     }
 }
@@ -111,6 +115,8 @@ else
         'page' => "Fais-tu le bon choix?",
         'xml' => $arrQuestions,
         'tId' => $arrId,
-        'fichier_script' => 'quiz2.js'
+        'fichier_script' => 'quiz2.js',
+        //HEADER
+        'arrMenuLiensActifs' => $arrMenuActif,
     ));
 }
