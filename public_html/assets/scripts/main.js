@@ -15,50 +15,89 @@
 
 
   $(document).ready(function () {
-
+    configurer();
   });
 
+
+
   function configurer() {
+    resizeMenu();
+
+    function resizeMenu() {
+      if ($(window).width() <= 769 && $(window).width() >= 551) {
+        $('#etudiant').click(function () {
+
+          if ($('#etudiant').is(':checked')) {
+            $(".menu_etudiant").css("height", "245px");
+            $(".menu_programme").css("height", "50px");
+            $(".menu_stages").css("height", "50px");
+
+          } else {
+            $('.menu_etudiant').css('height', "50px");
+          }
+        });
+        $('#programme').click(function () {
+
+          if ($('#programme').is(':checked')) {
+            $('.menu_programme').css("height", "167px");
+            $(".menu_etudiant").css("height", "50px");
+            $(".menu_stages").css("height", "50px");
+
+          } else {
+            $('.menu_programme').css("height", "50px");
+          }
+        });
+        $('#stages').click(function () {
+
+          if ($('#stages').is(':checked')) {
+            $('.menu_stages').css("height", "167px");
+            $(".menu_etudiant").css("height", "50px");
+            $(".menu_programme").css("height", "50px");
+
+          } else {
+            $('.menu_stages').css("height", "50px");
+          }
+        });
+      }
+      if ($(window).width() <= 550) {
+        $('#etudiant').click(function () {
+
+          if ($('#etudiant').is(':checked')) {
+            $(".menu_etudiant").css("height", "215px");
+            $(".menu_programme").css("height", "45px");
+            $(".menu_stages").css("height", "45px");
+
+          } else {
+            $('.menu_etudiant').css('height', "45px");
+          }
+        });
+        $('#programme').click(function () {
+
+          if ($('#programme').is(':checked')) {
+            $('.menu_programme').css("height", "147px");
+            $(".menu_etudiant").css("height", "45px");
+            $(".menu_stages").css("height", "45px");
+
+          } else {
+            $('.menu_programme').css("height", "45px");
+          }
+        });
+        $('#stages').click(function () {
+
+          if ($('#stages').is(':checked')) {
+            $('.menu_stages').css("height", "147px");
+            $(".menu_etudiant").css("height", "45px");
+            $(".menu_programme").css("height", "45px");
+
+          } else {
+            $('.menu_stages').css("height", "45px");
+          }
+        });
+      }
+    }
 
     $('#svg_logo').addClass("big_svg");
     $('#logo_text').addClass("big_text");
-
-
-    $('#etudiant').click(function () {
-      
-      if ($('#etudiant').is(':checked')) {
-        $(".etudiant").css("height", "256px");
-        $(".programme").css("height", "50px");
-        $(".stages").css("height", "50px");
-      }else{
-        $('.etudiant').css('height',"50px");
-      }
-    });
-     $('#programme').click(function () {
-      
-      if ($('#programme').is(':checked')) {
-        $('.programme').css("height", "178px");
-        $(".etudiant").css("height", "50px");
-        $(".stages").css("height", "50px");
-
-      }else{
-        $('.programme').css("height", "50px");
-      }
-    });
-     $('#stages').click(function () {
-      
-      if ($('#stages').is(':checked')) {
-        $('.stages').css("height", "178px");
-        $(".etudiant").css("height", "50px");
-        $(".programme").css("height", "50px");
-
-      }else{
-        $('.stages').css("height", "50px");
-      }
-    });
-
-   
-
 
     $('input.navbox').on('change', function () {
       $('input.navbox').not(this).prop('checked', false);
@@ -67,6 +106,11 @@
     var previousScroll = 0,
       headerOrgOffset = $('.meta_nav').height();
 
+
+    $(window).resize(function () {
+      resizeMenu();
+
+    });
 
     //$('header').height($('.meta_nav').height());
     $(window).scroll(function () {

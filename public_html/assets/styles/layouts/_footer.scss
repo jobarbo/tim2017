@@ -4,21 +4,9 @@ body {
     background-color: #ceedff;
     clear: both;
     z-index: 0;
-    padding-top: 2em;
+    padding-top: 1em;
     display: block;
     float: none !important;
-
-    h4{
-
-      margin-top: 1em;
-
-    }
-
-    ul.liste-social{
-
-      text-align: left;
-      padding-bottom: 1em;
-    }
 
         p{
           font-size:14px;
@@ -132,37 +120,4 @@ body {
 
     }
   }
-}
-
-@media screen and (max-width: 750px) {
-
-article.partie_tim{
-
-  margin-bottom: 3em;
-
-}
-
-p.copyright-footer{
-
-  text-align: left;
-
-}
-
-ul.meta-nav-footer, ul.liste-social{
-
-  text-align: left !important;
-
-}
-
-ul.meta-nav-footer{
-
-  margin-bottom: 0.5em;
-
-  li{
-
-    margin-left: 0em !important;
-  
-  }
-
-}
 }
