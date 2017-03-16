@@ -4,23 +4,28 @@
 
 {% block content %}
 <section id="ajoutEvenement">
+<div class="error">
+        <p class="errTitle" style="color:red;">{{erreur_titre}}</p>
+        <p class="errDesc" style="color:red;">{{erreur_desc}}</p>
+        <p class="errDate" style="color:red;">{{erreur_date}}</p>
+</div>
     <form method="get" action="" name="fInfosEtudiant">
         <h2> Création d'un nouvel événement </h2>
         <div class="titre_actu">
             <h3>Titre de l'evenement</h3>
-            <input type="text" name="titre_actu"></input>
+            <input type="text" name="titre_actu" value="{{titre_fill}}"></input>
         </div>
         <div class="date_publication">
             <input type="hidden" name="date_ajd" value="{{date_ajd}}"></input>
         </div>
         <div class="date_actu">
             <h3>Date de l'evenement</h3>
-            <input type="text" name="exp_actu"></input>
+            <input type="text" name="exp_actu" value="{{date_fill}}"></input>
             <p>année-mois-jour</p>
         </div>
         <div class="desc_actu">
             <h3>Description de l'evenement</h3>
-            <textarea name="desc_actu" cols="40"></textarea>
+            <textarea name="desc_actu" cols="40">{{desc_fill}}</textarea>
         </div>
         <div class="url_actu">
             <h3>Url de l'evenement</h3>
