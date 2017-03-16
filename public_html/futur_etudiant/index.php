@@ -128,7 +128,9 @@ try {
         'arrTexteFormationVivante' => $arrTexteFormationVivante,
         'arrTextePrealables' => $arrTextePrealables,
         'arrTexteProcessus' => $arrTexteProcessus,
-        'arrTexteEtudiantUnJour' => $arrTexteEtudiantUnJour
+        'arrTexteEtudiantUnJour' => $arrTexteEtudiantUnJour,
+        //HEADER
+        'arrMenuLiensActifs' => $arrMenuActif
     ));
 
 }
