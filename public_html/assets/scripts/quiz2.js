@@ -14,17 +14,16 @@ var app = $(function configurer(evenement) {
     var $qo = "";
     var $qn = "";
     var bon = 0;
-
     var $q0o = "Oui, Tim te permettra d’apprendre à concevoir et réaliser des éléments visuels et sonores de toutes sortes à l’aide de logiciels professionnels, sur plateforme Mac et PC avec par exemple la suite professionnelle d’Adobe.";
     var $q0n = "Attention, le programme Tim comporte un important pourcentage de cours dédiés à la conception et réalisation d’éléments visuels et sonores de toutes sortes à l’aide de logiciels professionnels, sur plateforme Mac et PC avec par exemple la suite professionnelle d’Adobe.";
     var $q1o = "Oui, Tim te permettra d'apprendre à programmer des pages Web et des produits interactifs à l'aide de langages de programmation. Les langages de programmation utilisés sont par exemple : JavaScript et PHP.";
-    var $q1n = "Attention, le programme Tim comporte un important pourcentage de cours dédiés à la programmation de pages web et de produits interactifs. Les langages de programmation utilisés sont par exemple : JavaScript et PHP.<";
-    var $q2o = "Non, Tim ne te permettra pas d’apprendre des notions reliées au domaine de la télédiffusion. Tout au plus, tu auras un cours de 60 heures dédié à la captation et au montage audiovidéo au cours de tes trois années de formation. Il existe des programmes spécialisés dans le domaine des communications, par exemple : http://www.cegepjonquiere.ca/arts-lettres-et-communication.html";
+    var $q1n = "Attention, le programme Tim comporte un important pourcentage de cours dédiés à la programmation de pages web et de produits interactifs. Les langages de programmation utilisés sont par exemple : JavaScript et PHP.";
+    var $q2o = "Non, Tim ne te permettra pas d’apprendre des notions reliées au domaine de la télédiffusion. Tout au plus, tu auras un cours de 60 heures dédié à la captation et au montage audiovidéo au cours de tes trois années de formation. Il existe des programmes spécialisés dans le domaine des communications, par exemple : <a href='http://www.cegepjonquiere.ca/arts-lettres-et-communication.html'>Arts, lettres et communication</a>";
     var $q2n = "En effet, TIM ne te permettra pas d’apprendre des notions reliées au domaine de la télédiffusion. Tout au plus, tu auras un cours de 60 heures dédié à la captation et au montage audio-vidéo au cours de tes trois années de formation.";
-    var $q3o = "Non, très peu. Tout au plus, tu auras un cours de 45 heures dédié à l'apprentissage de l'animation dans un contexte de diffusion pour le Web. Il existe des programmes spécialisés dans le domaine du 3D, par exemple: http://www.cegeplimoilou.ca/formations/diplomes-d-etudes-collegiales-dec-technique/574b0-animation-3d-et-synthese-d-images/";
+    var $q3o = "Non, très peu. Tout au plus, tu auras un cours de 45 heures dédié à l'apprentissage de l'animation dans un contexte de diffusion pour le Web. Il existe des programmes spécialisés dans le domaine du 3D, par exemple: <a href='http://www.cegeplimoilou.ca/formations/diplomes-d-etudes-collegiales-dec-technique/574b0-animation-3d-et-synthese-d-images/'>animation 3D</a>";
     var $q3n = "En effet, très peu. Tout au plus, tu auras un cours de 45 heures dédié à l'apprentissage de l'animation dans un contexte de diffusion pour le Web.";
-    var $q4o = "Non, Tim ne te permettra pas de développer des compétences en lien avec l’imprimé et l’illustration. Il existe des programmes spécialisés dans le domaine du Graphisme, par exemple : http://www.cegep-ste-foy.qc.ca/programmes/programmes-techniques/graphisme/";
-    var $q4n = "En effet, Tim ne te permettra pas de développer des compétences en lien avec l’imprimé et l’illustration. Il existe des programmes spécialisés dans le domaine du Graphisme, par exemple : http://www.cegep-ste-foy.qc.ca/programmes/programmes-techniques/graphisme/";
+    var $q4o = "Non, Tim ne te permettra pas de développer des compétences en lien avec l’imprimé et l’illustration. Il existe des programmes spécialisés dans le domaine du Graphisme, par exemple : <a href='http://www.cegep-ste-foy.qc.ca/programmes/programmes-techniques/graphisme/'> graphisme</a>";
+    var $q4n = "En effet, Tim ne te permettra pas de développer des compétences en lien avec l’imprimé et l’illustration. Il existe des programmes spécialisés dans le domaine du Graphisme, par exemple : <a href='http://www.cegep-ste-foy.qc.ca/programmes/programmes-techniques/graphisme/'> graphisme</a>";
 
     reInitQuestion(questionActive);
     /**
@@ -102,7 +101,7 @@ var app = $(function configurer(evenement) {
         {
             if($("input[name=Q"+ questionActive + "]:checked").val() == "Oui" && questionActive < 2)
             {
-                $("#explication").text($qo);
+                $("#explication").html($qo);
                 $("#explication").addClass("bon");
                 $("#icone-explication").html('<i class="fa fa-check" aria-hidden="true"></i>');
                 $("#icone-explication").addClass("bon");
@@ -111,7 +110,7 @@ var app = $(function configurer(evenement) {
             {
                 if($("input[name=Q"+ questionActive + "]:checked").val() == "Non" && questionActive >= 2)
                 {
-                    $("#explication").text($qn);
+                    $("#explication").html($qn);
                     $("#explication").addClass("bon");
                     $("#icone-explication").html('<i class="fa fa-check" aria-hidden="true"></i>');
                     $("#icone-explication").addClass("bon");
@@ -120,14 +119,14 @@ var app = $(function configurer(evenement) {
                 {
                     if($("input[name=Q"+ questionActive + "]:checked").val() == "Oui" && questionActive >= 2)
                     {
-                        $("#explication").text($qo);
+                        $("#explication").html($qo);
                         $("#explication").addClass("mauvais");
                         $("#icone-explication").html('<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>');
                         $("#icone-explication").addClass("mauvais");
                     }
                     else
                     {
-                        $("#explication").text($qn);
+                        $("#explication").html($qn);
                         $("#explication").addClass("mauvais");
                         $("#icone-explication").html('<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>');
                         $("#icone-explication").addClass("mauvais");
