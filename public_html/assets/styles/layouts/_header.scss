@@ -524,6 +524,9 @@ header {
         }
       }
       .mobile_meta_nav{
+        @media(min-width:770px){
+          display: none;
+        }
         margin: auto;
         display: block;
         height: 50px;
