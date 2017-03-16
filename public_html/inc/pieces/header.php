@@ -11,16 +11,19 @@ $arrMenuActif['accueil'] = "";
 $arrMenuActif['nousJoindre'] = "";
 
 $arrMenuActif['futurEtudiant'] = "";
+$arrMenuActif['integrateur'] = "";
 $arrMenuActif['bonChoix'] = "";
 $arrMenuActif['profil'] = "";
 $arrMenuActif['perspectives'] = "";
 $arrMenuActif['temoignages'] = "";
 
 $arrMenuActif['programme'] = "";
+$arrMenuActif['apprend'] = "";
 $arrMenuActif['equipe'] = "";
 $arrMenuActif['grilleCours'] = "";
 
 $arrMenuActif['stages'] = "";
+$arrMenuActif['sequences'] = "";
 $arrMenuActif['ate'] = "";
 $arrMenuActif['international'] = "";
 
@@ -31,7 +34,6 @@ $arrMenuActif['diplomes'] = "";
 if (strpos($_SERVER['PHP_SELF'], 'nous_joindre')) {
     $arrMenuActif['nousJoindre'] = "lien_actif";
 }
-
 /*********** SECTION FUTUR ETUDIANT ***********/
 else if (strpos($_SERVER['PHP_SELF'], 'futur_etudiant/bon_choix')) {
     $arrMenuActif['futurEtudiant'] = "lien_actif";
@@ -51,6 +53,7 @@ else if (strpos($_SERVER['PHP_SELF'], 'futur_etudiant/temoignages')) {
 }
 else if (strpos($_SERVER['PHP_SELF'], 'futur_etudiant')) {
     $arrMenuActif['futurEtudiant'] = "lien_actif";
+    $arrMenuActif['integrateur'] = "lien_actif";
 }
 
 /*********** SECTION PROGRAMME ***********/
@@ -62,8 +65,9 @@ else if (strpos($_SERVER['PHP_SELF'], 'programme/grille_cours')) {
     $arrMenuActif['programme'] = "lien_actif";
     $arrMenuActif['grilleCours'] = "lien_actif";
 }
-else if (strpos($_SERVER['PHP_SELF'], 'programme')) {
+else if (strpos($_SERVER['PHP_SELF'], 'programme/')) {
     $arrMenuActif['programme'] = "lien_actif";
+    $arrMenuActif['apprend'] = "lien_actif";
 }
 
 /*********** SECTION STAGES ***********/
@@ -75,12 +79,13 @@ else if (strpos($_SERVER['PHP_SELF'], 'stages/international')) {
     $arrMenuActif['stages'] = "lien_actif";
     $arrMenuActif['international'] = "lien_actif";
 }
-else if (strpos($_SERVER['PHP_SELF'], 'stages')) {
+else if (strpos($_SERVER['PHP_SELF'], 'stages/')) {
     $arrMenuActif['stages'] = "lien_actif";
+    $arrMenuActif['sequences'] = "lien_actif";
 }
 
 /*********** SECTION DIPLOMES ***********/
-else if (strpos($_SERVER['PHP_SELF'], 'diplomes')) {
+else if (strpos($_SERVER['PHP_SELF'], 'diplomes/')) {
     $arrMenuActif['diplomes'] = "lien_actif";
 }
 
