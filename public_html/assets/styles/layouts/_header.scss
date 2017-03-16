@@ -260,6 +260,9 @@ header {
       padding: 25px 40px 0;
       margin-bottom: 0;
       text-align: right;
+      @media(max-width:880px){
+        padding: 25px 0px 0;
+      }
       @media(max-width: 769px) {
         padding: 95px 0 0;
         text-align: center;
@@ -282,6 +285,7 @@ header {
         font-size: 14px;
         margin-left: 4.8611%;
         cursor: pointer;
+        
         @media(max-width: 769px) {
           font-size: 16px;
           margin: auto;
@@ -388,8 +392,9 @@ header {
 
         input[type="checkbox"] ~ ul.second_nav {
           display: block !important;
-          @media(max-width: 769px) {
           transition: transform .3s ease-out, box-shadow .4s .3s ease-out;
+          @media(max-width: 769px) {
+            transition: transform .3s ease-out, box-shadow .4s .3s ease-out;
             transform: translateY(0px);
             display: table !important;
           }
@@ -433,6 +438,9 @@ header {
             display: inline-block;
             color: #fff;
             margin-right: 4.8611%;
+            @media(max-width:880px){
+              margin-right: 2.8611%;
+        }
             @media(max-width: 769px) {
               display: block;
               margin: 0;
