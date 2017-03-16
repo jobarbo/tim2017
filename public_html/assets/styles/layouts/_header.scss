@@ -138,6 +138,11 @@ header {
       outline: none;
     }
   }
+  .mobile_ul{
+    @media(min-width:770px){
+      height: 10px;
+    }
+  }
 
   nav#nav_primary {
     height: 70px;
@@ -183,6 +188,13 @@ header {
           transform: translateY(692px);
 
         }
+      }
+    }
+
+    .mobile_meta_nav{
+      display:none;
+      @media(max-width:769px){
+        display: block;
       }
     }
 
@@ -364,9 +376,9 @@ header {
 
         input[type="checkbox"]~ul.second_nav {
           display: block!important;
-          transition: transform .4s, box-shadow .4s .3s ease-out;
+          transition: transform .7s ease-out, box-shadow .4s .3s ease-out;
           @media(max-width:769px){
-                transform: translateY(-555px);
+                transform: translateY(0px);
                 display:table!important;
           }
         }
@@ -466,48 +478,79 @@ header {
 
       .top_niveau.etudiant {
         top: 0;
+        @media(min-width:770px){
+          height: 25px!important;
+        }
         @media(max-width:769px) {
           top: 0;
           height: 50px;
           display: block;
-          transition: all .4s ease-out;
+          transition: all .9s ease-out;
         }
       }
 
 
       .top_niveau.programme {
         top: 195px;
+        @media(min-width:770px){
+          height: 25px!important;
+        }
         @media(max-width:769px) {
-          top: 0;
+          top: 0px;
           height: 50px;
           display: block;
-          transition: all .4s ease-out;
+          transition: all .9s ease-out;
         }
       }
 
 
       .top_niveau.stages {
+        @media(min-width:770px){
+          height: 25px!important;
+        }
         top: 312px;
         @media(max-width:769px) {
-          top: 0;
+          top: 0px;
           height: 50px;
           display: block;
-          transition: all .4s ease-out;
+          transition: all .9s ease-out;
         }
       }
 
       .top_niveau.diplomes {
         top: 428px;
         @media(max-width:769px) {
-          top: 0;
+          top: 0px;
         }
+      }
+      .mobile_meta_nav{
+        margin: auto;
+        display: block;
+        height: 50px;
+        position: relative;
+        top: 0;
+        width: 100%;
+        z-index: 99999999;
+        background-color: white;
+          ul{
+            top: 0;
+            z-index: 999999999;
+            li{
+                  margin-bottom: 15px;
+              a{
+                img{
+                  width:80px;
+                }
+              }
+            }
+          }
       }
 
       li:last-of-type {
         margin-right: 4.8611%;
         @media(max-width: 769px) {
           margin: auto;
-          height: 50px;
+          
           display: block;
         }
       }

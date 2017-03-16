@@ -27,7 +27,7 @@
     $('#etudiant').click(function () {
       
       if ($('#etudiant').is(':checked')) {
-        $(".etudiant").css("height", "256px");
+        $(".etudiant").css("height", "245px");
         $(".programme").css("height", "50px");
         $(".stages").css("height", "50px");
       }else{
@@ -37,7 +37,7 @@
      $('#programme').click(function () {
       
       if ($('#programme').is(':checked')) {
-        $('.programme').css("height", "178px");
+        $('.programme').css("height", "167px");
         $(".etudiant").css("height", "50px");
         $(".stages").css("height", "50px");
 
@@ -48,7 +48,7 @@
      $('#stages').click(function () {
       
       if ($('#stages').is(':checked')) {
-        $('.stages').css("height", "178px");
+        $('.stages').css("height", "167px");
         $(".etudiant").css("height", "50px");
         $(".programme").css("height", "50px");
 
