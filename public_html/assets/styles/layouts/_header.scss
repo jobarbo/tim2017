@@ -561,7 +561,8 @@ header {
         top: 0;
         width: 100%;
         z-index: 99999999;
-        background-color: #ceedff;
+        background-image: url(../images/footer_bkg_pattern.jpg);
+        background-repeat: repeat;
 
         ul {
           top: 0;
