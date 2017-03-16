@@ -196,13 +196,13 @@ header {
 
 
     /* LIENS ACTIFS */
-
     ul.second_nav a.lien_actif {
       border-bottom: #FFF solid 1px!important;
     }
 
-    ul.mobile_ul label.lien_actif, ul.mobile_ul label#lien_diplomes.lien_actif a {
+    ul.mobile_ul label.lien_actif, ul.mobile_ul label#lien_diplomes.lien_actif a, li.mobile_meta_nav a.lien_actif {
       color: $blue!important;
+
     }
 
 

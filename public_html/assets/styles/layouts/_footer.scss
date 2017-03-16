@@ -9,33 +9,37 @@ body {
     display: block;
     float: none !important;
 
-    h4{
+    h4 {
 
       margin-top: 1em;
 
     }
 
-ul.menu-meta-footer{
+    ul.menu-meta-footer {
 
-  @media screen and (max-width: 765px) {
+      a.lien_actif{
+        text-decoration: underline;
+      }
 
-    text-align: left;
+      @media screen and (max-width: 765px) {
 
-    li{
+        text-align: left;
 
-      margin-left: 0em;
+        li {
+
+          margin-left: 0em;
+
+        }
+
+      }
 
     }
-
-  }
-
-}
-    ul.footer-social{
+    ul.footer-social {
 
       text-align: left;
       padding-bottom: 1em;
 
-      li{
+      li {
 
         margin-left: 0em;
 
@@ -43,10 +47,9 @@ ul.menu-meta-footer{
 
     }
 
-    p{
-      font-size:14px;
+    p {
+      font-size: 14px;
     }
-      
 
     a {
       font-family: 'work sans', sans-serif;
@@ -54,14 +57,14 @@ ul.menu-meta-footer{
     }
 
     .blue-btn:before {
-      border-bottom: 10px solid #ceedff!important;
+      border-bottom: 10px solid #ceedff !important;
     }
 
     .back_slant {
-      box-shadow: 15px 3px 0px 12px #ceedff!important;
+      box-shadow: 15px 3px 0px 12px #ceedff !important;
     }
 
-    .blue-btn .back_slant:before{
+    .blue-btn .back_slant:before {
       border-top: 10px solid #ceedff;
     }
 
@@ -113,22 +116,22 @@ ul.menu-meta-footer{
       margin-bottom: 0;
       padding: 0;
       box-shadow: 2px -1px 5px 1px rgba(72, 72, 72, 0.25);
-      .credit{
+      .credit {
         margin-top: 20px;
       }
-      
+
       .roger {
-        a{
+        a {
           font-weight: 500;
           color: white;
         }
-        p{
+        p {
           font-size: 9px;
         }
-        
+
       }
-      .meta_social{
-        ul{
+      .meta_social {
+        ul {
           margin-top: 5px;
         }
       }
@@ -139,7 +142,7 @@ ul.menu-meta-footer{
         font-weight: 300;
         font-size: 10px;
       }
-      i{
+      i {
         font-size: 18px;
       }
       ul {
@@ -151,7 +154,6 @@ ul.menu-meta-footer{
 
         }
       }
-
 
     }
   }

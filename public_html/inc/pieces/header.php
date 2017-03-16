@@ -88,7 +88,6 @@ else if (strpos($_SERVER['PHP_SELF'], 'stages/')) {
 else if (strpos($_SERVER['PHP_SELF'], 'diplomes/')) {
     $arrMenuActif['diplomes'] = "lien_actif";
 }
-
 /*********** ACCUEIL ***********/
 else {
     $arrMenuActif['accueil'] = "lien_actif";
