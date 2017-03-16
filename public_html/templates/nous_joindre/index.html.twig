@@ -75,9 +75,9 @@
                 <div class="coordination col-md-6 col-sm-12">
                     {% if person %}
                         {% if type == 'diplome' %}
-                            <img src="assets/images/diplomes/{{ person.id }}.png" alt="Image de la personne que vous souhaitez contacter">
+                            <img src="dist/images/diplomes/{{ person.id }}.png" alt="Image de la personne que vous souhaitez contacter">
                         {% else %}
-                            <img src="assets/images/photo_enseignants/enseignant_{{ person.id }}.png" alt="Image de la personne que vous souhaitez contacter">
+                            <img src="dist/images/photo_enseignants/enseignant_{{ person.id }}.png" alt="Image de la personne que vous souhaitez contacter">
                         {% endif %}
                         <h3 class="name-person">{{ person.prenom }} {{ person.nom }}</h3>
                     {% else %}
