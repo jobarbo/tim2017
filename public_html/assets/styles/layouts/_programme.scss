@@ -29,6 +29,12 @@ div.programme{
       background-color: #f7f7f7;
       //border-bottom: 5px solid #42cef4;
 
+      @media screen and (min-width: 900px) {
+
+      width: 80%;
+
+      }
+
       ul {
         background-image: linear-gradient(to left, #0098FF, #00ACFF);
         //box-shadow: 0 3px 7px #0ca4ce;
@@ -40,6 +46,18 @@ div.programme{
           width: 15%;
           float: left;
           position: relative;
+
+          @media screen and (min-width: 600px) {
+
+            width: 10%;
+
+          }
+
+          @media screen and (min-width: 900px) {
+
+            width: 5%;
+
+          }
 
           img {
 
@@ -95,7 +113,7 @@ div.programme{
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
 
   ul.liste_sujets{
 
@@ -109,8 +127,8 @@ div.programme{
     margin-right: 1em;
     margin-bottom: 3em;
     width: 45%;
+    min-height: 20em;
     float: left;
-    min-height: 10em;
 
     ul {
 
