@@ -126,7 +126,8 @@ echo $template->render(array(
     'arrMenuLiensActifs' => $arrMenuActif,
     'type' => $type,
     'contacts' => $arrContact,
-    'person' => $arrPerson
+    'person' => $arrPerson,
+    'server' => $_SERVER
 ));
 
 

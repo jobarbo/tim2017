@@ -11,7 +11,7 @@ html{
       padding: 3rem 0;
       margin-bottom: 0;
 
-      button{
+      a{
         .blue-btn{
           box-shadow: 12px 3px 4px rgba(0, 172, 255, 0.31);
 
@@ -44,9 +44,9 @@ html{
     .section1{
       background-color: $grey;
 
-      a:first-of-type{
+      /*a:first-of-type{
         display: block;
-      }
+      }*/
     }
 
 
@@ -147,13 +147,17 @@ html{
       padding-top: 1rem;
       padding-bottom: 0 !important;
 
+      button{
+        margin-bottom: 1.4rem;
+      }
+
+      p:last-of-type{
+        margin-top: 1.8rem;
+      }
+
       img{
         display: block;
         margin: 0 auto;
-      }
-
-      button{
-        margin-bottom: 1.4rem;
       }
     }
 
