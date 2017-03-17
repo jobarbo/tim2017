@@ -14,11 +14,8 @@ var app = $(function configurer(evenement){
      * @param {int} no  -> le numéro de la question à afficher
      */
     function reInitQuestion(no){
-        console.log(no);
         $("#Q" + (no - 1)).hide();
         $("#Q" + (no)).fadeToggle({easing: "swing"});
-        /*$("#qProfil" + (no - 1)).hide();
-        $("#qProfil" + (no)).show();*/
     }
     function allerProchaineQuestion(evenement)
     {
