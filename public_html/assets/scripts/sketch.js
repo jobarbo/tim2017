@@ -7,7 +7,7 @@ var hero_height = document.getElementById('hero_canvas').offsetHeight;
 var timer = 0;
 var total = 0;
 var counter = 0;
-var step = Math.PI * 3 / 360;
+var step = Math.PI * 2 / 360;
 
 FinissantHero.Main = function (game) {
 
@@ -17,7 +17,7 @@ FinissantHero.Main = function (game) {
 FinissantHero.Main.prototype = {
 
 	preload: function () {
-		game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+		game.scale.scaleMode = Phaser.ScaleManager.NO_SCALE;
 
 		game.load.image('chapeau', 'dist/images/canvas/chapeau2.png');
 		game.load.image('arrow', 'dist/images/canvas/fleche.png');
