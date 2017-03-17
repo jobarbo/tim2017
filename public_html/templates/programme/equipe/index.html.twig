@@ -33,7 +33,7 @@
                             <div class="conteneur_sociaux">
                                 <ul class="liste_reseaux_sociaux">
                                     {% if valeur['courriel'] is not null %}
-                                        <li><a  class="blue-btn" target="_blank" href="nous_joindre/?type=prof&slug={{ valeur['slug'] }}">
+                                        <li><a  class="blue-btn" href="nous_joindre/prof&{{ valeur['slug'] }}">
                                         <picture>
                                             <img src="dist/images/sociaux/mail.png" srcset="dist/images/sociaux/mail.png 1x, dist/images/sociaux/mail2x.png 2x" alt="Courriel" />
                                         </picture>
