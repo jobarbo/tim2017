@@ -113,7 +113,7 @@ game.state.start('Main');
 
 var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 var android = /android/i.test(navigator.userAgent);
-console.log(iOS);
+
 $(window).resize(function () {
 	if (iOS === false && android === false){
 		resizeGame();
