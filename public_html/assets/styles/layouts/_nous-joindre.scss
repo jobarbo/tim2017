@@ -71,8 +71,24 @@ html {
           display: none;
         }
 
-        .name-person {
-          text-align: center;
+        .coordination-bg{
+          margin: 58px auto 0 auto;
+          padding: 1.5rem 0;
+          width: 400px;
+          background-color: #fff;
+
+          -webkit-box-shadow: 0px 0px 6px 0px rgba(196,196,196,1);
+          -moz-box-shadow: 0px 0px 6px 0px rgba(196,196,196,1);
+          box-shadow: 0px 0px 6px 0px rgba(196,196,196,1);
+
+          .name-person {
+            text-align: center;
+          }
+
+          .title-underline{
+            display: block;
+            margin: 0 auto;
+          }
         }
       }
 
