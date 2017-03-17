@@ -15,6 +15,25 @@ html{
         }
       }
 
+      .testimonial{
+        .header{
+          @include clearfix();
+
+          .infos{
+            padding-left: 20px;
+
+            @media (max-width: 1094px){
+              padding-left: 0;
+            }
+          }
+        }
+
+        hr{
+          margin: 2rem auto;
+          width: 80%;
+        }
+      }
+
       .partnership{
         list-style: none;
         padding: 0;
