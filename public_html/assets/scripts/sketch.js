@@ -117,6 +117,10 @@ $(window).resize(function () {
 function resizeGame() {
 	if ($(window).width() < 800) {
 		$("#hero_canvas").css("display", "none");
+	}else{
+		if ($(window).width() > 800){
+			$("#hero_canvas").css("display", "block");
+		}
 	}
 
 	var innerWidth = window.innerWidth;
