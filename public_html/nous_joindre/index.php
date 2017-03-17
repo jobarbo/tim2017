@@ -55,6 +55,8 @@ require '../inc/lib/PHPMailer-master/PHPMailerAutoload.php';
 
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+    storeDataInSession();
+
     /* Validation reCAPTCHA */
     if(isset($_POST['submit']) && !empty($_POST['submit'])){
         if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])){
