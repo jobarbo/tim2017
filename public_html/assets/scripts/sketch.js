@@ -122,7 +122,6 @@ function animationAccueil() {
 
 
 function animationDiplome() {
-	console.log("hello");
 	var FinissantHero = {
 
 	};
