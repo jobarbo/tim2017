@@ -37,6 +37,13 @@ if ($slug){
         'prenom' => $prenom,
         'recipient' => $recipient
     );
+
+    if ($arrPerson['id'] == null){
+        $arrPerson = null;
+
+        addFlash("danger", "Le destinataire n'a pas été trouvé.");
+        addFlash("danger", "Veuillez en choisir un dans la liste présente ci-dessous.");
+    }
 }
 
 
@@ -47,6 +54,8 @@ if ($slug){
 require '../inc/lib/PHPMailer-master/PHPMailerAutoload.php';
 
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    storeDataInSession();
 
     /* Validation reCAPTCHA */
     if(isset($_POST['submit']) && !empty($_POST['submit'])){

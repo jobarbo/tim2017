@@ -28,6 +28,11 @@ $twig = new Twig_Environment($loader, array(
 ));
 $twig->addFunction($flashesFonction);
 
+$valuesFonction = new Twig_SimpleFunction("last_value", function($field) {
+    return showLastValue($field);
+});
+$twig->addFunction($valuesFonction);
+
 
 
 
@@ -58,8 +63,33 @@ function showFlashes() {
         }
     }
     echo $str;
-
 }
 
 
 
+// Stock form data in _SESSION
+function storeDataInSession() {
+    if(!session_id()) session_start();
+    $_SESSION["formValues"] = $_POST;
+}
+
+
+
+// Last Values for twig
+function showLastValue($param) {
+    $result = "";
+    if (!session_id()) session_start();
+    if(isset($_SESSION['formValues']))
+    {
+        if (isset($_SESSION["formValues"][$param])){
+            $result = $_SESSION["formValues"][$param];
+            unset($_SESSION["formValues"][$param]);
+        }
+
+        if (count($_SESSION["formValues"]) == 0){
+            unset($_SESSION["formValues"][$param]);
+        }
+    }
+
+    return $result;
+}

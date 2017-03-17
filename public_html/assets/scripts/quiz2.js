@@ -58,7 +58,6 @@ var app = $(function configurer(evenement) {
                 break;
         }
 
-        console.log(no);
         if (no > 0) {
             $("#progression").html("<span class='total'>" + (no + 1).toString() + "</span>/5");
         }
@@ -75,8 +74,6 @@ var app = $(function configurer(evenement) {
         {
             $("#Q" + (no)).show();
         }
-        /*$("#qProfil" + (no - 1)).hide();
-         $("#qProfil" + (no)).show();*/
         $('#Q' + no).after("<input id='validerQuestion' class='btnQuizBleu' name='validerQuestion' type='submit' value='Valider mon choix' />");
         $('#validerQuestion').on("click", validerMonChoix);
     }
