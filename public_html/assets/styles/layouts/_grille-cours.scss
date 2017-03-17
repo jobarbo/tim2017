@@ -100,10 +100,17 @@ section > span {
   bottom: 42px;
   color: white;
   font-size: 16px;
+  @media screen and (max-width: 600px) {
+    color: black;
+    margin-bottom: 10px;
+  }
 }
 .retour-precedent-cours {
   position: absolute;
   bottom: 22px;
+  @media screen and (max-width: 600px) {
+    bottom: 87px;
+  }
   .lien-retour {
     padding-left: 5px;
     color: #1a405b;
