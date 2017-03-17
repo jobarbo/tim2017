@@ -3,6 +3,7 @@
 /*************** 1. VARIABLES LOCALES ***********************/
 $strNiveau = "../";
 $strNiveauAdmin = "../../";
+$strNiveauCSS = "../";
 $strSection = "Ajout d'évenement";
 setlocale(LC_TIME,"fr_CA");
 
@@ -188,9 +189,10 @@ if (isset($_GET['ajout']) || isset($_GET['submit_actu'])){
     echo $template->render(array(
     //HEAD
     'title' => "Section administrative | TIM",
-    'page' => "",
+    'page' => "Création d'un nouvel événement",
     'niveau' => $strNiveau,
     'niveauAdmin' => $strNiveauAdmin,
+        'niveauCSS' => $strNiveauCSS,
     'date_ajd' => $today_date,
     'erreur_titre' => $errTitre,
     'erreur_desc' => $errDesc,
@@ -207,9 +209,10 @@ if (isset($_GET['edit'])){
     echo $template->render(array(
     //HEAD
     'title' => "Section administrative | TIM",
-    'page' => "",
+    'page' => "Modification d'un événement",
     'niveau' => $strNiveau,
     'niveauAdmin' => $strNiveauAdmin,
+        'niveauCSS' => $strNiveauCSS,
     'arrEditNouvelle' => $arrEditNouvelle,
     'erreur_titre' => $errTitre,
     'erreur_desc' => $errDesc,

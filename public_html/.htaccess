@@ -1,4 +1,4 @@
-#ErrorDocument 404 http://localhost/prod6/TIM2017_team/public/404/
+ErrorDocument 404 http://localhost/~annabelleviolette/tim2017/public_html/404/
 #ErrorDocument 404 http://timunix.cegep-ste-foy.qc.ca/~hooli/404/
 
 # ------------ Cache et expiration ----------

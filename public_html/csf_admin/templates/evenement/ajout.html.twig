@@ -3,44 +3,69 @@
 
 
 {% block content %}
-<section id="ajoutEvenement">
-<div class="error">
-        <p class="errTitle" style="color:red;">{{erreur_titre}}</p>
-        <p class="errDesc" style="color:red;">{{erreur_desc}}</p>
-        <p class="errDate" style="color:red;">{{erreur_date}}</p>
-</div>
-    <form method="get" action="" name="fInfosEtudiant">
-        <h2> Création d'un nouvel événement </h2>
-        <div class="titre_actu">
-            <h3>Titre de l'evenement</h3>
-            <input type="text" name="titre_actu" value="{{titre_fill}}"></input>
-        </div>
-        <div class="date_publication">
-            <input type="hidden" name="date_ajd" value="{{date_ajd}}"></input>
-        </div>
-        <div class="date_actu">
-            <h3>Date de l'evenement</h3>
-            <input type="text" name="exp_actu" value="{{date_fill}}"></input>
-            <p>année-mois-jour</p>
-        </div>
-        <div class="desc_actu">
-            <h3>Description de l'evenement</h3>
-            <textarea name="desc_actu" cols="40">{{desc_fill}}</textarea>
-        </div>
-        <div class="url_actu">
-            <h3>Url de l'evenement</h3>
-            <input type="text" name="url_actu"></input>
-        </div>
+    <div class="evenement container_page">
+        <section id="ajoutEvenement">
+            <div class="error">
+                <p class="errTitle" style="color:red;">{{ erreur_titre }}</p>
+                <p class="errDesc" style="color:red;">{{ erreur_desc }}</p>
+                <p class="errDate" style="color:red;">{{ erreur_date }}</p>
+            </div>
+
+            <h1> Création d'un nouvel événement </h1>
+            <form method="get" action="" name="fInfosEtudiant">
+
+                <div class="col-sm-12 col-md-8">
+                    <div class="titre_actu">
+                        <label for="titre_actu">Titre de l'evenement</label>
+                        <i class="fa fa-font icon" aria-hidden="true"></i>
+                        <input type="text" name="titre_actu" value="{{ titre_fill }}" id="titre_actu"/>
+                    </div>
+                    <div class="desc_actu">
+                        <label for="desc_actu">Description de l'evenement</label>
+                        <textarea name="desc_actu" cols="40" id="desc_actu">{{ desc_fill }}</textarea>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <div class="date_publication">
+                        <input type="hidden" name="date_ajd" value="{{ date_ajd }}"/>
+                    </div>
+                    <div class="date_actu">
+                        <label for="exp_actu">Date de l'evenement</label>
+                        <i class="fa fa-calendar icon" aria-hidden="true"></i>
+                        <input type="text" name="exp_actu" value="{{ date_fill }}" id="exp_actu"/>
+                        <p>
+                            <small><i>AAAA-MM-JJ</i></small>
+                        </p>
+                    </div>
+                    <div class="url_actu">
+                        <label for="url_actu">Url de l'evenement</label>
+                        <i class="fa fa-globe icon" title="Site web" aria-hidden="true"></i>
+                        <input type="text" name="url_actu" id="url_actu"/>
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <button type="submit" name="submit_actu" value="Ajouter l'evenement"
+                            class="blue-btn">
+                        <i class="fa fa-check-circle-o i-space" aria-hidden="true"></i>
+                        Ajouter l'événement
+                        <span class="back_slant"></span>
+                    </button>
+                    <a href="evenement/index.php?ajout"
+                       class="blue-btn btn_reset">
+                        <i class="fa fa-refresh i-space" aria-hidden="true"></i>
+                        Rétablir
+                        <span class="back_slant"></span>
+                    </a>
+                </div>
+            </form>
 
 
-        <input type="submit" name="submit_actu" value="Ajouter l'evenement"/>
-    </form>
-    
-
-</section>
+        </section>
+    </div>
 
 
 
 
 
-{% endblock%}
+{% endblock %}

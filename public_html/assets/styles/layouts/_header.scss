@@ -49,6 +49,10 @@ header {
     position: relative;
     top: -5px;
     float: left;
+    -moz-margin-top: 10px;
+    -webkit-margin-top: 0;
+    margin-top: 5px;
+
     @media(max-width: 769px) {
       left: 2%;
     }
@@ -83,7 +87,7 @@ header {
       left: 120px;
       top: 20px;
       line-height: 14px;
-      font-family: raleway_semi_bold;
+      font-family: raleway_bold;
       font-size: 12px;
       transition: all .2s ease-in-out;
     }
@@ -147,6 +151,10 @@ header {
     }
   }
 
+  div.meta_nav a.lien_actif {
+    color: $blue!important;
+  }
+
   nav#nav_primary {
     height: 70px;
     padding: 0 155px 24px 2%;
@@ -196,13 +204,13 @@ header {
 
 
     /* LIENS ACTIFS */
-
     ul.second_nav a.lien_actif {
       border-bottom: #FFF solid 1px!important;
     }
 
-    ul.mobile_ul label.lien_actif, ul.mobile_ul label#lien_diplomes.lien_actif a {
+    ul.mobile_ul label.lien_actif, ul.mobile_ul label#lien_diplomes.lien_actif a, li.mobile_meta_nav a.lien_actif {
       color: $blue!important;
+
     }
 
 
@@ -561,7 +569,8 @@ header {
         top: 0;
         width: 100%;
         z-index: 99999999;
-        background-color: #ceedff;
+        background-image: url(../images/footer_bkg_pattern.jpg);
+        background-repeat: repeat;
 
         ul {
           top: 0;
