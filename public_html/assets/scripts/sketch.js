@@ -17,7 +17,7 @@ FinissantHero.Main = function (game) {
 FinissantHero.Main.prototype = {
 
 	preload: function () {
-		game.scale.scaleMode = Phaser.ScaleManager.NO_SCALE;
+		//game.scale.scaleMode = Phaser.ScaleManager.NO_SCALE;
 
 		game.load.image('chapeau', 'dist/images/canvas/chapeau2.png');
 		game.load.image('arrow', 'dist/images/canvas/fleche.png');
@@ -110,8 +110,15 @@ game.state.add('Main', FinissantHero.Main);
 
 game.state.start('Main');
 //game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+
+var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+var android = /android/i.test(navigator.userAgent);
+console.log(iOS);
 $(window).resize(function () {
-	resizeGame();
+	if (iOS === false && android === false){
+		resizeGame();
+	}
+	
 });
 
 function resizeGame() {
@@ -132,7 +139,7 @@ function resizeGame() {
 	//game.stage.bounds.width = 500;
 	//game.stage.bounds.height = 360;
 	//game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-	console.log(game.scale.scaleMode);
+	//console.log(game.scale.scaleMode);
 	game.scale.refresh();
 
 }
