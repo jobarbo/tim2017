@@ -4,6 +4,19 @@ html {
   .body-contact {
     #hero-section {
       margin: 0;
+
+      .retour_precedent{
+        position: absolute;
+        bottom: 10px;
+
+        @media (max-width: 770px) {
+          bottom: 30px;
+        }
+
+        a{
+          color: #1a405b;
+        }
+      }
     }
 
     .contact, .maps{

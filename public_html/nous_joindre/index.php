@@ -32,6 +32,7 @@ if ($slug){
     $stmt->fetch();
     $arrPerson = array(
         'id' => $id,
+        'slug' => $slug,
         'nom' => $nom,
         'prenom' => $prenom,
         'recipient' => $recipient
