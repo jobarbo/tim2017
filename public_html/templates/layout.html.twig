@@ -154,9 +154,14 @@
 <a href="{{ arrMenuLiensActifs.PHP_SELF }}{% if arrMenuLiensActifs.QUERY_STRING != "" %}?{{ arrMenuLiensActifs.QUERY_STRING }}{% endif %}#contenu"
    class="visuallyhidden focusable">Allez au contenu</a>
 
-<main>
+<main id="contenu">
     {# CONTENU DES PAGES #}
     {% block content %}{% endblock %}
+   <!--<div class="btn_haut_page">
+        <a href="#">
+        <i class="fa fa-arrow-up" title="Retour vers le haut de la page"></i>
+        </a>
+    </div>-->
 </main>
 
 
@@ -253,11 +258,10 @@
 </script>
 <script type="text/javascript" src="dist/scripts/jquery.js"></script>
 <!--<script type="text/javascript" src="dist/scripts/customizer.js"></script>-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/p5.js"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/2.6.2/phaser.min.js"></script>
 <script type="text/javascript" src="dist/scripts/main.js"></script>
 
-<!--<script type="text/javascript" src="dist/scripts/sketch.js"></script>-->
+<script type="text/javascript" src="dist/scripts/sketch.js"></script>
 
 
 {# SCRIPTS SELON PAGE #}
