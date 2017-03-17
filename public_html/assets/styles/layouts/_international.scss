@@ -13,38 +13,50 @@ html{
             max-width: 100%;
           }
         }
+
+        .partnership{
+          list-style: none;
+          padding: 0;
+
+          li{
+            font-family: work sans;
+            font-size: 16px;
+            margin-left: 1.5em;
+            margin-top: 0.3em;
+            list-style-image: url('../images/fleche_liste.png');
+
+          }
+        }
       }
 
-      .testimonial{
-        .header{
-          @include clearfix();
+      .testimonials{
+        .testimonial{
+          min-height: inherit;
+          margin-bottom: 5rem;
 
-          .infos{
-            padding-left: 20px;
+          @media (max-width: 1094px){
+            margin-bottom: 3;
+          }
 
-            @media (max-width: 1094px){
-              padding-left: 0;
+          .header{
+            @include clearfix();
+            .infos{
+              padding-left: 20px;
+
+              @media (max-width: 1094px){
+                padding-left: 0;
+              }
             }
+          }
+
+          hr{
+            margin: 2rem auto;
+            width: 80%;
           }
         }
 
-        hr{
-          margin: 2rem auto;
-          width: 80%;
-        }
-      }
-
-      .partnership{
-        list-style: none;
-        padding: 0;
-
-        li{
-          font-family: work sans;
-          font-size: 16px;
-          margin-left: 1.5em;
-          margin-top: 0.3em;
-          list-style-image: url('../images/fleche_liste.png');
-
+        .testimonial:last-of-type{
+          margin-bottom: 1rem;
         }
       }
     }
