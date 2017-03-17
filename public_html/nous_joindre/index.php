@@ -46,6 +46,21 @@ if ($slug){
     }
 }
 
+$arrEmail = array();
+$request = "SELECT courriel_responsable, prenom_responsable, nom_responsable, responsabilite FROM t_responsable";
+
+if ($objResultEmail = $objConnMySQLi->query($request)) {
+    while ($objLigneEmail = $objResultEmail->fetch_object()) {
+        $arrEmail[] = array(
+            'courriel'=>$objLigneEmail->courriel_responsable,
+            'prenom'=>$objLigneEmail->prenom_responsable,
+            'nom'=>$objLigneEmail->nom_responsable,
+            'responsabilite'=>$objLigneEmail->responsabilite
+        );
+    }
+    $objResultEmail->free_result();
+}
+
 
 
 
@@ -136,6 +151,7 @@ echo $template->render(array(
     'type' => $type,
     'contacts' => $arrContact,
     'person' => $arrPerson,
+    'responsables' => $arrEmail,
     'server' => $_SERVER
 ));
 

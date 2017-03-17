@@ -1,5 +1,3 @@
-{#todo: choose img css position#}
-
 {% extends 'layout.html.twig' %}
 
 {% block content %}
@@ -7,140 +5,11 @@
         <section id="hero-section">
             <div class="container_page">
                 <div class="hero-image-center col-sm-12">
-                    <h1 id="h1-no-width" class="hero_title">{{ stage[0]['titre_texte'] }}</h1>
+                    <h1 id="h1-no-width" class="hero_title">{{ stage.titre_texte }}</h1>
                 </div>
             </div>
         </section>
 
-        {# Champs1 #}
-        <section class="main">
-            <div class="container_page">
-                <div class="intro col-md-12">
-                    <h2>Stages internationaux</h2>
-                    <hr class="title-underline">
-                    <p>Le programme Techniques d'intégration multimédia du Cégep de Sainte-Foy vous offre la possibilité de terminer votre formation à l'étranger en y réalisant un stage en entreprise de 10 semaines.</p>
-                    <p>Le bureau international du Cégep de Sainte-Foy et notre programme ont établi des partenariats avec ces institutions françaises:</p>
-
-
-                    <ul class="partnership">
-                        <li><a href="http://iut.univ-mlv.fr/" target="_blank">L'<abbr title="Institut universitaire de Technologie">IUT</abbr> de Marne-Lavallée</a>, à Paris, France</li>
-                        <li><a href="https://iuthaguenau.unistra.fr/" target="_blank">L'<abbr title="Institut universitaire de Technologie">IUT</abbr> de Haguenau</a>, près de Strasbourg, France</li>
-                    </ul>
-                    <p>Il s'agit d'une opportunité de vivre une expérience internationale inoubliable!</p>
-                </div>
-            </div>
-
-
-            <div class="container_page">
-                <div class="testimonials col-md-12">
-                    <h2>Témoignages:</h2>
-                    <hr class="title-underline">
-
-                    <div class="testimonial col-md-6 col-sm-12">
-                        <div class="header">
-                            <img class="col-md-6" src="dist/images/stages-temoignages/paquing.jpg" alt="Gabriel Paquin">
-                            <div class="infos col-md-6">
-                                <h3>Gabriel Paquin</h3>
-                                <span>20 mars 2016 au 6 juin 2016</span>
-                            </div>
-                        </div>
-
-                        <hr>
-
-                        <p>Ce voyage m’a littéralement servi de carburant pour l’année 2015-2016 et tous les efforts que j’ai mis se sont vus-sur-récompensés par cette expérience qui a fait naître quelque chose de nouveau en moi et qui surtout, restera pour toujours gravée dans ma mémoire.</p>
-
-                        <a title="Témoignage de Gabriel Paquin" class="blue-btn" href="pdf/temoignage-gabriel-paquin.pdf" target="_blank">
-                            <i class="fa fa-file-o i-space" aria-hidden="true"></i>
-                            Télécharger le témoignage
-                            <span class="back_slant"></span>
-                        </a>
-                    </div>
-
-
-                    <div class="testimonial col-md-6 col-sm-12">
-                        <div class="header">
-                            <img class="col-md-6" src="dist/images/stages-temoignages/fisetgrenierl.jpg" alt="Laurence Fiset-Grenier">
-                            <div class="infos col-md-6">
-                                <h3>Laurence Fiset-Grenier</h3>
-                                <span>20 mars 2016 au 6 juin 2016 </span>
-                            </div>
-                        </div>
-
-                        <hr>
-
-                        <p>Cette expérience est sans aucun doute la meilleure que j’ai pu vivre jusqu’à maintenant et je recommencerais n’importe quand. Elle m’a permis de me développer sur le plan personnel, car c’était la première fois que je partais aussi longtemps, mais aussi la première fois que je vivais en appartement. J’ai donc beaucoup développé mon autonomie et ma débrouillardise.</p>
-
-                        <a title="Témoignage de Laurence Fiset-Grenier" class="blue-btn" href="pdf/temoignage-laurence-fisetg.pdf" target="_blank">
-                            <i class="fa fa-file-o i-space" aria-hidden="true"></i>
-                            Télécharger le témoignage
-                            <span class="back_slant"></span>
-                        </a>
-                    </div>
-
-
-                    <div class="testimonial col-md-6 col-sm-12">
-                        <div class="header">
-                            <img class="col-md-6" src="dist/images/stages-temoignages/genessef.jpg" alt="François Genesse">
-                            <div class="infos col-md-6">
-                                <h3>François Genesse</h3>
-                                <span>20 mars 2016 au 6 juin 2016</span>
-                            </div>
-                        </div>
-
-                        <hr>
-
-                        <p>C’est une merveilleuse occasion de passer 3 mois entouré d’histoire dans une ville vivante et dynamique où il fait bon vivre.</p>
-
-                        <a title="Témoignage de François Genesse" class="blue-btn" href="pdf/temoignage-francois-genesse.pdf" target="_blank">
-                            <i class="fa fa-file-o i-space" aria-hidden="true"></i>
-                            Télécharger le témoignage
-                            <span class="back_slant"></span>
-                        </a>
-                    </div>
-
-
-                    <div class="testimonial col-md-6 col-sm-12">
-                        <div class="header">
-                            <img class="col-md-6" src="dist/images/stages-temoignages/turcotteM.jpg" alt="Maxime Turcotte">
-                            <div class="infos col-md-6">
-                                <h3>Maxime Turcotte</h3>
-                                <span>Stagiaire à Paris, 21 mars au 6 juin 2015</span>
-                            </div>
-                        </div>
-
-                        <hr>
-
-                        <p>Le désir de faire ce stage international m'est venu spontanément un matin et je suis finalement heureux d'avoir foncé. De nature pas très explorateur, j'avais le goût de sortir de ma zone de confort et c'était un bon moyen de le faire.</p>
-
-                        <a title="Témoignage de Maxime Turcotte" class="blue-btn" href="pdf/temoignage-maxime-turcotte.pdf" target="_blank">
-                            <i class="fa fa-file-o i-space" aria-hidden="true"></i>
-                            Télécharger le témoignage
-                            <span class="back_slant"></span>
-                        </a>
-                    </div>
-
-
-                    <div class="testimonial col-md-6 col-sm-12">
-                        <div class="header">
-                            <img src="dist/images/stages-temoignages/turcotteS.jpg" alt="Sébastien Turcotte">
-                            <div class="infos">
-                                <h3>Sébastien Turcotte</h3>
-                                <span>Stagiaire à Paris, 21 mars au 6 juin 2015</span>
-                            </div>
-                        </div>
-
-                        <hr>
-
-                        <p>J’ai vécu l’expérience inoubliable de faire mon stage de fin d’études collégiales dans la ville de Paris, en France, dans le contexte d’échange étudiant entre la Techniques d’intégration multimédia du Cégep de Sainte-Foy et l’Institut Universitaire des Technologies de Marne-la-Vallée.</p>
-
-                        <a title="Témoignage de Sébastien Turcotte" class="blue-btn" href="pdf/temoignage-sebastien-turcotte.pdf" target="_blank">
-                            <i class="fa fa-file-o i-space" aria-hidden="true"></i>
-                            Télécharger le témoignage
-                            <span class="back_slant"></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+        {{ stage.texte | raw }}
     </div>
 {% endblock %}
