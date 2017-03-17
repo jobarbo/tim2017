@@ -154,9 +154,14 @@
 <a href="{{ arrMenuLiensActifs.PHP_SELF }}{% if arrMenuLiensActifs.QUERY_STRING != "" %}?{{ arrMenuLiensActifs.QUERY_STRING }}{% endif %}#contenu"
    class="visuallyhidden focusable">Allez au contenu</a>
 
-<main>
+<main id="contenu">
     {# CONTENU DES PAGES #}
     {% block content %}{% endblock %}
+   <!--<div class="btn_haut_page">
+        <a href="#">
+        <i class="fa fa-arrow-up" title="Retour vers le haut de la page"></i>
+        </a>
+    </div>-->
 </main>
 
 
