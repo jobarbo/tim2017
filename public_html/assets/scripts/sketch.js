@@ -72,7 +72,7 @@ function animationAccueil() {
 			this.arrow.body.y = 20 + tStep * 20;
 			counter += step * 5;
 
-			if (total < 200 && game.time.now+30 > timer) {
+			if (total < 400 && game.time.now+30 > timer) {
 				this.releaseHats();
 				game.world.bringToTop(this.arrow);
 			}
@@ -202,7 +202,7 @@ function animationDiplome() {
 			this.arrow.body.y = 20 + tStep * 20;
 			counter += step * 5;
 
-			if (total < 200 && game.time.now-200 > timer) {
+			if (total < 300 && game.time.now-200 > timer) {
 				this.releaseHats();
 			}
 
