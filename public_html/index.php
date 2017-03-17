@@ -259,7 +259,7 @@ function parseTweet($text)
 {
     $text = preg_replace('#http://[a-z0-9._/-]+#i', '<br><a  target="_blank" href="$0">$0</a>', $text); //Link
     $text = preg_replace('#@([a-z0-9_]+)#i', '<br>@<a  target="_blank" href="http://twitter.com/$1">$1</a>', $text); //usernames
-    $text = preg_replace('#https://[a-z0-9._/-]+#i', '<br><a  target="_blank" href="$0">$0</a>', $text); //Links
+    $text = preg_replace('#https://[a-z0-9._/-]+#i', '<br><a  target="_blank" href="$0">$0', $text); //Links
     return $text;
 }
 
