@@ -18,7 +18,7 @@ html{
           list-style: none;
           padding: 0;
 
-          li{
+          .website{
             font-family: work sans;
             font-size: 16px;
             margin-left: 1.5em;
@@ -32,14 +32,15 @@ html{
       .testimonials{
         .testimonial{
           min-height: inherit;
-          margin-bottom: 5rem;
+          margin-bottom: 5rem !important;
 
           @media (max-width: 1094px){
-            margin-bottom: 3;
+            margin-bottom: 3rem !important;
           }
 
           .header{
             @include clearfix();
+
             .infos{
               padding-left: 20px;
 
@@ -56,7 +57,7 @@ html{
         }
 
         .testimonial:last-of-type{
-          margin-bottom: 1rem;
+          margin-bottom: 1rem !important;
         }
       }
     }

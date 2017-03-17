@@ -65,12 +65,11 @@
                             <input type="text" name="recipient" value="{{ person.recipient }}" readonly>
                         {% else %}
                             <label for="recipient">Destinataire</label>
-                            <select name="recipient" id="recipient" title="Sélectionnez un destinataire" aria-describedby="recipient">
-                                <option value="erwann.letue@gmail.com">Sylvain Lamoureux (Coordonnateur départemental)</option>
-                                <option value="omar.jbara2@gmail.com">Guillaume Gaulin-Laquerre (Webmestre)</option>
-                                <option value="stages-tim@cegep-ste-foy.qc.ca">Audrey Morneau-Gagnon (Responsable des stages)</option>
-                                <option value="bfrigon@cegep-ste-foy.qc.ca">Benoît Frigon (Responsable "Étudiant d'un jour")</option>
-                            </select>
+                                <select name="recipient" id="recipient" title="Sélectionnez un destinataire" aria-describedby="recipient">
+                                    {% for responsable in responsables %}
+                                        <option value="{{ responsable.courriel }}">{{ responsable.prenom }} {{ responsable.nom }} ({{ responsable.responsabilite }})</option>
+                                    {% endfor %}
+                                </select>
                         {% endif %}
 
                         {# sujet #}

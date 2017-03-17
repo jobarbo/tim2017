@@ -13,6 +13,10 @@ html {
           bottom: 30px;
         }
 
+        @media (max-width: 600px) {
+          bottom: 90px;
+        }
+
         a{
           color: #1a405b;
         }

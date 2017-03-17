@@ -10,10 +10,11 @@ if ($objResult = $objConnMySQLi->query($request)) {
     while ($objLigne = $objResult->fetch_object()) {
         $arrStage[] = array(
             'titre_texte'=>$objLigne->titre_texte,
-            'text'=>$objLigne->texte,
+            'texte'=>$objLigne->texte,
         );
     }
-/*    $objResult->free_result();*/
+    $objResult->free_result();
+    $arrStage = $arrStage[0];
 }
 
 
