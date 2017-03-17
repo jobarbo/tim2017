@@ -37,6 +37,13 @@ if ($slug){
         'prenom' => $prenom,
         'recipient' => $recipient
     );
+
+    if ($arrPerson['id'] == null){
+        $arrPerson = null;
+
+        addFlash("danger", "Le destinataire n'a pas été trouvé.");
+        addFlash("danger", "Veuillez en choisir un dans la liste présente ci-dessous.");
+    }
 }
 
 
