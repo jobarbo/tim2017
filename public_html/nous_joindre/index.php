@@ -32,6 +32,7 @@ if ($slug){
     $stmt->fetch();
     $arrPerson = array(
         'id' => $id,
+        'slug' => $slug,
         'nom' => $nom,
         'prenom' => $prenom,
         'recipient' => $recipient
@@ -125,7 +126,8 @@ echo $template->render(array(
     'arrMenuLiensActifs' => $arrMenuActif,
     'type' => $type,
     'contacts' => $arrContact,
-    'person' => $arrPerson
+    'person' => $arrPerson,
+    'server' => $_SERVER
 ));
 
 

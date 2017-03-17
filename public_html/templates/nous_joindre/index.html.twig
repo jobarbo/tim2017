@@ -5,20 +5,45 @@
 {% block content %}
     <div class="body-contact">
         <section id="hero-section">
-            <div class="container">
+            <div class="container_page">
                 <div class="hero-image-center col-sm-12">
-                    <h1 id="h1-no-width" class="hero_title">Nous joindre</h1>
+                    {% if person %}
+                        {% if type == 'diplome' %}
+                            <h1 id="h1-no-width" class="hero_title">Contacter {{ person.prenom }} {{ person.nom }}</h1>
+                            <span class="retour_precedent">
+                                <a href="diplomes/fiche-etudiant/{{ person.slug }}">
+                                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                                    Revenir à la fiche de {{ person.prenom }} {{ person.nom }}
+                                </a>
+                             </span>
+                        {% else %}
+                            <h1 id="h1-no-width" class="hero_title">Contacter {{ person.prenom }} {{ person.nom }}</h1>
+                            <span class="retour_precedent">
+                                <a href="programme/equipe/">
+                                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                                    Revenir à la présentation de l'équipe
+                                </a>
+                            </span>
+                        {% endif %}
+                    {% else %}
+                        <h1 id="h1-no-width" class="hero_title">Nous joindre</h1>
+                    {% endif %}
                 </div>
             </div>
         </section>
         {{ showFlashes() }}
 
-        <section class="contact center-page">
+        <section class="contact">
             <div class="container_page">
                 <div class="form col-md-6 col-sm-12">
-                    <h2>Contactez-nous</h2>
+                    {% if person %}
+                        <h2>Contactez-le</h2>
+                    {% else %}
+                        <h2>Contactez-nous</h2>
+                    {% endif %}
+
                     {# formulaire de contact #}
-                    <form action="" method="post">
+                    <form action="{{ server["REQUEST_URI"] }}" method="post">
                         {# nom complet #}
                         <div class="field">
                             <label for="name">Nom complet</label>
@@ -40,7 +65,7 @@
                             <input type="text" name="recipient" value="{{ person.recipient }}" readonly>
                         {% else %}
                             <label for="recipient">Destinataire</label>
-                            <select name="recipient" id="recipient" title="Sélectionnez un destinataire" aria-describedby="destinataire-tip">
+                            <select name="recipient" id="recipient" title="Sélectionnez un destinataire" aria-describedby="recipient">
                                 <option value="erwann.letue@gmail.com">Sylvain Lamoureux (Coordonnateur départemental)</option>
                                 <option value="omar.jbara2@gmail.com">Guillaume Gaulin-Laquerre (Webmestre)</option>
                                 <option value="stages-tim@cegep-ste-foy.qc.ca">Audrey Morneau-Gagnon (Responsable des stages)</option>
@@ -57,7 +82,7 @@
 
                         {# Message #}
                         <label for="message">Message</label>
-                        <textarea required name="message" id="message" title="Entrez votre message" aria-describedby="message-tip" placeholder="Entrez votre message"></textarea>
+                        <textarea required name="message" id="message" title="Entrez votre message" aria-describedby="message" placeholder="Entrez votre message"></textarea>
 
                         {# reCAPTCHA #}
                         <div class="g-recaptcha" data-sitekey="6LeHzxgUAAAAAKfaMEfUk2kUbV4nV-awR4eXxIAZ"></div>
@@ -71,17 +96,23 @@
                     </form>
                 </div>
 
-                <hr>
 
-                <div class="coordination col-md-6 col-sm-12">
-                    {% if person %}
+
+                {% if person %}
+                    <div class="coordination-to-none col-md-6 col-sm-12">
+                        <hr>
+
                         {% if type == 'diplome' %}
-                            <img src="assets/images/diplomes/{{ person.id }}.png" alt="Image de la personne que vous souhaitez contacter">
+                            <img src="dist/images/diplomes/{{ person.id }}.png" alt="Image de la personne que vous souhaitez contacter">
                         {% else %}
-                            <img src="assets/images/photo_enseignants/enseignant_{{ person.id }}.png" alt="Image de la personne que vous souhaitez contacter">
+                            <img src="dist/images/photo_enseignants/enseignant_{{ person.id }}.png" alt="Image de la personne que vous souhaitez contacter">
                         {% endif %}
                         <h3 class="name-person">{{ person.prenom }} {{ person.nom }}</h3>
-                    {% else %}
+                    </div>
+                {% else %}
+                    <div class="coordination col-md-6 col-sm-12">
+                        <hr>
+
                         <img src="dist/images/photo_enseignants/enseignant_12.png" alt="Photo de Sylvain Lamoureux">
                         <div class="coordinateur">
                             <h2>{{ contacts[0]['titre_texte'] }}</h2>
@@ -93,45 +124,37 @@
                                 <li> tel: (418) 659-6600 </li>
                                 <li>poste 6662</li>
                             </ul>
-                            <a href="nous-joindre/prof&sylvain-lamoureux">
-                                <button class="blue-btn">
-                                    <i class="fa fa-envelope-o i-space" aria-hidden="true"></i>
-                                    Contacter
-                                    <span class="back_slant"></span>
-                                </button>
+                            <a href="nous-joindre/prof&sylvain-lamoureux" class="blue-btn">
+                                <i class="fa fa-envelope-o i-space" aria-hidden="true"></i>
+                                Contacter
+                                <span class="back_slant"></span>
                             </a>
                         </div>
-                    {% endif %}
-
-
+                    </div>
+                {% endif %}
                         {# !!! Champ 2 à supprimer !!! #}
-                </div>
             </div>
         </section>
 
 
 
-        <section class="maps center-page">
-            <div class="container_page">
-                <div class="col-md-7 col-sm-12">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2731.910858724522!2d-71.28615244180301!3d46.78636084500936!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb896dea093d777%3A0xf81581457f682cd6!2sC%C3%A9gep+de+Sainte-Foy!5e0!3m2!1sen!2sca!4v1487101030511" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-                </div>
-
-
-                <div class="infos col-md-5 col-sm-12">
-                    <p>Cégep de Sainte-Foy</p>
-                    <p>2410 chemin Sainte-Foy, Québec G1V 1T3</p>
-
-                    <a href="https://goo.gl/maps/RfnK9Gnm2112">
-                        <button class="blue-btn">
-                            <i class="fa fa-map-o i-space" aria-hidden="true"></i>
-                            Ouvrir dans google maps
-                            <span class="back_slant"></span>
-                        </button>
-                    </a>
-                </div>
+        <div class="maps container_page">
+            <div class="col-md-6 col-sm-12">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2731.910858724522!2d-71.28615244180301!3d46.78636084500936!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb896dea093d777%3A0xf81581457f682cd6!2sC%C3%A9gep+de+Sainte-Foy!5e0!3m2!1sen!2sca!4v1487101030511" style="border:0" allowfullscreen></iframe>
             </div>
-        </section>
+
+
+            <div class="infos col-md-6 col-sm-12">
+                <p>Cégep de Sainte-Foy</p>
+                <p>2410 chemin Sainte-Foy, Québec G1V 1T3</p>
+
+                <a href="https://goo.gl/maps/RfnK9Gnm2112" class="blue-btn">
+                    <i class="fa fa-map-o i-space" aria-hidden="true"></i>
+                    Ouvrir dans google maps
+                    <span class="back_slant"></span>
+                </a>
+            </div>
+        </div>
     </div>
 
     <script src='https://www.google.com/recaptcha/api.js'></script>
