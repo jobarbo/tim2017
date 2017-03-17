@@ -69,4 +69,3 @@ echo $template->render(array(
     'arrTemoignages' => $arrTemoignages
 
 ));
-//var_dump($arrTemoignages);

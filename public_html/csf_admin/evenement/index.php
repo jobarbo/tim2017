@@ -8,7 +8,7 @@ $strSection = "Ajout d'évenement";
 setlocale(LC_TIME,"fr_CA");
 
 $today_date = date("Y-m-d");
-//var_dump("Today is " . date("Y-m-d") . "<br>");
+
 $date_formater = strftime("%A %e %B", strtotime($today_date));
 
 
@@ -53,12 +53,6 @@ if ($_GET['desc_actu']==''){
 }
 
 
-
-if (isset($_GET['errorDate'])){
-    //echo 'vous ne pouvez publié un evenement qui se produira dans plus de 15 jours.';
-   // $strMessageErreurAjoutDate = 'vous ne pouvez publié un evenement qui se produira dans plus de 15 jours.';
-}
-
 if (isset($_GET['submit_actu'])) {
 
 function check_in_range($start_date, $end_date, $date_from_user)
@@ -92,7 +86,7 @@ if (isset($_GET['submit_actu'])) {
         try{
             $strSQLInsertEvenement = "INSERT INTO t_evenement (titre_actualite, description_actualite, url_actualite,date_publication,date_expiration)
             VALUES (". "'".$_GET['titre_actu']."'"."," ."'".$_GET['desc_actu']."'".","."'".$_GET['url_actu']."'".","."'".$_GET['date_ajd']."'".","."'".$_GET['exp_actu']."'".");";
-            //var_dump($strSQLInsertEvenement);
+
             
             if($objConnMySQLi->query($strSQLInsertEvenement) === TRUE){
                 $texteErreurInsert = "";

@@ -222,10 +222,6 @@ function limit_text($text, $len)
     return $out;
 }
 
-//echo $strActualite;
-//echo $date;
-
-//echo $linkFb;
 
 //----- 3.2 Twitter -----//
 
@@ -284,9 +280,6 @@ foreach ($arrTwitter as $tweet) {
 
 $tPos = strpos($strActualiteTweet, ">http");
 $link_tweet = substr($strActualiteTweet, $tPos + 1);
-
-//echo $strActualiteTweet;
-//echo $dateTweet;
 
 /*************** 5 TWIG ***********************/
 

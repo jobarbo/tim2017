@@ -23,12 +23,16 @@
   function configurer() {
     resizeMenu();
 
+    if ($(window).width() < 800) {
+      $("#hero_canvas").css("display", "none");
+    }
+
     function resizeMenu() {
       if ($(window).width() <= 769 && $(window).width() >= 551) {
         $('#etudiant').click(function () {
 
           if ($('#etudiant').is(':checked')) {
-            $(".menu_etudiant").css("height", "245px");
+            $(".menu_etudiant").css("height", "265px");
             $(".menu_programme").css("height", "50px");
             $(".menu_stages").css("height", "50px");
 
@@ -39,7 +43,7 @@
         $('#programme').click(function () {
 
           if ($('#programme').is(':checked')) {
-            $('.menu_programme').css("height", "167px");
+            $('.menu_programme').css("height", "179px");
             $(".menu_etudiant").css("height", "50px");
             $(".menu_stages").css("height", "50px");
 
@@ -50,7 +54,7 @@
         $('#stages').click(function () {
 
           if ($('#stages').is(':checked')) {
-            $('.menu_stages').css("height", "167px");
+            $('.menu_stages').css("height", "179px");
             $(".menu_etudiant").css("height", "50px");
             $(".menu_programme").css("height", "50px");
 
@@ -63,7 +67,7 @@
         $('#etudiant').click(function () {
 
           if ($('#etudiant').is(':checked')) {
-            $(".menu_etudiant").css("height", "215px");
+            $(".menu_etudiant").css("height", "235px");
             $(".menu_programme").css("height", "45px");
             $(".menu_stages").css("height", "45px");
 
@@ -74,7 +78,7 @@
         $('#programme').click(function () {
 
           if ($('#programme').is(':checked')) {
-            $('.menu_programme').css("height", "147px");
+            $('.menu_programme').css("height", "159px");
             $(".menu_etudiant").css("height", "45px");
             $(".menu_stages").css("height", "45px");
 
@@ -85,7 +89,7 @@
         $('#stages').click(function () {
 
           if ($('#stages').is(':checked')) {
-            $('.menu_stages').css("height", "147px");
+            $('.menu_stages').css("height", "159px");
             $(".menu_etudiant").css("height", "45px");
             $(".menu_programme").css("height", "45px");
 
@@ -114,7 +118,7 @@
 
     //$('header').height($('.meta_nav').height());
     $(window).scroll(function () {
-      console.log($(".meta_nav").css("height"));
+
       if ($(".meta_nav").css("height") > "26px") {
 
 
