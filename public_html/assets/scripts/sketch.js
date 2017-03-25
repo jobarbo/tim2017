@@ -1,7 +1,9 @@
 function animationAccueil() {
-	var FinissantHero = {
+	
+	var ConfettiHero = {
 
 	};
+
 	var hero_width = document.getElementById('hero_canvas').offsetWidth;
 	var hero_height = document.getElementById('hero_canvas').offsetHeight;
 
@@ -10,9 +12,9 @@ function animationAccueil() {
 	var counter = 0;
 	var step = Math.PI * 2 / 360;
 
-	FinissantHero.Main = function (game) {};
+	ConfettiHero.Main = function (game) {};
 
-	FinissantHero.Main.prototype = {
+	ConfettiHero.Main.prototype = {
 
 		preload: function () {
 			//game.scale.scaleMode = Phaser.ScaleManager.NO_SCALE;
@@ -43,47 +45,44 @@ function animationAccueil() {
 			//this.arrow.body.bounce.setTo(0.7);
 
 
-			this.releaseHats();
+			this.releaseConfettis();
 			
 		},
 
 
-		releaseHats: function () {
+		releaseConfettis: function () {
 
-			this.chapeau = game.add.sprite(-50, game.world.randomY, 'confetti');
-			this.chapeau.frame = Math.floor(Math.random()*20);
-			game.physics.arcade.enable(this.chapeau);
-			this.chapeau.scale.setTo(1, 1);
-			this.chapeau.angle = game.rnd.angle();
-			this.chapeau.body.velocity.x = 50;
+			this.confetti = game.add.sprite(-50, game.world.randomY, 'confetti');
+			this.confetti.frame = Math.floor(Math.random()*20);
+			game.physics.arcade.enable(this.confetti);
+			this.confetti.scale.setTo(1, 1);
+			this.confetti.angle = game.rnd.angle();
+			this.confetti.body.velocity.x = 100;
 			total++;
 			timer = game.time.now + 600;
 
 		},
 		update: function () {
 			
-			game.add.tween(this.chapeau).to({
+			game.add.tween(this.confetti).to({
 				angle: 360
 			}, 40000, Phaser.Easing.Linear.None, true);
-			game.physics.arcade.collide(this.chapeau, this.chapeau);
+			game.physics.arcade.collide(this.confetti, this.confetti);
 
 			// Move sprite up and down smoothly for show
 			var tStep = Math.sin(counter);
 			this.arrow.body.y = 20 + tStep * 20;
 			counter += step * 5;
 
-			if (total < 400 && game.time.now+30 > timer) {
-				this.releaseHats();
+			if (total < 400 && game.time.now+500 > timer) {
+				this.releaseConfettis();
 				game.world.bringToTop(this.arrow);
 			}
-
-
 		},
-
 	};
 	
 	var game = new Phaser.Game('100%', 360, Phaser.AUTO, 'hero_canvas');
-	game.state.add('Main', FinissantHero.Main);
+	game.state.add('Main', ConfettiHero.Main);
 	game.state.start('Main');
 
 	var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
@@ -112,14 +111,8 @@ function animationAccueil() {
 		game.width = document.getElementById('hero_canvas').offsetWidth;
 		game.height = 360;
 		game.scale.refresh();
-
 	}
-
-
 }
-
-
-
 
 function animationDiplome() {
 	var FinissantHero = {
