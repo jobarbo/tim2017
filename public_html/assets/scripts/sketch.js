@@ -16,6 +16,13 @@ function animationAccueil() {
 
 	ConfettiHero.Main.prototype = {
 
+		init: function() {
+			game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL; 
+			game.scale.pageAlignHorizontally = true;
+			game.scale.pageAlignVertically = true;
+			game.stage.smoothed = false;
+		},
+
 		preload: function () {
 			//game.scale.scaleMode = Phaser.ScaleManager.NO_SCALE;
 			game.physics.startSystem(Phaser.Physics.ARCADE);
